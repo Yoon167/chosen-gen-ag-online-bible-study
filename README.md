@@ -2,6 +2,8 @@
 
 A simple responsive landing page for the **Chosen Gen AG Online Bible Study**.
 
+When the site opens, an ambient welcome screen presents Matthew 18:20. The verse gently zooms into place for 8 seconds, remains still for 2 seconds so visitors can read it, then reveals the Bible-study journey. Visitors who request reduced motion skip this animation.
+
 ## Live website
 
 - Firebase Hosting: https://chosen-gen--ag-bible-study.web.app

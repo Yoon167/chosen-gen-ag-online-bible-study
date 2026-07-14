@@ -1,6 +1,8 @@
 const STORAGE_KEY = "chosen-gen-bible-study-progress";
 const QATAR_OFFSET_MS = 3 * 60 * 60 * 1000;
 const TUESDAY = 2;
+const LOADING_DURATION_MS = 10000;
+const LOADING_EXIT_DURATION_MS = 650;
 
 const sessions = {
   "part-1": { hour: 20, minute: 0, label: "Join Part 1 on Zoom" },
@@ -18,6 +20,8 @@ const stepTwo = document.querySelector("#step-two");
 const progressCopy = document.querySelector("#progress-copy");
 const resetButton = document.querySelector("#reset-button");
 const nextStudyCountdown = document.querySelector("#next-study-countdown");
+const loadingScreen = document.querySelector("#loading-screen");
+const appContent = document.querySelector("#app-content");
 
 function getQatarClock(now = new Date()) {
   return new Date(now.getTime() + QATAR_OFFSET_MS);
@@ -139,6 +143,17 @@ function render(progress) {
   }
 }
 
+function revealStudy() {
+  document.body.classList.remove("is-loading");
+  appContent.removeAttribute("aria-hidden");
+  appContent.removeAttribute("inert");
+  loadingScreen.classList.add("is-complete");
+
+  window.setTimeout(() => {
+    loadingScreen.remove();
+  }, LOADING_EXIT_DURATION_MS);
+}
+
 startButton.addEventListener("click", () => setProgress("part-1"));
 
 document.querySelectorAll("[data-complete]").forEach((button) => {
@@ -164,3 +179,9 @@ resetButton.addEventListener("click", () => {
 render(getProgress());
 updateSessionAvailability();
 setInterval(updateSessionAvailability, 1000);
+
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  revealStudy();
+} else {
+  window.setTimeout(revealStudy, LOADING_DURATION_MS);
+}

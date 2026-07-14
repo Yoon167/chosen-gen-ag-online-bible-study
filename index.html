@@ -16,8 +16,28 @@
   />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <main class="page-shell">
+<body class="is-loading">
+  <section class="loading-screen" id="loading-screen" aria-labelledby="loading-verse" role="status">
+    <div class="loading-screen__glow loading-screen__glow--one" aria-hidden="true"></div>
+    <div class="loading-screen__glow loading-screen__glow--two" aria-hidden="true"></div>
+    <div class="loading-screen__stars" aria-hidden="true"></div>
+
+    <div class="loading-screen__content">
+      <div class="loading-screen__cross" aria-hidden="true">
+        <span></span>
+        <span></span>
+      </div>
+      <p class="loading-screen__eyebrow">CHOSEN GEN AG</p>
+      <blockquote class="loading-screen__verse" id="loading-verse">
+        “For where two or three gather in my name, there am I with them.”
+      </blockquote>
+      <cite class="loading-screen__reference">Matthew 18:20</cite>
+      <span class="loading-screen__line" aria-hidden="true"></span>
+      <p class="loading-screen__message">Gathering in His presence</p>
+    </div>
+  </section>
+
+  <main class="page-shell" id="app-content" aria-hidden="true" inert>
     <div class="ambient ambient-one" aria-hidden="true"></div>
     <div class="ambient ambient-two" aria-hidden="true"></div>
     <div class="ambient ambient-three" aria-hidden="true"></div>
