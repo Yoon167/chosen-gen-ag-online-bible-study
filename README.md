@@ -18,5 +18,7 @@ Each Zoom button is locked by default and has a live countdown using **Qatar tim
 - `index.html` — page structure and the supplied Zoom links
 - `styles.css` — visual design, responsive layout, and animations
 - `script.js` — sequential session visibility, saved progress, and Qatar-time button countdowns
+- `firebase.js` — Firebase Analytics initialization for the configured Chosen Gen project
+- `firebase.json` and `.firebaserc` — Firebase Hosting deployment configuration
 
 Open `index.html` in a browser to use the site.

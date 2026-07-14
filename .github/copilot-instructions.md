@@ -7,11 +7,13 @@
 - [x] Install required extensions — none required.
 - [x] Compile the project — no build step; JavaScript syntax validated.
 - [x] Create and run task — skipped; static app requires no task.
-- [x] Launch the project — ready to open in a browser.
+- [x] Launch the project — published to GitHub Pages from the `main` branch.
 - [x] Ensure documentation is complete — README added and updated.
 
 ## Implementation notes
 
 - `index.html` contains the user-provided Zoom meeting links.
-- `script.js` saves the visitor's current study step in browser `localStorage`.
+- `script.js` saves the visitor's current study step in browser `localStorage` and unlocks each Zoom button on its Qatar-time schedule.
 - `styles.css` uses responsive styles and honors reduced-motion preferences.
+- Public source repository: https://github.com/Yoon167/chosen-gen-ag-online-bible-study
+- Public site address: https://yoon167.github.io/chosen-gen-ag-online-bible-study/
