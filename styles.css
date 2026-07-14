@@ -850,17 +850,9 @@ cite {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body.is-loading .page-shell {
-    opacity: 1;
-  }
-
-  .loading-screen {
-    display: none;
-  }
-
-  *,
-  *::before,
-  *::after {
+  body:not(.is-loading) *,
+  body:not(.is-loading) *::before,
+  body:not(.is-loading) *::after {
     scroll-behavior: auto !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

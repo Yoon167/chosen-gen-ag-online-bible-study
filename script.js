@@ -179,9 +179,4 @@ resetButton.addEventListener("click", () => {
 render(getProgress());
 updateSessionAvailability();
 setInterval(updateSessionAvailability, 1000);
-
-if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  revealStudy();
-} else {
-  window.setTimeout(revealStudy, LOADING_DURATION_MS);
-}
+window.setTimeout(revealStudy, LOADING_DURATION_MS);
