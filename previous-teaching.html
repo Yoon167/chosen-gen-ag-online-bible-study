@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Previous Bible teaching: What God Can Do — a web-based slide deck for Chosen Gen AG."
+  />
+  <title>Previous Teaching | What God Can Do</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css?v=previous-teaching-1" />
+</head>
+<body class="previous-teaching-page">
+  <main class="teaching-page-shell">
+    <nav class="teaching-nav" aria-label="Previous teaching navigation">
+      <a class="back-link" href="index.html">
+        <span aria-hidden="true">←</span>
+        Back to Bible study
+      </a>
+      <p class="teaching-nav__brand">CHOSEN GEN AG</p>
+    </nav>
+
+    <header class="teaching-hero">
+      <p class="teaching-hero__eyebrow">PREVIOUS TEACHING</p>
+      <h1>What God Can Do</h1>
+      <p class="teaching-hero__subtitle">Knowing the True God Through His Attributes</p>
+      <p class="teaching-hero__verse">“Now unto him that is able to do exceeding abundantly above all that we ask or think…” <span>— Ephesians 3:20</span></p>
+    </header>
+
+    <section class="web-deck" aria-labelledby="deck-heading">
+      <div class="web-deck__heading">
+        <div>
+          <p class="section-label">WEB SLIDE DECK</p>
+          <h2 id="deck-heading">Previous teaching</h2>
+        </div>
+        <p class="slide-counter" id="slide-counter" aria-live="polite">Slide 1 of 15</p>
+      </div>
+
+      <figure class="slide-stage" aria-describedby="slide-description">
+        <img
+          id="active-slide"
+          class="slide-stage__image"
+          src="assets/previous-teaching/slide-01.jpg"
+          alt="What God Can Do title slide"
+        />
+      </figure>
+
+      <section class="slide-description" aria-labelledby="slide-title" aria-live="polite">
+        <p class="slide-description__label">SLIDE DESCRIPTION</p>
+        <h2 id="slide-title">What God Can Do</h2>
+        <p id="slide-description">Introduces the study and its central truth: understanding what God can do begins with knowing who God is.</p>
+      </section>
+
+      <div class="deck-controls" aria-label="Slide controls">
+        <button class="deck-control" type="button" id="previous-slide" aria-label="Show previous slide">
+          <span aria-hidden="true">←</span>
+          Previous
+        </button>
+        <button class="deck-control deck-control--primary" type="button" id="next-slide" aria-label="Show next slide">
+          Next
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+
+      <p class="deck-hint">Use the buttons, the thumbnails, or the left and right arrow keys to move through the teaching.</p>
+
+      <nav class="slide-thumbnails" id="slide-thumbnails" aria-label="Choose a teaching slide"></nav>
+    </section>
+  </main>
+
+  <script src="previous-teaching.js"></script>
+</body>
+</html>

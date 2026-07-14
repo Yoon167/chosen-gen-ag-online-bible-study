@@ -15,6 +15,7 @@ When the site opens, an ambient welcome screen presents Matthew 18:20. The verse
 2. Select **Join Part 1 on Zoom** to open the first Zoom meeting.
 3. After completing Part 1, select **I have finished Part 1**. Its section is hidden and Part 2 is revealed.
 4. After Part 2, select **I have finished Part 2** to see the Bible-verse encouragement screen.
+5. Select **Go to previous teaching** to open the web-based *What God Can Do* slide deck. It uses the provided PDF as visual slides and adds a short description beneath each one.
 
 Progress is stored only in the browser using `localStorage`, so a visitor who refreshes the page stays on their current step. **Start again** clears that saved progress.
 
@@ -25,6 +26,8 @@ Each Zoom button is locked by default and has a live countdown using **Qatar tim
 - `index.html` — page structure and the supplied Zoom links
 - `styles.css` — visual design, responsive layout, and animations
 - `script.js` — sequential session visibility, saved progress, and Qatar-time button countdowns
+- `previous-teaching.html` and `previous-teaching.js` — accessible web slide deck for the previous teaching
+- `assets/previous-teaching/` — slide images rendered from the provided *Divine_Identity.pdf* source
 - `firebase.js` — Firebase Analytics initialization for the configured Chosen Gen project
 - `firebase.json` and `.firebaserc` — Firebase Hosting deployment configuration
 
