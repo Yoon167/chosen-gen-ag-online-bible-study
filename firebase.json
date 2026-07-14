@@ -8,6 +8,7 @@
       ".github/**",
       ".gitignore",
       ".qodo/**",
+      ".venv/**",
       "README.md"
     ],
     "cleanUrls": true,
