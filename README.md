@@ -2,6 +2,11 @@
 
 A simple responsive landing page for the **Chosen Gen AG Online Bible Study**.
 
+## Live website
+
+- Firebase Hosting: https://chosen-gen--ag-bible-study.web.app
+- GitHub Pages: https://yoon167.github.io/chosen-gen-ag-online-bible-study/
+
 ## How it works
 
 1. Select **Begin the journey** to reveal Part 1.
