@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="A guided online Bible study journey for Chosen Gen AG."
+  />
+  <title>Chosen Gen AG | Online Bible Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <div class="ambient ambient-three" aria-hidden="true"></div>
+
+    <section class="study-card" aria-labelledby="page-title">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" role="img">
+          <path d="M24 6v36M14 16h20" />
+          <path d="M10 24c4.5 0 8-2.3 10-5.5 2 3.2 5.5 5.5 10 5.5" class="accent-stroke" />
+        </svg>
+      </div>
+
+      <p class="eyebrow">CHOSEN GEN AG PRESENTS</p>
+      <h1 id="page-title">ONLINE<br /><em>BIBLE STUDY</em></h1>
+      <p class="intro">Gather. Grow. Go deeper in God's Word together.</p>
+
+      <div class="welcome-panel" id="welcome-panel">
+        <div class="welcome-panel__details">
+          <span class="pill">Every Tuesday</span>
+          <span class="detail-dot" aria-hidden="true"></span>
+          <span>8:00 PM · Qatar</span>
+        </div>
+        <p class="availability availability--welcome" id="next-study-countdown" aria-live="polite">
+          Checking the next Bible study in Qatar time…
+        </p>
+        <button class="button button--primary" type="button" id="start-button">
+          Begin the journey
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+
+      <section class="journey" id="journey" aria-label="Bible study journey" hidden>
+        <div class="journey-heading">
+          <div>
+            <p class="section-label">TONIGHT'S JOURNEY</p>
+            <h2>Study sessions</h2>
+          </div>
+          <p class="progress-copy" id="progress-copy" aria-live="polite">Step 1 of 2</p>
+        </div>
+
+        <ol class="steps" aria-label="Session progress">
+          <li class="step is-current" id="step-one">
+            <span class="step__number">1</span>
+            <span class="step__label">Part 1</span>
+          </li>
+          <li class="step" id="step-two">
+            <span class="step__number">2</span>
+            <span class="step__label">Part 2</span>
+          </li>
+        </ol>
+
+        <article class="session session--part-one" id="part-one-panel">
+          <div class="session__topline">
+            <span class="session-tag">PART 1</span>
+            <span class="status status--waiting" data-session-status="part-1">Locked until schedule</span>
+          </div>
+          <h3>Open your heart to the Word</h3>
+          <p>Begin the study and fellowship with the Chosen Gen AG family.</p>
+          <div class="session__time">
+            <span aria-hidden="true">◷</span>
+            Tuesday · 8:00 PM Qatar time
+          </div>
+          <p class="availability" data-countdown="part-1" aria-live="polite">Checking session availability…</p>
+          <a
+            class="button button--primary button--zoom"
+            href="https://us05web.zoom.us/j/83173887000?pwd=uzjTuD3tRhb6C2ICbGuUSzYggHaQJS.1"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-join="part-1"
+            aria-disabled="true"
+            tabindex="-1"
+          >
+            <span class="zoom-icon" aria-hidden="true">▹</span>
+            <span data-join-label="part-1">Part 1 opens soon</span>
+          </a>
+          <button class="text-button" type="button" data-complete="part-1">
+            I have finished Part 1 <span aria-hidden="true">→</span>
+          </button>
+        </article>
+
+        <article class="session session--part-two" id="part-two-panel" hidden>
+          <div class="session__topline">
+            <span class="session-tag">PART 2</span>
+            <span class="status status--waiting" data-session-status="part-2">Locked until schedule</span>
+          </div>
+          <h3>Continue the conversation</h3>
+          <p>Return for the next part of the study, reflection, and prayer.</p>
+          <div class="session__time">
+            <span aria-hidden="true">◷</span>
+            Tuesday · 8:40 PM Qatar time
+          </div>
+          <p class="availability" data-countdown="part-2" aria-live="polite">Checking session availability…</p>
+          <a
+            class="button button--primary button--zoom"
+            href="https://us05web.zoom.us/j/85909939743?pwd=8MtbVz87aMEfP8RRN0yyp2VUvWWWTD.1"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-join="part-2"
+            aria-disabled="true"
+            tabindex="-1"
+          >
+            <span class="zoom-icon" aria-hidden="true">▹</span>
+            <span data-join-label="part-2">Part 2 opens soon</span>
+          </a>
+          <button class="text-button" type="button" data-complete="part-2">
+            I have finished Part 2 <span aria-hidden="true">→</span>
+          </button>
+        </article>
+
+        <section class="encouragement" id="encouragement" hidden aria-labelledby="verse-title">
+          <p class="section-label">A WORD OF ENCOURAGEMENT</p>
+          <div class="quote-mark" aria-hidden="true">“</div>
+          <blockquote id="verse-title">
+            Let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up.
+          </blockquote>
+          <cite>Galatians 6:9</cite>
+          <p class="closing-note">Thank you for showing up. Keep walking with Jesus, one faithful step at a time.</p>
+          <button class="text-button text-button--restart" type="button" id="reset-button">
+            Start again <span aria-hidden="true">↻</span>
+          </button>
+        </section>
+      </section>
+
+      <p class="footer-note">CHOSEN GEN AG · GROWING TOGETHER IN CHRIST</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
