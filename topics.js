@@ -57,6 +57,20 @@ function getSafeUrl(value) {
   }
 }
 
+function hasEmbeddablePresentation(value) {
+  try {
+    const url = new URL(value, window.location.href);
+    const isGoogleSlides = (url.hostname === "docs.google.com" || url.hostname === "slides.google.com")
+      && /^\/presentation(?:\/u\/\d+)?\/d\/[A-Za-z0-9_-]+/.test(url.pathname);
+    const isGoogleDriveFile = url.hostname === "drive.google.com"
+      && /^\/file\/d\/[A-Za-z0-9_-]+/.test(url.pathname);
+
+    return isGoogleSlides || isGoogleDriveFile;
+  } catch {
+    return false;
+  }
+}
+
 function formatTopicDate(date) {
   if (!date) {
     return "Previous teaching";
@@ -145,8 +159,11 @@ function createTopicCard(topic) {
   if (resourceUrl) {
     const resource = document.createElement("a");
     resource.className = "topic-card__resource";
-    resource.href = resourceUrl;
-    resource.textContent = "Open teaching";
+    const canViewPresentation = hasEmbeddablePresentation(resourceUrl);
+    resource.href = canViewPresentation
+      ? `previous-teaching.html?topic=${encodeURIComponent(topic.id)}`
+      : resourceUrl;
+    resource.textContent = canViewPresentation ? "View presentation" : "Open teaching";
     card.append(resource);
   }
 

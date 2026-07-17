@@ -1014,6 +1014,13 @@ cite {
   resize: vertical;
 }
 
+.topic-form__help {
+  color: rgba(211, 209, 220, 0.72);
+  font-size: 0.72rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
 .admin-form input:focus,
 .topic-form input:focus,
 .topic-form textarea:focus {
@@ -1275,6 +1282,44 @@ cite {
   background: rgba(7, 19, 36, 0.7);
   box-shadow: 0 32px 80px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(18px);
+}
+
+.saved-presentation__message {
+  margin: 0;
+  color: #dce5f1;
+  line-height: 1.6;
+}
+
+.saved-presentation__frame {
+  display: block;
+  width: 100%;
+  min-height: min(68vw, 675px);
+  margin-top: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  background: #020814;
+}
+
+.saved-presentation__frame[hidden] {
+  display: none;
+}
+
+.saved-presentation__link {
+  display: inline-flex;
+  margin-top: 18px;
+  color: #f5d594;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.saved-presentation__link:hover {
+  color: #fff4da;
+  text-decoration: underline;
+}
+
+.saved-presentation__link[hidden] {
+  display: none;
 }
 
 .web-deck__heading {
@@ -1590,6 +1635,12 @@ cite {
   .web-deck {
     padding: 16px;
     border-radius: 19px;
+  }
+
+  .saved-presentation__frame {
+    min-height: 56vw;
+    margin-top: 16px;
+    border-radius: 9px;
   }
 
   .web-deck__heading {

@@ -14,7 +14,7 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="styles.css?v=messenger-browser-1" />
+  <link rel="stylesheet" href="styles.css?v=saved-presentations-1" />
 </head>
 <body class="previous-teaching-page">
   <main class="teaching-page-shell">
@@ -32,12 +32,30 @@
 
     <header class="teaching-hero">
       <p class="teaching-hero__eyebrow">PREVIOUS TEACHING</p>
-      <h1>What God Can Do</h1>
-      <p class="teaching-hero__subtitle">Knowing the True God Through His Attributes</p>
-      <p class="teaching-hero__verse">“Now unto him that is able to do exceeding abundantly above all that we ask or think…” <span>— Ephesians 3:20</span></p>
+      <h1 id="teaching-title">What God Can Do</h1>
+      <p class="teaching-hero__subtitle" id="teaching-subtitle">Knowing the True God Through His Attributes</p>
+      <p class="teaching-hero__verse" id="teaching-verse">“Now unto him that is able to do exceeding abundantly above all that we ask or think…” <span>— Ephesians 3:20</span></p>
     </header>
 
-    <section class="web-deck" aria-labelledby="deck-heading">
+    <section class="web-deck saved-presentation" id="saved-presentation" aria-labelledby="saved-presentation-heading" hidden>
+      <div class="web-deck__heading">
+        <div>
+          <p class="section-label">SAVED PRESENTATION</p>
+          <h2 id="saved-presentation-heading">Teaching presentation</h2>
+        </div>
+      </div>
+      <p class="saved-presentation__message" id="saved-presentation-message" aria-live="polite">Loading presentation...</p>
+      <iframe
+        class="saved-presentation__frame"
+        id="saved-presentation-frame"
+        title="Saved teaching presentation"
+        allowfullscreen
+        hidden
+      ></iframe>
+      <a class="saved-presentation__link" id="saved-presentation-link" href="#" target="_blank" rel="noopener" hidden>Open presentation in Google Drive</a>
+    </section>
+
+    <section class="web-deck" id="local-deck" aria-labelledby="deck-heading">
       <div class="web-deck__heading">
         <div>
           <p class="section-label">WEB SLIDE DECK</p>
@@ -78,6 +96,7 @@
     </section>
   </main>
 
+  <script type="module" src="saved-teaching.js?v=saved-presentations-1"></script>
   <script src="previous-teaching.js?v=messenger-browser-1"></script>
 </body>
 </html>
