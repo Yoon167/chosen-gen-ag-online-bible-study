@@ -86,29 +86,6 @@ body.is-loading .page-shell {
   transition: opacity 650ms ease, visibility 650ms ease;
 }
 
-.loading-screen::before,
-.loading-screen::after {
-  position: absolute;
-  border: 1px solid rgba(230, 215, 255, 0.13);
-  border-radius: 50%;
-  content: "";
-  pointer-events: none;
-}
-
-.loading-screen::before {
-  width: min(88vw, 46rem);
-  aspect-ratio: 1;
-  box-shadow: inset 0 0 5rem rgba(158, 117, 255, 0.05);
-  animation: loading-orbit 12s linear infinite;
-}
-
-.loading-screen::after {
-  width: min(68vw, 32rem);
-  aspect-ratio: 1;
-  border-color: rgba(233, 199, 132, 0.12);
-  animation: loading-orbit 17s linear infinite reverse;
-}
-
 .loading-screen.is-complete {
   visibility: hidden;
   opacity: 0;

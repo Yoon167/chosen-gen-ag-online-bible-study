@@ -3,6 +3,7 @@ import { app } from "./firebase.js";
 
 const db = getFirestore(app);
 const QATAR_OFFSET_MS = 3 * 60 * 60 * 1000;
+const TEACHING_END_HOUR = 22;
 
 const fallbackTopics = [
   {
@@ -21,6 +22,15 @@ let hasReceivedTopics = false;
 function getQatarDate(now = new Date()) {
   const qatarClock = new Date(now.getTime() + QATAR_OFFSET_MS);
   return qatarClock.toISOString().slice(0, 10);
+}
+
+function hasTeachingFinished(topic, now = new Date()) {
+  if (!isScheduledTopic(topic)) {
+    return true;
+  }
+
+  const teachingEnd = Date.parse(`${topic.date}T${String(TEACHING_END_HOUR).padStart(2, "0")}:00:00.000+03:00`);
+  return now.getTime() >= teachingEnd;
 }
 
 function isScheduledTopic(topic) {
@@ -118,6 +128,15 @@ function renderCurrentTopic(topics) {
     return;
   }
 
+  updateText("[data-session-topic]", topic.title);
+  updateJoinLink("[data-join='part-1']", topic.part1Url);
+  updateJoinLink("[data-join='part-2']", topic.part2Url);
+
+  if (!hasTeachingFinished(topic)) {
+    currentTopic.hidden = true;
+    return;
+  }
+
   currentTopic.hidden = false;
   updateText("[data-current-topic-title]", topic.title);
   updateText("[data-current-topic-date]", formatTopicDate(topic.date));
@@ -125,10 +144,6 @@ function renderCurrentTopic(topics) {
   if (topic.description) {
     updateText("[data-current-topic-description]", topic.description);
   }
-
-  updateText("[data-session-topic]", topic.title);
-  updateJoinLink("[data-join='part-1']", topic.part1Url);
-  updateJoinLink("[data-join='part-2']", topic.part2Url);
 }
 
 function createTopicCard(topic) {
@@ -175,7 +190,8 @@ function renderArchive(topics, statusMessage) {
     return;
   }
 
-  const visibleTopics = topics.length ? topics : fallbackTopics;
+  const completedTopics = topics.filter((topic) => hasTeachingFinished(topic));
+  const visibleTopics = completedTopics.length ? completedTopics : fallbackTopics;
   const fragment = document.createDocumentFragment();
 
   visibleTopics.forEach((topic) => fragment.append(createTopicCard(topic)));
@@ -188,7 +204,15 @@ function renderArchive(topics, statusMessage) {
 
 function renderTopics(topics) {
   renderCurrentTopic(topics);
-  renderArchive(topics, topics.length ? `${topics.length} teaching${topics.length === 1 ? "" : "s"} saved` : "No new topics have been added yet.");
+  const completedTopics = topics.filter((topic) => hasTeachingFinished(topic));
+  const pendingTopics = topics.length - completedTopics.length;
+  const statusMessage = completedTopics.length
+    ? `${completedTopics.length} teaching${completedTopics.length === 1 ? "" : "s"} available`
+    : pendingTopics
+      ? "The next teaching will appear here after Tuesday's meeting."
+      : "No new topics have been added yet.";
+
+  renderArchive(topics, statusMessage);
 }
 
 renderArchive([], "Loading teaching archive...");
