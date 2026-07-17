@@ -13,18 +13,18 @@ When the site opens, an ambient welcome screen presents Matthew 18:20. The verse
 ## How it works
 
 1. Select **Begin the journey** to reveal Part 1.
-2. Select **Join Part 1 on Zoom** to open the first Zoom meeting.
+2. Select **Join Part 1 on Google Meet** to open the first meeting.
 3. After completing Part 1, select **I have finished Part 1**. Its section is hidden and Part 2 is revealed.
 4. After Part 2, select **I have finished Part 2** to see the Bible-verse encouragement screen.
 5. Select **Go to previous teaching** to open the web-based *What God Can Do* slide deck. It uses the provided PDF as visual slides and adds a short description beneath each one.
 
 Progress is stored only in the browser using `localStorage`, so a visitor who refreshes the page stays on their current step. **Start again** clears that saved progress.
 
-Each Zoom button is locked by default and has a live countdown using **Qatar time (UTC+3)**. Part 1 unlocks every Tuesday at 8:00 PM and Part 2 unlocks every Tuesday at 8:40 PM. After each scheduled session starts, its Zoom button becomes clickable until the end of Tuesday in Qatar.
+Each Google Meet button is locked by default and has a live countdown using **Qatar time (UTC+3)**. Part 1 is available every Tuesday from 8:00–9:00 PM and Part 2 from 9:00–10:00 PM. The buttons lock again after their scheduled one-hour session ends.
 
 ## Weekly teaching manager
 
-Topics are stored centrally in Firestore, not in a visitor's browser. Every saved teaching remains in the **Teaching library** on the home page. The earliest scheduled Tuesday on or after today is automatically shown as the upcoming study and its Part 1 / Part 2 Zoom links replace the default links.
+Topics are stored centrally in Firestore, not in a visitor's browser. Every saved teaching remains in the **Teaching library** on the home page. The earliest scheduled Tuesday on or after today is automatically shown as the upcoming study and its Part 1 / Part 2 Google Meet links replace the default links.
 
 ### One-time Firebase setup
 
@@ -43,7 +43,7 @@ The rule allows everyone to read the teaching library but only that one Firebase
 
 1. Open `https://chosen-gen--ag-bible-study.web.app/manage-topics.html`.
 2. Sign in with the dedicated admin account.
-3. Select the Tuesday date, enter the topic, optional verse, Zoom links, and an optional teaching-resource link, then select **Save teaching**.
+3. Select the Tuesday date, enter the topic, optional verse, Google Meet links, and an optional teaching-resource link, then select **Save teaching**.
 
 The new topic appears immediately for visitors. There is no need to edit code, publish again, or ask for another prompt each week. Use **Edit** for corrections or **Delete** to remove a saved teaching.
 

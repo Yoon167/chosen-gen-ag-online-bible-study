@@ -81,8 +81,8 @@ function getTopicFromForm() {
     title,
     description: String(formData.get("description") || "").trim(),
     verse: String(formData.get("verse") || "").trim(),
-    part1Url: normalizeUrl(String(formData.get("part1Url") || ""), "Part 1 Zoom link"),
-    part2Url: normalizeUrl(String(formData.get("part2Url") || ""), "Part 2 Zoom link"),
+    part1Url: normalizeUrl(String(formData.get("part1Url") || ""), "Part 1 Google Meet link"),
+    part2Url: normalizeUrl(String(formData.get("part2Url") || ""), "Part 2 Google Meet link"),
     resourceUrl: normalizeUrl(String(formData.get("resourceUrl") || ""), "Teaching resource link"),
     updatedAt: serverTimestamp(),
   };

@@ -5,8 +5,8 @@ const LOADING_DURATION_MS = 10000;
 const LOADING_EXIT_DURATION_MS = 650;
 
 const sessions = {
-  "part-1": { hour: 20, minute: 0, label: "Join Part 1 on Zoom" },
-  "part-2": { hour: 20, minute: 40, label: "Join Part 2 on Zoom" },
+  "part-1": { hour: 20, minute: 0, endHour: 21, endMinute: 0, label: "Join Part 1 on Google Meet" },
+  "part-2": { hour: 21, minute: 0, endHour: 22, endMinute: 0, label: "Join Part 2 on Google Meet" },
 };
 
 const welcomePanel = document.querySelector("#welcome-panel");
@@ -50,8 +50,9 @@ function isSessionAvailable(session, now = new Date()) {
   const isTuesday = qatarClock.getUTCDay() === TUESDAY;
   const currentTime = qatarClock.getUTCHours() * 60 + qatarClock.getUTCMinutes();
   const sessionTime = session.hour * 60 + session.minute;
+  const sessionEndTime = session.endHour * 60 + session.endMinute;
 
-  return isTuesday && currentTime >= sessionTime;
+  return isTuesday && currentTime >= sessionTime && currentTime < sessionEndTime;
 }
 
 function formatCountdown(milliseconds) {
@@ -84,7 +85,7 @@ function updateSessionAvailability() {
     status.classList.toggle("status--waiting", !available);
 
     if (available) {
-      countdown.textContent = "Zoom room is available now · Qatar time";
+      countdown.textContent = "Google Meet is available now · Qatar time";
       return;
     }
 
