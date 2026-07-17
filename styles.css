@@ -793,6 +793,351 @@ cite {
   font-size: 1.1rem;
 }
 
+.current-topic,
+.topic-archive {
+  margin-top: 18px;
+  padding: 20px;
+  border: 1px solid rgba(233, 199, 132, 0.25);
+  border-radius: 15px;
+  background: rgba(11, 8, 20, 0.3);
+}
+
+.current-topic__date,
+.topic-card__date,
+.saved-topic__date {
+  margin: 6px 0 0;
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.current-topic h2,
+.topic-archive h2 {
+  margin: 7px 0 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.35rem;
+}
+
+.current-topic__description {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.topic-archive__heading,
+.saved-topics__heading,
+.admin-editor__heading,
+.saved-topic {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.topic-archive__status,
+.saved-topics__heading > p,
+.admin-user {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+
+.topic-archive__status {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.topic-archive__list {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.topic-card {
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.topic-card h3,
+.saved-topic h3 {
+  margin: 7px 0 0;
+  font-size: 1rem;
+}
+
+.topic-card__description,
+.topic-card__verse,
+.saved-topic > div > p:not(.saved-topic__date) {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.topic-card__verse {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.topic-card__resource {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.topic-card__resource:hover {
+  text-decoration: underline;
+}
+
+.admin-access-link {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 7px;
+  margin: 12px 2px 0 auto;
+  color: rgba(211, 209, 220, 0.75);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.admin-access-link:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
+.admin-topics-page {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 85% 2%, rgba(233, 199, 132, 0.17), transparent 27rem),
+    linear-gradient(145deg, #221a3b, #100d1d 64%, #080711);
+  color: var(--ink);
+}
+
+.admin-shell {
+  width: min(100%, 920px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 24px clamp(18px, 5vw, 56px) 70px;
+}
+
+.admin-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.admin-nav__brand {
+  margin: 0;
+  color: var(--gold);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.admin-header {
+  max-width: 580px;
+  margin-top: 58px;
+}
+
+.admin-header h1,
+.admin-auth h2,
+.admin-editor h2 {
+  margin: 8px 0 0;
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.admin-header h1 {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+}
+
+.admin-header > p:last-child {
+  margin: 14px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.admin-auth,
+.admin-editor {
+  margin-top: 38px;
+  padding: clamp(20px, 4vw, 34px);
+  border: 1px solid rgba(233, 199, 132, 0.25);
+  border-radius: 15px;
+  background: rgba(12, 9, 22, 0.42);
+  box-shadow: var(--shadow);
+}
+
+.admin-form,
+.topic-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.admin-form {
+  max-width: 470px;
+}
+
+.admin-form label,
+.topic-form label {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.admin-form input,
+.topic-form input,
+.topic-form textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.topic-form textarea {
+  resize: vertical;
+}
+
+.admin-form input:focus,
+.topic-form input:focus,
+.topic-form textarea:focus {
+  border-color: var(--gold);
+  outline: 2px solid rgba(233, 199, 132, 0.28);
+  outline-offset: 1px;
+}
+
+.topic-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.admin-button,
+.saved-topic__button {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: var(--gold);
+  color: #2a203e;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.admin-button {
+  width: fit-content;
+  min-height: 42px;
+  padding: 0 17px;
+}
+
+.admin-button--quiet {
+  border-color: rgba(233, 199, 132, 0.45);
+  background: transparent;
+  color: var(--gold);
+}
+
+.topic-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.admin-message {
+  min-height: 1.25em;
+  margin: 0;
+  color: #bfe8be;
+  font-size: 0.8rem;
+}
+
+.admin-message.is-error {
+  color: #ffb7aa;
+}
+
+.saved-topics {
+  margin-top: 42px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.saved-topics__heading h2 {
+  margin: 0;
+}
+
+.saved-topics__list {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.saved-topic {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.saved-topic__actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 8px;
+}
+
+.saved-topic__button {
+  min-height: 34px;
+  padding: 0 11px;
+}
+
+.saved-topic__button--danger {
+  border-color: rgba(255, 183, 170, 0.5);
+  background: transparent;
+  color: #ffb7aa;
+}
+
+.saved-topics__empty {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .topic-archive__heading,
+  .saved-topics__heading,
+  .admin-editor__heading,
+  .saved-topic {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .topic-archive__status {
+    text-align: left;
+  }
+
+  .topic-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .saved-topic__actions {
+    justify-content: start;
+  }
+}
+
 /* Previous teaching: an accessible, web-first presentation deck. */
 .previous-teaching-page {
   min-width: 320px;
@@ -818,6 +1163,32 @@ cite {
   gap: 18px;
   width: min(100%, 1200px);
   margin: 0 auto;
+}
+
+.browser-open {
+  width: min(100%, 1200px);
+  margin: 18px auto 0;
+  text-align: right;
+}
+
+.browser-open__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid rgba(233, 199, 132, 0.58);
+  border-radius: 7px;
+  background: rgba(7, 18, 32, 0.58);
+  color: #f8f4e9;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.browser-open__link:hover,
+.browser-open__link:focus-visible {
+  border-color: var(--gold);
+  background: rgba(233, 199, 132, 0.14);
 }
 
 .back-link {

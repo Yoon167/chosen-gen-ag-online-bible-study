@@ -14,7 +14,7 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="styles.css?v=loading-screen-3" />
+  <link rel="stylesheet" href="styles.css?v=messenger-browser-1" />
 </head>
 <body class="is-loading">
   <section class="loading-screen" id="loading-screen" aria-labelledby="loading-verse" role="status">
@@ -69,13 +69,36 @@
         </button>
       </div>
 
-      <a class="previous-teaching-link" href="previous-teaching.html">
+      <a class="previous-teaching-link" href="previous-teaching.html?v=messenger-browser-1">
         <span class="previous-teaching-link__icon" aria-hidden="true">▤</span>
         <span>
           <strong>Go to previous teaching</strong>
-          <small>View the full web slide deck</small>
+          <small>View the updated web slide deck</small>
         </span>
         <span class="previous-teaching-link__arrow" aria-hidden="true">→</span>
+      </a>
+
+      <section class="current-topic" id="current-topic" aria-labelledby="current-topic-title" hidden>
+        <p class="section-label">UPCOMING TUESDAY</p>
+        <p class="current-topic__date" data-current-topic-date></p>
+        <h2 id="current-topic-title" data-current-topic-title>Next Bible study</h2>
+        <p class="current-topic__description" data-current-topic-description></p>
+      </section>
+
+      <section class="topic-archive" aria-labelledby="topic-archive-title">
+        <div class="topic-archive__heading">
+          <div>
+            <p class="section-label">TEACHING LIBRARY</p>
+            <h2 id="topic-archive-title">Topics that stay with us</h2>
+          </div>
+          <p class="topic-archive__status" id="topic-archive-status" aria-live="polite"></p>
+        </div>
+        <div class="topic-archive__list" id="topic-archive-list"></div>
+      </section>
+
+      <a class="admin-access-link" href="manage-topics.html">
+        <span aria-hidden="true">⚿</span>
+        Teacher admin access
       </a>
 
       <section class="journey" id="journey" aria-label="Bible study journey" hidden>
@@ -103,7 +126,7 @@
             <span class="session-tag">PART 1</span>
             <span class="status status--waiting" data-session-status="part-1">Locked until schedule</span>
           </div>
-          <h3>Open your heart to the Word</h3>
+          <h3 data-session-topic>Open your heart to the Word</h3>
           <p>Begin the study and fellowship with the Chosen Gen AG family.</p>
           <div class="session__time">
             <span aria-hidden="true">◷</span>
@@ -132,7 +155,7 @@
             <span class="session-tag">PART 2</span>
             <span class="status status--waiting" data-session-status="part-2">Locked until schedule</span>
           </div>
-          <h3>Continue the conversation</h3>
+          <h3 data-session-topic>Continue the conversation</h3>
           <p>Return for the next part of the study, reflection, and prayer.</p>
           <div class="session__time">
             <span aria-hidden="true">◷</span>
@@ -175,6 +198,7 @@
   </main>
 
   <script type="module" src="firebase.js"></script>
-  <script src="script.js?v=loading-screen-3"></script>
+  <script type="module" src="topics.js?v=weekly-topics-1"></script>
+  <script src="script.js?v=messenger-browser-1"></script>
 </body>
 </html>

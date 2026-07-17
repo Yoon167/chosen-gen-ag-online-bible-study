@@ -68,8 +68,26 @@ const slideDescription = document.querySelector("#slide-description");
 const previousButton = document.querySelector("#previous-slide");
 const nextButton = document.querySelector("#next-slide");
 const thumbnails = document.querySelector("#slide-thumbnails");
+const browserOpen = document.querySelector("#browser-open");
+const browserOpenLink = document.querySelector("#browser-open-link");
 
 let currentSlide = 0;
+
+function showChromeLinkForMessenger() {
+  const isAndroid = /Android/i.test(navigator.userAgent);
+  const isMetaInAppBrowser = /FBAN|FBAV|FB_IAB|Messenger/i.test(navigator.userAgent);
+
+  if (!isAndroid || !isMetaInAppBrowser) {
+    return;
+  }
+
+  const teachingUrl = new URL(window.location.href);
+  teachingUrl.searchParams.set("v", "messenger-browser-1");
+  teachingUrl.hash = "";
+
+  browserOpenLink.href = `intent://${teachingUrl.host}${teachingUrl.pathname}${teachingUrl.search}#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${encodeURIComponent(teachingUrl.href)};end`;
+  browserOpen.hidden = false;
+}
 
 function getSlideIndexFromHash() {
   const match = window.location.hash.match(/^#slide-(\d{1,2})$/);
@@ -188,3 +206,4 @@ window.addEventListener("hashchange", () => {
 
 renderThumbnails();
 renderSlide(getSlideIndexFromHash(), false);
+showChromeLinkForMessenger();

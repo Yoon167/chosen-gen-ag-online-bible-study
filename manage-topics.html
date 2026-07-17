@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Private teaching manager for Chosen Gen AG." />
+  <title>Teaching Manager | Chosen Gen AG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css?v=weekly-topics-1" />
+</head>
+<body class="admin-topics-page">
+  <main class="admin-shell">
+    <nav class="admin-nav" aria-label="Teaching manager navigation">
+      <a class="back-link" href="index.html">
+        <span aria-hidden="true">←</span>
+        Back to Bible study
+      </a>
+      <p class="admin-nav__brand">CHOSEN GEN AG</p>
+    </nav>
+
+    <header class="admin-header">
+      <p class="section-label">PRIVATE AREA</p>
+      <h1>Teaching manager</h1>
+      <p>Add the next Tuesday topic, then keep every past teaching available in the library.</p>
+    </header>
+
+    <section class="admin-auth" id="auth-panel" aria-labelledby="sign-in-title">
+      <div>
+        <p class="section-label">ADMIN ACCESS</p>
+        <h2 id="sign-in-title">Sign in</h2>
+      </div>
+      <form class="admin-form" id="sign-in-form">
+        <label>
+          Email
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" autocomplete="current-password" required />
+        </label>
+        <button class="admin-button" type="submit">Sign in</button>
+        <p class="admin-message" id="auth-message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="admin-editor" id="topic-editor" aria-labelledby="editor-title" hidden>
+      <div class="admin-editor__heading">
+        <div>
+          <p class="section-label">WEEKLY TOPICS</p>
+          <h2 id="editor-title">Save a teaching</h2>
+          <p class="admin-user" id="signed-in-user"></p>
+        </div>
+        <button class="admin-button admin-button--quiet" type="button" id="sign-out-button">Sign out</button>
+      </div>
+
+      <form class="topic-form" id="topic-form">
+        <div class="topic-form__grid">
+          <label>
+            Tuesday date
+            <input type="date" name="date" id="topic-date" required />
+          </label>
+          <label>
+            Topic title
+            <input type="text" name="title" maxlength="100" required />
+          </label>
+        </div>
+        <label>
+          Short description
+          <textarea name="description" rows="3" maxlength="280" placeholder="The focus for this Bible study"></textarea>
+        </label>
+        <label>
+          Bible verse
+          <input type="text" name="verse" maxlength="180" placeholder="Example: Romans 8:28"></input>
+        </label>
+        <div class="topic-form__grid">
+          <label>
+            Part 1 Zoom link
+            <input type="text" name="part1Url" inputmode="url" placeholder="https://us05web.zoom.us/..." />
+          </label>
+          <label>
+            Part 2 Zoom link
+            <input type="text" name="part2Url" inputmode="url" placeholder="https://us05web.zoom.us/..." />
+          </label>
+        </div>
+        <label>
+          Teaching resource link
+          <input type="text" name="resourceUrl" inputmode="url" placeholder="https://drive.google.com/..." />
+        </label>
+        <div class="topic-form__actions">
+          <button class="admin-button" type="submit" id="save-topic-button">Save teaching</button>
+          <button class="admin-button admin-button--quiet" type="button" id="cancel-edit-button" hidden>Cancel edit</button>
+        </div>
+        <p class="admin-message" id="editor-message" aria-live="polite"></p>
+      </form>
+
+      <section class="saved-topics" aria-labelledby="saved-topics-title">
+        <div class="saved-topics__heading">
+          <h2 id="saved-topics-title">Saved teachings</h2>
+          <p id="saved-topics-status" aria-live="polite">Loading...</p>
+        </div>
+        <div class="saved-topics__list" id="saved-topics-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="manage-topics.js?v=weekly-topics-1"></script>
+</body>
+</html>
