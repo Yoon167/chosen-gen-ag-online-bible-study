@@ -286,26 +286,14 @@ body.is-loading .page-shell {
 }
 
 .brand-mark {
-  display: grid;
-  width: 54px;
-  height: 54px;
-  margin: 0 auto 20px;
-  border: 1px solid rgba(233, 199, 132, 0.6);
-  border-radius: 50%;
-  color: var(--gold);
-  place-items: center;
+  width: clamp(112px, 26vw, 148px);
+  margin: 0 auto 18px;
 }
 
-.brand-mark svg {
-  width: 30px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-width: 2;
-}
-
-.brand-mark .accent-stroke {
-  stroke: var(--violet-light);
+.brand-mark img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .eyebrow,
