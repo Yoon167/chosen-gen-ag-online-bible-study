@@ -14,7 +14,7 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="styles.css?v=teaching-release-1" />
+  <link rel="stylesheet" href="styles.css?v=teaching-release-3" />
 </head>
 <body class="is-loading">
   <section class="loading-screen" id="loading-screen" aria-labelledby="loading-verse" role="status">
@@ -69,15 +69,6 @@
         </button>
       </div>
 
-      <a class="previous-teaching-link" href="previous-teaching.html?v=messenger-browser-1">
-        <span class="previous-teaching-link__icon" aria-hidden="true">▤</span>
-        <span>
-          <strong>Go to previous teaching</strong>
-          <small>View the updated web slide deck</small>
-        </span>
-        <span class="previous-teaching-link__arrow" aria-hidden="true">→</span>
-      </a>
-
       <section class="current-topic" id="current-topic" aria-labelledby="current-topic-title" hidden>
         <p class="section-label">UPCOMING TUESDAY</p>
         <p class="current-topic__date" data-current-topic-date></p>
@@ -93,7 +84,15 @@
           </div>
           <p class="topic-archive__status" id="topic-archive-status" aria-live="polite"></p>
         </div>
-        <div class="topic-archive__list" id="topic-archive-list"></div>
+        <div class="topic-archive__carousel" aria-label="Teaching library carousel">
+          <button class="topic-archive__control" type="button" id="archive-previous" aria-label="Show previous teaching" disabled>
+            <span aria-hidden="true">←</span>
+          </button>
+          <div class="topic-archive__list" id="topic-archive-list" tabindex="0"></div>
+          <button class="topic-archive__control" type="button" id="archive-next" aria-label="Show next teaching" disabled>
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
       </section>
 
       <a class="admin-access-link" href="manage-topics.html">
@@ -198,7 +197,7 @@
   </main>
 
   <script type="module" src="firebase.js"></script>
-  <script type="module" src="topics.js?v=teaching-release-1"></script>
+  <script type="module" src="topics.js?v=teaching-release-2"></script>
   <script src="script.js?v=google-meet-1"></script>
 </body>
 </html>

@@ -5,17 +5,10 @@ const db = getFirestore(app);
 const QATAR_OFFSET_MS = 3 * 60 * 60 * 1000;
 const TEACHING_END_HOUR = 22;
 
-const fallbackTopics = [
-  {
-    id: "what-god-can-do",
-    title: "What God Can Do",
-    description: "Knowing the True God Through His Attributes",
-    resourceUrl: "previous-teaching.html?v=messenger-browser-1",
-  },
-];
-
 const archive = document.querySelector("#topic-archive-list");
 const archiveStatus = document.querySelector("#topic-archive-status");
+const previousArchiveButton = document.querySelector("#archive-previous");
+const nextArchiveButton = document.querySelector("#archive-next");
 const currentTopic = document.querySelector("#current-topic");
 let hasReceivedTopics = false;
 
@@ -132,11 +125,6 @@ function renderCurrentTopic(topics) {
   updateJoinLink("[data-join='part-1']", topic.part1Url);
   updateJoinLink("[data-join='part-2']", topic.part2Url);
 
-  if (!hasTeachingFinished(topic)) {
-    currentTopic.hidden = true;
-    return;
-  }
-
   currentTopic.hidden = false;
   updateText("[data-current-topic-title]", topic.title);
   updateText("[data-current-topic-date]", formatTopicDate(topic.date));
@@ -185,17 +173,43 @@ function createTopicCard(topic) {
   return card;
 }
 
+function getArchiveTopics(topics) {
+  return topics
+    .filter((topic) => hasTeachingFinished(topic))
+    .sort((first, second) => first.date.localeCompare(second.date));
+}
+
+function updateArchiveControls() {
+  if (!archive || !previousArchiveButton || !nextArchiveButton) {
+    return;
+  }
+
+  const maximumScroll = Math.max(0, archive.scrollWidth - archive.clientWidth);
+  previousArchiveButton.disabled = maximumScroll === 0 || archive.scrollLeft <= 1;
+  nextArchiveButton.disabled = maximumScroll === 0 || archive.scrollLeft >= maximumScroll - 1;
+}
+
+function moveArchive(direction) {
+  if (!archive) {
+    return;
+  }
+
+  const firstCard = archive.querySelector(".topic-card");
+  const distance = firstCard ? firstCard.getBoundingClientRect().width + 12 : archive.clientWidth;
+  archive.scrollBy({ left: direction * distance, behavior: "smooth" });
+}
+
 function renderArchive(topics, statusMessage) {
   if (!archive) {
     return;
   }
 
-  const completedTopics = topics.filter((topic) => hasTeachingFinished(topic));
-  const visibleTopics = completedTopics.length ? completedTopics : fallbackTopics;
+  const visibleTopics = getArchiveTopics(topics);
   const fragment = document.createDocumentFragment();
 
   visibleTopics.forEach((topic) => fragment.append(createTopicCard(topic)));
   archive.replaceChildren(fragment);
+  window.requestAnimationFrame(updateArchiveControls);
 
   if (archiveStatus) {
     archiveStatus.textContent = statusMessage;
@@ -204,16 +218,21 @@ function renderArchive(topics, statusMessage) {
 
 function renderTopics(topics) {
   renderCurrentTopic(topics);
-  const completedTopics = topics.filter((topic) => hasTeachingFinished(topic));
-  const pendingTopics = topics.length - completedTopics.length;
-  const statusMessage = completedTopics.length
-    ? `${completedTopics.length} teaching${completedTopics.length === 1 ? "" : "s"} available`
+  const archiveTopics = getArchiveTopics(topics);
+  const pendingTopics = topics.length - archiveTopics.length;
+  const statusMessage = archiveTopics.length
+    ? `${archiveTopics.length} teaching${archiveTopics.length === 1 ? "" : "s"} available`
     : pendingTopics
       ? "The next teaching will appear here after Tuesday's meeting."
-      : "No new topics have been added yet.";
+      : "No completed teachings yet.";
 
   renderArchive(topics, statusMessage);
 }
+
+previousArchiveButton?.addEventListener("click", () => moveArchive(-1));
+nextArchiveButton?.addEventListener("click", () => moveArchive(1));
+archive?.addEventListener("scroll", updateArchiveControls, { passive: true });
+window.addEventListener("resize", updateArchiveControls);
 
 renderArchive([], "Loading teaching archive...");
 

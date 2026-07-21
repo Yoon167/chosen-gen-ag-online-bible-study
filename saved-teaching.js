@@ -1,11 +1,7 @@
-import { doc, getDoc, getFirestore } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
-import { app } from "./firebase.js";
-
 const topicId = new URLSearchParams(window.location.search).get("topic");
 const title = document.querySelector("#teaching-title");
 const subtitle = document.querySelector("#teaching-subtitle");
 const verse = document.querySelector("#teaching-verse");
-const localDeck = document.querySelector("#local-deck");
 const savedPresentation = document.querySelector("#saved-presentation");
 const presentationMessage = document.querySelector("#saved-presentation-message");
 const presentationFrame = document.querySelector("#saved-presentation-frame");
@@ -42,13 +38,15 @@ function showUnavailable(message) {
 
 async function loadSavedPresentation() {
   if (!topicId || !/^[A-Za-z0-9_-]{1,128}$/.test(topicId)) {
+    showUnavailable("Select a saved teaching from the Teaching Library.");
     return;
   }
 
-  localDeck.hidden = true;
-  savedPresentation.hidden = false;
-
   try {
+    const [{ doc, getDoc, getFirestore }, { app }] = await Promise.all([
+      import("https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js"),
+      import("./firebase.js"),
+    ]);
     const snapshot = await getDoc(doc(getFirestore(app), "topics", topicId));
     if (!snapshot.exists()) {
       showUnavailable("This saved teaching is no longer available.");
