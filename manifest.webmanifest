@@ -1,0 +1,23 @@
+{
+  "name": "Chosen Gen AG Bible Study",
+  "short_name": "Chosen Gen AG",
+  "description": "Installable Bible study web app for Chosen Gen AG.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#071220",
+  "theme_color": "#071220",
+  "icons": [
+    {
+      "src": "logo/chosen-general-young-pro.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo/chosen-general-young-pro.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

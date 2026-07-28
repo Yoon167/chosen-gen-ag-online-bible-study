@@ -15,6 +15,11 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="styles.css?v=teaching-release-3" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#071220" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="apple-touch-icon" href="logo/chosen-general-young-pro.png" />
 </head>
 <body class="is-loading">
   <section class="loading-screen" id="loading-screen" aria-labelledby="loading-verse" role="status">
@@ -200,5 +205,14 @@
   <script type="module" src="firebase.js"></script>
   <script type="module" src="topics.js?v=teaching-release-2"></script>
   <script src="script.js?v=google-meet-1"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js').catch(() => {
+          // Registration failure is non-fatal; install prompt still works on supported browsers.
+        });
+      });
+    }
+  </script>
 </body>
 </html>
