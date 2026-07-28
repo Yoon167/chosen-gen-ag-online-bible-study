@@ -92,6 +92,26 @@
           <input type="text" name="resourceUrl" inputmode="url" placeholder="https://drive.google.com/..." />
           <span class="topic-form__help">For an in-site presentation viewer, use a Google Slides or Google Drive file link shared with anyone who has the link.</span>
         </label>
+        <div class="topic-form__section">
+          <div class="topic-form__section-heading">
+            <p class="section-label">SLIDE NOTES</p>
+            <button class="admin-button admin-button--quiet" type="button" id="add-slide-button">Add slide note</button>
+          </div>
+          <div id="slide-list" class="slide-list"></div>
+          <p class="topic-form__help">Add one note entry per slide with a title, description, and recap for the presentation.</p>
+        </div>
+        <label>
+          Teaching testimony
+          <textarea name="testimony" rows="3" maxlength="300" placeholder="Share a testimony from this teaching"></textarea>
+        </label>
+        <label>
+          Teaching notes
+          <textarea name="notes" rows="3" maxlength="300" placeholder="Add summary notes for this teaching"></textarea>
+        </label>
+        <label>
+          Public comments
+          <textarea name="comments" rows="4" maxlength="800" placeholder="Write public comments participants can see. Separate lines become separate comments."></textarea>
+        </label>
         <div class="topic-form__actions">
           <button class="admin-button" type="submit" id="save-topic-button">Save teaching</button>
           <button class="admin-button admin-button--quiet" type="button" id="cancel-edit-button" hidden>Cancel edit</button>

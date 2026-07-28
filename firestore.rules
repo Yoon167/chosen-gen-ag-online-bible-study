@@ -4,6 +4,8 @@ service cloud.firestore {
   match /databases/{database}/documents {
     match /topics/{topicId} {
       allow read: if true;
+      // Admin writes are limited to the authorized teacher account.
+      // Saved topic documents may include slide notes, recap fields, testimony, notes, and public comments.
       allow create, update, delete: if request.auth != null
         && request.auth.uid == "1G2TVkbe9igM8ij5KN9SqIYo08M2";
     }

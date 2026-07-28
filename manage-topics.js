@@ -76,6 +76,17 @@ function getTopicFromForm() {
     throw new Error("A topic title is required.");
   }
 
+  const slideNotes = Array.from(document.querySelectorAll(".slide-entry")).map((entry) => ({
+    title: entry.querySelector("[name='slideTitle']")?.value.trim() || "",
+    description: entry.querySelector("[name='slideDescription']")?.value.trim() || "",
+    recap: entry.querySelector("[name='slideRecap']")?.value.trim() || "",
+  })).filter((slide) => slide.title || slide.description || slide.recap);
+
+  const rawComments = String(formData.get("comments") || "").trim();
+  const comments = rawComments
+    ? rawComments.split(/\r?\n+/).map((line) => line.trim()).filter(Boolean)
+    : [];
+
   return {
     date,
     title,
@@ -84,6 +95,10 @@ function getTopicFromForm() {
     part1Url: normalizeUrl(String(formData.get("part1Url") || ""), "Part 1 Google Meet link"),
     part2Url: normalizeUrl(String(formData.get("part2Url") || ""), "Part 2 Google Meet link"),
     resourceUrl: normalizeUrl(String(formData.get("resourceUrl") || ""), "Teaching resource link"),
+    testimony: String(formData.get("testimony") || "").trim(),
+    notes: String(formData.get("notes") || "").trim(),
+    comments,
+    slideNotes,
     updatedAt: serverTimestamp(),
   };
 }
@@ -102,7 +117,58 @@ function resetTopicForm() {
   delete topicForm.dataset.topicId;
   topicDate.disabled = false;
   cancelEditButton.hidden = true;
+  document.querySelector("#slide-list")?.replaceChildren();
   setMessage(editorMessage, "");
+}
+
+function renderSlideEntry(slide = {}) {
+  const slideList = document.querySelector("#slide-list");
+  if (!slideList) {
+    return;
+  }
+
+  const entry = document.createElement("fieldset");
+  entry.className = "slide-entry";
+
+  const heading = document.createElement("div");
+  heading.className = "slide-entry__heading";
+  const titleLabel = document.createElement("label");
+  titleLabel.textContent = "Slide title";
+  const titleInput = document.createElement("input");
+  titleInput.name = "slideTitle";
+  titleInput.type = "text";
+  titleInput.value = slide.title || "";
+  titleInput.placeholder = "Slide title or number";
+  titleInput.required = true;
+  titleLabel.appendChild(titleInput);
+
+  const remove = document.createElement("button");
+  remove.type = "button";
+  remove.className = "admin-button admin-button--quiet";
+  remove.dataset.removeSlide = "true";
+  remove.textContent = "Remove";
+  heading.append(titleLabel, remove);
+
+  const descriptionLabel = document.createElement("label");
+  descriptionLabel.textContent = "Slide description";
+  const descriptionInput = document.createElement("textarea");
+  descriptionInput.name = "slideDescription";
+  descriptionInput.rows = 3;
+  descriptionInput.value = slide.description || "";
+  descriptionInput.placeholder = "Add a description displayed for this slide.";
+  descriptionLabel.appendChild(descriptionInput);
+
+  const recapLabel = document.createElement("label");
+  recapLabel.textContent = "Slide recap";
+  const recapInput = document.createElement("textarea");
+  recapInput.name = "slideRecap";
+  recapInput.rows = 2;
+  recapInput.value = slide.recap || "";
+  recapInput.placeholder = "Add a short recap or takeaway.";
+  recapLabel.appendChild(recapInput);
+
+  entry.append(heading, descriptionLabel, recapLabel);
+  slideList.appendChild(entry);
 }
 
 function createSavedTopic(topic) {
@@ -118,6 +184,13 @@ function createSavedTopic(topic) {
   const description = document.createElement("p");
   description.textContent = topic.description || "No description added.";
   details.append(date, title, description);
+
+  if (topic.slideNotes?.length) {
+    const slideCount = document.createElement("p");
+    slideCount.className = "saved-topic__meta";
+    slideCount.textContent = `${topic.slideNotes.length} slide note${topic.slideNotes.length === 1 ? "" : "s"}`;
+    details.append(slideCount);
+  }
 
   const actions = document.createElement("div");
   actions.className = "saved-topic__actions";
@@ -186,6 +259,12 @@ function startEditing(topic) {
   topicForm.elements.part1Url.value = topic.part1Url || "";
   topicForm.elements.part2Url.value = topic.part2Url || "";
   topicForm.elements.resourceUrl.value = topic.resourceUrl || "";
+  topicForm.elements.testimony.value = topic.testimony || "";
+  topicForm.elements.notes.value = topic.notes || "";
+  topicForm.elements.comments.value = (topic.comments || []).join("\n");
+  const slideList = document.querySelector("#slide-list");
+  slideList.replaceChildren();
+  (topic.slideNotes || []).forEach(renderSlideEntry);
   cancelEditButton.hidden = false;
   setMessage(editorMessage, `Editing ${formatTopicDate(topic.date)}.`);
   topicForm.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -238,6 +317,20 @@ topicForm.addEventListener("submit", async (event) => {
 });
 
 cancelEditButton.addEventListener("click", resetTopicForm);
+
+document.querySelector("#add-slide-button")?.addEventListener("click", () => {
+  renderSlideEntry({ title: "", description: "", recap: "" });
+});
+
+document.querySelector("#slide-list").addEventListener("click", (event) => {
+  const removeButton = event.target.closest("[data-remove-slide]");
+  if (!removeButton) {
+    return;
+  }
+
+  const entry = removeButton.closest(".slide-entry");
+  entry?.remove();
+});
 
 savedTopicsList.addEventListener("click", async (event) => {
   const editButton = event.target.closest("[data-edit-topic]");

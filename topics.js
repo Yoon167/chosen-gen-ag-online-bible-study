@@ -176,7 +176,7 @@ function createTopicCard(topic) {
 function getArchiveTopics(topics) {
   return topics
     .filter((topic) => hasTeachingFinished(topic))
-    .sort((first, second) => first.date.localeCompare(second.date));
+    .sort((first, second) => second.date.localeCompare(first.date));
 }
 
 function updateArchiveControls() {

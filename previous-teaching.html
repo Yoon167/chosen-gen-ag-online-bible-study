@@ -44,7 +44,12 @@
           <h2 id="saved-presentation-heading">Teaching presentation</h2>
         </div>
       </div>
-      <p class="saved-presentation__message" id="saved-presentation-message" aria-live="polite">Loading presentation...</p>
+      <div class="saved-presentation__header">
+        <p class="saved-presentation__message" id="saved-presentation-message" aria-live="polite">Loading presentation...</p>
+        <button class="admin-button saved-presentation__button" type="button" id="presentation-fullscreen-button" hidden>
+          View full screen
+        </button>
+      </div>
       <iframe
         class="saved-presentation__frame"
         id="saved-presentation-frame"
@@ -53,6 +58,44 @@
         hidden
       ></iframe>
       <a class="saved-presentation__link" id="saved-presentation-link" href="#" target="_blank" rel="noopener" hidden>Open presentation in Google Drive</a>
+
+      <section class="presentation-metadata" id="presentation-metadata" hidden aria-labelledby="presentation-notes-heading">
+        <div class="presentation-metadata__heading">
+          <div>
+            <p class="section-label">SLIDE NOTES</p>
+            <h2 id="presentation-notes-heading">Presentation notes</h2>
+          </div>
+        </div>
+        <div class="slide-navigation">
+          <button class="text-button" type="button" id="slide-previous">← Previous</button>
+          <div class="slide-navigation__current">
+            <p class="slide-label" id="slide-label"></p>
+            <h3 class="slide-title" id="slide-title"></h3>
+          </div>
+          <button class="text-button" type="button" id="slide-next">Next →</button>
+        </div>
+        <div class="slide-note" id="slide-description"></div>
+        <div class="slide-note slide-note--recap" id="slide-recap"></div>
+      </section>
+
+      <section class="presentation-summary" id="presentation-summary" hidden aria-labelledby="presentation-summary-heading">
+        <div class="presentation-summary__heading">
+          <p class="section-label">RECAP</p>
+          <h2 id="presentation-summary-heading">Teaching summary</h2>
+        </div>
+        <div class="presentation-summary__section">
+          <h3>Testimony</h3>
+          <p id="topic-testimony">No testimony has been added.</p>
+        </div>
+        <div class="presentation-summary__section">
+          <h3>Notes</h3>
+          <p id="topic-notes">No notes have been added.</p>
+        </div>
+        <div class="presentation-summary__section presentation-summary__comments" id="presentation-comments" hidden>
+          <h3>Public comments</h3>
+          <ul class="comment-list" id="topic-comments"></ul>
+        </div>
+      </section>
     </section>
   </main>
 
