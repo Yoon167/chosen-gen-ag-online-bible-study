@@ -51,7 +51,7 @@ installButton?.addEventListener("click", async () => {
   deferredInstallPrompt.prompt();
   const choiceResult = await deferredInstallPrompt.userChoice;
   deferredInstallPrompt = null;
-  installButton.hidden = true;
+  updateInstallButtonVisibility();
 
   if (choiceResult.outcome === "accepted") {
     console.log("PWA install accepted");
@@ -60,10 +60,10 @@ installButton?.addEventListener("click", async () => {
 
 window.addEventListener("appinstalled", () => {
   deferredInstallPrompt = null;
-  if (installButton) {
-    installButton.hidden = true;
-  }
+  updateInstallButtonVisibility();
 });
+
+updateInstallButtonVisibility();
 
 function getQatarClock(now = new Date()) {
   return new Date(now.getTime() + QATAR_OFFSET_MS);
