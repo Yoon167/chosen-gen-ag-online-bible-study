@@ -1229,7 +1229,7 @@ cite {
 
 .teaching-page-shell {
   min-height: 100vh;
-  padding: 24px clamp(18px, 5vw, 70px) 70px;
+  padding: 16px clamp(12px, 4vw, 40px) 52px;
   background:
     radial-gradient(circle at 86% 0%, rgba(219, 166, 83, 0.2), transparent 27rem),
     radial-gradient(circle at 10% 40%, rgba(60, 115, 189, 0.19), transparent 30rem),
@@ -1349,7 +1349,7 @@ cite {
 .web-deck {
   width: min(100%, 1200px);
   margin: 0 auto;
-  padding: clamp(20px, 4vw, 44px);
+  padding: clamp(20px, 4vw, 28px);
   border: 1px solid rgba(239, 218, 169, 0.21);
   border-radius: 28px;
   background: rgba(7, 19, 36, 0.7);
@@ -1366,11 +1366,31 @@ cite {
 .saved-presentation__frame {
   display: block;
   width: 100%;
-  min-height: min(68vw, 675px);
+  aspect-ratio: 16 / 9;
+  min-height: 240px;
+  max-height: 70vh;
   margin-top: 20px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   background: #020814;
+}
+
+@media (max-width: 720px) {
+  .saved-presentation__frame {
+    aspect-ratio: auto;
+    height: calc(100vw * 0.6);
+    max-height: 55vh;
+  }
+
+  .saved-presentation__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .saved-presentation__button {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .saved-presentation__frame[hidden] {
@@ -1438,18 +1458,19 @@ cite {
   background: #030814;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .saved-presentation.is-fullscreen .saved-presentation__header,
 .saved-presentation:fullscreen .saved-presentation__header {
   position: absolute;
-  top: 16px;
-  left: 16px;
-  right: 16px;
+  top: 12px;
+  left: 12px;
+  right: 12px;
   z-index: 2;
-  padding: 12px 14px;
+  padding: 10px 12px;
   border-radius: 16px;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.55);
 }
 
 .saved-presentation.is-fullscreen .presentation-metadata,
