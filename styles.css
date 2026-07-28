@@ -1401,6 +1401,21 @@ cite {
   outline: 2px solid rgba(245, 213, 148, 0.35);
 }
 
+.fullscreen-hint {
+  margin: 8px 0 0;
+  color: #cbd6ee;
+  font-size: 0.83rem;
+  line-height: 1.5;
+  opacity: 0.85;
+  display: none;
+}
+
+@media (pointer: coarse) {
+  .fullscreen-hint {
+    display: block;
+  }
+}
+
 .saved-presentation__link {
   display: inline-flex;
   margin-top: 18px;
@@ -1408,6 +1423,52 @@ cite {
   font-size: 0.84rem;
   font-weight: 700;
   text-decoration: none;
+}
+
+.saved-presentation.is-fullscreen,
+.saved-presentation:fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  border-radius: 0;
+  padding: 0;
+  background: #030814;
+  display: flex;
+  flex-direction: column;
+}
+
+.saved-presentation.is-fullscreen .saved-presentation__header,
+.saved-presentation:fullscreen .saved-presentation__header {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 2;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.saved-presentation.is-fullscreen .presentation-metadata,
+.saved-presentation.is-fullscreen .presentation-summary,
+.saved-presentation:fullscreen .presentation-metadata,
+.saved-presentation:fullscreen .presentation-summary,
+.saved-presentation.is-fullscreen .saved-presentation__link,
+.saved-presentation:fullscreen .saved-presentation__link {
+  display: none !important;
+}
+
+.saved-presentation.is-fullscreen .saved-presentation__frame,
+.saved-presentation:fullscreen .saved-presentation__frame {
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin-top: 0;
+  border-radius: 0;
 }
 
 .saved-presentation__link:hover {
