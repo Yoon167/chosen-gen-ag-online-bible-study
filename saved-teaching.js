@@ -84,12 +84,43 @@ async function enterPresentationFullscreen() {
     }
 
     if (screen.orientation?.lock) {
-      await screen.orientation.lock("landscape");
+      try {
+        await screen.orientation.lock("landscape");
+      } catch {
+        // Orientation lock may fail on some browsers.
+      }
     }
   } catch {
     // Fullscreen may be blocked by browser policy. The presentation still loads normally.
   }
 }
+
+async function exitPresentationFullscreen() {
+  if (document.fullscreenElement) {
+    try {
+      await document.exitFullscreen();
+    } catch {
+      // ignore failure
+    }
+  }
+}
+
+function updateFullscreenButton() {
+  if (!fullscreenButton) {
+    return;
+  }
+
+  const isFull = Boolean(document.fullscreenElement);
+  fullscreenButton.textContent = isFull ? "Exit full screen" : "View full screen";
+}
+
+function handleFullscreenChange() {
+  const isFull = Boolean(document.fullscreenElement);
+  savedPresentation?.classList.toggle("is-fullscreen", isFull);
+  updateFullscreenButton();
+}
+
+window.addEventListener("fullscreenchange", handleFullscreenChange);
 
 async function loadSavedPresentation() {
   if (!topicId || !/^[A-Za-z0-9_-]{1,128}$/.test(topicId)) {
@@ -143,7 +174,14 @@ async function loadSavedPresentation() {
 
     if (fullscreenButton) {
       fullscreenButton.hidden = false;
-      fullscreenButton.addEventListener("click", enterPresentationFullscreen);
+      updateFullscreenButton();
+      fullscreenButton.addEventListener("click", async () => {
+        if (document.fullscreenElement) {
+          await exitPresentationFullscreen();
+        } else {
+          await enterPresentationFullscreen();
+        }
+      });
     }
 
     if (topic.testimony || topic.notes || (Array.isArray(topic.comments) && topic.comments.length)) {
