@@ -115,6 +115,7 @@ function formatTopicDate(date) {
 function resetTopicForm() {
   topicForm.reset();
   delete topicForm.dataset.topicId;
+  delete topicForm.dataset.originalTopicId;
   topicDate.disabled = false;
   cancelEditButton.hidden = true;
   document.querySelector("#slide-list")?.replaceChildren();
@@ -251,8 +252,9 @@ function subscribeToTopics() {
 
 function startEditing(topic) {
   topicForm.dataset.topicId = topic.id;
+  topicForm.dataset.originalTopicId = topic.id;
   topicDate.value = topic.date;
-  topicDate.disabled = true;
+  topicDate.disabled = false;
   topicForm.elements.title.value = topic.title || "";
   topicForm.elements.description.value = topic.description || "";
   topicForm.elements.verse.value = topic.verse || "";
@@ -307,8 +309,15 @@ topicForm.addEventListener("submit", async (event) => {
 
   try {
     const topic = getTopicFromForm();
-    const savedTopicId = topicForm.dataset.topicId || topic.date;
-    await setDoc(doc(db, "topics", savedTopicId), topic, { merge: true });
+    const originalTopicId = topicForm.dataset.originalTopicId;
+    const targetTopicId = originalTopicId || topic.date;
+
+    await setDoc(doc(db, "topics", targetTopicId), topic, { merge: true });
+
+    if (originalTopicId && originalTopicId !== targetTopicId) {
+      await deleteDoc(doc(db, "topics", originalTopicId));
+    }
+
     resetTopicForm();
     setMessage(editorMessage, "Teaching saved. It is now available on the public site.");
   } catch (error) {
