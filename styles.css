@@ -429,6 +429,17 @@ h1 em {
   transform: translateY(-2px);
 }
 
+.button--secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f5d594;
+  border: 1px solid rgba(245, 213, 148, 0.35);
+}
+
+.button--secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-1px);
+}
+
 .journey {
   margin-top: 28px;
   text-align: left;

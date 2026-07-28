@@ -22,6 +22,48 @@ const resetButton = document.querySelector("#reset-button");
 const nextStudyCountdown = document.querySelector("#next-study-countdown");
 const loadingScreen = document.querySelector("#loading-screen");
 const appContent = document.querySelector("#app-content");
+const installButton = document.querySelector("#install-button");
+let deferredInstallPrompt = null;
+
+function isAppInstalled() {
+  return window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+}
+
+function updateInstallButtonVisibility() {
+  if (!installButton) {
+    return;
+  }
+
+  installButton.hidden = isAppInstalled() || !deferredInstallPrompt;
+}
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  deferredInstallPrompt = event;
+  updateInstallButtonVisibility();
+});
+
+installButton?.addEventListener("click", async () => {
+  if (!deferredInstallPrompt) {
+    return;
+  }
+
+  deferredInstallPrompt.prompt();
+  const choiceResult = await deferredInstallPrompt.userChoice;
+  deferredInstallPrompt = null;
+  installButton.hidden = true;
+
+  if (choiceResult.outcome === "accepted") {
+    console.log("PWA install accepted");
+  }
+});
+
+window.addEventListener("appinstalled", () => {
+  deferredInstallPrompt = null;
+  if (installButton) {
+    installButton.hidden = true;
+  }
+});
 
 function getQatarClock(now = new Date()) {
   return new Date(now.getTime() + QATAR_OFFSET_MS);
