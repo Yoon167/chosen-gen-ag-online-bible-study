@@ -1,4 +1,5 @@
 const STORAGE_KEY = "chosen-gen-bible-study-progress";
+const INSTALL_STATE_KEY = "chosen-gen-bible-study-installed";
 const QATAR_OFFSET_MS = 3 * 60 * 60 * 1000;
 const TUESDAY = 2;
 const LOADING_DURATION_MS = 10000;
@@ -26,7 +27,27 @@ const installButton = document.querySelector("#install-button");
 let deferredInstallPrompt = null;
 
 function isAppInstalled() {
-  return window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+  return (
+    window.matchMedia("(display-mode: standalone)").matches ||
+    window.matchMedia("(display-mode: fullscreen)").matches ||
+    window.navigator.standalone === true
+  );
+}
+
+function isInstallStateSaved() {
+  try {
+    return window.localStorage.getItem(INSTALL_STATE_KEY) === "installed";
+  } catch {
+    return false;
+  }
+}
+
+function setInstallState(installed) {
+  try {
+    window.localStorage.setItem(INSTALL_STATE_KEY, installed ? "installed" : "not-installed");
+  } catch {
+    // Ignore storage errors in private mode or restricted environments.
+  }
 }
 
 function updateInstallButtonVisibility() {
@@ -34,7 +55,8 @@ function updateInstallButtonVisibility() {
     return;
   }
 
-  installButton.hidden = isAppInstalled() || !deferredInstallPrompt;
+  const shouldHide = isAppInstalled() || isInstallStateSaved() || !deferredInstallPrompt;
+  installButton.hidden = shouldHide;
 }
 
 window.addEventListener("beforeinstallprompt", (event) => {
@@ -51,17 +73,40 @@ installButton?.addEventListener("click", async () => {
   deferredInstallPrompt.prompt();
   const choiceResult = await deferredInstallPrompt.userChoice;
   deferredInstallPrompt = null;
-  updateInstallButtonVisibility();
 
   if (choiceResult.outcome === "accepted") {
+    setInstallState(true);
     console.log("PWA install accepted");
   }
+
+  updateInstallButtonVisibility();
 });
 
 window.addEventListener("appinstalled", () => {
   deferredInstallPrompt = null;
+  setInstallState(true);
   updateInstallButtonVisibility();
 });
+
+window.addEventListener("pageshow", () => {
+  updateInstallButtonVisibility();
+});
+
+window.addEventListener("visibilitychange", () => {
+  if (!document.hidden) {
+    updateInstallButtonVisibility();
+  }
+});
+
+window.addEventListener("storage", (event) => {
+  if (event.key === INSTALL_STATE_KEY) {
+    updateInstallButtonVisibility();
+  }
+});
+
+if (isAppInstalled()) {
+  setInstallState(true);
+}
 
 updateInstallButtonVisibility();
 

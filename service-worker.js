@@ -1,4 +1,4 @@
-const CACHE_NAME = 'chosen-gen-ag-cache-v1';
+const CACHE_NAME = 'chosen-gen-ag-cache-v2';
 const ASSETS = [
   '/',
   '/index.html',
