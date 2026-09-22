@@ -16,10 +16,10 @@
   />
   <link rel="stylesheet" href="styles.css?v=teaching-release-3" />
   <link rel="manifest" href="manifest.webmanifest" />
-  <meta name="theme-color" content="#071220" />
+  <meta name="theme-color" content="#0f0c19" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <link rel="apple-touch-icon" href="logo/chosen-general-young-pro.png" />
+  <link rel="apple-touch-icon" href="logo/apple-touch-icon.png" />
 </head>
 <body class="is-loading">
   <section class="loading-screen" id="loading-screen" aria-labelledby="loading-verse" role="status">
@@ -50,7 +50,7 @@
     <section class="study-card" aria-labelledby="page-title">
       <div class="brand-mark">
         <img
-          src="logo/chosen-general-young-pro-glow-transparent.png"
+          src="logo/brand-mark.webp"
           alt="Chosen General Young Pro logo"
         />
       </div>
@@ -70,9 +70,10 @@
         </p>
         <button class="button button--primary" type="button" id="start-button">
           Begin the journey
-          <span aria-hidden="true">→</span>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
         </button>
         <button class="button button--secondary" type="button" id="install-button" hidden>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11" /><path d="M8 11l4 4 4-4" /><path d="M5 19h14" /></svg>
           Install Chosen Gen AG app
         </button>
       </div>
@@ -95,17 +96,17 @@
         <p class="topic-archive__note">Latest completed teaching appears first. Use the arrows to browse older lessons.</p>
         <div class="topic-archive__carousel" aria-label="Teaching library carousel">
           <button class="topic-archive__control" type="button" id="archive-previous" aria-label="Show previous teaching" disabled>
-            <span aria-hidden="true">←</span>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" /></svg>
           </button>
           <div class="topic-archive__list" id="topic-archive-list" tabindex="0"></div>
           <button class="topic-archive__control" type="button" id="archive-next" aria-label="Show next teaching" disabled>
-            <span aria-hidden="true">→</span>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
           </button>
         </div>
       </section>
 
       <a class="admin-access-link" href="manage-topics.html">
-        <span aria-hidden="true">⚿</span>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2.5" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>
         Teacher admin access
       </a>
 
@@ -137,7 +138,7 @@
           <h3 data-session-topic>Open your heart to the Word</h3>
           <p>Begin the study and fellowship with the Chosen Gen AG family.</p>
           <div class="session__time">
-            <span aria-hidden="true">◷</span>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="M12 8v4l3 2" /></svg>
             Tuesday · 8:00–9:00 PM Qatar time
           </div>
           <p class="availability" data-countdown="part-1" aria-live="polite">Checking session availability…</p>
@@ -150,11 +151,12 @@
             aria-disabled="true"
             tabindex="-1"
           >
-            <span class="zoom-icon" aria-hidden="true">▹</span>
+            <span class="zoom-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2.5" /><path d="M16 10.5l6-3.5v10l-6-3.5" /></svg></span>
             <span data-join-label="part-1">Part 1 opens soon</span>
           </a>
           <button class="text-button" type="button" data-complete="part-1">
-            I have finished Part 1 <span aria-hidden="true">→</span>
+            I have finished Part 1
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
           </button>
         </article>
 
@@ -166,7 +168,7 @@
           <h3 data-session-topic>Continue the conversation</h3>
           <p>Return for the next part of the study, reflection, and prayer.</p>
           <div class="session__time">
-            <span aria-hidden="true">◷</span>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="M12 8v4l3 2" /></svg>
             Tuesday · 9:00–10:00 PM Qatar time
           </div>
           <p class="availability" data-countdown="part-2" aria-live="polite">Checking session availability…</p>
@@ -179,11 +181,12 @@
             aria-disabled="true"
             tabindex="-1"
           >
-            <span class="zoom-icon" aria-hidden="true">▹</span>
+            <span class="zoom-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2.5" /><path d="M16 10.5l6-3.5v10l-6-3.5" /></svg></span>
             <span data-join-label="part-2">Part 2 opens soon</span>
           </a>
           <button class="text-button" type="button" data-complete="part-2">
-            I have finished Part 2 <span aria-hidden="true">→</span>
+            I have finished Part 2
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
           </button>
         </article>
 
@@ -196,7 +199,8 @@
           <cite>Galatians 6:9</cite>
           <p class="closing-note">Thank you for showing up. Keep walking with Jesus, one faithful step at a time.</p>
           <button class="text-button text-button--restart" type="button" id="reset-button">
-            Start again <span aria-hidden="true">↻</span>
+            Start again
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 1 3 6.7" /><path d="M3 21v-6h6" /></svg>
           </button>
         </section>
       </section>

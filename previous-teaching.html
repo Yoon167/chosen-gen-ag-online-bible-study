@@ -20,14 +20,17 @@
   <main class="teaching-page-shell">
     <nav class="teaching-nav" aria-label="Previous teaching navigation">
       <a class="back-link" href="index.html">
-        <span aria-hidden="true">←</span>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" /></svg>
         Back to Bible study
       </a>
       <p class="teaching-nav__brand">CHOSEN GEN AG</p>
     </nav>
 
     <p class="browser-open" id="browser-open" hidden>
-      <a class="browser-open__link" id="browser-open-link" href="#">Open in Chrome</a>
+      <a class="browser-open__link" id="browser-open-link" href="#">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h6" /><path d="M15 3h6v6" /><path d="M10 14L21 3" /></svg>
+        Open in Chrome
+      </a>
     </p>
 
     <header class="teaching-hero">
@@ -49,9 +52,7 @@
           <p class="saved-presentation__message" id="saved-presentation-message" aria-live="polite">Loading presentation...</p>
           <p class="fullscreen-hint" id="fullscreen-hint">Tip for mobile: swipe left or right in the presentation, or use the fullscreen button to exit.</p>
         </div>
-        <button class="admin-button saved-presentation__button" type="button" id="presentation-fullscreen-button" hidden>
-          View full screen
-        </button>
+        <button class="admin-button saved-presentation__button" type="button" id="presentation-fullscreen-button" hidden></button>
       </div>
       <iframe
         class="saved-presentation__frame"
@@ -60,7 +61,10 @@
         allowfullscreen
         hidden
       ></iframe>
-      <a class="saved-presentation__link" id="saved-presentation-link" href="#" target="_blank" rel="noopener" hidden>Open presentation in Google Drive</a>
+      <a class="saved-presentation__link" id="saved-presentation-link" href="#" target="_blank" rel="noopener" hidden>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h6" /><path d="M15 3h6v6" /><path d="M10 14L21 3" /></svg>
+        Open presentation in Google Drive
+      </a>
 
       <section class="presentation-metadata" id="presentation-metadata" hidden aria-labelledby="presentation-notes-heading">
         <div class="presentation-metadata__heading">
@@ -70,12 +74,18 @@
           </div>
         </div>
         <div class="slide-navigation">
-          <button class="text-button" type="button" id="slide-previous">← Previous</button>
+          <button class="text-button text-button--prev" type="button" id="slide-previous">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" /></svg>
+            Previous
+          </button>
           <div class="slide-navigation__current">
             <p class="slide-label" id="slide-label"></p>
             <h3 class="slide-title" id="slide-title"></h3>
           </div>
-          <button class="text-button" type="button" id="slide-next">Next →</button>
+          <button class="text-button" type="button" id="slide-next">
+            Next
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
+          </button>
         </div>
         <div class="slide-note" id="slide-description"></div>
         <div class="slide-note slide-note--recap" id="slide-recap"></div>
@@ -87,15 +97,15 @@
           <h2 id="presentation-summary-heading">Teaching summary</h2>
         </div>
         <div class="presentation-summary__section">
-          <h3>Testimony</h3>
+          <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z" /></svg> Testimony</h3>
           <p id="topic-testimony">No testimony has been added.</p>
         </div>
         <div class="presentation-summary__section">
-          <h3>Notes</h3>
+          <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" /></svg> Notes</h3>
           <p id="topic-notes">No notes have been added.</p>
         </div>
         <div class="presentation-summary__section presentation-summary__comments" id="presentation-comments" hidden>
-          <h3>Public comments</h3>
+          <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z" /></svg> Public comments</h3>
           <ul class="comment-list" id="topic-comments"></ul>
         </div>
       </section>

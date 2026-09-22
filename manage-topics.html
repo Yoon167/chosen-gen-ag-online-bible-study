@@ -17,7 +17,7 @@
   <main class="admin-shell">
     <nav class="admin-nav" aria-label="Teaching manager navigation">
       <a class="back-link" href="index.html">
-        <span aria-hidden="true">←</span>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" /></svg>
         Back to Bible study
       </a>
       <p class="admin-nav__brand">CHOSEN GEN AG</p>
@@ -43,7 +43,10 @@
           Password
           <input type="password" name="password" autocomplete="current-password" required />
         </label>
-        <button class="admin-button" type="submit">Sign in</button>
+        <button class="admin-button" type="submit">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2.5" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></svg>
+          Sign in
+        </button>
         <p class="admin-message" id="auth-message" aria-live="polite"></p>
       </form>
     </section>
@@ -55,7 +58,10 @@
           <h2 id="editor-title">Save a teaching</h2>
           <p class="admin-user" id="signed-in-user"></p>
         </div>
-        <button class="admin-button admin-button--quiet" type="button" id="sign-out-button">Sign out</button>
+        <button class="admin-button admin-button--quiet" type="button" id="sign-out-button">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" /><path d="M16 17l5-5-5-5" /><path d="M21 12H9" /></svg>
+          Sign out
+        </button>
       </div>
 
       <form class="topic-form" id="topic-form">
@@ -95,7 +101,10 @@
         <div class="topic-form__section">
           <div class="topic-form__section-heading">
             <p class="section-label">SLIDE NOTES</p>
-            <button class="admin-button admin-button--quiet" type="button" id="add-slide-button">Add slide note</button>
+            <button class="admin-button admin-button--quiet" type="button" id="add-slide-button">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14" /><path d="M5 12h14" /></svg>
+              Add slide note
+            </button>
           </div>
           <div id="slide-list" class="slide-list"></div>
           <p class="topic-form__help">Add one note entry per slide with a title, description, and recap for the presentation.</p>
@@ -113,7 +122,10 @@
           <textarea name="comments" rows="4" maxlength="800" placeholder="Write public comments participants can see. Separate lines become separate comments."></textarea>
         </label>
         <div class="topic-form__actions">
-          <button class="admin-button" type="submit" id="save-topic-button">Save teaching</button>
+          <button class="admin-button" type="submit" id="save-topic-button">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13l4 4L19 7" /></svg>
+            Save teaching
+          </button>
           <button class="admin-button admin-button--quiet" type="button" id="cancel-edit-button" hidden>Cancel edit</button>
         </div>
         <p class="admin-message" id="editor-message" aria-live="polite"></p>

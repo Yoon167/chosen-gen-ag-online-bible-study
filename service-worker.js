@@ -1,4 +1,4 @@
-const CACHE_NAME = 'chosen-gen-ag-cache-v2';
+const CACHE_NAME = 'chosen-gen-ag-cache-v3';
 const ASSETS = [
   '/',
   '/index.html',
@@ -12,8 +12,11 @@ const ASSETS = [
   '/saved-teaching.js',
   '/firebase.js',
   '/manifest.webmanifest',
-  '/logo/chosen-general-young-pro.png',
-  '/logo/chosen-general-young-pro-transparent.png'
+  '/logo/brand-mark.webp',
+  '/logo/icon-192.png',
+  '/logo/icon-512.png',
+  '/logo/apple-touch-icon.png',
+  '/assets/hero-bg.webp'
 ];
 
 self.addEventListener('install', (event) => {

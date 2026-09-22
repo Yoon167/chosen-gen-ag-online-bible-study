@@ -12,7 +12,8 @@
       ".gitignore",
       ".qodo/**",
       ".venv/**",
-      "README.md"
+      "README.md",
+      "gideon-app/**"
     ],
     "cleanUrls": true,
     "headers": [
