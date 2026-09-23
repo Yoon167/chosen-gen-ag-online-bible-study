@@ -30,10 +30,33 @@ export function cleanVerseText(text: string) {
   return text.replace(/\s+/g, " ").trim();
 }
 
+export interface BibleTranslation {
+  id: string;
+  name: string;
+}
+
+// Public-domain English translations offered by bible-api.com — no API key
+// needed, and responses are runtime-cached by the service worker so a
+// chapter already read once stays available offline afterward.
+export const BIBLE_TRANSLATIONS: BibleTranslation[] = [
+  { id: "kjv", name: "King James Version" },
+  { id: "asv", name: "American Standard Version" },
+  { id: "web", name: "World English Bible" },
+  { id: "bbe", name: "Bible in Basic English" },
+  { id: "darby", name: "Darby Bible" },
+  { id: "ylt", name: "Young's Literal Translation" },
+];
+
+export const DEFAULT_TRANSLATION = "kjv";
+
+export function translationName(id: string) {
+  return BIBLE_TRANSLATIONS.find((t) => t.id === id)?.name ?? id.toUpperCase();
+}
+
 export async function fetchChapter(
   bookSlug: string,
   chapter: number,
-  translation: "kjv" | "web" = "kjv"
+  translation: string = DEFAULT_TRANSLATION
 ): Promise<BibleApiResponse> {
   const singleChapterCount = SINGLE_CHAPTER_VERSE_COUNTS[bookSlug];
   const path = singleChapterCount
@@ -51,7 +74,7 @@ export async function fetchChapter(
 
 export async function fetchPassage(
   reference: string,
-  translation: "kjv" | "web" = "kjv"
+  translation: string = DEFAULT_TRANSLATION
 ): Promise<BibleApiResponse> {
   const res = await fetch(
     `${BASE_URL}/${encodeURIComponent(reference)}?translation=${translation}`

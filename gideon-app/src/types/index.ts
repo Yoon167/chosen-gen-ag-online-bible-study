@@ -168,6 +168,10 @@ export interface UserProfile {
   uid: string;
   displayName: string;
   ministry?: string;
+  bio?: string;
+  photoUrl?: string;
+  onboarded?: boolean;
+  bibleTranslation?: string;
   readingStreak: number;
   prayerStreak: number;
   lastReadDate?: string;

@@ -13,7 +13,7 @@ import {
   ChevronRight,
   Download,
 } from "lucide-react";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Switch } from "@/components/ui/switch";
 import {
   Sheet,
@@ -56,6 +56,7 @@ export default function ProfilePage() {
     <div>
       <header className="flex flex-col items-center gap-3 px-5 pb-6 pt-8 text-center">
         <Avatar className="size-20 border-2 border-primary/20">
+          {profile?.photoUrl && <AvatarImage src={profile.photoUrl} alt="" />}
           <AvatarFallback className="gradient-hero text-xl font-heading font-semibold text-primary-foreground">
             {initials}
           </AvatarFallback>
@@ -66,6 +67,9 @@ export default function ProfilePage() {
           </h1>
           {profile?.ministry && (
             <p className="text-xs text-muted-foreground">{profile.ministry}</p>
+          )}
+          {profile?.bio && (
+            <p className="mt-1 max-w-xs text-xs text-foreground/70">{profile.bio}</p>
           )}
         </div>
         <button
@@ -123,7 +127,7 @@ export default function ProfilePage() {
         open={editOpen}
         onOpenChange={setEditOpen}
         profile={profile}
-        onSubmit={(displayName, ministry) => updateProfile({ displayName, ministry })}
+        onSubmit={(values) => updateProfile(values)}
       />
 
       <Sheet open={privacyOpen} onOpenChange={setPrivacyOpen}>

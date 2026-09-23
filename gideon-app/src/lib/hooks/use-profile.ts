@@ -10,6 +10,9 @@ import type { UserProfile } from "@/types";
 const DEFAULT_PROFILE: Omit<UserProfile, "uid"> = {
   displayName: "Beloved",
   ministry: "",
+  bio: "",
+  onboarded: false,
+  bibleTranslation: "kjv",
   readingStreak: 0,
   prayerStreak: 0,
 };

@@ -4,7 +4,13 @@ import { useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, BookOpenText } from "lucide-react";
 import { findBook, getAdjacentChapter } from "@/lib/bible/books";
-import { fetchChapter, cleanVerseText, type BibleApiVerse } from "@/lib/bible/api";
+import {
+  fetchChapter,
+  cleanVerseText,
+  BIBLE_TRANSLATIONS,
+  DEFAULT_TRANSLATION,
+  type BibleApiVerse,
+} from "@/lib/bible/api";
 import { useUserCollection } from "@/lib/hooks/use-collection";
 import { useRecordBibleHistory } from "@/lib/hooks/use-bible-history";
 import { useProfile } from "@/lib/hooks/use-profile";
@@ -28,7 +34,8 @@ export function ChapterReaderClient() {
   const [selection, setSelection] = useState<VerseSelection | null>(null);
 
   const recordHistory = useRecordBibleHistory();
-  const { markReadingDone } = useProfile();
+  const { profile, markReadingDone, updateProfile } = useProfile();
+  const translation = profile?.bibleTranslation ?? DEFAULT_TRANSLATION;
 
   const highlights = useUserCollection<BibleHighlight>("bibleHighlights");
   const bookmarks = useUserCollection<BibleBookmark>("bibleBookmarks");
@@ -38,7 +45,7 @@ export function ChapterReaderClient() {
     if (!book) return;
     setVerses(null);
     setError(false);
-    fetchChapter(bookSlug, chapter)
+    fetchChapter(bookSlug, chapter, translation)
       .then((res) => {
         setVerses(res.verses);
         recordHistory(book.name, bookSlug, chapter);
@@ -46,7 +53,7 @@ export function ChapterReaderClient() {
       })
       .catch(() => setError(true));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bookSlug, chapter]);
+  }, [bookSlug, chapter, translation]);
 
   const highlightMap = useMemo(
     () =>
@@ -122,7 +129,18 @@ export function ChapterReaderClient() {
           <p className="font-heading text-base font-semibold">
             {book.name} {chapter}
           </p>
-          <p className="text-[10px] text-muted-foreground">King James Version</p>
+          <select
+            value={translation}
+            onChange={(e) => updateProfile({ bibleTranslation: e.target.value })}
+            aria-label="Bible translation"
+            className="mx-auto mt-0.5 block bg-transparent text-center text-[10px] text-muted-foreground"
+          >
+            {BIBLE_TRANSLATIONS.map((t) => (
+              <option key={t.id} value={t.id}>
+                {t.name}
+              </option>
+            ))}
+          </select>
         </div>
         <span className="flex size-9 items-center justify-center rounded-full bg-primary/10 text-primary">
           <BookOpenText className="size-4" />
@@ -163,7 +181,7 @@ export function ChapterReaderClient() {
                   }
                   className={cn(
                     "cursor-pointer rounded px-0.5 transition-colors",
-                    isHighlighted && "bg-gold/25",
+                    isHighlighted && "bg-gold/50 dark:bg-gold/40",
                     isBookmarked && "underline decoration-primary decoration-2 underline-offset-4"
                   )}
                 >
