@@ -12,6 +12,7 @@ import {
   ShieldCheck,
   ChevronRight,
   Download,
+  Cloud,
 } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Switch } from "@/components/ui/switch";
@@ -24,10 +25,12 @@ import {
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Section } from "@/components/shared/section";
 import { EditProfileDialog } from "@/components/profile/edit-profile-dialog";
+import { AccountSheet } from "@/components/profile/account-sheet";
 import { useProfile } from "@/lib/hooks/use-profile";
 import { useUserCollection } from "@/lib/hooks/use-collection";
 import { useReadingPlanProgress } from "@/lib/hooks/use-reading-plan";
 import { usePwaInstall } from "@/lib/hooks/use-pwa-install";
+import { useAuth } from "@/lib/hooks/use-auth";
 import { findPlan } from "@/lib/bible/plans";
 import type { JourneyMilestone } from "@/types";
 import Link from "next/link";
@@ -42,8 +45,11 @@ export default function ProfilePage() {
     : 0;
   const [editOpen, setEditOpen] = useState(false);
   const [privacyOpen, setPrivacyOpen] = useState(false);
+  const [accountOpen, setAccountOpen] = useState(false);
   const [notifications, setNotifications] = useState(true);
   const { canInstall, installed, promptInstall } = usePwaInstall();
+  const { user } = useAuth();
+  const linkedEmail = user && !user.isAnonymous ? user.email : null;
 
   const initials = (profile?.displayName ?? "B")
     .split(" ")
@@ -115,6 +121,15 @@ export default function ProfilePage() {
               <ChevronRight className="size-4 text-muted-foreground" />
             </SettingRow>
           </Link>
+          <button onClick={() => setAccountOpen(true)} className="block w-full text-left">
+            <SettingRow icon={Cloud} label={linkedEmail ? "Account Backed Up" : "Back Up My Account"}>
+              {linkedEmail ? (
+                <span className="max-w-28 truncate text-xs text-muted-foreground">{linkedEmail}</span>
+              ) : (
+                <ChevronRight className="size-4 text-muted-foreground" />
+              )}
+            </SettingRow>
+          </button>
           <button onClick={() => setPrivacyOpen(true)} className="block w-full text-left">
             <SettingRow icon={ShieldCheck} label="Privacy">
               <ChevronRight className="size-4 text-muted-foreground" />
@@ -129,6 +144,8 @@ export default function ProfilePage() {
         profile={profile}
         onSubmit={(values) => updateProfile(values)}
       />
+
+      <AccountSheet open={accountOpen} onOpenChange={setAccountOpen} />
 
       <Sheet open={privacyOpen} onOpenChange={setPrivacyOpen}>
         <SheetContent side="bottom">
