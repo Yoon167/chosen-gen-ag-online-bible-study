@@ -3,38 +3,12 @@
     "rules": "firestore.rules"
   },
   "hosting": {
-    "public": ".",
-    "ignore": [
-      "firebase.json",
-      ".firebaserc",
-      ".git/**",
-      ".github/**",
-      ".gitignore",
-      ".qodo/**",
-      ".venv/**",
-      "README.md",
-      "gideon-app/**"
-    ],
+    "public": "gideon-app/out",
     "cleanUrls": true,
-    "headers": [
-      {
-        "source": "**/*.html",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=0, must-revalidate"
-          }
-        ]
-      },
-      {
-        "source": "**/*.@(js|css)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=0, must-revalidate"
-          }
-        ]
-      }
+    "rewrites": [
+      { "source": "/bible/plans/**", "destination": "/bible/plans/30-day-new-testament.html" },
+      { "source": "/bible/**", "destination": "/bible/genesis/1.html" },
+      { "source": "/testimony/**", "destination": "/testimony/_.html" }
     ]
   }
 }
