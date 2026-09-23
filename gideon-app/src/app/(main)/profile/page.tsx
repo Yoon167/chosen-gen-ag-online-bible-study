@@ -11,6 +11,7 @@ import {
   Bell,
   ShieldCheck,
   ChevronRight,
+  Download,
 } from "lucide-react";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Switch } from "@/components/ui/switch";
@@ -26,6 +27,7 @@ import { EditProfileDialog } from "@/components/profile/edit-profile-dialog";
 import { useProfile } from "@/lib/hooks/use-profile";
 import { useUserCollection } from "@/lib/hooks/use-collection";
 import { useReadingPlanProgress } from "@/lib/hooks/use-reading-plan";
+import { usePwaInstall } from "@/lib/hooks/use-pwa-install";
 import { findPlan } from "@/lib/bible/plans";
 import type { JourneyMilestone } from "@/types";
 import Link from "next/link";
@@ -41,6 +43,7 @@ export default function ProfilePage() {
   const [editOpen, setEditOpen] = useState(false);
   const [privacyOpen, setPrivacyOpen] = useState(false);
   const [notifications, setNotifications] = useState(true);
+  const { canInstall, installed, promptInstall } = usePwaInstall();
 
   const initials = (profile?.displayName ?? "B")
     .split(" ")
@@ -88,6 +91,18 @@ export default function ProfilePage() {
           <SettingRow icon={UserRound} label="Dark Mode">
             <ThemeToggle />
           </SettingRow>
+          {canInstall && (
+            <button onClick={promptInstall} className="block w-full text-left">
+              <SettingRow icon={Download} label="Install App">
+                <ChevronRight className="size-4 text-muted-foreground" />
+              </SettingRow>
+            </button>
+          )}
+          {installed && (
+            <SettingRow icon={Download} label="App Installed">
+              <span className="text-xs text-muted-foreground">✓</span>
+            </SettingRow>
+          )}
           <SettingRow icon={Bell} label="Notifications">
             <Switch checked={notifications} onCheckedChange={setNotifications} />
           </SettingRow>

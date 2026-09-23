@@ -1,88 +1,59 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { PresentationIcon, Plus } from "lucide-react";
+import { PresentationIcon, Search } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
-import { UploadPresentationDialog } from "@/components/presentations/upload-presentation-dialog";
+import { Input } from "@/components/ui/input";
 import { PresentationCard } from "@/components/presentations/presentation-card";
-import { useUserCollection } from "@/lib/hooks/use-collection";
-import { cn } from "@/lib/utils";
-import type { PresentationCategory, PresentationItem } from "@/types";
-
-const CATEGORIES: (PresentationCategory | "All")[] = [
-  "All",
-  "Sunday Service",
-  "Youth",
-  "Leadership",
-  "Training",
-  "Bible Study",
-];
+import { useTopics } from "@/lib/hooks/use-collection";
 
 export default function PresentationsPage() {
-  const [open, setOpen] = useState(false);
-  const [filter, setFilter] = useState<PresentationCategory | "All">("All");
-  const { items, loading, add, remove } = useUserCollection<PresentationItem>("presentations");
+  const [search, setSearch] = useState("");
+  const { items, loading } = useTopics();
 
-  const filtered = useMemo(
-    () => (filter === "All" ? items : items.filter((i) => i.category === filter)),
-    [items, filter]
-  );
+  const filtered = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    if (!q) return items;
+    return items.filter(
+      (t) =>
+        t.title.toLowerCase().includes(q) ||
+        t.description?.toLowerCase().includes(q)
+    );
+  }, [items, search]);
 
   return (
     <div>
       <PageHeader
-        title="Presentation Library"
-        subtitle={`${items.length} presentations`}
+        title="Teaching Library"
+        subtitle={`${items.length} teachings with slides`}
         icon={PresentationIcon}
-        action={
-          <button
-            onClick={() => setOpen(true)}
-            className="flex size-9 items-center justify-center rounded-full bg-primary text-primary-foreground"
-            aria-label="Add presentation"
-          >
-            <Plus className="size-4.5" />
-          </button>
-        }
       />
 
-      <div className="flex gap-2 overflow-x-auto px-5 pb-1 no-scrollbar">
-        {CATEGORIES.map((c) => (
-          <button
-            key={c}
-            onClick={() => setFilter(c)}
-            className={cn(
-              "shrink-0 rounded-full border px-3.5 py-1.5 text-xs font-medium",
-              filter === c
-                ? "border-primary bg-primary text-primary-foreground"
-                : "border-border bg-card text-muted-foreground"
-            )}
-          >
-            {c}
-          </button>
-        ))}
+      <div className="px-5">
+        <div className="relative">
+          <Search className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+          <Input
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search teachings..."
+            className="h-11 rounded-full pl-10"
+          />
+        </div>
       </div>
 
       <div className="mt-4 space-y-2.5 px-5 pb-8">
         {!loading && filtered.length === 0 && (
           <EmptyState
             icon={PresentationIcon}
-            title="No presentations yet"
-            description="Add a link to slides from Sunday Service, youth, training, or Bible study."
+            title="No teachings yet"
+            description="Teachings and Google Slides links saved by the admin will appear here automatically."
           />
         )}
-        {filtered.map((item) => (
-          <PresentationCard key={item.id} item={item} onDelete={() => remove(item.id)} />
+        {filtered.map((topic) => (
+          <PresentationCard key={topic.id} topic={topic} />
         ))}
       </div>
-
-      <UploadPresentationDialog
-        open={open}
-        onOpenChange={setOpen}
-        onSubmit={(title, category, fileUrl) =>
-          add({ title, category, fileUrl, createdAt: Date.now() })
-        }
-      />
     </div>
   );
 }

@@ -93,20 +93,30 @@ export interface TeachingRecap {
   attachmentUrl?: string;
 }
 
-export type PresentationCategory =
-  | "Sunday Service"
-  | "Youth"
-  | "Leadership"
-  | "Training"
-  | "Bible Study";
-
-export interface PresentationItem {
-  id: string;
+export interface TopicSlideNote {
   title: string;
-  category: PresentationCategory;
-  fileUrl: string;
-  thumbnailUrl?: string;
-  createdAt: number;
+  description?: string;
+  recap?: string;
+}
+
+/**
+ * A saved Tuesday teaching from the shared `topics` collection, managed by
+ * the admin via manage-topics.html. Public read access; the resourceUrl is
+ * typically a Google Slides link.
+ */
+export interface Topic {
+  id: string;
+  date: string;
+  title: string;
+  description?: string;
+  verse?: string;
+  part1Url?: string;
+  part2Url?: string;
+  resourceUrl?: string;
+  testimony?: string;
+  notes?: string;
+  comments?: string[];
+  slideNotes?: TopicSlideNote[];
 }
 
 export type MeetingPlatform = "Zoom" | "Teams" | "Google Meet" | "Other";

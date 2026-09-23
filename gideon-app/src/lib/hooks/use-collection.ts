@@ -14,6 +14,7 @@ import {
 } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { useAuth } from "@/lib/hooks/use-auth";
+import type { Topic } from "@/types";
 
 /**
  * Realtime CRUD hook for a per-user subcollection at users/{uid}/{subpath}.
@@ -74,4 +75,31 @@ export function useUserCollection<T extends DocumentData>(
   }
 
   return { items, loading: loading || authLoading, add, update, remove, uid };
+}
+
+/**
+ * Realtime read-only hook for the shared `topics` collection (Tuesday
+ * teachings managed by the admin via manage-topics.html). Public read
+ * access — no auth required.
+ */
+export function useTopics() {
+  const [items, setItems] = useState<Topic[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const q = query(collection(db, "topics"), orderBy("date", "desc"));
+    const unsubscribe = onSnapshot(
+      q,
+      (snapshot) => {
+        setItems(
+          snapshot.docs.map((d) => ({ id: d.id, ...d.data() }) as Topic)
+        );
+        setLoading(false);
+      },
+      () => setLoading(false)
+    );
+    return unsubscribe;
+  }, []);
+
+  return { items, loading };
 }
