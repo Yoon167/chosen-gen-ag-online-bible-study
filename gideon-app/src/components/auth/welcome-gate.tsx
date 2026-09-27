@@ -31,7 +31,7 @@ export function WelcomeGate({ children }: { children: React.ReactNode }) {
     return (
       <div className="relative flex min-h-screen flex-col items-center justify-center gap-6 px-6 text-center safe-top safe-bottom">
         <LanguageToggle className="absolute right-4 top-4" />
-        <Image src="/icon.png" alt="GIDEON" width={72} height={72} className="rounded-2xl" />
+        <Image src="/icon.png" alt="GIDEON" width={128} height={128} className="rounded-3xl" />
         <div>
           <h1 className="font-heading text-2xl font-semibold">Welcome to GIDEON</h1>
           <p className="mt-1 text-sm text-muted-foreground">
