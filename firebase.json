@@ -2,8 +2,16 @@
   "firestore": {
     "rules": "firestore.rules"
   },
-  "hosting": {
-    "public": "gideon-app/out",
-    "cleanUrls": true
-  }
+  "hosting": [
+    {
+      "target": "gideon",
+      "public": "gideon-app/out",
+      "cleanUrls": true
+    },
+    {
+      "target": "legacy",
+      "public": "gideon-app/out",
+      "cleanUrls": true
+    }
+  ]
 }

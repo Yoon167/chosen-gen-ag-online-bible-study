@@ -15,10 +15,22 @@ const heading = Lora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://gideon-app.web.app"),
   title: "GIDEON — Strengthening Faith. Growing Disciples.",
   description:
     "GIDEON is an all-in-one Christian discipleship and ministry platform: Bible reading plans, daily devotion, prayer, spiritual journey, notes, and more.",
   manifest: "/manifest.webmanifest",
+  openGraph: {
+    type: "website",
+    siteName: "GIDEON",
+    title: "GIDEON — A Christian Journey",
+    description: "Bible, daily devotion, prayer, testimony and teaching recaps for AG members.",
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GIDEON — A Christian Journey",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",

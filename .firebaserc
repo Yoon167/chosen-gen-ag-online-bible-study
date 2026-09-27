@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "chosen-gen--ag-bible-study"
-  }
+  },
+  "targets": {
+    "chosen-gen--ag-bible-study": {
+      "hosting": {
+        "legacy": [
+          "chosen-gen--ag-bible-study"
+        ],
+        "gideon": [
+          "gideon-app"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

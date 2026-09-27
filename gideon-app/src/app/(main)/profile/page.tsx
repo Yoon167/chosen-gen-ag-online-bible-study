@@ -37,6 +37,7 @@ import { findPlan } from "@/lib/bible/plans";
 import type { JourneyMilestone } from "@/types";
 import Link from "next/link";
 import { LanguageToggle } from "@/components/language-toggle";
+import { InviteCard } from "@/components/invite-card";
 import { useLanguage } from "@/lib/i18n";
 
 export default function ProfilePage() {
@@ -103,6 +104,10 @@ export default function ProfilePage() {
           <StatCard icon={CalendarCheck2} label="Reading Plan" value={planPercent} suffix="%" />
         </div>
       </Section>
+
+      <div className="mt-6 px-5">
+        <InviteCard />
+      </div>
 
       <Section title={t("profile.settings")} className="mt-6 pb-10">
         <div className="divide-y divide-border rounded-2xl border border-border/70 bg-card">

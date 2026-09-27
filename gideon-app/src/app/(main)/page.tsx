@@ -12,6 +12,7 @@ import { Section } from "@/components/shared/section";
 import { useProfile } from "@/lib/hooks/use-profile";
 import { encouragementOfTheDay } from "@/lib/content/encouragements";
 import { LanguageToggle } from "@/components/language-toggle";
+import { InviteCard } from "@/components/invite-card";
 import { useLanguage, type StringKey } from "@/lib/i18n";
 
 function greetingKey(): StringKey {
@@ -99,6 +100,10 @@ export default function HomePage() {
       <Section title={t("home.quickActions")}>
         <QuickActions />
       </Section>
+
+      <div className="px-5 pb-4">
+        <InviteCard />
+      </div>
     </div>
   );
 }
