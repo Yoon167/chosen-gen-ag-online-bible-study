@@ -8,6 +8,7 @@ import { BookGrid } from "@/components/bible/book-grid";
 import { OLD_TESTAMENT, NEW_TESTAMENT } from "@/lib/bible/books";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpenText } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 const LINKS = [
   { label: "Reading Plans", href: "/bible/plans", icon: CalendarCheck2 },
@@ -17,10 +18,11 @@ const LINKS = [
 ];
 
 export default function BiblePage() {
+  const { t } = useLanguage();
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Bible"
+        title={t("page.bible")}
         subtitle="Old & New Testament"
         icon={BookOpenText}
       />

@@ -1,4 +1,10 @@
+import { ALL_BOOKS } from "./books";
+import { parseReference } from "./reference-parser";
+
 const BASE_URL = "https://bible-api.com";
+// bible-api.com has no Tagalog, so the Tagalog Bible comes from getbible.net.
+const GETBIBLE_URL = "https://api.getbible.net/v2";
+export const TAGALOG_TRANSLATION = "tagalog";
 
 export interface BibleApiVerse {
   book_id: string;
@@ -45,6 +51,7 @@ export const BIBLE_TRANSLATIONS: BibleTranslation[] = [
   { id: "bbe", name: "Bible in Basic English" },
   { id: "darby", name: "Darby Bible" },
   { id: "ylt", name: "Young's Literal Translation" },
+  { id: TAGALOG_TRANSLATION, name: "Ang Dating Biblia (Tagalog)" },
 ];
 
 export const DEFAULT_TRANSLATION = "kjv";
@@ -53,11 +60,63 @@ export function translationName(id: string) {
   return BIBLE_TRANSLATIONS.find((t) => t.id === id)?.name ?? id.toUpperCase();
 }
 
+interface GetBibleChapter {
+  translation: string;
+  book_name: string;
+  chapter: number;
+  name: string;
+  verses: { chapter: number; verse: number; text: string }[];
+}
+
+async function fetchTagalogChapter(bookSlug: string, chapter: number): Promise<BibleApiResponse> {
+  const bookNr = ALL_BOOKS.findIndex((b) => b.slug === bookSlug) + 1;
+  if (!bookNr) throw new Error("Chapter not found");
+  const res = await fetch(`${GETBIBLE_URL}/${TAGALOG_TRANSLATION}/${bookNr}/${chapter}.json`);
+  if (!res.ok) throw new Error("Failed to load chapter");
+  const data = (await res.json()) as GetBibleChapter;
+  if (!data.verses?.length) throw new Error("Chapter not found");
+  const verses = data.verses.map((v) => ({
+    book_id: bookSlug,
+    book_name: data.book_name,
+    chapter: v.chapter,
+    verse: v.verse,
+    text: v.text,
+  }));
+  return {
+    reference: data.name,
+    verses,
+    text: verses.map((v) => v.text).join(" "),
+    translation_id: TAGALOG_TRANSLATION,
+    translation_name: data.translation,
+  };
+}
+
+/** "John 3:16" / "Proverbs 3:5-6" from the Tagalog Bible, sliced from its chapter. */
+async function fetchTagalogPassage(reference: string): Promise<BibleApiResponse> {
+  const parsed = parseReference(reference);
+  if (!parsed) throw new Error("Passage not found");
+  const chapter = await fetchTagalogChapter(parsed.book.slug, parsed.chapter);
+  const range = reference.match(/:(\d+)(?:-(\d+))?\s*$/);
+  if (!range) return chapter;
+  const from = parseInt(range[1], 10);
+  const to = range[2] ? parseInt(range[2], 10) : from;
+  const verses = chapter.verses.filter((v) => v.verse >= from && v.verse <= to);
+  if (!verses.length) throw new Error("Passage not found");
+  const suffix = from === to ? `${from}` : `${from}-${to}`;
+  return {
+    ...chapter,
+    reference: `${verses[0].book_name} ${parsed.chapter}:${suffix}`,
+    verses,
+    text: verses.map((v) => v.text).join(" "),
+  };
+}
+
 export async function fetchChapter(
   bookSlug: string,
   chapter: number,
   translation: string = DEFAULT_TRANSLATION
 ): Promise<BibleApiResponse> {
+  if (translation === TAGALOG_TRANSLATION) return fetchTagalogChapter(bookSlug, chapter);
   const singleChapterCount = SINGLE_CHAPTER_VERSE_COUNTS[bookSlug];
   const path = singleChapterCount
     ? `${bookSlug}+1:1-${singleChapterCount}`
@@ -76,6 +135,7 @@ export async function fetchPassage(
   reference: string,
   translation: string = DEFAULT_TRANSLATION
 ): Promise<BibleApiResponse> {
+  if (translation === TAGALOG_TRANSLATION) return fetchTagalogPassage(reference);
   const res = await fetch(
     `${BASE_URL}/${encodeURIComponent(reference)}?translation=${translation}`
   );

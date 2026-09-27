@@ -13,20 +13,22 @@ import {
   PresentationIcon,
   Video,
 } from "lucide-react";
+import { useLanguage, type StringKey } from "@/lib/i18n";
 
-const ACTIONS = [
-  { label: "Read Bible", href: "/bible", icon: BookOpenText },
-  { label: "Devotion", href: "/devotion", icon: Sun },
-  { label: "Prayer List", href: "/prayer", icon: HandHeart },
-  { label: "Notes", href: "/notes", icon: NotebookPen },
-  { label: "Testimony", href: "/testimony", icon: Sparkles },
-  { label: "Journey", href: "/journey", icon: Compass },
-  { label: "Teaching Recap", href: "/teaching", icon: GraduationCap },
-  { label: "Presentations", href: "/presentations", icon: PresentationIcon },
-  { label: "Meetings", href: "/meetings", icon: Video },
+const ACTIONS: { label: StringKey; href: string; icon: typeof Sun }[] = [
+  { label: "qa.readBible", href: "/bible", icon: BookOpenText },
+  { label: "qa.devotion", href: "/devotion", icon: Sun },
+  { label: "qa.prayerList", href: "/prayer", icon: HandHeart },
+  { label: "qa.notes", href: "/notes", icon: NotebookPen },
+  { label: "qa.testimony", href: "/testimony", icon: Sparkles },
+  { label: "qa.journey", href: "/journey", icon: Compass },
+  { label: "qa.teaching", href: "/teaching", icon: GraduationCap },
+  { label: "qa.presentations", href: "/presentations", icon: PresentationIcon },
+  { label: "qa.meetings", href: "/meetings", icon: Video },
 ];
 
 export function QuickActions() {
+  const { t } = useLanguage();
   return (
     <div className="grid grid-cols-3 gap-3">
       {ACTIONS.map((a, i) => (
@@ -45,7 +47,7 @@ export function QuickActions() {
               <a.icon className="size-4.5" />
             </span>
             <span className="text-[11px] font-medium leading-tight text-foreground/90">
-              {a.label}
+              {t(a.label)}
             </span>
           </Link>
         </motion.div>

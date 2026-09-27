@@ -12,6 +12,7 @@ import { useUserCollection } from "@/lib/hooks/use-collection";
 import { useProfile } from "@/lib/hooks/use-profile";
 import { cn } from "@/lib/utils";
 import type { PrayerCategory, PrayerRequest } from "@/types";
+import { useLanguage } from "@/lib/i18n";
 
 const CATEGORIES: (PrayerCategory | "All")[] = [
   "All",
@@ -25,6 +26,7 @@ const CATEGORIES: (PrayerCategory | "All")[] = [
 ];
 
 function PrayerPageInner() {
+  const { t } = useLanguage();
   const searchParams = useSearchParams();
   const [dialogOpen, setDialogOpen] = useState(searchParams.get("new") === "1");
   const [filter, setFilter] = useState<PrayerCategory | "All">("All");
@@ -44,7 +46,7 @@ function PrayerPageInner() {
   return (
     <div>
       <PageHeader
-        title="Prayer"
+        title={t("page.prayer")}
         subtitle={`${items.length} total · ${totalAnswered} answered`}
         icon={HandHeart}
         action={

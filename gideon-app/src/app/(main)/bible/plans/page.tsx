@@ -7,6 +7,7 @@ import { Progress } from "@/components/ui/progress";
 import { READING_PLANS } from "@/lib/bible/plans";
 import { useReadingPlanProgress } from "@/lib/hooks/use-reading-plan";
 import { useProfile } from "@/lib/hooks/use-profile";
+import { useLanguage } from "@/lib/i18n";
 
 function PlanCard({ plan }: { plan: (typeof READING_PLANS)[number] }) {
   const { progress } = useReadingPlanProgress(plan.id);
@@ -39,9 +40,10 @@ function PlanCard({ plan }: { plan: (typeof READING_PLANS)[number] }) {
 }
 
 export default function PlansPage() {
+  const { t } = useLanguage();
   return (
     <div>
-      <PageHeader title="Reading Plans" icon={CalendarCheck2} back />
+      <PageHeader title={t("page.plans")} icon={CalendarCheck2} back />
       <div className="space-y-3 px-5">
         {READING_PLANS.map((plan) => (
           <PlanCard key={plan.id} plan={plan} />

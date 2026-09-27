@@ -10,8 +10,10 @@ import { GrowthAnalytics } from "@/components/journey/growth-analytics";
 import { Section } from "@/components/shared/section";
 import { useUserCollection } from "@/lib/hooks/use-collection";
 import type { JourneyMilestone } from "@/types";
+import { useLanguage } from "@/lib/i18n";
 
 export default function JourneyPage() {
+  const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   const { items, loading, add, remove } = useUserCollection<JourneyMilestone>(
     "journeyMilestones",
@@ -21,7 +23,7 @@ export default function JourneyPage() {
   return (
     <div>
       <PageHeader
-        title="Spiritual Journey"
+        title={t("page.journey")}
         subtitle={`${items.length} milestones`}
         icon={Compass}
         action={

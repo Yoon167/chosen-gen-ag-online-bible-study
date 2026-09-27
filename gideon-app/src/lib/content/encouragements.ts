@@ -31,11 +31,45 @@ export const DAILY_ENCOURAGEMENTS = [
   "Take heart — the One who called you is faithful, and He will do it.",
 ];
 
-export function encouragementOfTheDay(date = new Date()) {
+export const DAILY_ENCOURAGEMENTS_TL = [
+  "May isinusulat na kuwento ang Diyos sa pamamagitan mo na ikaw lang ang makapagsasalaysay. Magtiwala sa May-akda.",
+  "Ang bawat maliit na pagsunod ngayon ay binhi para sa tagumpay bukas.",
+  "Hindi mo kailangang malaman ang lahat — kailangan mo lang gawin ang susunod na tapat na hakbang.",
+  "Bago ang Kanyang mga kahabagan ngayong umaga, ginawa para sa iyo.",
+  "Ang Diyos na nagpatahimik sa bagyo ay kasama mong lumalakad sa gitna ng bagyo mo.",
+  "Hindi nasasayang ang iyong mga panalangin, kahit ang mga naghihintay pa ng sagot.",
+  "Hindi ka nahuhuli. Nandiyan ka mismo kung saan ka dinala ng biyaya.",
+  "Magpahinga ngayon, alam na mas mahigpit ang hawak Niya sa iyo kaysa sa hawak mo sa Kanya.",
+  "Ang maliit na pananampalataya sa isang dakilang Diyos ay nakapagpapagalaw pa rin ng bundok.",
+  "Lubos kang kilala at lubos kang minamahal, kung nasaan ka man ngayon.",
+  "Hindi napapagod ang Panginoon sa iyong mga panalangin — nagagalak Siya sa mga ito.",
+  "Ang araw na ito ay bagong pahina. Isulat mo ito kasama Niya.",
+  "Hindi ka nilikha para pasanin ito nang mag-isa — malapit Siya.",
+  "Gawing panalangin ngayon ang mga alalahanin mo ngayon.",
+  "Mas mahalaga kaysa sa inaakala mo ang iyong katapatan sa tahimik na sandali.",
+  "Ang nagsimula ng mabuting gawa sa iyo ay tatapusin ito.",
+  "Walang lambak na napakalalim na hindi maaabot ng Kanyang pag-ibig.",
+  "Patuloy na magpakita. Ang katapatan ay nabubuo isang ordinaryong araw sa bawat pagkakataon.",
+  "Isa kang obra maestra na ginagawa pa — maging matiyaga sa proseso.",
+  "Maaaring magkasabay ang kagalakan at mahirap na panahon. Hayaang salubungin ka Niya sa pareho.",
+  "Ang kapangyarihang bumuhay kay Jesus mula sa patay ay nananahan sa iyo.",
+  "Isinusulat pa ang kuwento ng iyong pagtubos — patuloy na lumakad.",
+  "Hindi Siya nagugulat sa hinaharap mo ngayon.",
+  "Hayaang ang pasasalamat ang maging unang panalangin mo ngayong umaga.",
+  "Nakikita ka, pinili ka, at hindi ka kailanman nakakalimutan.",
+  "Kahit sa katahimikan, kumikilos ang Diyos para sa iyo.",
+  "Ang pagsunod ngayon ay patotoo bukas.",
+  "Sumandal sa komunidad — hindi ka nilikha para lumakad nang mag-isa.",
+  "Mabuti ang Kanyang mga plano para sa iyo, kahit tila malabo ang daan.",
+  "Lakasan ang loob — tapat ang tumawag sa iyo, at gagawin Niya ito.",
+];
+
+export function encouragementOfTheDay(date = new Date(), lang: "en" | "tl" = "en") {
   const start = Date.UTC(date.getUTCFullYear(), 0, 0);
   const diff =
     Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()) -
     start;
   const dayOfYear = Math.floor(diff / 86400000);
-  return DAILY_ENCOURAGEMENTS[dayOfYear % DAILY_ENCOURAGEMENTS.length];
+  const pool = lang === "tl" ? DAILY_ENCOURAGEMENTS_TL : DAILY_ENCOURAGEMENTS;
+  return pool[dayOfYear % pool.length];
 }

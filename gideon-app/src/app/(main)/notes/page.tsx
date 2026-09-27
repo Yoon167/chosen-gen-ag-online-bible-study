@@ -12,6 +12,7 @@ import { useUserCollection } from "@/lib/hooks/use-collection";
 import { exportNoteAsText } from "@/lib/export-note";
 import { cn } from "@/lib/utils";
 import type { NoteCategory, SpiritualNote } from "@/types";
+import { useLanguage } from "@/lib/i18n";
 
 const CATEGORIES: (NoteCategory | "All")[] = [
   "All",
@@ -23,6 +24,7 @@ const CATEGORIES: (NoteCategory | "All")[] = [
 ];
 
 function NotesPageInner() {
+  const { t } = useLanguage();
   const searchParams = useSearchParams();
   const [dialogOpen, setDialogOpen] = useState(searchParams.get("new") === "1");
   const [editing, setEditing] = useState<(SpiritualNote & { id: string }) | null>(null);
@@ -52,7 +54,7 @@ function NotesPageInner() {
   return (
     <div>
       <PageHeader
-        title="Spiritual Notes"
+        title={t("page.notes")}
         subtitle={`${items.length} notes`}
         icon={NotebookPen}
         action={

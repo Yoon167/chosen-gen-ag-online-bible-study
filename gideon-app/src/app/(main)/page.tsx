@@ -11,18 +11,21 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { Section } from "@/components/shared/section";
 import { useProfile } from "@/lib/hooks/use-profile";
 import { encouragementOfTheDay } from "@/lib/content/encouragements";
+import { LanguageToggle } from "@/components/language-toggle";
+import { useLanguage, type StringKey } from "@/lib/i18n";
 
-function greeting() {
+function greetingKey(): StringKey {
   const hour = new Date().getHours();
-  if (hour < 12) return "Good morning";
-  if (hour < 18) return "Good afternoon";
-  return "Good evening";
+  if (hour < 12) return "home.morning";
+  if (hour < 18) return "home.afternoon";
+  return "home.evening";
 }
 
 export default function HomePage() {
   const { profile } = useProfile();
-  const encouragement = encouragementOfTheDay();
-  const today = new Date().toLocaleDateString(undefined, {
+  const { lang, t } = useLanguage();
+  const encouragement = encouragementOfTheDay(new Date(), lang);
+  const today = new Date().toLocaleDateString(lang === "tl" ? "fil-PH" : undefined, {
     weekday: "long",
     month: "long",
     day: "numeric",
@@ -46,14 +49,17 @@ export default function HomePage() {
           <div>
             <p className="text-xs text-white/70">{today}</p>
             <h1 className="font-heading text-2xl font-semibold tracking-tight text-white">
-              {greeting()}, {profile?.displayName ?? "Beloved"}
+              {t(greetingKey())}, {profile?.displayName ?? "Beloved"}
             </h1>
             <p className="mt-1 text-[11px] text-white/60">
-              Strengthening Faith. Growing Disciples. Living the Word.
+              {t("home.tagline")}
             </p>
           </div>
-          <div className="rounded-full bg-white/90 px-3 py-1.5 backdrop-blur-sm shadow-sm">
-            <ThemeToggle />
+          <div className="flex flex-col items-end gap-2">
+            <div className="rounded-full bg-white/90 px-3 py-1.5 backdrop-blur-sm shadow-sm">
+              <ThemeToggle />
+            </div>
+            <LanguageToggle className="bg-white/90 text-foreground" />
           </div>
         </header>
 
@@ -69,7 +75,7 @@ export default function HomePage() {
           </span>
           <div>
             <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              Daily Encouragement
+              {t("home.encouragement")}
             </p>
             <p className="mt-1 text-sm leading-relaxed text-foreground/90">
               {encouragement}
@@ -82,15 +88,15 @@ export default function HomePage() {
         <StreakCards />
       </div>
 
-      <Section title="Reading Plan">
+      <Section title={t("home.readingPlan")}>
         <PlanProgressCard />
       </Section>
 
-      <Section title="Upcoming Church Events" href="/meetings" hrefLabel="Meeting Center">
+      <Section title={t("home.events")} href="/meetings" hrefLabel={t("home.meetingCenter")}>
         <UpcomingEventCard />
       </Section>
 
-      <Section title="Quick Actions">
+      <Section title={t("home.quickActions")}>
         <QuickActions />
       </Section>
     </div>

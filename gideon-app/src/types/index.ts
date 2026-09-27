@@ -181,6 +181,7 @@ export type MemberRole = "member" | "leader";
 export interface UserProfile {
   uid: string;
   role?: MemberRole;
+  language?: "en" | "tl";
   displayName: string;
   ministry?: string;
   bio?: string;

@@ -14,6 +14,7 @@ import {
   Download,
   Cloud,
   Users,
+  Languages,
 } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Switch } from "@/components/ui/switch";
@@ -35,9 +36,12 @@ import { useAuth } from "@/lib/hooks/use-auth";
 import { findPlan } from "@/lib/bible/plans";
 import type { JourneyMilestone } from "@/types";
 import Link from "next/link";
+import { LanguageToggle } from "@/components/language-toggle";
+import { useLanguage } from "@/lib/i18n";
 
 export default function ProfilePage() {
   const { profile, updateProfile, isLeader } = useProfile();
+  const { t } = useLanguage();
   const { items: milestones } = useUserCollection<JourneyMilestone>("journeyMilestones");
   const activePlan = findPlan(profile?.activePlanId ?? "one-year-bible");
   const { progress: planProgress } = useReadingPlanProgress(activePlan?.id ?? "one-year-bible");
@@ -73,7 +77,7 @@ export default function ProfilePage() {
             {profile?.displayName ?? "Beloved"}
           </h1>
           <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
-            {isLeader ? "Leader" : "Member"} · AG
+            {isLeader ? t("profile.leader") : t("profile.member")} · AG
           </p>
           {profile?.ministry && (
             <p className="text-xs text-muted-foreground">{profile.ministry}</p>
@@ -87,11 +91,11 @@ export default function ProfilePage() {
           className="flex items-center gap-1.5 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium"
         >
           <Pencil className="size-3" />
-          Edit Profile
+          {t("profile.edit")}
         </button>
       </header>
 
-      <Section title="Spiritual Progress">
+      <Section title={t("profile.progress")}>
         <div className="grid grid-cols-2 gap-3">
           <StatCard icon={BookOpenText} label="Reading Streak" value={profile?.readingStreak ?? 0} />
           <StatCard icon={HandHeart} label="Prayer Streak" value={profile?.prayerStreak ?? 0} />
@@ -100,8 +104,11 @@ export default function ProfilePage() {
         </div>
       </Section>
 
-      <Section title="Settings" className="mt-6 pb-10">
+      <Section title={t("profile.settings")} className="mt-6 pb-10">
         <div className="divide-y divide-border rounded-2xl border border-border/70 bg-card">
+          <SettingRow icon={Languages} label={t("profile.language")}>
+            <LanguageToggle />
+          </SettingRow>
           <SettingRow icon={UserRound} label="Dark Mode">
             <ThemeToggle />
           </SettingRow>

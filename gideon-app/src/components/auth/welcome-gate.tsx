@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useProfile } from "@/lib/hooks/use-profile";
+import { LanguageToggle } from "@/components/language-toggle";
 
 export function WelcomeGate({ children }: { children: React.ReactNode }) {
   const { profile, loading, authError, updateProfile } = useProfile();
@@ -28,7 +29,8 @@ export function WelcomeGate({ children }: { children: React.ReactNode }) {
 
   if (!isOnboarded) {
     return (
-      <div className="flex min-h-screen flex-col items-center justify-center gap-6 px-6 text-center safe-top safe-bottom">
+      <div className="relative flex min-h-screen flex-col items-center justify-center gap-6 px-6 text-center safe-top safe-bottom">
+        <LanguageToggle className="absolute right-4 top-4" />
         <Image src="/icon.png" alt="GIDEON" width={72} height={72} className="rounded-2xl" />
         <div>
           <h1 className="font-heading text-2xl font-semibold">Welcome to GIDEON</h1>

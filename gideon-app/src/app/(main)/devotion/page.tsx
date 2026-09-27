@@ -10,18 +10,21 @@ import { Button } from "@/components/ui/button";
 import { devotionOfTheDay, type StaticDevotion } from "@/lib/content/devotions";
 import { useDevotionLog, useDevotionHistory } from "@/lib/hooks/use-devotion-log";
 import { cn } from "@/lib/utils";
+import { LanguageToggle } from "@/components/language-toggle";
+import { useLanguage } from "@/lib/i18n";
 
 export default function DevotionPage() {
   const [today, setToday] = useState<{ devotion: StaticDevotion; dateKey: string } | null>(null);
+  const { lang, t } = useLanguage();
 
   useEffect(() => {
-    setToday(devotionOfTheDay());
-  }, []);
+    setToday(devotionOfTheDay(new Date(), lang));
+  }, [lang]);
 
   if (!today) {
     return (
       <div>
-        <PageHeader title="Daily Devotion" icon={Sun} />
+        <PageHeader title={t("devotion.title")} icon={Sun} />
         <div className="space-y-3 px-5">
           <Skeleton className="h-48 w-full rounded-2xl" />
         </div>
@@ -35,6 +38,7 @@ export default function DevotionPage() {
 function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; dateKey: string }) {
   const { entry, update } = useDevotionLog(dateKey, devotion.title);
   const { items: history } = useDevotionHistory();
+  const { t } = useLanguage();
   const [noteDraft, setNoteDraft] = useState("");
   const [noteDirty, setNoteDirty] = useState(false);
 
@@ -53,7 +57,12 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
 
   return (
     <div>
-      <PageHeader title="Daily Devotion" subtitle={dateKey} icon={Sun} />
+      <PageHeader
+        title={t("devotion.title")}
+        subtitle={dateKey}
+        icon={Sun}
+        action={<LanguageToggle />}
+      />
 
       <div className="px-5">
         <div className="gradient-card rounded-3xl border border-border/70 p-5">
@@ -65,14 +74,14 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
           <div className="mt-4 space-y-4 text-sm leading-relaxed">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                Main Lesson
+                {t("devotion.mainLesson")}
               </p>
               <p className="mt-1 text-foreground/90">{devotion.mainLesson}</p>
             </div>
 
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                Reflection Questions
+                {t("devotion.reflection")}
               </p>
               <ul className="mt-1.5 space-y-1.5">
                 {devotion.reflectionQuestions.map((q) => (
@@ -86,14 +95,14 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
 
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                Application
+                {t("devotion.application")}
               </p>
               <p className="mt-1 text-foreground/90">{devotion.application}</p>
             </div>
 
             <div className="rounded-xl bg-primary/5 p-3.5">
               <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                Closing Prayer
+                {t("devotion.prayer")}
               </p>
               <p className="mt-1 italic text-foreground/90">{devotion.closingPrayer}</p>
             </div>
@@ -110,7 +119,7 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
               )}
             >
               {entry?.completed ? <Check className="size-3.5" /> : <RotateCcw className="size-3.5" />}
-              {entry?.completed ? "Completed" : "Mark Complete"}
+              {entry?.completed ? t("devotion.completed") : t("devotion.markComplete")}
             </button>
             <button
               onClick={() => update({ favorited: !entry?.favorited })}
@@ -133,14 +142,14 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
         </div>
       </div>
 
-      <Section title="Your Notes" className="mt-5">
+      <Section title={t("devotion.yourNotes")} className="mt-5">
         <Textarea
           value={noteDraft}
           onChange={(e) => {
             setNoteDraft(e.target.value);
             setNoteDirty(true);
           }}
-          placeholder="Write what stood out to you today..."
+          placeholder={t("devotion.notePlaceholder")}
           className="min-h-24"
         />
         {noteDirty && (
@@ -152,13 +161,13 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
               setNoteDirty(false);
             }}
           >
-            Save Note
+            {t("devotion.saveNote")}
           </Button>
         )}
       </Section>
 
       {history.length > 0 && (
-        <Section title="Recent Devotions" href="/devotion/history" className="mt-6 pb-8">
+        <Section title={t("devotion.recent")} href="/devotion/history" className="mt-6 pb-8">
           <div className="space-y-2">
             {history.slice(0, 5).map((h) => (
               <div

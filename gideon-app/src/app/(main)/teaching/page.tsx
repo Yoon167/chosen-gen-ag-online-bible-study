@@ -15,8 +15,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useTopics, useUserCollection } from "@/lib/hooks/use-collection";
 import { cn } from "@/lib/utils";
 import type { TeachingRecap, Topic } from "@/types";
+import { useLanguage } from "@/lib/i18n";
 
 export default function TeachingPage() {
+  const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   const [editing, setEditing] = useState<(TeachingRecap & { id: string }) | null>(null);
   const [search, setSearch] = useState("");
@@ -59,7 +61,7 @@ export default function TeachingPage() {
   return (
     <div>
       <PageHeader
-        title="Teaching Recap"
+        title={t("page.teaching")}
         subtitle={`${church.items.length} church · ${items.length} mine`}
         icon={GraduationCap}
         action={

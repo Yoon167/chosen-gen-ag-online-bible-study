@@ -10,8 +10,10 @@ import { MeetingCard, meetingStatus } from "@/components/meetings/meeting-card";
 import { useUserCollection } from "@/lib/hooks/use-collection";
 import { getChurchBibleStudyMeetings } from "@/lib/content/church-meetings";
 import type { MeetingItem } from "@/types";
+import { useLanguage } from "@/lib/i18n";
 
 export default function MeetingsPage() {
+  const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   const [now, setNow] = useState(() => Date.now());
   const { items, loading, add, remove } = useUserCollection<MeetingItem>(
@@ -43,7 +45,7 @@ export default function MeetingsPage() {
   return (
     <div>
       <PageHeader
-        title="Meeting Center"
+        title={t("page.meetings")}
         subtitle="Zoom, Teams, and Google Meet links in one place"
         icon={Video}
         action={

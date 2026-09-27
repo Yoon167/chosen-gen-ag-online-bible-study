@@ -7,8 +7,10 @@ import { EmptyState } from "@/components/shared/empty-state";
 import { Input } from "@/components/ui/input";
 import { PresentationCard } from "@/components/presentations/presentation-card";
 import { useTopics } from "@/lib/hooks/use-collection";
+import { useLanguage } from "@/lib/i18n";
 
 export default function PresentationsPage() {
+  const { t } = useLanguage();
   const [search, setSearch] = useState("");
   const { items, loading } = useTopics();
 
@@ -25,7 +27,7 @@ export default function PresentationsPage() {
   return (
     <div>
       <PageHeader
-        title="Teaching Library"
+        title={t("page.presentations")}
         subtitle={`${items.length} teachings with slides`}
         icon={PresentationIcon}
       />

@@ -11,8 +11,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useUserCollection } from "@/lib/hooks/use-collection";
 import { useCommunityTestimonies } from "@/lib/hooks/use-community-testimonies";
 import type { Testimony } from "@/types";
+import { useLanguage } from "@/lib/i18n";
 
 function TestimonyPageInner() {
+  const { t } = useLanguage();
   const router = useRouter();
   const searchParams = useSearchParams();
   const { items, loading } = useUserCollection<Testimony>("testimonies");
@@ -25,7 +27,7 @@ function TestimonyPageInner() {
   return (
     <div>
       <PageHeader
-        title="Testimony"
+        title={t("page.testimony")}
         subtitle="Stories of God's faithfulness"
         icon={Sparkles}
         action={

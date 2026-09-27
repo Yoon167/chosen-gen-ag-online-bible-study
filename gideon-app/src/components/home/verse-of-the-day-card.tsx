@@ -7,21 +7,29 @@ import { Skeleton } from "@/components/ui/skeleton";
 import {
   cleanVerseText,
   fetchPassage,
+  TAGALOG_TRANSLATION,
   verseOfTheDayReference,
 } from "@/lib/bible/api";
+import { useLanguage } from "@/lib/i18n";
 
 export function VerseOfTheDayCard() {
   const [text, setText] = useState<string | null>(null);
   const [reference, setReference] = useState(verseOfTheDayReference());
   const [error, setError] = useState(false);
+  const { lang, t } = useLanguage();
 
   useEffect(() => {
     const ref = verseOfTheDayReference();
+    setText(null);
+    setError(false);
     setReference(ref);
-    fetchPassage(ref)
-      .then((res) => setText(cleanVerseText(res.text)))
+    fetchPassage(ref, lang === "tl" ? TAGALOG_TRANSLATION : undefined)
+      .then((res) => {
+        setText(cleanVerseText(res.text));
+        setReference(res.reference);
+      })
       .catch(() => setError(true));
-  }, []);
+  }, [lang]);
 
   async function share() {
     const shareText = `"${text}" — ${reference} (GIDEON)`;
@@ -44,7 +52,7 @@ export function VerseOfTheDayCard() {
 
       <div className="relative flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-primary-foreground/70">
         <BookOpenText className="size-3.5" />
-        Verse of the Day
+        {t("home.verseOfDay")}
       </div>
 
       <div className="relative mt-3 min-h-20">

@@ -5,17 +5,19 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Home, BookOpenText, HandHeart, Compass, UserRound } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage, type StringKey } from "@/lib/i18n";
 
-const NAV_ITEMS = [
-  { href: "/", label: "Home", icon: Home },
-  { href: "/bible", label: "Bible", icon: BookOpenText },
-  { href: "/prayer", label: "Prayer", icon: HandHeart },
-  { href: "/journey", label: "Journey", icon: Compass },
-  { href: "/profile", label: "Profile", icon: UserRound },
+const NAV_ITEMS: { href: string; label: StringKey; icon: typeof Home }[] = [
+  { href: "/", label: "nav.home", icon: Home },
+  { href: "/bible", label: "nav.bible", icon: BookOpenText },
+  { href: "/prayer", label: "nav.prayer", icon: HandHeart },
+  { href: "/journey", label: "nav.journey", icon: Compass },
+  { href: "/profile", label: "nav.profile", icon: UserRound },
 ];
 
 export function BottomNav() {
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-40 safe-bottom border-t border-border/70 bg-card/85 backdrop-blur-xl">
@@ -49,7 +51,7 @@ export function BottomNav() {
                     active ? "text-primary" : "text-muted-foreground"
                   )}
                 >
-                  {label}
+                  {t(label)}
                 </span>
               </Link>
             </li>

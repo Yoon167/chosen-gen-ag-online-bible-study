@@ -9,6 +9,7 @@ import {
   cleanVerseText,
   BIBLE_TRANSLATIONS,
   DEFAULT_TRANSLATION,
+  TAGALOG_TRANSLATION,
   type BibleApiVerse,
 } from "@/lib/bible/api";
 import { useUserCollection } from "@/lib/hooks/use-collection";
@@ -20,6 +21,7 @@ import {
 } from "@/components/bible/verse-action-drawer";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/lib/i18n";
 import type { BibleBookmark, BibleHighlight, BibleVerseNote } from "@/types";
 
 export function ChapterReaderClient() {
@@ -35,7 +37,11 @@ export function ChapterReaderClient() {
 
   const recordHistory = useRecordBibleHistory();
   const { profile, markReadingDone, updateProfile } = useProfile();
-  const translation = profile?.bibleTranslation ?? DEFAULT_TRANSLATION;
+  const { lang } = useLanguage();
+  // Members who never picked a version get the Bible in their app language.
+  const translation =
+    profile?.bibleTranslation ?? (lang === "tl" ? TAGALOG_TRANSLATION : DEFAULT_TRANSLATION);
+  const isTagalog = translation === TAGALOG_TRANSLATION;
 
   const highlights = useUserCollection<BibleHighlight>("bibleHighlights");
   const bookmarks = useUserCollection<BibleBookmark>("bibleBookmarks");
@@ -127,7 +133,7 @@ export function ChapterReaderClient() {
         </button>
         <div className="flex-1 text-center">
           <p className="font-heading text-base font-semibold">
-            {book.name} {chapter}
+            {(isTagalog && verses?.[0]?.book_name) || book.name} {chapter}
           </p>
           <select
             value={translation}
@@ -142,9 +148,16 @@ export function ChapterReaderClient() {
             ))}
           </select>
         </div>
-        <span className="flex size-9 items-center justify-center rounded-full bg-primary/10 text-primary">
-          <BookOpenText className="size-4" />
-        </span>
+        <button
+          onClick={() =>
+            updateProfile({ bibleTranslation: isTagalog ? DEFAULT_TRANSLATION : TAGALOG_TRANSLATION })
+          }
+          aria-label={isTagalog ? "Switch to English Bible" : "Switch to Tagalog Bible"}
+          className="flex h-9 shrink-0 items-center gap-1 rounded-full bg-primary/10 px-2.5 text-[11px] font-semibold text-primary"
+        >
+          <BookOpenText className="size-3.5" />
+          {isTagalog ? "EN" : "TL"}
+        </button>
       </header>
 
       <div className="px-5 py-5">
