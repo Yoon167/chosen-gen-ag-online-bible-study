@@ -6,9 +6,13 @@ export function PwaRegister() {
   useEffect(() => {
     if (!("serviceWorker" in navigator)) return;
 
+    // Reload only when an update replaces an existing worker. On the first
+    // install there's nothing stale to replace, and reloading then would
+    // restart the app mid-intro.
+    const hadController = !!navigator.serviceWorker.controller;
     let hasReloaded = false;
     navigator.serviceWorker.addEventListener("controllerchange", () => {
-      if (hasReloaded) return;
+      if (!hadController || hasReloaded) return;
       hasReloaded = true;
       window.location.reload();
     });

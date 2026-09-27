@@ -1,4 +1,4 @@
-const CACHE_NAME = "gideon-cache-v1";
+const CACHE_NAME = "gideon-cache-v2";
 
 self.addEventListener("install", () => {
   self.skipWaiting();
@@ -17,6 +17,10 @@ self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
   const url = new URL(event.request.url);
+  // Leave Firebase (Firestore's live stream, auth), fonts and other
+  // cross-origin traffic alone: intercepting and caching those streams makes
+  // the installed app sluggish.
+  if (url.origin !== self.location.origin) return;
   const isImmutableAsset =
     url.pathname.startsWith("/_next/static/") || url.pathname.startsWith("/icons/");
 
@@ -27,8 +31,10 @@ self.addEventListener("fetch", (event) => {
       caches.match(event.request).then((cached) => {
         if (cached) return cached;
         return fetch(event.request).then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          if (response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          }
           return response;
         });
       })
@@ -36,13 +42,20 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Network-first for pages/data so a new deploy shows up immediately;
-  // fall back to the cache only when offline.
+  // Only page loads are cached (for offline use). Route prefetches and other
+  // requests go straight to the network so scrolling doesn't trigger a
+  // stream of cache writes.
+  if (event.request.mode !== "navigate") return;
+
+  // Network-first so a new deploy shows up immediately; fall back to the
+  // cache only when offline.
   event.respondWith(
     fetch(event.request)
       .then((response) => {
-        const copy = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        if (response.ok) {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        }
         return response;
       })
       .catch(() => caches.match(event.request))
