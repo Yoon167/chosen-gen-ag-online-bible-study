@@ -19,7 +19,7 @@ const DEFAULT_PROFILE: Omit<UserProfile, "uid"> = {
 };
 
 export function useProfile() {
-  const { uid, loading: authLoading, error: authError } = useAuth();
+  const { user, uid, loading: authLoading, error: authError } = useAuth();
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -33,6 +33,11 @@ export function useProfile() {
       ref,
       async (snap) => {
         if (!snap.exists()) {
+          // The local cache can report "missing" just because this device
+          // hasn't synced the profile yet (e.g. right after signing into an
+          // account). Only create a default profile once the server confirms
+          // it doesn't exist, so an existing profile is never overwritten.
+          if (snap.metadata.fromCache) return;
           const fresh = { uid, ...DEFAULT_PROFILE };
           await setDoc(ref, fresh, { merge: true });
           setProfile(fresh);
@@ -67,6 +72,8 @@ export function useProfile() {
 
   return {
     profile,
+    // Signed into a real (email) account rather than an anonymous session.
+    hasAccount: !!user && !user.isAnonymous,
     loading: loading || authLoading,
     authError,
     isLeader: profile?.role === "leader",

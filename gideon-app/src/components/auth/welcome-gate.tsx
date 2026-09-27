@@ -49,7 +49,7 @@ export function WelcomeGate({ children }: { children: React.ReactNode }) {
 }
 
 function Gate({ children }: { children: React.ReactNode }) {
-  const { profile, loading, authError, updateProfile } = useProfile();
+  const { profile, loading, authError, updateProfile, hasAccount } = useProfile();
   const [name, setName] = useState("");
   const [ministry, setMinistry] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -70,7 +70,10 @@ function Gate({ children }: { children: React.ReactNode }) {
   // Anyone who already picked a name in a previous session (before this
   // gate existed) counts as onboarded too, so returning members are never
   // interrupted by this screen.
-  const isOnboarded = profile?.onboarded || (!!profile?.displayName && profile.displayName !== "Beloved");
+  // Signing into a backed-up account also counts, even if that account never
+  // set a name.
+  const isOnboarded =
+    hasAccount || profile?.onboarded || (!!profile?.displayName && profile.displayName !== "Beloved");
 
   if (!isOnboarded) {
     return (
