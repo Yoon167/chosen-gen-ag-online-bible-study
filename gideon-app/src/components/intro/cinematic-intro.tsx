@@ -154,15 +154,21 @@ const GRASS = Array.from({ length: 150 }, (_, i) => {
   return {
     d: `M${x - 3.5} 300 Q${x + lean * 0.3} ${300 - h / 2} ${x + lean} ${300 - h} Q${x + lean * 0.3 + 2} ${300 - h / 2} ${x + 3.5} 300 Z`,
     fill: hue > 0.75 ? "#b9b25a" : hue > 0.4 ? "#5f8f34" : "#3f6d22",
-    duration: 2.6 + rand() * 2.2,
-    delay: -rand() * 4,
   };
 });
+
+// Animating 150 SVG paths one by one repaints every frame, so the blades are
+// split into a few layers that each sway as a whole on the compositor.
+const GRASS_LAYERS = [
+  { duration: 3.4, delay: 0 },
+  { duration: 4.3, delay: -1.5 },
+  { duration: 5.1, delay: -3 },
+].map((motion, k) => ({ ...motion, blades: GRASS.filter((_, i) => i % 3 === k) }));
 
 const PARTICLES = Array.from({ length: 26 }, () => ({
   x: 20 + rand() * 60,
   y: 30 + rand() * 60,
-  size: 2 + rand() * 3,
+  size: 4 + rand() * 6,
   duration: 3 + rand() * 3,
   delay: -rand() * 5,
 }));
@@ -171,7 +177,7 @@ const BOKEH = Array.from({ length: 18 }, () => ({
   x: rand() * 100,
   y: rand() * 100,
   size: 40 + rand() * 120,
-  color: rand() > 0.5 ? "rgba(255,206,120,0.35)" : "rgba(255,240,210,0.22)",
+  color: rand() > 0.5 ? "rgba(255,206,120,0.4)" : "rgba(255,240,210,0.26)",
   duration: 5 + rand() * 4,
   delay: -rand() * 6,
 }));
@@ -180,6 +186,12 @@ const GRAIN =
   "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")";
 
 const SHADOW = "0 2px 18px rgba(0,0,0,0.55)";
+
+// Camera moves run as CSS animations on their own GPU layer, so they stay
+// smooth even while the main thread is busy starting up the app.
+function camera(name: string, seconds: number, ease: string, origin = "50% 50%"): React.CSSProperties {
+  return { animation: `${name} ${seconds}s ${ease} both`, transformOrigin: origin, willChange: "transform" };
+}
 
 function SceneTitle({
   children,
@@ -192,8 +204,8 @@ function SceneTitle({
 }) {
   return (
     <motion.h2
-      initial={{ opacity: 0, y: 18, filter: "blur(8px)" }}
-      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      initial={{ opacity: 0, transform: "translateY(18px)" }}
+      animate={{ opacity: 1, transform: "translateY(0px)" }}
       transition={{ delay, duration: 1.4, ease: "easeOut" }}
       className={`absolute inset-x-0 mx-auto max-w-lg px-6 text-center font-heading text-3xl font-semibold leading-tight tracking-wide text-white sm:text-5xl ${className}`}
       style={{ textShadow: SHADOW }}
@@ -206,8 +218,9 @@ function SceneTitle({
 function Fog({ className, duration }: { className: string; duration: number }) {
   return (
     <div
-      className={`intro-anim absolute left-[-30%] w-[160%] blur-2xl ${className}`}
+      className={`intro-anim absolute left-[-30%] w-[160%] ${className}`}
       style={{
+        willChange: "transform",
         background:
           "radial-gradient(ellipse 30% 50% at 25% 50%, rgba(255,255,255,0.22), transparent 70%), radial-gradient(ellipse 35% 45% at 70% 60%, rgba(255,255,255,0.18), transparent 70%)",
         animation: `intro-drift ${duration}s ease-in-out infinite alternate`,
@@ -219,16 +232,17 @@ function Fog({ className, duration }: { className: string; duration: number }) {
 function Rays({ top, opacity = 1 }: { top: string; opacity?: number }) {
   return (
     <div
-      className="intro-anim pointer-events-none absolute left-1/2 size-[250vmax]"
+      className="intro-anim pointer-events-none absolute left-1/2 size-[140vmax]"
       style={{
         top,
-        marginLeft: "-125vmax",
-        marginTop: "-125vmax",
+        marginLeft: "-70vmax",
+        marginTop: "-70vmax",
         opacity,
+        willChange: "transform",
         background:
           "repeating-conic-gradient(from 0deg, rgba(255,232,170,0.22) 0deg 3deg, transparent 3deg 13deg)",
-        maskImage: "radial-gradient(circle, black 0%, transparent 38%)",
-        WebkitMaskImage: "radial-gradient(circle, black 0%, transparent 38%)",
+        maskImage: "radial-gradient(circle, black 0%, transparent 68%)",
+        WebkitMaskImage: "radial-gradient(circle, black 0%, transparent 68%)",
         animation: "intro-spin 90s linear infinite",
       }}
     />
@@ -242,9 +256,7 @@ function SceneCalling({ tx }: { tx: (t: Text) => string }) {
     <>
       <motion.div
         className="absolute inset-0"
-        initial={{ scale: 1.2, y: 40 }}
-        animate={{ scale: 1.02, y: 0 }}
-        transition={{ duration: 6, ease: "easeOut" }}
+        style={camera("intro-cam-rise", 6, "ease-out")}
       >
         <div
           className="absolute inset-0"
@@ -318,9 +330,7 @@ function SceneStory({ tx }: { tx: (t: Text) => string }) {
     <>
       <motion.div
         className="absolute inset-0"
-        initial={{ scale: 1.08 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 6, ease: "easeOut" }}
+        style={camera("intro-cam-settle", 6, "ease-out")}
       >
         <div
           className="absolute inset-0"
@@ -331,11 +341,9 @@ function SceneStory({ tx }: { tx: (t: Text) => string }) {
         />
         <Rays top="58%" />
         <motion.div
-          className="absolute left-1/2 size-[36vmin] rounded-full"
-          initial={{ top: "62%", opacity: 0.6 }}
-          animate={{ top: "52%", opacity: 1 }}
-          transition={{ duration: 5.5, ease: "easeOut" }}
+          className="absolute left-1/2 top-[52%] size-[36vmin] rounded-full"
           style={{
+            ...camera("intro-sun-rise", 5.5, "ease-out"),
             marginLeft: "-18vmin",
             background:
               "radial-gradient(circle, #fffdf0 0%, #fff0b8 22%, rgba(255,210,120,0.6) 42%, transparent 70%)",
@@ -374,8 +382,8 @@ function SceneStory({ tx }: { tx: (t: Text) => string }) {
         {tx(COPY.story)}
       </SceneTitle>
       <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, transform: "translateY(12px)" }}
+        animate={{ opacity: 1, transform: "translateY(0px)" }}
         transition={{ delay: 1.8, duration: 1.4 }}
         className="absolute inset-x-0 top-[33%] mx-auto max-w-sm px-6 text-center"
         style={{ textShadow: SHADOW }}
@@ -396,10 +404,7 @@ function SceneSees({ tx }: { tx: (t: Text) => string }) {
     <>
       <motion.div
         className="absolute inset-0"
-        initial={{ scale: 1 }}
-        animate={{ scale: 1.16 }}
-        transition={{ duration: 6, ease: "easeInOut" }}
-        style={{ transformOrigin: "50% 58%" }}
+        style={camera("intro-cam-push", 6, "ease-in-out", "50% 58%")}
       >
         <div
           className="absolute inset-0"
@@ -427,24 +432,26 @@ function SceneSees({ tx }: { tx: (t: Text) => string }) {
           className="absolute inset-x-0 bottom-0 h-[40%]"
           style={{ background: "linear-gradient(to bottom, #78a443, #4c7b29 45%, #2c5518)" }}
         />
-        <svg
-          className="absolute inset-x-0 bottom-0 h-[36%] w-full"
-          viewBox="0 0 1000 300"
-          preserveAspectRatio="none"
-        >
-          {GRASS.map((b, i) => (
-            <path
-              key={i}
-              d={b.d}
-              fill={b.fill}
-              className="intro-blade"
-              style={{ animationDuration: `${b.duration}s`, animationDelay: `${b.delay}s` }}
-            />
-          ))}
-        </svg>
+        {GRASS_LAYERS.map((layer, k) => (
+          <div
+            key={k}
+            className="intro-anim absolute inset-x-0 bottom-0 h-[36%]"
+            style={{
+              transformOrigin: "50% 100%",
+              willChange: "transform",
+              animation: `intro-wind ${layer.duration}s ease-in-out ${layer.delay}s infinite`,
+            }}
+          >
+            <svg className="h-full w-full" viewBox="0 0 1000 300" preserveAspectRatio="none">
+              {layer.blades.map((b, i) => (
+                <path key={i} d={b.d} fill={b.fill} />
+              ))}
+            </svg>
+          </div>
+        ))}
         <div
-          className="absolute inset-0 mix-blend-soft-light"
-          style={{ background: "linear-gradient(110deg, transparent 30%, rgba(255,210,130,0.7))" }}
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(110deg, transparent 30%, rgba(255,214,140,0.28))" }}
         />
       </motion.div>
       <SceneTitle delay={0.6} className="top-[18%]">
@@ -475,10 +482,7 @@ function SceneJourney({ tx }: { tx: (t: Text) => string }) {
     <>
       <motion.div
         className="absolute inset-0"
-        initial={{ scale: 1, y: 0 }}
-        animate={{ scale: 1.24, y: [0, -5, 0, -5, 0, -5, 0] }}
-        transition={{ duration: 6, ease: "easeInOut" }}
-        style={{ transformOrigin: "50% 46%" }}
+        style={camera("intro-cam-walk", 6, "ease-in-out", "50% 46%")}
       >
         <div
           className="absolute inset-0"
@@ -522,12 +526,11 @@ function SceneJourney({ tx }: { tx: (t: Text) => string }) {
         {[18, 30, 44, 58, 70].map((left, i) => (
           <div
             key={i}
-            className="intro-anim absolute top-[-15%] h-[120%] w-[7%] mix-blend-screen blur-md"
+            className="intro-anim absolute top-[-15%] h-[120%] w-[9%]"
             style={{
               left: `${left}%`,
               transform: "rotate(-18deg)",
-              background:
-                "linear-gradient(to bottom, rgba(255,245,200,0), rgba(255,240,190,0.4) 45%, rgba(255,240,190,0))",
+              background: "radial-gradient(ellipse 50% 50% at 50% 45%, rgba(255,242,195,0.4), transparent)",
               animation: `intro-shimmer ${3 + i * 0.6}s ease-in-out ${-i}s infinite`,
             }}
           />
@@ -535,12 +538,13 @@ function SceneJourney({ tx }: { tx: (t: Text) => string }) {
         {PARTICLES.map((p, i) => (
           <span
             key={i}
-            className="intro-anim absolute rounded-full bg-amber-50/80 blur-[1px]"
+            className="intro-anim absolute rounded-full"
             style={{
               left: `${p.x}%`,
               top: `${p.y}%`,
               width: p.size,
               height: p.size,
+              background: "radial-gradient(circle, rgba(255,251,235,0.9) 25%, transparent 70%)",
               animation: `intro-float ${p.duration}s ease-in-out ${p.delay}s infinite`,
             }}
           />
@@ -553,8 +557,8 @@ function SceneJourney({ tx }: { tx: (t: Text) => string }) {
         {steps.map((word, i) => (
           <motion.span
             key={word}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, transform: "translateY(10px)" }}
+            animate={{ opacity: 1, transform: "translateY(0px)" }}
             transition={{ delay: 1.6 + i * 0.45, duration: 0.9 }}
             className="text-sm font-semibold uppercase tracking-[0.25em] text-amber-50 sm:text-base"
             style={{ textShadow: SHADOW }}
@@ -569,8 +573,7 @@ function SceneJourney({ tx }: { tx: (t: Text) => string }) {
 
 /* ----------------------------- Scene 5 ----------------------------- */
 
-function ScenePurpose({ tx, local }: { tx: (t: Text) => string; local: number }) {
-  const cut = Math.min(MONTAGE.length - 1, Math.max(0, Math.floor(local)));
+function ScenePurpose({ tx, cut }: { tx: (t: Text) => string; cut: number }) {
   const { icon: Icon, label } = MONTAGE[cut];
   return (
     <>
@@ -581,13 +584,13 @@ function ScenePurpose({ tx, local }: { tx: (t: Text) => string; local: number })
       {BOKEH.map((b, i) => (
         <span
           key={i}
-          className="intro-anim absolute rounded-full blur-xl"
+          className="intro-anim absolute rounded-full"
           style={{
             left: `${b.x}%`,
             top: `${b.y}%`,
             width: b.size,
             height: b.size,
-            background: b.color,
+            background: `radial-gradient(circle, ${b.color} 0%, transparent 70%)`,
             animation: `intro-float ${b.duration}s ease-in-out ${b.delay}s infinite`,
           }}
         />
@@ -597,11 +600,11 @@ function ScenePurpose({ tx, local }: { tx: (t: Text) => string; local: number })
           <AnimatePresence>
             <motion.div
               key={cut}
-              initial={{ opacity: 0, scale: 1.25, filter: "blur(10px)" }}
-              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-              exit={{ opacity: 0, scale: 0.9, filter: "blur(8px)" }}
+              initial={{ opacity: 0, transform: "scale(1.25)" }}
+              animate={{ opacity: 1, transform: "scale(1)" }}
+              exit={{ opacity: 0, transform: "scale(0.9)" }}
               transition={{ duration: 0.55 }}
-              className="absolute inset-0 flex items-center justify-center rounded-full border border-amber-200/50 bg-white/10 backdrop-blur-sm"
+              className="absolute inset-0 flex items-center justify-center rounded-full border border-amber-200/50 bg-white/15"
               style={{ boxShadow: "0 0 60px rgba(255,200,110,0.45), inset 0 0 30px rgba(255,230,180,0.25)" }}
             >
               <Icon className="size-[45%] text-amber-100" strokeWidth={1.4} />
@@ -625,8 +628,8 @@ function ScenePurpose({ tx, local }: { tx: (t: Text) => string; local: number })
         {PURPOSE_LINES.map((line, i) => (
           <motion.p
             key={line.en}
-            initial={{ opacity: 0, y: 14, filter: "blur(6px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, transform: "translateY(14px)" }}
+            animate={{ opacity: 1, transform: "translateY(0px)" }}
             transition={{ delay: 0.4 + i * 1.05, duration: 0.9 }}
             className="font-heading text-2xl font-semibold text-white sm:text-3xl"
             style={{ textShadow: SHADOW }}
@@ -653,11 +656,9 @@ function SceneRevelation({ tx }: { tx: (t: Text) => string }) {
       />
       <Rays top="52%" />
       <motion.div
-        className="absolute left-1/2 size-[44vmin] rounded-full"
-        initial={{ top: "56%" }}
-        animate={{ top: "40%" }}
-        transition={{ duration: 3, ease: "easeOut" }}
+        className="absolute left-1/2 top-[40%] size-[44vmin] rounded-full"
         style={{
+          ...camera("intro-sun-rise-high", 3, "ease-out"),
           marginLeft: "-22vmin",
           background:
             "radial-gradient(circle, #fffef5 0%, #fff0bd 25%, rgba(255,210,120,0.55) 45%, transparent 70%)",
@@ -686,8 +687,8 @@ function SceneRevelation({ tx }: { tx: (t: Text) => string }) {
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 pb-[8vh] text-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, transform: "scale(0.85)" }}
+          animate={{ opacity: 1, transform: "scale(1)" }}
           transition={{ delay: 1.3, duration: 1.4, ease: "easeOut" }}
         >
           <Image
@@ -701,10 +702,10 @@ function SceneRevelation({ tx }: { tx: (t: Text) => string }) {
           />
         </motion.div>
         <motion.h1
-          initial={{ opacity: 0, letterSpacing: "0.6em" }}
-          animate={{ opacity: 1, letterSpacing: "0.28em" }}
+          initial={{ opacity: 0, transform: "scale(1.2)" }}
+          animate={{ opacity: 1, transform: "scale(1)" }}
           transition={{ delay: 1.7, duration: 1.8, ease: "easeOut" }}
-          className="mt-2 pl-[0.28em] font-heading text-5xl font-semibold text-[#3a2608] sm:text-6xl"
+          className="mt-2 pl-[0.28em] tracking-[0.28em] font-heading text-5xl font-semibold text-[#3a2608] sm:text-6xl"
           style={{ textShadow: glow }}
         >
           GIDEON
@@ -726,10 +727,10 @@ function SceneRevelation({ tx }: { tx: (t: Text) => string }) {
           {tx(COPY.tagline)}
         </motion.p>
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, transform: "translateY(10px)" }}
+          animate={{ opacity: 1, transform: "translateY(0px)" }}
           transition={{ delay: 3, duration: 1.2 }}
-          className="mt-4 max-w-sm rounded-2xl border border-white/60 bg-white/40 px-5 py-3 backdrop-blur-sm"
+          className="mt-4 max-w-sm rounded-2xl border border-white/60 bg-white/50 px-5 py-3"
           style={{ boxShadow: "0 0 40px rgba(255,236,190,0.8)" }}
         >
           <p className="font-heading text-sm italic text-[#3a2608] sm:text-base">{tx(COPY.finalVerse)}</p>
@@ -744,10 +745,23 @@ function SceneRevelation({ tx }: { tx: (t: Text) => string }) {
 
 /* ------------------------------ Intro ------------------------------ */
 
+type Timeline = { scene: number; narration: number; cut: number };
+
+// Only these discrete values drive React renders; everything that moves
+// continuously is a CSS/compositor animation, so the intro never re-renders
+// per frame.
+function timelineAt(t: number): Timeline {
+  return {
+    scene: Math.min(5, Math.floor(t / SCENE_LENGTH)),
+    narration: NARRATION.findIndex((n) => t >= n.from && t < n.to),
+    cut: Math.min(MONTAGE.length - 1, Math.max(0, Math.floor(t - 4 * SCENE_LENGTH))),
+  };
+}
+
 export function CinematicIntro({ onDone }: { onDone: () => void }) {
   const { lang } = useLanguage();
   const tx = useCallback((t: Text) => t[lang], [lang]);
-  const [elapsed, setElapsed] = useState(0);
+  const [timeline, setTimeline] = useState<Timeline>(() => timelineAt(0));
   const [soundOn, setSoundOn] = useState(false);
   const elapsedRef = useRef(0);
   const stopScoreRef = useRef<(() => void) | null>(null);
@@ -788,16 +802,24 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
 
   useEffect(() => {
     const start = performance.now();
-    const id = window.setInterval(() => {
+    let raf = 0;
+    const tick = () => {
       const t = (performance.now() - start) / 1000;
       elapsedRef.current = t;
-      setElapsed(t);
       if (t >= INTRO_DURATION) {
-        window.clearInterval(id);
         finish();
+        return;
       }
-    }, 100);
-    return () => window.clearInterval(id);
+      const next = timelineAt(t);
+      setTimeline((prev) =>
+        prev.scene === next.scene && prev.narration === next.narration && prev.cut === next.cut
+          ? prev
+          : next
+      );
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
   }, [finish]);
 
   // Relaxing background music plays automatically. Browsers block audio until
@@ -837,15 +859,15 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
     }
   };
 
-  const scene = Math.min(5, Math.floor(elapsed / SCENE_LENGTH));
-  const narration = NARRATION.find((n) => elapsed >= n.from && elapsed < n.to);
+  const { scene, cut } = timeline;
+  const narration = NARRATION[timeline.narration];
 
   const scenes = [
     <SceneCalling key="calling" tx={tx} />,
     <SceneStory key="story" tx={tx} />,
     <SceneSees key="sees" tx={tx} />,
     <SceneJourney key="journey" tx={tx} />,
-    <ScenePurpose key="purpose" tx={tx} local={elapsed - 4 * SCENE_LENGTH} />,
+    <ScenePurpose key="purpose" tx={tx} cut={cut} />,
     <SceneRevelation key="revelation" tx={tx} />,
   ];
 
@@ -880,24 +902,24 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
         }}
       />
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-overlay"
+        className="pointer-events-none absolute inset-0 opacity-[0.05]"
         style={{ backgroundImage: GRAIN }}
       />
       <motion.div
-        className="pointer-events-none absolute inset-x-0 top-0 bg-black"
-        initial={{ height: 0 }}
-        animate={{ height: "5vh" }}
+        className="pointer-events-none absolute inset-x-0 top-0 h-[5vh] origin-top bg-black"
+        initial={{ transform: "scaleY(0)" }}
+        animate={{ transform: "scaleY(1)" }}
         transition={{ duration: 1.2 }}
       />
       <motion.div
-        className="pointer-events-none absolute inset-x-0 bottom-0 bg-black"
-        initial={{ height: 0 }}
-        animate={{ height: "5vh" }}
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[5vh] origin-bottom bg-black"
+        initial={{ transform: "scaleY(0)" }}
+        animate={{ transform: "scaleY(1)" }}
         transition={{ duration: 1.2 }}
       >
         <div
-          className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-amber-200 to-amber-400"
-          style={{ width: `${Math.min(100, (elapsed / INTRO_DURATION) * 100)}%` }}
+          className="absolute inset-x-0 bottom-0 h-0.5 origin-left bg-gradient-to-r from-amber-200 to-amber-400"
+          style={{ animation: `intro-progress ${INTRO_DURATION}s linear forwards` }}
         />
       </motion.div>
 
@@ -910,12 +932,12 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
           {narration && (
             <motion.p
               key={narration.from}
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, transform: "translateY(6px)" }}
+              animate={{ opacity: 1, transform: "translateY(0px)" }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.6 }}
               aria-live="polite"
-              className="max-w-md rounded-2xl bg-black/35 px-4 py-2 text-center font-heading text-sm italic leading-relaxed text-white/95 backdrop-blur-sm sm:text-base"
+              className="max-w-md rounded-2xl bg-black/45 px-4 py-2 text-center font-heading text-sm italic leading-relaxed text-white/95 sm:text-base"
             >
               {tx(narration.text)}
             </motion.p>
@@ -932,7 +954,7 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
           type="button"
           onClick={toggleSound}
           aria-label={soundOn ? "Mute" : tx(COPY.soundOn)}
-          className="flex items-center gap-1.5 rounded-full border border-white/25 bg-black/30 px-3 py-1.5 text-xs font-medium text-white/90 backdrop-blur-md transition hover:bg-black/45"
+          className="flex items-center gap-1.5 rounded-full border border-white/25 bg-black/40 px-3 py-1.5 text-xs font-medium text-white/90 transition hover:bg-black/45"
         >
           {soundOn ? <Volume2 className="size-4" /> : <VolumeX className="size-4" />}
           {!soundOn && <span>{tx(COPY.soundOn)}</span>}
@@ -940,7 +962,7 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
         <button
           type="button"
           onClick={finish}
-          className="flex items-center gap-1 rounded-full border border-white/25 bg-black/30 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white backdrop-blur-md transition hover:bg-black/45"
+          className="flex items-center gap-1 rounded-full border border-white/25 bg-black/40 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-black/45"
         >
           {tx(COPY.skip)}
           <ChevronsRight className="size-4" />

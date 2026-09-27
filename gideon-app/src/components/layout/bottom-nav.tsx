@@ -20,7 +20,7 @@ export function BottomNav() {
   const { t } = useLanguage();
 
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-40 safe-bottom border-t border-border/70 bg-card/85 backdrop-blur-xl">
+    <nav className="fixed inset-x-0 bottom-0 z-40 safe-bottom border-t border-border/70 bg-card/95">
       <ul className="mx-auto flex max-w-xl items-stretch justify-between px-2">
         {NAV_ITEMS.map(({ href, label, icon: Icon }) => {
           const active =

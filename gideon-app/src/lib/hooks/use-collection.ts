@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import {
   addDoc,
   collection,
@@ -84,23 +84,43 @@ export function useUserCollection<T extends DocumentData>(
  * access — no auth required.
  */
 export function useTopics() {
-  const [items, setItems] = useState<Topic[]>([]);
-  const [loading, setLoading] = useState(true);
+  return useSyncExternalStore(subscribeTopics, getTopics, getTopicsServer);
+}
 
-  useEffect(() => {
+// One shared listener for the whole app, kept alive between pages, so
+// revisiting Presentations or Teaching shows the list immediately instead of
+// starting empty and re-fetching.
+type TopicsState = { items: Topic[]; loading: boolean };
+const TOPICS_INITIAL: TopicsState = { items: [], loading: true };
+let topicsStore = TOPICS_INITIAL;
+const topicsListeners = new Set<() => void>();
+let topicsUnsubscribe: (() => void) | null = null;
+
+const getTopics = () => topicsStore;
+const getTopicsServer = () => TOPICS_INITIAL;
+
+function subscribeTopics(listener: () => void) {
+  topicsListeners.add(listener);
+  if (!topicsUnsubscribe) {
+    const publish = (next: TopicsState) => {
+      topicsStore = next;
+      topicsListeners.forEach((l) => l());
+    };
     const q = query(collection(db, "topics"), orderBy("date", "desc"));
-    const unsubscribe = onSnapshot(
+    topicsUnsubscribe = onSnapshot(
       q,
-      (snapshot) => {
-        setItems(
-          snapshot.docs.map((d) => ({ id: d.id, ...d.data() }) as Topic)
-        );
-        setLoading(false);
-      },
-      () => setLoading(false)
+      (snapshot) =>
+        publish({
+          items: snapshot.docs.map((d) => ({ id: d.id, ...d.data() }) as Topic),
+          loading: false,
+        }),
+      () => {
+        topicsUnsubscribe = null;
+        publish({ ...topicsStore, loading: false });
+      }
     );
-    return unsubscribe;
-  }, []);
-
-  return { items, loading };
+  }
+  return () => {
+    topicsListeners.delete(listener);
+  };
 }

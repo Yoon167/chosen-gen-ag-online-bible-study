@@ -3,15 +3,17 @@
 import { PresentationIcon, Share2, Video } from "lucide-react";
 import type { Topic } from "@/types";
 
+const DATE_FORMAT = new Intl.DateTimeFormat("en-QA", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
 function formatTopicDate(date: string) {
   const parsed = new Date(`${date}T00:00:00Z`);
   if (Number.isNaN(parsed.getTime())) return date;
-  return new Intl.DateTimeFormat("en-QA", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    timeZone: "UTC",
-  }).format(parsed);
+  return DATE_FORMAT.format(parsed);
 }
 
 export function PresentationCard({ topic }: { topic: Topic }) {
@@ -26,7 +28,7 @@ export function PresentationCard({ topic }: { topic: Topic }) {
   }
 
   return (
-    <div className="rounded-2xl border border-border/70 bg-card p-4">
+    <div className="rounded-2xl border border-border/70 bg-card p-4 [contain-intrinsic-size:auto_124px] [content-visibility:auto]">
       <div className="flex items-start gap-3">
         <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
           <PresentationIcon className="size-5" />

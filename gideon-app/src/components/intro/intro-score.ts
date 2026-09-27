@@ -22,7 +22,7 @@ const PROGRESSION: Chord[] = [
 const freq = (midi: number) => 440 * Math.pow(2, (midi - 69) / 12);
 
 function createReverb(ctx: AudioContext) {
-  const seconds = 3;
+  const seconds = 2.2;
   const length = ctx.sampleRate * seconds;
   const impulse = ctx.createBuffer(2, length, ctx.sampleRate);
   for (let ch = 0; ch < 2; ch++) {
@@ -50,7 +50,8 @@ export function startIntroScore(offset: number): IntroScore {
     (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
   if (!AudioCtx) return { ready: Promise.resolve(false), stop: () => {} };
 
-  const ctx = new AudioCtx();
+  // "playback" uses a larger audio buffer, which avoids crackles on phones.
+  const ctx = new AudioCtx({ latencyHint: "playback" });
   // resume() stays pending forever when autoplay is blocked, so cap the wait.
   const ready = Promise.race([
     ctx.resume().then(() => ctx.state === "running"),

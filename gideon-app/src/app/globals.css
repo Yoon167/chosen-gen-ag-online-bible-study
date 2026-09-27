@@ -173,9 +173,13 @@
   from { transform: translateX(-12%); }
   to { transform: translateX(12%); }
 }
-@keyframes intro-sway {
-  0%, 100% { transform: rotate(-4deg); }
-  50% { transform: rotate(5deg); }
+@keyframes intro-wind {
+  0%, 100% { transform: skewX(-4deg); }
+  50% { transform: skewX(4deg); }
+}
+@keyframes intro-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 @keyframes intro-float {
   0% { transform: translateY(0); opacity: 0; }
@@ -193,13 +197,37 @@
   0%, 100% { opacity: 0.2; }
   50% { opacity: 0.9; }
 }
-.intro-blade {
-  transform-box: fill-box;
-  transform-origin: bottom center;
-  animation: intro-sway ease-in-out infinite;
+@keyframes intro-cam-rise {
+  from { transform: translateY(40px) scale(1.2); }
+  to { transform: scale(1.02); }
+}
+@keyframes intro-cam-settle {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+@keyframes intro-cam-push {
+  from { transform: scale(1); }
+  to { transform: scale(1.16); }
+}
+/* Slow push forward with a gentle walking bob */
+@keyframes intro-cam-walk {
+  0% { transform: translateY(0) scale(1); }
+  17% { transform: translateY(-5px) scale(1.04); }
+  33% { transform: translateY(0) scale(1.08); }
+  50% { transform: translateY(-5px) scale(1.12); }
+  67% { transform: translateY(0) scale(1.16); }
+  83% { transform: translateY(-5px) scale(1.2); }
+  100% { transform: translateY(0) scale(1.24); }
+}
+@keyframes intro-sun-rise {
+  from { transform: translateY(10vh); opacity: 0.6; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes intro-sun-rise-high {
+  from { transform: translateY(16vh); }
+  to { transform: translateY(0); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .intro-blade,
   .intro-anim {
     animation: none !important;
   }

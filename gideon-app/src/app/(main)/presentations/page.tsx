@@ -28,7 +28,7 @@ export default function PresentationsPage() {
     <div>
       <PageHeader
         title={t("page.presentations")}
-        subtitle={`${items.length} teachings with slides`}
+        subtitle={loading && !items.length ? "Loading teachings…" : `${items.length} teachings with slides`}
         icon={PresentationIcon}
       />
 
@@ -45,6 +45,11 @@ export default function PresentationsPage() {
       </div>
 
       <div className="mt-4 space-y-2.5 px-5 pb-8">
+        {loading &&
+          !items.length &&
+          Array.from({ length: 4 }, (_, i) => (
+            <div key={i} className="h-[124px] animate-pulse rounded-2xl border border-border/70 bg-card" />
+          ))}
         {!loading && filtered.length === 0 && (
           <EmptyState
             icon={PresentationIcon}
