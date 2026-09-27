@@ -12,6 +12,7 @@ import { Section } from "@/components/shared/section";
 import { useProfile } from "@/lib/hooks/use-profile";
 import { encouragementOfTheDay } from "@/lib/content/encouragements";
 import { LanguageToggle } from "@/components/language-toggle";
+import { MusicToggle } from "@/components/music-toggle";
 import { InviteCard } from "@/components/invite-card";
 import { useLanguage, type StringKey } from "@/lib/i18n";
 
@@ -61,6 +62,7 @@ export default function HomePage() {
               <ThemeToggle />
             </div>
             <LanguageToggle className="bg-white/90 text-foreground" />
+            <MusicToggle className="bg-white/90" />
           </div>
         </header>
 

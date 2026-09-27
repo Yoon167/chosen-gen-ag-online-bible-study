@@ -15,7 +15,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { useLanguage, type Language } from "@/lib/i18n";
-import { startIntroScore } from "./intro-score";
+import { toggleBackgroundMusic, useBackgroundMusic } from "@/lib/background-music";
 
 export const INTRO_DURATION = 30;
 const SCENE_LENGTH = 5;
@@ -762,41 +762,12 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
   const { lang } = useLanguage();
   const tx = useCallback((t: Text) => t[lang], [lang]);
   const [timeline, setTimeline] = useState<Timeline>(() => timelineAt(0));
-  const [soundOn, setSoundOn] = useState(false);
-  const elapsedRef = useRef(0);
-  const stopScoreRef = useRef<(() => void) | null>(null);
-  const mutedRef = useRef(false);
+  const { playing: soundOn } = useBackgroundMusic();
   const doneRef = useRef(false);
-
-  const stopMusic = useCallback(() => {
-    stopScoreRef.current?.();
-    stopScoreRef.current = null;
-    setSoundOn(false);
-  }, []);
-
-  const playMusic = useCallback(async () => {
-    if (stopScoreRef.current || doneRef.current) return true;
-    const score = startIntroScore(elapsedRef.current);
-    stopScoreRef.current = score.stop;
-    const playing = await score.ready;
-    if (!playing) {
-      score.stop();
-      if (stopScoreRef.current === score.stop) stopScoreRef.current = null;
-      return false;
-    }
-    if (doneRef.current) {
-      score.stop();
-      return true;
-    }
-    setSoundOn(true);
-    return true;
-  }, []);
 
   const finish = useCallback(() => {
     if (doneRef.current) return;
     doneRef.current = true;
-    stopScoreRef.current?.();
-    stopScoreRef.current = null;
     onDone();
   }, [onDone]);
 
@@ -805,7 +776,6 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
     let raf = 0;
     const tick = () => {
       const t = (performance.now() - start) / 1000;
-      elapsedRef.current = t;
       if (t >= INTRO_DURATION) {
         finish();
         return;
@@ -821,43 +791,6 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
   }, [finish]);
-
-  // Relaxing background music plays automatically. Browsers block audio until
-  // the viewer interacts with the page, so if autoplay is refused we start it
-  // on the first tap or key press instead (unless they muted it).
-  useEffect(() => {
-    let cancelled = false;
-    const onGesture = () => {
-      if (!mutedRef.current) void playMusic();
-      removeListeners();
-    };
-    const removeListeners = () => {
-      window.removeEventListener("pointerdown", onGesture);
-      window.removeEventListener("keydown", onGesture);
-    };
-    void playMusic().then((playing) => {
-      if (!playing && !cancelled) {
-        window.addEventListener("pointerdown", onGesture);
-        window.addEventListener("keydown", onGesture);
-      }
-    });
-    return () => {
-      cancelled = true;
-      removeListeners();
-      stopScoreRef.current?.();
-      stopScoreRef.current = null;
-    };
-  }, [playMusic]);
-
-  const toggleSound = () => {
-    if (soundOn) {
-      mutedRef.current = true;
-      stopMusic();
-    } else {
-      mutedRef.current = false;
-      void playMusic();
-    }
-  };
 
   const { scene, cut } = timeline;
   const narration = NARRATION[timeline.narration];
@@ -952,7 +885,8 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
       >
         <button
           type="button"
-          onClick={toggleSound}
+          onClick={toggleBackgroundMusic}
+          data-music-toggle
           aria-label={soundOn ? "Mute" : tx(COPY.soundOn)}
           className="flex items-center gap-1.5 rounded-full border border-white/25 bg-black/40 px-3 py-1.5 text-xs font-medium text-white/90 transition hover:bg-black/45"
         >
