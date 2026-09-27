@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { PresentationIcon, Share2, Video } from "lucide-react";
+import { slideEmbedUrl } from "@/lib/slide-embed";
 import type { Topic } from "@/types";
 
 const DATE_FORMAT = new Intl.DateTimeFormat("en-QA", {
@@ -50,7 +52,14 @@ export function PresentationCard({ topic }: { topic: Topic }) {
       </div>
 
       <div className="mt-3 flex gap-2">
-        {topic.resourceUrl ? (
+        {slideEmbedUrl(topic.resourceUrl) ? (
+          <Link
+            href={`/presentations/view?id=${encodeURIComponent(topic.id)}`}
+            className="flex flex-1 items-center justify-center gap-1.5 rounded-full bg-primary py-2 text-xs font-medium text-primary-foreground"
+          >
+            Open Slides
+          </Link>
+        ) : topic.resourceUrl ? (
           <a
             href={topic.resourceUrl}
             target="_blank"

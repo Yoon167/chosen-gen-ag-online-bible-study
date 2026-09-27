@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { ChevronDown, Pencil, PresentationIcon, Trash2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { slideEmbedUrl } from "@/lib/slide-embed";
 import type { Topic } from "@/types";
 
 function formatTopicDate(date: string) {
@@ -96,7 +98,15 @@ export function ChurchTeachingCard({
       )}
 
       <div className="mt-3 flex items-center gap-3">
-        {topic.resourceUrl && (
+        {slideEmbedUrl(topic.resourceUrl) ? (
+          <Link
+            href={`/presentations/view?id=${encodeURIComponent(topic.id)}`}
+            className="inline-flex items-center gap-1.5 text-xs font-medium text-primary"
+          >
+            <PresentationIcon className="size-3.5" />
+            Open slides
+          </Link>
+        ) : topic.resourceUrl && (
           <a
             href={topic.resourceUrl}
             target="_blank"
