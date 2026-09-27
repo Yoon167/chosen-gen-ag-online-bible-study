@@ -63,7 +63,7 @@ export function AccountSheet({
               variant="outline"
               className="w-full"
               onClick={async () => {
-                if (!confirm("Sign out? This device will get a fresh, empty session until you sign back in.")) return;
+                if (!confirm("Sign out? You can sign back in anytime from the welcome screen with your email and password.")) return;
                 await signOutAccount();
                 onOpenChange(false);
               }}

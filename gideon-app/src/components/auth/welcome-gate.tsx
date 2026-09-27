@@ -1,18 +1,63 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import Image from "next/image";
+import { AnimatePresence } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useProfile } from "@/lib/hooks/use-profile";
+import { useAccount } from "@/lib/hooks/use-account";
 import { LanguageToggle } from "@/components/language-toggle";
+import { CinematicIntro } from "@/components/intro/cinematic-intro";
+
+const INTRO_KEY = "gideon-intro-played";
+
+function readIntroPlayed() {
+  try {
+    return sessionStorage.getItem(INTRO_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+const noopSubscribe = () => () => {};
 
 export function WelcomeGate({ children }: { children: React.ReactNode }) {
+  // null on the server / first paint, so neither the intro nor the app
+  // flashes before we know whether the intro already played this session.
+  const playedThisSession = useSyncExternalStore(noopSubscribe, readIntroPlayed, () => null);
+  const [finished, setFinished] = useState(false);
+  const intro =
+    playedThisSession === null ? "pending" : playedThisSession || finished ? "done" : "playing";
+
+  const finishIntro = () => {
+    try {
+      sessionStorage.setItem(INTRO_KEY, "1");
+    } catch {}
+    setFinished(true);
+  };
+
+  return (
+    <>
+      <AnimatePresence>
+        {intro === "playing" && <CinematicIntro key="intro" onDone={finishIntro} />}
+      </AnimatePresence>
+      {intro === "pending" && <div className="fixed inset-0 z-[100] bg-black" />}
+      {intro === "done" && <Gate>{children}</Gate>}
+    </>
+  );
+}
+
+function Gate({ children }: { children: React.ReactNode }) {
   const { profile, loading, authError, updateProfile } = useProfile();
   const [name, setName] = useState("");
   const [ministry, setMinistry] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [signingIn, setSigningIn] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const account = useAccount();
 
   if (loading) {
     return (
@@ -39,52 +84,113 @@ export function WelcomeGate({ children }: { children: React.ReactNode }) {
           </p>
         </div>
 
-        <form
-          className="w-full max-w-xs space-y-3"
-          onSubmit={async (e) => {
-            e.preventDefault();
-            if (!name.trim() || submitting) return;
-            setSubmitting(true);
-            setError(null);
-            try {
-              await updateProfile({
-                displayName: name.trim(),
-                ministry: ministry.trim(),
-                onboarded: true,
-              });
-            } catch (err) {
-              console.error("Welcome sign-in failed", err);
-              setError("Couldn't sign you in. Check your connection and try again.");
-            } finally {
-              setSubmitting(false);
-            }
-          }}
-        >
-          <Input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Your name"
-            autoFocus
-          />
-          <Input
-            value={ministry}
-            onChange={(e) => setMinistry(e.target.value)}
-            placeholder="Ministry (optional)"
-          />
-          <Button type="submit" className="w-full" disabled={!name.trim() || submitting}>
-            {submitting ? "Signing in…" : "Continue"}
-          </Button>
-          {(error || authError) && (
-            <p className="text-xs text-destructive">
-              {error ?? "Couldn't start your session. Please try again later."}
-            </p>
-          )}
-        </form>
+        {signingIn ? (
+          <form
+            className="w-full max-w-xs space-y-3"
+            onSubmit={async (e) => {
+              e.preventDefault();
+              if (!email.trim() || password.length < 6 || account.busy) return;
+              try {
+                // Switching to the backed-up account loads its profile, which
+                // is already onboarded, so the gate opens on its own.
+                await account.signIn(email.trim(), password);
+              } catch {
+                // error state already set by the hook
+              }
+            }}
+          >
+            <Input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+              autoComplete="email"
+              autoFocus
+            />
+            <Input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              autoComplete="current-password"
+            />
+            <Button
+              type="submit"
+              className="w-full"
+              disabled={!email.trim() || password.length < 6 || account.busy}
+            >
+              {account.busy ? "Signing in…" : "Sign In"}
+            </Button>
+            {account.error && <p className="text-xs text-destructive">{account.error}</p>}
+            <button
+              type="button"
+              className="w-full text-center text-xs text-muted-foreground underline underline-offset-2"
+              onClick={() => {
+                setSigningIn(false);
+                account.setError("");
+              }}
+            >
+              New here? Continue without an account
+            </button>
+          </form>
+        ) : (
+          <>
+            <form
+              className="w-full max-w-xs space-y-3"
+              onSubmit={async (e) => {
+                e.preventDefault();
+                if (!name.trim() || submitting) return;
+                setSubmitting(true);
+                setError(null);
+                try {
+                  await updateProfile({
+                    displayName: name.trim(),
+                    ministry: ministry.trim(),
+                    onboarded: true,
+                  });
+                } catch (err) {
+                  console.error("Welcome sign-in failed", err);
+                  setError("Couldn't sign you in. Check your connection and try again.");
+                } finally {
+                  setSubmitting(false);
+                }
+              }}
+            >
+              <Input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Your name"
+                autoFocus
+              />
+              <Input
+                value={ministry}
+                onChange={(e) => setMinistry(e.target.value)}
+                placeholder="Ministry (optional)"
+              />
+              <Button type="submit" className="w-full" disabled={!name.trim() || submitting}>
+                {submitting ? "Signing in…" : "Continue"}
+              </Button>
+              {(error || authError) && (
+                <p className="text-xs text-destructive">
+                  {error ?? "Couldn't start your session. Please try again later."}
+                </p>
+              )}
+            </form>
 
-        <p className="max-w-xs text-[11px] text-muted-foreground">
-          No password needed — just tell us your name to get started. Your
-          data stays private to this device.
-        </p>
+            <p className="max-w-xs text-[11px] text-muted-foreground">
+              No password needed — just tell us your name to get started. Your
+              data stays private to this device.
+            </p>
+
+            <button
+              type="button"
+              className="text-xs text-muted-foreground underline underline-offset-2"
+              onClick={() => setSigningIn(true)}
+            >
+              Already backed up your account? Sign in
+            </button>
+          </>
+        )}
       </div>
     );
   }

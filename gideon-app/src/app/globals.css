@@ -168,3 +168,39 @@
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 }
+/* Cinematic intro */
+@keyframes intro-drift {
+  from { transform: translateX(-12%); }
+  to { transform: translateX(12%); }
+}
+@keyframes intro-sway {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(5deg); }
+}
+@keyframes intro-float {
+  0% { transform: translateY(0); opacity: 0; }
+  20%, 80% { opacity: 1; }
+  100% { transform: translateY(-60px); opacity: 0; }
+}
+@keyframes intro-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes intro-shimmer {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+@keyframes intro-twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.9; }
+}
+.intro-blade {
+  transform-box: fill-box;
+  transform-origin: bottom center;
+  animation: intro-sway ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro-blade,
+  .intro-anim {
+    animation: none !important;
+  }
+}
