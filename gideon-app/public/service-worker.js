@@ -1,4 +1,4 @@
-const CACHE_NAME = "gideon-cache-v2";
+const CACHE_NAME = "gideon-cache-v3";
 
 self.addEventListener("install", () => {
   self.skipWaiting();
@@ -49,8 +49,10 @@ self.addEventListener("fetch", (event) => {
 
   // Network-first so a new deploy shows up immediately; fall back to the
   // cache only when offline.
+  // `no-cache` skips pages the browser kept from an older deploy, which
+  // would otherwise make Next.js hard-reload on every tap.
   event.respondWith(
-    fetch(event.request)
+    fetch(event.request, { cache: "no-cache" })
       .then((response) => {
         if (response.ok) {
           const copy = response.clone();
