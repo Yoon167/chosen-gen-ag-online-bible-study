@@ -45,7 +45,18 @@ export interface Testimony {
   godsFaithfulness: string;
   scriptureReference?: string;
   photoUrl?: string;
+  /** "private" (default) = only me; "members" = visible to every GIDEON member. */
+  visibility?: TestimonyVisibility;
   createdAt: number;
+}
+
+export type TestimonyVisibility = "private" | "members";
+
+/** A testimony a member chose to share, mirrored to `communityTestimonies`. */
+export interface CommunityTestimony extends Omit<Testimony, "visibility"> {
+  ownerUid: string;
+  authorName: string;
+  authorPhotoUrl?: string;
 }
 
 export type JourneyMilestoneType =
@@ -164,8 +175,12 @@ export interface ReadingPlanProgress {
   currentDay: number;
 }
 
+/** Every new member starts as "member"; only a leader can promote someone. */
+export type MemberRole = "member" | "leader";
+
 export interface UserProfile {
   uid: string;
+  role?: MemberRole;
   displayName: string;
   ministry?: string;
   bio?: string;

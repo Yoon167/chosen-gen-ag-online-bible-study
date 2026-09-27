@@ -8,6 +8,7 @@ import { nextStreak, todayKey } from "@/lib/streak";
 import type { UserProfile } from "@/types";
 
 const DEFAULT_PROFILE: Omit<UserProfile, "uid"> = {
+  role: "member",
   displayName: "Beloved",
   ministry: "",
   bio: "",
@@ -18,7 +19,7 @@ const DEFAULT_PROFILE: Omit<UserProfile, "uid"> = {
 };
 
 export function useProfile() {
-  const { uid, loading: authLoading } = useAuth();
+  const { uid, loading: authLoading, error: authError } = useAuth();
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -46,7 +47,7 @@ export function useProfile() {
   }, [uid, authLoading]);
 
   async function updateProfile(data: Partial<UserProfile>) {
-    if (!uid) return;
+    if (!uid) throw new Error(authError ?? "auth/not-signed-in");
     await setDoc(doc(db, "users", uid), data, { merge: true });
   }
 
@@ -67,6 +68,8 @@ export function useProfile() {
   return {
     profile,
     loading: loading || authLoading,
+    authError,
+    isLeader: profile?.role === "leader",
     updateProfile,
     markReadingDone,
     markPrayerDone,

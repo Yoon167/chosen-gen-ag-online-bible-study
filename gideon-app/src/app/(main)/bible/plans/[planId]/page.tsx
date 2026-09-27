@@ -1,7 +1,8 @@
+import { READING_PLANS } from "@/lib/bible/plans";
 import { PlanDetailClient } from "./plan-detail-client";
 
 export function generateStaticParams() {
-  return [{ planId: "30-day-new-testament" }];
+  return READING_PLANS.map((plan) => ({ planId: plan.id }));
 }
 
 export default function PlanDetailPage() {

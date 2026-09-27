@@ -7,10 +7,11 @@ import { Button } from "@/components/ui/button";
 import { useProfile } from "@/lib/hooks/use-profile";
 
 export function WelcomeGate({ children }: { children: React.ReactNode }) {
-  const { profile, loading, updateProfile } = useProfile();
+  const { profile, loading, authError, updateProfile } = useProfile();
   const [name, setName] = useState("");
   const [ministry, setMinistry] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   if (loading) {
     return (
@@ -42,12 +43,19 @@ export function WelcomeGate({ children }: { children: React.ReactNode }) {
             e.preventDefault();
             if (!name.trim() || submitting) return;
             setSubmitting(true);
-            await updateProfile({
-              displayName: name.trim(),
-              ministry: ministry.trim(),
-              onboarded: true,
-            });
-            setSubmitting(false);
+            setError(null);
+            try {
+              await updateProfile({
+                displayName: name.trim(),
+                ministry: ministry.trim(),
+                onboarded: true,
+              });
+            } catch (err) {
+              console.error("Welcome sign-in failed", err);
+              setError("Couldn't sign you in. Check your connection and try again.");
+            } finally {
+              setSubmitting(false);
+            }
           }}
         >
           <Input
@@ -62,8 +70,13 @@ export function WelcomeGate({ children }: { children: React.ReactNode }) {
             placeholder="Ministry (optional)"
           />
           <Button type="submit" className="w-full" disabled={!name.trim() || submitting}>
-            Continue
+            {submitting ? "Signing in…" : "Continue"}
           </Button>
+          {(error || authError) && (
+            <p className="text-xs text-destructive">
+              {error ?? "Couldn't start your session. Please try again later."}
+            </p>
+          )}
         </form>
 
         <p className="max-w-xs text-[11px] text-muted-foreground">

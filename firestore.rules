@@ -2,23 +2,57 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.uid == "1G2TVkbe9igM8ij5KN9SqIYo08M2";
+    }
+
+    // GIDEON roles: every member starts as "member"; leaders are promoted by
+    // another leader (or set directly in the Firebase console).
+    function isLeader() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('role', 'member') == 'leader';
+    }
+
     match /topics/{topicId} {
       allow read: if true;
-      // Admin writes are limited to the authorized teacher account.
+      // Writes are limited to the authorized teacher account and GIDEON leaders.
       // Saved topic documents may include slide notes, recap fields, testimony, notes, and public comments.
-      allow create, update, delete: if request.auth != null
-        && request.auth.uid == "1G2TVkbe9igM8ij5KN9SqIYo08M2";
+      allow create, update, delete: if isAdmin() || isLeader();
     }
 
     // GIDEON app: every member (including anonymous auth sessions) gets a
     // private subtree for their own prayers, notes, journey, Bible activity,
     // reading progress, and personal meeting links.
     match /users/{userId} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
+      allow read: if (request.auth != null && request.auth.uid == userId) || isLeader();
+      // Members can't pick their own role: new profiles start as "member"...
+      allow create: if request.auth != null && request.auth.uid == userId
+        && request.resource.data.get('role', 'member') == 'member';
+      // ...and their own edits must leave the role untouched. Leaders may
+      // change only the role field of anyone's profile.
+      allow update: if (request.auth != null && request.auth.uid == userId
+          && request.resource.data.get('role', 'member') == resource.data.get('role', 'member'))
+        || (isLeader()
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['role'])
+          && request.resource.data.role in ['member', 'leader']);
+      allow delete: if request.auth != null && request.auth.uid == userId;
 
       match /{subcollection}/{docId} {
         allow read, write: if request.auth != null && request.auth.uid == userId;
       }
+    }
+
+    // Testimonies a member chose to share ("All members"). Any signed-in
+    // member can read them; only the owner can publish, edit or unshare.
+    match /communityTestimonies/{docId} {
+      allow read: if request.auth != null;
+      allow create, update: if request.auth != null
+        && request.resource.data.ownerUid == request.auth.uid
+        && docId.matches(request.auth.uid + '_.*');
+      allow delete: if request.auth != null
+        && docId.matches(request.auth.uid + '_.*');
     }
   }
 }

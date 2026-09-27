@@ -58,7 +58,8 @@ export function useUserCollection<T extends DocumentData>(
 
   async function add(data: Omit<T, "id">) {
     if (!colRef) return;
-    await addDoc(colRef, data);
+    const ref = await addDoc(colRef, data);
+    return ref.id;
   }
 
   async function update(id: string, data: Partial<T>) {

@@ -4,7 +4,9 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import type { Testimony } from "@/types";
+import { Lock, Users } from "lucide-react";
+import { cn } from "@/lib/utils";
+import type { Testimony, TestimonyVisibility } from "@/types";
 
 export interface TestimonyFormValues {
   title: string;
@@ -14,6 +16,7 @@ export interface TestimonyFormValues {
   godsFaithfulness: string;
   scriptureReference: string;
   photoUrl: string;
+  visibility: TestimonyVisibility;
 }
 
 export function TestimonyForm({
@@ -33,6 +36,7 @@ export function TestimonyForm({
     godsFaithfulness: initial?.godsFaithfulness ?? "",
     scriptureReference: initial?.scriptureReference ?? "",
     photoUrl: initial?.photoUrl ?? "",
+    visibility: initial?.visibility ?? "private",
   });
 
   function set<K extends keyof TestimonyFormValues>(key: K, value: TestimonyFormValues[K]) {
@@ -101,6 +105,25 @@ export function TestimonyForm({
         />
       </Field>
 
+      <Field label="Who can see this">
+        <div className="grid grid-cols-2 gap-2">
+          <VisibilityOption
+            active={values.visibility === "private"}
+            onClick={() => set("visibility", "private")}
+            icon={<Lock className="size-4" />}
+            title="Only me"
+            hint="Private to you"
+          />
+          <VisibilityOption
+            active={values.visibility === "members"}
+            onClick={() => set("visibility", "members")}
+            icon={<Users className="size-4" />}
+            title="All members"
+            hint="Shared with the church"
+          />
+        </div>
+      </Field>
+
       <Button
         className="w-full"
         disabled={!values.title.trim()}
@@ -129,5 +152,35 @@ function Field({
       </label>
       {children}
     </div>
+  );
+}
+
+function VisibilityOption({
+  active,
+  onClick,
+  icon,
+  title,
+  hint,
+}: {
+  active: boolean;
+  onClick: () => void;
+  icon: React.ReactNode;
+  title: string;
+  hint: string;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={active}
+      className={cn(
+        "flex flex-col items-start gap-1 rounded-xl border p-3 text-left",
+        active ? "border-primary bg-primary/5 text-primary" : "border-border text-muted-foreground"
+      )}
+    >
+      {icon}
+      <span className="text-sm font-medium text-foreground">{title}</span>
+      <span className="text-[11px]">{hint}</span>
+    </button>
   );
 }

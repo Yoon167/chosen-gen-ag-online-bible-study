@@ -69,12 +69,21 @@ export function PlanDetailClient() {
                   Day {d.day}
                 </p>
                 {first ? (
-                  <Link
-                    href={`/bible/${first.book.slug}/${first.chapter}`}
-                    className="truncate text-sm font-medium text-foreground/90"
-                  >
-                    {d.readings.join(", ") || "Rest day"}
-                  </Link>
+                  <div className="flex flex-wrap gap-x-2 gap-y-1">
+                    {d.readings.map((reading) => {
+                      const ref = parseReference(reading);
+                      if (!ref) return null;
+                      return (
+                        <Link
+                          key={reading}
+                          href={`/bible/${ref.book.slug}/${ref.chapter}`}
+                          className="text-sm font-medium text-primary underline-offset-2 hover:underline"
+                        >
+                          {reading}
+                        </Link>
+                      );
+                    })}
+                  </div>
                 ) : (
                   <p className="text-sm text-muted-foreground">Rest day</p>
                 )}

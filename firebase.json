@@ -4,11 +4,6 @@
   },
   "hosting": {
     "public": "gideon-app/out",
-    "cleanUrls": true,
-    "rewrites": [
-      { "source": "/bible/plans/**", "destination": "/bible/plans/30-day-new-testament.html" },
-      { "source": "/bible/**", "destination": "/bible/genesis/1.html" },
-      { "source": "/testimony/**", "destination": "/testimony/_.html" }
-    ]
+    "cleanUrls": true
   }
 }

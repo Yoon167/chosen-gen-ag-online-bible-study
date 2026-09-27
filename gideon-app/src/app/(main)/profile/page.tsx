@@ -13,6 +13,7 @@ import {
   ChevronRight,
   Download,
   Cloud,
+  Users,
 } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Switch } from "@/components/ui/switch";
@@ -36,7 +37,7 @@ import type { JourneyMilestone } from "@/types";
 import Link from "next/link";
 
 export default function ProfilePage() {
-  const { profile, updateProfile } = useProfile();
+  const { profile, updateProfile, isLeader } = useProfile();
   const { items: milestones } = useUserCollection<JourneyMilestone>("journeyMilestones");
   const activePlan = findPlan(profile?.activePlanId ?? "one-year-bible");
   const { progress: planProgress } = useReadingPlanProgress(activePlan?.id ?? "one-year-bible");
@@ -71,6 +72,9 @@ export default function ProfilePage() {
           <h1 className="font-heading text-xl font-semibold">
             {profile?.displayName ?? "Beloved"}
           </h1>
+          <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
+            {isLeader ? "Leader" : "Member"} · AG
+          </p>
           {profile?.ministry && (
             <p className="text-xs text-muted-foreground">{profile.ministry}</p>
           )}
@@ -116,6 +120,13 @@ export default function ProfilePage() {
           <SettingRow icon={Bell} label="Notifications">
             <Switch checked={notifications} onCheckedChange={setNotifications} />
           </SettingRow>
+          {isLeader && (
+            <Link href="/members" className="block">
+              <SettingRow icon={Users} label="Manage Members">
+                <ChevronRight className="size-4 text-muted-foreground" />
+              </SettingRow>
+            </Link>
+          )}
           <Link href="/bible/plans" className="block">
             <SettingRow icon={CalendarCheck2} label="Reading Plans">
               <ChevronRight className="size-4 text-muted-foreground" />
@@ -158,8 +169,11 @@ export default function ProfilePage() {
               activity in a private, per-device account secured by Firebase.
             </p>
             <p>
-              Your data is never shared with other members. You can request
-              deletion at any time from your church administrator.
+              Your prayers, notes and journey are only visible to you.
+              Testimonies stay private too unless you choose &ldquo;All
+              members&rdquo; when writing one. Church teachings are shared with
+              everyone. You can request deletion at any time from your church
+              administrator.
             </p>
           </div>
         </SheetContent>
