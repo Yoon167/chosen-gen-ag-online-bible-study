@@ -9,6 +9,7 @@ import {
   verseLabel,
   type AssessmentResult as Result,
 } from "@/lib/content/assessment";
+import { findLesson } from "@/lib/content/journey";
 
 function scoreLabel(score: number, tx: (en: string, tl: string) => string) {
   if (score >= 80) return tx("Flourishing", "Masigla");
@@ -102,11 +103,16 @@ export function AssessmentResult({ result }: { result: Result }) {
                     </Link>
                   ))}
                 </div>
-                <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                <Link
+                  href={`/journey/lessons/${area.lessonId}`}
+                  className="flex items-center gap-1.5 text-xs text-muted-foreground"
+                >
                   <GraduationCap className="size-3.5" />
                   {tx("Suggested lesson: ", "Iminumungkahing aralin: ")}
-                  <span className="font-medium text-foreground">{area.lesson[lang]}</span>
-                </p>
+                  <span className="font-medium text-primary underline underline-offset-2">
+                    {findLesson(area.lessonId)?.title[lang]}
+                  </span>
+                </Link>
               </div>
             );
           })}

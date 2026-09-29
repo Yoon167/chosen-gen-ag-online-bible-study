@@ -8,6 +8,7 @@ import { EmptyState } from "@/components/shared/empty-state";
 import { AddMilestoneDialog } from "@/components/journey/add-milestone-dialog";
 import { MilestoneTimeline } from "@/components/journey/milestone-timeline";
 import { GrowthAnalytics } from "@/components/journey/growth-analytics";
+import { JourneyLevels } from "@/components/journey/journey-levels";
 import { Section } from "@/components/shared/section";
 import { useUserCollection } from "@/lib/hooks/use-collection";
 import type { JourneyMilestone } from "@/types";
@@ -38,6 +39,10 @@ export default function JourneyPage() {
           </button>
         }
       />
+
+      <Section title={tx("Discipleship Journey", "Discipleship Journey")} className="pb-5">
+        <JourneyLevels />
+      </Section>
 
       <div className="px-5 pb-5">
         <Link

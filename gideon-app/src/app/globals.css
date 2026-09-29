@@ -232,3 +232,19 @@
     animation: none !important;
   }
 }
+
+/* Journey certificate: when printing (or saving as PDF), show only the certificate. */
+@media print {
+  body:has(.gideon-certificate) * {
+    visibility: hidden;
+  }
+  .gideon-certificate,
+  .gideon-certificate * {
+    visibility: visible;
+  }
+  .gideon-certificate {
+    position: absolute;
+    inset: 0 0 auto 0;
+    margin: 1.5cm;
+  }
+}

@@ -1,4 +1,6 @@
-import { slugify } from "@/lib/bible/books";
+import type { VerseRef } from "@/lib/bible/verse-ref";
+
+export { verseHref, verseLabel, type VerseRef } from "@/lib/bible/verse-ref";
 
 /**
  * Spiritual Assessment content and scoring. Scoring runs entirely on the
@@ -29,18 +31,13 @@ export interface AssessmentQuestion {
   positive: boolean;
 }
 
-export interface VerseRef {
-  book: string;
-  chapter: number;
-  verses: string;
-}
-
 export interface AssessmentArea {
   id: AreaId;
   title: Text;
   questions: AssessmentQuestion[];
   verses: VerseRef[];
-  lesson: Text;
+  /** A lesson in lib/content/journey.ts. */
+  lessonId: string;
   prayer: Text;
 }
 
@@ -74,7 +71,7 @@ export const ASSESSMENT_AREAS: AssessmentArea[] = [
       { book: "1 Thessalonians", chapter: 5, verses: "16-18" },
       { book: "Matthew", chapter: 6, verses: "6" },
     ],
-    lesson: { en: "Learning to Pray", tl: "Pag-aaral Manalangin" },
+    lessonId: "learning-to-pray",
     prayer: {
       en: "Lord, teach me to pray. Draw me to Your presence every day.",
       tl: "Panginoon, turuan Mo akong manalangin. Ilapit Mo ako sa Iyong presensya araw-araw.",
@@ -100,7 +97,7 @@ export const ASSESSMENT_AREAS: AssessmentArea[] = [
       { book: "Joshua", chapter: 1, verses: "8" },
       { book: "2 Timothy", chapter: 3, verses: "16-17" },
     ],
-    lesson: { en: "Growing in God's Word", tl: "Paglago sa Salita ng Diyos" },
+    lessonId: "growing-in-the-word",
     prayer: {
       en: "Lord, give me hunger for Your Word and help me obey it.",
       tl: "Panginoon, bigyan Mo ako ng pagkagutom sa Iyong Salita at tulungan Mo akong sundin ito.",
@@ -131,7 +128,7 @@ export const ASSESSMENT_AREAS: AssessmentArea[] = [
       { book: "Hebrews", chapter: 11, verses: "6" },
       { book: "Proverbs", chapter: 3, verses: "5-6" },
     ],
-    lesson: { en: "Assurance of Salvation", tl: "Katiyakan ng Kaligtasan" },
+    lessonId: "assurance-of-salvation",
     prayer: {
       en: "Lord, I believe; help my unbelief. Let me know Your love is real.",
       tl: "Panginoon, sumasampalataya ako; tulungan Mo ang aking kawalan ng pananampalataya. Ipakilala Mo sa akin na totoo ang Iyong pag-ibig.",
@@ -157,7 +154,7 @@ export const ASSESSMENT_AREAS: AssessmentArea[] = [
       { book: "1 Peter", chapter: 5, verses: "7" },
       { book: "2 Timothy", chapter: 1, verses: "7" },
     ],
-    lesson: { en: "Peace That Guards the Heart", tl: "Kapayapaang Nag-iingat sa Puso" },
+    lessonId: "peace-that-guards",
     prayer: {
       en: "Lord, I cast my anxiety on You. Fill me with Your peace.",
       tl: "Panginoon, ipinapasa ko sa Iyo ang aking pagkabalisa. Punuin Mo ako ng Iyong kapayapaan.",
@@ -183,7 +180,7 @@ export const ASSESSMENT_AREAS: AssessmentArea[] = [
       { book: "1 John", chapter: 1, verses: "9" },
       { book: "James", chapter: 4, verses: "7" },
     ],
-    lesson: { en: "Walking in Freedom from Sin", tl: "Paglakad sa Kalayaan mula sa Kasalanan" },
+    lessonId: "freedom-from-sin",
     prayer: {
       en: "Lord, I confess my sin to You. Cleanse me and give me strength to resist.",
       tl: "Panginoon, ipinapahayag ko sa Iyo ang aking kasalanan. Linisin Mo ako at bigyan ng lakas na lumaban.",
@@ -212,7 +209,7 @@ export const ASSESSMENT_AREAS: AssessmentArea[] = [
       { book: "Galatians", chapter: 5, verses: "1" },
       { book: "Romans", chapter: 6, verses: "14" },
     ],
-    lesson: { en: "Breaking Strongholds", tl: "Pagwasak sa mga Tanggulan" },
+    lessonId: "breaking-strongholds",
     prayer: {
       en: "Lord Jesus, You set captives free. Break every chain in my life.",
       tl: "Panginoong Hesus, pinalalaya Mo ang mga bihag. Putulin Mo ang bawat tanikala sa buhay ko.",
@@ -252,7 +249,7 @@ export const ASSESSMENT_AREAS: AssessmentArea[] = [
       { book: "Acts", chapter: 19, verses: "18-20" },
       { book: "Colossians", chapter: 2, verses: "15" },
     ],
-    lesson: { en: "Freedom in Christ", tl: "Kalayaan kay Kristo" },
+    lessonId: "freedom-in-christ",
     prayer: {
       en: "Lord Jesus, I renounce every occult practice and give You full authority over my life.",
       tl: "Panginoong Hesus, tinatalikuran ko ang bawat gawaing okulto at ibinibigay ko sa Iyo ang buong kapamahalaan sa buhay ko.",
@@ -284,7 +281,7 @@ export const ASSESSMENT_AREAS: AssessmentArea[] = [
       { book: "Galatians", chapter: 3, verses: "13" },
       { book: "Ezekiel", chapter: 18, verses: "20" },
     ],
-    lesson: { en: "A New Family in Christ", tl: "Bagong Pamilya kay Kristo" },
+    lessonId: "new-family-in-christ",
     prayer: {
       en: "Lord, I am a new creation. Let every generational pattern end with me in Jesus' name.",
       tl: "Panginoon, ako ay bagong nilalang. Nawa'y matapos sa akin ang bawat pattern ng mga henerasyon, sa pangalan ni Hesus.",
@@ -316,7 +313,7 @@ export const ASSESSMENT_AREAS: AssessmentArea[] = [
       { book: "Luke", chapter: 10, verses: "19" },
       { book: "1 John", chapter: 4, verses: "4" },
     ],
-    lesson: { en: "The Armor of God", tl: "Ang Baluti ng Diyos" },
+    lessonId: "armor-of-god",
     prayer: {
       en: "Lord, You are greater than any power against me. Cover me and my home.",
       tl: "Panginoon, higit Kang makapangyarihan sa anumang kapangyarihang laban sa akin. Takpan Mo ako at ang aking tahanan.",
@@ -342,7 +339,7 @@ export const ASSESSMENT_AREAS: AssessmentArea[] = [
       { book: "Psalms", chapter: 147, verses: "3" },
       { book: "Isaiah", chapter: 61, verses: "1-3" },
     ],
-    lesson: { en: "Healing the Broken Heart", tl: "Pagpapagaling sa Sugatang Puso" },
+    lessonId: "healing-broken-heart",
     prayer: {
       en: "Lord, You are close to the brokenhearted. Heal my wounds and show me my worth in You.",
       tl: "Panginoon, malapit Ka sa mga may bagbag na puso. Pagalingin Mo ang aking mga sugat at ipakita Mo ang halaga ko sa Iyo.",
@@ -368,7 +365,7 @@ export const ASSESSMENT_AREAS: AssessmentArea[] = [
       { book: "Colossians", chapter: 3, verses: "13" },
       { book: "Psalms", chapter: 103, verses: "12" },
     ],
-    lesson: { en: "Forgiven and Forgiving", tl: "Pinatawad at Nagpapatawad" },
+    lessonId: "forgiven-and-forgiving",
     prayer: {
       en: "Lord, thank You for forgiving me. Help me release those who hurt me.",
       tl: "Panginoon, salamat sa pagpapatawad Mo sa akin. Tulungan Mo akong palayain ang mga nanakit sa akin.",
@@ -400,7 +397,7 @@ export const ASSESSMENT_AREAS: AssessmentArea[] = [
       { book: "Hebrews", chapter: 10, verses: "24-25" },
       { book: "Romans", chapter: 12, verses: "18" },
     ],
-    lesson: { en: "Life in Christian Community", tl: "Buhay sa Kristiyanong Komunidad" },
+    lessonId: "christian-community",
     prayer: {
       en: "Lord, heal my relationships and surround me with believers who help me grow.",
       tl: "Panginoon, pagalingin Mo ang aking mga relasyon at palibutan Mo ako ng mga mananampalatayang tutulong sa aking paglago.",
@@ -472,12 +469,4 @@ export function scoreAssessment(answers: Answers): AssessmentResult {
 
 export function findArea(id: AreaId) {
   return ASSESSMENT_AREAS.find((a) => a.id === id)!;
-}
-
-export function verseLabel(v: VerseRef) {
-  return `${v.book} ${v.chapter}:${v.verses}`;
-}
-
-export function verseHref(v: VerseRef) {
-  return `/bible/${slugify(v.book)}/${v.chapter}`;
 }
