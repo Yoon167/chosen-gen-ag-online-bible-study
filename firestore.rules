@@ -19,14 +19,16 @@ service cloud.firestore {
       allow read: if true;
       // Writes are limited to the authorized teacher account and GIDEON leaders.
       // Saved topic documents may include slide notes, recap fields, testimony, notes, and public comments.
-      allow create, update, delete: if isAdmin() || isLeader();
+      // Leaders are either legacy "leader" profiles or cell leaders and up in
+      // the first church, until topics move under churches/{churchId}.
+      allow create, update, delete: if isAdmin() || isLeader() || rankAtLeast('chosen-gen-ag', 3);
     }
 
     // GIDEON app: every member (including anonymous auth sessions) gets a
     // private subtree for their own prayers, notes, journey, Bible activity,
     // reading progress, and personal meeting links.
     match /users/{userId} {
-      allow read: if (request.auth != null && request.auth.uid == userId) || isLeader();
+      allow read: if (request.auth != null && request.auth.uid == userId) || isLeader() || isAdmin();
       // Members can't pick their own role: new profiles start as "member"...
       allow create: if request.auth != null && request.auth.uid == userId
         && request.resource.data.get('role', 'member') == 'member';
@@ -72,11 +74,109 @@ service cloud.firestore {
       }
     }
 
-    function isVaultOwner(userId) {
-      // A guest who later linked Google or email has identities on the token.
-      return request.auth != null && request.auth.uid == userId
+    // Signed in with Google or email, not a guest session. A guest who later
+    // linked Google or email has identities on the token.
+    function isRealAccount() {
+      return request.auth != null
         && (request.auth.token.firebase.sign_in_provider != 'anonymous'
           || request.auth.token.firebase.get('identities', {}).size() > 0);
+    }
+
+    function isVaultOwner(userId) {
+      return isRealAccount() && request.auth.uid == userId;
+    }
+
+    // ---------- Churches ----------
+    // Roles live in churches/{churchId}/members/{uid} as a rank:
+    // 1 member, 2 mentor, 3 cell leader, 4 ministry leader,
+    // 5 associate pastor, 6 senior pastor. Must match lib/church.ts.
+
+    function memberPath(churchId, uid) {
+      return /databases/$(database)/documents/churches/$(churchId)/members/$(uid);
+    }
+
+    function isActiveMember(churchId, uid) {
+      return exists(memberPath(churchId, uid))
+        && get(memberPath(churchId, uid)).data.status == 'active';
+    }
+
+    function rankAtLeast(churchId, rank) {
+      return request.auth != null
+        && isActiveMember(churchId, request.auth.uid)
+        && get(memberPath(churchId, request.auth.uid)).data.rank >= rank;
+    }
+
+    function myRank(churchId) {
+      return get(memberPath(churchId, request.auth.uid)).data.rank;
+    }
+
+    // Senior pastor (6) is left out: only the national admin can appoint one.
+    function validRole(role, rank) {
+      return {'member': 1, 'mentor': 2, 'cell_leader': 3, 'ministry_leader': 4,
+        'associate_pastor': 5}.get(role, 0) == rank;
+    }
+
+    function changedOnly(keys) {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly(keys);
+    }
+
+    match /churches/{churchId} {
+      // The directory holds only public details, so any signed-in user may browse it.
+      allow read: if request.auth != null;
+      // Churches are created and edited by the national admin (approval flow).
+      allow create, update: if isAdmin();
+      allow delete: if false;
+
+      match /members/{uid} {
+        allow read: if isAdmin()
+          || (request.auth != null && request.auth.uid == uid)
+          || rankAtLeast(churchId, 3)
+          || (request.auth != null && resource.data.get('mentorUid', null) == request.auth.uid);
+
+        // Join request: yourself, as a pending member, into an active church.
+        allow create: if isAdmin()
+          || (isRealAccount() && request.auth.uid == uid
+            && get(/databases/$(database)/documents/churches/$(churchId)).data.status == 'active'
+            && request.resource.data.keys().hasOnly(['uid', 'displayName', 'role', 'rank', 'status', 'joinedAt'])
+            && request.resource.data.uid == uid
+            && request.resource.data.role == 'member'
+            && request.resource.data.rank == 1
+            && request.resource.data.status == 'pending');
+
+        allow update: if isAdmin()
+          // Members may update only their display name and sharing choice.
+          || (request.auth != null && request.auth.uid == uid
+            && changedOnly(['displayName', 'shareProgress']))
+          // Cell leaders and up approve join requests.
+          || (rankAtLeast(churchId, 3)
+            && resource.data.status == 'pending'
+            && request.resource.data.status == 'active'
+            && request.resource.data.approvedBy == request.auth.uid
+            && changedOnly(['status', 'approvedBy', 'approvedAt']))
+          // Pastors change roles, only for people below them and only to roles below them.
+          || (rankAtLeast(churchId, 5)
+            && uid != request.auth.uid
+            && resource.data.rank < myRank(churchId)
+            && request.resource.data.rank < myRank(churchId)
+            && validRole(request.resource.data.role, request.resource.data.rank)
+            && changedOnly(['role', 'rank']))
+          // Pastors assign (or clear) a mentor, who must be a mentor or above in this church.
+          || (rankAtLeast(churchId, 5)
+            && changedOnly(['mentorUid', 'mentorName'])
+            && (request.resource.data.get('mentorUid', null) == null
+              || (isActiveMember(churchId, request.resource.data.mentorUid)
+                && get(memberPath(churchId, request.resource.data.mentorUid)).data.rank >= 2)));
+
+        allow delete: if isAdmin()
+          || (request.auth != null && request.auth.uid == uid)
+          || (rankAtLeast(churchId, 3) && resource.data.status == 'pending')
+          || (rankAtLeast(churchId, 5) && resource.data.rank < myRank(churchId));
+      }
+    }
+
+    // "Which church am I in?": a collection-group query for your own membership.
+    match /{path=**}/members/{memberId} {
+      allow read: if request.auth != null && resource.data.uid == request.auth.uid;
     }
 
     // Testimonies a member chose to share ("All members"). Any signed-in

@@ -15,6 +15,7 @@ import {
   Cloud,
   Users,
   Languages,
+  Church,
 } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Switch } from "@/components/ui/switch";
@@ -29,6 +30,7 @@ import { Section } from "@/components/shared/section";
 import { EditProfileDialog } from "@/components/profile/edit-profile-dialog";
 import { AccountSheet } from "@/components/profile/account-sheet";
 import { useProfile } from "@/lib/hooks/use-profile";
+import { useMyChurch } from "@/lib/hooks/use-church";
 import { useUserCollection } from "@/lib/hooks/use-collection";
 import { useReadingPlanProgress } from "@/lib/hooks/use-reading-plan";
 import { usePwaInstall } from "@/lib/hooks/use-pwa-install";
@@ -42,6 +44,7 @@ import { useLanguage } from "@/lib/i18n";
 
 export default function ProfilePage() {
   const { profile, updateProfile, isLeader } = useProfile();
+  const myChurch = useMyChurch();
   const { t } = useLanguage();
   const { items: milestones } = useUserCollection<JourneyMilestone>("journeyMilestones");
   const activePlan = findPlan(profile?.activePlanId ?? "one-year-bible");
@@ -132,7 +135,17 @@ export default function ProfilePage() {
           <SettingRow icon={Bell} label="Notifications">
             <Switch checked={notifications} onCheckedChange={setNotifications} />
           </SettingRow>
-          {isLeader && (
+          <Link href="/church" className="block">
+            <SettingRow icon={Church} label="My Church">
+              <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                <span className="max-w-28 truncate">
+                  {myChurch.active ? myChurch.church?.name : myChurch.membership ? "Pending" : ""}
+                </span>
+                <ChevronRight className="size-4" />
+              </span>
+            </SettingRow>
+          </Link>
+          {(isLeader || myChurch.isChurchLeader) && (
             <Link href="/members" className="block">
               <SettingRow icon={Users} label="Manage Members">
                 <ChevronRight className="size-4 text-muted-foreground" />

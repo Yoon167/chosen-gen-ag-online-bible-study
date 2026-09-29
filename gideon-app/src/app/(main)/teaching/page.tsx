@@ -10,6 +10,7 @@ import { TeachingCard } from "@/components/teaching/teaching-card";
 import { ChurchTeachingCard } from "@/components/teaching/church-teaching-card";
 import { ChurchTeachingFormDialog } from "@/components/teaching/church-teaching-form-dialog";
 import { useProfile } from "@/lib/hooks/use-profile";
+import { useMyChurch } from "@/lib/hooks/use-church";
 import { deleteChurchTeaching, saveChurchTeaching } from "@/lib/hooks/use-leader";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useTopics, useUserCollection } from "@/lib/hooks/use-collection";
@@ -29,7 +30,10 @@ export default function TeachingPage() {
     "date"
   );
   const church = useTopics();
-  const { isLeader } = useProfile();
+  const { isLeader: isLegacyLeader } = useProfile();
+  // Legacy "leader" profiles keep editing rights until everyone is in the church structure.
+  const { isChurchLeader } = useMyChurch();
+  const isLeader = isLegacyLeader || isChurchLeader;
   const [churchOpen, setChurchOpen] = useState(false);
   const [editingTopic, setEditingTopic] = useState<Topic | null>(null);
 

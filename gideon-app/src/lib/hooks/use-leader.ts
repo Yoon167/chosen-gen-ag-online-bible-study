@@ -1,49 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import {
-  collection,
-  deleteDoc,
-  doc,
-  onSnapshot,
-  serverTimestamp,
-  setDoc,
-  updateDoc,
-} from "firebase/firestore";
+import { deleteDoc, doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
-import type { MemberRole, Topic, UserProfile } from "@/types";
-
-/**
- * Leader-only: realtime list of every member's profile. Firestore rules
- * refuse the query for anyone who is not a leader.
- */
-export function useMembers(enabled: boolean) {
-  const [items, setItems] = useState<UserProfile[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    if (!enabled) return;
-    return onSnapshot(
-      collection(db, "users"),
-      (snapshot) => {
-        setItems(
-          snapshot.docs
-            .map((d) => ({ ...d.data(), uid: d.id }) as UserProfile)
-            .filter((m) => m.onboarded || (m.displayName && m.displayName !== "Beloved"))
-            .sort((a, b) => a.displayName.localeCompare(b.displayName))
-        );
-        setLoading(false);
-      },
-      () => setLoading(false)
-    );
-  }, [enabled]);
-
-  async function setRole(uid: string, role: MemberRole) {
-    await updateDoc(doc(db, "users", uid), { role });
-  }
-
-  return { items, loading, setRole };
-}
+import type { Topic } from "@/types";
 
 export type ChurchTeachingValues = Pick<
   Topic,
