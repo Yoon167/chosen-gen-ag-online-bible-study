@@ -37,13 +37,5 @@ export function getChurchBibleStudyMeetings(now = Date.now()): MeetingItem[] {
       startsAt: nextWeeklyOccurrence(2, 20, 0, now),
       status: "upcoming",
     },
-    {
-      id: "bible-study-part-2",
-      title: "Online Bible Study — Part 2",
-      platform: "Google Meet",
-      link: "https://meet.google.com/wov-akna-pms",
-      startsAt: nextWeeklyOccurrence(2, 21, 0, now),
-      status: "upcoming",
-    },
   ];
 }
