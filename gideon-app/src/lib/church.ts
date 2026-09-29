@@ -32,8 +32,8 @@ export const ROLES: { role: ChurchRole; rank: number; label: Text }[] = [
 
 /** Rank needed to approve join requests and see the roster. */
 export const LEADER_RANK = 3;
-/** Rank needed to change roles and assign mentors. */
-export const PASTOR_RANK = 5;
+/** Rank needed to change roles, assign mentors, and remove members (ministry leader and up). */
+export const MANAGE_RANK = 4;
 
 export function roleInfo(role: ChurchRole) {
   return ROLES.find((r) => r.role === role)!;

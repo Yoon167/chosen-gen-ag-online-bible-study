@@ -15,7 +15,7 @@ import {
   useMyChurch,
   useRoster,
 } from "@/lib/hooks/use-church";
-import { NATIONAL_ADMIN_UID, PASTOR_RANK, ROLES, roleInfo, type ChurchRole, type Membership } from "@/lib/church";
+import { NATIONAL_ADMIN_UID, MANAGE_RANK, ROLES, roleInfo, type ChurchRole, type Membership } from "@/lib/church";
 import { useLanguage, useTx } from "@/lib/i18n";
 
 const selectClass =
@@ -64,8 +64,8 @@ export default function MembersPage() {
   const pending = roster.items.filter((m) => m.status === "pending");
   const active = roster.items.filter((m) => m.status === "active");
   const mentors = active.filter((m) => m.rank >= 2);
-  const canManage = my.rank >= PASTOR_RANK;
-  // Pastors can give only roles below their own; senior pastor is appointed by the national admin.
+  const canManage = my.rank >= MANAGE_RANK;
+  // Ministry leaders and pastors give only roles below their own; senior pastor is appointed by the national admin.
   const assignableRoles = ROLES.filter((r) => r.rank < my.rank);
 
   return (

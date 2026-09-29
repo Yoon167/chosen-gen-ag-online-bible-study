@@ -160,15 +160,17 @@ service cloud.firestore {
             && request.resource.data.status == 'active'
             && request.resource.data.approvedBy == request.auth.uid
             && changedOnly(['status', 'approvedBy', 'approvedAt']))
-          // Pastors change roles, only for people below them and only to roles below them.
-          || (rankAtLeast(churchId, 5)
+          // Ministry leaders and pastors change roles, only for people below
+          // them and only to roles below them.
+          || (rankAtLeast(churchId, 4)
             && uid != request.auth.uid
             && resource.data.rank < myRank(churchId)
             && request.resource.data.rank < myRank(churchId)
             && validRole(request.resource.data.role, request.resource.data.rank)
             && changedOnly(['role', 'rank']))
-          // Pastors assign (or clear) a mentor, who must be a mentor or above in this church.
-          || (rankAtLeast(churchId, 5)
+          // Ministry leaders and pastors assign (or clear) a mentor, who must be
+          // a mentor or above in this church.
+          || (rankAtLeast(churchId, 4)
             && changedOnly(['mentorUid', 'mentorName'])
             && (request.resource.data.get('mentorUid', null) == null
               || (isActiveMember(churchId, request.resource.data.mentorUid)
@@ -177,7 +179,7 @@ service cloud.firestore {
         allow delete: if isAdmin()
           || (request.auth != null && request.auth.uid == uid)
           || (rankAtLeast(churchId, 3) && resource.data.status == 'pending')
-          || (rankAtLeast(churchId, 5) && resource.data.rank < myRank(churchId));
+          || (rankAtLeast(churchId, 4) && resource.data.rank < myRank(churchId));
       }
     }
 
