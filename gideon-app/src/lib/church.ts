@@ -7,8 +7,8 @@
 
 type Text = { en: string; tl: string };
 
-/** The Gideon national admin. Must match isAdmin() in firestore.rules. */
-export const NATIONAL_ADMIN_UID = "1G2TVkbe9igM8ij5KN9SqIYo08M2";
+/** The Gideon national admin (yoonhuaa@gmail.com). Must match isAdmin() in firestore.rules. */
+export const NATIONAL_ADMIN_UID = "KcHm9yKcLcNbkTh7qbqi5pI7AYH2";
 
 /** The first church, migrated from the single-church version of the app. */
 export const FIRST_CHURCH_ID = "chosen-gen-ag";

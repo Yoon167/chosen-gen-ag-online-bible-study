@@ -2,7 +2,14 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
+    // Gideon national admin (yoonhuaa@gmail.com). Must match NATIONAL_ADMIN_UID in lib/church.ts.
     function isAdmin() {
+      return request.auth != null
+        && request.auth.uid == "KcHm9yKcLcNbkTh7qbqi5pI7AYH2";
+    }
+
+    // The original teacher account from manage-topics.html; it may still edit topics.
+    function isLegacyTeacher() {
       return request.auth != null
         && request.auth.uid == "1G2TVkbe9igM8ij5KN9SqIYo08M2";
     }
@@ -21,7 +28,7 @@ service cloud.firestore {
       // Saved topic documents may include slide notes, recap fields, testimony, notes, and public comments.
       // Leaders are either legacy "leader" profiles or cell leaders and up in
       // the first church, until topics move under churches/{churchId}.
-      allow create, update, delete: if isAdmin() || isLeader() || rankAtLeast('chosen-gen-ag', 3);
+      allow create, update, delete: if isAdmin() || isLegacyTeacher() || isLeader() || rankAtLeast('chosen-gen-ag', 3);
     }
 
     // GIDEON app: every member (including anonymous auth sessions) gets a
