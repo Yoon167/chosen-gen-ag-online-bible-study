@@ -40,8 +40,43 @@ service cloud.firestore {
       allow delete: if request.auth != null && request.auth.uid == userId;
 
       match /{subcollection}/{docId} {
-        allow read, write: if request.auth != null && request.auth.uid == userId;
+        allow read, write: if request.auth != null && request.auth.uid == userId
+          && !(subcollection in ['assessments', 'vaultKeys']);
       }
+
+      // Spiritual Assessment vault. Answers are encrypted on the member's
+      // device; these rules only accept ciphertext, so a client bug can never
+      // store plaintext. Guest (anonymous) sessions are refused because their
+      // vault would be lost with the device.
+      match /vaultKeys/{docId} {
+        allow read, delete: if isVaultOwner(userId);
+        allow create: if isVaultOwner(userId) && docId == 'main'
+          && request.resource.data.keys().hasOnly(['v', 'pin', 'recovery', 'createdAt'])
+          && request.resource.data.pin is map && request.resource.data.recovery is map;
+        // A PIN reset re-wraps the key with a new PIN. The recovery copy must
+        // stay the same, so an existing vault can never be replaced by a new one.
+        allow update: if isVaultOwner(userId)
+          && request.resource.data.recovery == resource.data.recovery
+          && request.resource.data.createdAt == resource.data.createdAt
+          && request.resource.data.keys().hasOnly(['v', 'pin', 'recovery', 'createdAt', 'updatedAt']);
+      }
+
+      match /assessments/{docId} {
+        allow read, delete: if isVaultOwner(userId);
+        allow create: if isVaultOwner(userId)
+          && request.resource.data.keys().hasOnly(['ct', 'iv', 'v', 'createdAt'])
+          && request.resource.data.ct is string
+          && request.resource.data.iv is string
+          && request.resource.data.ct.size() < 200000;
+        allow update: if false;
+      }
+    }
+
+    function isVaultOwner(userId) {
+      // A guest who later linked Google or email has identities on the token.
+      return request.auth != null && request.auth.uid == userId
+        && (request.auth.token.firebase.sign_in_provider != 'anonymous'
+          || request.auth.token.firebase.get('identities', {}).size() > 0);
     }
 
     // Testimonies a member chose to share ("All members"). Any signed-in

@@ -135,3 +135,9 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 export function useLanguage() {
   return useContext(LanguageContext);
 }
+
+/** Inline English/Tagalog text for one-off screen copy that doesn't belong in STRINGS. */
+export function useTx() {
+  const { lang } = useLanguage();
+  return useCallback((en: string, tl: string) => (lang === "tl" ? tl : en), [lang]);
+}

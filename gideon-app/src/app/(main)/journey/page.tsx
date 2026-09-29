@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Compass, Plus } from "lucide-react";
+import Link from "next/link";
+import { ChevronRight, Compass, Plus, ShieldCheck } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { AddMilestoneDialog } from "@/components/journey/add-milestone-dialog";
@@ -10,10 +11,11 @@ import { GrowthAnalytics } from "@/components/journey/growth-analytics";
 import { Section } from "@/components/shared/section";
 import { useUserCollection } from "@/lib/hooks/use-collection";
 import type { JourneyMilestone } from "@/types";
-import { useLanguage } from "@/lib/i18n";
+import { useLanguage, useTx } from "@/lib/i18n";
 
 export default function JourneyPage() {
   const { t } = useLanguage();
+  const tx = useTx();
   const [open, setOpen] = useState(false);
   const { items, loading, add, remove } = useUserCollection<JourneyMilestone>(
     "journeyMilestones",
@@ -36,6 +38,27 @@ export default function JourneyPage() {
           </button>
         }
       />
+
+      <div className="px-5 pb-5">
+        <Link
+          href="/journey/assessment"
+          className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4"
+        >
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <ShieldCheck className="size-5" />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block font-medium">{tx("Spiritual Assessment", "Spiritual Assessment")}</span>
+            <span className="block text-xs text-muted-foreground">
+              {tx(
+                "Private and encrypted. Only you can see your answers.",
+                "Pribado at naka-encrypt. Ikaw lang ang makakakita ng mga sagot mo."
+              )}
+            </span>
+          </span>
+          <ChevronRight className="size-4 text-muted-foreground" />
+        </Link>
+      </div>
 
       {items.length > 0 && (
         <div className="px-5">
