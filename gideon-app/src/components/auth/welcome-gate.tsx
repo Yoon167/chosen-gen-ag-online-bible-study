@@ -102,13 +102,28 @@ function Gate({ children }: { children: React.ReactNode }) {
               }
             }}
           >
+            <Button
+              type="button"
+              variant="outline"
+              className="w-full"
+              disabled={account.busy}
+              onClick={async () => {
+                try {
+                  await account.signInWithGoogle();
+                } catch {
+                  // error state already set by the hook
+                }
+              }}
+            >
+              Sign In with Google
+            </Button>
+            <p className="text-[11px] text-muted-foreground">or use email</p>
             <Input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
               autoComplete="email"
-              autoFocus
             />
             <Input
               type="password"

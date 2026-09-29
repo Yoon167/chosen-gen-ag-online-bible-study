@@ -3,8 +3,11 @@
 import { useState } from "react";
 import {
   EmailAuthProvider,
+  GoogleAuthProvider,
   linkWithCredential,
+  linkWithPopup,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   type AuthError,
 } from "firebase/auth";
@@ -15,7 +18,14 @@ function mapAuthError(error: unknown): string {
   switch (code) {
     case "auth/email-already-in-use":
     case "auth/credential-already-in-use":
-      return "That email is already registered. Try signing in instead.";
+    case "auth/account-exists-with-different-credential":
+      return "That account is already registered. Try signing in instead.";
+    case "auth/popup-blocked":
+      return "Your browser blocked the Google window. Allow pop-ups and try again.";
+    case "auth/operation-not-allowed":
+      return "Google sign-in isn't turned on yet. Please use email for now.";
+    case "auth/network-request-failed":
+      return "No connection. Check your internet and try again.";
     case "auth/invalid-email":
       return "That doesn't look like a valid email.";
     case "auth/weak-password":
@@ -27,6 +37,11 @@ function mapAuthError(error: unknown): string {
     default:
       return "Something went wrong. Please try again.";
   }
+}
+
+function isPopupClosed(error: unknown) {
+  const code = (error as AuthError)?.code;
+  return code === "auth/popup-closed-by-user" || code === "auth/cancelled-popup-request";
 }
 
 /**
@@ -71,9 +86,51 @@ export function useAccount() {
     }
   }
 
+  // Google versions of the two flows above. Closing the Google window is not
+  // an error worth showing, so it resolves to false instead of throwing.
+  async function backupWithGoogle() {
+    setError("");
+    setBusy(true);
+    try {
+      if (!auth.currentUser) throw new Error("Not ready yet, try again in a moment.");
+      await linkWithPopup(auth.currentUser, new GoogleAuthProvider());
+      return true;
+    } catch (e) {
+      if (isPopupClosed(e)) return false;
+      setError(mapAuthError(e));
+      throw e;
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function signInWithGoogle() {
+    setError("");
+    setBusy(true);
+    try {
+      await signInWithPopup(auth, new GoogleAuthProvider());
+      return true;
+    } catch (e) {
+      if (isPopupClosed(e)) return false;
+      setError(mapAuthError(e));
+      throw e;
+    } finally {
+      setBusy(false);
+    }
+  }
+
   async function signOutAccount() {
     await signOut(auth);
   }
 
-  return { backupAccount, signIn, signOutAccount, busy, error, setError };
+  return {
+    backupAccount,
+    signIn,
+    backupWithGoogle,
+    signInWithGoogle,
+    signOutAccount,
+    busy,
+    error,
+    setError,
+  };
 }

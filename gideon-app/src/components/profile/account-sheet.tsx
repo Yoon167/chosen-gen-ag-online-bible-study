@@ -15,7 +15,16 @@ export function AccountSheet({
   onOpenChange: (open: boolean) => void;
 }) {
   const { user } = useAuth();
-  const { backupAccount, signIn, signOutAccount, busy, error, setError } = useAccount();
+  const {
+    backupAccount,
+    signIn,
+    backupWithGoogle,
+    signInWithGoogle,
+    signOutAccount,
+    busy,
+    error,
+    setError,
+  } = useAccount();
   const [mode, setMode] = useState<"backup" | "signin">("backup");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -35,6 +44,15 @@ export function AccountSheet({
       if (mode === "backup") await backupAccount(email.trim(), password);
       else await signIn(email.trim(), password);
       setDone(true);
+    } catch {
+      // error state already set by the hook
+    }
+  }
+
+  async function submitGoogle() {
+    try {
+      const ok = mode === "backup" ? await backupWithGoogle() : await signInWithGoogle();
+      if (ok) setDone(true);
     } catch {
       // error state already set by the hook
     }
@@ -63,7 +81,7 @@ export function AccountSheet({
               variant="outline"
               className="w-full"
               onClick={async () => {
-                if (!confirm("Sign out? You can sign back in anytime from the welcome screen with your email and password.")) return;
+                if (!confirm("Sign out? You can sign back in anytime from the welcome screen.")) return;
                 await signOutAccount();
                 onOpenChange(false);
               }}
@@ -78,7 +96,7 @@ export function AccountSheet({
             </p>
             <p className="text-xs text-muted-foreground">
               {mode === "backup"
-                ? "You can now sign in with this email on any device without losing your data."
+                ? "You can now sign in with this account on any device without losing your data."
                 : "Your saved prayers, notes, and journey are now loading."}
             </p>
             <Button className="w-full" onClick={() => onOpenChange(false)}>
@@ -92,6 +110,12 @@ export function AccountSheet({
                 ? "GIDEON works without an account, but adding an email keeps your prayers, notes, and journey safe if you lose this device."
                 : "Sign in to an account you already created, on this or another device."}
             </p>
+
+            <Button variant="outline" className="w-full" disabled={busy} onClick={submitGoogle}>
+              {mode === "backup" ? "Back Up with Google" : "Sign In with Google"}
+            </Button>
+
+            <p className="text-center text-[11px] text-muted-foreground">or use email</p>
 
             <Input
               type="email"
