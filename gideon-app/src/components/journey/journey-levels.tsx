@@ -1,14 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { Award, Check, ChevronRight, Lock } from "lucide-react";
+import { Award, Check, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage, useTx } from "@/lib/i18n";
-import { JOURNEY_LEVELS, UPCOMING_LEVELS } from "@/lib/content/journey";
+import { JOURNEY_LEVELS } from "@/lib/content/journey";
 import { useJourneyProgress } from "@/lib/hooks/use-journey-progress";
 import { useJourneySync } from "@/lib/hooks/use-journey-sync";
 
-/** The discipleship level map on the Journey tab: levels 1–4 open, 5–8 coming soon. */
+/** The discipleship level map on the Journey tab: all eight levels. */
 export function JourneyLevels() {
   const { lang } = useLanguage();
   const tx = useTx();
@@ -51,22 +51,6 @@ export function JourneyLevels() {
           </Link>
         );
       })}
-
-      {UPCOMING_LEVELS.map((level) => (
-        <div
-          key={level.level}
-          className="flex items-center gap-3 rounded-2xl border border-dashed border-border/70 p-3.5 text-muted-foreground"
-        >
-          <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-muted text-sm font-semibold">
-            {level.level}
-          </span>
-          <span className="flex-1 text-sm">{level.title[lang]}</span>
-          <span className="flex items-center gap-1 text-[11px]">
-            <Lock className="size-3" />
-            {tx("Coming soon", "Malapit na")}
-          </span>
-        </div>
-      ))}
     </div>
   );
 }

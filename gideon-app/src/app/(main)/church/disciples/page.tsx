@@ -12,6 +12,23 @@ import { JOURNEY_LEVELS } from "@/lib/content/journey";
 import type { Membership } from "@/lib/church";
 import { useLanguage, useTx } from "@/lib/i18n";
 
+/**
+ * With eight levels, show only what matters for this disciple: levels they
+ * have started or finished and their current one when they share progress;
+ * otherwise the confirmed levels plus the next one to confirm.
+ */
+function visibleLevels(d: Membership) {
+  const nextUnconfirmed = JOURNEY_LEVELS.find((l) => !d.confirmedLevels?.[l.level])?.level;
+  return JOURNEY_LEVELS.filter((l) => {
+    const confirmed = !!d.confirmedLevels?.[l.level];
+    if (d.shareProgress && d.progress) {
+      const shared = d.progress.levels[l.level];
+      return confirmed || (shared && shared.done > 0) || d.progress.currentLevel === l.level;
+    }
+    return confirmed || l.level === nextUnconfirmed;
+  });
+}
+
 /** Mentor: the people assigned to them, their shared progress, and checkpoint confirmation. */
 export default function DisciplesPage() {
   const { lang } = useLanguage();
@@ -81,12 +98,12 @@ export default function DisciplesPage() {
                 {d.shareProgress && d.progress
                   ? d.progress.currentLevel
                     ? tx(`Working on Level ${d.progress.currentLevel}`, `Nasa Level ${d.progress.currentLevel}`)
-                    : tx("Finished every open level", "Tapos na sa lahat ng bukas na level")
+                    : tx("Finished every level", "Tapos na sa lahat ng level")
                   : tx("Not sharing progress. Ask how they're doing when you meet.", "Hindi nagbabahagi ng progress. Kumustahin sila kapag nagkita kayo.")}
               </p>
             </div>
 
-            {JOURNEY_LEVELS.map((l) => {
+            {visibleLevels(d).map((l) => {
               const shared = d.shareProgress ? d.progress?.levels[l.level] : undefined;
               const confirmed = d.confirmedLevels?.[l.level];
               const ready = shared ? shared.done === shared.total : false;

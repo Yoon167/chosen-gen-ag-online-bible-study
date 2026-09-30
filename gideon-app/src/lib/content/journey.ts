@@ -1,8 +1,11 @@
 import type { VerseRef } from "@/lib/bible/verse-ref";
+import { GROWTH_LESSONS } from "./journey-lessons-growth";
+import { LEADER_LESSONS } from "./journey-lessons-leaders";
 
 /**
- * Discipleship Journey curriculum. Levels 1–4 have lessons; 5–8 are shown as
- * coming soon until their content is written with church leaders.
+ * Discipleship Journey curriculum: eight levels from New Believer to Future
+ * Pastor / Missionary. Core lessons are below; more live in
+ * journey-lessons-growth.ts (Levels 1–4) and journey-lessons-leaders.ts (5–8).
  *
  * Lesson ids are stored in members' progress and referenced by the Spiritual
  * Assessment, so never rename an id once it is live.
@@ -43,7 +46,14 @@ export const JOURNEY_LEVELS: JourneyLevel[] = [
       en: "The first steps: knowing you are saved, learning to pray and read the Bible, and belonging to God's family.",
       tl: "Ang mga unang hakbang: pagkakaalam na ligtas ka na, pag-aaral manalangin at magbasa ng Bibliya, at pagiging bahagi ng pamilya ng Diyos.",
     },
-    lessonIds: ["assurance-of-salvation", "learning-to-pray", "growing-in-the-word", "christian-community"],
+    lessonIds: [
+      "assurance-of-salvation",
+      "gods-unfailing-love",
+      "learning-to-pray",
+      "growing-in-the-word",
+      "holy-spirit-helper",
+      "christian-community",
+    ],
     checkpoint: [
       { en: "Share how you came to believe in Jesus.", tl: "Ikuwento kung paano ka sumampalataya kay Hesus." },
       { en: "What has changed in your prayer and Bible reading these past weeks?", tl: "Ano ang nagbago sa iyong panalangin at pagbabasa ng Bibliya nitong mga nakaraang linggo?" },
@@ -57,7 +67,14 @@ export const JOURNEY_LEVELS: JourneyLevel[] = [
       en: "Who Jesus is, what forgiveness means, and the freedom and new identity you have in Him.",
       tl: "Kung sino si Hesus, ano ang kahulugan ng pagpapatawad, at ang kalayaan at bagong pagkakakilanlan mo sa Kanya.",
     },
-    lessonIds: ["who-jesus-is", "forgiven-and-forgiving", "freedom-in-christ", "new-family-in-christ"],
+    lessonIds: [
+      "who-jesus-is",
+      "saved-by-grace",
+      "identity-in-christ",
+      "forgiven-and-forgiving",
+      "freedom-in-christ",
+      "new-family-in-christ",
+    ],
     checkpoint: [
       { en: "Explain in your own words who Jesus is and what He did for you.", tl: "Ipaliwanag sa sarili mong salita kung sino si Hesus at ano ang ginawa Niya para sa iyo." },
       { en: "Is there anyone you are still working to forgive? Pray about it together.", tl: "May tao pa bang pinagsisikapan mong patawarin? Ipanalangin ito nang magkasama." },
@@ -71,7 +88,15 @@ export const JOURNEY_LEVELS: JourneyLevel[] = [
       en: "Growing strong: overcoming sin and strongholds, finding peace, healing from wounds, and standing firm.",
       tl: "Paglago sa lakas: pagtagumpay sa kasalanan at mga tanggulan, pagkakaroon ng kapayapaan, paggaling mula sa sugat, at matatag na paninindigan.",
     },
-    lessonIds: ["freedom-from-sin", "breaking-strongholds", "peace-that-guards", "healing-broken-heart", "armor-of-god"],
+    lessonIds: [
+      "fruit-of-the-spirit",
+      "freedom-from-sin",
+      "breaking-strongholds",
+      "peace-that-guards",
+      "faith-in-trials",
+      "healing-broken-heart",
+      "armor-of-god",
+    ],
     checkpoint: [
       { en: "Which temptation or habit has God helped you overcome? Where do you still need help?", tl: "Aling tukso o bisyo ang tinulungan ka ng Diyos na mapagtagumpayan? Saan ka pa nangangailangan ng tulong?" },
       { en: "Who is your accountability partner, and how often do you meet?", tl: "Sino ang accountability partner mo, at gaano kadalas kayong nagkikita?" },
@@ -85,24 +110,103 @@ export const JOURNEY_LEVELS: JourneyLevel[] = [
       en: "Learning to lead like Jesus: serving others, sharing your faith, and helping someone else grow.",
       tl: "Pag-aaral mamuno tulad ni Hesus: paglilingkod sa iba, pagbabahagi ng pananampalataya, at pagtulong sa paglago ng iba.",
     },
-    lessonIds: ["servant-leadership", "sharing-your-faith", "making-disciples"],
+    lessonIds: [
+      "servant-leadership",
+      "spiritual-gifts",
+      "leading-with-integrity",
+      "faithful-stewardship",
+      "sharing-your-faith",
+      "making-disciples",
+    ],
     checkpoint: [
       { en: "Where are you serving in the church right now?", tl: "Saan ka naglilingkod sa simbahan ngayon?" },
       { en: "Share about the person you shared your faith with.", tl: "Ikuwento ang taong binahagian mo ng iyong pananampalataya." },
       { en: "Who could you begin to disciple? Make a plan together.", tl: "Sino ang puwede mong simulang i-disciple? Gumawa ng plano nang magkasama." },
     ],
   },
+  {
+    level: 5,
+    title: { en: "Disciple Maker", tl: "Tagagawa ng Alagad" },
+    summary: {
+      en: "Walking with others the way Jesus did: leading a Bible study, praying for people, caring for new believers, and multiplying disciples.",
+      tl: "Pagsama sa iba tulad ng ginawa ni Hesus: pangunguna sa Bible study, pananalangin para sa tao, pag-aalaga sa bagong mananampalataya, at pagpaparami ng alagad.",
+    },
+    lessonIds: [
+      "jesus-way-of-discipleship",
+      "leading-a-bible-study",
+      "praying-for-others",
+      "caring-for-new-believers",
+      "multiplying-disciples",
+    ],
+    checkpoint: [
+      { en: "Who are you discipling now, and how is it going?", tl: "Sino ang dinidisipulo mo ngayon, at kumusta ito?" },
+      { en: "Lead a short Bible study together and ask for feedback.", tl: "Manguna sa maikling Bible study nang magkasama at humingi ng puna." },
+      { en: "Who will your disciple walk with next?", tl: "Sino ang susunod na sasamahan ng iyong disipulo?" },
+    ],
+  },
+  {
+    level: 6,
+    title: { en: "Ministry Leadership", tl: "Pamumuno sa Ministeryo" },
+    summary: {
+      en: "Leading a ministry or cell group: vision born in prayer, building teams, handling conflict, shepherding people, and leading through crisis.",
+      tl: "Pangunguna sa ministeryo o cell group: bisyong isinilang sa panalangin, pagbuo ng team, pagharap sa alitan, pagpapastol sa tao, at pamumuno sa gitna ng krisis.",
+    },
+    lessonIds: [
+      "vision-and-prayer",
+      "building-teams",
+      "handling-conflict",
+      "shepherding-with-care",
+      "leading-through-crisis",
+    ],
+    checkpoint: [
+      { en: "Share your ministry vision and next steps.", tl: "Ibahagi ang bisyon at susunod na hakbang ng iyong ministeryo." },
+      { en: "Who is on your team, and what role does each person have?", tl: "Sino ang nasa iyong team, at ano ang tungkulin ng bawat isa?" },
+      { en: "Talk through one hard situation in your group and pray together.", tl: "Pag-usapan ang isang mahirap na sitwasyon sa iyong grupo at manalangin nang magkasama." },
+    ],
+  },
+  {
+    level: 7,
+    title: { en: "Church Worker", tl: "Manggagawa ng Simbahan" },
+    summary: {
+      en: "Serving the church faithfully: your calling, excellence with humility, sound doctrine, caring for the sick and needy, and guarding your heart.",
+      tl: "Tapat na paglilingkod sa simbahan: ang iyong pagkatawag, kahusayang may kababaang-loob, tamang aral, pag-aalaga sa maysakit at nangangailangan, at pag-iingat sa iyong puso.",
+    },
+    lessonIds: [
+      "called-to-serve",
+      "serving-with-excellence",
+      "sound-doctrine",
+      "visitation-and-care",
+      "guarding-your-heart",
+    ],
+    checkpoint: [
+      { en: "Share your testimony of calling with your senior pastor.", tl: "Ibahagi ang iyong patotoo ng pagkatawag sa iyong senior pastor." },
+      { en: "Review your church's statement of faith together.", tl: "Suriin nang magkasama ang statement of faith ng inyong simbahan." },
+      { en: "How are your rest, family, and devotion? Be honest.", tl: "Kumusta ang iyong pahinga, pamilya, at debosyon? Maging tapat." },
+    ],
+  },
+  {
+    level: 8,
+    title: { en: "Future Pastor / Missionary", tl: "Magiging Pastor / Misyonero" },
+    summary: {
+      en: "Preparing for pastoral or missionary work: testing the call, preaching the Word, the gospel to the nations, reaching across cultures, and finishing well.",
+      tl: "Paghahanda sa pagpapastor o misyon: pagsubok sa pagkatawag, pangangaral ng Salita, ang ebanghelyo sa mga bansa, pag-abot sa ibang kultura, at pagtatapos nang mabuti.",
+    },
+    lessonIds: [
+      "the-call-to-ministry",
+      "preaching-the-word",
+      "gospel-to-the-nations",
+      "cross-cultural-ministry",
+      "finishing-well",
+    ],
+    checkpoint: [
+      { en: "Your senior pastor confirms your calling and character for further training.", tl: "Kinukumpirma ng iyong senior pastor ang iyong pagkatawag at ugali para sa karagdagang pagsasanay." },
+      { en: "Preach a short message and receive feedback.", tl: "Mangaral ng maikling mensahe at tumanggap ng puna." },
+      { en: "Agree on next steps: Bible school, internship, or mission training.", tl: "Pagkasunduan ang susunod na hakbang: Bible school, internship, o mission training." },
+    ],
+  },
 ];
 
-/** Levels 5–8 from the Gideon journey, not yet written. */
-export const UPCOMING_LEVELS: Pick<JourneyLevel, "level" | "title">[] = [
-  { level: 5, title: { en: "Disciple Maker", tl: "Tagagawa ng Alagad" } },
-  { level: 6, title: { en: "Ministry Leadership", tl: "Pamumuno sa Ministeryo" } },
-  { level: 7, title: { en: "Church Worker", tl: "Manggagawa ng Simbahan" } },
-  { level: 8, title: { en: "Future Pastor / Missionary", tl: "Magiging Pastor / Misyonero" } },
-];
-
-export const LESSONS: Lesson[] = [
+const CORE_LESSONS: Lesson[] = [
   // ---------------- Level 1 ----------------
   {
     id: "assurance-of-salvation",
@@ -638,6 +742,8 @@ export const LESSONS: Lesson[] = [
     },
   },
 ];
+
+export const LESSONS: Lesson[] = [...CORE_LESSONS, ...GROWTH_LESSONS, ...LEADER_LESSONS];
 
 export function findLesson(id: string) {
   return LESSONS.find((l) => l.id === id);

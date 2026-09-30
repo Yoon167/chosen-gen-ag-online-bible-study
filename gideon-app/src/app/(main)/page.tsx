@@ -7,6 +7,7 @@ import { StreakCards } from "@/components/home/streak-cards";
 import { PlanProgressCard } from "@/components/home/plan-progress-card";
 import { QuickActions } from "@/components/home/quick-actions";
 import { UpcomingEventCard } from "@/components/home/upcoming-event-card";
+import { NextStepCard } from "@/components/home/next-step-card";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Section } from "@/components/shared/section";
 import { useProfile } from "@/lib/hooks/use-profile";
@@ -14,7 +15,7 @@ import { encouragementOfTheDay } from "@/lib/content/encouragements";
 import { LanguageToggle } from "@/components/language-toggle";
 import { MusicToggle } from "@/components/music-toggle";
 import { InviteCard } from "@/components/invite-card";
-import { useLanguage, type StringKey } from "@/lib/i18n";
+import { useLanguage, useTx, type StringKey } from "@/lib/i18n";
 
 function greetingKey(): StringKey {
   const hour = new Date().getHours();
@@ -26,6 +27,7 @@ function greetingKey(): StringKey {
 export default function HomePage() {
   const { profile } = useProfile();
   const { lang, t } = useLanguage();
+  const tx = useTx();
   const encouragement = encouragementOfTheDay(new Date(), lang);
   const today = new Date().toLocaleDateString(lang === "tl" ? "fil-PH" : undefined, {
     weekday: "long",
@@ -86,6 +88,10 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+
+      <Section title={tx("Your next step", "Ang susunod mong hakbang")} href="/journey" hrefLabel={tx("Journey", "Journey")}>
+        <NextStepCard />
+      </Section>
 
       <div className="px-5">
         <StreakCards />

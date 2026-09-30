@@ -62,7 +62,9 @@ export function useJourneyProgress() {
         done,
         lessonsDone,
         checkpointDone: !!progress.checkpoint,
-        complete: lessonsDone && !!progress.checkpoint,
+        // A level completed before new lessons were added stays completed;
+        // the new lessons simply show as not done yet.
+        complete: (lessonsDone && !!progress.checkpoint) || !!progress.completedAt,
       };
     },
     [byLevel]

@@ -137,7 +137,7 @@ export default function PastorDashboardPage() {
                 <HBars
                   rows={[
                     ...d.atLevel.map((l) => ({ label: `L${l.level} · ${l.title[lang]}`, value: l.people })),
-                    { label: tx("Finished Levels 1–4", "Tapos na ang Level 1–4"), value: d.finishedAll },
+                    { label: tx("Finished every level", "Tapos na sa lahat ng level"), value: d.finishedAll },
                   ]}
                   format={(v) => String(v)}
                 />
