@@ -41,6 +41,7 @@ const STRINGS = {
   "qa.presentations": { en: "Presentations", tl: "Mga Presentasyon" },
   "qa.meetings": { en: "Meetings", tl: "Mga Pulong" },
   "qa.memory": { en: "Memory Verses", tl: "Pagsasaulo" },
+  "qa.oikos": { en: "My Oikos", tl: "Aking Oikos" },
 
   // Devotion
   "devotion.title": { en: "Daily Devotion", tl: "Pang-araw-araw na Debosyon" },

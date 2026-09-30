@@ -197,4 +197,6 @@ export interface UserProfile {
   lastReadDate?: string;
   lastPrayerDate?: string;
   activePlanId?: string;
+  /** Share first names and steps from My Oikos with the member's AG. */
+  shareOikos?: boolean;
 }

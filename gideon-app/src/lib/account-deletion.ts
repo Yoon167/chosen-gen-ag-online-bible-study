@@ -43,6 +43,7 @@ const USER_SUBCOLLECTIONS = [
   "readingProgress",
   "churchPrayed",
   "memoryVerses",
+  "oikos",
   "assessments",
   "vaultKeys",
 ];
@@ -125,6 +126,8 @@ async function deleteEverything(user: User, onStep?: (step: string) => void) {
         query(collection(db, "churches", churchId, "testimonies"), where("ownerUid", "==", uid))
       );
       await deleteRefs(agTestimonies.docs.map((t) => t.ref));
+      // A shared "My Oikos" list.
+      await deleteRefs([doc(db, "churches", churchId, "oikos", uid)]);
     }
   }
 

@@ -261,6 +261,22 @@ service cloud.firestore {
           || rankAtLeast(churchId, 3);
       }
 
+      // "My Oikos" lists a member chose to share: first names and steps only.
+      // Doc id is the member's uid.
+      match /oikos/{uid} {
+        allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);
+        allow create, update: if request.auth != null && request.auth.uid == uid
+          && isActiveMember(churchId, uid)
+          && request.resource.data.keys().hasOnly(['uid', 'memberName', 'people', 'updatedAt'])
+          && request.resource.data.uid == uid
+          && validText(request.resource.data.memberName, 1, 100)
+          && request.resource.data.people is list
+          && request.resource.data.people.size() <= 10
+          && request.resource.data.updatedAt is int;
+        // The owner can always take it down (even after leaving); leaders can remove it.
+        allow delete: if (request.auth != null && request.auth.uid == uid) || rankAtLeast(churchId, 3);
+      }
+
       // Church meetings: every active member sees them; cell leaders and up manage them.
       match /meetings/{meetingId} {
         allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);
