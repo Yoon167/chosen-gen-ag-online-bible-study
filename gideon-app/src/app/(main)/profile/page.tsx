@@ -19,11 +19,11 @@ import {
   ClipboardList,
 } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Switch } from "@/components/ui/switch";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Section } from "@/components/shared/section";
 import { EditProfileDialog } from "@/components/profile/edit-profile-dialog";
 import { AccountSheet } from "@/components/profile/account-sheet";
+import { ReminderSheet } from "@/components/profile/reminder-sheet";
 import { useProfile } from "@/lib/hooks/use-profile";
 import { useMyChurch } from "@/lib/hooks/use-church";
 import { useApplications } from "@/lib/hooks/use-church-applications";
@@ -55,7 +55,7 @@ export default function ProfilePage() {
     : 0;
   const [editOpen, setEditOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
-  const [notifications, setNotifications] = useState(true);
+  const [reminderOpen, setReminderOpen] = useState(false);
   const { canInstall, installed, promptInstall } = usePwaInstall();
   const linkedEmail = user && !user.isAnonymous ? user.email : null;
 
@@ -133,9 +133,11 @@ export default function ProfilePage() {
               <span className="text-xs text-muted-foreground">✓</span>
             </SettingRow>
           )}
-          <SettingRow icon={Bell} label="Notifications">
-            <Switch checked={notifications} onCheckedChange={setNotifications} />
-          </SettingRow>
+          <button onClick={() => setReminderOpen(true)} className="block w-full text-left">
+            <SettingRow icon={Bell} label="Daily Quiet-Time Reminder">
+              <ChevronRight className="size-4 text-muted-foreground" />
+            </SettingRow>
+          </button>
           <Link href="/church" className="block">
             <SettingRow icon={Church} label="My AG">
               <span className="flex items-center gap-1 text-xs text-muted-foreground">
@@ -197,6 +199,7 @@ export default function ProfilePage() {
       />
 
       <AccountSheet open={accountOpen} onOpenChange={setAccountOpen} />
+      <ReminderSheet open={reminderOpen} onOpenChange={setReminderOpen} />
 
     </div>
   );
