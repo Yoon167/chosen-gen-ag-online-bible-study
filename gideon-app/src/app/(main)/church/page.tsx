@@ -2,7 +2,16 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Church as ChurchIcon, ChevronRight, Clock, HeartHandshake, MapPin, UserRound, Users } from "lucide-react";
+import {
+  Church as ChurchIcon,
+  ChevronRight,
+  Clock,
+  HandHeart,
+  HeartHandshake,
+  MapPin,
+  UserRound,
+  Users,
+} from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
@@ -175,6 +184,15 @@ export default function MyChurchPage() {
                 </p>
               </div>
             </div>
+
+            <Link
+              href="/church/prayer"
+              className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4"
+            >
+              <HandHeart className="size-5 text-primary" />
+              <span className="flex-1 text-sm font-medium">{tx("Prayer Wall", "Prayer Wall")}</span>
+              <ChevronRight className="size-4 text-muted-foreground" />
+            </Link>
 
             <label className="flex items-start gap-3 rounded-2xl border border-border/70 bg-card p-4">
               <span className="min-w-0 flex-1">

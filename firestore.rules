@@ -190,6 +190,55 @@ service cloud.firestore {
           || (rankAtLeast(churchId, 3) && resource.data.status == 'pending')
           || (rankAtLeast(churchId, 4) && resource.data.rank < myRank(churchId));
       }
+
+      // Church prayer wall, for active members only. Anonymous requests store
+      // no author at all, so nobody in the church can tell who posted them.
+      match /prayers/{prayerId} {
+        allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);
+        allow create: if request.auth != null && isActiveMember(churchId, request.auth.uid)
+          && request.resource.data.keys().hasOnly(['text', 'category', 'anonymous', 'urgent',
+            'authorUid', 'authorName', 'prayedCount', 'answered', 'createdAt'])
+          && validText(request.resource.data.text, 1, 1000)
+          && request.resource.data.category in ['health', 'family', 'finances', 'work',
+            'salvation', 'spiritual', 'guidance', 'thanksgiving', 'other']
+          && request.resource.data.urgent is bool
+          && request.resource.data.prayedCount == 0
+          && request.resource.data.answered == false
+          && request.resource.data.createdAt is int
+          && ((request.resource.data.anonymous == false
+              && request.resource.data.authorUid == request.auth.uid
+              && validText(request.resource.data.authorName, 1, 100))
+            || (request.resource.data.anonymous == true
+              && request.resource.data.authorUid == null
+              && request.resource.data.authorName == null));
+        allow update: if request.auth != null && isActiveMember(churchId, request.auth.uid)
+          && (
+            // "I prayed": +1 together with creating your prayedBy marker, -1 with removing it.
+            (changedOnly(['prayedCount'])
+              && ((request.resource.data.prayedCount == resource.data.prayedCount + 1
+                  && !exists(/databases/$(database)/documents/churches/$(churchId)/prayers/$(prayerId)/prayedBy/$(request.auth.uid))
+                  && existsAfter(/databases/$(database)/documents/churches/$(churchId)/prayers/$(prayerId)/prayedBy/$(request.auth.uid)))
+                || (request.resource.data.prayedCount == resource.data.prayedCount - 1
+                  && exists(/databases/$(database)/documents/churches/$(churchId)/prayers/$(prayerId)/prayedBy/$(request.auth.uid))
+                  && !existsAfter(/databases/$(database)/documents/churches/$(churchId)/prayers/$(prayerId)/prayedBy/$(request.auth.uid)))))
+            // The author marks their own request answered (or not).
+            || (resource.data.authorUid == request.auth.uid
+              && changedOnly(['answered'])
+              && request.resource.data.answered is bool));
+        allow delete: if (request.auth != null && resource.data.authorUid == request.auth.uid)
+          || rankAtLeast(churchId, 3);
+
+        match /prayedBy/{uid} {
+          allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);
+          allow create: if request.auth != null && request.auth.uid == uid
+            && isActiveMember(churchId, uid)
+            && getAfter(/databases/$(database)/documents/churches/$(churchId)/prayers/$(prayerId)).data.prayedCount
+              == get(/databases/$(database)/documents/churches/$(churchId)/prayers/$(prayerId)).data.prayedCount + 1;
+          allow delete: if request.auth != null && request.auth.uid == uid
+            && getAfter(/databases/$(database)/documents/churches/$(churchId)/prayers/$(prayerId)).data.prayedCount
+              == get(/databases/$(database)/documents/churches/$(churchId)/prayers/$(prayerId)).data.prayedCount - 1;
+        }
+      }
     }
 
     // ---------- Church registration ----------
