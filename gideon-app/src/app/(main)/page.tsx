@@ -11,6 +11,7 @@ import { NextStepCard } from "@/components/home/next-step-card";
 import { CheckinCard } from "@/components/home/checkin-card";
 import { MemoryReviewCard } from "@/components/home/memory-review-card";
 import { AnnouncementCard } from "@/components/home/announcement-card";
+import { GroupReadingCard } from "@/components/home/group-reading-card";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Section } from "@/components/shared/section";
 import { useProfile } from "@/lib/hooks/use-profile";
@@ -97,6 +98,7 @@ export default function HomePage() {
           <AnnouncementCard />
           <NextStepCard />
           <CheckinCard />
+          <GroupReadingCard />
           <MemoryReviewCard />
         </div>
       </Section>
