@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Check, Trash2, Users, X } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
@@ -10,12 +10,24 @@ import { useAuth } from "@/lib/hooks/use-auth";
 import {
   approveMember,
   assignMentor,
+  listActiveChurches,
   removeMember,
   setMemberRole,
   useMyChurch,
   useRoster,
 } from "@/lib/hooks/use-church";
-import { NATIONAL_ADMIN_UID, MANAGE_RANK, ROLES, roleInfo, type ChurchRole, type Membership } from "@/lib/church";
+import {
+  NATIONAL_ADMIN_UID,
+  MANAGE_RANK,
+  ROLES,
+  roleInfo,
+  type Church,
+  type ChurchRole,
+  type Membership,
+} from "@/lib/church";
+
+/** The national admin outranks every church role, so they can set any role, including senior pastor. */
+const ADMIN_RANK = 7;
 import { useLanguage, useTx } from "@/lib/i18n";
 
 const selectClass =
@@ -26,8 +38,22 @@ export default function MembersPage() {
   const tx = useTx();
   const { uid } = useAuth();
   const my = useMyChurch();
-  const roster = useRoster(my.churchId, my.isChurchLeader);
+  const isAdmin = uid === NATIONAL_ADMIN_UID;
+  // The national admin can open any church's roster; everyone else sees their own church.
+  const [churches, setChurches] = useState<Church[]>([]);
+  const [pickedChurchId, setPickedChurchId] = useState<string | null>(null);
+  const churchId = isAdmin ? (pickedChurchId ?? my.churchId ?? churches[0]?.id ?? null) : my.churchId;
+  const churchName = churches.find((c) => c.id === churchId)?.name ?? my.church?.name ?? "";
+  const canView = isAdmin || my.isChurchLeader;
+  const roster = useRoster(churchId, canView);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (!isAdmin) return;
+    listActiveChurches()
+      .then(setChurches)
+      .catch(() => setChurches([]));
+  }, [isAdmin]);
 
   async function run(action: () => Promise<void>) {
     setError("");
@@ -38,7 +64,7 @@ export default function MembersPage() {
     }
   }
 
-  if (!my.loading && !my.isChurchLeader) {
+  if (!my.loading && !canView) {
     return (
       <div>
         <PageHeader title={tx("Members", "Mga Miyembro")} icon={Users} back />
@@ -64,20 +90,60 @@ export default function MembersPage() {
   const pending = roster.items.filter((m) => m.status === "pending");
   const active = roster.items.filter((m) => m.status === "active");
   const mentors = active.filter((m) => m.rank >= 2);
-  const canManage = my.rank >= MANAGE_RANK;
+  const myRank = isAdmin ? ADMIN_RANK : my.rank;
+  const canManage = myRank >= MANAGE_RANK;
   // Ministry leaders and pastors give only roles below their own; senior pastor is appointed by the national admin.
-  const assignableRoles = ROLES.filter((r) => r.rank < my.rank);
+  const assignableRoles = ROLES.filter((r) => r.rank < myRank);
+
+  async function changeRole(m: Membership, role: ChurchRole) {
+    // One senior pastor per church: appointing a new one moves the current one to associate pastor.
+    const current = active.filter((x) => x.role === "senior_pastor" && x.uid !== m.uid);
+    if (role === "senior_pastor" && current.length) {
+      const names = current.map((x) => x.displayName).join(", ");
+      if (
+        !confirm(
+          tx(
+            `${names} is the current senior pastor and will become associate pastor. Continue?`,
+            `Si ${names} ang kasalukuyang senior pastor at magiging associate pastor. Ituloy?`
+          )
+        )
+      )
+        return;
+      await run(async () => {
+        for (const x of current) await setMemberRole(churchId!, x.uid, "associate_pastor");
+        await setMemberRole(churchId!, m.uid, role);
+      });
+      return;
+    }
+    await run(() => setMemberRole(churchId!, m.uid, role));
+  }
 
   return (
     <div>
       <PageHeader
         title={tx("Members", "Mga Miyembro")}
-        subtitle={`${my.church?.name ?? ""} · ${active.length} ${tx("members", "miyembro")}`}
+        subtitle={`${churchName} · ${active.length} ${tx("members", "miyembro")}`}
         icon={Users}
         back
       />
 
       <div className="space-y-5 px-5 pb-8">
+        {isAdmin && churches.length > 0 && (
+          <label className="block space-y-1">
+            <span className="text-[11px] text-muted-foreground">{tx("National admin · church", "National admin · simbahan")}</span>
+            <select
+              className="h-10 w-full rounded-lg border border-border bg-background px-2 text-sm"
+              value={churchId ?? ""}
+              onChange={(e) => setPickedChurchId(e.target.value)}
+            >
+              {churches.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name} · {c.city}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
         {error && <p className="text-xs text-destructive">{error}</p>}
 
         {pending.length > 0 && (
@@ -97,14 +163,14 @@ export default function MembersPage() {
                 <button
                   aria-label={tx("Approve", "Aprubahan")}
                   className="flex size-9 items-center justify-center rounded-full bg-primary text-primary-foreground"
-                  onClick={() => run(() => approveMember(my.churchId!, m.uid, uid!))}
+                  onClick={() => run(() => approveMember(churchId!, m.uid, uid!))}
                 >
                   <Check className="size-4" />
                 </button>
                 <button
                   aria-label={tx("Decline", "Tanggihan")}
                   className="flex size-9 items-center justify-center rounded-full border border-border"
-                  onClick={() => run(() => removeMember(my.churchId!, m.uid))}
+                  onClick={() => run(() => removeMember(churchId!, m.uid))}
                 >
                   <X className="size-4" />
                 </button>
@@ -119,17 +185,17 @@ export default function MembersPage() {
               key={m.uid}
               member={m}
               isSelf={m.uid === uid}
-              canManage={canManage && m.uid !== uid && m.rank < my.rank}
+              canManage={canManage && (isAdmin || m.uid !== uid) && m.rank < myRank}
               canAssignMentor={canManage}
               roles={assignableRoles}
               mentors={mentors.filter((x) => x.uid !== m.uid)}
               lang={lang}
               tx={tx}
-              onRole={(role) => run(() => setMemberRole(my.churchId!, m.uid, role))}
-              onMentor={(mentor) => run(() => assignMentor(my.churchId!, m.uid, mentor))}
+              onRole={(role) => changeRole(m, role)}
+              onMentor={(mentor) => run(() => assignMentor(churchId!, m.uid, mentor))}
               onRemove={() => {
                 if (!confirm(tx(`Remove ${m.displayName} from the church?`, `Alisin si ${m.displayName} sa simbahan?`))) return;
-                run(() => removeMember(my.churchId!, m.uid));
+                run(() => removeMember(churchId!, m.uid));
               }}
             />
           ))}

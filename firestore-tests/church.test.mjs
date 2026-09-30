@@ -128,6 +128,11 @@ await t("mentor cannot edit topics", assertFails(setDoc(doc(real("mentor"), "top
 await t("admin reads user profiles", assertSucceeds(getDoc(doc(real(ADMIN), "users/m1"))));
 await t("members still cannot read other profiles", assertFails(getDoc(doc(real("m2"), "users/m1"))));
 
+// National admin manages any church
+await t("admin reads a church roster", assertSucceeds(getDocs(collection(real(ADMIN), `churches/${C}/members`))));
+await t("admin appoints a senior pastor", assertSucceeds(updateDoc(doc(real(ADMIN), M("m2")), { role: "senior_pastor", rank: 6 })));
+await t("admin moves the old senior pastor", assertSucceeds(updateDoc(doc(real(ADMIN), M("pastor")), { role: "associate_pastor", rank: 5 })));
+
 // Legacy "leader" cleanup
 await t("legacy leader cannot read other profiles", assertFails(getDoc(doc(real("legacy"), "users/plain"))));
 await t("legacy leader cannot list profiles", assertFails(getDocs(collection(real("legacy"), "users"))));

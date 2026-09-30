@@ -167,7 +167,7 @@ export default function ProfilePage() {
               </SettingRow>
             </Link>
           )}
-          {(isLeader || myChurch.isChurchLeader) && (
+          {(isLeader || myChurch.isChurchLeader || isNationalAdmin) && (
             <Link href="/members" className="block">
               <SettingRow icon={Users} label="Manage Members">
                 <ChevronRight className="size-4 text-muted-foreground" />
