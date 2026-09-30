@@ -8,6 +8,8 @@ import { JOURNEY_LEVELS, findLevel, lessonsForLevel } from "@/lib/content/journe
 import { verseLabel } from "@/lib/bible/verse-ref";
 import { isLessonDone, useJourneyProgress } from "@/lib/hooks/use-journey-progress";
 import { useLanguage, useTx } from "@/lib/i18n";
+import { useJourneyAccess } from "@/lib/hooks/use-journey-access";
+import { JoinAgNotice } from "@/components/journey/join-ag-notice";
 
 /**
  * "Your next step" on Home: the next unfinished lesson in the member's current
@@ -18,8 +20,10 @@ export function NextStepCard() {
   const { lang } = useLanguage();
   const tx = useTx();
   const journey = useJourneyProgress();
+  const access = useJourneyAccess();
 
-  if (journey.loading) return <Skeleton className="h-28 w-full rounded-2xl" />;
+  if (journey.loading || access.loading) return <Skeleton className="h-28 w-full rounded-2xl" />;
+  if (!access.unlocked) return <JoinAgNotice />;
 
   const className = "block space-y-3 rounded-2xl border border-primary/30 bg-card p-4";
 

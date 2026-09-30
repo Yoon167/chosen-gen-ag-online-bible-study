@@ -13,6 +13,8 @@ import { findLevel, lessonsForLevel } from "@/lib/content/journey";
 import { isLessonDone, useJourneyProgress } from "@/lib/hooks/use-journey-progress";
 import { useJourneySync } from "@/lib/hooks/use-journey-sync";
 import { useMyChurch } from "@/lib/hooks/use-church";
+import { useJourneyAccess } from "@/lib/hooks/use-journey-access";
+import { JoinAgNotice } from "@/components/journey/join-ag-notice";
 
 export function LevelDetailClient() {
   const params = useParams<{ level: string }>();
@@ -24,6 +26,7 @@ export function LevelDetailClient() {
   const mentorName_ = my.active ? my.membership?.mentorName : null;
   const [mentorName, setMentorName] = useState("");
   const [saving, setSaving] = useState(false);
+  const access = useJourneyAccess();
 
   const level = findLevel(Number(params.level));
   if (!level) return <PageHeader title={tx("Level not found", "Walang ganitong level")} back />;
@@ -48,9 +51,24 @@ export function LevelDetailClient() {
           <Progress value={s.total ? (s.done / s.total) * 100 : 0} />
         </div>
 
+        <JoinAgNotice />
+
         <ul className="space-y-2">
           {lessons.map((lesson, i) => {
             const done = isLessonDone(s.progress.lessons?.[lesson.id]);
+            if (!access.unlocked)
+              return (
+                <li
+                  key={lesson.id}
+                  className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-3.5 opacity-60"
+                >
+                  <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-xs font-semibold">
+                    {i + 1}
+                  </span>
+                  <span className="flex-1 text-sm font-medium">{lesson.title[lang]}</span>
+                  <Lock className="size-4 text-muted-foreground" />
+                </li>
+              );
             return (
               <li key={lesson.id}>
                 <Link
@@ -74,87 +92,89 @@ export function LevelDetailClient() {
           })}
         </ul>
 
-        <section className="rounded-2xl border border-border/70 bg-card p-4">
-          <h2 className="flex items-center gap-2 text-sm font-semibold">
-            {s.lessonsDone ? <Users className="size-4 text-primary" /> : <Lock className="size-4 text-muted-foreground" />}
-            {tx("Mentor checkpoint", "Mentor checkpoint")}
-          </h2>
+        {access.unlocked && (
+          <section className="rounded-2xl border border-border/70 bg-card p-4">
+            <h2 className="flex items-center gap-2 text-sm font-semibold">
+              {s.lessonsDone ? <Users className="size-4 text-primary" /> : <Lock className="size-4 text-muted-foreground" />}
+              {tx("Mentor checkpoint", "Mentor checkpoint")}
+            </h2>
 
-          {s.checkpointDone ? (
-            <p className="mt-2 text-sm text-muted-foreground">
-              {tx("Met with ", "Nakipagkita kay ")}
-              <span className="font-medium text-foreground">{s.progress.checkpoint!.mentorName}</span>
-              {" · "}
-              {new Date(s.progress.checkpoint!.date).toLocaleDateString(lang === "tl" ? "fil-PH" : "en-PH")}
-              {s.progress.checkpoint!.confirmedByMentor && (
-                <span className="text-primary"> · {tx("confirmed by mentor", "kinumpirma ng mentor")}</span>
-              )}
-            </p>
-          ) : !s.lessonsDone ? (
-            <p className="mt-2 text-sm text-muted-foreground">
-              {tx(
-                "Finish every lesson in this level, then meet with your mentor or AG leader.",
-                "Tapusin ang lahat ng aralin sa level na ito, tapos makipagkita sa iyong mentor o AG leader."
-              )}
-            </p>
-          ) : mentorName_ ? (
-            <div className="mt-3 space-y-3">
-              <p className="text-sm">
-                {tx(`Meet with ${mentorName_} and talk through:`, `Makipagkita kay ${mentorName_} at pag-usapan:`)}
-              </p>
-              <ul className="list-disc space-y-1.5 pl-5 text-sm text-muted-foreground">
-                {level.checkpoint.map((q) => (
-                  <li key={q.en}>{q[lang]}</li>
-                ))}
-              </ul>
-              <p className="rounded-xl bg-primary/5 p-3 text-xs">
-                {tx(
-                  `After you meet, ${mentorName_} confirms this checkpoint in Gideon and this level completes.`,
-                  `Pagkatapos ninyong magkita, kukumpirmahin ni ${mentorName_} ang checkpoint na ito sa Gideon at matatapos ang level na ito.`
+            {s.checkpointDone ? (
+              <p className="mt-2 text-sm text-muted-foreground">
+                {tx("Met with ", "Nakipagkita kay ")}
+                <span className="font-medium text-foreground">{s.progress.checkpoint!.mentorName}</span>
+                {" · "}
+                {new Date(s.progress.checkpoint!.date).toLocaleDateString(lang === "tl" ? "fil-PH" : "en-PH")}
+                {s.progress.checkpoint!.confirmedByMentor && (
+                  <span className="text-primary"> · {tx("confirmed by mentor", "kinumpirma ng mentor")}</span>
                 )}
-                {!my.membership?.shareProgress &&
-                  tx(
-                    " Turn on progress sharing in My AG so they can see you're ready.",
-                    " I-on ang progress sharing sa My AG para makita nilang handa ka na."
+              </p>
+            ) : !s.lessonsDone ? (
+              <p className="mt-2 text-sm text-muted-foreground">
+                {tx(
+                  "Finish every lesson in this level, then meet with your mentor or AG leader.",
+                  "Tapusin ang lahat ng aralin sa level na ito, tapos makipagkita sa iyong mentor o AG leader."
+                )}
+              </p>
+            ) : mentorName_ ? (
+              <div className="mt-3 space-y-3">
+                <p className="text-sm">
+                  {tx(`Meet with ${mentorName_} and talk through:`, `Makipagkita kay ${mentorName_} at pag-usapan:`)}
+                </p>
+                <ul className="list-disc space-y-1.5 pl-5 text-sm text-muted-foreground">
+                  {level.checkpoint.map((q) => (
+                    <li key={q.en}>{q[lang]}</li>
+                  ))}
+                </ul>
+                <p className="rounded-xl bg-primary/5 p-3 text-xs">
+                  {tx(
+                    `After you meet, ${mentorName_} confirms this checkpoint in Gideon and this level completes.`,
+                    `Pagkatapos ninyong magkita, kukumpirmahin ni ${mentorName_} ang checkpoint na ito sa Gideon at matatapos ang level na ito.`
                   )}
-              </p>
-            </div>
-          ) : (
-            <form
-              className="mt-3 space-y-3"
-              onSubmit={async (e) => {
-                e.preventDefault();
-                if (!mentorName.trim() || saving) return;
-                setSaving(true);
-                try {
-                  await journey.completeCheckpoint(level.level, mentorName.trim());
-                } finally {
-                  setSaving(false);
-                }
-              }}
-            >
-              <p className="text-sm">
-                {tx(
-                  "Meet with your mentor or AG leader and talk through:",
-                  "Makipagkita sa iyong mentor o AG leader at pag-usapan:"
-                )}
-              </p>
-              <ul className="list-disc space-y-1.5 pl-5 text-sm text-muted-foreground">
-                {level.checkpoint.map((q) => (
-                  <li key={q.en}>{q[lang]}</li>
-                ))}
-              </ul>
-              <Input
-                value={mentorName}
-                onChange={(e) => setMentorName(e.target.value)}
-                placeholder={tx("Your mentor or leader's name", "Pangalan ng iyong mentor o lider")}
-              />
-              <Button type="submit" className="w-full" disabled={!mentorName.trim() || saving}>
-                {tx("We met. Complete this level", "Nagkita na kami. Tapusin ang level na ito")}
-              </Button>
-            </form>
-          )}
-        </section>
+                  {!my.membership?.shareProgress &&
+                    tx(
+                      " Turn on progress sharing in My AG so they can see you're ready.",
+                      " I-on ang progress sharing sa My AG para makita nilang handa ka na."
+                    )}
+                </p>
+              </div>
+            ) : (
+              <form
+                className="mt-3 space-y-3"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  if (!mentorName.trim() || saving) return;
+                  setSaving(true);
+                  try {
+                    await journey.completeCheckpoint(level.level, mentorName.trim());
+                  } finally {
+                    setSaving(false);
+                  }
+                }}
+              >
+                <p className="text-sm">
+                  {tx(
+                    "Meet with your mentor or AG leader and talk through:",
+                    "Makipagkita sa iyong mentor o AG leader at pag-usapan:"
+                  )}
+                </p>
+                <ul className="list-disc space-y-1.5 pl-5 text-sm text-muted-foreground">
+                  {level.checkpoint.map((q) => (
+                    <li key={q.en}>{q[lang]}</li>
+                  ))}
+                </ul>
+                <Input
+                  value={mentorName}
+                  onChange={(e) => setMentorName(e.target.value)}
+                  placeholder={tx("Your mentor or leader's name", "Pangalan ng iyong mentor o lider")}
+                />
+                <Button type="submit" className="w-full" disabled={!mentorName.trim() || saving}>
+                  {tx("We met. Complete this level", "Nagkita na kami. Tapusin ang level na ito")}
+                </Button>
+              </form>
+            )}
+          </section>
+        )}
 
         {s.complete && (
           <Link

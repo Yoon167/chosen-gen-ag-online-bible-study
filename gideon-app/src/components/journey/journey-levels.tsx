@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { Award, Check, ChevronRight } from "lucide-react";
+import { Award, Check, ChevronRight, Lock } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage, useTx } from "@/lib/i18n";
 import { JOURNEY_LEVELS } from "@/lib/content/journey";
 import { useJourneyProgress } from "@/lib/hooks/use-journey-progress";
 import { useJourneySync } from "@/lib/hooks/use-journey-sync";
+import { useJourneyAccess } from "@/lib/hooks/use-journey-access";
 
 /** The discipleship level map on the Journey tab: all twelve levels. */
 export function JourneyLevels() {
@@ -14,6 +15,9 @@ export function JourneyLevels() {
   const tx = useTx();
   const journey = useJourneyProgress();
   useJourneySync();
+  const access = useJourneyAccess();
+  // Until the member joins an AG the map is shown but can't be opened.
+  const locked = !access.unlocked;
 
   return (
     <div className="space-y-2">
@@ -23,10 +27,12 @@ export function JourneyLevels() {
         return (
           <Link
             key={level.level}
-            href={`/journey/levels/${level.level}`}
+            href={locked ? "/church" : `/journey/levels/${level.level}`}
+            aria-disabled={locked}
             className={cn(
               "flex items-center gap-3 rounded-2xl border bg-card p-3.5",
-              isCurrent ? "border-primary/50 ring-1 ring-primary/20" : "border-border/70"
+              isCurrent && !locked ? "border-primary/50 ring-1 ring-primary/20" : "border-border/70",
+              locked && "opacity-60"
             )}
           >
             <span
@@ -47,7 +53,13 @@ export function JourneyLevels() {
                     }`}
               </span>
             </span>
-            {s.complete ? <Check className="size-4 text-primary" /> : <ChevronRight className="size-4 text-muted-foreground" />}
+            {locked ? (
+              <Lock className="size-4 text-muted-foreground" />
+            ) : s.complete ? (
+              <Check className="size-4 text-primary" />
+            ) : (
+              <ChevronRight className="size-4 text-muted-foreground" />
+            )}
           </Link>
         );
       })}

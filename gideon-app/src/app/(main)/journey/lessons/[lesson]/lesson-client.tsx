@@ -12,6 +12,9 @@ import { verseLabel, type VerseRef } from "@/lib/bible/verse-ref";
 import { PassageSheet } from "@/components/bible/passage-sheet";
 import { isLessonDone, useJourneyProgress } from "@/lib/hooks/use-journey-progress";
 import { useJourneySync } from "@/lib/hooks/use-journey-sync";
+import { useJourneyAccess } from "@/lib/hooks/use-journey-access";
+import { JoinAgNotice } from "@/components/journey/join-ag-notice";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export function LessonClient() {
   const { lesson: lessonId } = useParams<{ lesson: string }>();
@@ -21,11 +24,28 @@ export function LessonClient() {
   const [passage, setPassage] = useState<VerseRef | null>(null);
   const journey = useJourneyProgress();
   useJourneySync();
+  const access = useJourneyAccess();
   const lesson = findLesson(lessonId);
 
   if (!lesson) return <PageHeader title={tx("Lesson not found", "Walang ganitong aralin")} back />;
 
   const level = findLevel(lesson.level)!;
+
+  if (!access.unlocked) {
+    return (
+      <div>
+        <PageHeader
+          title={lesson.title[lang]}
+          subtitle={`${tx("Level", "Level")} ${level.level} · ${level.title[lang]}`}
+          back
+        />
+        <div className="px-5 pb-8">
+          {access.loading ? <Skeleton className="h-40 w-full rounded-2xl" /> : <JoinAgNotice />}
+        </div>
+      </div>
+    );
+  }
+
   const progress = journey.byLevel[lesson.level]?.lessons?.[lesson.id] ?? {};
   const done = isLessonDone(progress);
 

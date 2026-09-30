@@ -9,6 +9,7 @@ import { AddMilestoneDialog } from "@/components/journey/add-milestone-dialog";
 import { MilestoneTimeline } from "@/components/journey/milestone-timeline";
 import { GrowthAnalytics } from "@/components/journey/growth-analytics";
 import { JourneyLevels } from "@/components/journey/journey-levels";
+import { JoinAgNotice } from "@/components/journey/join-ag-notice";
 import { Section } from "@/components/shared/section";
 import { useUserCollection } from "@/lib/hooks/use-collection";
 import type { JourneyMilestone } from "@/types";
@@ -41,6 +42,7 @@ export default function JourneyPage() {
       />
 
       <Section title={tx("Discipleship Journey", "Discipleship Journey")} className="pb-5">
+        <JoinAgNotice className="mb-3" />
         <JourneyLevels />
       </Section>
 
