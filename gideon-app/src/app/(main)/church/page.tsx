@@ -14,6 +14,9 @@ import {
   UserPlus,
   UserRound,
   Users,
+  Megaphone,
+  NotebookPen,
+  CalendarCheck2,
 } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
@@ -214,6 +217,23 @@ export default function MyChurchPage() {
               <UserPlus className="size-4" />
               {tx(`Invite someone to ${my.church.name}`, `Mag-imbita sa ${my.church.name}`)}
             </Button>
+
+            <div className="grid grid-cols-3 gap-2">
+              {[
+                { href: "/church/announcements", icon: Megaphone, label: tx("Announcements", "Anunsyo") },
+                { href: "/sermons", icon: NotebookPen, label: tx("Sermon notes", "Sermon notes") },
+                { href: "/church/reading", icon: CalendarCheck2, label: tx("Reading plan", "Reading plan") },
+              ].map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="flex flex-col items-center gap-1.5 rounded-2xl border border-border/70 bg-card px-2 py-3 text-center"
+                >
+                  <l.icon className="size-5 text-primary" />
+                  <span className="text-[0.6875rem] font-medium leading-tight">{l.label}</span>
+                </Link>
+              ))}
+            </div>
 
             <Link
               href="/church/checkin"
