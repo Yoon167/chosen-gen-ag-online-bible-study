@@ -250,7 +250,7 @@ export function PrayerTimer() {
       </h2>
       {finished !== null && (
         <p className="mt-2 rounded-xl bg-primary/10 px-3 py-2 text-sm text-primary">
-          {tx(`Amen! You prayed ${finished} minutes.`, `Amen! Nanalangin ka nang ${finished} minuto.`)}
+          {tx(`Amen! You prayed ${finished} minute${finished === 1 ? "" : "s"}.`, `Amen! Nanalangin ka nang ${finished} minuto.`)}
         </p>
       )}
       <div role="group" aria-label={tx("Minutes", "Minuto")} className="mt-3 grid grid-cols-5 gap-1.5">
@@ -284,7 +284,10 @@ export function PrayerTimer() {
       </Button>
       {weekMinutes > 0 && (
         <p className="mt-2 text-center text-xs text-muted-foreground">
-          {tx(`${weekMinutes} minutes of prayer this week`, `${weekMinutes} minutong panalangin ngayong linggo`)}
+          {tx(
+            `${weekMinutes} minute${weekMinutes === 1 ? "" : "s"} of prayer this week`,
+            `${weekMinutes} minutong panalangin ngayong linggo`
+          )}
         </p>
       )}
     </section>
