@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { BookOpen, Check, PlayCircle } from "lucide-react";
@@ -7,7 +8,8 @@ import { PageHeader } from "@/components/shared/page-header";
 import { cn } from "@/lib/utils";
 import { useLanguage, useTx } from "@/lib/i18n";
 import { findLesson, findLevel, type LessonStep } from "@/lib/content/journey";
-import { verseHref, verseLabel } from "@/lib/bible/verse-ref";
+import { verseLabel, type VerseRef } from "@/lib/bible/verse-ref";
+import { PassageSheet } from "@/components/bible/passage-sheet";
 import { isLessonDone, useJourneyProgress } from "@/lib/hooks/use-journey-progress";
 import { useJourneySync } from "@/lib/hooks/use-journey-sync";
 
@@ -15,6 +17,8 @@ export function LessonClient() {
   const { lesson: lessonId } = useParams<{ lesson: string }>();
   const { lang } = useLanguage();
   const tx = useTx();
+  // The passage open in the sheet; reading stays inside the lesson.
+  const [passage, setPassage] = useState<VerseRef | null>(null);
   const journey = useJourneyProgress();
   useJourneySync();
   const lesson = findLesson(lessonId);
@@ -85,14 +89,15 @@ export function LessonClient() {
           </h2>
           <div className="mt-3 flex flex-wrap gap-2">
             {lesson.reading.map((v) => (
-              <Link
+              <button
                 key={verseLabel(v)}
-                href={verseHref(v)}
+                type="button"
+                onClick={() => setPassage(v)}
                 className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary"
               >
                 <BookOpen className="size-3.5" />
                 {verseLabel(v)}
-              </Link>
+              </button>
             ))}
           </div>
           <div className="mt-4 space-y-3 text-sm leading-relaxed">
@@ -144,6 +149,7 @@ export function LessonClient() {
           {tx(`Back to Level ${level.level}`, `Bumalik sa Level ${level.level}`)}
         </Link>
       </div>
+      <PassageSheet passage={passage} onClose={() => setPassage(null)} />
     </div>
   );
 }

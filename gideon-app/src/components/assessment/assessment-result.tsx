@@ -1,15 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { BookOpen, GraduationCap, HandHeart, HeartHandshake, Sparkles } from "lucide-react";
 import { useLanguage, useTx } from "@/lib/i18n";
 import {
   findArea,
-  verseHref,
   verseLabel,
   type AssessmentResult as Result,
 } from "@/lib/content/assessment";
 import { findLesson } from "@/lib/content/journey";
+import { PassageSheet } from "@/components/bible/passage-sheet";
+import type { VerseRef } from "@/lib/bible/verse-ref";
 
 function scoreLabel(score: number, tx: (en: string, tl: string) => string) {
   if (score >= 80) return tx("Flourishing", "Masigla");
@@ -42,6 +44,7 @@ function ScoreRing({ score }: { score: number }) {
 export function AssessmentResult({ result }: { result: Result }) {
   const { lang } = useLanguage();
   const tx = useTx();
+  const [passage, setPassage] = useState<VerseRef | null>(null);
 
   return (
     <div className="space-y-4">
@@ -93,14 +96,15 @@ export function AssessmentResult({ result }: { result: Result }) {
                 <p className="text-sm italic text-muted-foreground">&ldquo;{area.prayer[lang]}&rdquo;</p>
                 <div className="flex flex-wrap gap-2">
                   {area.verses.map((v) => (
-                    <Link
+                    <button
                       key={verseLabel(v)}
-                      href={verseHref(v)}
+                      type="button"
+                      onClick={() => setPassage(v)}
                       className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary"
                     >
                       <BookOpen className="size-3.5" />
                       {verseLabel(v)}
-                    </Link>
+                    </button>
                   ))}
                 </div>
                 <Link
@@ -141,6 +145,7 @@ export function AssessmentResult({ result }: { result: Result }) {
           </div>
         </section>
       )}
+      <PassageSheet passage={passage} onClose={() => setPassage(null)} />
     </div>
   );
 }
