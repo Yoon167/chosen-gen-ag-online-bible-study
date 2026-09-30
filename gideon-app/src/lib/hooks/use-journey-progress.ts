@@ -16,8 +16,8 @@ export type LessonProgress = Partial<Record<LessonStep, boolean>> & { completedA
 /** Stored at users/{uid}/journeyProgress/level-{n}. */
 export interface LevelProgress {
   lessons?: Record<string, LessonProgress>;
-  /** Self-reported for now; a mentor will confirm it once mentors exist in Gideon. */
-  checkpoint?: { mentorName: string; date: number };
+  /** Self-reported, or confirmed by the member's mentor in their church. */
+  checkpoint?: { mentorName: string; date: number; confirmedByMentor?: boolean };
   completedAt?: number;
 }
 
@@ -81,6 +81,13 @@ export function useJourneyProgress() {
       const current = byLevel[lesson.level]?.lessons?.[lessonId] ?? {};
       const next = { ...current, [step]: !current[step] };
       const nowDone = isLessonDone(next);
+      // Finishing the last lesson after the checkpoint completes the level.
+      const levelDef = JOURNEY_LEVELS.find((l) => l.level === lesson.level)!;
+      const levelNowComplete =
+        !!byLevel[lesson.level]?.checkpoint &&
+        levelDef.lessonIds.every((id) =>
+          id === lessonId ? nowDone : isLessonDone(byLevel[lesson.level]?.lessons?.[id])
+        );
       await setDoc(
         doc(db, "users", uid, "journeyProgress", docId(lesson.level)),
         {
@@ -90,6 +97,7 @@ export function useJourneyProgress() {
               completedAt: nowDone ? (current.completedAt ?? Date.now()) : deleteField(),
             },
           },
+          ...(levelNowComplete && !byLevel[lesson.level]?.completedAt ? { completedAt: Date.now() } : {}),
         },
         { merge: true }
       );
@@ -98,20 +106,21 @@ export function useJourneyProgress() {
   );
 
   const completeCheckpoint = useCallback(
-    async (level: number, mentorName: string) => {
+    async (level: number, mentorName: string, confirmedByMentor = false) => {
       if (!uid) return;
       const now = Date.now();
       await setDoc(
         doc(db, "users", uid, "journeyProgress", docId(level)),
         {
-          checkpoint: { mentorName, date: now },
-          // The checkpoint is only offered once every lesson is done, so this completes the level.
-          completedAt: now,
+          checkpoint: { mentorName, date: now, confirmedByMentor },
+          // A mentor may confirm before the last lesson is ticked; the level is
+          // only complete (and dated) once the lessons are done too.
+          ...(stats(level).lessonsDone ? { completedAt: now } : {}),
         },
         { merge: true }
       );
     },
-    [uid]
+    [uid, stats]
   );
 
   return {

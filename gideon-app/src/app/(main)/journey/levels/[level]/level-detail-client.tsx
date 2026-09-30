@@ -11,12 +11,17 @@ import { Progress } from "@/components/ui/progress";
 import { useLanguage, useTx } from "@/lib/i18n";
 import { findLevel, lessonsForLevel } from "@/lib/content/journey";
 import { isLessonDone, useJourneyProgress } from "@/lib/hooks/use-journey-progress";
+import { useJourneySync } from "@/lib/hooks/use-journey-sync";
+import { useMyChurch } from "@/lib/hooks/use-church";
 
 export function LevelDetailClient() {
   const params = useParams<{ level: string }>();
   const { lang } = useLanguage();
   const tx = useTx();
   const journey = useJourneyProgress();
+  useJourneySync();
+  const my = useMyChurch();
+  const mentorName_ = my.active ? my.membership?.mentorName : null;
   const [mentorName, setMentorName] = useState("");
   const [saving, setSaving] = useState(false);
 
@@ -81,6 +86,9 @@ export function LevelDetailClient() {
               <span className="font-medium text-foreground">{s.progress.checkpoint!.mentorName}</span>
               {" · "}
               {new Date(s.progress.checkpoint!.date).toLocaleDateString(lang === "tl" ? "fil-PH" : "en-PH")}
+              {s.progress.checkpoint!.confirmedByMentor && (
+                <span className="text-primary"> · {tx("confirmed by mentor", "kinumpirma ng mentor")}</span>
+              )}
             </p>
           ) : !s.lessonsDone ? (
             <p className="mt-2 text-sm text-muted-foreground">
@@ -89,6 +97,28 @@ export function LevelDetailClient() {
                 "Tapusin ang lahat ng aralin sa level na ito, tapos makipagkita sa iyong mentor o cell leader."
               )}
             </p>
+          ) : mentorName_ ? (
+            <div className="mt-3 space-y-3">
+              <p className="text-sm">
+                {tx(`Meet with ${mentorName_} and talk through:`, `Makipagkita kay ${mentorName_} at pag-usapan:`)}
+              </p>
+              <ul className="list-disc space-y-1.5 pl-5 text-sm text-muted-foreground">
+                {level.checkpoint.map((q) => (
+                  <li key={q.en}>{q[lang]}</li>
+                ))}
+              </ul>
+              <p className="rounded-xl bg-primary/5 p-3 text-xs">
+                {tx(
+                  `After you meet, ${mentorName_} confirms this checkpoint in Gideon and this level completes.`,
+                  `Pagkatapos ninyong magkita, kukumpirmahin ni ${mentorName_} ang checkpoint na ito sa Gideon at matatapos ang level na ito.`
+                )}
+                {!my.membership?.shareProgress &&
+                  tx(
+                    " Turn on progress sharing in My Church so they can see you're ready.",
+                    " I-on ang progress sharing sa My Church para makita nilang handa ka na."
+                  )}
+              </p>
+            </div>
           ) : (
             <form
               className="mt-3 space-y-3"

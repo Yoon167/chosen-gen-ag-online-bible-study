@@ -9,12 +9,14 @@ import { useLanguage, useTx } from "@/lib/i18n";
 import { findLesson, findLevel, type LessonStep } from "@/lib/content/journey";
 import { verseHref, verseLabel } from "@/lib/bible/verse-ref";
 import { isLessonDone, useJourneyProgress } from "@/lib/hooks/use-journey-progress";
+import { useJourneySync } from "@/lib/hooks/use-journey-sync";
 
 export function LessonClient() {
   const { lesson: lessonId } = useParams<{ lesson: string }>();
   const { lang } = useLanguage();
   const tx = useTx();
   const journey = useJourneyProgress();
+  useJourneySync();
   const lesson = findLesson(lessonId);
 
   if (!lesson) return <PageHeader title={tx("Lesson not found", "Walang ganitong aralin")} back />;

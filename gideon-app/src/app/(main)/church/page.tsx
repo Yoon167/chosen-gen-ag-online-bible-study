@@ -2,14 +2,21 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Church as ChurchIcon, ChevronRight, Clock, MapPin, UserRound, Users } from "lucide-react";
+import { Church as ChurchIcon, ChevronRight, Clock, HeartHandshake, MapPin, UserRound, Users } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 import { AccountSheet } from "@/components/profile/account-sheet";
 import { useAuth } from "@/lib/hooks/use-auth";
 import { useProfile } from "@/lib/hooks/use-profile";
-import { leaveChurch, listActiveChurches, requestToJoin, useMyChurch } from "@/lib/hooks/use-church";
+import {
+  leaveChurch,
+  listActiveChurches,
+  requestToJoin,
+  setShareProgress,
+  useMyChurch,
+} from "@/lib/hooks/use-church";
 import { roleInfo, type Church } from "@/lib/church";
 import { useLanguage, useTx } from "@/lib/i18n";
 
@@ -168,6 +175,36 @@ export default function MyChurchPage() {
                 </p>
               </div>
             </div>
+
+            <label className="flex items-start gap-3 rounded-2xl border border-border/70 bg-card p-4">
+              <span className="min-w-0 flex-1">
+                <span className="block text-sm font-medium">
+                  {tx("Share my journey progress", "Ibahagi ang aking journey progress")}
+                </span>
+                <span className="block text-xs text-muted-foreground">
+                  {tx(
+                    "Lets your mentor and church leaders see how many lessons you've finished in each level, so they can walk with you. Never your answers, notes, prayers, or assessment.",
+                    "Makikita ng iyong mentor at mga lider ng simbahan kung ilang aralin na ang natapos mo sa bawat level, para masamahan ka nila. Hindi kasama ang iyong mga sagot, notes, panalangin, o assessment."
+                  )}
+                </span>
+              </span>
+              <Switch
+                checked={!!my.membership!.shareProgress}
+                disabled={busy}
+                onCheckedChange={(on) => run(() => setShareProgress(my.churchId!, uid!, on))}
+              />
+            </label>
+
+            {my.rank >= 2 && (
+              <Link
+                href="/church/disciples"
+                className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4"
+              >
+                <HeartHandshake className="size-5 text-primary" />
+                <span className="flex-1 text-sm font-medium">{tx("My disciples", "Aking mga disipulo")}</span>
+                <ChevronRight className="size-4 text-muted-foreground" />
+              </Link>
+            )}
 
             {my.isChurchLeader && (
               <Link

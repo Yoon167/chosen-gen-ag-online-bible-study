@@ -87,8 +87,18 @@ export interface Membership {
   approvedAt?: number;
   mentorUid?: string | null;
   mentorName?: string | null;
-  /** The member agreed to let their mentor see their journey progress. */
+  /** The member agreed to let their mentor (and church leaders) see their journey progress. */
   shareProgress?: boolean;
+  /** Written by the member only while sharing: lesson counts, never answers or notes. */
+  progress?: ProgressSummary;
+  /** Journey checkpoints confirmed by the member's mentor, keyed by level number. */
+  confirmedLevels?: Record<string, { by: string; name: string; at: number }>;
+}
+
+export interface ProgressSummary {
+  levels: Record<string, { done: number; total: number; checkpoint: boolean }>;
+  currentLevel: number | null;
+  updatedAt: number;
 }
 
 export function slugifyChurch(name: string) {

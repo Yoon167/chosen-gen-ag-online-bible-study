@@ -6,12 +6,14 @@ import { cn } from "@/lib/utils";
 import { useLanguage, useTx } from "@/lib/i18n";
 import { JOURNEY_LEVELS, UPCOMING_LEVELS } from "@/lib/content/journey";
 import { useJourneyProgress } from "@/lib/hooks/use-journey-progress";
+import { useJourneySync } from "@/lib/hooks/use-journey-sync";
 
 /** The discipleship level map on the Journey tab: levels 1–4 open, 5–8 coming soon. */
 export function JourneyLevels() {
   const { lang } = useLanguage();
   const tx = useTx();
   const journey = useJourneyProgress();
+  useJourneySync();
 
   return (
     <div className="space-y-2">

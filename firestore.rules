@@ -151,9 +151,18 @@ service cloud.firestore {
             && request.resource.data.status == 'pending');
 
         allow update: if isAdmin()
-          // Members may update only their display name and sharing choice.
+          // Members may update their display name, their sharing choice, and
+          // (only while sharing) a summary of their journey progress.
           || (request.auth != null && request.auth.uid == uid
-            && changedOnly(['displayName', 'shareProgress']))
+            && changedOnly(['displayName', 'shareProgress', 'progress'])
+            && (!request.resource.data.keys().hasAny(['progress'])
+              || (request.resource.data.shareProgress == true && request.resource.data.progress is map)))
+          // A member's own mentor confirms journey checkpoints.
+          || (request.auth != null
+            && resource.data.get('mentorUid', null) == request.auth.uid
+            && isActiveMember(churchId, request.auth.uid)
+            && changedOnly(['confirmedLevels'])
+            && request.resource.data.confirmedLevels is map)
           // Cell leaders and up approve join requests.
           || (rankAtLeast(churchId, 3)
             && resource.data.status == 'pending'

@@ -5,6 +5,7 @@ import {
   collection,
   collectionGroup,
   deleteDoc,
+  deleteField,
   doc,
   getDocs,
   onSnapshot,
@@ -22,6 +23,7 @@ import {
   type Church,
   type ChurchRole,
   type Membership,
+  type ProgressSummary,
 } from "@/lib/church";
 
 /**
@@ -106,8 +108,54 @@ export async function leaveChurch(churchId: string, uid: string) {
   await deleteDoc(doc(db, "churches", churchId, "members", uid));
 }
 
+/** Turning sharing off also removes the shared summary. */
 export async function setShareProgress(churchId: string, uid: string, shareProgress: boolean) {
-  await updateDoc(doc(db, "churches", churchId, "members", uid), { shareProgress });
+  await updateDoc(
+    doc(db, "churches", churchId, "members", uid),
+    shareProgress ? { shareProgress } : { shareProgress, progress: deleteField() }
+  );
+}
+
+export async function syncProgressSummary(churchId: string, uid: string, progress: ProgressSummary) {
+  await updateDoc(doc(db, "churches", churchId, "members", uid), { progress });
+}
+
+/** Mentor: the people they mentor in this church. */
+export function useDisciples(churchId: string | null, mentorUid: string | null) {
+  const [items, setItems] = useState<Membership[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!churchId || !mentorUid) return;
+    return onSnapshot(
+      query(collection(db, "churches", churchId, "members"), where("mentorUid", "==", mentorUid)),
+      (snap) => {
+        setItems(
+          snap.docs
+            .map((d) => d.data() as Membership)
+            .sort((a, b) => a.displayName.localeCompare(b.displayName))
+        );
+        setLoading(false);
+      },
+      () => setLoading(false)
+    );
+  }, [churchId, mentorUid]);
+
+  return { items, loading };
+}
+
+export async function confirmCheckpoint(
+  churchId: string,
+  disciple: Membership,
+  level: number,
+  mentor: { uid: string; name: string }
+) {
+  await updateDoc(doc(db, "churches", churchId, "members", disciple.uid), {
+    confirmedLevels: {
+      ...(disciple.confirmedLevels ?? {}),
+      [level]: { by: mentor.uid, name: mentor.name, at: Date.now() },
+    },
+  });
 }
 
 /** Leader-only (rank 3+): realtime church roster. Rules refuse it for everyone else. */
