@@ -8,6 +8,18 @@ import {
 } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 
+// Dozens of hooks call useAuth at once when a screen opens. Each used to start
+// its own guest sign-in on seeing "no user", so a new visitor got many
+// accounts (and many empty "Beloved" profiles). Everyone shares one sign-in.
+let guestSignIn: Promise<unknown> | null = null;
+
+function ensureGuestSession() {
+  guestSignIn ??= signInAnonymously(auth).finally(() => {
+    guestSignIn = null;
+  });
+  return guestSignIn;
+}
+
 export function useAuth() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
@@ -20,7 +32,7 @@ export function useAuth() {
         setError(null);
         setLoading(false);
       } else {
-        signInAnonymously(auth).catch((err) => {
+        ensureGuestSession().catch((err) => {
           setError(err?.code ?? "auth/unknown");
           setLoading(false);
         });
