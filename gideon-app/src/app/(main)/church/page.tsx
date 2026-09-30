@@ -11,6 +11,7 @@ import {
   LayoutDashboard,
   MapPin,
   ShieldCheck,
+  UserPlus,
   UserRound,
   Users,
 } from "lucide-react";
@@ -18,6 +19,7 @@ import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
+import { InviteSheet } from "@/components/church/invite-sheet";
 import { AccountSheet } from "@/components/profile/account-sheet";
 import { useAuth } from "@/lib/hooks/use-auth";
 import { useProfile } from "@/lib/hooks/use-profile";
@@ -41,6 +43,17 @@ export default function MyChurchPage() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [accountOpen, setAccountOpen] = useState(false);
+  const [inviteOpen, setInviteOpen] = useState(false);
+  // An invite link opens this page as /church?join={agId}.
+  const [invitedId, setInvitedId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const id = setTimeout(() => setInvitedId(new URLSearchParams(window.location.search).get("join")), 0);
+    return () => clearTimeout(id);
+  }, []);
+  const invited = churches?.find((c) => c.id === invitedId) ?? null;
+  // The invited AG goes first in the list.
+  const directory = churches ? [...churches].sort((a, b) => Number(b.id === invitedId) - Number(a.id === invitedId)) : null;
 
   const needsDirectory = !my.loading && !my.membership;
   useEffect(() => {
@@ -74,8 +87,8 @@ export default function MyChurchPage() {
           <>
             <p className="text-sm text-muted-foreground">
               {tx(
-                "To join an AG, first back up your account so your membership stays with you on any device.",
-                "Para makasali sa isang AG, i-back up muna ang account mo para dala mo ang pagiging miyembro sa kahit anong device."
+                `${invited ? `You're invited to ${invited.name}. ` : ""}To join an AG, first back up your account so your membership stays with you on any device.`,
+                `${invited ? `Inimbitahan ka sa ${invited.name}. ` : ""}Para makasali sa isang AG, i-back up muna ang account mo para dala mo ang pagiging miyembro sa kahit anong device.`
               )}
             </p>
             <Button className="w-full" onClick={() => setAccountOpen(true)}>
@@ -109,8 +122,18 @@ export default function MyChurchPage() {
             >
               {tx("Is your AG not listed? Register your AG", "Wala ang AG mo? Irehistro ang iyong AG")}
             </Link>
-            {churches?.map((c) => (
-              <div key={c.id} className="space-y-3 rounded-2xl border border-border/70 bg-card p-4">
+            {directory?.map((c) => (
+              <div
+                key={c.id}
+                className={
+                  c.id === invitedId
+                    ? "space-y-3 rounded-2xl border-2 border-primary bg-card p-4"
+                    : "space-y-3 rounded-2xl border border-border/70 bg-card p-4"
+                }
+              >
+                {c.id === invitedId && (
+                  <p className="text-xs font-semibold text-primary">{tx("You're invited to join", "Inimbitahan kang sumali")}</p>
+                )}
                 <div>
                   <p className="font-medium">{c.name}</p>
                   <p className="text-xs text-muted-foreground">
@@ -186,6 +209,11 @@ export default function MyChurchPage() {
                 </p>
               </div>
             </div>
+
+            <Button variant="outline" className="w-full" onClick={() => setInviteOpen(true)}>
+              <UserPlus className="size-4" />
+              {tx(`Invite someone to ${my.church.name}`, `Mag-imbita sa ${my.church.name}`)}
+            </Button>
 
             <Link
               href="/church/checkin"
@@ -285,6 +313,9 @@ export default function MyChurchPage() {
       </div>
 
       <AccountSheet open={accountOpen} onOpenChange={setAccountOpen} />
+      {my.active && my.church && (
+        <InviteSheet open={inviteOpen} onOpenChange={setInviteOpen} churchId={my.churchId!} churchName={my.church.name} />
+      )}
     </div>
   );
 }
