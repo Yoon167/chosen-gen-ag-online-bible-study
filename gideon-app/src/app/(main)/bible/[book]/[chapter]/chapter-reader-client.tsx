@@ -21,6 +21,12 @@ import {
 } from "@/components/bible/verse-action-drawer";
 import { Skeleton } from "@/components/ui/skeleton";
 import { AudioPlayer } from "@/components/bible/audio-player";
+import {
+  NarratedPlayer,
+  consumeAutoplayFlag,
+  markAutoplayNextChapter,
+} from "@/components/bible/narrated-player";
+import { WEB_AUDIO, webAudioUrl } from "@/lib/bible/audio";
 import { useBibleSpeech } from "@/lib/hooks/use-bible-speech";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/lib/i18n";
@@ -48,6 +54,33 @@ export function ChapterReaderClient() {
   const verseTexts = useMemo(() => verses?.map((v) => cleanVerseText(v.text)) ?? [], [verses]);
   const speech = useBibleSpeech(verseTexts, isTagalog ? "tl" : "en");
   const [listening, setListening] = useState(false);
+  // English chapters play a human-narrated recording; Tagalog uses the phone's voice.
+  const [narratedSrc, setNarratedSrc] = useState<string | null>(null);
+  const [autoPlayNarrated, setAutoPlayNarrated] = useState(false);
+
+  // Look up the recording as soon as the chapter opens, so pressing play
+  // starts it immediately (mobile browsers only allow playback on a tap).
+  useEffect(() => {
+    if (isTagalog) return;
+    let cancelled = false;
+    webAudioUrl(bookSlug, chapter)
+      .then((url) => !cancelled && setNarratedSrc(url))
+      .catch(() => !cancelled && setNarratedSrc(null));
+    return () => {
+      cancelled = true;
+    };
+  }, [bookSlug, chapter, isTagalog]);
+
+  // Keep listening into the next chapter after the previous one finished.
+  useEffect(() => {
+    const id = setTimeout(() => {
+      if (consumeAutoplayFlag()) {
+        setListening(true);
+        setAutoPlayNarrated(true);
+      }
+    }, 0);
+    return () => clearTimeout(id);
+  }, [bookSlug, chapter]);
 
   // Keep the verse being read in view.
   useEffect(() => {
@@ -176,16 +209,38 @@ export function ChapterReaderClient() {
         <button
           onClick={() => {
             setListening(true);
-            if (speech.state !== "playing") speech.play();
+            if (isTagalog) {
+              if (speech.state !== "playing") speech.play();
+            } else {
+              setAutoPlayNarrated(true);
+            }
           }}
-          disabled={!verses}
+          disabled={!verses || (!isTagalog && !narratedSrc)}
           aria-label={isTagalog ? "Pakinggan ang kabanata" : "Listen to this chapter"}
           className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary disabled:opacity-40"
         >
           <Headphones className="size-4" />
         </button>
         </div>
-        {listening && (
+        {listening && !isTagalog && narratedSrc && (
+          <NarratedPlayer
+            src={narratedSrc}
+            title={`${book.name} ${chapter}`}
+            autoPlay={autoPlayNarrated}
+            readingOtherTranslation={translation !== WEB_AUDIO.translationId}
+            onReadAlong={() => updateProfile({ bibleTranslation: WEB_AUDIO.translationId })}
+            onEnded={() => {
+              if (!getAdjacentChapter(bookSlug, chapter, "next")) return;
+              markAutoplayNextChapter();
+              goTo("next");
+            }}
+            onClose={() => {
+              setListening(false);
+              setAutoPlayNarrated(false);
+            }}
+          />
+        )}
+        {listening && isTagalog && (
           <AudioPlayer
             speech={speech}
             verseNumber={verses?.[speech.index]?.verse}
