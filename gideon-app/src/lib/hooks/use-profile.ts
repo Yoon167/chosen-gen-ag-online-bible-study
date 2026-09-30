@@ -5,6 +5,7 @@ import { doc, onSnapshot, setDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { useAuth } from "@/lib/hooks/use-auth";
 import { nextStreak, todayKey } from "@/lib/streak";
+import { accountDeletion } from "@/lib/account-deletion";
 import type { UserProfile } from "@/types";
 
 const DEFAULT_PROFILE: Omit<UserProfile, "uid"> = {
@@ -38,6 +39,8 @@ export function useProfile() {
           // account). Only create a default profile once the server confirms
           // it doesn't exist, so an existing profile is never overwritten.
           if (snap.metadata.fromCache) return;
+          // The member is deleting their account; don't bring the profile back.
+          if (accountDeletion.inProgress) return;
           const fresh = { uid, ...DEFAULT_PROFILE };
           await setDoc(ref, fresh, { merge: true });
           setProfile(fresh);

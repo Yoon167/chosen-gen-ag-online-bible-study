@@ -20,12 +20,6 @@ import {
 } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Switch } from "@/components/ui/switch";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-} from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Section } from "@/components/shared/section";
 import { EditProfileDialog } from "@/components/profile/edit-profile-dialog";
@@ -60,7 +54,6 @@ export default function ProfilePage() {
     ? Math.round(((planProgress?.completedDays.length ?? 0) / activePlan.totalDays) * 100)
     : 0;
   const [editOpen, setEditOpen] = useState(false);
-  const [privacyOpen, setPrivacyOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
   const [notifications, setNotifications] = useState(true);
   const { canInstall, installed, promptInstall } = usePwaInstall();
@@ -188,11 +181,11 @@ export default function ProfilePage() {
               )}
             </SettingRow>
           </button>
-          <button onClick={() => setPrivacyOpen(true)} className="block w-full text-left">
-            <SettingRow icon={ShieldCheck} label="Privacy">
+          <Link href="/privacy" className="block">
+            <SettingRow icon={ShieldCheck} label="Privacy & Delete Account">
               <ChevronRight className="size-4 text-muted-foreground" />
             </SettingRow>
-          </button>
+          </Link>
         </div>
       </Section>
 
@@ -205,26 +198,6 @@ export default function ProfilePage() {
 
       <AccountSheet open={accountOpen} onOpenChange={setAccountOpen} />
 
-      <Sheet open={privacyOpen} onOpenChange={setPrivacyOpen}>
-        <SheetContent side="bottom">
-          <SheetHeader>
-            <SheetTitle className="font-heading">Privacy</SheetTitle>
-          </SheetHeader>
-          <div className="space-y-3 px-4 pb-6 text-sm text-muted-foreground">
-            <p>
-              GIDEON stores your prayers, notes, testimonies, journey, and Bible
-              activity in a private, per-device account secured by Firebase.
-            </p>
-            <p>
-              Your prayers, notes and journey are only visible to you.
-              Testimonies stay private too unless you choose &ldquo;All
-              members&rdquo; when writing one. Church teachings are shared with
-              everyone. You can request deletion at any time from your church
-              administrator.
-            </p>
-          </div>
-        </SheetContent>
-      </Sheet>
     </div>
   );
 }

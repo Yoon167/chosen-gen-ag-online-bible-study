@@ -187,6 +187,8 @@ export interface UserProfile {
   bio?: string;
   photoUrl?: string;
   onboarded?: boolean;
+  /** Which Privacy Notice version the member agreed to, and when. */
+  privacyConsent?: { version: string; at: number };
   bibleTranslation?: string;
   readingStreak: number;
   prayerStreak: number;

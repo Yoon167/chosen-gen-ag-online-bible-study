@@ -25,6 +25,7 @@ export function VaultSetup({
   const [recoveryCode, setRecoveryCode] = useState("");
   const [saved, setSaved] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [understood, setUnderstood] = useState(false);
 
   if (step === "intro") {
     const promises = [
@@ -73,7 +74,19 @@ export function VaultSetup({
             </li>
           ))}
         </ul>
-        <Button className="w-full" onClick={() => setStep("pin")}>
+        <label className="flex items-start gap-2.5 text-sm">
+          <input
+            type="checkbox"
+            checked={understood}
+            onChange={(e) => setUnderstood(e.target.checked)}
+            className="mt-0.5 size-4 shrink-0 accent-[var(--primary)]"
+          />
+          {tx(
+            "I understand and agree to keep my answers in this private, encrypted vault.",
+            "Naiintindihan ko at pumapayag akong itago ang aking mga sagot sa pribado at naka-encrypt na vault na ito."
+          )}
+        </label>
+        <Button className="w-full" disabled={!understood} onClick={() => setStep("pin")}>
           {tx("Set up my private vault", "I-set up ang aking pribadong vault")}
         </Button>
       </div>

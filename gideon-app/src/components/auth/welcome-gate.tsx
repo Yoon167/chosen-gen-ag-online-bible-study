@@ -9,6 +9,9 @@ import { useProfile } from "@/lib/hooks/use-profile";
 import { useAccount } from "@/lib/hooks/use-account";
 import { LanguageToggle } from "@/components/language-toggle";
 import { CinematicIntro } from "@/components/intro/cinematic-intro";
+import { PRIVACY_VERSION, PrivacyNotice } from "@/components/privacy/privacy-notice";
+import { DeleteAccount } from "@/components/privacy/delete-account";
+import { useTx } from "@/lib/i18n";
 
 const INTRO_KEY = "gideon-intro-played";
 
@@ -57,6 +60,8 @@ function Gate({ children }: { children: React.ReactNode }) {
   const [signingIn, setSigningIn] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [agreed, setAgreed] = useState(false);
+  const [showNotice, setShowNotice] = useState(false);
   const account = useAccount();
 
   if (loading) {
@@ -157,7 +162,7 @@ function Gate({ children }: { children: React.ReactNode }) {
               className="w-full max-w-xs space-y-3"
               onSubmit={async (e) => {
                 e.preventDefault();
-                if (!name.trim() || submitting) return;
+                if (!name.trim() || !agreed || submitting) return;
                 setSubmitting(true);
                 setError(null);
                 try {
@@ -165,6 +170,7 @@ function Gate({ children }: { children: React.ReactNode }) {
                     displayName: name.trim(),
                     ministry: ministry.trim(),
                     onboarded: true,
+                    privacyConsent: { version: PRIVACY_VERSION, at: Date.now() },
                   });
                 } catch (err) {
                   console.error("Welcome sign-in failed", err);
@@ -185,7 +191,26 @@ function Gate({ children }: { children: React.ReactNode }) {
                 onChange={(e) => setMinistry(e.target.value)}
                 placeholder="Ministry (optional)"
               />
-              <Button type="submit" className="w-full" disabled={!name.trim() || submitting}>
+              <label className="flex items-start gap-2.5 text-left text-xs">
+                <input
+                  type="checkbox"
+                  checked={agreed}
+                  onChange={(e) => setAgreed(e.target.checked)}
+                  className="mt-0.5 size-4 shrink-0 accent-[var(--primary)]"
+                />
+                <span>
+                  I agree to how Gideon keeps my data.{" "}
+                  <button type="button" className="underline underline-offset-2" onClick={() => setShowNotice((v) => !v)}>
+                    {showNotice ? "Hide" : "Read the Privacy Notice"}
+                  </button>
+                </span>
+              </label>
+              {showNotice && (
+                <div className="max-h-64 overflow-y-auto rounded-xl border border-border/70 bg-card p-3 text-left">
+                  <PrivacyNotice />
+                </div>
+              )}
+              <Button type="submit" className="w-full" disabled={!name.trim() || !agreed || submitting}>
                 {submitting ? "Signing in…" : "Continue"}
               </Button>
               {(error || authError) && (
@@ -213,5 +238,58 @@ function Gate({ children }: { children: React.ReactNode }) {
     );
   }
 
+  // Members who joined before the Privacy Notice (or before a new version) agree once.
+  if (profile && profile.privacyConsent?.version !== PRIVACY_VERSION) {
+    return <ConsentScreen onAgree={() => updateProfile({ privacyConsent: { version: PRIVACY_VERSION, at: Date.now() } })} />;
+  }
+
   return <>{children}</>;
+}
+
+function ConsentScreen({ onAgree }: { onAgree: () => Promise<void> }) {
+  const tx = useTx();
+  const [busy, setBusy] = useState(false);
+  const [declining, setDeclining] = useState(false);
+  return (
+    <div className="mx-auto max-w-xl space-y-5 px-5 py-8 safe-top safe-bottom">
+      <div className="flex items-center justify-between gap-3">
+        <h1 className="font-heading text-xl font-semibold">{tx("Your privacy", "Ang iyong privacy")}</h1>
+        <LanguageToggle />
+      </div>
+      <p className="text-sm text-muted-foreground">
+        {tx(
+          "Please read how Gideon cares for your data. You can change your sharing choices or delete your account anytime in Profile → Privacy.",
+          "Pakibasa kung paano iniingatan ng Gideon ang iyong data. Maaari mong baguhin ang pagbabahagi o burahin ang iyong account anumang oras sa Profile → Privacy."
+        )}
+      </p>
+      <div className="rounded-2xl border border-border/70 bg-card p-4">
+        <PrivacyNotice />
+      </div>
+      <Button
+        className="w-full"
+        disabled={busy}
+        onClick={async () => {
+          setBusy(true);
+          try {
+            await onAgree();
+          } finally {
+            setBusy(false);
+          }
+        }}
+      >
+        {tx("I agree", "Sumasang-ayon ako")}
+      </Button>
+      {declining ? (
+        <DeleteAccount />
+      ) : (
+        <button
+          type="button"
+          onClick={() => setDeclining(true)}
+          className="w-full text-center text-xs text-muted-foreground underline underline-offset-2"
+        >
+          {tx("I don't agree. Delete my account", "Hindi ako sang-ayon. Burahin ang aking account")}
+        </button>
+      )}
+    </div>
+  );
 }
