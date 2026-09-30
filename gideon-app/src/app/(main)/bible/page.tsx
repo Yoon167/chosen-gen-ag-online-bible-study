@@ -39,7 +39,7 @@ export default function BiblePage() {
             className="flex flex-col items-center gap-1.5 rounded-xl border border-border/70 bg-card py-3 text-center"
           >
             <l.icon className="size-4 text-primary" />
-            <span className="text-[10px] font-medium leading-tight">
+            <span className="text-[0.625rem] font-medium leading-tight">
               {l.label}
             </span>
           </Link>

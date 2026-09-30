@@ -147,7 +147,7 @@ export function NarratedPlayer({
         aria-label={tx("Position in chapter", "Posisyon sa kabanata")}
         className="w-full accent-[var(--primary)]"
       />
-      <div className="flex justify-between text-[11px] tabular-nums text-muted-foreground">
+      <div className="flex justify-between text-[0.6875rem] tabular-nums text-muted-foreground">
         <span>{formatTime(time)}</span>
         <span>{formatTime(duration)}</span>
       </div>
@@ -190,7 +190,7 @@ export function NarratedPlayer({
           {tx("Couldn't load the recording. Check your connection.", "Hindi ma-load ang recording. Tingnan ang iyong internet.")}
         </p>
       )}
-      <p className="text-center text-[11px] text-muted-foreground">
+      <p className="text-center text-[0.6875rem] text-muted-foreground">
         {tx("Read by", "Binasa ni")} {WEB_AUDIO.narrator} · World English Bible ·{" "}
         <a href={WEB_AUDIO.sourceUrl} target="_blank" rel="noreferrer" className="underline underline-offset-2">
           {WEB_AUDIO.source}
@@ -198,7 +198,7 @@ export function NarratedPlayer({
         ({tx("public domain", "public domain")})
       </p>
       {readingOtherTranslation && (
-        <p className="text-center text-[11px] text-muted-foreground">
+        <p className="text-center text-[0.6875rem] text-muted-foreground">
           {tx("The recording follows the World English Bible wording. ", "Sinusundan ng recording ang World English Bible. ")}
           <button onClick={onReadAlong} className="font-medium text-primary underline underline-offset-2">
             {tx("Read along in WEB", "Sabayan sa WEB")}

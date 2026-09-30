@@ -72,7 +72,7 @@ export function MeetingCard({
           </button>
         ) : (
           recurring && (
-            <Badge variant="secondary" className="shrink-0 text-[10px]">
+            <Badge variant="secondary" className="shrink-0 text-[0.625rem]">
               Weekly
             </Badge>
           )
@@ -82,7 +82,7 @@ export function MeetingCard({
       <div className="mt-3 flex items-center justify-between">
         <Badge
           className={cn(
-            "text-[10px]",
+            "text-[0.625rem]",
             status === "live" && "bg-red-500/15 text-red-600 dark:text-red-400",
             status === "upcoming" && "bg-primary/10 text-primary",
             status === "ended" && "bg-muted text-muted-foreground"

@@ -57,7 +57,7 @@ export function MilestoneTimeline({
               <div className="rounded-2xl border border-border/70 bg-card p-4">
                 <div className="flex items-start justify-between gap-2">
                   <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+                    <p className="text-[0.625rem] font-semibold uppercase tracking-wide text-muted-foreground">
                       {m.type} · {new Date(m.date).toLocaleDateString()}
                     </p>
                     <p className="mt-0.5 text-sm font-medium">{m.title}</p>

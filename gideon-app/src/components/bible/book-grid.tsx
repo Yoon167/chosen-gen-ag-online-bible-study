@@ -12,10 +12,10 @@ export function BookGrid({ books }: { books: BibleBook[] }) {
           href={`/bible/${book.slug}/1`}
           className="flex flex-col items-center justify-center rounded-xl border border-border/70 bg-card px-2 py-3.5 text-center transition hover:border-primary/40"
         >
-          <span className="text-[13px] font-medium leading-tight">
+          <span className="text-[0.8125rem] font-medium leading-tight">
             {book.name}
           </span>
-          <span className="mt-0.5 text-[10px] text-muted-foreground">
+          <span className="mt-0.5 text-[0.625rem] text-muted-foreground">
             {book.chapters} ch
           </span>
         </Link>

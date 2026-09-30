@@ -46,7 +46,7 @@ export function QuickActions() {
             <span className="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
               <a.icon className="size-4.5" />
             </span>
-            <span className="text-[11px] font-medium leading-tight text-foreground/90">
+            <span className="text-[0.6875rem] font-medium leading-tight text-foreground/90">
               {t(a.label)}
             </span>
           </Link>

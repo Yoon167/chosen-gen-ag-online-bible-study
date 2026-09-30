@@ -20,13 +20,13 @@ export function TeachingCard({
     <div className="rounded-2xl border border-border/70 bg-card p-4">
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0 flex-1">
-          <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+          <p className="text-[0.625rem] font-semibold uppercase tracking-wide text-muted-foreground">
             {new Date(teaching.date).toLocaleDateString()}
             {teaching.speaker ? ` · ${teaching.speaker}` : ""}
           </p>
           <p className="mt-0.5 text-sm font-medium">{teaching.topic}</p>
           {teaching.scripture && (
-            <Badge variant="secondary" className="mt-1.5 text-[10px]">
+            <Badge variant="secondary" className="mt-1.5 text-[0.625rem]">
               {teaching.scripture}
             </Badge>
           )}

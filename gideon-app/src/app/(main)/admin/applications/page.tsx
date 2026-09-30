@@ -142,7 +142,7 @@ function ApplicationCard({
 
       {a.status === "pending" && (
         <>
-          <p className="text-[11px] text-muted-foreground">
+          <p className="text-[0.6875rem] text-muted-foreground">
             Before approving, contact the leader to confirm the AG is real and they lead it.
           </p>
           <div className="flex gap-2">

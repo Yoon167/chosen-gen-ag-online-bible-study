@@ -94,7 +94,7 @@ function PassageBody({ passage }: { passage: VerseRef }) {
           </div>
         )}
         {verses && (
-          <p className="font-heading text-[17px] leading-loose">
+          <p className="font-heading text-[1.0625rem] leading-loose">
             {verses.map((v) => {
               const isLesson = highlighted.has(v.verse);
               return (
@@ -106,7 +106,7 @@ function PassageBody({ passage }: { passage: VerseRef }) {
                     isLesson ? "bg-gold/40 dark:bg-gold/30" : "text-muted-foreground"
                   )}
                 >
-                  <sup className="mr-1 font-sans text-[11px] font-semibold text-primary/70">{v.verse}</sup>
+                  <sup className="mr-1 font-sans text-[0.6875rem] font-semibold text-primary/70">{v.verse}</sup>
                   {cleanVerseText(v.text)}{" "}
                 </span>
               );

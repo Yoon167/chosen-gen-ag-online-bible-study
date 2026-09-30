@@ -122,7 +122,7 @@ function Gate({ children }: { children: React.ReactNode }) {
             >
               Sign In with Google
             </Button>
-            <p className="text-[11px] text-muted-foreground">or use email</p>
+            <p className="text-[0.6875rem] text-muted-foreground">or use email</p>
             <Input
               type="email"
               value={email}
@@ -220,7 +220,7 @@ function Gate({ children }: { children: React.ReactNode }) {
               )}
             </form>
 
-            <p className="max-w-xs text-[11px] text-muted-foreground">
+            <p className="max-w-xs text-[0.6875rem] text-muted-foreground">
               No password needed — just tell us your name to get started. Your
               data stays private to this device.
             </p>

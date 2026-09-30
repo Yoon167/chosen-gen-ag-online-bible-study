@@ -270,7 +270,7 @@ function PrayerCard({
         urgent ? "border-destructive/50 bg-destructive/5" : "border-border/70"
       )}
     >
-      <div className="flex flex-wrap items-center gap-1.5 text-[11px]">
+      <div className="flex flex-wrap items-center gap-1.5 text-[0.6875rem]">
         {urgent && (
           <span className="inline-flex items-center gap-1 rounded-full bg-destructive px-2 py-0.5 font-semibold text-white">
             <AlertTriangle className="size-3" /> {tx("Urgent", "Urgent")}

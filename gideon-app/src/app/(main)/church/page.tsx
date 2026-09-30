@@ -199,11 +199,11 @@ export default function MyChurchPage() {
 
             <div className="grid grid-cols-2 gap-2">
               <div className="rounded-2xl border border-border/70 bg-card p-3">
-                <p className="text-[11px] uppercase tracking-wide text-muted-foreground">{tx("Your role", "Iyong role")}</p>
+                <p className="text-[0.6875rem] uppercase tracking-wide text-muted-foreground">{tx("Your role", "Iyong role")}</p>
                 <p className="mt-1 text-sm font-medium">{roleInfo(my.membership!.role).label[lang]}</p>
               </div>
               <div className="rounded-2xl border border-border/70 bg-card p-3">
-                <p className="text-[11px] uppercase tracking-wide text-muted-foreground">{tx("Your mentor", "Iyong mentor")}</p>
+                <p className="text-[0.6875rem] uppercase tracking-wide text-muted-foreground">{tx("Your mentor", "Iyong mentor")}</p>
                 <p className="mt-1 truncate text-sm font-medium">
                   {my.membership!.mentorName ?? tx("Not yet assigned", "Wala pa")}
                 </p>

@@ -88,7 +88,7 @@ export function InviteCard() {
           {copied ? <Check className="size-4 text-primary" /> : <Copy className="size-4" />}
         </button>
       </div>
-      {copied && <p className="mt-2 text-center text-[11px] text-primary">{copy.copied}</p>}
+      {copied && <p className="mt-2 text-center text-[0.6875rem] text-primary">{copy.copied}</p>}
     </div>
   );
 }

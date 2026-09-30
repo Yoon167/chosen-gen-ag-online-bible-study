@@ -618,7 +618,7 @@ function ScenePurpose({ tx, cut }: { tx: (t: Text) => string; cut: number }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="mt-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-amber-100/90"
+            className="mt-4 text-[0.6875rem] font-semibold uppercase tracking-[0.3em] text-amber-100/90"
           >
             {tx(label)}
           </motion.p>
@@ -722,7 +722,7 @@ function SceneRevelation({ tx }: { tx: (t: Text) => string }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2.6, duration: 1.2 }}
-          className="max-w-xs text-[11px] font-semibold uppercase leading-relaxed tracking-[0.2em] text-[#6b4a16] sm:max-w-md sm:text-xs"
+          className="max-w-xs text-[0.6875rem] font-semibold uppercase leading-relaxed tracking-[0.2em] text-[#6b4a16] sm:max-w-md sm:text-xs"
         >
           {tx(COPY.tagline)}
         </motion.p>
@@ -734,7 +734,7 @@ function SceneRevelation({ tx }: { tx: (t: Text) => string }) {
           style={{ boxShadow: "0 0 40px rgba(255,236,190,0.8)" }}
         >
           <p className="font-heading text-sm italic text-[#3a2608] sm:text-base">{tx(COPY.finalVerse)}</p>
-          <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-[#8a5f1c]">
+          <p className="mt-1 text-[0.625rem] font-semibold uppercase tracking-[0.3em] text-[#8a5f1c]">
             {tx(COPY.finalVerseRef)}
           </p>
         </motion.div>

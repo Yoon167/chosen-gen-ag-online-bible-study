@@ -64,7 +64,7 @@ export function AudioPlayer({
         </button>
       </div>
 
-      <div className="flex items-center justify-center gap-2 text-[11px] text-muted-foreground">
+      <div className="flex items-center justify-center gap-2 text-[0.6875rem] text-muted-foreground">
         {verseNumber !== undefined && speech.state !== "idle" && (
           <span>
             {tx("Verse", "Talata")} {verseNumber}
@@ -87,7 +87,7 @@ export function AudioPlayer({
       </div>
 
       {isTagalog && !speech.hasLanguageVoice && (
-        <p className="text-center text-[11px] text-muted-foreground">
+        <p className="text-center text-[0.6875rem] text-muted-foreground">
           {tx(
             "This phone has no Tagalog (Filipino) voice installed, so another voice is reading. You can add one in your phone's text-to-speech settings.",
             "Walang Tagalog (Filipino) na boses sa phone na ito, kaya ibang boses ang nagbabasa. Puwede kang magdagdag nito sa text-to-speech settings ng phone mo."

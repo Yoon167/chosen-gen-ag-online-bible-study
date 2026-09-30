@@ -29,11 +29,11 @@ export function PrayerCard({
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           <div className="mb-1.5 flex items-center gap-2">
-            <Badge variant="secondary" className="text-[10px]">
+            <Badge variant="secondary" className="text-[0.625rem]">
               {prayer.category}
             </Badge>
             {prayer.answered && (
-              <Badge className="bg-gold/25 text-[10px] text-gold-foreground">
+              <Badge className="bg-gold/25 text-[0.625rem] text-gold-foreground">
                 Answered
               </Badge>
             )}

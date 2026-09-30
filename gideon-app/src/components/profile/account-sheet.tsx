@@ -115,7 +115,7 @@ export function AccountSheet({
               {mode === "backup" ? "Back Up with Google" : "Sign In with Google"}
             </Button>
 
-            <p className="text-center text-[11px] text-muted-foreground">or use email</p>
+            <p className="text-center text-[0.6875rem] text-muted-foreground">or use email</p>
 
             <Input
               type="email"

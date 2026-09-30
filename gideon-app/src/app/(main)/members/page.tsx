@@ -131,7 +131,7 @@ export default function MembersPage() {
       <div className="space-y-5 px-5 pb-8">
         {isAdmin && churches.length > 0 && (
           <label className="block space-y-1">
-            <span className="text-[11px] text-muted-foreground">{tx("National admin · AG", "National admin · AG")}</span>
+            <span className="text-[0.6875rem] text-muted-foreground">{tx("National admin · AG", "National admin · AG")}</span>
             <select
               className="h-10 w-full rounded-lg border border-border bg-background px-2 text-sm"
               value={churchId ?? ""}
@@ -274,7 +274,7 @@ function MemberRow({
       {(canManage || canAssignMentor) && (
         <div className="grid grid-cols-2 gap-2">
           <label className="space-y-1">
-            <span className="text-[11px] text-muted-foreground">{tx("Role", "Role")}</span>
+            <span className="text-[0.6875rem] text-muted-foreground">{tx("Role", "Role")}</span>
             <select
               className={selectClass}
               value={m.role}
@@ -293,7 +293,7 @@ function MemberRow({
             </select>
           </label>
           <label className="space-y-1">
-            <span className="text-[11px] text-muted-foreground">{tx("Mentor", "Mentor")}</span>
+            <span className="text-[0.6875rem] text-muted-foreground">{tx("Mentor", "Mentor")}</span>
             <select
               className={selectClass}
               value={m.mentorUid ?? ""}
@@ -309,7 +309,7 @@ function MemberRow({
             </select>
           </label>
           <label className="col-span-2 space-y-1">
-            <span className="text-[11px] text-muted-foreground">{tx("Accountability partner", "Accountability partner")}</span>
+            <span className="text-[0.6875rem] text-muted-foreground">{tx("Accountability partner", "Accountability partner")}</span>
             <select
               className={selectClass}
               value={m.partnerUid ?? ""}

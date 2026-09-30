@@ -190,7 +190,7 @@ export default function PastorDashboardPage() {
               <Download className="size-4" />
               {tx("Download members report (CSV)", "I-download ang report ng mga miyembro (CSV)")}
             </Button>
-            <p className="text-center text-[11px] text-muted-foreground">
+            <p className="text-center text-[0.6875rem] text-muted-foreground">
               {tx(
                 "Journey numbers include only members who chose to share. Prayers, notes, and assessments are never shown here.",
                 "Kasama lang sa journey numbers ang mga miyembrong pumayag magbahagi. Hindi kailanman makikita rito ang mga panalangin, notes, at assessment."
@@ -206,9 +206,9 @@ export default function PastorDashboardPage() {
 function StatTile({ label, value, sub }: { label: string; value: number; sub?: string }) {
   return (
     <div className="rounded-2xl border border-border/70 bg-card p-3.5">
-      <p className="text-[11px] leading-tight text-muted-foreground">{label}</p>
+      <p className="text-[0.6875rem] leading-tight text-muted-foreground">{label}</p>
       <p className="mt-1 font-heading text-2xl font-semibold tabular-nums">{value}</p>
-      {sub && <p className="text-[11px] text-muted-foreground">{sub}</p>}
+      {sub && <p className="text-[0.6875rem] text-muted-foreground">{sub}</p>}
     </div>
   );
 }
@@ -324,7 +324,7 @@ function WeeklyColumns({
           </button>
         ))}
       </div>
-      <div className="mt-1 flex justify-between text-[10px] text-muted-foreground">
+      <div className="mt-1 flex justify-between text-[0.625rem] text-muted-foreground">
         <span>{label(weeks[0].week)}</span>
         <span>{label(weeks[weeks.length - 1].week)}</span>
       </div>

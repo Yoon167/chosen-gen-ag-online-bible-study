@@ -248,3 +248,12 @@
     margin: 1.5cm;
   }
 }
+
+/* Senior mode: every size in the app is in rem, so raising the root font
+   size makes text, spacing and tap targets larger together. */
+html[data-text-size="lg"] {
+  font-size: 112.5%;
+}
+html[data-text-size="xl"] {
+  font-size: 125%;
+}

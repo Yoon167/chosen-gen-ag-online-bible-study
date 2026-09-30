@@ -73,14 +73,14 @@ export default function CheckinPage() {
           <div className="flex flex-1 items-center gap-2.5 rounded-2xl border border-border/70 bg-card p-3">
             <UserRound className="size-5 shrink-0 text-primary" />
             <div className="min-w-0">
-              <p className="text-[11px] text-muted-foreground">{tx("Accountability partner", "Accountability partner")}</p>
+              <p className="text-[0.6875rem] text-muted-foreground">{tx("Accountability partner", "Accountability partner")}</p>
               <p className="truncate text-sm font-medium">{partnerName ?? tx("Not paired yet", "Wala pa")}</p>
             </div>
           </div>
           <div className="flex items-center gap-2.5 rounded-2xl border border-border/70 bg-card p-3">
             <Flame className="size-5 shrink-0 text-gold" />
             <div>
-              <p className="text-[11px] text-muted-foreground">{tx("Streak", "Sunod-sunod")}</p>
+              <p className="text-[0.6875rem] text-muted-foreground">{tx("Streak", "Sunod-sunod")}</p>
               <p className="text-sm font-semibold tabular-nums">
                 {streak} {tx(streak === 1 ? "week" : "weeks", "linggo")}
               </p>

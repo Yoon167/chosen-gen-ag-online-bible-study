@@ -17,6 +17,7 @@ import {
   Languages,
   Church,
   ClipboardList,
+  Type,
 } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -36,6 +37,7 @@ import { findPlan } from "@/lib/bible/plans";
 import type { JourneyMilestone } from "@/types";
 import Link from "next/link";
 import { LanguageToggle } from "@/components/language-toggle";
+import { TextSizeToggle } from "@/components/text-size-toggle";
 import { InviteCard } from "@/components/invite-card";
 import { useLanguage } from "@/lib/i18n";
 
@@ -79,7 +81,7 @@ export default function ProfilePage() {
           <h1 className="font-heading text-xl font-semibold">
             {profile?.displayName ?? "Beloved"}
           </h1>
-          <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
+          <p className="mt-0.5 text-[0.625rem] font-semibold uppercase tracking-wide text-primary">
             {myChurch.active && myChurch.membership && myChurch.church
               ? `${roleInfo(myChurch.membership.role).label[lang]} · ${myChurch.church.name}`
               : `${isLeader ? t("profile.leader") : t("profile.member")} · AG`}
@@ -118,6 +120,9 @@ export default function ProfilePage() {
           <SettingRow icon={Languages} label={t("profile.language")}>
             <LanguageToggle />
           </SettingRow>
+          <SettingRow icon={Type} label={lang === "tl" ? "Laki ng Text" : "Text Size"}>
+            <TextSizeToggle />
+          </SettingRow>
           <SettingRow icon={UserRound} label="Dark Mode">
             <ThemeToggle />
           </SettingRow>
@@ -153,7 +158,7 @@ export default function ProfilePage() {
               <SettingRow icon={ClipboardList} label="AG Applications">
                 <span className="flex items-center gap-1 text-xs text-muted-foreground">
                   {pendingApplications > 0 && (
-                    <span className="rounded-full bg-primary px-1.5 text-[11px] font-semibold text-primary-foreground">
+                    <span className="rounded-full bg-primary px-1.5 text-[0.6875rem] font-semibold text-primary-foreground">
                       {pendingApplications}
                     </span>
                   )}

@@ -168,7 +168,7 @@ function ActionButton({
       >
         <Icon className="size-4.5" />
       </span>
-      <span className="text-[10px] font-medium text-foreground/80">
+      <span className="text-[0.625rem] font-medium text-foreground/80">
         {label}
       </span>
     </button>

@@ -150,7 +150,7 @@ function StatBlock({ label, value }: { label: string; value: number }) {
   return (
     <div className="rounded-xl border border-border/70 bg-card py-3 text-center">
       <p className="font-heading text-xl font-semibold text-primary">{value}</p>
-      <p className="text-[10px] text-muted-foreground">{label}</p>
+      <p className="text-[0.625rem] text-muted-foreground">{label}</p>
     </div>
   );
 }

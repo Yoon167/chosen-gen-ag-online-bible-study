@@ -16,7 +16,7 @@ export function LanguageToggle({ className }: { className?: string }) {
     <div
       role="group"
       aria-label="Language"
-      className={cn("flex items-center gap-0.5 rounded-full border border-border bg-card p-0.5 text-[11px] font-semibold", className)}
+      className={cn("flex items-center gap-0.5 rounded-full border border-border bg-card p-0.5 text-[0.6875rem] font-semibold", className)}
     >
       <Languages className="mx-1 size-3.5 text-muted-foreground" />
       {OPTIONS.map((o) => (

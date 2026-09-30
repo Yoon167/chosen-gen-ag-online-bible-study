@@ -56,7 +56,7 @@ export default function HomePage() {
             <h1 className="font-heading text-2xl font-semibold tracking-tight text-white">
               {t(greetingKey())}, {profile?.displayName ?? "Beloved"}
             </h1>
-            <p className="mt-1 text-[11px] text-white/60">
+            <p className="mt-1 text-[0.6875rem] text-white/60">
               {t("home.tagline")}
             </p>
           </div>

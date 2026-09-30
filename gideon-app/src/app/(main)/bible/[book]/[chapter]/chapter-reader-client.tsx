@@ -187,7 +187,7 @@ export function ChapterReaderClient() {
             value={translation}
             onChange={(e) => updateProfile({ bibleTranslation: e.target.value })}
             aria-label="Bible translation"
-            className="mx-auto mt-0.5 block bg-transparent text-center text-[10px] text-muted-foreground"
+            className="mx-auto mt-0.5 block bg-transparent text-center text-[0.625rem] text-muted-foreground"
           >
             {BIBLE_TRANSLATIONS.map((t) => (
               <option key={t.id} value={t.id}>
@@ -201,7 +201,7 @@ export function ChapterReaderClient() {
             updateProfile({ bibleTranslation: isTagalog ? DEFAULT_TRANSLATION : TAGALOG_TRANSLATION })
           }
           aria-label={isTagalog ? "Switch to English Bible" : "Switch to Tagalog Bible"}
-          className="flex h-9 shrink-0 items-center gap-1 rounded-full bg-primary/10 px-2.5 text-[11px] font-semibold text-primary"
+          className="flex h-9 shrink-0 items-center gap-1 rounded-full bg-primary/10 px-2.5 text-[0.6875rem] font-semibold text-primary"
         >
           <BookOpenText className="size-3.5" />
           {isTagalog ? "EN" : "TL"}
@@ -266,7 +266,7 @@ export function ChapterReaderClient() {
         )}
 
         {verses && (
-          <div className="space-y-0.5 font-heading text-[17px] leading-loose">
+          <div className="space-y-0.5 font-heading text-[1.0625rem] leading-loose">
             {verses.map((v, i) => {
               const isHighlighted = highlightMap.has(v.verse);
               const isBeingRead = listening && speech.state !== "idle" && speech.index === i;
@@ -293,7 +293,7 @@ export function ChapterReaderClient() {
                     isBeingRead && "bg-primary/15 ring-1 ring-primary/30"
                   )}
                 >
-                  <sup className="mr-1 font-sans text-[11px] font-semibold text-primary/70">
+                  <sup className="mr-1 font-sans text-[0.6875rem] font-semibold text-primary/70">
                     {v.verse}
                   </sup>
                   {cleanVerseText(v.text)}{" "}

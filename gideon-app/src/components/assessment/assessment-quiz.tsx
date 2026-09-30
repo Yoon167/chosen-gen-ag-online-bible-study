@@ -91,7 +91,7 @@ export function AssessmentQuiz({
         </fieldset>
       ))}
 
-      <p className="text-[11px] text-muted-foreground">
+      <p className="text-[0.6875rem] text-muted-foreground">
         {tx(
           "Answer honestly. You can skip any question you are not ready to answer.",
           "Sumagot nang tapat. Puwede mong laktawan ang anumang tanong na hindi ka pa handang sagutin."

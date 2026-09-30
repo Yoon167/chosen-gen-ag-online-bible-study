@@ -184,7 +184,7 @@ export default function RegisterChurchPage() {
                 }
               />
             ))}
-            <p className="text-[11px] text-muted-foreground">
+            <p className="text-[0.6875rem] text-muted-foreground">
               {tx(
                 "Your email and phone are seen only by the Gideon team, never shown publicly.",
                 "Ang Gideon team lang ang makakakita ng iyong email at telepono. Hindi ito ipapakita sa publiko."

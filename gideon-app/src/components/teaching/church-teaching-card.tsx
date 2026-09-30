@@ -44,12 +44,12 @@ export function ChurchTeachingCard({
         aria-expanded={open}
       >
         <div className="min-w-0 flex-1">
-          <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+          <p className="text-[0.625rem] font-semibold uppercase tracking-wide text-muted-foreground">
             {formatTopicDate(topic.date)}
           </p>
           <p className="mt-0.5 text-sm font-medium">{topic.title}</p>
           {topic.verse && (
-            <Badge variant="secondary" className="mt-1.5 max-w-full whitespace-normal text-left text-[10px]">
+            <Badge variant="secondary" className="mt-1.5 max-w-full whitespace-normal text-left text-[0.625rem]">
               {topic.verse}
             </Badge>
           )}
@@ -140,7 +140,7 @@ export function ChurchTeachingCard({
 function Block({ label, text }: { label: string; text: string }) {
   return (
     <div>
-      <p className="text-[10px] font-semibold uppercase tracking-wide text-primary">{label}</p>
+      <p className="text-[0.625rem] font-semibold uppercase tracking-wide text-primary">{label}</p>
       <p className="mt-1 whitespace-pre-line text-xs leading-relaxed text-foreground/85">{text}</p>
     </div>
   );

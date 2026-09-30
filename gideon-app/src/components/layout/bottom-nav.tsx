@@ -29,7 +29,7 @@ export function BottomNav() {
             <li key={href} className="flex-1">
               <Link
                 href={href}
-                className="relative flex flex-col items-center gap-1 py-2.5 text-[11px] font-medium"
+                className="relative flex flex-col items-center gap-1 py-2.5 text-[0.6875rem] font-medium"
               >
                 {active && (
                   <motion.span

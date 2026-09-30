@@ -37,14 +37,14 @@ export function PresentationCard({ topic }: { topic: Topic }) {
         </span>
         <div className="min-w-0 flex-1">
           <p className="truncate text-sm font-medium">{topic.title}</p>
-          <p className="text-[10px] text-muted-foreground">{formatTopicDate(topic.date)}</p>
+          <p className="text-[0.625rem] text-muted-foreground">{formatTopicDate(topic.date)}</p>
           {topic.description && (
             <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">
               {topic.description}
             </p>
           )}
           {!!topic.slideNotes?.length && (
-            <p className="mt-1 text-[10px] text-primary">
+            <p className="mt-1 text-[0.625rem] text-primary">
               {topic.slideNotes.length} slide{topic.slideNotes.length === 1 ? "" : "s"}
             </p>
           )}

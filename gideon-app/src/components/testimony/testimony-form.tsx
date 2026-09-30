@@ -192,7 +192,7 @@ function VisibilityOption({
     >
       {icon}
       <span className="text-sm font-medium text-foreground">{title}</span>
-      <span className="text-[11px]">{hint}</span>
+      <span className="text-[0.6875rem]">{hint}</span>
     </button>
   );
 }

@@ -23,7 +23,7 @@ export function NoteCard({
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0 flex-1">
           <div className="mb-1.5 flex items-center gap-2">
-            <Badge variant="secondary" className="text-[10px]">
+            <Badge variant="secondary" className="text-[0.625rem]">
               {note.category}
             </Badge>
             {note.pinned && <Pin className="size-3 fill-current text-gold-foreground" />}
@@ -37,7 +37,7 @@ export function NoteCard({
               {note.tags.map((t) => (
                 <span
                   key={t}
-                  className="rounded-full bg-muted px-2 py-0.5 text-[10px] text-muted-foreground"
+                  className="rounded-full bg-muted px-2 py-0.5 text-[0.625rem] text-muted-foreground"
                 >
                   #{t}
                 </span>

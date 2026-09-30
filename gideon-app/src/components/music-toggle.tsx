@@ -14,7 +14,7 @@ export function MusicToggle({ className }: { className?: string }) {
       aria-pressed={playing}
       aria-label={playing ? "Mute background music" : "Play background music"}
       className={cn(
-        "flex items-center gap-1.5 rounded-full border border-border bg-card px-2.5 py-1 text-[11px] font-semibold",
+        "flex items-center gap-1.5 rounded-full border border-border bg-card px-2.5 py-1 text-[0.6875rem] font-semibold",
         playing ? "text-primary" : "text-muted-foreground",
         className
       )}

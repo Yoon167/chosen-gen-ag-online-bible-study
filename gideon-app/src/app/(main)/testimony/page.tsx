@@ -162,12 +162,12 @@ function Timeline({
               className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4"
             >
               <div className="min-w-0 flex-1">
-                <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+                <p className="text-[0.625rem] font-semibold uppercase tracking-wide text-muted-foreground">
                   {new Date(t.createdAt).toLocaleDateString()} · {t.meta}
                 </p>
                 <p className="mt-0.5 text-sm font-medium">{t.title}</p>
                 {t.scriptureReference && (
-                  <Badge variant="secondary" className="mt-1.5 text-[10px]">
+                  <Badge variant="secondary" className="mt-1.5 text-[0.625rem]">
                     {t.scriptureReference}
                   </Badge>
                 )}

@@ -73,7 +73,7 @@ function OwnTestimony({ id }: { id: string }) {
     <TestimonyBody
       testimony={testimony}
       badge={
-        <Badge variant="outline" className="gap-1 text-[10px]">
+        <Badge variant="outline" className="gap-1 text-[0.625rem]">
           {shared ? <Users className="size-3" /> : <Lock className="size-3" />}
           {testimony.visibility === "ag" ? "Shared with my AG" : shared ? "Shared with all members" : "Only me"}
         </Badge>
@@ -111,7 +111,7 @@ function SharedTestimony({ sharedId }: { sharedId: string }) {
     <TestimonyBody
       testimony={testimony}
       badge={
-        <Badge variant="outline" className="gap-1 text-[10px]">
+        <Badge variant="outline" className="gap-1 text-[0.625rem]">
           <Users className="size-3" />
           by {testimony.authorName}
         </Badge>
@@ -132,7 +132,7 @@ function AgSharedTestimony({ sharedId }: { sharedId: string }) {
     <TestimonyBody
       testimony={testimony}
       badge={
-        <Badge variant="outline" className="gap-1 text-[10px]">
+        <Badge variant="outline" className="gap-1 text-[0.625rem]">
           <Users className="size-3" />
           by {testimony.authorName} · {my.church?.name}
         </Badge>
