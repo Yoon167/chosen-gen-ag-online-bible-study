@@ -90,8 +90,8 @@ export function DeleteAccount() {
           </p>
           <p className="text-xs text-muted-foreground">
             {tx(
-              "Kept because they belong to the group or carry no name: anonymous prayer requests, meeting attendance records, and meetings you created for your AG.",
-              "Mananatili dahil pag-aari ng grupo o walang pangalan: mga anonymous na prayer request, attendance records sa meetings, at mga meeting na ginawa mo para sa iyong AG."
+              "Kept because they belong to the group or carry no name: anonymous prayer requests, meeting attendance records, and the meetings, sermon outlines and reading plans you set up for your AG.",
+              "Mananatili dahil pag-aari ng grupo o walang pangalan: mga anonymous na prayer request, attendance records sa meetings, at ang mga meeting, sermon outline at reading plan na inihanda mo para sa iyong AG."
             )}
           </p>
           <Button variant="destructive" className="w-full" onClick={() => setOpen(true)}>

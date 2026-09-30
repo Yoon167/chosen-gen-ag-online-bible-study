@@ -49,6 +49,7 @@ const USER_SUBCOLLECTIONS = [
   "prayerSessions",
   "fasts",
   "badges",
+  "sermonAnswers",
   "assessments",
   "vaultKeys",
 ];
@@ -82,8 +83,8 @@ export async function reauthenticate(user: User, password?: string) {
 /**
  * Deletes the member's data everywhere they wrote it, then their account.
  * Kept on purpose: anonymous prayer requests (they carry no author), meeting
- * attendance records, meetings they created for their AG, and an approved AG
- * registration (it belongs to the group).
+ * attendance records, meetings, sermon outlines and reading plans they set up
+ * for their AG, and an approved AG registration (it belongs to the group).
  */
 export async function deleteMyAccount(user: User, onStep?: (step: string) => void) {
   accountDeletion.inProgress = true;
@@ -133,6 +134,14 @@ async function deleteEverything(user: User, onStep?: (step: string) => void) {
       await deleteRefs(agTestimonies.docs.map((t) => t.ref));
       // A shared "My Oikos" list.
       await deleteRefs([doc(db, "churches", churchId, "oikos", uid)]);
+      // Announcements they posted.
+      const announcements = await getDocs(
+        query(collection(db, "churches", churchId, "announcements"), where("authorUid", "==", uid))
+      );
+      await deleteRefs(announcements.docs.map((a) => a.ref));
+      // Their days in the AG's reading plans.
+      const groupPlans = await getDocs(collection(db, "churches", churchId, "groupPlans"));
+      await deleteRefs(groupPlans.docs.map((p) => doc(db, "churches", churchId, "groupPlans", p.id, "progress", uid)));
     }
   }
 
