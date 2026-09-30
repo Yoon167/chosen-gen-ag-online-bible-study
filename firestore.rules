@@ -277,6 +277,73 @@ service cloud.firestore {
         allow delete: if (request.auth != null && request.auth.uid == uid) || rankAtLeast(churchId, 3);
       }
 
+      // AG announcements: every active member reads them; leaders post, edit
+      // and remove them (an author can always remove their own).
+      match /announcements/{announcementId} {
+        allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);
+        allow create: if rankAtLeast(churchId, 3)
+          && request.resource.data.keys().hasOnly(['title', 'body', 'pinned', 'authorUid', 'authorName', 'createdAt'])
+          && request.resource.data.authorUid == request.auth.uid
+          && validText(request.resource.data.title, 1, 100)
+          && validText(request.resource.data.body, 1, 2000)
+          && request.resource.data.pinned is bool
+          && validText(request.resource.data.authorName, 1, 100)
+          && request.resource.data.createdAt is int;
+        allow update: if rankAtLeast(churchId, 3)
+          && changedOnly(['title', 'body', 'pinned'])
+          && validText(request.resource.data.title, 1, 100)
+          && validText(request.resource.data.body, 1, 2000)
+          && request.resource.data.pinned is bool;
+        allow delete: if rankAtLeast(churchId, 3)
+          || (request.auth != null && resource.data.authorUid == request.auth.uid);
+      }
+
+      // Sermon outlines with [[blanks]] that members fill in while listening.
+      // Members' answers stay private under users/{uid}/sermonAnswers.
+      match /sermons/{sermonId} {
+        allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);
+        allow create, update: if rankAtLeast(churchId, 3)
+          && request.resource.data.keys().hasOnly(['title', 'speaker', 'scripture', 'date', 'outline', 'createdBy', 'createdAt'])
+          && validText(request.resource.data.title, 1, 120)
+          && validText(request.resource.data.speaker, 0, 100)
+          && validText(request.resource.data.scripture, 0, 100)
+          && request.resource.data.date is string
+          && request.resource.data.date.matches('[0-9]{4}-[0-9]{2}-[0-9]{2}')
+          && validText(request.resource.data.outline, 1, 10000)
+          && request.resource.data.createdBy is string
+          && request.resource.data.createdAt is int;
+        allow delete: if rankAtLeast(churchId, 3);
+      }
+
+      // A reading plan the whole AG reads together. Leaders choose it; each
+      // member records their own days, and everyone in the AG can see who read.
+      match /groupPlans/{groupPlanId} {
+        allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);
+        allow create, update: if rankAtLeast(churchId, 3)
+          && request.resource.data.keys().hasOnly(['planId', 'title', 'startDate', 'active', 'createdBy', 'createdAt'])
+          && validText(request.resource.data.planId, 1, 60)
+          && validText(request.resource.data.title, 1, 120)
+          && request.resource.data.startDate is string
+          && request.resource.data.startDate.matches('[0-9]{4}-[0-9]{2}-[0-9]{2}')
+          && request.resource.data.active is bool
+          && request.resource.data.createdBy is string
+          && request.resource.data.createdAt is int;
+        allow delete: if rankAtLeast(churchId, 3);
+
+        match /progress/{uid} {
+          allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);
+          allow create, update: if request.auth != null && request.auth.uid == uid
+            && isActiveMember(churchId, uid)
+            && request.resource.data.keys().hasOnly(['uid', 'name', 'days', 'updatedAt'])
+            && request.resource.data.uid == uid
+            && validText(request.resource.data.name, 1, 100)
+            && request.resource.data.days is list
+            && request.resource.data.days.size() <= 400
+            && request.resource.data.updatedAt is int;
+          allow delete: if (request.auth != null && request.auth.uid == uid) || rankAtLeast(churchId, 3);
+        }
+      }
+
       // Church meetings: every active member sees them; cell leaders and up manage them.
       match /meetings/{meetingId} {
         allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);

@@ -16,5 +16,6 @@ npm test
 | `applications.test.mjs` | Church registration and national admin approval |
 | `prayer-wall.test.mjs` | Church prayer wall, anonymous posts, one "I prayed" per person |
 | `meetings.test.mjs` | Church meetings and attendance check-in |
+| `ag-features.test.mjs` | Shared "My Oikos" lists, announcements, sermon outlines, group reading plans and progress |
 
 The national admin uid in the tests must match `isAdmin()` in the rules.
