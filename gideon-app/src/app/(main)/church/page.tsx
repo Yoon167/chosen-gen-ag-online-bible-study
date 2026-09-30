@@ -8,6 +8,7 @@ import {
   Clock,
   HandHeart,
   HeartHandshake,
+  LayoutDashboard,
   MapPin,
   UserRound,
   Users,
@@ -220,6 +221,17 @@ export default function MyChurchPage() {
               >
                 <HeartHandshake className="size-5 text-primary" />
                 <span className="flex-1 text-sm font-medium">{tx("My disciples", "Aking mga disipulo")}</span>
+                <ChevronRight className="size-4 text-muted-foreground" />
+              </Link>
+            )}
+
+            {my.isChurchLeader && (
+              <Link
+                href="/church/dashboard"
+                className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4"
+              >
+                <LayoutDashboard className="size-5 text-primary" />
+                <span className="flex-1 text-sm font-medium">{tx("Pastor Dashboard", "Pastor Dashboard")}</span>
                 <ChevronRight className="size-4 text-muted-foreground" />
               </Link>
             )}
