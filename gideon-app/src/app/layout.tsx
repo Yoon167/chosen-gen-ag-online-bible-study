@@ -15,6 +15,21 @@ const heading = Lora({
   subsets: ["latin"],
 });
 
+/** iPhone screen sizes in points and pixel ratio; files live in public/splash. */
+const LAUNCH_SCREENS: [number, number, number][] = [
+  [440, 956, 3],
+  [402, 874, 3],
+  [430, 932, 3],
+  [393, 852, 3],
+  [428, 926, 3],
+  [390, 844, 3],
+  [375, 812, 3],
+  [414, 896, 3],
+  [414, 896, 2],
+  [375, 667, 2],
+  [414, 736, 3],
+];
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://gideon-app.web.app"),
   title: "GIDEON — Strengthening Faith. Growing Disciples.",
@@ -36,6 +51,11 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: "black-translucent",
     title: "GIDEON",
+    // Launch screens for installed iPhones (portrait), generated from the app icon.
+    startupImage: LAUNCH_SCREENS.map(([w, h, dpr]) => ({
+      url: `/splash/launch-${w * dpr}x${h * dpr}.png`,
+      media: `(device-width: ${w}px) and (device-height: ${h}px) and (-webkit-device-pixel-ratio: ${dpr}) and (orientation: portrait)`,
+    })),
   },
 };
 

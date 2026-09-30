@@ -62,6 +62,15 @@
               "value": "public, max-age=604800"
             }
           ]
+        },
+        {
+          "source": "/splash/**",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=604800"
+            }
+          ]
         }
       ]
     },
@@ -117,6 +126,15 @@
         },
         {
           "source": "/audio/**",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=604800"
+            }
+          ]
+        },
+        {
+          "source": "/splash/**",
           "headers": [
             {
               "key": "Cache-Control",
