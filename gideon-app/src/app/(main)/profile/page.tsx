@@ -20,13 +20,18 @@ import {
   Type,
   CloudDownload,
   Award,
+  Palette,
+  Map as MapIcon,
 } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { Section } from "@/components/shared/section";
 import { EditProfileDialog } from "@/components/profile/edit-profile-dialog";
 import { AccountSheet } from "@/components/profile/account-sheet";
-import { ReminderSheet } from "@/components/profile/reminder-sheet";
+import { NotificationSheet } from "@/components/profile/notification-sheet";
+import { InstallSheet } from "@/components/profile/install-sheet";
+import { WebAppCard } from "@/components/profile/web-app-card";
+import { ThemeSelect } from "@/components/theme-select";
+import { useTour } from "@/components/tour/tour-provider";
 import { useProfile } from "@/lib/hooks/use-profile";
 import { useMyChurch } from "@/lib/hooks/use-church";
 import { useApplications } from "@/lib/hooks/use-church-applications";
@@ -62,8 +67,10 @@ export default function ProfilePage() {
   const earnedBadges = useEarnedBadges();
   const [editOpen, setEditOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
-  const [reminderOpen, setReminderOpen] = useState(false);
+  const [notificationsOpen, setNotificationsOpen] = useState(false);
+  const [installOpen, setInstallOpen] = useState(false);
   const { canInstall, installed, promptInstall } = usePwaInstall();
+  const tour = useTour();
   const linkedEmail = user && !user.isAnonymous ? user.email : null;
 
   const initials = (profile?.displayName ?? "B")
@@ -133,7 +140,8 @@ export default function ProfilePage() {
         </Link>
       </Section>
 
-      <div className="mt-6 px-5">
+      <div className="mt-6 space-y-3 px-5">
+        <WebAppCard />
         <InviteCard />
       </div>
 
@@ -145,23 +153,30 @@ export default function ProfilePage() {
           <SettingRow icon={Type} label={lang === "tl" ? "Laki ng Text" : "Text Size"}>
             <TextSizeToggle />
           </SettingRow>
-          <SettingRow icon={UserRound} label="Dark Mode">
-            <ThemeToggle />
+          <SettingRow icon={Palette} label={lang === "tl" ? "Tema" : "Theme"}>
+            <ThemeSelect />
           </SettingRow>
-          {canInstall && (
-            <button onClick={promptInstall} className="block w-full text-left">
-              <SettingRow icon={Download} label="Install App">
+          {installed ? (
+            <SettingRow icon={Download} label={lang === "tl" ? "Naka-install ang Gideon" : "Gideon Installed"}>
+              <span className="text-xs text-muted-foreground">✓</span>
+            </SettingRow>
+          ) : (
+            <button
+              onClick={() => (canInstall ? promptInstall() : setInstallOpen(true))}
+              className="block w-full text-left"
+            >
+              <SettingRow icon={Download} label={lang === "tl" ? "I-install ang Gideon" : "Install Gideon"}>
                 <ChevronRight className="size-4 text-muted-foreground" />
               </SettingRow>
             </button>
           )}
-          {installed && (
-            <SettingRow icon={Download} label="App Installed">
-              <span className="text-xs text-muted-foreground">✓</span>
+          <button onClick={() => setNotificationsOpen(true)} className="block w-full text-left">
+            <SettingRow icon={Bell} label={lang === "tl" ? "Notifications at Paalala" : "Notifications & Reminders"}>
+              <ChevronRight className="size-4 text-muted-foreground" />
             </SettingRow>
-          )}
-          <button onClick={() => setReminderOpen(true)} className="block w-full text-left">
-            <SettingRow icon={Bell} label="Daily Quiet-Time Reminder">
+          </button>
+          <button onClick={() => tour.start("app")} className="block w-full text-left">
+            <SettingRow icon={MapIcon} label={lang === "tl" ? "Ulitin ang App Tour" : "Restart App Tour"}>
               <ChevronRight className="size-4 text-muted-foreground" />
             </SettingRow>
           </button>
@@ -231,7 +246,8 @@ export default function ProfilePage() {
       />
 
       <AccountSheet open={accountOpen} onOpenChange={setAccountOpen} />
-      <ReminderSheet open={reminderOpen} onOpenChange={setReminderOpen} />
+      <NotificationSheet open={notificationsOpen} onOpenChange={setNotificationsOpen} />
+      <InstallSheet open={installOpen} onOpenChange={setInstallOpen} />
 
     </div>
   );

@@ -7,6 +7,7 @@ import { useMyChurch } from "@/lib/hooks/use-church";
 import { planDay, useActiveGroupPlan } from "@/lib/hooks/use-group-plan";
 import { findPlan } from "@/lib/bible/plans";
 import { useTx } from "@/lib/i18n";
+import { useHomePrefs } from "@/lib/home-prefs";
 
 /** Today's passage in the plan the member's AG is reading together. */
 export function GroupReadingCard() {
@@ -15,6 +16,7 @@ export function GroupReadingCard() {
   const churchId = my.active ? my.churchId : null;
   const { plan } = useActiveGroupPlan(churchId);
   const [today, setToday] = useState<number | null>(null);
+  const { prefs } = useHomePrefs();
 
   useEffect(() => {
     if (!plan) return;
@@ -23,7 +25,7 @@ export function GroupReadingCard() {
   }, [plan]);
 
   const reading = plan ? findPlan(plan.planId) : null;
-  if (!plan || !reading || today === null || today < 1 || today > reading.totalDays) return null;
+  if (!prefs.reading || !plan || !reading || today === null || today < 1 || today > reading.totalDays) return null;
   const readings = reading.days.find((d) => d.day === today)?.readings ?? [];
 
   return (

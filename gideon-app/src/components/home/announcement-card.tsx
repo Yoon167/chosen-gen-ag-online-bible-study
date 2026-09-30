@@ -6,6 +6,7 @@ import { ChevronRight, Megaphone } from "lucide-react";
 import { useMyChurch } from "@/lib/hooks/use-church";
 import { readAnnouncementsSeen, useAnnouncements } from "@/lib/hooks/use-announcements";
 import { useTx } from "@/lib/i18n";
+import { useHomePrefs } from "@/lib/home-prefs";
 
 /** The newest AG announcement the member hasn't opened yet. */
 export function AnnouncementCard() {
@@ -14,6 +15,7 @@ export function AnnouncementCard() {
   const churchId = my.active ? my.churchId : null;
   const { items } = useAnnouncements(churchId, 3);
   const [seen, setSeen] = useState<number | null>(null);
+  const { prefs } = useHomePrefs();
 
   useEffect(() => {
     if (!churchId) return;
@@ -21,7 +23,7 @@ export function AnnouncementCard() {
     return () => clearTimeout(id);
   }, [churchId]);
 
-  if (seen === null) return null;
+  if (seen === null || !prefs.announcements) return null;
   const unread = items.filter((a) => a.createdAt > seen);
   if (!unread.length) return null;
   const latest = unread[0];

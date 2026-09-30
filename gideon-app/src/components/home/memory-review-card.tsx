@@ -4,12 +4,14 @@ import Link from "next/link";
 import { Brain, ChevronRight } from "lucide-react";
 import { useMemoryVerses } from "@/lib/hooks/use-memory-verses";
 import { useTx } from "@/lib/i18n";
+import { useHomePrefs } from "@/lib/home-prefs";
 
 /** Home nudge when memory verses are due for review today. */
 export function MemoryReviewCard() {
   const tx = useTx();
   const { due, loading } = useMemoryVerses();
-  if (loading || due.length === 0) return null;
+  const { prefs } = useHomePrefs();
+  if (loading || due.length === 0 || !prefs.memory) return null;
 
   return (
     <Link href="/memory" className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4">

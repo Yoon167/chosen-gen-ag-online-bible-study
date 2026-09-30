@@ -6,6 +6,7 @@ import { useAuth } from "@/lib/hooks/use-auth";
 import { useMyChurch } from "@/lib/hooks/use-church";
 import { checkinStreak, useMyCheckins, usePartnerCheckins, weekKeyOf } from "@/lib/hooks/use-checkins";
 import { useTx } from "@/lib/i18n";
+import { useHomePrefs } from "@/lib/home-prefs";
 
 /** Home reminder for the weekly AG check-in, and a nudge to pray for your partner. */
 export function CheckinCard() {
@@ -15,8 +16,9 @@ export function CheckinCard() {
   const churchId = my.active ? my.churchId : null;
   const mine = useMyCheckins(churchId, uid);
   const shared = usePartnerCheckins(churchId, uid);
+  const { prefs } = useHomePrefs();
 
-  if (!churchId || mine.loading) return null;
+  if (!churchId || mine.loading || !prefs.checkin) return null;
 
   const week = weekKeyOf();
   const done = mine.items.some((c) => c.weekKey === week);

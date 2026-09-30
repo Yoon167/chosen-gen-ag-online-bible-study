@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
+// Imported for its side effect: it catches the browser's install offer at startup.
+import "@/lib/hooks/use-pwa-install";
 
 export function PwaRegister() {
   useEffect(() => {
