@@ -19,6 +19,7 @@ import {
   ClipboardList,
   Type,
   CloudDownload,
+  Award,
 } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -39,6 +40,8 @@ import type { JourneyMilestone } from "@/types";
 import Link from "next/link";
 import { LanguageToggle } from "@/components/language-toggle";
 import { TextSizeToggle } from "@/components/text-size-toggle";
+import { useEarnedBadges } from "@/lib/hooks/use-badges";
+import { BADGES } from "@/lib/badges";
 import { InviteCard } from "@/components/invite-card";
 import { useLanguage } from "@/lib/i18n";
 
@@ -56,6 +59,7 @@ export default function ProfilePage() {
   const planPercent = activePlan
     ? Math.round(((planProgress?.completedDays.length ?? 0) / activePlan.totalDays) * 100)
     : 0;
+  const earnedBadges = useEarnedBadges();
   const [editOpen, setEditOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
   const [reminderOpen, setReminderOpen] = useState(false);
@@ -110,6 +114,23 @@ export default function ProfilePage() {
           <StatCard icon={Compass} label="Journey Milestones" value={milestones.length} />
           <StatCard icon={CalendarCheck2} label="Reading Plan" value={planPercent} suffix="%" />
         </div>
+        <Link
+          href="/badges"
+          className="mt-3 flex items-center gap-3 rounded-2xl border border-gold/50 bg-gold/10 p-4"
+        >
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-gold text-gold-foreground">
+            <Award className="size-5" />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-sm font-medium">{lang === "tl" ? "Mga Badge" : "Badges"}</span>
+            <span className="block text-xs text-muted-foreground">
+              {lang === "tl"
+                ? `${earnedBadges.items.length} sa ${BADGES.length} ang nakuha`
+                : `${earnedBadges.items.length} of ${BADGES.length} earned`}
+            </span>
+          </span>
+          <ChevronRight className="size-4 text-muted-foreground" />
+        </Link>
       </Section>
 
       <div className="mt-6 px-5">

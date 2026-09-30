@@ -48,6 +48,7 @@ const USER_SUBCOLLECTIONS = [
   "giftResults",
   "prayerSessions",
   "fasts",
+  "badges",
   "assessments",
   "vaultKeys",
 ];
