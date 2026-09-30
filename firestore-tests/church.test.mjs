@@ -26,6 +26,8 @@ await env.withSecurityRulesDisabled(async (ctx) => {
   await setDoc(doc(db, `churches/${C}/members/p1`), m("p1", "member", 1, "pending"));
   await setDoc(doc(db, `churches/${C}/members/p2`), m("p2", "member", 1, "pending"));
   await setDoc(doc(db, "users/m1"), { displayName: "m1" });
+  await setDoc(doc(db, "users/legacy"), { displayName: "Old Leader", role: "leader" });
+  await setDoc(doc(db, "users/plain"), { displayName: "Plain", role: "member" });
   await setDoc(doc(db, `churches/${C}/members/min`), m("min", "ministry_leader", 4));
   await setDoc(doc(db, `churches/${C}/members/min2`), m("min2", "ministry_leader", 4));
   await setDoc(doc(db, `churches/${C}/members/m3`), m("m3", "member", 1));
@@ -125,6 +127,15 @@ await t("cell leader edits teaching topics", assertSucceeds(setDoc(doc(real("cel
 await t("mentor cannot edit topics", assertFails(setDoc(doc(real("mentor"), "topics/2026-10-02"), { title: "x" })));
 await t("admin reads user profiles", assertSucceeds(getDoc(doc(real(ADMIN), "users/m1"))));
 await t("members still cannot read other profiles", assertFails(getDoc(doc(real("m2"), "users/m1"))));
+
+// Legacy "leader" cleanup
+await t("legacy leader cannot read other profiles", assertFails(getDoc(doc(real("legacy"), "users/plain"))));
+await t("legacy leader cannot list profiles", assertFails(getDocs(collection(real("legacy"), "users"))));
+await t("legacy leader cannot promote anyone", assertFails(updateDoc(doc(real("legacy"), "users/plain"), { role: "leader" })));
+await t("nobody promotes themselves", assertFails(updateDoc(doc(real("plain"), "users/plain"), { role: "leader" })));
+await t("owner still edits own profile", assertSucceeds(updateDoc(doc(real("plain"), "users/plain"), { displayName: "Plain 2" })));
+await t("legacy leader keeps teaching topics", assertSucceeds(setDoc(doc(real("legacy"), "topics/2026-10-04"), { title: "x" })));
+await t("admin still lists profiles for church setup", assertSucceeds(getDocs(collection(real(ADMIN), "users"))));
 
 await t("old teacher still edits topics", assertSucceeds(setDoc(doc(real(OLD_TEACHER), "topics/2026-10-03"), { title: "x" })));
 await t("old teacher is not national admin", assertFails(setDoc(doc(real(OLD_TEACHER), "churches/x2"), { name: "x", status: "active" })));

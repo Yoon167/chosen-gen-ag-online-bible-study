@@ -14,8 +14,9 @@ service cloud.firestore {
         && request.auth.uid == "1G2TVkbe9igM8ij5KN9SqIYo08M2";
     }
 
-    // GIDEON roles: every member starts as "member"; leaders are promoted by
-    // another leader (or set directly in the Firebase console).
+    // Legacy single-church "leader" profiles. Church roles now live in
+    // churches/{churchId}/members; this only keeps existing legacy leaders'
+    // access to teaching topics, and nobody can be promoted to it any more.
     function isLeader() {
       return request.auth != null
         && exists(/databases/$(database)/documents/users/$(request.auth.uid))
@@ -35,17 +36,15 @@ service cloud.firestore {
     // private subtree for their own prayers, notes, journey, Bible activity,
     // reading progress, and personal meeting links.
     match /users/{userId} {
-      allow read: if (request.auth != null && request.auth.uid == userId) || isLeader() || isAdmin();
+      // Profiles are private: only the owner and the national admin (for
+      // church setup) can read them. Leaders see their church roster instead.
+      allow read: if (request.auth != null && request.auth.uid == userId) || isAdmin();
       // Members can't pick their own role: new profiles start as "member"...
       allow create: if request.auth != null && request.auth.uid == userId
         && request.resource.data.get('role', 'member') == 'member';
-      // ...and their own edits must leave the role untouched. Leaders may
-      // change only the role field of anyone's profile.
-      allow update: if (request.auth != null && request.auth.uid == userId
-          && request.resource.data.get('role', 'member') == resource.data.get('role', 'member'))
-        || (isLeader()
-          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['role'])
-          && request.resource.data.role in ['member', 'leader']);
+      // ...and their own edits must leave the role untouched.
+      allow update: if request.auth != null && request.auth.uid == userId
+          && request.resource.data.get('role', 'member') == resource.data.get('role', 'member');
       allow delete: if request.auth != null && request.auth.uid == userId;
 
       match /{subcollection}/{docId} {

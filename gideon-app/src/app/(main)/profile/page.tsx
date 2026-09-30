@@ -33,7 +33,7 @@ import { AccountSheet } from "@/components/profile/account-sheet";
 import { useProfile } from "@/lib/hooks/use-profile";
 import { useMyChurch } from "@/lib/hooks/use-church";
 import { useApplications } from "@/lib/hooks/use-church-applications";
-import { NATIONAL_ADMIN_UID } from "@/lib/church";
+import { NATIONAL_ADMIN_UID, roleInfo } from "@/lib/church";
 import { useUserCollection } from "@/lib/hooks/use-collection";
 import { useReadingPlanProgress } from "@/lib/hooks/use-reading-plan";
 import { usePwaInstall } from "@/lib/hooks/use-pwa-install";
@@ -52,7 +52,7 @@ export default function ProfilePage() {
   const isNationalAdmin = user?.uid === NATIONAL_ADMIN_UID;
   const applications = useApplications(isNationalAdmin);
   const pendingApplications = applications.items.filter((a) => a.status === "pending").length;
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const { items: milestones } = useUserCollection<JourneyMilestone>("journeyMilestones");
   const activePlan = findPlan(profile?.activePlanId ?? "one-year-bible");
   const { progress: planProgress } = useReadingPlanProgress(activePlan?.id ?? "one-year-bible");
@@ -87,7 +87,9 @@ export default function ProfilePage() {
             {profile?.displayName ?? "Beloved"}
           </h1>
           <p className="mt-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
-            {isLeader ? t("profile.leader") : t("profile.member")} · AG
+            {myChurch.active && myChurch.membership && myChurch.church
+              ? `${roleInfo(myChurch.membership.role).label[lang]} · ${myChurch.church.name}`
+              : `${isLeader ? t("profile.leader") : t("profile.member")} · AG`}
           </p>
           {profile?.ministry && (
             <p className="text-xs text-muted-foreground">{profile.ministry}</p>
