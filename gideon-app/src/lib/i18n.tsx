@@ -43,6 +43,7 @@ const STRINGS = {
   "qa.memory": { en: "Memory Verses", tl: "Pagsasaulo" },
   "qa.oikos": { en: "My Oikos", tl: "Aking Oikos" },
   "qa.fasting": { en: "Prayer & Fasting", tl: "Panalangin at Ayuno" },
+  "qa.help": { en: "Help in the Struggle", tl: "Tulong sa Laban" },
 
   // Devotion
   "devotion.title": { en: "Daily Devotion", tl: "Pang-araw-araw na Debosyon" },

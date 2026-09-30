@@ -15,6 +15,7 @@ import {
   Brain,
   HeartHandshake,
   Flame,
+  LifeBuoy,
 } from "lucide-react";
 import { useLanguage, type StringKey } from "@/lib/i18n";
 
@@ -28,6 +29,7 @@ const ACTIONS: { label: StringKey; href: string; icon: typeof Sun }[] = [
   { label: "qa.memory", href: "/memory", icon: Brain },
   { label: "qa.oikos", href: "/oikos", icon: HeartHandshake },
   { label: "qa.fasting", href: "/fasting", icon: Flame },
+  { label: "qa.help", href: "/help", icon: LifeBuoy },
   { label: "qa.teaching", href: "/teaching", icon: GraduationCap },
   { label: "qa.presentations", href: "/presentations", icon: PresentationIcon },
   { label: "qa.meetings", href: "/meetings", icon: Video },
