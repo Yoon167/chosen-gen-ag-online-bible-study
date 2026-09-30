@@ -16,6 +16,7 @@ import {
   Users,
   Languages,
   Church,
+  ClipboardList,
 } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Switch } from "@/components/ui/switch";
@@ -31,6 +32,8 @@ import { EditProfileDialog } from "@/components/profile/edit-profile-dialog";
 import { AccountSheet } from "@/components/profile/account-sheet";
 import { useProfile } from "@/lib/hooks/use-profile";
 import { useMyChurch } from "@/lib/hooks/use-church";
+import { useApplications } from "@/lib/hooks/use-church-applications";
+import { NATIONAL_ADMIN_UID } from "@/lib/church";
 import { useUserCollection } from "@/lib/hooks/use-collection";
 import { useReadingPlanProgress } from "@/lib/hooks/use-reading-plan";
 import { usePwaInstall } from "@/lib/hooks/use-pwa-install";
@@ -44,7 +47,11 @@ import { useLanguage } from "@/lib/i18n";
 
 export default function ProfilePage() {
   const { profile, updateProfile, isLeader } = useProfile();
+  const { user } = useAuth();
   const myChurch = useMyChurch();
+  const isNationalAdmin = user?.uid === NATIONAL_ADMIN_UID;
+  const applications = useApplications(isNationalAdmin);
+  const pendingApplications = applications.items.filter((a) => a.status === "pending").length;
   const { t } = useLanguage();
   const { items: milestones } = useUserCollection<JourneyMilestone>("journeyMilestones");
   const activePlan = findPlan(profile?.activePlanId ?? "one-year-bible");
@@ -57,7 +64,6 @@ export default function ProfilePage() {
   const [accountOpen, setAccountOpen] = useState(false);
   const [notifications, setNotifications] = useState(true);
   const { canInstall, installed, promptInstall } = usePwaInstall();
-  const { user } = useAuth();
   const linkedEmail = user && !user.isAnonymous ? user.email : null;
 
   const initials = (profile?.displayName ?? "B")
@@ -145,6 +151,20 @@ export default function ProfilePage() {
               </span>
             </SettingRow>
           </Link>
+          {isNationalAdmin && (
+            <Link href="/admin/applications" className="block">
+              <SettingRow icon={ClipboardList} label="Church Applications">
+                <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                  {pendingApplications > 0 && (
+                    <span className="rounded-full bg-primary px-1.5 text-[11px] font-semibold text-primary-foreground">
+                      {pendingApplications}
+                    </span>
+                  )}
+                  <ChevronRight className="size-4" />
+                </span>
+              </SettingRow>
+            </Link>
+          )}
           {(isLeader || myChurch.isChurchLeader) && (
             <Link href="/members" className="block">
               <SettingRow icon={Users} label="Manage Members">

@@ -85,6 +85,12 @@ export default function MyChurchPage() {
                 )}
               />
             )}
+            <Link
+              href="/church/register"
+              className="block text-center text-xs text-muted-foreground underline underline-offset-2"
+            >
+              {tx("Is your church not listed? Register your church", "Wala ang simbahan mo? Irehistro ang iyong simbahan")}
+            </Link>
             {churches?.map((c) => (
               <div key={c.id} className="space-y-3 rounded-2xl border border-border/70 bg-card p-4">
                 <div>

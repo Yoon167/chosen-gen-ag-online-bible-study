@@ -40,9 +40,12 @@ export function useMyChurch() {
     return onSnapshot(
       query(collectionGroup(db, "members"), where("uid", "==", uid)),
       (snap) => {
-        // One church per person for now; prefer an active membership.
+        // One church per person for now: prefer an active membership, then
+        // the highest role (e.g. a pastor whose own church was just approved).
         const docs = [...snap.docs].sort(
-          (a, b) => Number(b.data().status === "active") - Number(a.data().status === "active")
+          (a, b) =>
+            Number(b.data().status === "active") - Number(a.data().status === "active") ||
+            b.data().rank - a.data().rank
         );
         const first = docs[0];
         setMembership(first ? (first.data() as Membership) : null);

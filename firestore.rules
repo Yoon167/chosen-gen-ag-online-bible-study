@@ -183,6 +183,45 @@ service cloud.firestore {
       }
     }
 
+    // ---------- Church registration ----------
+    // One application per account (the doc id is the applicant's uid). The
+    // national admin reviews it; approval creates the church in one batch.
+    // Contact details stay here, readable only by the applicant and the admin.
+
+    function validText(value, min, max) {
+      return value is string && value.size() >= min && value.size() <= max;
+    }
+
+    match /churchApplications/{uid} {
+      allow read: if isAdmin() || (request.auth != null && request.auth.uid == uid);
+      allow create: if isRealAccount() && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['churchName', 'pastorName', 'city', 'province',
+          'country', 'email', 'phone', 'website', 'denomination', 'memberCount', 'applicantName',
+          'submittedBy', 'status', 'createdAt'])
+        && request.resource.data.submittedBy == uid
+        && request.resource.data.status == 'pending'
+        && validText(request.resource.data.churchName, 2, 100)
+        && validText(request.resource.data.pastorName, 2, 100)
+        && validText(request.resource.data.city, 2, 80)
+        && validText(request.resource.data.province, 2, 80)
+        && validText(request.resource.data.country, 2, 80)
+        && validText(request.resource.data.denomination, 2, 100)
+        && validText(request.resource.data.applicantName, 1, 100)
+        && validText(request.resource.data.website, 0, 200)
+        && validText(request.resource.data.phone, 7, 30)
+        && validText(request.resource.data.email, 5, 120)
+        && request.resource.data.email.matches('[^@ ]+@[^@ ]+[.][^@ ]+')
+        && request.resource.data.memberCount is int
+        && request.resource.data.memberCount >= 1
+        && request.resource.data.memberCount <= 100000
+        && request.resource.data.createdAt is int;
+      // Only the admin reviews (approve / reject).
+      allow update: if isAdmin();
+      // Applicants may withdraw, or clear a rejected application to apply again.
+      allow delete: if isAdmin()
+        || (request.auth != null && request.auth.uid == uid && resource.data.status != 'approved');
+    }
+
     // "Which church am I in?": a collection-group query for your own membership.
     match /{path=**}/members/{memberId} {
       allow read: if request.auth != null && resource.data.uid == request.auth.uid;

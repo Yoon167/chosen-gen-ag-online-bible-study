@@ -47,8 +47,33 @@ export interface Church {
   province: string;
   country: string;
   denomination: string;
+  website?: string;
   status: "active" | "suspended";
   createdAt: number;
+  /** The application that created this church (the applicant's uid). */
+  applicationId?: string;
+}
+
+/** Stored at churchApplications/{applicant uid}; only the applicant and the admin can read it. */
+export interface ChurchApplication {
+  churchName: string;
+  pastorName: string;
+  city: string;
+  province: string;
+  country: string;
+  email: string;
+  phone: string;
+  website: string;
+  denomination: string;
+  memberCount: number;
+  applicantName: string;
+  submittedBy: string;
+  status: "pending" | "approved" | "rejected";
+  createdAt: number;
+  reviewNote?: string;
+  reviewedAt?: number;
+  reviewedBy?: string;
+  churchId?: string;
 }
 
 export interface Membership {
@@ -74,4 +99,10 @@ export function slugifyChurch(name: string) {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "")
     .slice(0, 40);
+}
+
+/** A readable, collision-resistant id like "grace-ag-iloilo-7k2f". */
+export function newChurchId(name: string) {
+  const suffix = Math.random().toString(36).slice(2, 6);
+  return `${slugifyChurch(name) || "church"}-${suffix}`;
 }
