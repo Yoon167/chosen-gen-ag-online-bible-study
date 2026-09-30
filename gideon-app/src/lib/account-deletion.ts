@@ -45,6 +45,7 @@ const USER_SUBCOLLECTIONS = [
   "memoryVerses",
   "oikos",
   "lessonReflections",
+  "giftResults",
   "assessments",
   "vaultKeys",
 ];

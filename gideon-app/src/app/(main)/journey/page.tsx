@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronRight, Compass, Plus, ShieldCheck } from "lucide-react";
+import { ChevronRight, Compass, Gift, Plus, ShieldCheck } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { AddMilestoneDialog } from "@/components/journey/add-milestone-dialog";
@@ -61,6 +61,21 @@ export default function JourneyPage() {
                 "Private and encrypted. Only you can see your answers.",
                 "Pribado at naka-encrypt. Ikaw lang ang makakakita ng mga sagot mo."
               )}
+            </span>
+          </span>
+          <ChevronRight className="size-4 text-muted-foreground" />
+        </Link>
+        <Link
+          href="/journey/gifts"
+          className="mt-2.5 flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4"
+        >
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-gold/25 text-gold-foreground">
+            <Gift className="size-5" />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block font-medium">{tx("Spiritual Gifts Test", "Spiritual Gifts Test")}</span>
+            <span className="block text-xs text-muted-foreground">
+              {tx("Discover how God made you to serve", "Tuklasin kung paano ka ginawa ng Diyos para maglingkod")}
             </span>
           </span>
           <ChevronRight className="size-4 text-muted-foreground" />
