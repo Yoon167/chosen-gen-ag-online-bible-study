@@ -122,6 +122,27 @@ service cloud.firestore {
         'associate_pastor': 5}.get(role, 0) == rank;
     }
 
+    // A member's own weekly check-in, written with their current partner.
+    function validOwnCheckin(churchId, checkinId) {
+      let d = request.resource.data;
+      return request.auth != null
+        && isActiveMember(churchId, request.auth.uid)
+        && d.keys().hasOnly(['uid', 'name', 'weekKey', 'partnerUid', 'prayerScore', 'bibleDays',
+          'temptation', 'win', 'struggle', 'prayerRequest', 'createdAt', 'updatedAt',
+          'partnerReply', 'partnerPrayedAt'])
+        && d.uid == request.auth.uid
+        && d.weekKey is string && d.weekKey.matches('[0-9]{4}-[0-9]{2}-[0-9]{2}')
+        && checkinId == d.weekKey + '_' + request.auth.uid
+        && d.get('partnerUid', null) == get(memberPath(churchId, request.auth.uid)).data.get('partnerUid', null)
+        && validText(d.name, 1, 100)
+        && d.prayerScore is int && d.prayerScore >= 1 && d.prayerScore <= 5
+        && d.bibleDays is int && d.bibleDays >= 0 && d.bibleDays <= 7
+        && d.temptation in ['no', 'yes', 'skip']
+        && validText(d.win, 0, 1000)
+        && validText(d.struggle, 0, 1000)
+        && validText(d.prayerRequest, 0, 1000);
+    }
+
     function changedOnly(keys) {
       return request.resource.data.diff(resource.data).affectedKeys().hasOnly(keys);
     }
@@ -182,12 +203,50 @@ service cloud.firestore {
             && changedOnly(['mentorUid', 'mentorName'])
             && (request.resource.data.get('mentorUid', null) == null
               || (isActiveMember(churchId, request.resource.data.mentorUid)
-                && get(memberPath(churchId, request.resource.data.mentorUid)).data.rank >= 2)));
+                && get(memberPath(churchId, request.resource.data.mentorUid)).data.rank >= 2)))
+          // Leaders pair (or unpair) accountability partners within the group.
+          || (rankAtLeast(churchId, 4)
+            && changedOnly(['partnerUid', 'partnerName'])
+            && (request.resource.data.get('partnerUid', null) == null
+              || (request.resource.data.partnerUid != uid
+                && isActiveMember(churchId, request.resource.data.partnerUid))));
 
         allow delete: if isAdmin()
           || (request.auth != null && request.auth.uid == uid)
           || (rankAtLeast(churchId, 3) && resource.data.status == 'pending')
           || (rankAtLeast(churchId, 4) && resource.data.rank < myRank(churchId));
+      }
+
+      // Weekly accountability check-ins. Only the member and their current
+      // accountability partner (recorded when the check-in is written) can
+      // read one; leaders see only the separate check-in marks below.
+      match /checkins/{checkinId} {
+        allow read: if request.auth != null
+          && (resource.data.uid == request.auth.uid || resource.data.partnerUid == request.auth.uid);
+        allow create: if validOwnCheckin(churchId, checkinId)
+          && !request.resource.data.keys().hasAny(['partnerReply', 'partnerPrayedAt']);
+        allow update: if (validOwnCheckin(churchId, checkinId)
+            && resource.data.uid == request.auth.uid
+            && request.resource.data.get('partnerReply', null) == resource.data.get('partnerReply', null)
+            && request.resource.data.get('partnerPrayedAt', null) == resource.data.get('partnerPrayedAt', null))
+          // The partner may answer with a short note and "I prayed for you".
+          || (request.auth != null
+            && resource.data.partnerUid == request.auth.uid
+            && changedOnly(['partnerReply', 'partnerPrayedAt'])
+            && validText(request.resource.data.get('partnerReply', ''), 0, 500));
+        allow delete: if request.auth != null && resource.data.uid == request.auth.uid;
+      }
+
+      // "Checked in this week" markers: no content, so leaders can see who
+      // checked in without reading anyone's answers.
+      match /checkinMarks/{markId} {
+        allow read: if rankAtLeast(churchId, 3)
+          || (request.auth != null && resource.data.uid == request.auth.uid);
+        allow create, update: if request.auth != null && isActiveMember(churchId, request.auth.uid)
+          && request.resource.data.keys().hasOnly(['uid', 'weekKey', 'at'])
+          && request.resource.data.uid == request.auth.uid
+          && markId == request.resource.data.weekKey + '_' + request.auth.uid;
+        allow delete: if request.auth != null && resource.data.uid == request.auth.uid;
       }
 
       // Church meetings: every active member sees them; cell leaders and up manage them.

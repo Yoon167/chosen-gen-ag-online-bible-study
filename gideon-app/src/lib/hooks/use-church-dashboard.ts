@@ -6,6 +6,7 @@ import { db } from "@/lib/firebase";
 import { useRoster } from "@/lib/hooks/use-church";
 import { useChurchMeetings, type AttendanceRecord } from "@/lib/hooks/use-church-meetings";
 import { useChurchPrayers } from "@/lib/hooks/use-church-prayers";
+import { useWeekMarks, weekKeyOf } from "@/lib/hooks/use-checkins";
 import { JOURNEY_LEVELS } from "@/lib/content/journey";
 import { roleInfo, type Membership } from "@/lib/church";
 
@@ -32,6 +33,8 @@ export function useChurchDashboard(churchId: string | null, enabled: boolean) {
   const meetings = useChurchMeetings(enabled ? churchId : null);
   const prayers = useChurchPrayers(enabled ? churchId : null);
   const [attendance, setAttendance] = useState<AttendanceRecord[] | null>(null);
+  // Who checked in this week (markers only; check-in answers stay private).
+  const checkedIn = useWeekMarks(churchId, weekKeyOf(), enabled);
   const [now] = useState(() => Date.now());
 
   const since = useMemo(
@@ -112,6 +115,8 @@ export function useChurchDashboard(churchId: string | null, enabled: boolean) {
       ? active.filter((m) => (lastSeen.get(m.uid) ?? "") < quietSince)
       : [];
 
+    const notCheckedIn = checkedIn ? active.filter((m) => !checkedIn.has(m.uid)) : [];
+
     // Prayer wall, last 30 days (the wall keeps the latest 100 requests).
     const monthAgo = now - 30 * DAY;
     const recentPrayers = prayers.items.filter((p) => p.createdAt >= monthAgo);
@@ -128,6 +133,8 @@ export function useChurchDashboard(churchId: string | null, enabled: boolean) {
       noMentor,
       quiet,
       lastSeen,
+      checkedInCount: checkedIn ? active.filter((m) => checkedIn.has(m.uid)).length : 0,
+      notCheckedIn,
       prayer: {
         requests: recentPrayers.length,
         answered: recentPrayers.filter((p) => p.answered).length,
@@ -135,7 +142,7 @@ export function useChurchDashboard(churchId: string | null, enabled: boolean) {
         prayedTimes: recentPrayers.reduce((sum, p) => sum + p.prayedCount, 0),
       },
     };
-  }, [roster.items, attendance, prayers.items, now]);
+  }, [roster.items, attendance, prayers.items, checkedIn, now]);
 
   return {
     loading: roster.loading || attendance === null,

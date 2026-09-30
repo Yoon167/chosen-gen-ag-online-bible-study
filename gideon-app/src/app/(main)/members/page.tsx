@@ -10,6 +10,7 @@ import { useAuth } from "@/lib/hooks/use-auth";
 import {
   approveMember,
   assignMentor,
+  assignPartner,
   listActiveChurches,
   removeMember,
   setMemberRole,
@@ -193,6 +194,8 @@ export default function MembersPage() {
               tx={tx}
               onRole={(role) => changeRole(m, role)}
               onMentor={(mentor) => run(() => assignMentor(churchId!, m.uid, mentor))}
+              partners={active.filter((x) => x.uid !== m.uid)}
+              onPartner={(partner) => run(() => assignPartner(churchId!, m, partner, roster.items))}
               onRemove={() => {
                 if (!confirm(tx(`Remove ${m.displayName} from the AG?`, `Alisin si ${m.displayName} sa AG?`))) return;
                 run(() => removeMember(churchId!, m.uid));
@@ -224,6 +227,8 @@ function MemberRow({
   tx,
   onRole,
   onMentor,
+  partners,
+  onPartner,
   onRemove,
 }: {
   member: Membership;
@@ -236,6 +241,8 @@ function MemberRow({
   tx: (en: string, tl: string) => string;
   onRole: (role: ChurchRole) => void;
   onMentor: (mentor: Membership | null) => void;
+  partners: Membership[];
+  onPartner: (partner: Membership | null) => void;
   onRemove: () => void;
 }) {
   return (
@@ -250,6 +257,7 @@ function MemberRow({
           <p className="truncate text-xs text-muted-foreground">
             {roleInfo(m.role).label[lang]}
             {m.mentorName && ` · ${tx("Mentor", "Mentor")}: ${m.mentorName}`}
+            {m.partnerName && ` · ${tx("Partner", "Partner")}: ${m.partnerName}`}
           </p>
         </div>
         {canManage && (
@@ -296,6 +304,23 @@ function MemberRow({
               {mentors.map((x) => (
                 <option key={x.uid} value={x.uid}>
                   {x.displayName}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="col-span-2 space-y-1">
+            <span className="text-[11px] text-muted-foreground">{tx("Accountability partner", "Accountability partner")}</span>
+            <select
+              className={selectClass}
+              value={m.partnerUid ?? ""}
+              disabled={!canAssignMentor}
+              onChange={(e) => onPartner(partners.find((x) => x.uid === e.target.value) ?? null)}
+            >
+              <option value="">{tx("None", "Wala")}</option>
+              {partners.map((x) => (
+                <option key={x.uid} value={x.uid}>
+                  {x.displayName}
+                  {x.partnerUid && x.partnerUid !== m.uid ? ` (${tx("paired with", "kapares ni")} ${x.partnerName})` : ""}
                 </option>
               ))}
             </select>

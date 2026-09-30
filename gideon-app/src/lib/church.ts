@@ -93,6 +93,9 @@ export interface Membership {
   approvedAt?: number;
   mentorUid?: string | null;
   mentorName?: string | null;
+  /** Accountability partner in the same AG; leaders pair people both ways. */
+  partnerUid?: string | null;
+  partnerName?: string | null;
   /** The member agreed to let their mentor (and church leaders) see their journey progress. */
   shareProgress?: boolean;
   /** Written by the member only while sharing: lesson counts, never answers or notes. */

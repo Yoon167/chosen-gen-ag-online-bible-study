@@ -8,6 +8,7 @@ import { PlanProgressCard } from "@/components/home/plan-progress-card";
 import { QuickActions } from "@/components/home/quick-actions";
 import { UpcomingEventCard } from "@/components/home/upcoming-event-card";
 import { NextStepCard } from "@/components/home/next-step-card";
+import { CheckinCard } from "@/components/home/checkin-card";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Section } from "@/components/shared/section";
 import { useProfile } from "@/lib/hooks/use-profile";
@@ -90,7 +91,10 @@ export default function HomePage() {
       </div>
 
       <Section title={tx("Your next step", "Ang susunod mong hakbang")} href="/journey" hrefLabel={tx("Journey", "Journey")}>
-        <NextStepCard />
+        <div className="space-y-2.5">
+          <NextStepCard />
+          <CheckinCard />
+        </div>
       </Section>
 
       <div className="px-5">

@@ -10,6 +10,7 @@ import {
   HeartHandshake,
   LayoutDashboard,
   MapPin,
+  ShieldCheck,
   UserRound,
   Users,
 } from "lucide-react";
@@ -185,6 +186,23 @@ export default function MyChurchPage() {
                 </p>
               </div>
             </div>
+
+            <Link
+              href="/church/checkin"
+              className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4"
+            >
+              <ShieldCheck className="size-5 text-primary" />
+              <span className="flex-1 text-sm font-medium">
+                {tx("Weekly Check-in", "Lingguhang Check-in")}
+                {my.membership!.partnerName && (
+                  <span className="block text-xs font-normal text-muted-foreground">
+                    {tx("Partner: ", "Partner: ")}
+                    {my.membership!.partnerName}
+                  </span>
+                )}
+              </span>
+              <ChevronRight className="size-4 text-muted-foreground" />
+            </Link>
 
             <Link
               href="/church/prayer"

@@ -120,6 +120,34 @@ export async function syncProgressSummary(churchId: string, uid: string, progres
   await updateDoc(doc(db, "churches", churchId, "members", uid), { progress });
 }
 
+/**
+ * Pairs two members as accountability partners (both ways), first releasing
+ * anyone either of them was paired with. `partner` null just unpairs `member`.
+ */
+export async function assignPartner(
+  churchId: string,
+  member: Membership,
+  partner: Membership | null,
+  roster: Membership[]
+) {
+  const batch = writeBatch(db);
+  const ref = (uid: string) => doc(db, "churches", churchId, "members", uid);
+  const clear = { partnerUid: null, partnerName: null };
+  const released = new Set<string>();
+  for (const person of [member, partner]) {
+    const old = person?.partnerUid;
+    if (old && old !== member.uid && old !== partner?.uid && roster.some((m) => m.uid === old)) released.add(old);
+  }
+  released.forEach((uid) => batch.update(ref(uid), clear));
+  if (partner) {
+    batch.update(ref(member.uid), { partnerUid: partner.uid, partnerName: partner.displayName });
+    batch.update(ref(partner.uid), { partnerUid: member.uid, partnerName: member.displayName });
+  } else {
+    batch.update(ref(member.uid), clear);
+  }
+  await batch.commit();
+}
+
 /** Mentor: the people they mentor in this church. */
 export function useDisciples(churchId: string | null, mentorUid: string | null) {
   const [items, setItems] = useState<Membership[]>([]);

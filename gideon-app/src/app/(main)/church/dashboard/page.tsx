@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { AlertTriangle, ChevronRight, Download, LayoutDashboard, UserPlus, Users } from "lucide-react";
+import { AlertTriangle, ChevronRight, Download, LayoutDashboard, ShieldCheck, UserPlus, Users } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
@@ -74,6 +74,11 @@ export default function PastorDashboardPage() {
               />
               <StatTile label={tx("Prayer requests · 30 days", "Prayer requests · 30 araw")} value={d.prayer.requests} sub={`${d.prayer.answered} ${tx("answered", "sinagot")}`} />
               <StatTile label={tx("Times prayed · 30 days", "Beses ipinanalangin · 30 araw")} value={d.prayer.prayedTimes} />
+              <StatTile
+                label={tx("Checked in this week", "Nag-check in ngayong linggo")}
+                value={d.checkedInCount}
+                sub={d.activeCount ? `${tx("of", "sa")} ${d.activeCount}` : undefined}
+              />
             </div>
 
             {/* Who to reach out to */}
@@ -101,6 +106,13 @@ export default function PastorDashboardPage() {
                   names={d.noMentor.map((m) => m.displayName)}
                 />
               )}
+              {d.notCheckedIn.length > 0 && (
+                <CareRow
+                  icon={<ShieldCheck className="size-4 text-primary" />}
+                  text={tx(`${d.notCheckedIn.length} haven't done this week's check-in`, `${d.notCheckedIn.length} ang hindi pa nakapag-check in ngayong linggo`)}
+                  names={d.notCheckedIn.map((m) => m.displayName)}
+                />
+              )}
               {d.quiet.length > 0 && (
                 <CareRow
                   icon={<Users className="size-4 text-muted-foreground" />}
@@ -108,7 +120,7 @@ export default function PastorDashboardPage() {
                   names={d.quiet.map((m) => m.displayName)}
                 />
               )}
-              {!d.prayer.urgentOpen && !d.pending.length && !d.noMentor.length && !d.quiet.length && (
+              {!d.prayer.urgentOpen && !d.pending.length && !d.noMentor.length && !d.quiet.length && !d.notCheckedIn.length && (
                 <p className="rounded-2xl border border-border/70 bg-card p-3 text-sm text-muted-foreground">
                   {tx("No one flagged right now. Keep walking with your people.", "Walang naka-flag ngayon. Patuloy na samahan ang iyong mga tao.")}
                 </p>
