@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Brain, Plus, Trash2 } from "lucide-react";
+import { Brain, ImageIcon, Plus, Trash2 } from "lucide-react";
+import { VerseImageSheet } from "@/components/bible/verse-image-sheet";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
@@ -18,6 +19,7 @@ export default function MemoryPage() {
   const memory = useMemoryVerses();
   const [practice, setPractice] = useState<MemoryVerse[] | null>(null);
   const [adding, setAdding] = useState(false);
+  const [image, setImage] = useState<MemoryVerse | null>(null);
   const learning = memory.items.length - memory.mastered.length;
 
   function dueLabel(v: MemoryVerse) {
@@ -116,15 +118,24 @@ export default function MemoryPage() {
                     />
                   ))}
                 </div>
-                <button
-                  onClick={() => {
-                    if (confirm(tx(`Remove ${v.reference}?`, `Alisin ang ${v.reference}?`))) memory.remove(v.id);
-                  }}
-                  className="flex size-8 items-center justify-center rounded-full text-muted-foreground"
-                  aria-label={tx("Remove", "Alisin")}
-                >
-                  <Trash2 className="size-4" />
-                </button>
+                <div className="flex">
+                  <button
+                    onClick={() => setImage(v)}
+                    className="flex size-8 items-center justify-center rounded-full text-muted-foreground"
+                    aria-label={tx("Make an image", "Gawing larawan")}
+                  >
+                    <ImageIcon className="size-4" />
+                  </button>
+                  <button
+                    onClick={() => {
+                      if (confirm(tx(`Remove ${v.reference}?`, `Alisin ang ${v.reference}?`))) memory.remove(v.id);
+                    }}
+                    className="flex size-8 items-center justify-center rounded-full text-muted-foreground"
+                    aria-label={tx("Remove", "Alisin")}
+                  >
+                    <Trash2 className="size-4" />
+                  </button>
+                </div>
               </div>
             </div>
           ))}
@@ -132,6 +143,7 @@ export default function MemoryPage() {
       </div>
 
       <MemoryPractice verses={practice} onClose={() => setPractice(null)} onReview={memory.review} />
+      <VerseImageSheet verse={image} onClose={() => setImage(null)} />
       <AddMemoryVerseDialog open={adding} onOpenChange={setAdding} has={memory.has} onAdd={memory.addVerse} />
     </div>
   );

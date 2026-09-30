@@ -21,6 +21,7 @@ import {
   type VerseSelection,
 } from "@/components/bible/verse-action-drawer";
 import { Skeleton } from "@/components/ui/skeleton";
+import { VerseImageSheet, type VerseForImage } from "@/components/bible/verse-image-sheet";
 import { AudioPlayer } from "@/components/bible/audio-player";
 import {
   NarratedPlayer,
@@ -43,6 +44,7 @@ export function ChapterReaderClient() {
   const [verses, setVerses] = useState<BibleApiVerse[] | null>(null);
   const [error, setError] = useState(false);
   const [selection, setSelection] = useState<VerseSelection | null>(null);
+  const [imageVerse, setImageVerse] = useState<VerseForImage | null>(null);
 
   const recordHistory = useRecordBibleHistory();
   const { profile, markReadingDone, updateProfile } = useProfile();
@@ -371,7 +373,13 @@ export function ChapterReaderClient() {
           const reference = `${selection.book} ${selection.chapter}:${selection.verse}`;
           if (!memory.has(reference)) memory.addVerse(reference, selection.text, translation);
         }}
+        onImage={() => {
+          if (!selection) return;
+          setImageVerse({ text: selection.text, reference: `${selection.book} ${selection.chapter}:${selection.verse}` });
+          setSelection(null);
+        }}
       />
+      <VerseImageSheet verse={imageVerse} onClose={() => setImageVerse(null)} />
     </div>
   );
 }

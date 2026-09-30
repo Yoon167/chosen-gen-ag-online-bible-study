@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { BookOpenText, Share2 } from "lucide-react";
+import { BookOpenText, ImageIcon, Share2 } from "lucide-react";
+import { VerseImageSheet } from "@/components/bible/verse-image-sheet";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
   cleanVerseText,
@@ -16,6 +17,7 @@ export function VerseOfTheDayCard() {
   const [text, setText] = useState<string | null>(null);
   const [reference, setReference] = useState(verseOfTheDayReference());
   const [error, setError] = useState(false);
+  const [imageOpen, setImageOpen] = useState(false);
   const { lang, t } = useLanguage();
 
   useEffect(() => {
@@ -77,14 +79,29 @@ export function VerseOfTheDayCard() {
         <span className="gradient-gold-text font-heading text-sm font-semibold">
           {error ? "Proverbs 3:5" : reference}
         </span>
-        <button
-          onClick={share}
-          aria-label="Share verse"
-          className="flex size-8 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20"
-        >
-          <Share2 className="size-3.5" />
-        </button>
+        <div className="flex gap-1.5">
+          {text && (
+            <button
+              onClick={() => setImageOpen(true)}
+              aria-label="Make a verse image"
+              className="flex size-8 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20"
+            >
+              <ImageIcon className="size-3.5" />
+            </button>
+          )}
+          <button
+            onClick={share}
+            aria-label="Share verse"
+            className="flex size-8 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20"
+          >
+            <Share2 className="size-3.5" />
+          </button>
+        </div>
       </div>
+      <VerseImageSheet
+        verse={imageOpen && text ? { text, reference } : null}
+        onClose={() => setImageOpen(false)}
+      />
     </motion.div>
   );
 }

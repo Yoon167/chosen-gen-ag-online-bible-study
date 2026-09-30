@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Highlighter, Bookmark, Copy, Share2, NotebookPen, Brain } from "lucide-react";
+import { Highlighter, Bookmark, Copy, Share2, NotebookPen, Brain, ImageIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface VerseSelection {
@@ -31,6 +31,7 @@ export function VerseActionDrawer({
   onSaveNote,
   isMemorized,
   onMemorize,
+  onImage,
 }: {
   selection: VerseSelection | null;
   onOpenChange: (open: boolean) => void;
@@ -42,6 +43,7 @@ export function VerseActionDrawer({
   onSaveNote: (note: string) => void;
   isMemorized?: boolean;
   onMemorize?: () => void;
+  onImage?: () => void;
 }) {
   const [noteOpen, setNoteOpen] = useState(false);
   const [noteDraft, setNoteDraft] = useState(existingNote);
@@ -109,6 +111,7 @@ export function VerseActionDrawer({
             {onMemorize && (
               <ActionButton icon={Brain} label="Memorize" active={isMemorized} onClick={onMemorize} />
             )}
+            {onImage && <ActionButton icon={ImageIcon} label="Image" onClick={onImage} />}
           </div>
         ) : (
           <div className="space-y-3 px-4 pb-2">
