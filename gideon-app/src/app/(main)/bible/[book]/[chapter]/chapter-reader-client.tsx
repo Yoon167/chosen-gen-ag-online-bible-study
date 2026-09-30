@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { ChevronLeft, ChevronRight, BookOpenText } from "lucide-react";
+import { ChevronLeft, ChevronRight, BookOpenText, Headphones } from "lucide-react";
 import { findBook, getAdjacentChapter } from "@/lib/bible/books";
 import {
   fetchChapter,
@@ -20,6 +20,8 @@ import {
   type VerseSelection,
 } from "@/components/bible/verse-action-drawer";
 import { Skeleton } from "@/components/ui/skeleton";
+import { AudioPlayer } from "@/components/bible/audio-player";
+import { useBibleSpeech } from "@/lib/hooks/use-bible-speech";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/lib/i18n";
 import type { BibleBookmark, BibleHighlight, BibleVerseNote } from "@/types";
@@ -42,6 +44,18 @@ export function ChapterReaderClient() {
   const translation =
     profile?.bibleTranslation ?? (lang === "tl" ? TAGALOG_TRANSLATION : DEFAULT_TRANSLATION);
   const isTagalog = translation === TAGALOG_TRANSLATION;
+
+  const verseTexts = useMemo(() => verses?.map((v) => cleanVerseText(v.text)) ?? [], [verses]);
+  const speech = useBibleSpeech(verseTexts, isTagalog ? "tl" : "en");
+  const [listening, setListening] = useState(false);
+
+  // Keep the verse being read in view.
+  useEffect(() => {
+    if (speech.state !== "playing" || !verses?.[speech.index]) return;
+    document
+      .getElementById(`v${verses[speech.index].verse}`)
+      ?.scrollIntoView({ block: "center", behavior: "smooth" });
+  }, [speech.state, speech.index, verses]);
 
   const highlights = useUserCollection<BibleHighlight>("bibleHighlights");
   const bookmarks = useUserCollection<BibleBookmark>("bibleBookmarks");
@@ -123,7 +137,8 @@ export function ChapterReaderClient() {
 
   return (
     <div>
-      <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-border/70 bg-background/90 px-5 py-4 backdrop-blur safe-top">
+      <header className="sticky top-0 z-30 border-b border-border/70 bg-background/90 px-5 py-4 backdrop-blur safe-top">
+        <div className="flex items-center gap-3">
         <button
           onClick={() => router.push("/bible")}
           aria-label="Back to Bible"
@@ -158,6 +173,26 @@ export function ChapterReaderClient() {
           <BookOpenText className="size-3.5" />
           {isTagalog ? "EN" : "TL"}
         </button>
+        <button
+          onClick={() => {
+            setListening(true);
+            if (speech.state !== "playing") speech.play();
+          }}
+          disabled={!verses}
+          aria-label={isTagalog ? "Pakinggan ang kabanata" : "Listen to this chapter"}
+          className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary disabled:opacity-40"
+        >
+          <Headphones className="size-4" />
+        </button>
+        </div>
+        {listening && (
+          <AudioPlayer
+            speech={speech}
+            verseNumber={verses?.[speech.index]?.verse}
+            isTagalog={isTagalog}
+            onClose={() => setListening(false)}
+          />
+        )}
       </header>
 
       <div className="px-5 py-5">
@@ -177,25 +212,30 @@ export function ChapterReaderClient() {
 
         {verses && (
           <div className="space-y-0.5 font-heading text-[17px] leading-loose">
-            {verses.map((v) => {
+            {verses.map((v, i) => {
               const isHighlighted = highlightMap.has(v.verse);
+              const isBeingRead = listening && speech.state !== "idle" && speech.index === i;
               const isBookmarked = bookmarkMap.has(v.verse);
               return (
                 <span
                   key={v.verse}
                   id={`v${v.verse}`}
                   onClick={() =>
-                    setSelection({
-                      book: book.name,
-                      chapter,
-                      verse: v.verse,
-                      text: cleanVerseText(v.text),
-                    })
+                    // While listening, tapping a verse moves the reading there.
+                    listening && speech.state !== "idle"
+                      ? speech.jumpTo(i)
+                      : setSelection({
+                          book: book.name,
+                          chapter,
+                          verse: v.verse,
+                          text: cleanVerseText(v.text),
+                        })
                   }
                   className={cn(
                     "cursor-pointer rounded px-0.5 transition-colors",
                     isHighlighted && "bg-gold/50 dark:bg-gold/40",
-                    isBookmarked && "underline decoration-primary decoration-2 underline-offset-4"
+                    isBookmarked && "underline decoration-primary decoration-2 underline-offset-4",
+                    isBeingRead && "bg-primary/15 ring-1 ring-primary/30"
                   )}
                 >
                   <sup className="mr-1 font-sans text-[11px] font-semibold text-primary/70">
