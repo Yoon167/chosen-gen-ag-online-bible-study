@@ -1,2 +1,3 @@
 .qodo/
 .firebase/
+firestore-tests/node_modules/
