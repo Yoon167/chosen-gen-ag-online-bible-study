@@ -26,7 +26,7 @@ const STRINGS = {
   "home.verseOfDay": { en: "Verse of the Day", tl: "Talata ng Araw" },
   "home.encouragement": { en: "Daily Encouragement", tl: "Pampalakas-loob sa Araw na Ito" },
   "home.readingPlan": { en: "Reading Plan", tl: "Plano sa Pagbasa" },
-  "home.events": { en: "Upcoming Church Events", tl: "Mga Darating na Gawain ng Simbahan" },
+  "home.events": { en: "Upcoming Meetings", tl: "Mga Darating na Pulong" },
   "home.meetingCenter": { en: "Meeting Center", tl: "Mga Pulong" },
   "home.quickActions": { en: "Quick Actions", tl: "Mabilisang Pindot" },
 

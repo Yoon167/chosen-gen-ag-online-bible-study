@@ -63,14 +63,14 @@ export default function ChurchSetupPage() {
             displayName: p.displayName,
             legacyLeader: p.role === "leader",
             include: true,
-            role: (p.role === "leader" ? "ministry_leader" : "member") as ChurchRole,
+            role: (p.role === "leader" ? "associate_pastor" : "member") as ChurchRole,
           }))
           .sort((a, b) => a.displayName.localeCompare(b.displayName))
       )
     );
   }, [isAdmin]);
 
-  if (authLoading) return <PageHeader title="Church setup" back />;
+  if (authLoading) return <PageHeader title="AG setup" back />;
 
   if (!isAdmin) {
     return (
@@ -139,7 +139,7 @@ export default function ChurchSetupPage() {
         <PageHeader title="Church setup" icon={ShieldCheck} back />
         <div className="space-y-3 px-5 text-sm">
           <p>
-            {form.name} is set up with {included.length} members. Members see it under Profile → My Church.
+            {form.name} is set up with {included.length} members. Members see it under Profile → My AG.
           </p>
           <Link href="/members" className="font-medium text-primary underline">
             Manage members
@@ -151,15 +151,15 @@ export default function ChurchSetupPage() {
 
   return (
     <div>
-      <PageHeader title="Church setup" subtitle="One-time move to the church structure" icon={ShieldCheck} back />
+      <PageHeader title="AG setup" subtitle="One-time move to the AG structure" icon={ShieldCheck} back />
 
       <div className="space-y-5 px-5 pb-8">
         <section className="space-y-2">
-          <h2 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Church details</h2>
+          <h2 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">AG details</h2>
           {(
             [
-              ["name", "Church name"],
-              ["pastorName", "Senior pastor's name"],
+              ["name", "AG name"],
+              ["pastorName", "AG leader's name"],
               ["city", "City"],
               ["province", "Province / region"],
               ["country", "Country"],
@@ -181,7 +181,7 @@ export default function ChurchSetupPage() {
             Members to import ({included.length} of {candidates.length})
           </h2>
           <p className="text-xs text-muted-foreground">
-            Pick one senior pastor. Former &ldquo;leaders&rdquo; start as ministry leaders; you can change any role here or later.
+            Pick one AG leader. Former &ldquo;leaders&rdquo; start as assistant leaders; you can change any role here or later.
           </p>
           {candidates.map((c) => (
             <div key={c.uid} className="flex items-center gap-2 rounded-xl border border-border/70 bg-card p-2.5">
@@ -203,7 +203,7 @@ export default function ChurchSetupPage() {
                 onChange={(e) => update(c.uid, { role: e.target.value as ChurchRole })}
                 className="h-8 rounded-lg border border-border bg-background px-1.5 text-xs"
               >
-                {ROLES.map((r) => (
+                {ROLES.filter((r) => !r.hidden).map((r) => (
                   <option key={r.role} value={r.role}>
                     {r.label.en}
                   </option>
@@ -214,7 +214,7 @@ export default function ChurchSetupPage() {
         </section>
 
         {seniorPastors.length !== 1 && (
-          <p className="text-xs text-destructive">Choose exactly one senior pastor ({seniorPastors.length} chosen).</p>
+          <p className="text-xs text-destructive">Choose exactly one AG leader ({seniorPastors.length} chosen).</p>
         )}
         {error && <p className="text-xs text-destructive">{error}</p>}
 

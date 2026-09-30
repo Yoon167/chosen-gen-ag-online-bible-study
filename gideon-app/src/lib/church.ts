@@ -21,13 +21,19 @@ export type ChurchRole =
   | "associate_pastor"
   | "senior_pastor";
 
-export const ROLES: { role: ChurchRole; rank: number; label: Text }[] = [
+/**
+ * Gideon groups are Accountability Groups (AGs). The stored role ids keep
+ * their original church names so existing memberships and security rules
+ * stay valid; only the labels are AG terms. Ranks 3 and 4 are no longer
+ * offered (`hidden`) but still display for anyone who already has them.
+ */
+export const ROLES: { role: ChurchRole; rank: number; label: Text; hidden?: boolean }[] = [
   { role: "member", rank: 1, label: { en: "Member", tl: "Miyembro" } },
   { role: "mentor", rank: 2, label: { en: "Mentor", tl: "Mentor" } },
-  { role: "cell_leader", rank: 3, label: { en: "Cell Leader", tl: "Cell Leader" } },
-  { role: "ministry_leader", rank: 4, label: { en: "Ministry Leader", tl: "Ministry Leader" } },
-  { role: "associate_pastor", rank: 5, label: { en: "Associate Pastor", tl: "Associate Pastor" } },
-  { role: "senior_pastor", rank: 6, label: { en: "Senior Pastor", tl: "Senior Pastor" } },
+  { role: "cell_leader", rank: 3, label: { en: "Facilitator", tl: "Facilitator" }, hidden: true },
+  { role: "ministry_leader", rank: 4, label: { en: "Co-Leader", tl: "Co-Leader" }, hidden: true },
+  { role: "associate_pastor", rank: 5, label: { en: "Assistant Leader", tl: "Katuwang na Lider" } },
+  { role: "senior_pastor", rank: 6, label: { en: "AG Leader", tl: "AG Leader" } },
 ];
 
 /** Rank needed to approve join requests and see the roster. */

@@ -144,7 +144,7 @@ export default function ProfilePage() {
             <Switch checked={notifications} onCheckedChange={setNotifications} />
           </SettingRow>
           <Link href="/church" className="block">
-            <SettingRow icon={Church} label="My Church">
+            <SettingRow icon={Church} label="My AG">
               <span className="flex items-center gap-1 text-xs text-muted-foreground">
                 <span className="max-w-28 truncate">
                   {myChurch.active ? myChurch.church?.name : myChurch.membership ? "Pending" : ""}
@@ -155,7 +155,7 @@ export default function ProfilePage() {
           </Link>
           {isNationalAdmin && (
             <Link href="/admin/applications" className="block">
-              <SettingRow icon={ClipboardList} label="Church Applications">
+              <SettingRow icon={ClipboardList} label="AG Applications">
                 <span className="flex items-center gap-1 text-xs text-muted-foreground">
                   {pendingApplications > 0 && (
                     <span className="rounded-full bg-primary px-1.5 text-[11px] font-semibold text-primary-foreground">

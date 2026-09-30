@@ -94,7 +94,7 @@ export default function MeetingsPage() {
       />
 
       {my.active && my.church && (sortedChurchMeetings.length > 0 || isChurchLeader) && (
-        <Section title={tx("Church Meetings", "Mga Pulong ng Simbahan")}>
+        <Section title={tx("AG Meetings", "Mga Pulong ng AG")}>
           <div className="space-y-2.5">
             {sortedChurchMeetings.map((m) => (
               <ChurchMeetingCard
@@ -107,7 +107,7 @@ export default function MeetingsPage() {
                 isLeader={isChurchLeader}
                 onEdit={() => setEditing(m)}
                 onDelete={() => {
-                  if (!confirm(tx(`Delete "${m.title}" for the whole church?`, `Burahin ang "${m.title}" para sa buong simbahan?`))) return;
+                  if (!confirm(tx(`Delete "${m.title}" for the whole AG?`, `Burahin ang "${m.title}" para sa buong AG?`))) return;
                   deleteChurchMeeting(my.churchId!, m.id).catch(() => {});
                 }}
               />
@@ -118,7 +118,7 @@ export default function MeetingsPage() {
                 className="flex w-full items-center justify-center gap-2 rounded-2xl border border-dashed border-border p-3 text-sm text-muted-foreground"
               >
                 <Plus className="size-4" />
-                {tx("Add a church meeting", "Magdagdag ng church meeting")}
+                {tx("Add an AG meeting", "Magdagdag ng AG meeting")}
               </button>
             )}
           </div>

@@ -82,7 +82,7 @@ export function ChurchMeetingDialog({
       <DialogContent>
         <DialogHeader>
           <DialogTitle className="font-heading">
-            {meeting ? tx("Edit church meeting", "I-edit ang church meeting") : tx("New church meeting", "Bagong church meeting")}
+            {meeting ? tx("Edit AG meeting", "I-edit ang AG meeting") : tx("New AG meeting", "Bagong AG meeting")}
           </DialogTitle>
         </DialogHeader>
         <div className="space-y-3">

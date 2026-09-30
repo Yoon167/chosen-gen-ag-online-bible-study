@@ -71,8 +71,8 @@ export default function DisciplesPage() {
             icon={HeartHandshake}
             title={tx("For mentors", "Para sa mga mentor")}
             description={tx(
-              "Your pastor can make you a mentor and assign people to walk with.",
-              "Puwede kang gawing mentor ng iyong pastor at bigyan ng mga taong sasamahan mo."
+              "Your AG leader can make you a mentor and assign people to walk with.",
+              "Puwede kang gawing mentor ng iyong AG leader at bigyan ng mga taong sasamahan mo."
             )}
           />
         )}
@@ -82,8 +82,8 @@ export default function DisciplesPage() {
             icon={HeartHandshake}
             title={tx("No disciples yet", "Wala pang disipulo")}
             description={tx(
-              "When a pastor or ministry leader assigns someone to you, they appear here.",
-              "Kapag may itinalaga sa iyo ang pastor o ministry leader, lalabas sila rito."
+              "When an AG leader assigns someone to you, they appear here.",
+              "Kapag may itinalaga sa iyo ang AG leader, lalabas sila rito."
             )}
           />
         )}

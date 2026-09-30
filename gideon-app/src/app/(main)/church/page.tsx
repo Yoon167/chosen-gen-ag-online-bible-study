@@ -63,7 +63,7 @@ export default function MyChurchPage() {
 
   return (
     <div>
-      <PageHeader title={tx("My Church", "Aking Simbahan")} icon={ChurchIcon} back />
+      <PageHeader title={tx("My AG", "Aking AG")} icon={ChurchIcon} back />
 
       <div className="space-y-4 px-5 pb-8">
         {my.loading && <div className="h-32 animate-pulse rounded-2xl bg-muted" />}
@@ -73,8 +73,8 @@ export default function MyChurchPage() {
           <>
             <p className="text-sm text-muted-foreground">
               {tx(
-                "To join your church, first back up your account so your membership stays with you on any device.",
-                "Para makasali sa iyong simbahan, i-back up muna ang account mo para dala mo ang pagiging miyembro sa kahit anong device."
+                "To join an AG, first back up your account so your membership stays with you on any device.",
+                "Para makasali sa isang AG, i-back up muna ang account mo para dala mo ang pagiging miyembro sa kahit anong device."
               )}
             </p>
             <Button className="w-full" onClick={() => setAccountOpen(true)}>
@@ -87,18 +87,18 @@ export default function MyChurchPage() {
           <>
             <p className="text-sm text-muted-foreground">
               {tx(
-                "Find your church and ask to join. A church leader will approve your request.",
-                "Hanapin ang iyong simbahan at humiling na sumali. Aaprubahan ito ng isang lider ng simbahan."
+                "Find your Accountability Group (AG) and ask to join. An AG leader will approve your request.",
+                "Hanapin ang iyong Accountability Group (AG) at humiling na sumali. Aaprubahan ito ng isang AG leader."
               )}
             </p>
             {churches === null && <div className="h-20 animate-pulse rounded-2xl bg-muted" />}
             {churches?.length === 0 && (
               <EmptyState
                 icon={ChurchIcon}
-                title={tx("No churches yet", "Wala pang simbahan")}
+                title={tx("No AGs yet", "Wala pang AG")}
                 description={tx(
-                  "Churches appear here once they are registered and approved.",
-                  "Lalabas dito ang mga simbahan kapag nakarehistro at naaprubahan na."
+                  "AGs appear here once they are registered and approved.",
+                  "Lalabas dito ang mga AG kapag nakarehistro at naaprubahan na."
                 )}
               />
             )}
@@ -106,7 +106,7 @@ export default function MyChurchPage() {
               href="/church/register"
               className="block text-center text-xs text-muted-foreground underline underline-offset-2"
             >
-              {tx("Is your church not listed? Register your church", "Wala ang simbahan mo? Irehistro ang iyong simbahan")}
+              {tx("Is your AG not listed? Register your AG", "Wala ang AG mo? Irehistro ang iyong AG")}
             </Link>
             {churches?.map((c) => (
               <div key={c.id} className="space-y-3 rounded-2xl border border-border/70 bg-card p-4">
@@ -121,7 +121,7 @@ export default function MyChurchPage() {
                   disabled={busy || !uid}
                   onClick={() => run(() => requestToJoin(c.id, uid!, profile?.displayName ?? "Member"))}
                 >
-                  {tx("Ask to join", "Humiling na sumali")}
+                  {tx("Join AG", "Sumali sa AG")}
                 </Button>
               </div>
             ))}
@@ -135,7 +135,7 @@ export default function MyChurchPage() {
             <p className="text-sm">
               {tx("Your request to join ", "Naipadala na ang hiling mong sumali sa ")}
               <span className="font-medium">{my.church?.name}</span>
-              {tx(" was sent. A church leader will approve it soon.", ". Aaprubahan ito ng isang lider ng simbahan.")}
+              {tx(" was sent. An AG leader will approve it soon.", ". Aaprubahan ito ng isang AG leader.")}
             </p>
             <Button
               variant="outline"
@@ -167,7 +167,7 @@ export default function MyChurchPage() {
               {my.church.pastorName && (
                 <p className="flex items-center gap-2 text-sm text-muted-foreground">
                   <UserRound className="size-4" />
-                  {tx("Pastor ", "Pastor ")}
+                  {tx("Leader: ", "Lider: ")}
                   {my.church.pastorName}
                 </p>
               )}
@@ -202,8 +202,8 @@ export default function MyChurchPage() {
                 </span>
                 <span className="block text-xs text-muted-foreground">
                   {tx(
-                    "Lets your mentor and church leaders see how many lessons you've finished in each level, so they can walk with you. Never your answers, notes, prayers, or assessment.",
-                    "Makikita ng iyong mentor at mga lider ng simbahan kung ilang aralin na ang natapos mo sa bawat level, para masamahan ka nila. Hindi kasama ang iyong mga sagot, notes, panalangin, o assessment."
+                    "Lets your mentor and AG leaders see how many lessons you've finished in each level, so they can walk with you. Never your answers, notes, prayers, or assessment.",
+                    "Makikita ng iyong mentor at mga AG leader kung ilang aralin na ang natapos mo sa bawat level, para masamahan ka nila. Hindi kasama ang iyong mga sagot, notes, panalangin, o assessment."
                   )}
                 </span>
               </span>
@@ -231,7 +231,7 @@ export default function MyChurchPage() {
                 className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4"
               >
                 <LayoutDashboard className="size-5 text-primary" />
-                <span className="flex-1 text-sm font-medium">{tx("Pastor Dashboard", "Pastor Dashboard")}</span>
+                <span className="flex-1 text-sm font-medium">{tx("Leader Dashboard", "Leader Dashboard")}</span>
                 <ChevronRight className="size-4 text-muted-foreground" />
               </Link>
             )}
@@ -253,11 +253,11 @@ export default function MyChurchPage() {
                 className="w-full text-center text-xs text-muted-foreground underline underline-offset-2"
                 disabled={busy}
                 onClick={() => {
-                  if (!confirm(tx("Leave this church in Gideon?", "Umalis sa simbahang ito sa Gideon?"))) return;
+                  if (!confirm(tx("Leave this AG?", "Umalis sa AG na ito?"))) return;
                   run(() => leaveChurch(my.churchId!, uid!));
                 }}
               >
-                {tx("Leave church", "Umalis sa simbahan")}
+                {tx("Leave AG", "Umalis sa AG")}
               </button>
             )}
           </>

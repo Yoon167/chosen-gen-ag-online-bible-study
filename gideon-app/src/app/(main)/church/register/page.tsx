@@ -41,14 +41,14 @@ export default function RegisterChurchPage() {
   const [accountOpen, setAccountOpen] = useState(false);
 
   const fields: { key: keyof ApplicationForm; label: string; type?: string; optional?: boolean }[] = [
-    { key: "churchName", label: tx("Church name", "Pangalan ng simbahan") },
-    { key: "pastorName", label: tx("Senior pastor's name", "Pangalan ng senior pastor") },
-    { key: "denomination", label: tx("Denomination (or Independent)", "Denominasyon (o Independent)") },
+    { key: "churchName", label: tx("AG name (e.g. DD3 AG)", "Pangalan ng AG (hal. DD3 AG)") },
+    { key: "pastorName", label: tx("AG leader's name", "Pangalan ng AG leader") },
+    { key: "denomination", label: tx("Home church (or Independent)", "Simbahang kinabibilangan (o Independent)") },
     { key: "city", label: tx("City / municipality", "Lungsod / bayan") },
     { key: "province", label: tx("Province", "Probinsya") },
     { key: "country", label: tx("Country", "Bansa") },
-    { key: "email", label: tx("Church email", "Email ng simbahan"), type: "email" },
-    { key: "phone", label: tx("Church phone", "Telepono ng simbahan"), type: "tel" },
+    { key: "email", label: tx("Contact email", "Email na makokontak"), type: "email" },
+    { key: "phone", label: tx("Contact phone", "Teleponong makokontak"), type: "tel" },
     { key: "website", label: tx("Website or Facebook page (optional)", "Website o Facebook page (opsyonal)"), optional: true },
     { key: "memberCount", label: tx("Number of members", "Bilang ng miyembro"), type: "number" },
   ];
@@ -86,7 +86,7 @@ export default function RegisterChurchPage() {
 
   return (
     <div>
-      <PageHeader title={tx("Register your church", "Irehistro ang iyong simbahan")} icon={FilePlus2} back />
+      <PageHeader title={tx("Register your AG", "Irehistro ang iyong AG")} icon={FilePlus2} back />
 
       <div className="space-y-4 px-5 pb-8">
         {loading && <div className="h-32 animate-pulse rounded-2xl bg-muted" />}
@@ -95,8 +95,8 @@ export default function RegisterChurchPage() {
           <>
             <p className="text-sm text-muted-foreground">
               {tx(
-                "Back up your account first. The person who registers becomes the church's senior pastor account in Gideon.",
-                "I-back up muna ang iyong account. Ang magrerehistro ang magiging senior pastor account ng simbahan sa Gideon."
+                "Back up your account first. The person who registers becomes the AG leader in Gideon.",
+                "I-back up muna ang iyong account. Ang magrerehistro ang magiging AG leader sa Gideon."
               )}
             </p>
             <Button className="w-full" onClick={() => setAccountOpen(true)}>
@@ -127,12 +127,12 @@ export default function RegisterChurchPage() {
             <p className="font-medium">{application.churchName}</p>
             <p className="text-sm">
               {tx(
-                "Approved! Your church is now in Gideon and you are its senior pastor. Invite your members to join it from My Church.",
-                "Aprubado! Nasa Gideon na ang iyong simbahan at ikaw ang senior pastor nito. Anyayahan ang mga miyembro mo na sumali mula sa My Church."
+                "Approved! Your AG is now in Gideon and you are its AG leader. Invite your members to join it from My AG.",
+                "Aprubado! Nasa Gideon na ang iyong AG at ikaw ang AG leader nito. Anyayahan ang mga miyembro mo na sumali mula sa My AG."
               )}
             </p>
             <Link href="/church" className="inline-block text-sm font-medium text-primary underline">
-              {tx("Go to My Church", "Pumunta sa My Church")}
+              {tx("Go to My AG", "Pumunta sa My AG")}
             </Link>
           </div>
         )}
@@ -161,8 +161,8 @@ export default function RegisterChurchPage() {
           >
             <p className="text-sm text-muted-foreground">
               {tx(
-                "The Gideon team reviews every church before it appears in the app. Once approved, your church gets its own space and you become its senior pastor account.",
-                "Sinusuri ng Gideon team ang bawat simbahan bago ito lumabas sa app. Kapag naaprubahan, magkakaroon ng sariling espasyo ang simbahan mo at ikaw ang magiging senior pastor account nito."
+                "The Gideon team reviews every AG before it appears in the app. Once approved, your AG gets its own space and you become its AG leader.",
+                "Sinusuri ng Gideon team ang bawat AG bago ito lumabas sa app. Kapag naaprubahan, magkakaroon ng sariling espasyo ang AG mo at ikaw ang magiging AG leader nito."
               )}
             </p>
             {fields.map((f) => (

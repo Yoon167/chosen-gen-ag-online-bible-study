@@ -119,7 +119,7 @@ export function TestimonyForm({
             onClick={() => set("visibility", "members")}
             icon={<Users className="size-4" />}
             title="All members"
-            hint="Shared with the church"
+            hint="Shared with members"
           />
         </div>
       </Field>

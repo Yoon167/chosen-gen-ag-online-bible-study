@@ -49,10 +49,10 @@ export default function ChurchPrayerWallPage() {
         <PageHeader title={tx("Prayer Wall", "Prayer Wall")} icon={HandHeart} back />
         <EmptyState
           icon={HandHeart}
-          title={tx("For church members", "Para sa mga miyembro ng simbahan")}
+          title={tx("For AG members", "Para sa mga miyembro ng AG")}
           description={tx(
-            "Join your church in My Church to pray with your church family.",
-            "Sumali sa iyong simbahan sa My Church para makapanalangin kasama ang iyong church family."
+            "Join your AG in My AG to pray together.",
+            "Sumali sa iyong AG sa My AG para makapanalangin nang sama-sama."
           )}
         />
       </div>
@@ -125,7 +125,7 @@ export default function ChurchPrayerWallPage() {
           <EmptyState
             icon={HandHeart}
             title={tx("No prayer requests here yet", "Wala pang prayer request dito")}
-            description={tx("Tap + to share one with your church.", "Pindutin ang + para magbahagi sa iyong simbahan.")}
+            description={tx("Tap + to share one with your AG.", "Pindutin ang + para magbahagi sa iyong AG.")}
           />
         )}
 
@@ -179,7 +179,7 @@ function Composer({
         onChange={(e) => setText(e.target.value)}
         maxLength={1000}
         rows={4}
-        placeholder={tx("What can your church pray for?", "Ano ang maipapanalangin ng iyong simbahan?")}
+        placeholder={tx("What can your AG pray for?", "Ano ang maipapanalangin ng iyong AG?")}
         autoFocus
       />
       <select
@@ -205,8 +205,8 @@ function Composer({
           {tx("Post anonymously", "I-post nang anonymous")}
           <span className="block text-xs text-muted-foreground">
             {tx(
-              "Your name is not saved at all, so no one (not even your pastor) can see who posted it. You won't be able to edit or delete it later; a church leader can remove it.",
-              "Hindi ise-save ang pangalan mo, kaya walang makakaalam (kahit ang pastor mo) kung sino ang nag-post. Hindi mo na ito mae-edit o mabubura; ang lider ng simbahan ang makapag-aalis nito."
+              "Your name is not saved at all, so no one (not even your AG leader) can see who posted it. You won't be able to edit or delete it later; an AG leader can remove it.",
+              "Hindi ise-save ang pangalan mo, kaya walang makakaalam (kahit ang AG leader mo) kung sino ang nag-post. Hindi mo na ito mae-edit o mabubura; ang AG leader ang makapag-aalis nito."
             )}
           </span>
         </span>

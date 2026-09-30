@@ -70,16 +70,16 @@ export default function MembersPage() {
         <PageHeader title={tx("Members", "Mga Miyembro")} icon={Users} back />
         <EmptyState
           icon={Users}
-          title={tx("Church leaders only", "Para sa mga lider ng simbahan lamang")}
+          title={tx("AG leaders only", "Para sa mga AG leader lamang")}
           description={tx(
-            "Cell leaders and pastors manage members here once your church is set up in Gideon.",
-            "Dito pinamamahalaan ng mga cell leader at pastor ang mga miyembro kapag naka-set up na ang simbahan mo sa Gideon."
+            "AG leaders manage members here once your AG is set up in Gideon.",
+            "Dito pinamamahalaan ng mga AG leader ang mga miyembro kapag naka-set up na ang AG mo sa Gideon."
           )}
         />
         {uid === NATIONAL_ADMIN_UID && (
           <div className="px-5">
             <Link href="/admin/church-setup" className="block text-center text-sm font-medium text-primary underline">
-              {tx("Set up the church", "I-set up ang simbahan")}
+              {tx("Set up an AG", "Mag-set up ng AG")}
             </Link>
           </div>
         )}
@@ -93,7 +93,7 @@ export default function MembersPage() {
   const myRank = isAdmin ? ADMIN_RANK : my.rank;
   const canManage = myRank >= MANAGE_RANK;
   // Ministry leaders and pastors give only roles below their own; senior pastor is appointed by the national admin.
-  const assignableRoles = ROLES.filter((r) => r.rank < myRank);
+  const assignableRoles = ROLES.filter((r) => r.rank < myRank && !r.hidden);
 
   async function changeRole(m: Membership, role: ChurchRole) {
     // One senior pastor per church: appointing a new one moves the current one to associate pastor.
@@ -103,8 +103,8 @@ export default function MembersPage() {
       if (
         !confirm(
           tx(
-            `${names} is the current senior pastor and will become associate pastor. Continue?`,
-            `Si ${names} ang kasalukuyang senior pastor at magiging associate pastor. Ituloy?`
+            `${names} is the current AG leader and will become assistant leader. Continue?`,
+            `Si ${names} ang kasalukuyang AG leader at magiging katuwang na lider. Ituloy?`
           )
         )
       )
@@ -130,7 +130,7 @@ export default function MembersPage() {
       <div className="space-y-5 px-5 pb-8">
         {isAdmin && churches.length > 0 && (
           <label className="block space-y-1">
-            <span className="text-[11px] text-muted-foreground">{tx("National admin · church", "National admin · simbahan")}</span>
+            <span className="text-[11px] text-muted-foreground">{tx("National admin · AG", "National admin · AG")}</span>
             <select
               className="h-10 w-full rounded-lg border border-border bg-background px-2 text-sm"
               value={churchId ?? ""}
@@ -194,7 +194,7 @@ export default function MembersPage() {
               onRole={(role) => changeRole(m, role)}
               onMentor={(mentor) => run(() => assignMentor(churchId!, m.uid, mentor))}
               onRemove={() => {
-                if (!confirm(tx(`Remove ${m.displayName} from the church?`, `Alisin si ${m.displayName} sa simbahan?`))) return;
+                if (!confirm(tx(`Remove ${m.displayName} from the AG?`, `Alisin si ${m.displayName} sa AG?`))) return;
                 run(() => removeMember(churchId!, m.uid));
               }}
             />
@@ -254,7 +254,7 @@ function MemberRow({
         </div>
         {canManage && (
           <button
-            aria-label={tx("Remove from church", "Alisin sa simbahan")}
+            aria-label={tx("Remove from AG", "Alisin sa AG")}
             className="text-muted-foreground hover:text-destructive"
             onClick={onRemove}
           >

@@ -93,8 +93,8 @@ export function LevelDetailClient() {
           ) : !s.lessonsDone ? (
             <p className="mt-2 text-sm text-muted-foreground">
               {tx(
-                "Finish every lesson in this level, then meet with your mentor or cell leader.",
-                "Tapusin ang lahat ng aralin sa level na ito, tapos makipagkita sa iyong mentor o cell leader."
+                "Finish every lesson in this level, then meet with your mentor or AG leader.",
+                "Tapusin ang lahat ng aralin sa level na ito, tapos makipagkita sa iyong mentor o AG leader."
               )}
             </p>
           ) : mentorName_ ? (
@@ -114,8 +114,8 @@ export function LevelDetailClient() {
                 )}
                 {!my.membership?.shareProgress &&
                   tx(
-                    " Turn on progress sharing in My Church so they can see you're ready.",
-                    " I-on ang progress sharing sa My Church para makita nilang handa ka na."
+                    " Turn on progress sharing in My AG so they can see you're ready.",
+                    " I-on ang progress sharing sa My AG para makita nilang handa ka na."
                   )}
               </p>
             </div>
@@ -135,8 +135,8 @@ export function LevelDetailClient() {
             >
               <p className="text-sm">
                 {tx(
-                  "Meet with your mentor or cell leader and talk through:",
-                  "Makipagkita sa iyong mentor o cell leader at pag-usapan:"
+                  "Meet with your mentor or AG leader and talk through:",
+                  "Makipagkita sa iyong mentor o AG leader at pag-usapan:"
                 )}
               </p>
               <ul className="list-disc space-y-1.5 pl-5 text-sm text-muted-foreground">

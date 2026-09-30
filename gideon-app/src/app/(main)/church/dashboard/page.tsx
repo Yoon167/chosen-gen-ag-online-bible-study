@@ -28,11 +28,11 @@ export default function PastorDashboardPage() {
   if (!my.loading && !isLeader) {
     return (
       <div>
-        <PageHeader title={tx("Pastor Dashboard", "Pastor Dashboard")} icon={LayoutDashboard} back />
+        <PageHeader title={tx("Leader Dashboard", "Leader Dashboard")} icon={LayoutDashboard} back />
         <EmptyState
           icon={LayoutDashboard}
-          title={tx("For church leaders", "Para sa mga lider ng simbahan")}
-          description={tx("Cell leaders and pastors see church care and growth here.", "Dito makikita ng mga cell leader at pastor ang kalagayan at paglago ng simbahan.")}
+          title={tx("For AG leaders", "Para sa mga AG leader")}
+          description={tx("AG leaders see the care and growth of their group here.", "Dito makikita ng mga AG leader ang kalagayan at paglago ng kanilang grupo.")}
         />
       </div>
     );
@@ -41,7 +41,7 @@ export default function PastorDashboardPage() {
   return (
     <div>
       <PageHeader
-        title={tx("Pastor Dashboard", "Pastor Dashboard")}
+        title={tx("Leader Dashboard", "Leader Dashboard")}
         subtitle={my.church?.name}
         icon={LayoutDashboard}
         back
@@ -90,7 +90,7 @@ export default function PastorDashboardPage() {
                 <CareRow
                   href="/members"
                   icon={<UserPlus className="size-4 text-primary" />}
-                  text={tx(`${d.pending.length} waiting to join the church`, `${d.pending.length} naghihintay na makasali sa simbahan`)}
+                  text={tx(`${d.pending.length} waiting to join the AG`, `${d.pending.length} naghihintay na makasali sa AG`)}
                 />
               )}
               {d.noMentor.length > 0 && (
@@ -129,8 +129,8 @@ export default function PastorDashboardPage() {
               {d.sharingCount === 0 ? (
                 <p className="text-sm text-muted-foreground">
                   {tx(
-                    "No one is sharing progress yet. Members can turn it on in My Church.",
-                    "Wala pang nagbabahagi ng progress. Puwede itong i-on ng mga miyembro sa My Church."
+                    "No one is sharing progress yet. Members can turn it on in My AG.",
+                    "Wala pang nagbabahagi ng progress. Puwede itong i-on ng mga miyembro sa My AG."
                   )}
                 </p>
               ) : (
@@ -167,8 +167,8 @@ export default function PastorDashboardPage() {
               ) : (
                 <p className="text-sm text-muted-foreground">
                   {tx(
-                    "No check-ins yet. Members tap “I'm here” on a church meeting while it's happening.",
-                    "Wala pang check-in. Pipindutin ng mga miyembro ang “Nandito ako” sa church meeting habang nagaganap ito."
+                    "No check-ins yet. Members tap “I'm here” on an AG meeting while it's happening.",
+                    "Wala pang check-in. Pipindutin ng mga miyembro ang “Nandito ako” sa AG meeting habang nagaganap ito."
                   )}
                 </p>
               )}

@@ -38,8 +38,8 @@ export function VaultSetup({
       {
         icon: ShieldCheck,
         text: tx(
-          "No one else can read them: not your pastor, not church leaders, not Gideon's administrators.",
-          "Walang ibang makakabasa nito: hindi ang pastor mo, hindi ang mga lider ng simbahan, hindi ang mga administrator ng Gideon."
+          "No one else can read them: not your pastor, not your AG leaders, not Gideon's administrators.",
+          "Walang ibang makakabasa nito: hindi ang pastor mo, hindi ang mga AG leader mo, hindi ang mga administrator ng Gideon."
         ),
       },
       {

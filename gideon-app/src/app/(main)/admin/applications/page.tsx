@@ -24,12 +24,12 @@ export default function ApplicationsPage() {
   const [busyId, setBusyId] = useState<string | null>(null);
   const [error, setError] = useState("");
 
-  if (authLoading) return <PageHeader title="Church applications" back />;
+  if (authLoading) return <PageHeader title="AG applications" back />;
 
   if (!isAdmin) {
     return (
       <div>
-        <PageHeader title="Church applications" icon={ClipboardList} back />
+        <PageHeader title="AG applications" icon={ClipboardList} back />
         <p className="px-5 text-sm text-muted-foreground">Only the Gideon national admin can review applications.</p>
       </div>
     );
@@ -53,7 +53,7 @@ export default function ApplicationsPage() {
 
   return (
     <div>
-      <PageHeader title="Church applications" subtitle={`${count("pending")} waiting for review`} icon={ClipboardList} back />
+      <PageHeader title="AG applications" subtitle={`${count("pending")} waiting for review`} icon={ClipboardList} back />
 
       <div className="space-y-4 px-5 pb-8">
         <div className="flex rounded-full border border-border p-0.5 text-xs">
@@ -75,7 +75,7 @@ export default function ApplicationsPage() {
         {error && <p className="text-xs text-destructive">{error}</p>}
 
         {!loading && shown.length === 0 && (
-          <EmptyState icon={ClipboardList} title={`No ${filter} applications`} description="New church registrations appear here." />
+          <EmptyState icon={ClipboardList} title={`No ${filter} applications`} description="New AG registrations appear here." />
         )}
 
         {shown.map((a) => (
@@ -84,7 +84,7 @@ export default function ApplicationsPage() {
             app={a}
             busy={busyId === a.id}
             onApprove={() => {
-              if (!confirm(`Approve ${a.churchName}? ${a.applicantName} becomes its senior pastor.`)) return;
+              if (!confirm(`Approve ${a.churchName}? ${a.applicantName} becomes its AG leader.`)) return;
               run(a.id, () => approveApplication(a.id, a, uid!));
             }}
             onReject={() => {
@@ -121,7 +121,7 @@ function ApplicationCard({
       </div>
       <div className="space-y-1.5 text-sm">
         <p>
-          <span className="text-muted-foreground">Pastor:</span> {a.pastorName}
+          <span className="text-muted-foreground">Leader:</span> {a.pastorName}
         </p>
         <p>
           <span className="text-muted-foreground">Submitted by:</span> {a.applicantName} ·{" "}
@@ -143,7 +143,7 @@ function ApplicationCard({
       {a.status === "pending" && (
         <>
           <p className="text-[11px] text-muted-foreground">
-            Before approving, contact the pastor to confirm the church is real and they lead it.
+            Before approving, contact the leader to confirm the AG is real and they lead it.
           </p>
           <div className="flex gap-2">
             <Button variant="outline" className="flex-1" disabled={busy} onClick={onReject}>
