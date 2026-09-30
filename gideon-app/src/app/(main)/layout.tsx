@@ -3,10 +3,12 @@ import { QuickAddFab } from "@/components/layout/quick-add-fab";
 import { WelcomeGate } from "@/components/auth/welcome-gate";
 import { LanguageProvider } from "@/lib/i18n";
 import { BackgroundMusic } from "@/lib/background-music";
+import { TourAutostart, TourProvider } from "@/components/tour/tour-provider";
 
 export default function MainLayout({ children }: LayoutProps<"/">) {
   return (
     <LanguageProvider>
+    <TourProvider>
     <BackgroundMusic />
     <WelcomeGate>
       <div className="relative mx-auto flex min-h-screen w-full max-w-xl flex-col">
@@ -14,7 +16,9 @@ export default function MainLayout({ children }: LayoutProps<"/">) {
         <QuickAddFab />
         <BottomNav />
       </div>
+      <TourAutostart />
     </WelcomeGate>
+    </TourProvider>
     </LanguageProvider>
   );
 }

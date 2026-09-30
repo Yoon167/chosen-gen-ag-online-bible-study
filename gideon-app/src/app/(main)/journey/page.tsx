@@ -49,6 +49,7 @@ export default function JourneyPage() {
       <div className="px-5 pb-5">
         <Link
           href="/journey/assessment"
+          data-tour="journey-assessment"
           className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4"
         >
           <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">

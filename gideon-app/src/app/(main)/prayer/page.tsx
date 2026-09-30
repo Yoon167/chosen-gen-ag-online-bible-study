@@ -62,7 +62,7 @@ function PrayerPageInner() {
         }
       />
 
-      <div className="grid grid-cols-3 gap-2.5 px-5">
+      <div className="grid grid-cols-3 gap-2.5 px-5" data-tour="prayer-journal">
         <StatBlock label="Total" value={items.length} />
         <StatBlock label="Answered" value={totalAnswered} />
         <StatBlock label="Active" value={items.length - totalAnswered} />

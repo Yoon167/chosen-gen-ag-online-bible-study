@@ -28,7 +28,7 @@ export default function BiblePage() {
         icon={BookOpenText}
       />
 
-      <div className="px-5">
+      <div className="px-5" data-tour="bible-search">
         <ReferenceSearch />
       </div>
 

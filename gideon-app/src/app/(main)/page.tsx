@@ -94,7 +94,7 @@ export default function HomePage() {
       </div>
 
       <Section title={tx("Your next step", "Ang susunod mong hakbang")} href="/journey" hrefLabel={tx("Journey", "Journey")}>
-        <div className="space-y-2.5">
+        <div className="space-y-2.5" data-tour="home-progress">
           <AnnouncementCard />
           <NextStepCard />
           <CheckinCard />

@@ -88,7 +88,7 @@ export default function MyChurchPage() {
         {/* Not in a church yet */}
         {needsDirectory && !hasAccount && (
           <>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground" data-tour="ag-community">
               {tx(
                 `${invited ? `You're invited to ${invited.name}. ` : ""}To join an AG, first back up your account so your membership stays with you on any device.`,
                 `${invited ? `Inimbitahan ka sa ${invited.name}. ` : ""}Para makasali sa isang AG, i-back up muna ang account mo para dala mo ang pagiging miyembro sa kahit anong device.`
@@ -102,7 +102,7 @@ export default function MyChurchPage() {
 
         {needsDirectory && hasAccount && (
           <>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground" data-tour="ag-community">
               {tx(
                 "Find your Accountability Group (AG) and ask to join. An AG leader will approve your request.",
                 "Hanapin ang iyong Accountability Group (AG) at humiling na sumali. Aaprubahan ito ng isang AG leader."
@@ -218,7 +218,7 @@ export default function MyChurchPage() {
               {tx(`Invite someone to ${my.church.name}`, `Mag-imbita sa ${my.church.name}`)}
             </Button>
 
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-3 gap-2" data-tour="ag-community">
               {[
                 { href: "/church/announcements", icon: Megaphone, label: tx("Announcements", "Anunsyo") },
                 { href: "/sermons", icon: NotebookPen, label: tx("Sermon notes", "Sermon notes") },
