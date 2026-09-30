@@ -191,6 +191,39 @@ service cloud.firestore {
           || (rankAtLeast(churchId, 4) && resource.data.rank < myRank(churchId));
       }
 
+      // Church meetings: every active member sees them; cell leaders and up manage them.
+      match /meetings/{meetingId} {
+        allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);
+        allow create, update: if rankAtLeast(churchId, 3)
+          && request.resource.data.keys().hasOnly(['title', 'type', 'platform', 'link', 'location',
+            'startsAt', 'durationMin', 'weekly', 'createdBy', 'createdAt'])
+          && validText(request.resource.data.title, 1, 100)
+          && request.resource.data.type in ['bible_study', 'prayer', 'discipleship', 'leadership', 'service', 'other']
+          && request.resource.data.platform in ['Google Meet', 'Teams', 'Zoom', 'In person']
+          && validText(request.resource.data.link, 0, 500)
+          && validText(request.resource.data.location, 0, 200)
+          && request.resource.data.startsAt is int
+          && request.resource.data.durationMin is int
+          && request.resource.data.durationMin >= 5 && request.resource.data.durationMin <= 600
+          && request.resource.data.weekly is bool;
+        allow delete: if rankAtLeast(churchId, 3);
+
+        // Attendance per occurrence: doc id is "{YYYY-MM-DD}_{uid}". Members
+        // check themselves in; leaders see everyone and can correct the list.
+        match /attendance/{attendanceId} {
+          allow read: if rankAtLeast(churchId, 3)
+            || (request.auth != null && attendanceId.matches('[0-9-]+_' + request.auth.uid));
+          allow create: if request.auth != null && isActiveMember(churchId, request.auth.uid)
+            && request.resource.data.keys().hasOnly(['uid', 'name', 'dateKey', 'at'])
+            && request.resource.data.uid == request.auth.uid
+            && attendanceId == request.resource.data.dateKey + '_' + request.auth.uid
+            && request.resource.data.dateKey.matches('[0-9]{4}-[0-9]{2}-[0-9]{2}')
+            && validText(request.resource.data.name, 1, 100);
+          allow delete: if rankAtLeast(churchId, 3)
+            || (request.auth != null && attendanceId.matches('[0-9-]+_' + request.auth.uid));
+        }
+      }
+
       // Church prayer wall, for active members only. Anonymous requests store
       // no author at all, so nobody in the church can tell who posted them.
       match /prayers/{prayerId} {
