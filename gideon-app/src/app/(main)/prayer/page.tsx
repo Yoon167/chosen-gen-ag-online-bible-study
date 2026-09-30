@@ -3,7 +3,8 @@
 import { Suspense, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
-import { HandHeart, Plus } from "lucide-react";
+import Link from "next/link";
+import { Flame, HandHeart, HeartHandshake, Plus } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { AddPrayerDialog } from "@/components/prayer/add-prayer-dialog";
@@ -12,7 +13,7 @@ import { useUserCollection } from "@/lib/hooks/use-collection";
 import { useProfile } from "@/lib/hooks/use-profile";
 import { cn } from "@/lib/utils";
 import type { PrayerCategory, PrayerRequest } from "@/types";
-import { useLanguage } from "@/lib/i18n";
+import { useLanguage, useTx } from "@/lib/i18n";
 
 const CATEGORIES: (PrayerCategory | "All")[] = [
   "All",
@@ -27,6 +28,7 @@ const CATEGORIES: (PrayerCategory | "All")[] = [
 
 function PrayerPageInner() {
   const { t } = useLanguage();
+  const tx = useTx();
   const searchParams = useSearchParams();
   const [dialogOpen, setDialogOpen] = useState(searchParams.get("new") === "1");
   const [filter, setFilter] = useState<PrayerCategory | "All">("All");
@@ -73,6 +75,23 @@ function PrayerPageInner() {
         <HandHeart className="size-3.5" />
         I prayed today
       </button>
+
+      <div className="mx-5 mt-2 grid grid-cols-2 gap-2">
+        <Link
+          href="/fasting"
+          className="flex items-center justify-center gap-1.5 rounded-full border border-border bg-card py-2.5 text-xs font-medium"
+        >
+          <Flame className="size-3.5 text-primary" />
+          {tx("Prayer timer & fasting", "Prayer timer at ayuno")}
+        </Link>
+        <Link
+          href="/oikos"
+          className="flex items-center justify-center gap-1.5 rounded-full border border-border bg-card py-2.5 text-xs font-medium"
+        >
+          <HeartHandshake className="size-3.5 text-primary" />
+          {tx("My Oikos", "Aking Oikos")}
+        </Link>
+      </div>
 
       <div className="mt-5 flex gap-2 overflow-x-auto px-5 pb-1 no-scrollbar">
         {CATEGORIES.map((c) => (

@@ -46,6 +46,8 @@ const USER_SUBCOLLECTIONS = [
   "oikos",
   "lessonReflections",
   "giftResults",
+  "prayerSessions",
+  "fasts",
   "assessments",
   "vaultKeys",
 ];
