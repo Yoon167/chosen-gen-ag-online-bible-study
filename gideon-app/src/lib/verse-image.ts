@@ -89,7 +89,7 @@ export async function drawVerseImage(
   if (theme.photo) {
     try {
       drawCover(ctx, await loadImage(theme.photo), W, H);
-      ctx.fillStyle = "rgba(20, 16, 48, 0.55)";
+      ctx.fillStyle = "rgba(20, 16, 48, 0.72)";
       ctx.fillRect(0, 0, W, H);
     } catch {
       // Keep the gradient if the photo can't load (e.g. offline).

@@ -3,7 +3,7 @@ import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { PwaRegister } from "@/components/pwa-register";
-import { TEXT_SIZE_BOOT_SCRIPT } from "@/lib/text-size";
+import { TEXT_SIZE_BOOT_SCRIPT } from "@/lib/text-size-boot";
 
 const sans = Inter({
   variable: "--font-sans",

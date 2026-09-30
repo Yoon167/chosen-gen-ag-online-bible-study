@@ -1,15 +1,9 @@
-// No "use client": the root (server) layout imports the boot script string.
+"use client";
+
 import { useCallback, useSyncExternalStore } from "react";
+import { TEXT_SIZE_KEY } from "@/lib/text-size-boot";
 
 export type TextSize = "md" | "lg" | "xl";
-
-export const TEXT_SIZE_KEY = "gideon-text-size";
-
-/**
- * Runs before the app paints (inlined in the root layout) so a member who
- * chose large text never sees the small size flash first.
- */
-export const TEXT_SIZE_BOOT_SCRIPT = `try{var s=localStorage.getItem("${TEXT_SIZE_KEY}");if(s==="lg"||s==="xl")document.documentElement.dataset.textSize=s}catch(e){}`;
 
 const listeners = new Set<() => void>();
 
