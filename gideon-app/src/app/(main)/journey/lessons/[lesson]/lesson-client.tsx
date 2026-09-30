@@ -14,6 +14,8 @@ import { isLessonDone, useJourneyProgress } from "@/lib/hooks/use-journey-progre
 import { useJourneySync } from "@/lib/hooks/use-journey-sync";
 import { useJourneyAccess } from "@/lib/hooks/use-journey-access";
 import { JoinAgNotice } from "@/components/journey/join-ag-notice";
+import { ReflectionJournal } from "@/components/journey/reflection-journal";
+import { VerseQuizCard } from "@/components/journey/verse-quiz-card";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export function LessonClient() {
@@ -128,21 +130,13 @@ export function LessonClient() {
           {stepCheck("read", tx("I read the passages and the lesson", "Nabasa ko ang mga talata at ang aralin"))}
         </section>
 
+        <VerseQuizCard lesson={lesson} />
+
         <section className="rounded-2xl border border-border/70 bg-card p-4">
           <h2 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
             2 · {tx("Reflect", "Magnilay")}
           </h2>
-          <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm">
-            {lesson.reflection.map((q) => (
-              <li key={q.en}>{q[lang]}</li>
-            ))}
-          </ol>
-          <p className="mt-3 text-xs text-muted-foreground">
-            {tx(
-              "Write your answers in Notes, or talk them through with your mentor.",
-              "Isulat ang mga sagot mo sa Notes, o pag-usapan ito kasama ang iyong mentor."
-            )}
-          </p>
+          <ReflectionJournal lesson={lesson} />
           {stepCheck("reflect", tx("I reflected on these questions", "Pinagnilayan ko ang mga tanong"))}
         </section>
 
