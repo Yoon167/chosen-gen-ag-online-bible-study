@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Highlighter, Bookmark, Copy, Share2, NotebookPen } from "lucide-react";
+import { Highlighter, Bookmark, Copy, Share2, NotebookPen, Brain } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface VerseSelection {
@@ -29,6 +29,8 @@ export function VerseActionDrawer({
   onToggleHighlight,
   onToggleBookmark,
   onSaveNote,
+  isMemorized,
+  onMemorize,
 }: {
   selection: VerseSelection | null;
   onOpenChange: (open: boolean) => void;
@@ -38,6 +40,8 @@ export function VerseActionDrawer({
   onToggleHighlight: () => void;
   onToggleBookmark: () => void;
   onSaveNote: (note: string) => void;
+  isMemorized?: boolean;
+  onMemorize?: () => void;
 }) {
   const [noteOpen, setNoteOpen] = useState(false);
   const [noteDraft, setNoteDraft] = useState(existingNote);
@@ -81,7 +85,7 @@ export function VerseActionDrawer({
         </div>
 
         {!noteOpen ? (
-          <div className="grid grid-cols-5 gap-2 px-4 py-3">
+          <div className="grid grid-cols-4 gap-2 px-4 py-3">
             <ActionButton
               icon={Highlighter}
               label="Highlight"
@@ -102,6 +106,9 @@ export function VerseActionDrawer({
               active={!!existingNote}
               onClick={() => setNoteOpen(true)}
             />
+            {onMemorize && (
+              <ActionButton icon={Brain} label="Memorize" active={isMemorized} onClick={onMemorize} />
+            )}
           </div>
         ) : (
           <div className="space-y-3 px-4 pb-2">

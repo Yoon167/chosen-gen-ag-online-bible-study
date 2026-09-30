@@ -15,6 +15,7 @@ import {
 import { useUserCollection } from "@/lib/hooks/use-collection";
 import { useRecordBibleHistory } from "@/lib/hooks/use-bible-history";
 import { useProfile } from "@/lib/hooks/use-profile";
+import { useMemoryVerses } from "@/lib/hooks/use-memory-verses";
 import {
   VerseActionDrawer,
   type VerseSelection,
@@ -93,6 +94,7 @@ export function ChapterReaderClient() {
   const highlights = useUserCollection<BibleHighlight>("bibleHighlights");
   const bookmarks = useUserCollection<BibleBookmark>("bibleBookmarks");
   const notes = useUserCollection<BibleVerseNote>("bibleNotes");
+  const memory = useMemoryVerses();
 
   useEffect(() => {
     if (!book) return;
@@ -362,6 +364,12 @@ export function ChapterReaderClient() {
               note,
               createdAt: Date.now(),
             });
+        }}
+        isMemorized={!!selection && memory.has(`${selection.book} ${selection.chapter}:${selection.verse}`)}
+        onMemorize={() => {
+          if (!selection) return;
+          const reference = `${selection.book} ${selection.chapter}:${selection.verse}`;
+          if (!memory.has(reference)) memory.addVerse(reference, selection.text, translation);
         }}
       />
     </div>

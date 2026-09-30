@@ -12,6 +12,7 @@ import {
   GraduationCap,
   PresentationIcon,
   Video,
+  Brain,
 } from "lucide-react";
 import { useLanguage, type StringKey } from "@/lib/i18n";
 
@@ -22,6 +23,7 @@ const ACTIONS: { label: StringKey; href: string; icon: typeof Sun }[] = [
   { label: "qa.notes", href: "/notes", icon: NotebookPen },
   { label: "qa.testimony", href: "/testimony", icon: Sparkles },
   { label: "qa.journey", href: "/journey", icon: Compass },
+  { label: "qa.memory", href: "/memory", icon: Brain },
   { label: "qa.teaching", href: "/teaching", icon: GraduationCap },
   { label: "qa.presentations", href: "/presentations", icon: PresentationIcon },
   { label: "qa.meetings", href: "/meetings", icon: Video },

@@ -40,6 +40,7 @@ const STRINGS = {
   "qa.teaching": { en: "Teaching Recap", tl: "Buod ng Aral" },
   "qa.presentations": { en: "Presentations", tl: "Mga Presentasyon" },
   "qa.meetings": { en: "Meetings", tl: "Mga Pulong" },
+  "qa.memory": { en: "Memory Verses", tl: "Pagsasaulo" },
 
   // Devotion
   "devotion.title": { en: "Daily Devotion", tl: "Pang-araw-araw na Debosyon" },

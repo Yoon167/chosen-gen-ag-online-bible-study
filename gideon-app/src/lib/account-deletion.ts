@@ -42,6 +42,7 @@ const USER_SUBCOLLECTIONS = [
   "devotionLog",
   "readingProgress",
   "churchPrayed",
+  "memoryVerses",
   "assessments",
   "vaultKeys",
 ];
