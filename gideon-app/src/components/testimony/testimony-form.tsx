@@ -23,10 +23,13 @@ export function TestimonyForm({
   initial,
   onSubmit,
   submitLabel = "Save Testimony",
+  agName,
 }: {
   initial?: Partial<Testimony>;
   onSubmit: (values: TestimonyFormValues) => void;
   submitLabel?: string;
+  /** The member's AG, which adds a "My AG" sharing option. */
+  agName?: string | null;
 }) {
   const [values, setValues] = useState<TestimonyFormValues>({
     title: initial?.title ?? "",
@@ -106,7 +109,7 @@ export function TestimonyForm({
       </Field>
 
       <Field label="Who can see this">
-        <div className="grid grid-cols-2 gap-2">
+        <div className={agName ? "grid grid-cols-3 gap-2" : "grid grid-cols-2 gap-2"}>
           <VisibilityOption
             active={values.visibility === "private"}
             onClick={() => set("visibility", "private")}
@@ -121,6 +124,15 @@ export function TestimonyForm({
             title="All members"
             hint="Shared with members"
           />
+          {agName && (
+            <VisibilityOption
+              active={values.visibility === "ag"}
+              onClick={() => set("visibility", "ag")}
+              icon={<Users className="size-4" />}
+              title="My AG"
+              hint={`Only ${agName}`}
+            />
+          )}
         </div>
       </Field>
 

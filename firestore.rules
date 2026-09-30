@@ -249,6 +249,18 @@ service cloud.firestore {
         allow delete: if request.auth != null && resource.data.uid == request.auth.uid;
       }
 
+      // Testimonies a member shared with their AG only (a copy of their private
+      // testimony). Doc id is "{ownerUid}_{testimonyId}".
+      match /testimonies/{docId} {
+        allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);
+        allow create, update: if request.auth != null && isActiveMember(churchId, request.auth.uid)
+          && request.resource.data.ownerUid == request.auth.uid
+          && docId.matches(request.auth.uid + '_.*');
+        // The owner can always take it down (even after leaving); leaders can remove it.
+        allow delete: if (request.auth != null && docId.matches(request.auth.uid + '_.*'))
+          || rankAtLeast(churchId, 3);
+      }
+
       // Church meetings: every active member sees them; cell leaders and up manage them.
       match /meetings/{meetingId} {
         allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);

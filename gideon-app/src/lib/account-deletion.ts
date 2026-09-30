@@ -119,6 +119,11 @@ async function deleteEverything(user: User, onStep?: (step: string) => void) {
         query(collection(db, "churches", churchId, "prayers"), where("authorUid", "==", uid))
       );
       await deleteRefs(prayers.docs.map((p) => p.ref));
+      // Testimonies shared with the AG.
+      const agTestimonies = await getDocs(
+        query(collection(db, "churches", churchId, "testimonies"), where("ownerUid", "==", uid))
+      );
+      await deleteRefs(agTestimonies.docs.map((t) => t.ref));
     }
   }
 

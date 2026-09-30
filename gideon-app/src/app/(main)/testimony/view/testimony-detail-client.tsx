@@ -11,8 +11,10 @@ import { useUserCollection } from "@/lib/hooks/use-collection";
 import { useProfile } from "@/lib/hooks/use-profile";
 import {
   syncCommunityTestimony,
+  useAgTestimonies,
   useCommunityTestimonies,
 } from "@/lib/hooks/use-community-testimonies";
+import { useMyChurch } from "@/lib/hooks/use-church";
 import type { CommunityTestimony, Testimony } from "@/types";
 
 const SECTIONS: { key: keyof Testimony; label: string }[] = [
@@ -25,6 +27,8 @@ const SECTIONS: { key: keyof Testimony; label: string }[] = [
 export function TestimonyDetailClient() {
   const searchParams = useSearchParams();
   const sharedId = searchParams.get("shared");
+  const agSharedId = searchParams.get("ag");
+  if (agSharedId) return <AgSharedTestimony sharedId={agSharedId} />;
   return sharedId ? (
     <SharedTestimony sharedId={sharedId} />
   ) : (
@@ -36,6 +40,8 @@ function OwnTestimony({ id }: { id: string }) {
   const router = useRouter();
   const { items, loading, update, remove, uid } = useUserCollection<Testimony>("testimonies");
   const { profile } = useProfile();
+  const my = useMyChurch();
+  const agId = my.active ? my.churchId : null;
   const [editing, setEditing] = useState(false);
   const testimony = items.find((t) => t.id === id);
 
@@ -49,9 +55,11 @@ function OwnTestimony({ id }: { id: string }) {
         <TestimonyForm
           initial={testimony}
           submitLabel="Save Changes"
+          agName={agId ? my.church?.name : null}
           onSubmit={async (values) => {
-            await update(testimony.id, values);
-            if (uid) await syncCommunityTestimony(uid, { ...testimony, ...values }, profile);
+            const next = { ...values, agId: values.visibility === "ag" ? agId : null };
+            await update(testimony.id, next);
+            if (uid) await syncCommunityTestimony(uid, { ...testimony, ...next }, profile, testimony.agId ?? null);
             setEditing(false);
           }}
         />
@@ -59,7 +67,7 @@ function OwnTestimony({ id }: { id: string }) {
     );
   }
 
-  const shared = testimony.visibility === "members";
+  const shared = testimony.visibility === "members" || testimony.visibility === "ag";
 
   return (
     <TestimonyBody
@@ -67,7 +75,7 @@ function OwnTestimony({ id }: { id: string }) {
       badge={
         <Badge variant="outline" className="gap-1 text-[10px]">
           {shared ? <Users className="size-3" /> : <Lock className="size-3" />}
-          {shared ? "Shared with all members" : "Only me"}
+          {testimony.visibility === "ag" ? "Shared with my AG" : shared ? "Shared with all members" : "Only me"}
         </Badge>
       }
       actions={
@@ -79,7 +87,7 @@ function OwnTestimony({ id }: { id: string }) {
             label="Delete"
             onClick={async () => {
               if (!confirm("Delete this testimony?")) return;
-              if (uid) await syncCommunityTestimony(uid, { ...testimony, visibility: "private" }, profile);
+              if (uid) await syncCommunityTestimony(uid, { ...testimony, visibility: "private" }, profile, testimony.agId ?? null);
               await remove(testimony.id);
               router.push("/testimony");
             }}
@@ -106,6 +114,27 @@ function SharedTestimony({ sharedId }: { sharedId: string }) {
         <Badge variant="outline" className="gap-1 text-[10px]">
           <Users className="size-3" />
           by {testimony.authorName}
+        </Badge>
+      }
+    />
+  );
+}
+
+function AgSharedTestimony({ sharedId }: { sharedId: string }) {
+  const my = useMyChurch();
+  const { items, loading } = useAgTestimonies(my.active ? my.churchId : null);
+  const testimony = items.find((t) => t.id === sharedId);
+
+  if (loading || my.loading) return <LoadingState />;
+  if (!testimony) return <NotFound />;
+
+  return (
+    <TestimonyBody
+      testimony={testimony}
+      badge={
+        <Badge variant="outline" className="gap-1 text-[10px]">
+          <Users className="size-3" />
+          by {testimony.authorName} · {my.church?.name}
         </Badge>
       }
     />

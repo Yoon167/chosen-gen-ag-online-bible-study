@@ -32,6 +32,7 @@ await env.withSecurityRulesDisabled(async (ctx) => {
   await setDoc(doc(db, `churches/${C}/prayers/p-ben/prayedBy/ana`), { uid: "ana", at: 1 });
   await setDoc(doc(db, `users/ana/churchPrayed/p-ben`), { churchId: C, at: 1 });
   await setDoc(doc(db, `communityTestimonies/ana_t1`), { ownerUid: "ana", title: "x" });
+  await setDoc(doc(db, `churches/${C}/testimonies/ana_t3`), { ownerUid: "ana", title: "AG story", createdAt: 1 });
   await setDoc(doc(db, `churchApplications/ana`), { submittedBy: "ana", status: "pending" });
   await setDoc(doc(db, `users/ana`), { displayName: "Ana", role: "member" });
   await setDoc(doc(db, `users/ben`), { displayName: "Ben", role: "member" });
@@ -73,6 +74,14 @@ await t("undo own 'I prayed'", assertSucceeds((() => {
   b.delete(doc(ana, `churches/${C}/prayers/p-ben/prayedBy/ana`));
   return b.commit();
 })()));
+await t("AG members read AG testimonies", assertSucceeds(getDocs(collection(real("ben"), `churches/${C}/testimonies`))));
+await t("outsider cannot read AG testimonies", assertFails(getDocs(collection(real("zed"), `churches/${C}/testimonies`))));
+await t("cannot share a testimony as someone else", assertFails(setDoc(doc(real("ben"), `churches/${C}/testimonies/ana_t9`), { ownerUid: "ana", title: "x" })));
+await t("member shares a testimony with the AG", assertSucceeds(setDoc(doc(real("ben"), `churches/${C}/testimonies/ben_t2`), { ownerUid: "ben", title: "x", createdAt: 1 })));
+await t("find own AG testimonies", assertSucceeds(getDocs(query(collection(ana, `churches/${C}/testimonies`), where("ownerUid", "==", "ana")))));
+await t("delete own AG testimony", assertSucceeds(del([doc(ana, `churches/${C}/testimonies/ana_t3`)])));
+await t("others cannot delete it", assertFails(del([doc(ana, `churches/${C}/testimonies/ben_t2`)])));
+await t("AG leader removes a testimony", assertSucceeds(writeBatch(real("lead")).delete(doc(real("lead"), `churches/${C}/testimonies/ben_t2`)).commit()));
 await t("leave the AG", assertSucceeds(del([doc(ana, `churches/${C}/members/ana`)])));
 await t("find own testimonies", assertSucceeds(getDocs(query(collection(ana, "communityTestimonies"), where("ownerUid", "==", "ana")))));
 await t("delete own testimony", assertSucceeds(del([doc(ana, "communityTestimonies/ana_t1")])));

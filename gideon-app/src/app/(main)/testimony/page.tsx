@@ -9,7 +9,8 @@ import { EmptyState } from "@/components/shared/empty-state";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useUserCollection } from "@/lib/hooks/use-collection";
-import { useCommunityTestimonies } from "@/lib/hooks/use-community-testimonies";
+import { useAgTestimonies, useCommunityTestimonies } from "@/lib/hooks/use-community-testimonies";
+import { useMyChurch } from "@/lib/hooks/use-church";
 import type { Testimony } from "@/types";
 import { useLanguage } from "@/lib/i18n";
 
@@ -19,6 +20,9 @@ function TestimonyPageInner() {
   const searchParams = useSearchParams();
   const { items, loading } = useUserCollection<Testimony>("testimonies");
   const community = useCommunityTestimonies();
+  const my = useMyChurch();
+  const agId = my.active ? my.churchId : null;
+  const ag = useAgTestimonies(agId);
 
   useEffect(() => {
     if (searchParams.get("new") === "1") router.replace("/testimony/new");
@@ -47,6 +51,11 @@ function TestimonyPageInner() {
             <TabsTrigger value="mine" className="flex-1">
               Mine ({items.length})
             </TabsTrigger>
+            {agId && (
+              <TabsTrigger value="ag" className="flex-1">
+                My AG ({ag.items.length})
+              </TabsTrigger>
+            )}
             <TabsTrigger value="community" className="flex-1">
               Community ({community.items.length})
             </TabsTrigger>
@@ -68,7 +77,9 @@ function TestimonyPageInner() {
                 createdAt: t.createdAt,
                 scriptureReference: t.scriptureReference,
                 meta:
-                  t.visibility === "members" ? (
+                  t.visibility === "ag" ? (
+                    <span className="inline-flex items-center gap-1"><Users className="size-3" />My AG</span>
+                  ) : t.visibility === "members" ? (
                     <span className="inline-flex items-center gap-1"><Users className="size-3" />Shared</span>
                   ) : (
                     <span className="inline-flex items-center gap-1"><Lock className="size-3" />Only me</span>
@@ -76,6 +87,28 @@ function TestimonyPageInner() {
               }))}
             />
           </TabsContent>
+
+          {agId && (
+            <TabsContent value="ag" className="mt-4">
+              {!ag.loading && ag.items.length === 0 && (
+                <EmptyState
+                  icon={Users}
+                  title="No AG testimonies yet"
+                  description={`Testimonies members share with ${my.church?.name ?? "your AG"} appear here.`}
+                />
+              )}
+              <Timeline
+                entries={ag.items.map((t) => ({
+                  key: t.id,
+                  href: `/testimony/view?ag=${t.id}`,
+                  title: t.title,
+                  createdAt: t.createdAt,
+                  scriptureReference: t.scriptureReference,
+                  meta: <span>by {t.authorName}</span>,
+                }))}
+              />
+            </TabsContent>
+          )}
 
           <TabsContent value="community" className="mt-4">
             {!community.loading && community.items.length === 0 && (

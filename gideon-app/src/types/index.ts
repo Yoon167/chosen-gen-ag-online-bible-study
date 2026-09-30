@@ -45,12 +45,14 @@ export interface Testimony {
   godsFaithfulness: string;
   scriptureReference?: string;
   photoUrl?: string;
-  /** "private" (default) = only me; "members" = visible to every GIDEON member. */
+  /** "private" (default) = only me; "members" = every GIDEON member; "ag" = my AG only. */
   visibility?: TestimonyVisibility;
+  /** The AG it is shared with when visibility is "ag". */
+  agId?: string | null;
   createdAt: number;
 }
 
-export type TestimonyVisibility = "private" | "members";
+export type TestimonyVisibility = "private" | "members" | "ag";
 
 /** A testimony a member chose to share, mirrored to `communityTestimonies`. */
 export interface CommunityTestimony extends Omit<Testimony, "visibility"> {
