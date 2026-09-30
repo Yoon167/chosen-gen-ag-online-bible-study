@@ -1,5 +1,6 @@
 import { ALL_BOOKS } from "./books";
 import { parseReference } from "./reference-parser";
+import { readOfflineChapter } from "@/lib/offline";
 
 const BASE_URL = "https://bible-api.com";
 // bible-api.com has no Tagalog, so the Tagalog Bible comes from getbible.net.
@@ -91,11 +92,15 @@ async function fetchTagalogChapter(bookSlug: string, chapter: number): Promise<B
   };
 }
 
-/** "John 3:16" / "Proverbs 3:5-6" from the Tagalog Bible, sliced from its chapter. */
-async function fetchTagalogPassage(reference: string): Promise<BibleApiResponse> {
+/** "John 3:16" / "Proverbs 3:5-6" sliced from a whole chapter (Tagalog or a downloaded Bible). */
+async function passageFromChapter(
+  reference: string,
+  loadChapter: (bookSlug: string, chapter: number) => Promise<BibleApiResponse | null>
+): Promise<BibleApiResponse | null> {
   const parsed = parseReference(reference);
   if (!parsed) throw new Error("Passage not found");
-  const chapter = await fetchTagalogChapter(parsed.book.slug, parsed.chapter);
+  const chapter = await loadChapter(parsed.book.slug, parsed.chapter);
+  if (!chapter) return null;
   const range = reference.match(/:(\d+)(?:-(\d+))?\s*$/);
   if (!range) return chapter;
   const from = parseInt(range[1], 10);
@@ -116,6 +121,9 @@ export async function fetchChapter(
   chapter: number,
   translation: string = DEFAULT_TRANSLATION
 ): Promise<BibleApiResponse> {
+  // A downloaded Bible works offline and opens instantly.
+  const offline = await readOfflineChapter(translation, bookSlug, chapter);
+  if (offline) return offline;
   if (translation === TAGALOG_TRANSLATION) return fetchTagalogChapter(bookSlug, chapter);
   const singleChapterCount = SINGLE_CHAPTER_VERSE_COUNTS[bookSlug];
   const path = singleChapterCount
@@ -135,7 +143,13 @@ export async function fetchPassage(
   reference: string,
   translation: string = DEFAULT_TRANSLATION
 ): Promise<BibleApiResponse> {
-  if (translation === TAGALOG_TRANSLATION) return fetchTagalogPassage(reference);
+  const offline = await passageFromChapter(reference, (book, ch) => readOfflineChapter(translation, book, ch)).catch(
+    () => null
+  );
+  if (offline) return offline;
+  if (translation === TAGALOG_TRANSLATION) {
+    return (await passageFromChapter(reference, fetchTagalogChapter))!;
+  }
   const res = await fetch(
     `${BASE_URL}/${encodeURIComponent(reference)}?translation=${translation}`
   );

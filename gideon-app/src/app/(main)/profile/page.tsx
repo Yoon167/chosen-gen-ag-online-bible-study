@@ -18,6 +18,7 @@ import {
   Church,
   ClipboardList,
   Type,
+  CloudDownload,
 } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -174,6 +175,11 @@ export default function ProfilePage() {
               </SettingRow>
             </Link>
           )}
+          <Link href="/offline" className="block">
+            <SettingRow icon={CloudDownload} label={lang === "tl" ? "Offline Download" : "Offline Download"}>
+              <ChevronRight className="size-4 text-muted-foreground" />
+            </SettingRow>
+          </Link>
           <Link href="/bible/plans" className="block">
             <SettingRow icon={CalendarCheck2} label="Reading Plans">
               <ChevronRight className="size-4 text-muted-foreground" />

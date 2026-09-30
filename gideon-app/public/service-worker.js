@@ -1,4 +1,9 @@
 const CACHE_NAME = "gideon-cache-v3";
+// Downloads the member chose on the Offline page (see lib/offline.ts). They
+// survive app updates; only the app's own cache is replaced.
+const OFFLINE_PREFIX = "gideon-offline-";
+const OFFLINE_READER = "/bible/offline-reader";
+const MATCH = { ignoreSearch: true, ignoreVary: true };
 
 self.addEventListener("install", () => {
   self.skipWaiting();
@@ -7,7 +12,11 @@ self.addEventListener("install", () => {
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)))
+      Promise.all(
+        keys
+          .filter((key) => key !== CACHE_NAME && !key.startsWith(OFFLINE_PREFIX))
+          .map((key) => caches.delete(key))
+      )
     )
   );
   self.clients.claim();
@@ -60,6 +69,18 @@ self.addEventListener("fetch", (event) => {
         }
         return response;
       })
-      .catch(() => caches.match(event.request))
+      .catch(() => offlinePage(url))
   );
 });
+
+// Offline: the page itself if it was saved; any Bible chapter through the
+// offline reader; otherwise the home page.
+async function offlinePage(url) {
+  const saved = await caches.match(url.pathname, MATCH);
+  if (saved) return saved;
+  if (/^\/bible\/[a-z0-9-]+\/\d+\/?$/.test(url.pathname)) {
+    const reader = await caches.match(OFFLINE_READER, MATCH);
+    if (reader) return reader;
+  }
+  return (await caches.match("/", MATCH)) || Response.error();
+}

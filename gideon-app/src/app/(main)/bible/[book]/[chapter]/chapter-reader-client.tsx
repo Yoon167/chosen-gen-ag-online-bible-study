@@ -34,11 +34,15 @@ import { cn } from "@/lib/utils";
 import { useLanguage } from "@/lib/i18n";
 import type { BibleBookmark, BibleHighlight, BibleVerseNote } from "@/types";
 
-export function ChapterReaderClient() {
+/**
+ * The Bible reader. Normally the chapter comes from the URL's route params;
+ * the offline reader passes it in instead (see bible/offline-reader).
+ */
+export function ChapterReaderClient({ bookSlug: bookProp, chapter: chapterProp }: { bookSlug?: string; chapter?: number } = {}) {
   const params = useParams<{ book: string; chapter: string }>();
   const router = useRouter();
-  const bookSlug = params.book;
-  const chapter = parseInt(params.chapter, 10);
+  const bookSlug = bookProp ?? params.book;
+  const chapter = chapterProp ?? parseInt(params.chapter, 10);
   const book = findBook(bookSlug);
 
   const [verses, setVerses] = useState<BibleApiVerse[] | null>(null);

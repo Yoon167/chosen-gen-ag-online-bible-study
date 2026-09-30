@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { CalendarCheck2, Bookmark, Highlighter, History } from "lucide-react";
+import { CalendarCheck2, Bookmark, Highlighter, History, CloudDownload } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { ReferenceSearch } from "@/components/bible/reference-search";
 import { BookGrid } from "@/components/bible/book-grid";
@@ -15,6 +15,7 @@ const LINKS = [
   { label: "Bookmarks", href: "/bible/bookmarks", icon: Bookmark },
   { label: "Highlights", href: "/bible/highlights", icon: Highlighter },
   { label: "History", href: "/bible/history", icon: History },
+  { label: "Offline", href: "/offline", icon: CloudDownload },
 ];
 
 export default function BiblePage() {
@@ -31,7 +32,7 @@ export default function BiblePage() {
         <ReferenceSearch />
       </div>
 
-      <div className="grid grid-cols-4 gap-2 px-5">
+      <div className="grid grid-cols-5 gap-2 px-5">
         {LINKS.map((l) => (
           <Link
             key={l.href}
