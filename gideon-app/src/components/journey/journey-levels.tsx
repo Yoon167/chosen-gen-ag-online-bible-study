@@ -8,7 +8,7 @@ import { JOURNEY_LEVELS } from "@/lib/content/journey";
 import { useJourneyProgress } from "@/lib/hooks/use-journey-progress";
 import { useJourneySync } from "@/lib/hooks/use-journey-sync";
 
-/** The discipleship level map on the Journey tab: all eight levels. */
+/** The discipleship level map on the Journey tab: all twelve levels. */
 export function JourneyLevels() {
   const { lang } = useLanguage();
   const tx = useTx();

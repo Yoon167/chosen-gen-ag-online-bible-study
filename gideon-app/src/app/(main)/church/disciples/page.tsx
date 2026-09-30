@@ -13,7 +13,7 @@ import type { Membership } from "@/lib/church";
 import { useLanguage, useTx } from "@/lib/i18n";
 
 /**
- * With eight levels, show only what matters for this disciple: levels they
+ * With twelve levels, show only what matters for this disciple: levels they
  * have started or finished and their current one when they share progress;
  * otherwise the confirmed levels plus the next one to confirm.
  */

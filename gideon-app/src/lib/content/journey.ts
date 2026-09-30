@@ -1,11 +1,24 @@
 import type { VerseRef } from "@/lib/bible/verse-ref";
 import { GROWTH_LESSONS } from "./journey-lessons-growth";
 import { LEADER_LESSONS } from "./journey-lessons-leaders";
+import { LEVEL_1_MORE } from "./lessons/level-01";
+import { LEVEL_2_MORE } from "./lessons/level-02";
+import { LEVEL_3_MORE } from "./lessons/level-03";
+import { LEVEL_4_MORE } from "./lessons/level-04";
+import { LEVEL_5_MORE } from "./lessons/level-05";
+import { LEVEL_6_MORE } from "./lessons/level-06";
+import { LEVEL_7_MORE } from "./lessons/level-07";
+import { LEVEL_8_MORE } from "./lessons/level-08";
+import { LEVEL_9 } from "./lessons/level-09";
+import { LEVEL_10 } from "./lessons/level-10";
+import { LEVEL_11 } from "./lessons/level-11";
+import { LEVEL_12 } from "./lessons/level-12";
 
 /**
- * Discipleship Journey curriculum: eight levels from New Believer to Future
- * Pastor / Missionary. Core lessons are below; more live in
- * journey-lessons-growth.ts (Levels 1–4) and journey-lessons-leaders.ts (5–8).
+ * Discipleship Journey curriculum: twelve levels from New Believer to Spiritual
+ * Father / Mother, 20 lessons each. Core lessons are below; more live in
+ * journey-lessons-growth.ts (Levels 1–4), journey-lessons-leaders.ts (5–8),
+ * and lessons/level-NN.ts (the rest of each level, and all of Levels 9–12).
  *
  * Lesson ids are stored in members' progress and referenced by the Spiritual
  * Assessment, so never rename an id once it is live.
@@ -38,6 +51,11 @@ export interface JourneyLevel {
 export const LESSON_STEPS = ["read", "reflect", "pray", "assignment"] as const;
 export type LessonStep = (typeof LESSON_STEPS)[number];
 
+/** Each level holds at most this many lessons. */
+export const MAX_LESSONS_PER_LEVEL = 20;
+
+const idsOf = (lessons: Lesson[]) => lessons.map((l) => l.id);
+
 export const JOURNEY_LEVELS: JourneyLevel[] = [
   {
     level: 1,
@@ -53,6 +71,7 @@ export const JOURNEY_LEVELS: JourneyLevel[] = [
       "growing-in-the-word",
       "holy-spirit-helper",
       "christian-community",
+      ...idsOf(LEVEL_1_MORE),
     ],
     checkpoint: [
       { en: "Share how you came to believe in Jesus.", tl: "Ikuwento kung paano ka sumampalataya kay Hesus." },
@@ -74,6 +93,7 @@ export const JOURNEY_LEVELS: JourneyLevel[] = [
       "forgiven-and-forgiving",
       "freedom-in-christ",
       "new-family-in-christ",
+      ...idsOf(LEVEL_2_MORE),
     ],
     checkpoint: [
       { en: "Explain in your own words who Jesus is and what He did for you.", tl: "Ipaliwanag sa sarili mong salita kung sino si Hesus at ano ang ginawa Niya para sa iyo." },
@@ -96,6 +116,7 @@ export const JOURNEY_LEVELS: JourneyLevel[] = [
       "faith-in-trials",
       "healing-broken-heart",
       "armor-of-god",
+      ...idsOf(LEVEL_3_MORE),
     ],
     checkpoint: [
       { en: "Which temptation or habit has God helped you overcome? Where do you still need help?", tl: "Aling tukso o bisyo ang tinulungan ka ng Diyos na mapagtagumpayan? Saan ka pa nangangailangan ng tulong?" },
@@ -117,6 +138,7 @@ export const JOURNEY_LEVELS: JourneyLevel[] = [
       "faithful-stewardship",
       "sharing-your-faith",
       "making-disciples",
+      ...idsOf(LEVEL_4_MORE),
     ],
     checkpoint: [
       { en: "Where are you serving in the church right now?", tl: "Saan ka naglilingkod sa simbahan ngayon?" },
@@ -137,6 +159,7 @@ export const JOURNEY_LEVELS: JourneyLevel[] = [
       "praying-for-others",
       "caring-for-new-believers",
       "multiplying-disciples",
+      ...idsOf(LEVEL_5_MORE),
     ],
     checkpoint: [
       { en: "Who are you discipling now, and how is it going?", tl: "Sino ang dinidisipulo mo ngayon, at kumusta ito?" },
@@ -157,6 +180,7 @@ export const JOURNEY_LEVELS: JourneyLevel[] = [
       "handling-conflict",
       "shepherding-with-care",
       "leading-through-crisis",
+      ...idsOf(LEVEL_6_MORE),
     ],
     checkpoint: [
       { en: "Share your ministry vision and next steps.", tl: "Ibahagi ang bisyon at susunod na hakbang ng iyong ministeryo." },
@@ -177,6 +201,7 @@ export const JOURNEY_LEVELS: JourneyLevel[] = [
       "sound-doctrine",
       "visitation-and-care",
       "guarding-your-heart",
+      ...idsOf(LEVEL_7_MORE),
     ],
     checkpoint: [
       { en: "Share your testimony of calling with your senior pastor.", tl: "Ibahagi ang iyong patotoo ng pagkatawag sa iyong senior pastor." },
@@ -197,11 +222,68 @@ export const JOURNEY_LEVELS: JourneyLevel[] = [
       "gospel-to-the-nations",
       "cross-cultural-ministry",
       "finishing-well",
+      ...idsOf(LEVEL_8_MORE),
     ],
     checkpoint: [
       { en: "Your senior pastor confirms your calling and character for further training.", tl: "Kinukumpirma ng iyong senior pastor ang iyong pagkatawag at ugali para sa karagdagang pagsasanay." },
       { en: "Preach a short message and receive feedback.", tl: "Mangaral ng maikling mensahe at tumanggap ng puna." },
       { en: "Agree on next steps: Bible school, internship, or mission training.", tl: "Pagkasunduan ang susunod na hakbang: Bible school, internship, o mission training." },
+    ],
+  },
+  {
+    level: 9,
+    title: { en: "Church Planter", tl: "Tagapagtanim ng Iglesia" },
+    summary: {
+      en: "Planting healthy churches the way the apostles did: prayer, the person of peace, house gatherings, local leaders, and churches that plant churches, from the city to the islands.",
+      tl: "Pagtatanim ng malulusog na iglesia tulad ng ginawa ng mga apostol: panalangin, ang taong may kapayapaan, pagtitipon sa tahanan, lokal na lider, at iglesiang nagtatanim ng iglesia, mula lungsod hanggang isla.",
+    },
+    lessonIds: idsOf(LEVEL_9),
+    checkpoint: [
+      { en: "Share a map and prayer plan for one community you sense God calling you to reach.", tl: "Ibahagi ang mapa at plano ng panalangin para sa isang komunidad na nararamdaman mong tinatawag ka ng Diyos na abutin." },
+      { en: "Who is on your planting team, and who is your person of peace?", tl: "Sino ang nasa iyong planting team, at sino ang iyong taong may kapayapaan?" },
+      { en: "Your senior pastor or overseer confirms your readiness and covering.", tl: "Kinukumpirma ng iyong senior pastor o overseer ang iyong kahandaan at pagtatakip." },
+    ],
+  },
+  {
+    level: 10,
+    title: { en: "Pastor & Shepherd", tl: "Pastor at Pastol" },
+    summary: {
+      en: "Shepherding a congregation like the Good Shepherd: feeding the flock, preaching, counseling, caring in crisis, working with elders, and guarding your own soul and home.",
+      tl: "Pagpapastol sa kongregasyon tulad ng Mabuting Pastol: pagpapakain sa kawan, pangangaral, pagpapayo, pag-aalaga sa krisis, pakikipagtulungan sa mga matanda, at pag-iingat sa sariling kaluluwa at tahanan.",
+    },
+    lessonIds: idsOf(LEVEL_10),
+    checkpoint: [
+      { en: "Preach a series plan through one book of the Bible and receive feedback.", tl: "Magpresenta ng plano ng serye sa isang aklat ng Biblia at tumanggap ng puna." },
+      { en: "How are your marriage, family, and personal walk with God? Be honest.", tl: "Kumusta ang iyong pag-aasawa, pamilya, at personal na paglakad kasama ang Diyos? Maging tapat." },
+      { en: "Who holds you accountable, and who are you preparing to succeed you?", tl: "Sino ang humahawak sa iyo ng pananagutan, at sino ang inihahanda mong papalit sa iyo?" },
+    ],
+  },
+  {
+    level: 11,
+    title: { en: "Equipper of Leaders", tl: "Tagapagsanay ng mga Lider" },
+    summary: {
+      en: "Multiplying leaders who lead leaders: building a pipeline, coaching with honest love, releasing others, keeping leaders united, and leaving a legacy that outlives you.",
+      tl: "Pagpaparami ng mga lider na namumuno sa mga lider: pagbuo ng pipeline, pag-coach nang may tapat na pag-ibig, pagpapalaya sa iba, pagpapanatiling nagkakaisa ang mga lider, at pag-iwan ng pamanang lalampas sa iyo.",
+    },
+    lessonIds: idsOf(LEVEL_11),
+    checkpoint: [
+      { en: "Name the leaders you are coaching and where each is growing.", tl: "Pangalanan ang mga lider na iyong kino-coach at kung saan lumalago ang bawat isa." },
+      { en: "What have you released to others this year, and what are you still holding too tightly?", tl: "Ano ang ipinaubaya mo sa iba ngayong taon, at ano ang mahigpit mo pa ring hinahawakan?" },
+      { en: "Share your plan for developing leaders over the next twelve months.", tl: "Ibahagi ang iyong plano sa paghubog ng mga lider sa susunod na labindalawang buwan." },
+    ],
+  },
+  {
+    level: 12,
+    title: { en: "Spiritual Father / Mother", tl: "Espirituwal na Ama / Ina" },
+    summary: {
+      en: "A lifetime of faithfulness poured into the next generation: blessing, praying, mentoring, letting go, and finishing the race to hear \"Well done.\"",
+      tl: "Isang buhay ng katapatan na ibinubuhos sa susunod na henerasyon: pagpapala, pananalangin, pag-mentor, pagbitaw, at pagtatapos ng takbuhin upang marinig ang \"Magaling.\"",
+    },
+    lessonIds: idsOf(LEVEL_12),
+    checkpoint: [
+      { en: "Share the story of your journey with God, including failures and His faithfulness.", tl: "Ibahagi ang kuwento ng iyong paglalakbay kasama ang Diyos, kasama ang mga kabiguan at ang Kanyang katapatan." },
+      { en: "Who are your spiritual children, and how are you praying for them?", tl: "Sino ang iyong mga espirituwal na anak, at paano mo sila ipinapanalangin?" },
+      { en: "Receive a blessing from your AG and commit to disciple someone new from Level 1.", tl: "Tumanggap ng pagpapala mula sa iyong AG at mangakong disipulohin ang isang bagong tao mula sa Level 1." },
     ],
   },
 ];
@@ -743,7 +825,23 @@ const CORE_LESSONS: Lesson[] = [
   },
 ];
 
-export const LESSONS: Lesson[] = [...CORE_LESSONS, ...GROWTH_LESSONS, ...LEADER_LESSONS];
+export const LESSONS: Lesson[] = [
+  ...CORE_LESSONS,
+  ...GROWTH_LESSONS,
+  ...LEADER_LESSONS,
+  ...LEVEL_1_MORE,
+  ...LEVEL_2_MORE,
+  ...LEVEL_3_MORE,
+  ...LEVEL_4_MORE,
+  ...LEVEL_5_MORE,
+  ...LEVEL_6_MORE,
+  ...LEVEL_7_MORE,
+  ...LEVEL_8_MORE,
+  ...LEVEL_9,
+  ...LEVEL_10,
+  ...LEVEL_11,
+  ...LEVEL_12,
+];
 
 export function findLesson(id: string) {
   return LESSONS.find((l) => l.id === id);
