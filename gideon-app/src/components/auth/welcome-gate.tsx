@@ -2,13 +2,17 @@
 
 import { useState, useSyncExternalStore } from "react";
 import Image from "next/image";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useProfile } from "@/lib/hooks/use-profile";
 import { useAccount } from "@/lib/hooks/use-account";
 import { LanguageToggle } from "@/components/language-toggle";
 import { CinematicIntro } from "@/components/intro/cinematic-intro";
+import { Landing } from "@/components/intro/landing";
+import { useTour } from "@/components/tour/tour-provider";
+import { cancelTourAutostart, requestTourAutostart } from "@/lib/tour";
+import type { UserProfile } from "@/types";
 import { PRIVACY_VERSION, PrivacyNotice } from "@/components/privacy/privacy-notice";
 import { DeleteAccount } from "@/components/privacy/delete-account";
 import { useTx } from "@/lib/i18n";
@@ -26,29 +30,69 @@ function readIntroPlayed() {
 const noopSubscribe = () => () => {};
 
 export function WelcomeGate({ children }: { children: React.ReactNode }) {
-  // null on the server / first paint, so neither the intro nor the app
-  // flashes before we know whether the intro already played this session.
-  const playedThisSession = useSyncExternalStore(noopSubscribe, readIntroPlayed, () => null);
-  const [finished, setFinished] = useState(false);
-  const intro =
-    playedThisSession === null ? "pending" : playedThisSession || finished ? "done" : "playing";
+  // null on the server / first paint, so neither the landing nor the app
+  // flashes before we know whether this session already went past it.
+  const enteredThisSession = useSyncExternalStore(noopSubscribe, readIntroPlayed, () => null);
+  const [stage, setStage] = useState<"landing" | "film" | "app" | null>(null);
+  // Back from the film: show the landing already settled, not its opening again.
+  const [returned, setReturned] = useState(false);
+  const { profile, loading, hasAccount } = useProfile();
+  const tour = useTour();
+  const current = stage ?? (enteredThisSession === null ? "pending" : enteredThisSession ? "app" : "landing");
+  const onboarded = loading ? null : isOnboardedProfile(profile, hasAccount);
 
-  const finishIntro = () => {
+  const enterApp = () => {
     try {
       sessionStorage.setItem(INTRO_KEY, "1");
     } catch {}
-    setFinished(true);
+    setStage("app");
   };
 
   return (
     <>
       <AnimatePresence>
-        {intro === "playing" && <CinematicIntro key="intro" onDone={finishIntro} />}
+        {current === "landing" && (
+          <motion.div key="landing" exit={{ opacity: 0 }} transition={{ duration: 0.8 }}>
+            <Landing
+              onboarded={onboarded}
+              settled={returned}
+              onStart={enterApp}
+              onWatch={() => setStage("film")}
+              onExplore={() => {
+                if (onboarded) {
+                  enterApp();
+                  tour.start("app");
+                } else {
+                  tour.start("preview", { onStartJourney: enterApp });
+                }
+              }}
+            />
+          </motion.div>
+        )}
+        {current === "film" && (
+          <CinematicIntro
+            key="film"
+            onDone={() => {
+              setReturned(true);
+              setStage("landing");
+            }}
+          />
+        )}
       </AnimatePresence>
-      {intro === "pending" && <div className="fixed inset-0 z-[100] bg-black" />}
-      {intro === "done" && <Gate>{children}</Gate>}
+      {current === "pending" && <div className="fixed inset-0 z-[100] bg-black" />}
+      {current === "app" && <Gate>{children}</Gate>}
     </>
   );
+}
+
+/**
+ * Anyone who already picked a name in a previous session (before this gate
+ * existed) counts as onboarded too, so returning members are never
+ * interrupted. Signing into a backed-up account also counts, even if that
+ * account never set a name.
+ */
+function isOnboardedProfile(profile: UserProfile | null, hasAccount: boolean) {
+  return hasAccount || !!profile?.onboarded || (!!profile?.displayName && profile.displayName !== "Beloved");
 }
 
 function Gate({ children }: { children: React.ReactNode }) {
@@ -72,13 +116,7 @@ function Gate({ children }: { children: React.ReactNode }) {
     );
   }
 
-  // Anyone who already picked a name in a previous session (before this
-  // gate existed) counts as onboarded too, so returning members are never
-  // interrupted by this screen.
-  // Signing into a backed-up account also counts, even if that account never
-  // set a name.
-  const isOnboarded =
-    hasAccount || profile?.onboarded || (!!profile?.displayName && profile.displayName !== "Beloved");
+  const isOnboarded = isOnboardedProfile(profile, hasAccount);
 
   if (!isOnboarded) {
     return (
@@ -165,6 +203,10 @@ function Gate({ children }: { children: React.ReactNode }) {
                 if (!name.trim() || !agreed || submitting) return;
                 setSubmitting(true);
                 setError(null);
+                // Show new members around once the app opens. Asked for before
+                // saving: the app can open from the local write before the save
+                // finishes.
+                requestTourAutostart();
                 try {
                   await updateProfile({
                     displayName: name.trim(),
@@ -173,6 +215,7 @@ function Gate({ children }: { children: React.ReactNode }) {
                     privacyConsent: { version: PRIVACY_VERSION, at: Date.now() },
                   });
                 } catch (err) {
+                  cancelTourAutostart();
                   console.error("Welcome sign-in failed", err);
                   setError("Couldn't sign you in. Check your connection and try again.");
                 } finally {

@@ -169,14 +169,6 @@
   }
 }
 /* Cinematic intro */
-@keyframes intro-drift {
-  from { transform: translateX(-12%); }
-  to { transform: translateX(12%); }
-}
-@keyframes intro-wind {
-  0%, 100% { transform: skewX(-4deg); }
-  50% { transform: skewX(4deg); }
-}
 @keyframes intro-progress {
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }
@@ -189,43 +181,132 @@
 @keyframes intro-spin {
   to { transform: rotate(360deg); }
 }
-@keyframes intro-shimmer {
-  0%, 100% { opacity: 0.55; }
-  50% { opacity: 1; }
+/* "Watch Introduction": one camera move per scene over the landing valley */
+@keyframes film-cam-0 {
+  from { transform: scale(2.1); }
+  to { transform: scale(1.35); }
 }
-@keyframes intro-twinkle {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 0.9; }
+@keyframes film-cam-1 {
+  from { transform: scale(2.5); }
+  to { transform: scale(2.2); }
 }
-@keyframes intro-cam-rise {
-  from { transform: translateY(40px) scale(1.2); }
-  to { transform: scale(1.02); }
+@keyframes film-cam-2 {
+  from { transform: scale(2.5); }
+  to { transform: scale(3.1); }
 }
-@keyframes intro-cam-settle {
-  from { transform: scale(1.08); }
+@keyframes film-cam-3 {
+  from { transform: scale(1.7) translateY(-17%); }
+  to { transform: scale(1.7) translateY(5%); }
+}
+@keyframes film-cam-4 {
+  from { transform: scale(1.14); }
   to { transform: scale(1); }
 }
-@keyframes intro-cam-push {
+@keyframes film-cam-5 {
   from { transform: scale(1); }
-  to { transform: scale(1.16); }
+  to { transform: scale(1.08); }
 }
-/* Slow push forward with a gentle walking bob */
-@keyframes intro-cam-walk {
-  0% { transform: translateY(0) scale(1); }
-  17% { transform: translateY(-5px) scale(1.04); }
-  33% { transform: translateY(0) scale(1.08); }
-  50% { transform: translateY(-5px) scale(1.12); }
-  67% { transform: translateY(0) scale(1.16); }
-  83% { transform: translateY(-5px) scale(1.2); }
-  100% { transform: translateY(0) scale(1.24); }
+@keyframes film-dip {
+  0% { opacity: 1; }
+  12%, 90% { opacity: 0; }
+  100% { opacity: 1; }
 }
-@keyframes intro-sun-rise {
-  from { transform: translateY(10vh); opacity: 0.6; }
+/* Landing scene (components/intro/landing-scene.tsx) */
+@property --px {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+@property --py {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+/* A 16:10 stage that covers the screen from the bottom center */
+.landing-stage {
+  width: max(100vw, 160vh);
+  height: max(62.5vw, 100vh);
+}
+@supports (height: 100dvh) {
+  .landing-stage {
+    width: max(100vw, 160dvh);
+    height: max(62.5vw, 100dvh);
+  }
+}
+@media (hover: none) {
+  .landing-stage {
+    animation: landing-drift 14s ease-in-out infinite alternate;
+  }
+}
+@keyframes landing-drift {
+  from { --px: -0.7; --py: -0.25; }
+  to { --px: 0.7; --py: 0.25; }
+}
+@keyframes landing-appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes landing-sunrise {
+  from { transform: translateY(45%); opacity: 0.6; }
   to { transform: translateY(0); opacity: 1; }
 }
-@keyframes intro-sun-rise-high {
-  from { transform: translateY(16vh); }
-  to { transform: translateY(0); }
+@keyframes landing-cloud {
+  from { transform: translateX(-40%); }
+  to { transform: translateX(110%); }
+}
+@keyframes landing-birds {
+  0% { transform: translate(0, 0); opacity: 1; }
+  35% { transform: translate(38%, -2%); }
+  70% { transform: translate(110%, 1%); opacity: 1; }
+  70.1%, 100% { transform: translate(110%, 1%); opacity: 0; }
+}
+@keyframes landing-flap {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.25); }
+}
+@keyframes landing-wind {
+  0%, 100% { transform: skewX(-3deg); }
+  50% { transform: skewX(3deg); }
+}
+/* People walk up the path, slowing and shrinking with distance, and fade
+   into the light near Jesus. Translate % is of the full-stage wrapper. */
+@keyframes landing-walk-a {
+  0% { transform: translate(0, 0); opacity: 0; }
+  6% { opacity: 1; }
+  50% { transform: translate(3.4%, -24%); }
+  80% { opacity: 1; }
+  92%, 100% { transform: translate(5.4%, -34.5%); opacity: 0; }
+}
+@keyframes landing-walk-b {
+  0% { transform: translate(0, 0); opacity: 0; }
+  6% { opacity: 1; }
+  50% { transform: translate(-3.4%, -24%); }
+  80% { opacity: 1; }
+  92%, 100% { transform: translate(-5.4%, -34.5%); opacity: 0; }
+}
+@keyframes landing-walk-c {
+  0% { transform: translate(0, 0); opacity: 0; }
+  6% { opacity: 1; }
+  50% { transform: translate(0.3%, -24%); }
+  80% { opacity: 1; }
+  92%, 100% { transform: translate(0.4%, -34.5%); opacity: 0; }
+}
+@keyframes landing-recede {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.6); }
+  100% { transform: scale(0.28); }
+}
+@keyframes landing-step {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes landing-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes landing-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1px); }
 }
 @media (prefers-reduced-motion: reduce) {
   .intro-anim {
