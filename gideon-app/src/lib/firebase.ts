@@ -41,7 +41,7 @@ export const db = createDb();
 
 // Local testing only: a build made with NEXT_PUBLIC_FIREBASE_EMULATORS=1 talks
 // to the Auth and Firestore emulators instead of the real project. Production
-// builds never set it, so this is compiled out.
+// builds never set it, so there the check is always false.
 if (process.env.NEXT_PUBLIC_FIREBASE_EMULATORS === "1" && typeof window !== "undefined") {
   try {
     connectAuthEmulator(auth, "http://127.0.0.1:9099", { disableWarnings: true });
