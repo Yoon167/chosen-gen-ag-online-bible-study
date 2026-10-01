@@ -44,6 +44,8 @@ const STRINGS = {
   "qa.oikos": { en: "My Oikos", tl: "Aking Oikos" },
   "qa.fasting": { en: "Prayer & Fasting", tl: "Panalangin at Ayuno" },
   "qa.help": { en: "Help in the Struggle", tl: "Tulong sa Laban" },
+  "qa.feelings": { en: "Verses for How I Feel", tl: "Talata sa Nararamdaman Ko" },
+  "qa.victories": { en: "What God Has Done", tl: "Ginawa ng Diyos" },
 
   // Devotion
   "devotion.title": { en: "Daily Devotion", tl: "Pang-araw-araw na Debosyon" },
