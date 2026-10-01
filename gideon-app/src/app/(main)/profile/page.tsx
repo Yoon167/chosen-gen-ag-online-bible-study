@@ -17,6 +17,7 @@ import {
   Languages,
   Church,
   ClipboardList,
+  Globe2,
   Type,
   CloudDownload,
   Award,
@@ -190,6 +191,13 @@ export default function ProfilePage() {
               </span>
             </SettingRow>
           </Link>
+          {isNationalAdmin && (
+            <Link href="/admin/overview" className="block">
+              <SettingRow icon={Globe2} label="National Dashboard">
+                <ChevronRight className="size-4 text-muted-foreground" />
+              </SettingRow>
+            </Link>
+          )}
           {isNationalAdmin && (
             <Link href="/admin/applications" className="block">
               <SettingRow icon={ClipboardList} label="AG Applications">
