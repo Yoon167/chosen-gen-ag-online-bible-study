@@ -44,10 +44,27 @@ function Editor({ verse }: { verse: VerseForImage }) {
     typeof navigator !== "undefined" &&
     !!navigator.canShare?.({ files: [new File([""], "v.png", { type: "image/png" })] });
 
+  const theme = VERSE_IMAGE_THEMES.find((t) => t.id === themeId)!;
+  const colors = VERSE_IMAGE_THEMES.filter((t) => !t.thumb);
+  const photos = VERSE_IMAGE_THEMES.filter((t) => t.thumb);
+
+  // Draw off screen and copy over only if this design is still the chosen
+  // one: photos take a moment to load, and a slower earlier pick must not
+  // replace a newer one.
   useEffect(() => {
-    const theme = VERSE_IMAGE_THEMES.find((t) => t.id === themeId)!;
-    if (canvas.current) drawVerseImage(canvas.current, { ...verse, theme });
-  }, [verse, themeId]);
+    let cancelled = false;
+    const off = document.createElement("canvas");
+    drawVerseImage(off, { ...verse, theme }).then(() => {
+      const target = canvas.current;
+      if (cancelled || !target) return;
+      target.width = off.width;
+      target.height = off.height;
+      target.getContext("2d")!.drawImage(off, 0, 0);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [verse, theme]);
 
   async function getFile() {
     const blob = await canvasToBlob(canvas.current!);
@@ -91,25 +108,52 @@ function Editor({ verse }: { verse: VerseForImage }) {
         role="img"
         aria-label={`${verse.reference}: ${verse.text}`}
       />
-      <div role="group" aria-label={tx("Design", "Disenyo")} className="flex justify-center gap-2 overflow-x-auto no-scrollbar">
-        {VERSE_IMAGE_THEMES.map((t) => (
-          <button
-            key={t.id}
-            onClick={() => setThemeId(t.id)}
-            aria-pressed={themeId === t.id}
-            aria-label={t.name[lang]}
-            title={t.name[lang]}
-            className={cn(
-              "size-9 shrink-0 rounded-full border-2",
-              themeId === t.id ? "border-primary ring-2 ring-primary/30" : "border-border"
-            )}
-            style={{
-              background: t.photo
-                ? `center / cover url(${t.photo})`
-                : `linear-gradient(135deg, ${t.colors[0]}, ${t.colors[1]})`,
-            }}
-          />
-        ))}
+      {theme.credit && (
+        <p className="text-center text-[0.625rem] text-muted-foreground">
+          {tx("Photo", "Larawan")}: {theme.credit} / Unsplash
+        </p>
+      )}
+      <div>
+        <p className="mb-1.5 text-xs font-medium text-muted-foreground">{tx("Colors", "Kulay")}</p>
+        <div role="group" aria-label={tx("Colors", "Kulay")} className="flex gap-2 overflow-x-auto no-scrollbar">
+          {colors.map((t) => (
+            <button
+              key={t.id}
+              onClick={() => setThemeId(t.id)}
+              aria-pressed={themeId === t.id}
+              aria-label={t.name[lang]}
+              title={t.name[lang]}
+              className={cn(
+                "size-9 shrink-0 rounded-full border-2",
+                themeId === t.id ? "border-primary ring-2 ring-primary/30" : "border-border"
+              )}
+              style={{
+                background: t.photo
+                  ? `center / cover url(${t.photo})`
+                  : `linear-gradient(135deg, ${t.colors[0]}, ${t.colors[1]})`,
+              }}
+            />
+          ))}
+        </div>
+      </div>
+      <div>
+        <p className="mb-1.5 text-xs font-medium text-muted-foreground">{tx("Photos", "Mga larawan")}</p>
+        <div role="group" aria-label={tx("Photos", "Mga larawan")} className="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
+          {photos.map((t) => (
+            <button
+              key={t.id}
+              onClick={() => setThemeId(t.id)}
+              aria-pressed={themeId === t.id}
+              aria-label={t.name[lang]}
+              title={t.name[lang]}
+              className={cn(
+                "h-16 w-[3.2rem] shrink-0 overflow-hidden rounded-lg border-2 bg-muted bg-cover bg-center",
+                themeId === t.id ? "border-primary ring-2 ring-primary/30" : "border-transparent"
+              )}
+              style={{ backgroundImage: `url(${t.thumb})` }}
+            />
+          ))}
+        </div>
       </div>
       <div className={cn("grid gap-2", canShareFiles ? "grid-cols-2" : "grid-cols-1")}>
         {canShareFiles && (

@@ -12,7 +12,39 @@ export interface VerseImageTheme {
   accent: string;
   /** A photo drawn under a dark wash instead of the gradient. */
   photo?: string;
+  /** Small preview of the photo for the picker. */
+  thumb?: string;
+  /** How dark the wash over the photo is (0–1). */
+  wash?: number;
+  /** Photographer, for the credit line. */
+  credit?: string;
 }
+
+/**
+ * Free photos for verse cards, from Unsplash (Unsplash License: free to use
+ * and share, no permission needed), fetched through picsum.photos and saved
+ * in public/verse-bg at 1080×1350. Each one downloads only when picked.
+ */
+const PHOTOS: { id: number; name: { en: string; tl: string }; credit: string; wash: number }[] = [
+  { id: 499, name: { en: "Sunset", tl: "Paglubog ng araw" }, credit: "Gabriel Santiago", wash: 0.4 },
+  { id: 505, name: { en: "First light", tl: "Unang liwanag" }, credit: "Lee Scott", wash: 0.3 },
+  { id: 110, name: { en: "Golden field", tl: "Gintong bukid" }, credit: "Kenneth Thewissen", wash: 0.5 },
+  { id: 206, name: { en: "Morning sun", tl: "Araw sa umaga" }, credit: "Philipp Reiner", wash: 0.55 },
+  { id: 213, name: { en: "Dawn sea", tl: "Dagat sa bukang-liwayway" }, credit: "Kelly Sikkema", wash: 0.5 },
+  { id: 77, name: { en: "Pier", tl: "Daungan" }, credit: "May Pamintuan", wash: 0.5 },
+  { id: 501, name: { en: "Calm sea", tl: "Payapang dagat" }, credit: "Davide Ragusa", wash: 0.45 },
+  { id: 16, name: { en: "Islands", tl: "Mga isla" }, credit: "Paul Jarvis", wash: 0.5 },
+  { id: 434, name: { en: "Mountain lake", tl: "Lawa sa bundok" }, credit: "Ales Krivec", wash: 0.5 },
+  { id: 450, name: { en: "Still waters", tl: "Tahimik na tubig" }, credit: "Tanvi Malik", wash: 0.5 },
+  { id: 412, name: { en: "Forest lake", tl: "Lawa sa gubat" }, credit: "Samuel Rohl", wash: 0.5 },
+  { id: 29, name: { en: "Mountains", tl: "Mga bundok" }, credit: "Go Wild", wash: 0.55 },
+  { id: 482, name: { en: "Valley", tl: "Lambak" }, credit: "Danny Froese", wash: 0.5 },
+  { id: 509, name: { en: "Waterfall", tl: "Talon" }, credit: "Jeff Sheldon", wash: 0.55 },
+  { id: 466, name: { en: "River", tl: "Ilog" }, credit: "Caleb George", wash: 0.55 },
+  { id: 222, name: { en: "Light from above", tl: "Liwanag mula sa itaas" }, credit: "Todd Quackenbush", wash: 0.45 },
+  { id: 54, name: { en: "Open sky", tl: "Malawak na langit" }, credit: "Nicholas Swanson", wash: 0.45 },
+  { id: 202, name: { en: "Road ahead", tl: "Daang tatahakin" }, credit: "Glen Carrie", wash: 0.5 },
+];
 
 export const VERSE_IMAGE_THEMES: VerseImageTheme[] = [
   { id: "night", name: { en: "Night", tl: "Gabi" }, colors: ["#1a1638", "#3d3284"], text: "#fbfaf7", accent: "#e9c46a" },
@@ -21,6 +53,17 @@ export const VERSE_IMAGE_THEMES: VerseImageTheme[] = [
   { id: "sea", name: { en: "Sea", tl: "Dagat" }, colors: ["#0f4c75", "#3282b8"], text: "#ffffff", accent: "#ffe08a" },
   { id: "field", name: { en: "Field", tl: "Parang" }, colors: ["#134e5e", "#71b280"], text: "#ffffff", accent: "#fff3b0" },
   { id: "paper", name: { en: "Paper", tl: "Papel" }, colors: ["#fbfaf7", "#efe9dc"], text: "#24203f", accent: "#5b4bb7" },
+  ...PHOTOS.map((p) => ({
+    id: `photo-${p.id}`,
+    name: p.name,
+    colors: ["#141024", "#141024"] as [string, string],
+    text: "#ffffff",
+    accent: "#ffe08a",
+    photo: `/verse-bg/${p.id}.webp`,
+    thumb: `/verse-bg/thumb/${p.id}.webp`,
+    wash: p.wash,
+    credit: p.credit,
+  })),
 ];
 
 export const VERSE_IMAGE_SIZE = { width: 1080, height: 1350 };
@@ -89,7 +132,7 @@ export async function drawVerseImage(
   if (theme.photo) {
     try {
       drawCover(ctx, await loadImage(theme.photo), W, H);
-      ctx.fillStyle = "rgba(20, 16, 48, 0.72)";
+      ctx.fillStyle = `rgba(14, 11, 30, ${theme.wash ?? 0.72})`;
       ctx.fillRect(0, 0, W, H);
     } catch {
       // Keep the gradient if the photo can't load (e.g. offline).
@@ -122,6 +165,12 @@ export async function drawVerseImage(
   const top = 330 + (boxHeight - blockHeight) / 2;
   ctx.fillStyle = theme.text;
   ctx.textBaseline = "top";
+  // On photos a soft shadow keeps the words readable over bright spots.
+  if (theme.photo) {
+    ctx.shadowColor = "rgba(0, 0, 0, 0.55)";
+    ctx.shadowBlur = 18;
+    ctx.shadowOffsetY = 2;
+  }
   lines.forEach((l, i) => ctx.fillText(l, PADDING, top + i * lineHeight));
 
   // Reference.
@@ -130,6 +179,10 @@ export async function drawVerseImage(
   ctx.fillRect(PADDING, refY + 18, 60, 5);
   ctx.font = `600 44px ${sans}`;
   ctx.fillText(reference, PADDING + 84, refY);
+
+  ctx.shadowColor = "transparent";
+  ctx.shadowBlur = 0;
+  ctx.shadowOffsetY = 0;
 
   // Footer mark.
   ctx.globalAlpha = 0.8;
