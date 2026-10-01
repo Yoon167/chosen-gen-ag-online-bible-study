@@ -13,6 +13,7 @@ import { MemoryReviewCard } from "@/components/home/memory-review-card";
 import { AnnouncementCard } from "@/components/home/announcement-card";
 import { GroupReadingCard } from "@/components/home/group-reading-card";
 import { WeeklySummaryCard } from "@/components/home/weekly-summary-card";
+import { UrgentPrayerCard } from "@/components/home/urgent-prayer-card";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Section } from "@/components/shared/section";
 import { useProfile } from "@/lib/hooks/use-profile";
@@ -96,6 +97,7 @@ export default function HomePage() {
 
       <Section title={tx("Your next step", "Ang susunod mong hakbang")} href="/journey" hrefLabel={tx("Journey", "Journey")}>
         <div className="space-y-2.5" data-tour="home-progress">
+          <UrgentPrayerCard />
           <AnnouncementCard />
           <NextStepCard />
           <CheckinCard />
