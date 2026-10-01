@@ -17,6 +17,7 @@ import {
   Megaphone,
   NotebookPen,
   CalendarCheck2,
+  PlusCircle,
 } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
@@ -31,9 +32,10 @@ import {
   listActiveChurches,
   requestToJoin,
   setShareProgress,
+  switchAg,
   useMyChurch,
 } from "@/lib/hooks/use-church";
-import { roleInfo, type Church } from "@/lib/church";
+import { NATIONAL_ADMIN_UID, roleInfo, type Church } from "@/lib/church";
 import { useLanguage, useTx } from "@/lib/i18n";
 
 export default function MyChurchPage() {
@@ -58,7 +60,10 @@ export default function MyChurchPage() {
   // The invited AG goes first in the list.
   const directory = churches ? [...churches].sort((a, b) => Number(b.id === invitedId) - Number(a.id === invitedId)) : null;
 
-  const needsDirectory = !my.loading && !my.membership;
+  const needsDirectory = !my.loading && (!my.membership || my.memberships.length > 1);
+  // AG Leaders and Assistant Leaders (and the national admin) can start another AG.
+  const canStartAg =
+    hasAccount && (uid === NATIONAL_ADMIN_UID || my.memberships.some((m) => m.membership.status === "active" && m.membership.rank >= 5));
   useEffect(() => {
     if (!needsDirectory) return;
     listActiveChurches()
@@ -174,6 +179,29 @@ export default function MyChurchPage() {
           </div>
         )}
 
+        {/* People in more than one AG pick which one to see */}
+        {my.memberships.length > 1 && (
+          <div className="flex gap-1.5 overflow-x-auto pb-1" role="tablist" aria-label={tx("Your AGs", "Mga AG mo")}>
+            {my.memberships.map((m) => (
+              <button
+                key={m.churchId}
+                role="tab"
+                aria-selected={m.churchId === my.churchId}
+                disabled={m.membership.status !== "active"}
+                onClick={() => switchAg(m.churchId)}
+                className={
+                  m.churchId === my.churchId
+                    ? "shrink-0 rounded-full bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground"
+                    : "shrink-0 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium disabled:opacity-50"
+                }
+              >
+                {churches?.find((c) => c.id === m.churchId)?.name ?? m.churchId}
+                {m.membership.status !== "active" && ` · ${tx("pending", "naghihintay")}`}
+              </button>
+            ))}
+          </div>
+        )}
+
         {/* Active member */}
         {my.active && my.church && (
           <>
@@ -217,6 +245,15 @@ export default function MyChurchPage() {
               <UserPlus className="size-4" />
               {tx(`Invite someone to ${my.church.name}`, `Mag-imbita sa ${my.church.name}`)}
             </Button>
+            {canStartAg && (
+              <Link
+                href="/church/new"
+                className="flex items-center justify-center gap-2 rounded-xl border border-dashed border-primary/40 px-3 py-2.5 text-sm font-medium text-primary"
+              >
+                <PlusCircle className="size-4" />
+                {tx("Start a new AG", "Gumawa ng bagong AG")}
+              </Link>
+            )}
 
             <div className="grid grid-cols-3 gap-2" data-tour="ag-community">
               {[

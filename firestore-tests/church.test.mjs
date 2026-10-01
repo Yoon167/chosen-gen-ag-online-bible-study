@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { initializeTestEnvironment, assertSucceeds, assertFails } from "@firebase/rules-unit-testing";
-import { doc, setDoc, getDoc, getDocs, deleteDoc, updateDoc, collectionGroup, query, where, collection, deleteField } from "firebase/firestore";
+import { doc, setDoc, getDoc, getDocs, deleteDoc, updateDoc, collectionGroup, query, where, collection, deleteField, writeBatch } from "firebase/firestore";
 
 const ADMIN = "KcHm9yKcLcNbkTh7qbqi5pI7AYH2";
 const OLD_TEACHER = "1G2TVkbe9igM8ij5KN9SqIYo08M2";
@@ -145,6 +145,41 @@ await t("admin still lists profiles for church setup", assertSucceeds(getDocs(co
 await t("old teacher still edits topics", assertSucceeds(setDoc(doc(real(OLD_TEACHER), "topics/2026-10-03"), { title: "x" })));
 await t("old teacher is not national admin", assertFails(setDoc(doc(real(OLD_TEACHER), "churches/x2"), { name: "x", status: "active" })));
 await t("old teacher cannot read profiles", assertFails(getDoc(doc(real(OLD_TEACHER), "users/m1"))));
+
+// ---------- AG leaders start a new AG themselves ----------
+const newAg = (uid, id, extra = {}) => {
+  const db = real(uid);
+  const batch = writeBatch(db);
+  batch.set(doc(db, `churches/${id}`), {
+    name: "New AG", pastorName: uid, city: "Doha", province: "", country: "Qatar", denomination: "", website: "",
+    status: "active", createdAt: 1, createdBy: uid, createdFrom: C, ...extra,
+  });
+  batch.set(doc(db, `churches/${id}/members/${uid}`), m(uid, "senior_pastor", 6));
+  return batch.commit();
+};
+await t("AG Leader starts a new AG and leads it", assertSucceeds(newAg("pastor", "new-1")));
+await t("Assistant Leader starts a new AG", assertSucceeds(newAg("assoc", "new-2")));
+await t("Facilitator (rank 3) cannot start an AG", assertFails(newAg("cell", "new-3")));
+await t("member cannot start an AG", assertFails(newAg("m4", "new-4")));
+await t("cannot claim another AG as the source", assertFails(newAg("pastor", "new-5", { createdFrom: "closed" })));
+await t("cannot start an AG for someone else", assertFails(newAg("pastor", "new-6", { createdBy: "m4" })));
+await t("new AG must be active", assertFails(newAg("pastor", "new-7", { status: "suspended" })));
+await t(
+  "nobody can make themselves leader of an existing AG",
+  assertFails(setDoc(doc(real("m4"), `churches/new-1/members/m4`), m("m4", "senior_pastor", 6)))
+);
+await t(
+  "founder cannot re-claim leadership of an existing AG",
+  assertFails(setDoc(doc(real("m4"), `churches/${C}/members/m4`), m("m4", "senior_pastor", 6)))
+);
+await t("guests cannot start an AG", assertFails((() => {
+  const db = guest("g1");
+  const batch = writeBatch(db);
+  batch.set(doc(db, "churches/new-8"), { name: "X AG", pastorName: "g", city: "Doha", province: "", country: "Qatar", denomination: "", website: "", status: "active", createdAt: 1, createdBy: "g1", createdFrom: C });
+  batch.set(doc(db, "churches/new-8/members/g1"), m("g1", "senior_pastor", 6));
+  return batch.commit();
+})()));
+
 await env.cleanup();
 console.log(failed ? `${failed} FAILED` : "ALL PASSED");
 process.exit(failed ? 1 : 0);

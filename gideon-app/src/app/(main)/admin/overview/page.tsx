@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { AlertTriangle, ChevronDown, ClipboardList, Download, Globe2, RefreshCw, UserPlus } from "lucide-react";
+import { AlertTriangle, Check, ChevronDown, ClipboardList, Download, Globe2, PlusCircle, RefreshCw, UserPlus, X } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useAuth } from "@/lib/hooks/use-auth";
 import { useApplications } from "@/lib/hooks/use-church-applications";
+import { approveMember, removeMember } from "@/lib/hooks/use-church";
+import { Button } from "@/components/ui/button";
 import { downloadNationalCsv, useNationalDashboard, type AgStats } from "@/lib/hooks/use-national-dashboard";
 import { JOURNEY_LEVELS } from "@/lib/content/journey";
 import { NATIONAL_ADMIN_UID } from "@/lib/church";
@@ -26,6 +28,7 @@ export default function NationalDashboardPage() {
   const { items, error, loadedAt, reload } = useNationalDashboard(isAdmin);
   const applications = useApplications(isAdmin);
   const [refreshing, setRefreshing] = useState(false);
+  const [busyId, setBusyId] = useState<string | null>(null);
   const title = tx("National Dashboard", "National Dashboard");
 
   if (authLoading) return <PageHeader title={title} back />;
@@ -116,6 +119,70 @@ export default function NationalDashboardPage() {
             </div>
 
             <section className="space-y-2">
+              <h2 className="text-sm font-semibold">{tx("New members", "Mga bagong miyembro")}</h2>
+              {live.flatMap((a) => a.waiting.map((m) => ({ a, m }))).length === 0 && (
+                <p className="text-xs text-muted-foreground">{tx("No one is waiting for approval.", "Walang naghihintay ng pag-apruba.")}</p>
+              )}
+              {live.flatMap((a) => a.waiting.map((m) => ({ a, m }))).map(({ a, m }) => {
+                const key = `${a.church.id}/${m.uid}`;
+                const act = async (approve: boolean) => {
+                  setBusyId(key);
+                  try {
+                    if (approve) await approveMember(a.church.id, m.uid, uid!);
+                    else await removeMember(a.church.id, m.uid);
+                    await reload();
+                  } finally {
+                    setBusyId(null);
+                  }
+                };
+                return (
+                  <div key={key} className="flex items-center gap-2 rounded-xl border border-primary/30 bg-primary/5 px-3 py-2.5">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium">{m.displayName}</p>
+                      <p className="truncate text-xs text-muted-foreground">
+                        {tx("wants to join", "gustong sumali sa")} {a.church.name} ·{" "}
+                        {new Date(m.joinedAt).toLocaleDateString(locale, { month: "short", day: "numeric" })}
+                      </p>
+                    </div>
+                    <Button size="sm" className="h-8" disabled={busyId !== null} onClick={() => act(true)}>
+                      <Check className="size-3.5" />
+                      {tx("Approve", "Aprubahan")}
+                    </Button>
+                    <button
+                      onClick={() => act(false)}
+                      disabled={busyId !== null}
+                      aria-label={tx(`Decline ${m.displayName}`, `Tanggihan si ${m.displayName}`)}
+                      className="flex size-8 items-center justify-center rounded-full text-muted-foreground disabled:opacity-40"
+                    >
+                      <X className="size-4" />
+                    </button>
+                  </div>
+                );
+              })}
+              {live.some((a) => a.recent.length) && (
+                <div className="rounded-xl border border-border/70 bg-card px-3 py-2.5">
+                  <p className="text-xs font-medium">{tx("Joined in the last 30 days", "Sumali sa nakaraang 30 araw")}</p>
+                  <ul className="mt-1.5 space-y-1">
+                    {live
+                      .flatMap((a) => a.recent.map((m) => ({ a, m })))
+                      .sort((x, y) => (y.m.approvedAt ?? y.m.joinedAt) - (x.m.approvedAt ?? x.m.joinedAt))
+                      .slice(0, 30)
+                      .map(({ a, m }) => (
+                        <li key={`${a.church.id}/${m.uid}`} className="flex justify-between gap-2 text-xs">
+                          <span className="truncate">
+                            {m.displayName} <span className="text-muted-foreground">· {a.church.name}</span>
+                          </span>
+                          <span className="shrink-0 text-muted-foreground">
+                            {new Date(m.approvedAt ?? m.joinedAt).toLocaleDateString(locale, { month: "short", day: "numeric" })}
+                          </span>
+                        </li>
+                      ))}
+                  </ul>
+                </div>
+              )}
+            </section>
+
+            <section className="space-y-2">
               <h2 className="text-sm font-semibold">{tx("Needs attention", "Kailangang tingnan")}</h2>
               {pendingApps > 0 && (
                 <Row href="/admin/applications" icon={<ClipboardList className="size-4 text-primary" />}>
@@ -146,7 +213,13 @@ export default function NationalDashboardPage() {
             </section>
 
             <section className="space-y-2">
-              <h2 className="text-sm font-semibold">{tx("Every AG", "Lahat ng AG")}</h2>
+              <div className="flex items-center justify-between">
+                <h2 className="text-sm font-semibold">{tx("Every AG", "Lahat ng AG")}</h2>
+                <Link href="/church/new" className="inline-flex items-center gap-1 text-xs font-medium text-primary">
+                  <PlusCircle className="size-3.5" />
+                  {tx("Start an AG", "Gumawa ng AG")}
+                </Link>
+              </div>
               {ags.length ? (
                 ags.map((a) => <AgCard key={a.church.id} ag={a} />)
               ) : (

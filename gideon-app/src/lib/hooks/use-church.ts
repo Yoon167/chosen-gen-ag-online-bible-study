@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import {
   collection,
   collectionGroup,
@@ -26,37 +26,71 @@ import {
   type ProgressSummary,
 } from "@/lib/church";
 
+// Someone who leads more than one AG picks which one the app shows (kept on
+// this device).
+const CURRENT_KEY = "gideon-current-ag";
+const currentListeners = new Set<() => void>();
+
+function readCurrentAg() {
+  try {
+    return localStorage.getItem(CURRENT_KEY);
+  } catch {
+    return null;
+  }
+}
+
+/** Shows this AG across the app (for people in more than one). */
+export function switchAg(churchId: string) {
+  try {
+    localStorage.setItem(CURRENT_KEY, churchId);
+  } catch {}
+  currentListeners.forEach((l) => l());
+}
+
+function subscribeCurrentAg(listener: () => void) {
+  currentListeners.add(listener);
+  return () => {
+    currentListeners.delete(listener);
+  };
+}
+
 /**
  * The signed-in person's church membership (active or pending), found with a
- * collection-group query on their own uid, plus that church's details.
+ * collection-group query on their own uid, plus that church's details. A
+ * person in several AGs sees the one they picked (switchAg), otherwise an
+ * active one with their highest role.
  */
 export function useMyChurch() {
   const { uid, loading: authLoading } = useAuth();
-  const [membership, setMembership] = useState<Membership | null>(null);
-  const [churchId, setChurchId] = useState<string | null>(null);
+  const [all, setAll] = useState<{ churchId: string; membership: Membership }[]>([]);
+  const [listed, setListed] = useState(false);
+  const preferred = useSyncExternalStore(subscribeCurrentAg, readCurrentAg, () => null);
   const [church, setChurch] = useState<Church | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loadedChurchId, setLoadedChurchId] = useState<string | null>(null);
 
   useEffect(() => {
     if (!uid) return;
     return onSnapshot(
       query(collectionGroup(db, "members"), where("uid", "==", uid)),
       (snap) => {
-        // One church per person for now: prefer an active membership, then
-        // the highest role (e.g. a pastor whose own church was just approved).
-        const docs = [...snap.docs].sort(
-          (a, b) =>
-            Number(b.data().status === "active") - Number(a.data().status === "active") ||
-            b.data().rank - a.data().rank
+        setAll(
+          snap.docs
+            .map((d) => ({ churchId: d.ref.parent.parent!.id, membership: d.data() as Membership }))
+            .sort(
+              (a, b) =>
+                Number(b.membership.status === "active") - Number(a.membership.status === "active") ||
+                b.membership.rank - a.membership.rank
+            )
         );
-        const first = docs[0];
-        setMembership(first ? (first.data() as Membership) : null);
-        setChurchId(first ? first.ref.parent.parent!.id : null);
-        if (!first) setLoading(false);
+        setListed(true);
       },
-      () => setLoading(false)
+      () => setListed(true)
     );
   }, [uid]);
+
+  const chosen = all.find((m) => m.churchId === preferred && m.membership.status === "active") ?? all[0] ?? null;
+  const churchId = chosen?.churchId ?? null;
+  const membership = chosen?.membership ?? null;
 
   useEffect(() => {
     if (!churchId) return;
@@ -64,24 +98,81 @@ export function useMyChurch() {
       doc(db, "churches", churchId),
       (snap) => {
         setChurch(snap.exists() ? ({ id: snap.id, ...snap.data() } as Church) : null);
-        setLoading(false);
+        setLoadedChurchId(churchId);
       },
-      () => setLoading(false)
+      () => setLoadedChurchId(churchId)
     );
   }, [churchId]);
 
   const active = membership?.status === "active";
   const rank = active ? membership!.rank : 0;
+  const loading = authLoading || !listed || (!!churchId && loadedChurchId !== churchId);
 
   return {
     membership,
-    church: churchId ? church : null,
+    church: churchId && loadedChurchId === churchId ? church : null,
     churchId,
-    loading: loading || authLoading,
+    loading,
     active,
     rank,
     isChurchLeader: rank >= LEADER_RANK,
+    /** Every AG this person belongs to (active or pending). */
+    memberships: all,
   };
+}
+
+export interface NewAgForm {
+  name: string;
+  city: string;
+  province: string;
+  country: string;
+  denomination: string;
+}
+
+/** A url-safe id for a new AG: its name plus a short random tail. */
+function newAgId(name: string) {
+  const slug = name
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")
+    .slice(0, 40);
+  return `${slug || "ag"}-${Math.random().toString(36).slice(2, 7)}`;
+}
+
+/**
+ * Starts a new AG with the creator as its AG Leader, in one batch. Allowed for
+ * the national admin, and for AG Leaders and Assistant Leaders of another AG
+ * (`fromChurchId`), which the rules check.
+ */
+export async function createAg(form: NewAgForm, me: { uid: string; name: string }, fromChurchId: string | null) {
+  const id = newAgId(form.name);
+  const batch = writeBatch(db);
+  batch.set(doc(db, "churches", id), {
+    name: form.name.trim(),
+    pastorName: me.name,
+    city: form.city.trim(),
+    province: form.province.trim(),
+    country: form.country.trim(),
+    denomination: form.denomination.trim(),
+    website: "",
+    status: "active",
+    createdAt: Date.now(),
+    createdBy: me.uid,
+    createdFrom: fromChurchId ?? "",
+  });
+  const founder: Membership = {
+    uid: me.uid,
+    displayName: me.name,
+    role: "senior_pastor",
+    rank: 6,
+    status: "active",
+    joinedAt: Date.now(),
+  };
+  batch.set(doc(db, "churches", id, "members", me.uid), founder);
+  await batch.commit();
+  switchAg(id);
+  return id;
 }
 
 /** Active churches people can ask to join. */

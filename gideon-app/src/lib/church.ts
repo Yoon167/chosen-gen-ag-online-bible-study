@@ -58,6 +58,9 @@ export interface Church {
   createdAt: number;
   /** The application that created this church (the applicant's uid). */
   applicationId?: string;
+  /** Started directly by an AG leader (their uid) from another AG (`createdFrom`). */
+  createdBy?: string;
+  createdFrom?: string;
 }
 
 /** Stored at churchApplications/{applicant uid}; only the applicant and the admin can read it. */

@@ -30,6 +30,10 @@ export interface AgStats {
   joined30d: number;
   /** No check-in at all in four weeks. */
   quiet: boolean;
+  /** Join requests waiting for approval, oldest first. */
+  waiting: Membership[];
+  /** Approved in the last 30 days, newest first. */
+  recent: Membership[];
 }
 
 /**
@@ -79,6 +83,10 @@ export function useNationalDashboard(enabled: boolean) {
             checkedIn4w: new Set(markList.map((m) => m.uid)).size,
             joined30d: active.filter((m) => m.joinedAt >= now - 30 * DAY).length,
             quiet: active.length > 0 && markList.length === 0,
+            waiting: roster.filter((m) => m.status === "pending").sort((a, b) => a.joinedAt - b.joinedAt),
+            recent: active
+              .filter((m) => (m.approvedAt ?? m.joinedAt) >= now - 30 * DAY)
+              .sort((a, b) => (b.approvedAt ?? b.joinedAt) - (a.approvedAt ?? a.joinedAt)),
           } satisfies AgStats;
         })
       );

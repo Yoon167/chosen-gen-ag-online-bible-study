@@ -151,7 +151,25 @@ service cloud.firestore {
       // The directory holds only public details, so any signed-in user may browse it.
       allow read: if request.auth != null;
       // Churches are created and edited by the national admin (approval flow).
-      allow create, update: if isAdmin();
+      // An AG Leader or Assistant Leader (rank 5+) of an existing AG may also
+      // start a new AG directly, becoming its AG Leader (see members below).
+      allow create: if isAdmin()
+        || (isRealAccount()
+          && request.resource.data.keys().hasOnly(['name', 'pastorName', 'city', 'province', 'country',
+            'denomination', 'website', 'status', 'createdAt', 'createdBy', 'createdFrom'])
+          && request.resource.data.createdBy == request.auth.uid
+          && request.resource.data.status == 'active'
+          && validText(request.resource.data.name, 2, 100)
+          && validText(request.resource.data.pastorName, 1, 100)
+          && validText(request.resource.data.city, 1, 80)
+          && validText(request.resource.data.province, 0, 80)
+          && validText(request.resource.data.country, 2, 80)
+          && validText(request.resource.data.denomination, 0, 100)
+          && validText(request.resource.data.website, 0, 200)
+          && request.resource.data.createdAt is int
+          && request.resource.data.createdFrom is string
+          && rankAtLeast(request.resource.data.createdFrom, 5));
+      allow update: if isAdmin();
       allow delete: if false;
 
       match /members/{uid} {
@@ -162,6 +180,16 @@ service cloud.firestore {
 
         // Join request: yourself, as a pending member, into an active church.
         allow create: if isAdmin()
+          // The founder of a new AG becomes its AG Leader, in the same batch
+          // that creates the AG.
+          || (isRealAccount() && request.auth.uid == uid
+            && !exists(/databases/$(database)/documents/churches/$(churchId))
+            && getAfter(/databases/$(database)/documents/churches/$(churchId)).data.createdBy == uid
+            && request.resource.data.keys().hasOnly(['uid', 'displayName', 'role', 'rank', 'status', 'joinedAt'])
+            && request.resource.data.uid == uid
+            && request.resource.data.role == 'senior_pastor'
+            && request.resource.data.rank == 6
+            && request.resource.data.status == 'active')
           || (isRealAccount() && request.auth.uid == uid
             && get(/databases/$(database)/documents/churches/$(churchId)).data.status == 'active'
             && request.resource.data.keys().hasOnly(['uid', 'displayName', 'role', 'rank', 'status', 'joinedAt'])
