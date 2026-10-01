@@ -50,6 +50,7 @@ const USER_SUBCOLLECTIONS = [
   "fasts",
   "badges",
   "sermonAnswers",
+  "quizScores",
   "assessments",
   "vaultKeys",
 ];

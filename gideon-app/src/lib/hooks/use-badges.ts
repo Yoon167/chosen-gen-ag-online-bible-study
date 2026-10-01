@@ -9,6 +9,7 @@ import { BADGES, badgeProgress, type BadgeStats } from "@/lib/badges";
 import { isMastered, type MemoryVerse } from "@/lib/memory";
 import type { OikosPerson } from "@/lib/oikos";
 import type { Fast, PrayerSession } from "@/lib/fasting";
+import type { QuizScore } from "@/lib/content/bible-quiz";
 import { useUserCollection } from "@/lib/hooks/use-collection";
 import { useBibleHistory } from "@/lib/hooks/use-bible-history";
 import { useDevotionHistory } from "@/lib/hooks/use-devotion-log";
@@ -47,6 +48,7 @@ export function useBadges() {
   const gifts = useUserCollection<{ id: string; createdAt: number }>("giftResults");
   const fasts = useUserCollection<Fast>("fasts", "startedAt");
   const sessions = useUserCollection<PrayerSession>("prayerSessions", "startedAt");
+  const quizzes = useUserCollection<QuizScore>("quizScores", "at");
 
   const loading =
     profileLoading ||
@@ -61,7 +63,8 @@ export function useBadges() {
     testimonies.loading ||
     gifts.loading ||
     fasts.loading ||
-    sessions.loading;
+    sessions.loading ||
+    quizzes.loading;
 
   const journeyStats = journey.stats;
   const stats = useMemo<BadgeStats>(() => {
@@ -98,8 +101,10 @@ export function useBadges() {
       fastsCompleted: fasts.items.filter((f) => f.completed).length,
       prayerMinutes: sessions.items.reduce((sum, s) => sum + s.minutes, 0),
       inAg: my.active,
+      quizzesPlayed: quizzes.items.length,
+      quizPerfect: quizzes.items.filter((q) => q.score >= q.total && q.total > 0).length,
     };
-  }, [profile, my.active, history.items, devotions.items, journeyStats, memory.items, oikos.items, prayers.items, testimonies.items, gifts.items, fasts.items, sessions.items]);
+  }, [profile, my.active, history.items, devotions.items, journeyStats, memory.items, oikos.items, prayers.items, testimonies.items, gifts.items, fasts.items, sessions.items, quizzes.items]);
 
   const earnedAt = useMemo(() => new Map(earned.items.map((b) => [b.id, b.earnedAt])), [earned.items]);
 

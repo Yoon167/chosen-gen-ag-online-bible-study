@@ -53,6 +53,9 @@ export interface BadgeStats {
   fastsCompleted: number;
   prayerMinutes: number;
   inAg: boolean;
+  quizzesPlayed: number;
+  /** Rounds answered 10 out of 10. */
+  quizPerfect: number;
 }
 
 export type BadgeCategory = "bible" | "prayer" | "journey" | "mission";
@@ -87,6 +90,8 @@ export const BADGES: BadgeDef[] = [
   { id: "reading-7", category: "bible", icon: Sunrise, title: t("Week in the Word", "Isang Linggo sa Salita"), description: t("Read the Bible 7 days in a row", "Nagbasa ng Biblia 7 araw nang sunod-sunod"), target: 7, progress: (s) => s.readingStreak },
   { id: "reading-30", category: "bible", icon: Sun, title: t("Month in the Word", "Isang Buwan sa Salita"), description: t("Read the Bible 30 days in a row", "Nagbasa ng Biblia 30 araw nang sunod-sunod"), target: 30, progress: (s) => s.readingStreak },
   { id: "memory-1", category: "bible", icon: Brain, title: t("Hidden in My Heart", "Itinago sa Puso"), description: t("Start memorizing a verse", "Nagsimulang magsaulo ng talata"), target: 1, progress: (s) => s.memoryVerses },
+  { id: "quiz-1", category: "bible", icon: Trophy, title: t("Quiz Time", "Oras ng Quiz"), description: t("Play a Bible Quiz", "Naglaro ng Bible Quiz"), target: 1, progress: (s) => s.quizzesPlayed },
+  { id: "quiz-perfect", category: "bible", icon: Crown, title: t("Perfect Score", "Perpektong Score"), description: t("Answer all 10 Bible Quiz questions right", "Nasagot nang tama ang lahat ng 10 tanong sa Bible Quiz"), target: 1, progress: (s) => s.quizPerfect },
   { id: "memory-5", category: "bible", icon: Medal, title: t("Five Verses Memorized", "Limang Talatang Kabisado"), description: t("Fully memorize 5 verses", "Lubos na nakabisado ang 5 talata"), target: 5, progress: (s) => s.memoryMastered },
   // Prayer
   { id: "prayer-7", category: "prayer", icon: HandHeart, title: t("Week of Prayer", "Isang Linggong Panalangin"), description: t("Pray 7 days in a row", "Nanalangin 7 araw nang sunod-sunod"), target: 7, progress: (s) => s.prayerStreak },
