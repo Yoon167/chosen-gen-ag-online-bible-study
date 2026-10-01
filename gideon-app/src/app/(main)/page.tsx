@@ -12,6 +12,7 @@ import { CheckinCard } from "@/components/home/checkin-card";
 import { MemoryReviewCard } from "@/components/home/memory-review-card";
 import { AnnouncementCard } from "@/components/home/announcement-card";
 import { GroupReadingCard } from "@/components/home/group-reading-card";
+import { WeeklySummaryCard } from "@/components/home/weekly-summary-card";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Section } from "@/components/shared/section";
 import { useProfile } from "@/lib/hooks/use-profile";
@@ -103,8 +104,9 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <div className="px-5">
+      <div className="space-y-2.5 px-5">
         <StreakCards />
+        <WeeklySummaryCard />
       </div>
 
       <Section title={t("home.readingPlan")}>

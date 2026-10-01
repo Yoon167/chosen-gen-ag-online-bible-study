@@ -3,11 +3,11 @@
 import { useCallback, useSyncExternalStore } from "react";
 
 /** Which reminder cards show on Home (kept on this device). */
-export type HomeCard = "announcements" | "memory" | "reading" | "checkin";
+export type HomeCard = "announcements" | "memory" | "reading" | "checkin" | "summary";
 export type HomePrefs = Record<HomeCard, boolean>;
 
 const KEY = "gideon-home-cards";
-const DEFAULTS: HomePrefs = { announcements: true, memory: true, reading: true, checkin: true };
+const DEFAULTS: HomePrefs = { announcements: true, memory: true, reading: true, checkin: true, summary: true };
 
 let cached: HomePrefs | null = null;
 const listeners = new Set<() => void>();

@@ -102,6 +102,7 @@ export function NotificationSheet({ open, onOpenChange }: { open: boolean; onOpe
     { id: "memory", label: { en: "Memory verses to review", tl: "Mga talatang ire-review" } },
     { id: "reading", label: { en: "Today's AG reading", tl: "Babasahin ng AG ngayon" } },
     { id: "checkin", label: { en: "Weekly check-in", tl: "Lingguhang check-in" } },
+    { id: "summary", label: { en: "Your week with God (summary)", tl: "Ang linggo mo kasama ang Diyos (buod)" } },
   ];
 
   return (
