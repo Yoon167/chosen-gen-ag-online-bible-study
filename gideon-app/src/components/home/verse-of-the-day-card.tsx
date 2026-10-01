@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { BookOpenText, ImageIcon, Share2 } from "lucide-react";
 import { VerseImageSheet } from "@/components/bible/verse-image-sheet";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -43,11 +42,8 @@ export function VerseOfTheDayCard() {
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35 }}
-      className="gradient-hero relative overflow-hidden rounded-3xl p-6 text-primary-foreground shadow-lg shadow-primary/20"
+    <div
+      className="ui-rise gradient-hero relative overflow-hidden rounded-3xl p-6 text-primary-foreground shadow-lg shadow-primary/20"
     >
       <div className="pointer-events-none absolute -right-8 -top-8 size-36 rounded-full bg-white/10 blur-2xl" />
       <div className="pointer-events-none absolute -bottom-10 -left-6 size-28 rounded-full bg-gold/20 blur-2xl" />
@@ -102,6 +98,6 @@ export function VerseOfTheDayCard() {
         verse={imageOpen && text ? { text, reference } : null}
         onClose={() => setImageOpen(false)}
       />
-    </motion.div>
+    </div>
   );
 }

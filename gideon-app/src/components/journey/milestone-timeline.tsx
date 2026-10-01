@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   Droplet,
   Flame,
@@ -42,12 +41,10 @@ export function MilestoneTimeline({
         {sorted.map((m, i) => {
           const meta = TYPE_META[m.type];
           return (
-            <motion.div
+            <div
               key={m.id}
-              initial={{ opacity: 0, x: -8 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: i * 0.03 }}
-              className="relative"
+              className="ui-rise relative"
+              style={{ animationDelay: `${i * 0.03}s` }}
             >
               <span
                 className={`absolute -left-6 flex size-8 items-center justify-center rounded-full ring-4 ring-background ${meta.color}`}
@@ -76,7 +73,7 @@ export function MilestoneTimeline({
                   </button>
                 </div>
               </div>
-            </motion.div>
+            </div>
           );
         })}
       </div>

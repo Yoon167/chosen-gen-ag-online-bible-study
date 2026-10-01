@@ -168,6 +168,32 @@
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 }
+/* Entrance animations for the app's pages and cards. CSS keyframes on
+   opacity/transform run on the GPU, so they stay smooth while a page is
+   still loading its data (framer-motion's JS animations stuttered then). */
+@keyframes ui-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes ui-rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes ui-pop {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes ui-grow-x {
+  from { transform: scaleX(0); }
+  to { transform: none; }
+}
+.page-enter { animation: ui-fade 0.2s ease-out both; }
+.ui-rise { animation: ui-rise 0.3s ease-out both; }
+.ui-pop { animation: ui-pop 0.25s ease-out both; }
+.ui-grow-x { transform-origin: left; animation: ui-grow-x 0.5s ease-out both; }
+@media (prefers-reduced-motion: reduce) {
+  .page-enter, .ui-rise, .ui-pop, .ui-grow-x { animation: none; }
+}
 /* Cinematic intro */
 @keyframes intro-progress {
   from { transform: scaleX(0); }

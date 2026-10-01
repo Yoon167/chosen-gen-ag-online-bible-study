@@ -2,7 +2,6 @@
 
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, RotateCcw, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TOUR_STEPS, isTourDone, markTourDone, takeTourAutostart } from "@/lib/tour";
@@ -125,17 +124,19 @@ function TourOverlay({
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(measure);
     };
+    // Jump straight to the target (a smooth scroll made the spotlight chase
+    // it frame by frame), then measure on the next frame.
     const find = () => {
       if (cancelled) return;
       const el = document.querySelector(selector);
       if (el) {
-        el.scrollIntoView({ block: "center", behavior: "smooth" });
-        setTimeout(measure, 450);
+        el.scrollIntoView({ block: "center", behavior: "instant" });
+        frame = requestAnimationFrame(measure);
       } else if (tries++ < 40) {
         setTimeout(find, 100);
       }
     };
-    const first = setTimeout(find, 150);
+    const first = setTimeout(find, 80);
     window.addEventListener("scroll", follow, true);
     window.addEventListener("resize", follow);
     return () => {
@@ -183,30 +184,37 @@ function TourOverlay({
       aria-label={tx("App tour", "App tour")}
     >
       {box ? (
-        <div
-          className="pointer-events-none absolute rounded-2xl ring-2 ring-amber-300/90 transition-all duration-300"
-          style={{
-            top: box.top - pad,
-            left: box.left - pad,
-            width: box.width + pad * 2,
-            height: box.height + pad * 2,
-            boxShadow: "0 0 0 9999px rgba(10,8,24,0.68), 0 0 30px rgba(255,210,130,0.45)",
-          }}
-        />
+        // Four plain dark panels around the target plus a ring: cheap for a
+        // phone to draw, unlike a giant box-shadow repainted as it moves.
+        (() => {
+          const top = Math.max(0, box.top - pad);
+          const left = Math.max(0, box.left - pad);
+          const bottom = box.top + box.height + pad;
+          const right = box.left + box.width + pad;
+          const shade = "pointer-events-none absolute bg-[#0a0818]/70";
+          return (
+            <>
+              <div className={shade} style={{ top: 0, left: 0, right: 0, height: top }} />
+              <div className={shade} style={{ top: bottom, left: 0, right: 0, bottom: 0 }} />
+              <div className={shade} style={{ top, left: 0, width: left, height: bottom - top }} />
+              <div className={shade} style={{ top, left: right, right: 0, height: bottom - top }} />
+              <div
+                className="pointer-events-none absolute rounded-2xl ring-2 ring-amber-300/90"
+                style={{ top, left, width: right - left, height: bottom - top }}
+              />
+            </>
+          );
+        })()
       ) : (
-        <div className="absolute inset-0 bg-[#0a0818]/70 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-[#0a0818]/75" />
       )}
 
       <div className="absolute inset-x-4" style={cardStyle}>
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={step.id}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.25 }}
-            className="mx-auto max-w-sm rounded-3xl border border-border/70 bg-card p-5 text-card-foreground shadow-2xl"
-          >
+        {/* Keyed by step so each card rises in (CSS, on the GPU) */}
+        <div
+          key={step.id}
+          className="ui-rise mx-auto max-w-sm rounded-3xl border border-border/70 bg-card p-5 text-card-foreground shadow-2xl"
+        >
             <div className="flex items-start justify-between gap-3">
               <span
                 className={cn(
@@ -236,7 +244,7 @@ function TourOverlay({
               {TOUR_STEPS.map((s, i) => (
                 <span
                   key={s.id}
-                  className={cn("h-1.5 rounded-full transition-all", i === index ? "w-5 bg-primary" : "w-1.5 bg-muted")}
+                  className={cn("h-1.5 rounded-full", i === index ? "w-5 bg-primary" : "w-1.5 bg-muted")}
                 />
               ))}
             </div>
@@ -270,8 +278,7 @@ function TourOverlay({
                 </Button>
               </div>
             )}
-          </motion.div>
-        </AnimatePresence>
+        </div>
       </div>
     </div>
   );

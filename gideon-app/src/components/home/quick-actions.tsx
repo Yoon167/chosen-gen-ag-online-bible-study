@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
   BookOpenText,
   Sun,
@@ -44,16 +43,10 @@ export function QuickActions() {
   return (
     <div className="grid grid-cols-3 gap-3">
       {ACTIONS.map((a, i) => (
-        <motion.div
-          key={a.href}
-          initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: i * 0.03, duration: 0.25 }}
-          whileTap={{ scale: 0.95 }}
-        >
+        <div key={a.href} className="ui-pop" style={{ animationDelay: `${i * 0.03}s` }}>
           <Link
             href={a.href}
-            className="flex flex-col items-center gap-2 rounded-2xl border border-border/70 bg-card px-2 py-4 text-center transition hover:border-primary/40 hover:shadow-sm"
+            className="flex flex-col items-center gap-2 rounded-2xl border border-border/70 bg-card px-2 py-4 text-center transition hover:border-primary/40 hover:shadow-sm active:scale-95"
           >
             <span className="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
               <a.icon className="size-4.5" />
@@ -62,7 +55,7 @@ export function QuickActions() {
               {t(a.label)}
             </span>
           </Link>
-        </motion.div>
+        </div>
       ))}
     </div>
   );

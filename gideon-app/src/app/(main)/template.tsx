@@ -1,15 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
-
+// A quick fade as each page opens. Opacity only, in CSS (see .page-enter in
+// globals.css): the GPU runs it, so it stays smooth while the page loads.
 export default function Template({ children }: { children: React.ReactNode }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.28, ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
-  );
+  return <div className="page-enter">{children}</div>;
 }

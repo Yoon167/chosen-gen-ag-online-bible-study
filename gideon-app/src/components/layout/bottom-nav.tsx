@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 import { Home, BookOpenText, HandHeart, Compass, UserRound } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage, type StringKey } from "@/lib/i18n";
@@ -31,13 +30,7 @@ export function BottomNav() {
                 href={href}
                 className="relative flex flex-col items-center gap-1 py-2.5 text-[0.6875rem] font-medium"
               >
-                {active && (
-                  <motion.span
-                    layoutId="nav-pill"
-                    className="absolute -top-0.5 h-1 w-8 rounded-full bg-primary"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  />
-                )}
+                {active && <span className="ui-pop absolute -top-0.5 h-1 w-8 rounded-full bg-primary" />}
                 <Icon
                   className={cn(
                     "size-5 transition-colors",

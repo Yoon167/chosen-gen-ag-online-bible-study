@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import type { JourneyMilestone } from "@/types";
 
 export function GrowthAnalytics({ milestones }: { milestones: JourneyMilestone[] }) {
@@ -25,12 +24,7 @@ export function GrowthAnalytics({ milestones }: { milestones: JourneyMilestone[]
               {type}
             </span>
             <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: `${(count / max) * 100}%` }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="h-full rounded-full bg-primary"
-              />
+              <div className="ui-grow-x h-full rounded-full bg-primary" style={{ width: `${(count / max) * 100}%` }} />
             </div>
             <span className="w-4 shrink-0 text-right text-xs font-semibold text-primary">
               {count}

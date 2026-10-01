@@ -182,7 +182,7 @@ export function ChapterReaderClient({ bookSlug: bookProp, chapter: chapterProp }
 
   return (
     <div>
-      <header className="sticky top-0 z-30 border-b border-border/70 bg-background/90 px-5 py-4 backdrop-blur safe-top">
+      <header className="sticky top-0 z-30 border-b border-border/70 bg-background px-5 py-4 safe-top">
         <div className="flex items-center gap-3">
         <button
           onClick={() => router.push("/bible")}

@@ -65,7 +65,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="flex flex-col items-end gap-2">
-            <div className="rounded-full bg-white/90 px-3 py-1.5 backdrop-blur-sm shadow-sm">
+            <div className="rounded-full bg-white/95 px-3 py-1.5 shadow-sm">
               <ThemeToggle />
             </div>
             <LanguageToggle className="bg-white/90 text-foreground" />

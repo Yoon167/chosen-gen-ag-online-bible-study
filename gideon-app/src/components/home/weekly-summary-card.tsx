@@ -1,19 +1,56 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { BookOpenText, Brain, CheckCircle2, Compass, HandHeart, Sun } from "lucide-react";
-import { useBibleHistory } from "@/lib/hooks/use-bible-history";
-import { useDevotionHistory } from "@/lib/hooks/use-devotion-log";
-import { useUserCollection } from "@/lib/hooks/use-collection";
-import { useJourneyProgress } from "@/lib/hooks/use-journey-progress";
-import { useMemoryVerses } from "@/lib/hooks/use-memory-verses";
+import { db } from "@/lib/firebase";
+import { useAuth } from "@/lib/hooks/use-auth";
 import { localDateKey } from "@/lib/memory";
 import { useHomePrefs } from "@/lib/home-prefs";
 import { useTx } from "@/lib/i18n";
-import type { PrayerSession } from "@/lib/fasting";
-import type { PrayerRequest } from "@/types";
 
 const WEEK = 7 * 24 * 60 * 60 * 1000;
+
+interface Week {
+  chapters: number;
+  devotions: number;
+  prayerMinutes: number;
+  prayersAdded: number;
+  answered: number;
+  lessons: number;
+  versesReviewed: number;
+}
+
+/** Counts the last seven days with small one-time queries (no live listeners on Home). */
+async function loadWeek(uid: string): Promise<Week> {
+  const since = Date.now() - WEEK;
+  const col = (name: string) => collection(db, "users", uid, name);
+  const count = async (name: string, field: string, from: number | string) =>
+    (await getDocs(query(col(name), where(field, ">=", from)))).docs.map((d) => d.data());
+  const [chapters, devotions, sessions, prayersAdded, answered, reviewed, added, journey] = await Promise.all([
+    count("bibleHistory", "visitedAt", since),
+    count("devotionLog", "date", localDateKey(new Date(since))),
+    count("prayerSessions", "startedAt", since),
+    count("prayers", "createdAt", since),
+    count("prayers", "answeredAt", since),
+    count("memoryVerses", "reviewedAt", since),
+    count("memoryVerses", "createdAt", since),
+    getDocs(col("journeyProgress")),
+  ]);
+  const lessons = journey.docs.reduce((n, d) => {
+    const level = d.data() as { lessons?: Record<string, { completedAt?: number }> };
+    return n + Object.values(level.lessons ?? {}).filter((l) => (l.completedAt ?? 0) >= since).length;
+  }, 0);
+  return {
+    chapters: chapters.length,
+    devotions: devotions.filter((d) => d.completed).length,
+    prayerMinutes: Math.round(sessions.reduce((m, s) => m + (Number(s.minutes) || 0), 0)),
+    prayersAdded: prayersAdded.length,
+    answered: answered.filter((p) => p.answered).length,
+    lessons,
+    versesReviewed: new Set([...reviewed, ...added].map((v) => v.reference as string)).size,
+  };
+}
 
 /**
  * "Your week with God": what the member did in the last seven days, from
@@ -21,37 +58,30 @@ const WEEK = 7 * 24 * 60 * 60 * 1000;
  */
 export function WeeklySummaryCard() {
   const tx = useTx();
+  const { uid } = useAuth();
   const { prefs } = useHomePrefs();
-  const [since] = useState(() => Date.now() - WEEK);
-  const bible = useBibleHistory();
-  const devotions = useDevotionHistory();
-  const prayers = useUserCollection<PrayerRequest>("prayers");
-  const sessions = useUserCollection<PrayerSession>("prayerSessions", "startedAt");
-  const journey = useJourneyProgress();
-  const memory = useMemoryVerses();
+  const [week, setWeek] = useState<Week | null>(null);
 
-  const week = useMemo(() => {
-    const sinceKey = localDateKey(new Date(since));
-    const lessons = Object.values(journey.byLevel).reduce(
-      (n, level) => n + Object.values(level.lessons ?? {}).filter((l) => (l.completedAt ?? 0) >= since).length,
-      0
-    );
-    return {
-      chapters: bible.items.filter((h) => h.visitedAt >= since).length,
-      devotions: devotions.items.filter((d) => d.completed && d.date >= sinceKey).length,
-      prayerMinutes: Math.round(sessions.items.filter((s) => s.startedAt >= since).reduce((m, s) => m + s.minutes, 0)),
-      prayersAdded: prayers.items.filter((p) => p.createdAt >= since).length,
-      answered: prayers.items.filter((p) => p.answered && (p.answeredAt ?? 0) >= since).length,
-      lessons,
-      versesReviewed: memory.items.filter((v) => (v.reviewedAt ?? 0) >= since || v.createdAt >= since).length,
+  useEffect(() => {
+    if (!uid || !prefs.summary) return;
+    let cancelled = false;
+    loadWeek(uid)
+      .then((w) => !cancelled && setWeek(w))
+      .catch(() => {});
+    return () => {
+      cancelled = true;
     };
-  }, [since, bible.items, devotions.items, sessions.items, prayers.items, journey.byLevel, memory.items]);
+  }, [uid, prefs.summary]);
 
-  if (!prefs.summary) return null;
+  if (!prefs.summary || !week) return null;
   const tiles = [
     { icon: BookOpenText, value: week.chapters, label: tx("chapters read", "kabanatang nabasa") },
     { icon: Sun, value: week.devotions, label: tx("devotions", "debosyon") },
-    { icon: HandHeart, value: week.prayerMinutes || week.prayersAdded, label: week.prayerMinutes ? tx("minutes in prayer", "minuto sa panalangin") : tx("prayers written", "panalanging isinulat") },
+    {
+      icon: HandHeart,
+      value: week.prayerMinutes || week.prayersAdded,
+      label: week.prayerMinutes ? tx("minutes in prayer", "minuto sa panalangin") : tx("prayers written", "panalanging isinulat"),
+    },
     { icon: Compass, value: week.lessons, label: tx("Journey lessons", "aralin sa Journey") },
     { icon: Brain, value: week.versesReviewed, label: tx("verses memorized", "talatang isinaulo") },
     { icon: CheckCircle2, value: week.answered, label: tx("prayers answered", "panalanging sinagot") },
@@ -59,7 +89,7 @@ export function WeeklySummaryCard() {
   if (!tiles.length) return null;
 
   return (
-    <div className="rounded-2xl border border-border/70 bg-card p-4">
+    <div className="ui-rise rounded-2xl border border-border/70 bg-card p-4">
       <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
         {tx("Your week with God", "Ang linggo mo kasama ang Diyos")}
       </p>

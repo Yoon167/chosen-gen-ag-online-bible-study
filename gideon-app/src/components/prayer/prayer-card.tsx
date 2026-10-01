@@ -16,11 +16,13 @@ export function PrayerCard({
   onDelete: () => void;
 }) {
   return (
+    // Opacity only (no layout animation): measuring every card on each
+    // update made long prayer lists stutter on phones.
     <motion.div
-      layout
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
       className={cn(
         "rounded-2xl border border-border/70 bg-card p-4",
         prayer.answered && "bg-secondary/40"
