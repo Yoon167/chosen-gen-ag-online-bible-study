@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useSyncExternalStore } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
@@ -12,6 +12,7 @@ import { CinematicIntro } from "@/components/intro/cinematic-intro";
 import { Landing } from "@/components/intro/landing";
 import { useTour } from "@/components/tour/tour-provider";
 import { cancelTourAutostart, requestTourAutostart } from "@/lib/tour";
+import { holdGuestSignIn, releaseGuestSignIn } from "@/lib/guest-session";
 import type { UserProfile } from "@/types";
 import { PRIVACY_VERSION, PrivacyNotice } from "@/components/privacy/privacy-notice";
 import { DeleteAccount } from "@/components/privacy/delete-account";
@@ -40,6 +41,14 @@ export function WelcomeGate({ children }: { children: React.ReactNode }) {
   const tour = useTour();
   const current = stage ?? (enteredThisSession === null ? "pending" : enteredThisSession ? "app" : "landing");
   const onboarded = loading ? null : isOnboardedProfile(profile, hasAccount);
+
+  // A new visitor's guest account waits until they go past the landing page,
+  // so page loads by bots and link previews don't create empty accounts.
+  // Held during render, before any sign-in effect below can run.
+  if (current !== "app") holdGuestSignIn();
+  useEffect(() => {
+    if (current === "app") releaseGuestSignIn();
+  }, [current]);
 
   const enterApp = () => {
     try {

@@ -7,6 +7,7 @@ import {
   type User,
 } from "firebase/auth";
 import { auth } from "@/lib/firebase";
+import { whenGuestSignInAllowed } from "@/lib/guest-session";
 
 // Dozens of hooks call useAuth at once when a screen opens. Each used to start
 // its own guest sign-in on seeing "no user", so a new visitor got many
@@ -26,19 +27,27 @@ export function useAuth() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    let cancelWait = () => {};
     const unsubscribe = onAuthStateChanged(auth, (current) => {
+      cancelWait();
       if (current) {
         setUser(current);
         setError(null);
         setLoading(false);
       } else {
-        ensureGuestSession().catch((err) => {
-          setError(err?.code ?? "auth/unknown");
-          setLoading(false);
+        // Not before the visitor leaves the landing page (see guest-session).
+        cancelWait = whenGuestSignInAllowed(() => {
+          ensureGuestSession().catch((err) => {
+            setError(err?.code ?? "auth/unknown");
+            setLoading(false);
+          });
         });
       }
     });
-    return unsubscribe;
+    return () => {
+      cancelWait();
+      unsubscribe();
+    };
   }, []);
 
   return { user, uid: user?.uid ?? null, loading, error };
