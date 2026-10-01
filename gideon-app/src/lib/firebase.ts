@@ -1,4 +1,5 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
+import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 import { connectAuthEmulator, getAuth } from "firebase/auth";
 import {
   connectFirestoreEmulator,
@@ -20,6 +21,25 @@ const firebaseConfig = {
 };
 
 export const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+
+// App Check (free, reCAPTCHA v3): proves requests come from the real Gideon
+// app, so bots can't use the database directly. It turns on when a build sets
+// NEXT_PUBLIC_RECAPTCHA_SITE_KEY (a public key from google.com/recaptcha/admin,
+// registered under Firebase console > App Check). Requests are only refused
+// once enforcement is switched on in the console, after the metrics there show
+// that real members' requests are verified.
+const appCheckSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+if (appCheckSiteKey && typeof window !== "undefined" && process.env.NEXT_PUBLIC_FIREBASE_EMULATORS !== "1") {
+  try {
+    initializeAppCheck(app, {
+      provider: new ReCaptchaV3Provider(appCheckSiteKey),
+      isTokenAutoRefreshEnabled: true,
+    });
+  } catch {
+    // Already initialized (e.g. after a hot reload).
+  }
+}
+
 export const auth = getAuth(app);
 
 // Keep a local copy of Firestore data in IndexedDB so lists (teachings,
