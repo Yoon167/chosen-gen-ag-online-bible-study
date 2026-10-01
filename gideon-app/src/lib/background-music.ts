@@ -7,7 +7,10 @@ import { useEffect, useSyncExternalStore } from "react";
 // session, so navigating between pages never restarts it.
 // Track: "Christian Instrumental Piano Worship Calm Emotional Soaking Prayer"
 // by JesseQuinnMedia (Pixabay Content License).
-const SRC = "/audio/soaking-prayer.m4a";
+// Mono AAC at 48 kbps (1.4 MB instead of 2.7 MB): every new visitor downloads
+// it, and the free Hosting plan allows about 360 MB a day. Files in /audio
+// are cached for a year, so give a changed file a new name.
+const SRC = "/audio/soaking-prayer-v2.m4a";
 // The file itself is mastered quieter (iOS ignores `audio.volume`), and other
 // platforms lower it a bit more.
 const VOLUME = 0.7;
