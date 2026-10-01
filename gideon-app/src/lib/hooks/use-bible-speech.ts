@@ -22,8 +22,34 @@ function store(key: string, value: string) {
 }
 
 function matchesLanguage(voice: SpeechSynthesisVoice, lang: "en" | "tl") {
-  const code = voice.lang.toLowerCase();
+  const code = voice.lang.toLowerCase().replace("_", "-");
   return lang === "tl" ? code.startsWith("fil") || code.startsWith("tl") : code.startsWith("en");
+}
+
+/**
+ * Most phones have no Filipino voice. An English voice reads Tagalog badly
+ * ("Panginoon" comes out as English sounds), so the fallback is a voice whose
+ * spelling-to-sound rules are close to Tagalog: Indonesian, then Malay, then
+ * Spanish. Same for Cebuano, Hiligaynon and Ilocano.
+ */
+const TAGALOG_FALLBACKS = ["id", "in", "ms", "es"];
+
+function fallbackRank(voice: SpeechSynthesisVoice) {
+  const code = voice.lang.toLowerCase().replace("_", "-");
+  const i = TAGALOG_FALLBACKS.findIndex((l) => code === l || code.startsWith(`${l}-`));
+  return i < 0 ? TAGALOG_FALLBACKS.length : i;
+}
+
+/**
+ * Verse text tidied for reading aloud: no brackets or pilcrows, and words in
+ * capitals ("PANGINOON", "LORD") said as words instead of letter by letter.
+ */
+export function speakableText(text: string) {
+  return text
+    .replace(/[\[\]{}<>¶*_|]/g, " ")
+    .replace(/(?<!\p{L})\p{Lu}{2,}(?!\p{L})/gu, (w) => w.charAt(0) + w.slice(1).toLowerCase())
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 /**
@@ -61,9 +87,18 @@ export function useBibleSpeech(verses: string[], lang: "en" | "tl") {
   }, [lang]);
 
   const languageVoices = allVoices.filter((v) => matchesLanguage(v, lang));
-  // No Tagalog voice installed: fall back to any voice so the reader still works.
-  const voices = languageVoices.length ? languageVoices : allVoices;
-  const voice = voices.find((v) => v.voiceURI === voiceURI) ?? voices.find((v) => v.default) ?? voices[0];
+  // No Tagalog voice installed: offer the closest-sounding voices first, then
+  // the rest, so the reader still works.
+  const voices = languageVoices.length
+    ? languageVoices
+    : lang === "tl"
+      ? [...allVoices].sort((a, b) => fallbackRank(a) - fallbackRank(b))
+      : allVoices;
+  const voice =
+    voices.find((v) => v.voiceURI === voiceURI) ??
+    // For Tagalog without a Filipino voice, the closest one (sorted first) beats the phone's default English voice.
+    (lang === "tl" && !languageVoices.length ? voices[0] : voices.find((v) => v.default)) ??
+    voices[0];
 
   const speakFrom = useCallback(
     (start: number, overrides?: { rate?: number; voice?: SpeechSynthesisVoice }) => {
@@ -82,8 +117,9 @@ export function useBibleSpeech(verses: string[], lang: "en" | "tl") {
           return;
         }
         setIndex(i);
-        const u = new SpeechSynthesisUtterance(verses[i]);
-        u.lang = lang === "tl" ? "fil-PH" : "en-US";
+        const u = new SpeechSynthesisUtterance(speakableText(verses[i]));
+        // The voice's own language, so a stand-in voice uses its own pronunciation rules.
+        u.lang = useVoice?.lang ?? (lang === "tl" ? "fil-PH" : "en-US");
         if (useVoice) u.voice = useVoice;
         u.rate = useRate;
         u.onend = () => speak(i + 1);

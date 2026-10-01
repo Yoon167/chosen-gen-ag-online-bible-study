@@ -89,8 +89,8 @@ export function AudioPlayer({
       {isTagalog && !speech.hasLanguageVoice && (
         <p className="text-center text-[0.6875rem] text-muted-foreground">
           {tx(
-            "This phone has no Tagalog (Filipino) voice installed, so another voice is reading. You can add one in your phone's text-to-speech settings.",
-            "Walang Tagalog (Filipino) na boses sa phone na ito, kaya ibang boses ang nagbabasa. Puwede kang magdagdag nito sa text-to-speech settings ng phone mo."
+            "This phone has no Filipino voice yet, so the closest voice (Indonesian or Spanish) is reading. For a clearer Tagalog voice on Android: Settings → Text-to-speech → Speech Services by Google → Install voice data → Filipino, then reopen this chapter.",
+            "Wala pang Filipino na boses sa phone na ito, kaya ang pinakamalapit na boses (Indonesian o Spanish) ang nagbabasa. Para sa mas malinaw na Tagalog sa Android: Settings → Text-to-speech → Speech Services by Google → Install voice data → Filipino, saka buksan ulit ang kabanata."
           )}
         </p>
       )}

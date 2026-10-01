@@ -1,8 +1,9 @@
 /**
  * Offline downloads, kept in the browser's Cache Storage on the phone.
  *
- * - Bible text comes straight from getbible.net one book at a time, so it
- *   never counts against Gideon's free hosting quota.
+ * - Bible text comes straight from getbible.net one book at a time (or, for
+ *   the Free Use Bible API translations, the whole Bible in one file split
+ *   into books here), so it never counts against Gideon's free hosting quota.
  * - App pages (Home, Journey levels and lessons, the offline Bible reader)
  *   and the scripts they need are cached so the service worker can serve
  *   them without a connection.
@@ -12,14 +13,30 @@
  */
 
 import { ALL_BOOKS } from "@/lib/bible/books";
+import {
+  BIBLE_TRANSLATIONS,
+  HELLOAO_URL,
+  helloaoVerseText,
+  tidyBookName,
+  translationInfo,
+  type HelloaoChapter,
+} from "@/lib/bible/translations";
 
 const GETBIBLE_URL = "https://api.getbible.net/v2";
 export const BIBLE_CACHE = "gideon-offline-bible-v1";
 export const PAGES_CACHE = "gideon-offline-pages-v1";
 const STATE_KEY = "gideon-offline";
 
-/** Translations getbible.net offers as whole books (Bible in Basic English isn't there). */
-export const OFFLINE_TRANSLATIONS = ["tagalog", "kjv", "web", "asv", "darby", "ylt"];
+/** Translations that can be downloaded: getbible.net's books and every Free Use Bible API one (Bible in Basic English isn't on either). */
+export const OFFLINE_TRANSLATIONS = [
+  "tagalog",
+  "kjv",
+  "web",
+  "asv",
+  "darby",
+  "ylt",
+  ...BIBLE_TRANSLATIONS.filter((t) => t.source === "helloao").map((t) => t.id),
+];
 
 /** The route the service worker serves for any Bible chapter that isn't cached. */
 export const OFFLINE_READER_PATH = "/bible/offline-reader";
@@ -47,8 +64,42 @@ function writeOfflineState(update: (s: OfflineState) => OfflineState) {
   } catch {}
 }
 
+/**
+ * Where a downloaded book is kept. Free Use Bible API books are stored under
+ * a made-up address in getbible.net's book format, so reading them back works
+ * the same way.
+ */
 function bookUrl(translation: string, bookNumber: number) {
-  return `${GETBIBLE_URL}/${translation}/${bookNumber}.json`;
+  return translationInfo(translation).source === "helloao"
+    ? `${HELLOAO_URL}/${translation}/offline-book-${bookNumber}.json`
+    : `${GETBIBLE_URL}/${translation}/${bookNumber}.json`;
+}
+
+interface HelloaoComplete {
+  books: { order: number; name: string; commonName?: string; chapters: { chapter: HelloaoChapter["chapter"] }[] }[];
+}
+
+/** The whole Bible in one download, split into getbible.net-shaped books. */
+async function downloadHelloaoBible(translation: string, onProgress: (done: number, total: number) => void) {
+  const cache = await caches.open(BIBLE_CACHE);
+  onProgress(0, ALL_BOOKS.length);
+  const data = (await (await fetchWithRetry(`${HELLOAO_URL}/${translation}/complete.json`)).json()) as HelloaoComplete;
+  let done = 0;
+  for (const book of data.books) {
+    const name = tidyBookName(book.commonName || book.name);
+    const body: GetBibleBook = {
+      name,
+      chapters: book.chapters.map(({ chapter }) => ({
+        chapter: chapter.number,
+        name: `${name} ${chapter.number}`,
+        verses: chapter.content
+          .filter((c) => c.type === "verse" && c.number)
+          .map((c) => ({ chapter: chapter.number, verse: c.number!, text: helloaoVerseText(c.content ?? []) })),
+      })),
+    };
+    await cache.put(bookUrl(translation, book.order), new Response(JSON.stringify(body), { headers: { "content-type": "application/json" } }));
+    onProgress(++done, data.books.length);
+  }
 }
 
 /** Runs `task` over `items` with a few requests in flight at a time. */
@@ -75,6 +126,11 @@ async function fetchWithRetry(url: string, tries = 3): Promise<Response> {
 }
 
 export async function downloadBible(translation: string, onProgress: (done: number, total: number) => void) {
+  if (translationInfo(translation).source === "helloao") {
+    await downloadHelloaoBible(translation, onProgress);
+    writeOfflineState((s) => ({ ...s, bibles: { ...s.bibles, [translation]: Date.now() } }));
+    return;
+  }
   const cache = await caches.open(BIBLE_CACHE);
   const books = ALL_BOOKS.map((_, i) => i + 1);
   let done = 0;

@@ -1,11 +1,30 @@
 import { ALL_BOOKS } from "./books";
 import { parseReference } from "./reference-parser";
 import { readOfflineChapter } from "@/lib/offline";
+import {
+  DEFAULT_TRANSLATION,
+  HELLOAO_URL,
+  TAGALOG_TRANSLATION,
+  USFM_BOOKS,
+  helloaoToResponse,
+  translationInfo,
+  type HelloaoChapter,
+} from "./translations";
+
+export {
+  BIBLE_TRANSLATIONS,
+  DEFAULT_TRANSLATION,
+  TAGALOG_TRANSLATION,
+  isPhilippineTranslation,
+  translationInfo,
+  translationName,
+  type BibleLang,
+  type BibleTranslation,
+} from "./translations";
 
 const BASE_URL = "https://bible-api.com";
 // bible-api.com has no Tagalog, so the Tagalog Bible comes from getbible.net.
 const GETBIBLE_URL = "https://api.getbible.net/v2";
-export const TAGALOG_TRANSLATION = "tagalog";
 
 export interface BibleApiVerse {
   book_id: string;
@@ -37,28 +56,14 @@ export function cleanVerseText(text: string) {
   return text.replace(/\s+/g, " ").trim();
 }
 
-export interface BibleTranslation {
-  id: string;
-  name: string;
-}
-
-// Public-domain English translations offered by bible-api.com — no API key
-// needed, and responses are runtime-cached by the service worker so a
-// chapter already read once stays available offline afterward.
-export const BIBLE_TRANSLATIONS: BibleTranslation[] = [
-  { id: "kjv", name: "King James Version" },
-  { id: "asv", name: "American Standard Version" },
-  { id: "web", name: "World English Bible" },
-  { id: "bbe", name: "Bible in Basic English" },
-  { id: "darby", name: "Darby Bible" },
-  { id: "ylt", name: "Young's Literal Translation" },
-  { id: TAGALOG_TRANSLATION, name: "Ang Dating Biblia (Tagalog)" },
-];
-
-export const DEFAULT_TRANSLATION = "kjv";
-
-export function translationName(id: string) {
-  return BIBLE_TRANSLATIONS.find((t) => t.id === id)?.name ?? id.toUpperCase();
+async function fetchHelloaoChapter(translation: string, bookSlug: string, chapter: number): Promise<BibleApiResponse> {
+  const index = ALL_BOOKS.findIndex((b) => b.slug === bookSlug);
+  if (index < 0) throw new Error("Chapter not found");
+  const res = await fetch(`${HELLOAO_URL}/${translation}/${USFM_BOOKS[index]}/${chapter}.json`);
+  if (!res.ok) throw new Error("Failed to load chapter");
+  const response = helloaoToResponse((await res.json()) as HelloaoChapter, bookSlug, translation);
+  if (!response.verses.length) throw new Error("Chapter not found");
+  return response;
 }
 
 interface GetBibleChapter {
@@ -125,6 +130,7 @@ export async function fetchChapter(
   const offline = await readOfflineChapter(translation, bookSlug, chapter);
   if (offline) return offline;
   if (translation === TAGALOG_TRANSLATION) return fetchTagalogChapter(bookSlug, chapter);
+  if (translationInfo(translation).source === "helloao") return fetchHelloaoChapter(translation, bookSlug, chapter);
   const singleChapterCount = SINGLE_CHAPTER_VERSE_COUNTS[bookSlug];
   const path = singleChapterCount
     ? `${bookSlug}+1:1-${singleChapterCount}`
@@ -149,6 +155,9 @@ export async function fetchPassage(
   if (offline) return offline;
   if (translation === TAGALOG_TRANSLATION) {
     return (await passageFromChapter(reference, fetchTagalogChapter))!;
+  }
+  if (translationInfo(translation).source === "helloao") {
+    return (await passageFromChapter(reference, (book, ch) => fetchHelloaoChapter(translation, book, ch)))!;
   }
   const res = await fetch(
     `${BASE_URL}/${encodeURIComponent(reference)}?translation=${translation}`

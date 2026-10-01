@@ -10,6 +10,8 @@ import {
   BIBLE_TRANSLATIONS,
   DEFAULT_TRANSLATION,
   TAGALOG_TRANSLATION,
+  isPhilippineTranslation,
+  translationInfo,
   type BibleApiVerse,
 } from "@/lib/bible/api";
 import { useUserCollection } from "@/lib/hooks/use-collection";
@@ -56,7 +58,9 @@ export function ChapterReaderClient({ bookSlug: bookProp, chapter: chapterProp }
   // Members who never picked a version get the Bible in their app language.
   const translation =
     profile?.bibleTranslation ?? (lang === "tl" ? TAGALOG_TRANSLATION : DEFAULT_TRANSLATION);
-  const isTagalog = translation === TAGALOG_TRANSLATION;
+  // Tagalog, Cebuano, Hiligaynon and Ilocano: book names come from the text,
+  // and the phone reads them aloud with a Filipino (or the closest) voice.
+  const isTagalog = isPhilippineTranslation(translation);
 
   const verseTexts = useMemo(() => verses?.map((v) => cleanVerseText(v.text)) ?? [], [verses]);
   const speech = useBibleSpeech(verseTexts, isTagalog ? "tl" : "en");
@@ -197,11 +201,20 @@ export function ChapterReaderClient({ bookSlug: bookProp, chapter: chapterProp }
             aria-label="Bible translation"
             className="mx-auto mt-0.5 block bg-transparent text-center text-[0.625rem] text-muted-foreground"
           >
-            {BIBLE_TRANSLATIONS.map((t) => (
-              <option key={t.id} value={t.id}>
-                {t.name}
-              </option>
-            ))}
+            <optgroup label="Filipino">
+              {BIBLE_TRANSLATIONS.filter((t) => t.lang !== "en").map((t) => (
+                <option key={t.id} value={t.id}>
+                  {t.name}
+                </option>
+              ))}
+            </optgroup>
+            <optgroup label="English">
+              {BIBLE_TRANSLATIONS.filter((t) => t.lang === "en").map((t) => (
+                <option key={t.id} value={t.id}>
+                  {t.name}
+                </option>
+              ))}
+            </optgroup>
           </select>
         </div>
         <button
@@ -309,6 +322,9 @@ export function ChapterReaderClient({ bookSlug: bookProp, chapter: chapterProp }
               );
             })}
           </div>
+        )}
+        {verses && translationInfo(translation).credit && (
+          <p className="mt-6 text-center text-[0.625rem] text-muted-foreground">{translationInfo(translation).credit}</p>
         )}
       </div>
 

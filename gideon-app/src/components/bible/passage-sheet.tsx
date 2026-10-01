@@ -10,6 +10,7 @@ import {
   DEFAULT_TRANSLATION,
   fetchChapter,
   TAGALOG_TRANSLATION,
+  isPhilippineTranslation,
   translationName,
   type BibleApiVerse,
 } from "@/lib/bible/api";
@@ -69,7 +70,7 @@ function PassageBody({ passage }: { passage: VerseRef }) {
   }, [verses, first]);
 
   // The Tagalog Bible uses Tagalog book names (e.g. Juan, Mga Awit).
-  const bookName = (translation === TAGALOG_TRANSLATION && verses?.[0]?.book_name) || passage.book;
+  const bookName = (isPhilippineTranslation(translation) && verses?.[0]?.book_name) || passage.book;
 
   return (
     <>
