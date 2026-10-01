@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { ChevronsRight, Volume2, VolumeX } from "lucide-react";
 import { LandingScene } from "@/components/intro/landing-scene";
 import { useLanguage, type Language } from "@/lib/i18n";
@@ -108,20 +107,6 @@ const NARRATION: { from: number; to: number; text: Text }[] = [
     to: INTRO_DURATION,
     text: { en: "Welcome to Gideon.", tl: "Maligayang pagdating sa Gideon." },
   },
-];
-
-/**
- * One camera move over the sunrise valley per scene (see film-cam-* in
- * globals.css). The pivot is where the camera looks: the sun, the people on
- * the path, Jesus on the hill.
- */
-const CAMERA: { origin: string }[] = [
-  { origin: "50% 52%" }, // the sunrise
-  { origin: "50% 100%" }, // people starting up the path
-  { origin: "50% 53%" }, // Jesus in the light
-  { origin: "50% 50%" }, // up the path toward Him
-  { origin: "50% 60%" }, // the whole valley
-  { origin: "50% 55%" }, // the reveal
 ];
 
 const SHADOW = "0 2px 18px rgba(0,0,0,0.65)";
@@ -326,26 +311,18 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
   const narration = NARRATION[timeline.narration];
 
   return (
-    <motion.div
+    // No fade on the whole film: it opens and ends on black (film-dip), which
+    // is far lighter for a phone than fading the entire animated scene.
+    <div
       className="fixed inset-0 z-[100] overflow-hidden bg-black text-white"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.8 }}
       role="dialog"
       aria-label="GIDEON — A Christian Journey"
     >
-      {/* The camera: one gentle move per scene over the living valley. Same
-          scene all the way through (so the sunrise plays once); only the move
-          changes. The zoom stays modest so phones don't have to redraw the
-          whole scene sharper at every cut. */}
-      <div
-        className="absolute inset-0"
-        style={{
-          animation: `film-cam-${scene} ${SCENE_LENGTH + 0.4}s ease-in-out both`,
-          transformOrigin: CAMERA[scene].origin,
-        }}
-      >
+      {/* The camera pans over the living valley, one move per scene. The zoom
+          is the same all film long (see film-cam-* in globals.css), so the
+          phone draws the scene once instead of redrawing it at every cut.
+          Same scene all the way through, so the sunrise plays once. */}
+      <div className="absolute inset-0" style={{ animation: `film-cam-${scene} ${SCENE_LENGTH + 0.4}s ease-in-out both` }}>
         <LandingScene />
       </div>
       {/* Cut through black between scenes */}
@@ -437,6 +414,6 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
           <ChevronsRight className="size-4" />
         </button>
       </div>
-    </motion.div>
+    </div>
   );
 }

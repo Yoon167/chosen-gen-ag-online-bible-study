@@ -59,9 +59,11 @@ export function WelcomeGate({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <AnimatePresence>
+      {/* "wait": the landing finishes fading before the film starts, so the
+          phone never draws two animated valleys at once. */}
+      <AnimatePresence mode="wait">
         {current === "landing" && (
-          <motion.div key="landing" exit={{ opacity: 0 }} transition={{ duration: 0.8 }}>
+          <motion.div key="landing" exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
             <Landing
               onboarded={onboarded}
               settled={returned}

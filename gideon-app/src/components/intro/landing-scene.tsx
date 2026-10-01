@@ -15,7 +15,7 @@ import { useEffect, useRef } from "react";
  * GPU runs by itself (see "Landing scene" in globals.css). Nothing animates
  * inside an SVG, and nothing is blended, masked or blurred while it moves,
  * because those make the phone redraw the scene on the main thread every
- * frame. Walking legs are three still poses that take turns.
+ * frame. Walking legs are still poses on a strip that slides.
  */
 
 // Deterministic pseudo-random so the scene is identical on every render.
@@ -197,41 +197,32 @@ function Figures({ kind, pose }: { kind: Kind; pose: Pose }) {
   }
 }
 
-/**
- * One still pose of a group, backlit by the sunrise: a light copy drawn a
- * little wider sits behind the dark silhouette and shows as a thin rim.
- */
-function PoseArt({ kind, pose }: { kind: Kind; pose: Pose }) {
-  const rim = "rgba(255,214,150,0.5)";
-  return (
-    <svg viewBox={VIEWBOX[kind]} className="h-full overflow-visible" fill="currentColor">
-      <g fill={rim} stroke={rim} strokeWidth="1.6" strokeLinejoin="round">
-        <Figures kind={kind} pose={pose} />
-      </g>
-      <Figures kind={kind} pose={pose} />
-    </svg>
-  );
-}
+/** The four steps of a stride: feet together, left foot up, together, right foot up. */
+const STRIDE: Pose[] = ["down", "left", "down", "right"];
 
 /**
- * A group walking: feet together, left foot up, together, right foot up, a
- * stride every 0.9s. Each loop holds eight strides (see landing-pose-* in
- * globals.css) because every loop restart costs the phone main-thread work.
+ * A group walking. The four poses sit side by side on one strip that slides
+ * behind a window, one pose every 0.225s (see landing-stride in globals.css):
+ * a single GPU animation, so the figures can't blink between poses. Each
+ * pose is backlit by the sunrise: a light copy drawn a little wider sits
+ * behind the dark silhouette and shows as a thin rim.
  */
 function Walking({ kind, phase }: { kind: Kind; phase: number }) {
-  const pose = (name: string, offset: number) => ({
-    animation: `${name} 7.2s step-end ${-(phase + offset)}s infinite`,
-  });
+  const [, , w, h] = VIEWBOX[kind].split(" ").map(Number);
+  const rim = "rgba(255,214,150,0.5)";
   return (
-    <div className="relative h-full">
-      <div className="intro-anim h-full" style={pose("landing-pose-down", 0)}>
-        <PoseArt kind={kind} pose="down" />
-      </div>
-      <div className="intro-anim absolute inset-0 opacity-0" style={pose("landing-pose-up", 0)}>
-        <PoseArt kind={kind} pose="left" />
-      </div>
-      <div className="intro-anim absolute inset-0 opacity-0" style={pose("landing-pose-up", 0.45)}>
-        <PoseArt kind={kind} pose="right" />
+    <div className="h-full overflow-hidden" style={{ aspectRatio: `${w} / ${h}` }}>
+      <div className="intro-anim h-full w-[400%]" style={{ animation: `landing-stride 7.2s step-end ${-phase}s infinite` }}>
+        <svg viewBox={`0 0 ${w * 4} ${h}`} className="size-full" fill="currentColor">
+          {STRIDE.map((pose, i) => (
+            <g key={i} transform={`translate(${w * i} 0)`}>
+              <g fill={rim} stroke={rim} strokeWidth="1.6" strokeLinejoin="round">
+                <Figures kind={kind} pose={pose} />
+              </g>
+              <Figures kind={kind} pose={pose} />
+            </g>
+          ))}
+        </svg>
       </div>
     </div>
   );
