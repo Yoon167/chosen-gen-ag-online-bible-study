@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -44,19 +44,23 @@ export function TeachingFormDialog({
   const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
   const [attachmentUrl, setAttachmentUrl] = useState("");
 
-  useEffect(() => {
-    if (!open) return;
-    setTopic(teaching?.topic ?? "");
-    setSpeaker(teaching?.speaker ?? "");
-    setScripture(teaching?.scripture ?? "");
-    setKeyPointsText(teaching?.keyPoints.join("\n") ?? "");
-    setSummary(teaching?.summary ?? "");
-    setApplication(teaching?.application ?? "");
-    setDate(
-      teaching ? new Date(teaching.date).toISOString().slice(0, 10) : new Date().toISOString().slice(0, 10)
-    );
-    setAttachmentUrl(teaching?.attachmentUrl ?? "");
-  }, [open, teaching]);
+  // Opening the dialog fills the form, adjusted during render.
+  const [shown, setShown] = useState({ open, teaching });
+  if (shown.open !== open || shown.teaching !== teaching) {
+    setShown({ open, teaching });
+    if (open) {
+      setTopic(teaching?.topic ?? "");
+      setSpeaker(teaching?.speaker ?? "");
+      setScripture(teaching?.scripture ?? "");
+      setKeyPointsText(teaching?.keyPoints.join("\n") ?? "");
+      setSummary(teaching?.summary ?? "");
+      setApplication(teaching?.application ?? "");
+      setDate(
+        teaching ? new Date(teaching.date).toISOString().slice(0, 10) : new Date().toISOString().slice(0, 10)
+      );
+      setAttachmentUrl(teaching?.attachmentUrl ?? "");
+    }
+  }
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>

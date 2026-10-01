@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useMemo, useState, useSyncExternalStore } from "react";
 import { Sun, Heart, Share2, Check, RotateCcw } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { Section } from "@/components/shared/section";
@@ -13,13 +13,21 @@ import { cn } from "@/lib/utils";
 import { LanguageToggle } from "@/components/language-toggle";
 import { useLanguage } from "@/lib/i18n";
 
-export default function DevotionPage() {
-  const [today, setToday] = useState<{ devotion: StaticDevotion; dateKey: string } | null>(null);
-  const { lang, t } = useLanguage();
+const noSubscribe = () => () => {};
 
-  useEffect(() => {
-    setToday(devotionOfTheDay(new Date(), lang));
-  }, [lang]);
+function localTodayKey() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
+export default function DevotionPage() {
+  const { lang, t } = useLanguage();
+  // Today's date is only known in the browser (pages are built ahead of time).
+  const todayKey = useSyncExternalStore(noSubscribe, localTodayKey, () => null);
+  const today = useMemo(
+    () => (todayKey ? devotionOfTheDay(new Date(`${todayKey}T12:00:00`), lang) : null),
+    [todayKey, lang]
+  );
 
   if (!today) {
     return (
@@ -39,12 +47,10 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
   const { entry, update } = useDevotionLog(dateKey, devotion.title);
   const { items: history } = useDevotionHistory();
   const { t } = useLanguage();
-  const [noteDraft, setNoteDraft] = useState("");
-  const [noteDirty, setNoteDirty] = useState(false);
-
-  useEffect(() => {
-    if (entry && !noteDirty) setNoteDraft(entry.note ?? "");
-  }, [entry, noteDirty]);
+  // The saved note shows until you start editing; then your draft does.
+  const [draft, setDraft] = useState<string | null>(null);
+  const noteDirty = draft !== null;
+  const noteDraft = draft ?? entry?.note ?? "";
 
   async function share() {
     const text = `${devotion.title} (${devotion.scriptureReference})\n\n${devotion.mainLesson}\n\n— GIDEON`;
@@ -146,8 +152,7 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
         <Textarea
           value={noteDraft}
           onChange={(e) => {
-            setNoteDraft(e.target.value);
-            setNoteDirty(true);
+            setDraft(e.target.value);
           }}
           placeholder={t("devotion.notePlaceholder")}
           className="min-h-24"
@@ -158,7 +163,7 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
             className="mt-2"
             onClick={() => {
               update({ note: noteDraft });
-              setNoteDirty(false);
+              setDraft(null);
             }}
           >
             {t("devotion.saveNote")}

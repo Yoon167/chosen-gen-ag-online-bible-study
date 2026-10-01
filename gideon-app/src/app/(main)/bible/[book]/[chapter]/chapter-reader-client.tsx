@@ -47,8 +47,9 @@ export function ChapterReaderClient({ bookSlug: bookProp, chapter: chapterProp }
   const chapter = chapterProp ?? parseInt(params.chapter, 10);
   const book = findBook(bookSlug);
 
-  const [verses, setVerses] = useState<BibleApiVerse[] | null>(null);
-  const [error, setError] = useState(false);
+  // The loaded chapter, tagged with what was asked for, so a slow answer for
+  // a chapter you already left never shows up on the new one.
+  const [loaded, setLoaded] = useState<{ key: string; verses: BibleApiVerse[] | null } | null>(null);
   const [selection, setSelection] = useState<VerseSelection | null>(null);
   const [imageVerse, setImageVerse] = useState<VerseForImage | null>(null);
 
@@ -58,6 +59,9 @@ export function ChapterReaderClient({ bookSlug: bookProp, chapter: chapterProp }
   // Members who never picked a version get the Bible in their app language.
   const translation =
     profile?.bibleTranslation ?? (lang === "tl" ? TAGALOG_TRANSLATION : DEFAULT_TRANSLATION);
+  const chapterKey = `${translation}/${bookSlug}/${chapter}`;
+  const verses = loaded?.key === chapterKey ? loaded.verses : null;
+  const error = loaded?.key === chapterKey && !loaded.verses;
   // Tagalog, Cebuano, Hiligaynon and Ilocano: book names come from the text,
   // and the phone reads them aloud with a Filipino (or the closest) voice.
   const isTagalog = isPhilippineTranslation(translation);
@@ -108,17 +112,20 @@ export function ChapterReaderClient({ bookSlug: bookProp, chapter: chapterProp }
 
   useEffect(() => {
     if (!book) return;
-    setVerses(null);
-    setError(false);
+    let cancelled = false;
     fetchChapter(bookSlug, chapter, translation)
       .then((res) => {
-        setVerses(res.verses);
+        if (cancelled) return;
+        setLoaded({ key: chapterKey, verses: res.verses });
         recordHistory(book.name, bookSlug, chapter);
         markReadingDone();
       })
-      .catch(() => setError(true));
+      .catch(() => !cancelled && setLoaded({ key: chapterKey, verses: null }));
+    return () => {
+      cancelled = true;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bookSlug, chapter, translation]);
+  }, [chapterKey]);
 
   const highlightMap = useMemo(
     () =>

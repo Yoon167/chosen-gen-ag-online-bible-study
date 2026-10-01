@@ -34,13 +34,10 @@ export function useRecordBibleHistory() {
 export function useBibleHistory() {
   const { uid, loading: authLoading } = useAuth();
   const [items, setItems] = useState<BibleHistoryEntry[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loadedFor, setLoadedFor] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!uid) {
-      if (!authLoading) setLoading(false);
-      return;
-    }
+    if (!uid) return;
     const q = query(
       collection(db, "users", uid, "bibleHistory"),
       orderBy("visitedAt", "desc")
@@ -51,12 +48,12 @@ export function useBibleHistory() {
         setItems(
           snap.docs.map((d) => ({ id: d.id, ...d.data() }) as BibleHistoryEntry)
         );
-        setLoading(false);
+        setLoadedFor(uid);
       },
-      () => setLoading(false)
+      () => setLoadedFor(uid)
     );
     return unsubscribe;
-  }, [uid, authLoading]);
+  }, [uid]);
 
-  return { items, loading: loading || authLoading };
+  return { items, loading: authLoading || (!!uid && loadedFor !== uid) };
 }

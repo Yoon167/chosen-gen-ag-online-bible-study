@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -29,22 +29,26 @@ export function ChurchTeachingFormDialog({
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (!open) return;
-    setError(null);
-    setValues(
-      topic
-        ? {
-            title: topic.title,
-            date: topic.date,
-            verse: topic.verse ?? "",
-            description: topic.description ?? "",
-            resourceUrl: topic.resourceUrl ?? "",
-            notes: topic.notes ?? "",
-          }
-        : empty()
-    );
-  }, [open, topic]);
+  // Opening the dialog fills the form, adjusted during render.
+  const [shown, setShown] = useState({ open, topic });
+  if (shown.open !== open || shown.topic !== topic) {
+    setShown({ open, topic });
+    if (open) {
+      setError(null);
+      setValues(
+        topic
+          ? {
+              title: topic.title,
+              date: topic.date,
+              verse: topic.verse ?? "",
+              description: topic.description ?? "",
+              resourceUrl: topic.resourceUrl ?? "",
+              notes: topic.notes ?? "",
+            }
+          : empty()
+      );
+    }
+  }
 
   function set<K extends keyof ChurchTeachingValues>(key: K, value: string) {
     setValues((v) => ({ ...v, [key]: value }));

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -44,14 +44,18 @@ export function NoteEditorDialog({
   const [category, setCategory] = useState<NoteCategory>("General");
   const [tags, setTags] = useState("");
 
-  useEffect(() => {
+  // Opening the dialog (or switching notes) fills the form, adjusted during
+  // render instead of in an effect.
+  const [shown, setShown] = useState({ open, note });
+  if (shown.open !== open || shown.note !== note) {
+    setShown({ open, note });
     if (open) {
       setTitle(note?.title ?? "");
       setContent(note?.content ?? "");
       setCategory(note?.category ?? "General");
       setTags(note?.tags.join(", ") ?? "");
     }
-  }, [open, note]);
+  }
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>

@@ -22,13 +22,11 @@ const DEFAULT_PROFILE: Omit<UserProfile, "uid"> = {
 export function useProfile() {
   const { user, uid, loading: authLoading, error: authError } = useAuth();
   const [profile, setProfile] = useState<UserProfile | null>(null);
-  const [loading, setLoading] = useState(true);
+  // Whose profile is loaded; loading is derived from it.
+  const [loadedFor, setLoadedFor] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!uid) {
-      if (!authLoading) setLoading(false);
-      return;
-    }
+    if (!uid) return;
     const ref = doc(db, "users", uid);
     const unsubscribe = onSnapshot(
       ref,
@@ -47,12 +45,12 @@ export function useProfile() {
         } else {
           setProfile({ uid, ...DEFAULT_PROFILE, ...snap.data() } as UserProfile);
         }
-        setLoading(false);
+        setLoadedFor(uid);
       },
-      () => setLoading(false)
+      () => setLoadedFor(uid)
     );
     return unsubscribe;
-  }, [uid, authLoading]);
+  }, [uid]);
 
   async function updateProfile(data: Partial<UserProfile>) {
     if (!uid) throw new Error(authError ?? "auth/not-signed-in");
@@ -77,7 +75,7 @@ export function useProfile() {
     profile,
     // Signed into a real (email) account rather than an anonymous session.
     hasAccount: !!user && !user.isAnonymous,
-    loading: loading || authLoading,
+    loading: authLoading || (!!uid && loadedFor !== uid),
     authError,
     isLeader: profile?.role === "leader",
     updateProfile,

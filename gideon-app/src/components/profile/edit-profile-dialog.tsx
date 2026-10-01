@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Camera } from "lucide-react";
 import {
   Dialog,
@@ -41,13 +41,17 @@ export function EditProfileDialog({
   const [photoError, setPhotoError] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
+  // Opening the dialog (or a profile update) refills the form, adjusted
+  // during render instead of in an effect.
+  const [shown, setShown] = useState({ profile, open });
+  if (shown.profile !== profile || shown.open !== open) {
+    setShown({ profile, open });
     setName(profile?.displayName ?? "");
     setMinistry(profile?.ministry ?? "");
     setBio(profile?.bio ?? "");
     setPhotoUrl(profile?.photoUrl ?? "");
     setPhotoError("");
-  }, [profile, open]);
+  }
 
   const initials = (name || "B")
     .split(" ")

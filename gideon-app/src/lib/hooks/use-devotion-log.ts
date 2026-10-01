@@ -24,13 +24,11 @@ export interface DevotionLogEntry {
 export function useDevotionLog(dateKey: string, title: string) {
   const { uid, loading: authLoading } = useAuth();
   const [entry, setEntry] = useState<DevotionLogEntry | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loadedKey, setLoadedKey] = useState<string | null>(null);
+  const key = uid ? `${uid}/${dateKey}` : null;
 
   useEffect(() => {
-    if (!uid) {
-      if (!authLoading) setLoading(false);
-      return;
-    }
+    if (!uid || !key) return;
     const ref = doc(db, "users", uid, "devotionLog", dateKey);
     const unsubscribe = onSnapshot(
       ref,
@@ -40,12 +38,12 @@ export function useDevotionLog(dateKey: string, title: string) {
             ? (snap.data() as DevotionLogEntry)
             : { date: dateKey, title, completed: false, favorited: false, note: "", updatedAt: Date.now() }
         );
-        setLoading(false);
+        setLoadedKey(key);
       },
-      () => setLoading(false)
+      () => setLoadedKey(key)
     );
     return unsubscribe;
-  }, [uid, dateKey, title, authLoading]);
+  }, [uid, dateKey, title, key]);
 
   async function update(data: Partial<DevotionLogEntry>) {
     if (!uid) return;
@@ -56,19 +54,16 @@ export function useDevotionLog(dateKey: string, title: string) {
     );
   }
 
-  return { entry, loading: loading || authLoading, update };
+  return { entry, loading: authLoading || (key !== null && loadedKey !== key), update };
 }
 
 export function useDevotionHistory() {
   const { uid, loading: authLoading } = useAuth();
   const [items, setItems] = useState<DevotionLogEntry[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loadedFor, setLoadedFor] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!uid) {
-      if (!authLoading) setLoading(false);
-      return;
-    }
+    if (!uid) return;
     const q = query(
       collection(db, "users", uid, "devotionLog"),
       orderBy("date", "desc")
@@ -77,12 +72,12 @@ export function useDevotionHistory() {
       q,
       (snap) => {
         setItems(snap.docs.map((d) => d.data() as DevotionLogEntry));
-        setLoading(false);
+        setLoadedFor(uid);
       },
-      () => setLoading(false)
+      () => setLoadedFor(uid)
     );
     return unsubscribe;
-  }, [uid, authLoading]);
+  }, [uid]);
 
-  return { items, loading: loading || authLoading };
+  return { items, loading: authLoading || (!!uid && loadedFor !== uid) };
 }

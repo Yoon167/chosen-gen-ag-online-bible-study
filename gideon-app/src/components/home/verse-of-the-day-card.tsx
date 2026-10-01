@@ -13,24 +13,25 @@ import {
 import { useLanguage } from "@/lib/i18n";
 
 export function VerseOfTheDayCard() {
-  const [text, setText] = useState<string | null>(null);
-  const [reference, setReference] = useState(verseOfTheDayReference());
-  const [error, setError] = useState(false);
+  // Today's verse in the language it was loaded for.
+  const [loaded, setLoaded] = useState<{ lang: string; text: string | null; reference: string } | null>(null);
   const [imageOpen, setImageOpen] = useState(false);
   const { lang, t } = useLanguage();
 
   useEffect(() => {
     const ref = verseOfTheDayReference();
-    setText(null);
-    setError(false);
-    setReference(ref);
+    let cancelled = false;
     fetchPassage(ref, lang === "tl" ? TAGALOG_TRANSLATION : undefined)
-      .then((res) => {
-        setText(cleanVerseText(res.text));
-        setReference(res.reference);
-      })
-      .catch(() => setError(true));
+      .then((res) => !cancelled && setLoaded({ lang, text: cleanVerseText(res.text), reference: res.reference }))
+      .catch(() => !cancelled && setLoaded({ lang, text: null, reference: ref }));
+    return () => {
+      cancelled = true;
+    };
   }, [lang]);
+  const current = loaded?.lang === lang ? loaded : null;
+  const text = current?.text ?? null;
+  const error = !!current && current.text === null;
+  const reference = current?.reference ?? "";
 
   async function share() {
     const shareText = `"${text}" — ${reference} (GIDEON)`;

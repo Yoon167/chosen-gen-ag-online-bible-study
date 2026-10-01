@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useState, useSyncExternalStore } from "react";
 import { useProfile } from "@/lib/hooks/use-profile";
 
 export type Language = "en" | "tl";
@@ -97,24 +97,28 @@ const LanguageContext = createContext<LanguageContextValue>({
   t: (key) => STRINGS[key].en,
 });
 
+const noSubscribe = () => () => {};
+
+function readSavedLanguage(): Language | null {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    return saved === "en" || saved === "tl" ? saved : null;
+  } catch {
+    return null;
+  }
+}
+
 /**
  * App-wide language. Saved on the member's profile so it follows them, and
  * mirrored to localStorage so the right language shows before Firestore loads.
  */
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const { profile, updateProfile } = useProfile();
-  const [lang, setLangState] = useState<Language>("en");
-
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved === "en" || saved === "tl") setLangState(saved);
-    } catch {}
-  }, []);
-
-  useEffect(() => {
-    if (profile?.language) setLangState(profile.language);
-  }, [profile?.language]);
+  // A choice made on this screen wins; then the profile's; then this
+  // device's saved one (shown before Firestore loads); then English.
+  const [chosen, setChosen] = useState<Language | null>(null);
+  const saved = useSyncExternalStore(noSubscribe, readSavedLanguage, () => null);
+  const lang: Language = chosen ?? profile?.language ?? saved ?? "en";
 
   useEffect(() => {
     document.documentElement.lang = lang === "tl" ? "tl" : "en";
@@ -122,7 +126,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const setLang = useCallback(
     (next: Language) => {
-      setLangState(next);
+      setChosen(next);
       try {
         localStorage.setItem(STORAGE_KEY, next);
       } catch {}

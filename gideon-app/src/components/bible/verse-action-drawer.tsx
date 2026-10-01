@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Drawer,
   DrawerContent,
@@ -47,11 +47,14 @@ export function VerseActionDrawer({
 }) {
   const [noteOpen, setNoteOpen] = useState(false);
   const [noteDraft, setNoteDraft] = useState(existingNote);
-
-  useEffect(() => {
+  // A different verse (or its saved note changing) resets the note editor,
+  // adjusted during render instead of in an effect.
+  const [shown, setShown] = useState({ selection, existingNote });
+  if (shown.selection !== selection || shown.existingNote !== existingNote) {
+    setShown({ selection, existingNote });
     setNoteDraft(existingNote);
     setNoteOpen(false);
-  }, [selection, existingNote]);
+  }
 
   const reference = selection
     ? `${selection.book} ${selection.chapter}:${selection.verse}`

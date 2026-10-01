@@ -27,7 +27,11 @@ export function useUserCollection<T extends DocumentData>(
 ) {
   const { uid, loading: authLoading } = useAuth();
   const [items, setItems] = useState<(T & { id: string })[]>([]);
-  const [loading, setLoading] = useState(true);
+  // Which query the current items belong to; loading is derived from it
+  // instead of being set inside the effect.
+  const [loadedKey, setLoadedKey] = useState<string | null>(null);
+  const key = uid ? `${uid}/${subpath}/${orderField}/${orderDir}` : null;
+  const loading = authLoading || (key !== null && loadedKey !== key);
 
   const colRef = useMemo(() => {
     if (!uid) return null;
@@ -35,11 +39,7 @@ export function useUserCollection<T extends DocumentData>(
   }, [uid, subpath]);
 
   useEffect(() => {
-    if (!colRef) {
-      if (!authLoading) setLoading(false);
-      return;
-    }
-    setLoading(true);
+    if (!colRef || !key) return;
     const q = query(colRef, orderBy(orderField, orderDir));
     const unsubscribe = onSnapshot(
       q,
@@ -49,12 +49,12 @@ export function useUserCollection<T extends DocumentData>(
             (d) => ({ id: d.id, ...d.data() }) as T & { id: string }
           )
         );
-        setLoading(false);
+        setLoadedKey(key);
       },
-      () => setLoading(false)
+      () => setLoadedKey(key)
     );
     return unsubscribe;
-  }, [colRef, orderField, orderDir, authLoading]);
+  }, [colRef, orderField, orderDir, key]);
 
   async function add(data: Omit<T, "id">) {
     if (!colRef) return;

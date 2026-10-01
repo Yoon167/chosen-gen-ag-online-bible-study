@@ -9,13 +9,11 @@ import type { ReadingPlanProgress } from "@/types";
 export function useReadingPlanProgress(planId: string) {
   const { uid, loading: authLoading } = useAuth();
   const [progress, setProgress] = useState<ReadingPlanProgress | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loadedKey, setLoadedKey] = useState<string | null>(null);
+  const key = uid ? `${uid}/${planId}` : null;
 
   useEffect(() => {
-    if (!uid) {
-      if (!authLoading) setLoading(false);
-      return;
-    }
+    if (!uid || !key) return;
     const ref = doc(db, "users", uid, "readingProgress", planId);
     const unsubscribe = onSnapshot(
       ref,
@@ -25,12 +23,12 @@ export function useReadingPlanProgress(planId: string) {
         } else {
           setProgress({ planId, startedAt: Date.now(), completedDays: [], currentDay: 1 });
         }
-        setLoading(false);
+        setLoadedKey(key);
       },
-      () => setLoading(false)
+      () => setLoadedKey(key)
     );
     return unsubscribe;
-  }, [uid, planId, authLoading]);
+  }, [uid, planId, key]);
 
   async function toggleDay(day: number) {
     if (!uid) return;
@@ -48,5 +46,5 @@ export function useReadingPlanProgress(planId: string) {
     await setDoc(doc(db, "users", uid, "readingProgress", planId), next);
   }
 
-  return { progress, loading: loading || authLoading, toggleDay };
+  return { progress, loading: authLoading || (key !== null && loadedKey !== key), toggleDay };
 }
