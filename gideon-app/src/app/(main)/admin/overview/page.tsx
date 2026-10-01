@@ -129,7 +129,10 @@ export default function NationalDashboardPage() {
               )}
               {waiting.length > 0 && (
                 <Row icon={<UserPlus className="size-4 text-primary" />} names={waiting.map((a) => `${a.church.name} (${a.pending})`)}>
-                  {tx(`${sum((a) => a.pending)} people waiting for an AG leader to approve them`, `${sum((a) => a.pending)} tao ang naghihintay ng pag-apruba ng AG leader`)}
+                  {tx(
+                    `${sum((a) => a.pending)} ${sum((a) => a.pending) === 1 ? "person" : "people"} waiting for an AG leader's approval`,
+                    `${sum((a) => a.pending)} tao ang naghihintay ng pag-apruba ng AG leader`
+                  )}
                 </Row>
               )}
               {noLeader.length > 0 && (
