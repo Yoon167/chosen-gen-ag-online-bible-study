@@ -125,6 +125,25 @@ await t("national admin lists check-in markers", assertSucceeds(getDocs(collecti
 await t("national admin reads the roster", assertSucceeds(getDocs(collection(ADMIN, `churches/${C}/members`))));
 await t("member still cannot list markers", assertFails(getDocs(collection(real("ben"), `churches/${C}/checkinMarks`))));
 
+// ---------- Prayer chains ----------
+const PC = `churches/${C}/prayerChains/pc1`;
+const chain = (extra = {}) => ({ title: "24-hour prayer", note: "", startsAt: 1, hours: 24, active: true, createdBy: "lead", createdAt: 1, ...extra });
+const slot = (uid, hour, extra = {}) => ({ uid, name: uid, hour, at: 1, ...extra });
+await t("leader starts a prayer chain", assertSucceeds(setDoc(doc(real("lead"), PC), chain())));
+await t("member cannot start a chain", assertFails(setDoc(doc(real("ana"), `churches/${C}/prayerChains/pc2`), chain())));
+await t("chain longer than a week refused", assertFails(setDoc(doc(real("lead"), `churches/${C}/prayerChains/pc3`), chain({ hours: 169 }))));
+await t("member signs up for an hour", assertSucceeds(setDoc(doc(real("ana"), `${PC}/slots/5_ana`), slot("ana", 5))));
+await t("two people can share an hour", assertSucceeds(setDoc(doc(real("ben"), `${PC}/slots/5_ben`), slot("ben", 5))));
+await t("hour must be inside the chain", assertFails(setDoc(doc(real("ana"), `${PC}/slots/24_ana`), slot("ana", 24))));
+await t("slot id must match hour and uid", assertFails(setDoc(doc(real("ana"), `${PC}/slots/6_ana`), slot("ana", 7))));
+await t("cannot sign someone else up", assertFails(setDoc(doc(real("ana"), `${PC}/slots/8_ben`), slot("ben", 8))));
+await t("pending member cannot sign up", assertFails(setDoc(doc(real("pend"), `${PC}/slots/9_pend`), slot("pend", 9))));
+await t("AG sees who is praying when", assertSucceeds(getDocs(collection(real("ben"), `${PC}/slots`))));
+await t("outsider cannot see the chain", assertFails(getDocs(collection(real("out"), `${PC}/slots`))));
+await t("member cannot remove someone else's hour", assertFails(deleteDoc(doc(real("ana"), `${PC}/slots/5_ben`))));
+await t("member leaves their hour", assertSucceeds(deleteDoc(doc(real("ana"), `${PC}/slots/5_ana`))));
+await t("leader removes any hour", assertSucceeds(deleteDoc(doc(real("lead"), `${PC}/slots/5_ben`))));
+
 await env.cleanup();
 console.log(failed ? `${failed} FAILED` : "ALL PASSED");
 process.exit(failed ? 1 : 0);

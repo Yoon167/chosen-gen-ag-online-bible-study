@@ -69,3 +69,45 @@ export function downloadReminder({
   a.click();
   setTimeout(() => URL.revokeObjectURL(href), 1000);
 }
+
+const utc = (ms: number) => new Date(ms).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+
+/** One-time events (e.g. your hours in a prayer chain), each with an alert 10 minutes before. */
+export function downloadEvents({
+  events,
+  url,
+  fileName,
+}: {
+  events: { start: number; end: number; title: string; body: string }[];
+  url: string;
+  fileName: string;
+}) {
+  const stamp = utc(Date.now());
+  const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Gideon//Events//EN"];
+  events.forEach((e, i) => {
+    lines.push(
+      "BEGIN:VEVENT",
+      `UID:gideon-${fileName}-${e.start}-${i}@gideon-app.web.app`,
+      `DTSTAMP:${stamp}`,
+      `DTSTART:${utc(e.start)}`,
+      `DTEND:${utc(e.end)}`,
+      `SUMMARY:${esc(e.title)}`,
+      `DESCRIPTION:${esc(`${e.body}\n${url}`)}`,
+      `URL:${url}`,
+      "BEGIN:VALARM",
+      "ACTION:DISPLAY",
+      `DESCRIPTION:${esc(e.title)}`,
+      "TRIGGER:-PT10M",
+      "END:VALARM",
+      "END:VEVENT"
+    );
+  });
+  lines.push("END:VCALENDAR");
+  const blob = new Blob([lines.join("\r\n")], { type: "text/calendar;charset=utf-8" });
+  const href = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = href;
+  a.download = `${fileName}.ics`;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(href), 1000);
+}

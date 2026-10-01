@@ -98,7 +98,7 @@ export function NotificationSheet({ open, onOpenChange }: { open: boolean; onOpe
   ];
 
   const cards: { id: HomeCard; label: Text }[] = [
-    { id: "urgent", label: { en: "Urgent prayer requests in my AG", tl: "Urgent na prayer request sa AG ko" } },
+    { id: "urgent", label: { en: "Urgent prayers and prayer chains in my AG", tl: "Urgent na panalangin at prayer chain sa AG ko" } },
     { id: "announcements", label: { en: "New AG announcements", tl: "Bagong anunsyo ng AG" } },
     { id: "memory", label: { en: "Memory verses to review", tl: "Mga talatang ire-review" } },
     { id: "reading", label: { en: "Today's AG reading", tl: "Babasahin ng AG ngayon" } },

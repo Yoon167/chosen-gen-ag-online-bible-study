@@ -18,6 +18,7 @@ import {
   NotebookPen,
   CalendarCheck2,
   PlusCircle,
+  Link2,
 } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
@@ -255,11 +256,12 @@ export default function MyChurchPage() {
               </Link>
             )}
 
-            <div className="grid grid-cols-3 gap-2" data-tour="ag-community">
+            <div className="grid grid-cols-2 gap-2" data-tour="ag-community">
               {[
                 { href: "/church/announcements", icon: Megaphone, label: tx("Announcements", "Anunsyo") },
                 { href: "/sermons", icon: NotebookPen, label: tx("Sermon notes", "Sermon notes") },
                 { href: "/church/reading", icon: CalendarCheck2, label: tx("Reading plan", "Reading plan") },
+                { href: "/church/prayer-chain", icon: Link2, label: tx("Prayer chain", "Prayer chain") },
               ].map((l) => (
                 <Link
                   key={l.href}

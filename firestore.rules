@@ -421,6 +421,39 @@ service cloud.firestore {
         }
       }
 
+      // Prayer chains: leaders set a stretch of hours (up to a week, e.g. a
+      // 24-hour prayer day during a fast); members sign up for hours. Slot
+      // doc id is "{hour}_{uid}", and several people may share an hour.
+      match /prayerChains/{chainId} {
+        allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);
+        allow create, update: if rankAtLeast(churchId, 3)
+          && request.resource.data.keys().hasOnly(['title', 'note', 'startsAt', 'hours', 'active', 'createdBy', 'createdAt'])
+          && validText(request.resource.data.title, 1, 100)
+          && validText(request.resource.data.note, 0, 500)
+          && request.resource.data.startsAt is int
+          && request.resource.data.hours is int
+          && request.resource.data.hours >= 1 && request.resource.data.hours <= 168
+          && request.resource.data.active is bool
+          && request.resource.data.createdBy is string
+          && request.resource.data.createdAt is int;
+        allow delete: if rankAtLeast(churchId, 3);
+
+        match /slots/{slotId} {
+          allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);
+          allow create: if request.auth != null && isActiveMember(churchId, request.auth.uid)
+            && request.resource.data.keys().hasOnly(['uid', 'name', 'hour', 'at'])
+            && request.resource.data.uid == request.auth.uid
+            && request.resource.data.hour is int
+            && request.resource.data.hour >= 0
+            && request.resource.data.hour < get(/databases/$(database)/documents/churches/$(churchId)/prayerChains/$(chainId)).data.hours
+            && slotId == string(request.resource.data.hour) + '_' + request.auth.uid
+            && validText(request.resource.data.name, 1, 100)
+            && request.resource.data.at is int;
+          allow delete: if rankAtLeast(churchId, 3)
+            || (request.auth != null && slotId.matches('[0-9]+_' + request.auth.uid));
+        }
+      }
+
       // Church prayer wall, for active members only. Anonymous requests store
       // no author at all, so nobody in the church can tell who posted them.
       match /prayers/{prayerId} {
