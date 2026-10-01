@@ -103,6 +103,28 @@ await t("AG sees who read", assertSucceeds(getDocs(collection(real("ben"), `${GP
 await t("outsider cannot see who read", assertFails(getDocs(collection(real("out"), `${GP("g1")}/progress`))));
 await t("member removes own progress", assertSucceeds(deleteDoc(doc(real("ana"), PR("ana")))));
 
+// ---------- Meeting RSVPs ----------
+const RS = (id) => `churches/${C}/meetings/m1/rsvps/${id}`;
+const rsvp = (uid, extra = {}) => ({ uid, name: uid, dateKey: "2026-10-04", going: true, at: 1, ...extra });
+await t("member RSVPs", assertSucceeds(setDoc(doc(real("ana"), RS("2026-10-04_ana")), rsvp("ana"))));
+await t("member changes their RSVP", assertSucceeds(setDoc(doc(real("ana"), RS("2026-10-04_ana")), rsvp("ana", { going: false }))));
+await t("member cannot RSVP for someone else", assertFails(setDoc(doc(real("ana"), RS("2026-10-04_ben")), rsvp("ben"))));
+await t("RSVP id must match date and uid", assertFails(setDoc(doc(real("ben"), RS("2026-10-05_ben")), rsvp("ben"))));
+await t("pending member cannot RSVP", assertFails(setDoc(doc(real("pend"), RS("2026-10-04_pend")), rsvp("pend"))));
+await t("going must be true or false", assertFails(setDoc(doc(real("ben"), RS("2026-10-04_ben")), rsvp("ben", { going: "yes" }))));
+await t("AG sees who is coming", assertSucceeds(getDocs(collection(real("ben"), `churches/${C}/meetings/m1/rsvps`))));
+await t("outsider cannot see RSVPs", assertFails(getDocs(collection(real("out"), `churches/${C}/meetings/m1/rsvps`))));
+await t("member removes own RSVP", assertSucceeds(deleteDoc(doc(real("ana"), RS("2026-10-04_ana")))));
+
+// ---------- National dashboard: check-in markers ----------
+const ADMIN = env.authenticatedContext("KcHm9yKcLcNbkTh7qbqi5pI7AYH2").firestore();
+await env.withSecurityRulesDisabled(async (ctx) => {
+  await setDoc(doc(ctx.firestore(), `churches/${C}/checkinMarks/2026-09-28_ana`), { uid: "ana", weekKey: "2026-09-28", at: 1 });
+});
+await t("national admin lists check-in markers", assertSucceeds(getDocs(collection(ADMIN, `churches/${C}/checkinMarks`))));
+await t("national admin reads the roster", assertSucceeds(getDocs(collection(ADMIN, `churches/${C}/members`))));
+await t("member still cannot list markers", assertFails(getDocs(collection(real("ben"), `churches/${C}/checkinMarks`))));
+
 await env.cleanup();
 console.log(failed ? `${failed} FAILED` : "ALL PASSED");
 process.exit(failed ? 1 : 0);

@@ -142,6 +142,12 @@ async function deleteEverything(user: User, onStep?: (step: string) => void) {
       // Their days in the AG's reading plans.
       const groupPlans = await getDocs(collection(db, "churches", churchId, "groupPlans"));
       await deleteRefs(groupPlans.docs.map((p) => doc(db, "churches", churchId, "groupPlans", p.id, "progress", uid)));
+      // Their RSVPs to AG meetings.
+      const meetings = await getDocs(collection(db, "churches", churchId, "meetings"));
+      for (const meeting of meetings.docs) {
+        const rsvps = await getDocs(query(collection(meeting.ref, "rsvps"), where("uid", "==", uid)));
+        await deleteRefs(rsvps.docs.map((r) => r.ref));
+      }
     }
   }
 

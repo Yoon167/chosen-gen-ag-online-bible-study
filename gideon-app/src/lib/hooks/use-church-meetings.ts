@@ -159,6 +159,42 @@ export function useAttendance(churchId: string | null, meetingId: string, dateKe
   return items;
 }
 
+export interface Rsvp {
+  uid: string;
+  name: string;
+  dateKey: string;
+  /** true: "I'm coming", false: "Can't make it". */
+  going: boolean;
+  at: number;
+}
+
+/** Everyone's RSVP for one occurrence (the whole AG sees who is coming). */
+export function useRsvps(churchId: string | null, meetingId: string, dateKey: string) {
+  const [items, setItems] = useState<Rsvp[]>([]);
+  useEffect(() => {
+    if (!churchId) return;
+    return onSnapshot(
+      query(collection(db, "churches", churchId, "meetings", meetingId, "rsvps"), where("dateKey", "==", dateKey)),
+      (snap) => setItems(snap.docs.map((d) => d.data() as Rsvp).sort((a, b) => a.name.localeCompare(b.name))),
+      () => setItems([])
+    );
+  }, [churchId, meetingId, dateKey]);
+  return items;
+}
+
+/** Sets your answer for one occurrence; `null` clears it. */
+export async function setRsvp(
+  churchId: string,
+  meetingId: string,
+  dateKey: string,
+  me: { uid: string; name: string },
+  going: boolean | null
+) {
+  const ref = doc(db, "churches", churchId, "meetings", meetingId, "rsvps", `${dateKey}_${me.uid}`);
+  if (going === null) await deleteDoc(ref);
+  else await setDoc(ref, { uid: me.uid, name: me.name, dateKey, going, at: Date.now() } satisfies Rsvp);
+}
+
 function icsDate(ms: number) {
   return new Date(ms).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
 }

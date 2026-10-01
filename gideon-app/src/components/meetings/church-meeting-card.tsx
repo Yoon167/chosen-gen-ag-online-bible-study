@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CalendarPlus, Check, ExternalLink, MapPin, Pencil, Trash2, Users, Video } from "lucide-react";
+import { CalendarPlus, Check, ExternalLink, MapPin, Pencil, ThumbsUp, Trash2, Users, Video, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useLanguage, useTx } from "@/lib/i18n";
@@ -10,9 +10,11 @@ import {
   checkIn,
   currentOccurrence,
   downloadCalendarFile,
+  setRsvp,
   undoCheckIn,
   useAttendance,
   useMyCheckIn,
+  useRsvps,
   type ChurchMeeting,
 } from "@/lib/hooks/use-church-meetings";
 
@@ -41,6 +43,10 @@ export function ChurchMeetingCard({
   const checkedIn = useMyCheckIn(churchId, m.id, occ.dateKey, me.uid);
   const attendance = useAttendance(churchId, m.id, occ.dateKey, isLeader);
   const [showAttendance, setShowAttendance] = useState(false);
+  const rsvps = useRsvps(churchId, m.id, occ.dateKey);
+  const coming = rsvps.filter((r) => r.going);
+  const mine = rsvps.find((r) => r.uid === me.uid)?.going ?? null;
+  const [showComing, setShowComing] = useState(false);
   const [busy, setBusy] = useState(false);
   const locale = lang === "tl" ? "fil-PH" : "en-PH";
   const type = MEETING_TYPES.find((t) => t.id === m.type);
@@ -62,6 +68,16 @@ export function ChurchMeetingCard({
     try {
       if (checkedIn) await undoCheckIn(churchId, m.id, occ.dateKey, me.uid);
       else await checkIn(churchId, m.id, occ.dateKey, me.uid, me.name);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function answer(going: boolean) {
+    setBusy(true);
+    try {
+      // Tapping your current answer again clears it.
+      await setRsvp(churchId, m.id, occ.dateKey, me, mine === going ? null : going);
     } finally {
       setBusy(false);
     }
@@ -131,6 +147,32 @@ export function ChurchMeetingCard({
           </Button>
         )}
       </div>
+
+      {occ.status === "upcoming" && (
+        <div className="space-y-1.5 rounded-xl bg-muted/50 p-2.5">
+          <div className="flex items-center gap-2">
+            <span className="flex-1 text-xs font-medium">{tx("Are you coming?", "Pupunta ka ba?")}</span>
+            <Button size="sm" variant={mine === true ? "default" : "outline"} disabled={busy} onClick={() => answer(true)} className="h-8">
+              <ThumbsUp className="size-3.5" />
+              {tx("I'm coming", "Pupunta ako")}
+            </Button>
+            <Button size="sm" variant={mine === false ? "secondary" : "ghost"} disabled={busy} onClick={() => answer(false)} className="h-8">
+              <X className="size-3.5" />
+              {tx("Can't", "Hindi")}
+            </Button>
+          </div>
+          <button
+            onClick={() => setShowComing((v) => !v)}
+            disabled={!coming.length}
+            className="text-xs text-muted-foreground underline-offset-2 enabled:underline"
+          >
+            {coming.length
+              ? tx(`${coming.length} coming`, `${coming.length} ang pupunta`)
+              : tx("No one has answered yet", "Wala pang sumasagot")}
+          </button>
+          {showComing && coming.length > 0 && <p className="text-xs">{coming.map((r) => r.name).join(", ")}</p>}
+        </div>
+      )}
 
       {isLeader && (
         <div>

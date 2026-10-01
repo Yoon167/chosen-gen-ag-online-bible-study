@@ -237,10 +237,10 @@ service cloud.firestore {
         allow delete: if request.auth != null && resource.data.uid == request.auth.uid;
       }
 
-      // "Checked in this week" markers: no content, so leaders can see who
-      // checked in without reading anyone's answers.
+      // "Checked in this week" markers: no content, so leaders (and the
+      // national dashboard) can see who checked in without reading anyone's answers.
       match /checkinMarks/{markId} {
-        allow read: if rankAtLeast(churchId, 3)
+        allow read: if isAdmin() || rankAtLeast(churchId, 3)
           || (request.auth != null && resource.data.uid == request.auth.uid);
         allow create, update: if request.auth != null && isActiveMember(churchId, request.auth.uid)
           && request.resource.data.keys().hasOnly(['uid', 'weekKey', 'at'])
@@ -374,6 +374,22 @@ service cloud.firestore {
             && validText(request.resource.data.name, 1, 100);
           allow delete: if rankAtLeast(churchId, 3)
             || (request.auth != null && attendanceId.matches('[0-9-]+_' + request.auth.uid));
+        }
+
+        // RSVPs ("I'm coming" / "Can't make it") per occurrence: doc id is
+        // "{YYYY-MM-DD}_{uid}". Everyone in the AG sees who is coming.
+        match /rsvps/{rsvpId} {
+          allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);
+          allow create, update: if request.auth != null && isActiveMember(churchId, request.auth.uid)
+            && request.resource.data.keys().hasOnly(['uid', 'name', 'dateKey', 'going', 'at'])
+            && request.resource.data.uid == request.auth.uid
+            && rsvpId == request.resource.data.dateKey + '_' + request.auth.uid
+            && request.resource.data.dateKey.matches('[0-9]{4}-[0-9]{2}-[0-9]{2}')
+            && request.resource.data.going is bool
+            && request.resource.data.at is int
+            && validText(request.resource.data.name, 1, 100);
+          allow delete: if rankAtLeast(churchId, 3)
+            || (request.auth != null && rsvpId.matches('[0-9-]+_' + request.auth.uid));
         }
       }
 
