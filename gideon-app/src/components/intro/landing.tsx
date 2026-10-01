@@ -54,12 +54,12 @@ export function Landing({
           onClick={toggleBackgroundMusic}
           data-music-toggle
           aria-label={soundOn ? tx("Mute music", "I-mute ang musika") : tx("Play music", "Patugtugin ang musika")}
-          className="flex items-center gap-1.5 rounded-full border border-white/25 bg-black/35 px-3 py-1.5 text-xs font-medium text-white/90 backdrop-blur-sm"
+          className="flex items-center gap-1.5 rounded-full border border-white/25 bg-black/45 px-3 py-1.5 text-xs font-medium text-white/90"
         >
           {soundOn ? <Volume2 className="size-4" /> : <VolumeX className="size-4" />}
           {!soundOn && <span>{tx("Tap for sound", "Pindutin para sa tunog")}</span>}
         </button>
-        <LanguageToggle className="border-white/25 bg-black/35 text-white backdrop-blur-sm" />
+        <LanguageToggle className="border-white/25 bg-black/45 text-white" />
       </div>
 
       <div
@@ -110,7 +110,7 @@ export function Landing({
           <button
             type="button"
             onClick={onExplore}
-            className="flex h-11 flex-1 items-center justify-center gap-1.5 rounded-full border border-white/30 bg-white/10 text-xs font-semibold text-white backdrop-blur-sm transition active:scale-[0.98]"
+            className="flex h-11 flex-1 items-center justify-center gap-1.5 rounded-full border border-white/30 bg-white/[0.13] text-xs font-semibold text-white transition active:scale-[0.98]"
           >
             <Compass className="size-4" />
             {tx("Explore Features", "Mga Feature")}
@@ -118,7 +118,7 @@ export function Landing({
           <button
             type="button"
             onClick={onWatch}
-            className="flex h-11 flex-1 items-center justify-center gap-1.5 rounded-full border border-white/30 bg-white/10 text-xs font-semibold text-white backdrop-blur-sm transition active:scale-[0.98]"
+            className="flex h-11 flex-1 items-center justify-center gap-1.5 rounded-full border border-white/30 bg-white/[0.13] text-xs font-semibold text-white transition active:scale-[0.98]"
           >
             <Play className="size-4" />
             {tx("Watch Introduction", "Panoorin ang Intro")}

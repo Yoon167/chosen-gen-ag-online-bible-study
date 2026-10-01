@@ -8,9 +8,14 @@ import { useEffect, useRef } from "react";
  * of every age walking up the path toward Him.
  *
  * Everything sits on a 16:10 "stage" scaled to cover the screen from the
- * bottom center, so layers line up on phones and desktops alike. All motion is
- * CSS transforms/opacity (see "Landing scene" in globals.css), and the pointer
- * (or a slow drift on touch screens) moves the layers for depth.
+ * bottom center, so layers line up on phones and desktops alike.
+ *
+ * Built to stay smooth on budget phones and in the installed app: everything
+ * that moves is an HTML element animated with CSS transform/opacity, which the
+ * GPU runs by itself (see "Landing scene" in globals.css). Nothing animates
+ * inside an SVG, and nothing is blended, masked or blurred while it moves,
+ * because those make the phone redraw the scene on the main thread every
+ * frame. Walking legs are three still poses that take turns.
  */
 
 // Deterministic pseudo-random so the scene is identical on every render.
@@ -45,11 +50,11 @@ const GRASS_LAYERS = [0, 1, 2].map((k) => ({
   delay: -k * 1.3,
 }));
 
-const DUST = Array.from({ length: 18 }, () => ({
+const DUST = Array.from({ length: 8 }, () => ({
   x: 38 + rand() * 24,
   y: 40 + rand() * 40,
   size: 2 + rand() * 3.5,
-  duration: 5 + rand() * 4,
+  duration: 9 + rand() * 5,
   delay: -rand() * 8,
 }));
 
@@ -60,7 +65,24 @@ const CLOUDS = [
   { y: 14, w: 18, duration: 95, delay: -15, opacity: 0.8 },
 ];
 
-type Walker = { kind: "family" | "shoulders" | "youth" | "elder" | "woman" | "man"; lane: "a" | "b" | "c"; delay: number };
+const BIRDS = [
+  [0, 0],
+  [3.2, 1.6],
+  [6.2, 3],
+  [2.4, -1.8],
+  [5, -3.2],
+];
+
+/** 32 thin wedges around the sun, drawn once and turned by the GPU. */
+const RAYS = Array.from({ length: 32 }, (_, i) => {
+  const from = (i / 32) * 2 * Math.PI;
+  const to = from + (2.5 * Math.PI) / 180;
+  const at = (t: number) => `${(Math.cos(t) * 100).toFixed(1)} ${(Math.sin(t) * 100).toFixed(1)}`;
+  return `M0 0L${at(from)}L${at(to)}Z`;
+}).join("");
+
+type Kind = "family" | "shoulders" | "youth" | "elder" | "woman" | "man";
+type Walker = { kind: Kind; lane: "a" | "b" | "c"; delay: number };
 
 // Six groups spaced evenly along a 26s walk, so the path is never empty.
 const WALKERS: Walker[] = [
@@ -74,7 +96,10 @@ const WALKERS: Walker[] = [
 
 const LANE_START: Record<Walker["lane"], string> = { a: "44%", b: "56%", c: "49.5%" };
 
-/** A person seen from behind, walking (legs step, body bobs). */
+type Leg = "left" | "right";
+type Pose = "down" | Leg;
+
+/** A person seen from behind; `lift` is the foot off the ground mid-stride. */
 function Person({
   x = 0,
   scale = 1,
@@ -82,7 +107,7 @@ function Person({
   dress = false,
   pack = false,
   cane = false,
-  phase = 0,
+  lift,
 }: {
   x?: number;
   scale?: number;
@@ -90,88 +115,126 @@ function Person({
   dress?: boolean;
   pack?: boolean;
   cane?: boolean;
-  phase?: number;
+  lift?: Leg;
 }) {
-  const step = (offset: number): React.CSSProperties => ({
-    animation: `landing-step 0.9s ease-in-out ${phase + offset}s infinite`,
-    transformBox: "fill-box",
-    transformOrigin: "50% 0%",
-  });
+  const up = (leg: Leg) => (leg === lift ? "translate(0 -3)" : undefined);
   return (
     <g transform={`translate(${x} ${100 - 100 * scale}) scale(${scale})`}>
-      <g style={{ animation: `landing-bob 0.45s ease-in-out ${phase}s infinite` }}>
-        {/* legs */}
-        <path d="M12.6 52 L13 97 C13 99.2 18.4 99.2 18.6 97 L19.4 56 Z" style={step(0)} />
-        <path d="M20.6 56 L21.4 97 C21.6 99.2 27 99.2 27 97 L27.4 52 Z" style={step(0.45)} />
-        {/* body */}
-        {dress ? (
-          <path d="M14.5 19.5 C11.5 20.5 10.2 22.5 10 26 L9.2 50 C9 52.5 11.2 53 11.6 51 L12.6 33 L10 80 L30 80 L27.4 33 L28.4 51 C28.8 53 31 52.5 30.8 50 L30 26 C29.8 22.5 28.5 20.5 25.5 19.5 Z" />
-        ) : (
-          <path d="M13.5 19 C10 20 8.5 22 8.3 26 L7.6 52 C7.5 54 9.8 54.5 10.2 52.6 L11.5 31 L12.2 56 L27.8 56 L28.5 31 L29.8 52.6 C30.2 54.5 32.5 54 32.4 52 L31.7 26 C31.5 22 30 20 26.5 19 Z" />
-        )}
-        {pack && <rect x="12.5" y="23" width="15" height="22" rx="4" />}
-        {cane && <path d="M31.6 51 L35.5 98" stroke="currentColor" strokeWidth="1.6" fill="none" />}
-        {/* head and hair */}
-        <circle cx="20" cy="11" r={child ? 7 : 6.4} />
-        {dress && <path d="M13.6 11 C13.6 4 26.4 4 26.4 11 L27 24 L13 24 Z" />}
-      </g>
+      {/* legs */}
+      <path d="M12.6 52 L13 97 C13 99.2 18.4 99.2 18.6 97 L19.4 56 Z" transform={up("left")} />
+      <path d="M20.6 56 L21.4 97 C21.6 99.2 27 99.2 27 97 L27.4 52 Z" transform={up("right")} />
+      {/* body */}
+      {dress ? (
+        <path d="M14.5 19.5 C11.5 20.5 10.2 22.5 10 26 L9.2 50 C9 52.5 11.2 53 11.6 51 L12.6 33 L10 80 L30 80 L27.4 33 L28.4 51 C28.8 53 31 52.5 30.8 50 L30 26 C29.8 22.5 28.5 20.5 25.5 19.5 Z" />
+      ) : (
+        <path d="M13.5 19 C10 20 8.5 22 8.3 26 L7.6 52 C7.5 54 9.8 54.5 10.2 52.6 L11.5 31 L12.2 56 L27.8 56 L28.5 31 L29.8 52.6 C30.2 54.5 32.5 54 32.4 52 L31.7 26 C31.5 22 30 20 26.5 19 Z" />
+      )}
+      {pack && <rect x="12.5" y="23" width="15" height="22" rx="4" />}
+      {cane && <path d="M31.6 51 L35.5 98" stroke="currentColor" strokeWidth="1.6" fill="none" />}
+      {/* head and hair */}
+      <circle cx="20" cy="11" r={child ? 7 : 6.4} />
+      {dress && <path d="M13.6 11 C13.6 4 26.4 4 26.4 11 L27 24 L13 24 Z" />}
     </g>
   );
 }
 
-function Group({ kind, phase }: { kind: Walker["kind"]; phase: number }) {
+const VIEWBOX: Record<Kind, string> = {
+  family: "0 0 120 100",
+  shoulders: "0 0 40 130",
+  youth: "0 0 80 100",
+  elder: "0 0 80 100",
+  woman: "0 0 40 100",
+  man: "0 0 40 100",
+};
+
+function Figures({ kind, pose }: { kind: Kind; pose: Pose }) {
+  // Neighbours step with opposite feet.
+  const lift = (k: number): Leg | undefined =>
+    pose === "down" ? undefined : (k % 2 === 0) === (pose === "left") ? "left" : "right";
   switch (kind) {
     case "family":
       return (
-        <svg viewBox="0 0 120 100" className="h-full overflow-visible" fill="currentColor">
-          <Person x={0} phase={phase} />
-          <Person x={38} scale={0.58} child phase={phase + 0.2} />
-          <Person x={72} dress phase={phase + 0.1} />
+        <>
+          <Person x={0} lift={lift(0)} />
+          <Person x={38} scale={0.58} child lift={lift(1)} />
+          <Person x={72} dress lift={lift(2)} />
           {/* hands held */}
           <path d="M31 53 Q36 60 44 64" stroke="currentColor" strokeWidth="2" fill="none" />
           <path d="M58 64 Q66 60 80 52" stroke="currentColor" strokeWidth="2" fill="none" />
-        </svg>
+        </>
       );
     case "shoulders":
       return (
-        <svg viewBox="0 0 40 130" className="h-full overflow-visible" fill="currentColor">
+        <>
           <g transform="translate(0 30)">
-            <Person phase={phase} />
+            <Person lift={lift(0)} />
           </g>
           {/* child riding on the father's shoulders */}
           <g transform="translate(9 0) scale(0.55)">
             <circle cx="20" cy="11" r="7.5" />
             <path d="M12 20 C9 22 8 26 8 30 L2 34 C0 35 1 38 3 37 L10 34 L10 52 L2 60 L6 64 L20 55 L34 64 L38 60 L30 52 L30 34 L37 37 C39 38 40 35 38 34 L32 30 C32 26 31 22 28 20 Z" />
           </g>
-        </svg>
+        </>
       );
     case "youth":
       return (
-        <svg viewBox="0 0 80 100" className="h-full overflow-visible" fill="currentColor">
-          <Person x={0} pack phase={phase} />
-          <Person x={36} scale={0.94} dress phase={phase + 0.3} />
-        </svg>
+        <>
+          <Person x={0} pack lift={lift(0)} />
+          <Person x={36} scale={0.94} dress lift={lift(1)} />
+        </>
       );
     case "elder":
       return (
-        <svg viewBox="0 0 80 100" className="h-full overflow-visible" fill="currentColor">
-          <Person x={0} scale={0.95} cane phase={phase} />
-          <Person x={38} scale={0.92} dress phase={phase + 0.25} />
-        </svg>
+        <>
+          <Person x={0} scale={0.95} cane lift={lift(0)} />
+          <Person x={38} scale={0.92} dress lift={lift(1)} />
+        </>
       );
     case "woman":
-      return (
-        <svg viewBox="0 0 40 100" className="h-full overflow-visible" fill="currentColor">
-          <Person dress phase={phase} />
-        </svg>
-      );
+      return <Person dress lift={lift(0)} />;
     default:
-      return (
-        <svg viewBox="0 0 40 100" className="h-full overflow-visible" fill="currentColor">
-          <Person phase={phase} />
-        </svg>
-      );
+      return <Person lift={lift(0)} />;
   }
+}
+
+/**
+ * One still pose of a group, backlit by the sunrise: a light copy drawn a
+ * little wider sits behind the dark silhouette and shows as a thin rim.
+ */
+function PoseArt({ kind, pose }: { kind: Kind; pose: Pose }) {
+  const rim = "rgba(255,214,150,0.5)";
+  return (
+    <svg viewBox={VIEWBOX[kind]} className="h-full overflow-visible" fill="currentColor">
+      <g fill={rim} stroke={rim} strokeWidth="1.6" strokeLinejoin="round">
+        <Figures kind={kind} pose={pose} />
+      </g>
+      <Figures kind={kind} pose={pose} />
+    </svg>
+  );
+}
+
+/**
+ * A group walking: feet together, left foot up, together, right foot up, a
+ * stride every 0.9s. Each loop holds eight strides (see landing-pose-* in
+ * globals.css) because every loop restart costs the phone main-thread work.
+ */
+function Walking({ kind, phase }: { kind: Kind; phase: number }) {
+  const pose = (name: string, offset: number) => ({
+    animation: `${name} 7.2s step-end ${-(phase + offset)}s infinite`,
+  });
+  return (
+    <div className="relative h-full">
+      <div className="intro-anim h-full" style={pose("landing-pose-down", 0)}>
+        <PoseArt kind={kind} pose="down" />
+      </div>
+      <div className="intro-anim absolute inset-0 opacity-0" style={pose("landing-pose-up", 0)}>
+        <PoseArt kind={kind} pose="left" />
+      </div>
+      <div className="intro-anim absolute inset-0 opacity-0" style={pose("landing-pose-up", 0.45)}>
+        <PoseArt kind={kind} pose="right" />
+      </div>
+    </div>
+  );
 }
 
 /** Jesus, standing with arms slightly open, facing the people. */
@@ -196,16 +259,25 @@ function Jesus() {
 export function LandingScene({ settled = false }: { settled?: boolean }) {
   const stage = useRef<HTMLDivElement>(null);
 
-  // Pointer parallax on devices with a mouse; touch screens get a slow drift.
+  // Depth on devices with a mouse: nearer layers follow the pointer more.
+  // Each layer gets its own transform (no shared CSS variable), so a move
+  // restyles a dozen elements instead of the whole scene.
   useEffect(() => {
     const el = stage.current;
-    if (!el || !window.matchMedia("(hover: hover)").matches) return;
+    if (!el || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    const layers = Array.from(el.querySelectorAll<HTMLElement>("[data-depth]"), (node) => ({
+      node,
+      depth: Number(node.dataset.depth),
+    }));
     let frame = 0;
     const onMove = (e: PointerEvent) => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
-        el.style.setProperty("--px", String((e.clientX / window.innerWidth) * 2 - 1));
-        el.style.setProperty("--py", String((e.clientY / window.innerHeight) * 2 - 1));
+        const px = (e.clientX / window.innerWidth) * 2 - 1;
+        const py = (e.clientY / window.innerHeight) * 2 - 1;
+        for (const { node, depth } of layers) {
+          node.style.transform = `translate3d(${(px * depth).toFixed(2)}px, ${(py * depth * 0.4).toFixed(2)}px, 0)`;
+        }
       });
     };
     window.addEventListener("pointermove", onMove);
@@ -217,10 +289,6 @@ export function LandingScene({ settled = false }: { settled?: boolean }) {
 
   // `settled` skips the opening sequence (e.g. coming back from the film).
   const at = (seconds: number) => (settled ? "0s" : `${seconds}s`);
-  const layer = (depth: number): React.CSSProperties => ({
-    transform: `translate3d(calc(var(--px, 0) * ${depth}px), calc(var(--py, 0) * ${depth * 0.4}px), 0)`,
-    willChange: "transform",
-  });
   const appear = (delay: number, duration = 1.6): React.CSSProperties => ({
     animation: `landing-appear ${settled ? 0.01 : duration}s ease-out ${at(delay)} both`,
   });
@@ -228,22 +296,24 @@ export function LandingScene({ settled = false }: { settled?: boolean }) {
   return (
     <div className="absolute inset-0 overflow-hidden bg-[#0b1030]" aria-hidden>
       <div ref={stage} className="landing-stage absolute bottom-0 left-1/2 -translate-x-1/2">
-        {/* Sky: night gives way to dawn */}
-        <div
-          className="absolute inset-0"
-          style={{ background: "linear-gradient(to bottom, #070b24 0%, #1a1f4d 40%, #3d2f5e 58%, #5b3c5f 70%)" }}
-        />
+        {/* Sky: the night fades away into dawn */}
         <div
           className="absolute inset-0"
           style={{
-            ...appear(0, 3.2),
             background:
               "linear-gradient(to bottom, #25407e 0%, #5d6fae 22%, #d98d7a 44%, #ffc98f 55%, #ffe6b8 62%, #f7c48b 70%)",
           }}
         />
+        <div
+          className="absolute inset-0"
+          style={{
+            animation: `landing-vanish ${settled ? 0.01 : 3.2}s ease-out ${at(0)} both`,
+            background: "linear-gradient(to bottom, #070b24 0%, #1a1f4d 40%, #3d2f5e 58%, #5b3c5f 70%)",
+          }}
+        />
 
         {/* Sun rising directly behind the hill where Jesus stands */}
-        <div className="absolute left-1/2 top-[58%] w-[17%] -translate-x-1/2 -translate-y-1/2" style={layer(3)}>
+        <div data-depth={3} className="landing-depth absolute left-1/2 top-[58%] w-[17%] -translate-x-1/2 -translate-y-1/2">
           <div className="aspect-square" style={{ animation: `landing-sunrise ${settled ? 0.01 : 3.4}s cubic-bezier(.2,.7,.2,1) ${at(0.2)} both` }}>
             <div
               className="size-full rounded-full"
@@ -255,25 +325,26 @@ export function LandingScene({ settled = false }: { settled?: boolean }) {
           </div>
         </div>
 
-        {/* Light rays */}
-        <div className="absolute left-1/2 top-[56%] size-0" style={layer(3)}>
-          <div style={appear(2.2, 2.4)}>
-            <div
-              className="intro-anim absolute left-[-60vmax] top-[-60vmax] size-[120vmax]"
-              style={{
-                mixBlendMode: "screen",
-                background:
-                  "repeating-conic-gradient(from 0deg, rgba(255,236,190,0.24) 0deg 2.5deg, transparent 2.5deg 11deg)",
-                maskImage: "radial-gradient(circle, black 2%, transparent 60%)",
-                WebkitMaskImage: "radial-gradient(circle, black 2%, transparent 60%)",
-                animation: "intro-spin 120s linear infinite",
-              }}
-            />
+        {/* Light rays turning slowly around the sun, only above the hills */}
+        <div data-depth={3} className="landing-depth absolute inset-x-0 top-0 h-[62%] overflow-hidden">
+          <div className="absolute left-1/2 top-[90.3%] aspect-square w-[84%] -translate-x-1/2 -translate-y-1/2" style={appear(2.2, 2.4)}>
+            <div className="intro-anim size-full" style={{ animation: "intro-spin 120s linear infinite" }}>
+              <svg viewBox="-100 -100 200 200" className="size-full">
+                <defs>
+                  <radialGradient id="landing-ray" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="100">
+                    <stop offset="0" stopColor="#ffecbe" stopOpacity="0.42" />
+                    <stop offset="0.35" stopColor="#ffecbe" stopOpacity="0.2" />
+                    <stop offset="1" stopColor="#ffecbe" stopOpacity="0" />
+                  </radialGradient>
+                </defs>
+                <path d={RAYS} fill="url(#landing-ray)" />
+              </svg>
+            </div>
           </div>
         </div>
 
         {/* Clouds, lit from below by the sunrise */}
-        <div className="absolute inset-0" style={{ ...layer(8), ...appear(1) }}>
+        <div data-depth={8} className="landing-depth absolute inset-0" style={appear(1)}>
           {CLOUDS.map((c, i) => (
             <div
               key={i}
@@ -303,48 +374,33 @@ export function LandingScene({ settled = false }: { settled?: boolean }) {
           ))}
         </div>
 
-        {/* Birds */}
-        <div className="absolute inset-0" style={layer(10)}>
+        {/* Birds gliding across the dawn */}
+        <div data-depth={10} className="landing-depth absolute inset-0">
           <div
             className="intro-anim absolute inset-0"
             style={{ animation: `landing-birds 26s linear ${at(1.6)} infinite` }}
           >
-            {[
-              [0, 0],
-              [3.2, 1.6],
-              [6.2, 3],
-              [2.4, -1.8],
-              [5, -3.2],
-            ].map(([dx, dy], i) => (
+            {BIRDS.map(([dx, dy], i) => (
               <svg
                 key={i}
                 viewBox="0 0 24 10"
                 className="absolute w-[1.4%] text-[#241a33]"
                 style={{ left: `${-4 + dx * 0.9}%`, top: `${22 + dy}%` }}
               >
-                <path
-                  d="M0 6 Q6 0 12 6 Q18 0 24 6 Q18 3 12 8 Q6 3 0 6 Z"
-                  fill="currentColor"
-                  className="intro-anim"
-                  style={{
-                    transformBox: "fill-box",
-                    transformOrigin: "50% 80%",
-                    animation: `landing-flap ${0.5 + i * 0.07}s ease-in-out ${-i * 0.13}s infinite`,
-                  }}
-                />
+                <path d="M0 6 Q6 0 12 6 Q18 0 24 6 Q18 3 12 8 Q6 3 0 6 Z" fill="currentColor" />
               </svg>
             ))}
           </div>
         </div>
 
         {/* Mountains, far to near */}
-        <svg viewBox="0 0 1600 1000" preserveAspectRatio="none" className="absolute inset-0 size-full" style={{ ...layer(6), ...appear(0.6) }}>
+        <svg viewBox="0 0 1600 1000" preserveAspectRatio="none" data-depth={6} className="landing-depth absolute inset-0 size-full" style={appear(0.6)}>
           <path
             d="M0 560 C80 530 140 505 220 512 C300 520 340 470 420 455 C500 440 560 492 640 486 C700 482 740 530 800 540 C860 530 900 480 960 472 C1040 462 1100 432 1190 450 C1280 468 1330 505 1420 492 C1500 480 1560 505 1600 515 L1600 1000 L0 1000 Z"
             fill="#8a79a8"
           />
         </svg>
-        <svg viewBox="0 0 1600 1000" preserveAspectRatio="none" className="absolute inset-0 size-full" style={{ ...layer(12), ...appear(0.9) }}>
+        <svg viewBox="0 0 1600 1000" preserveAspectRatio="none" data-depth={12} className="landing-depth absolute inset-0 size-full" style={appear(0.9)}>
           <path
             d="M0 600 C90 575 170 548 260 560 C350 572 420 530 500 540 C580 552 640 590 720 592 C760 593 780 585 800 590 C830 585 860 590 900 585 C980 575 1040 530 1130 538 C1220 548 1290 585 1380 575 C1470 565 1540 580 1600 590 L1600 1000 L0 1000 Z"
             fill="#5f5687"
@@ -361,7 +417,7 @@ export function LandingScene({ settled = false }: { settled?: boolean }) {
         </svg>
 
         {/* The hill, the valley and the path to Jesus */}
-        <svg viewBox="0 0 1600 1000" preserveAspectRatio="none" className="absolute inset-0 size-full" style={{ ...layer(18), ...appear(1.2) }}>
+        <svg viewBox="0 0 1600 1000" preserveAspectRatio="none" data-depth={18} className="landing-depth absolute inset-0 size-full" style={appear(1.2)}>
           <defs>
             <linearGradient id="landing-ground" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0" stopColor="#3b3659" />
@@ -397,7 +453,7 @@ export function LandingScene({ settled = false }: { settled?: boolean }) {
         </svg>
 
         {/* Jesus, with light around Him */}
-        <div className="absolute left-1/2 top-[60.3%] h-[10.5%] -translate-x-1/2 -translate-y-full" style={layer(18)}>
+        <div data-depth={18} className="landing-depth absolute left-1/2 top-[60.3%] h-[10.5%] -translate-x-1/2 -translate-y-full">
           <div className="h-full" style={appear(2.8, 2)}>
             <div
               className="absolute left-1/2 top-[40%] aspect-square h-[340%] -translate-x-1/2 -translate-y-1/2 rounded-full"
@@ -413,26 +469,19 @@ export function LandingScene({ settled = false }: { settled?: boolean }) {
         </div>
 
         {/* People walking up the path toward Him */}
-        <div className="absolute inset-0" style={{ ...layer(24), ...appear(3.4, 2) }}>
+        <div data-depth={24} className="landing-depth absolute inset-0" style={appear(3.4, 2)}>
           {WALKERS.map((w, i) => (
             <div
               key={i}
               className="intro-anim absolute inset-0"
               style={{ animation: `landing-walk-${w.lane} 26s linear ${w.delay}s infinite` }}
             >
-              <div
-                className="intro-anim absolute top-[97%] h-[9%] -translate-x-1/2 -translate-y-full"
-                style={{ left: LANE_START[w.lane] }}
-              >
+              <div className="absolute top-[97%] h-[9%] -translate-x-1/2 -translate-y-full" style={{ left: LANE_START[w.lane] }}>
                 <div
-                  className="h-full text-[#150f1f]"
-                  style={{
-                    transformOrigin: "50% 100%",
-                    animation: `landing-recede 26s linear ${w.delay}s infinite`,
-                    filter: "drop-shadow(0 0 1px rgba(255,214,150,0.55))",
-                  }}
+                  className="intro-anim h-full text-[#150f1f]"
+                  style={{ transformOrigin: "50% 100%", animation: `landing-recede 26s linear ${w.delay}s infinite` }}
                 >
-                  <Group kind={w.kind} phase={i * 0.17} />
+                  <Walking kind={w.kind} phase={i * 0.17} />
                 </div>
               </div>
             </div>
@@ -440,7 +489,7 @@ export function LandingScene({ settled = false }: { settled?: boolean }) {
         </div>
 
         {/* Specks of light near the sun */}
-        <div className="absolute inset-0" style={{ ...layer(28), ...appear(2.4) }}>
+        <div data-depth={28} className="landing-depth absolute inset-0" style={appear(2.4)}>
           {DUST.map((p, i) => (
             <span
               key={i}
@@ -458,7 +507,7 @@ export function LandingScene({ settled = false }: { settled?: boolean }) {
         </div>
 
         {/* Foreground grass swaying in the morning wind */}
-        <div className="absolute inset-x-0 bottom-0 h-[22%]" style={{ ...layer(34), ...appear(1.2) }}>
+        <div data-depth={34} className="landing-depth absolute inset-x-0 bottom-0 h-[22%]" style={appear(1.2)}>
           {GRASS_LAYERS.map((g, k) => (
             <div
               key={k}

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ChevronsRight, Volume2, VolumeX } from "lucide-react";
 import { LandingScene } from "@/components/intro/landing-scene";
 import { useLanguage, type Language } from "@/lib/i18n";
@@ -117,17 +117,23 @@ const NARRATION: { from: number; to: number; text: Text }[] = [
  */
 const CAMERA: { origin: string }[] = [
   { origin: "50% 52%" }, // the sunrise
-  { origin: "50% 100%" }, // people starting up the path (Jesus just out of frame)
+  { origin: "50% 100%" }, // people starting up the path
   { origin: "50% 53%" }, // Jesus in the light
   { origin: "50% 50%" }, // up the path toward Him
   { origin: "50% 60%" }, // the whole valley
   { origin: "50% 55%" }, // the reveal
 ];
 
-const GRAIN =
-  "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")";
-
 const SHADOW = "0 2px 18px rgba(0,0,0,0.65)";
+
+// Every animation in the film is a CSS keyframe on transform/opacity, so the
+// phone's GPU plays it without the main thread (no JavaScript per frame).
+const rise = (delay: number, duration = 1.4): React.CSSProperties => ({
+  animation: `landing-rise ${duration}s ease-out ${delay}s both`,
+});
+const fadeIn = (delay: number, duration = 1.1): React.CSSProperties => ({
+  animation: `landing-appear ${duration}s ease-out ${delay}s both`,
+});
 
 function SceneTitle({
   children,
@@ -139,15 +145,12 @@ function SceneTitle({
   className?: string;
 }) {
   return (
-    <motion.h2
-      initial={{ opacity: 0, transform: "translateY(18px)" }}
-      animate={{ opacity: 1, transform: "translateY(0px)" }}
-      transition={{ delay, duration: 1.4, ease: "easeOut" }}
+    <h2
       className={`absolute inset-x-0 mx-auto max-w-lg px-6 text-center font-heading text-3xl font-semibold leading-tight tracking-wide text-white sm:text-5xl ${className}`}
-      style={{ textShadow: SHADOW }}
+      style={{ ...rise(delay), textShadow: SHADOW }}
     >
       {children}
-    </motion.h2>
+    </h2>
   );
 }
 
@@ -161,16 +164,13 @@ function Words({ scene, tx }: { scene: number; tx: (t: Text) => string }) {
           <SceneTitle delay={0.5} className="top-[12%]">
             {tx(COPY.story)}
           </SceneTitle>
-          <motion.div
-            initial={{ opacity: 0, transform: "translateY(12px)" }}
-            animate={{ opacity: 1, transform: "translateY(0px)" }}
-            transition={{ delay: 1.8, duration: 1.4 }}
+          <div
             className="absolute inset-x-0 top-[27%] mx-auto max-w-sm px-6 text-center"
-            style={{ textShadow: SHADOW }}
+            style={{ ...rise(1.8), textShadow: SHADOW }}
           >
             <p className="font-heading text-lg italic text-white sm:text-2xl">{tx(COPY.verse)}</p>
             <p className="mt-2 text-xs font-semibold uppercase tracking-[0.3em] text-amber-100">{tx(COPY.verseRef)}</p>
-          </motion.div>
+          </div>
         </>
       );
     case 2:
@@ -189,16 +189,13 @@ function Words({ scene, tx }: { scene: number; tx: (t: Text) => string }) {
             {tx(COPY.journeySteps)
               .split(" ")
               .map((word, i) => (
-                <motion.span
+                <span
                   key={word}
-                  initial={{ opacity: 0, transform: "translateY(10px)" }}
-                  animate={{ opacity: 1, transform: "translateY(0px)" }}
-                  transition={{ delay: 1.6 + i * 0.45, duration: 0.9 }}
                   className="text-sm font-semibold uppercase tracking-[0.25em] text-amber-50 sm:text-base"
-                  style={{ textShadow: SHADOW }}
+                  style={{ ...rise(1.6 + i * 0.45, 0.9), textShadow: SHADOW }}
                 >
                   {word}
-                </motion.span>
+                </span>
               ))}
           </div>
         </>
@@ -207,16 +204,13 @@ function Words({ scene, tx }: { scene: number; tx: (t: Text) => string }) {
       return (
         <div className="absolute inset-x-0 top-[14%] flex flex-col items-center gap-2 px-6 text-center sm:gap-3">
           {PURPOSE_LINES.map((line, i) => (
-            <motion.p
+            <p
               key={line.en}
-              initial={{ opacity: 0, transform: "translateY(14px)" }}
-              animate={{ opacity: 1, transform: "translateY(0px)" }}
-              transition={{ delay: 0.5 + i * 0.95, duration: 0.9 }}
               className="font-heading text-2xl font-semibold text-white sm:text-3xl"
-              style={{ textShadow: SHADOW }}
+              style={{ ...rise(0.5 + i * 0.95, 0.9), textShadow: SHADOW }}
             >
               {tx(line)}
-            </motion.p>
+            </p>
           ))}
         </div>
       );
@@ -230,22 +224,16 @@ function Revelation({ tx }: { tx: (t: Text) => string }) {
   const glow = "0 0 26px rgba(255,244,214,0.95)";
   return (
     <>
-      <motion.div
+      <div
         className="absolute inset-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.88 }}
-        transition={{ delay: 0.6, duration: 1.8, ease: "easeInOut" }}
         style={{
+          animation: "film-light 1.8s ease-in-out 0.6s both",
           background:
             "radial-gradient(circle at 50% 46%, rgba(255,252,242,0.97) 0%, rgba(255,237,189,0.92) 38%, rgba(244,196,108,0.82) 78%, rgba(217,151,74,0.75) 100%)",
         }}
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 pb-[8vh] text-center">
-        <motion.div
-          initial={{ opacity: 0, transform: "scale(0.85)" }}
-          animate={{ opacity: 1, transform: "scale(1)" }}
-          transition={{ delay: 1.2, duration: 1.3, ease: "easeOut" }}
-        >
+        <div style={{ animation: "film-grow 1.3s ease-out 1.2s both" }}>
           <Image
             src="/icon.png"
             alt=""
@@ -255,44 +243,31 @@ function Revelation({ tx }: { tx: (t: Text) => string }) {
             className="rounded-3xl"
             style={{ boxShadow: "0 0 50px rgba(255,214,130,0.9)" }}
           />
-        </motion.div>
-        <motion.h1
-          initial={{ opacity: 0, transform: "scale(1.2)" }}
-          animate={{ opacity: 1, transform: "scale(1)" }}
-          transition={{ delay: 1.6, duration: 1.6, ease: "easeOut" }}
+        </div>
+        <h1
           className="mt-2 pl-[0.28em] tracking-[0.28em] font-heading text-5xl font-semibold text-[#3a2608] sm:text-6xl"
-          style={{ textShadow: glow }}
+          style={{ animation: "film-settle 1.6s ease-out 1.6s both", textShadow: glow }}
         >
           GIDEON
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2.1, duration: 1.1 }}
-          className="font-heading text-lg italic text-[#5a3e12] sm:text-xl"
-        >
+        </h1>
+        <p className="font-heading text-lg italic text-[#5a3e12] sm:text-xl" style={fadeIn(2.1)}>
           {tx(COPY.subtitle)}
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2.4, duration: 1.1 }}
+        </p>
+        <p
           className="max-w-xs text-[0.6875rem] font-semibold uppercase leading-relaxed tracking-[0.2em] text-[#6b4a16] sm:max-w-md sm:text-xs"
+          style={fadeIn(2.4)}
         >
           {tx(COPY.tagline)}
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, transform: "translateY(10px)" }}
-          animate={{ opacity: 1, transform: "translateY(0px)" }}
-          transition={{ delay: 2.8, duration: 1.1 }}
+        </p>
+        <div
           className="mt-4 max-w-sm rounded-2xl border border-white/60 bg-white/55 px-5 py-3"
-          style={{ boxShadow: "0 0 40px rgba(255,236,190,0.8)" }}
+          style={{ ...rise(2.8, 1.1), boxShadow: "0 0 40px rgba(255,236,190,0.8)" }}
         >
           <p className="font-heading text-sm italic text-[#3a2608] sm:text-base">{tx(COPY.finalVerse)}</p>
           <p className="mt-1 text-[0.625rem] font-semibold uppercase tracking-[0.3em] text-[#8a5f1c]">
             {tx(COPY.finalVerseRef)}
           </p>
-        </motion.div>
+        </div>
       </div>
     </>
   );
@@ -302,9 +277,6 @@ function Revelation({ tx }: { tx: (t: Text) => string }) {
 
 type Timeline = { scene: number; narration: number };
 
-// Only these discrete values drive React renders; everything that moves
-// continuously is a CSS/compositor animation, so the film never re-renders
-// per frame.
 function timelineAt(t: number): Timeline {
   return {
     scene: Math.min(5, Math.floor(t / SCENE_LENGTH)),
@@ -329,21 +301,25 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
     onDone();
   }, [onDone]);
 
+  // React re-renders only when the scene or the narration line changes; a
+  // light check ten times a second is enough for that.
   useEffect(() => {
     const start = performance.now();
-    let raf = 0;
-    const tick = () => {
+    let current = timelineAt(0);
+    const id = window.setInterval(() => {
       const t = (performance.now() - start) / 1000;
       if (t >= INTRO_DURATION) {
+        window.clearInterval(id);
         finish();
         return;
       }
       const next = timelineAt(t);
-      setTimeline((prev) => (prev.scene === next.scene && prev.narration === next.narration ? prev : next));
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+      if (next.scene !== current.scene || next.narration !== current.narration) {
+        current = next;
+        setTimeline(next);
+      }
+    }, 100);
+    return () => window.clearInterval(id);
   }, [finish]);
 
   const { scene } = timeline;
@@ -359,14 +335,15 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
       role="dialog"
       aria-label="GIDEON — A Christian Journey"
     >
-      {/* The camera: one move per scene over the living valley */}
-      {/* Same scene all the way through (so the sunrise plays once); only the move changes. */}
+      {/* The camera: one gentle move per scene over the living valley. Same
+          scene all the way through (so the sunrise plays once); only the move
+          changes. The zoom stays modest so phones don't have to redraw the
+          whole scene sharper at every cut. */}
       <div
         className="absolute inset-0"
         style={{
           animation: `film-cam-${scene} ${SCENE_LENGTH + 0.4}s ease-in-out both`,
           transformOrigin: CAMERA[scene].origin,
-          willChange: "transform",
         }}
       >
         <LandingScene />
@@ -386,20 +363,16 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
         }}
       />
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={scene}
-          className="absolute inset-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Words scene={scene} tx={tx} />
-        </motion.div>
-      </AnimatePresence>
+      {/* This scene's words, fading out just before the cut */}
+      <div
+        key={`words-${scene}`}
+        className="absolute inset-0"
+        style={{ animation: scene < 5 ? `landing-vanish 0.5s ease-in ${SCENE_LENGTH - 0.6}s forwards` : undefined }}
+      >
+        <Words scene={scene} tx={tx} />
+      </div>
 
-      {/* Film look: vignette, grain and letterbox bars */}
+      {/* Film look: vignette and letterbox bars */}
       <div
         className="pointer-events-none absolute inset-0 transition-opacity duration-1000"
         style={{
@@ -407,45 +380,37 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
           background: "radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.6) 100%)",
         }}
       />
-      <div className="pointer-events-none absolute inset-0 opacity-[0.05]" style={{ backgroundImage: GRAIN }} />
-      <motion.div
+      <div
         className="pointer-events-none absolute inset-x-0 top-0 h-[5vh] origin-top bg-black"
-        initial={{ transform: "scaleY(0)" }}
-        animate={{ transform: "scaleY(1)" }}
-        transition={{ duration: 1.2 }}
+        style={{ animation: "film-bar 1.2s ease-out both" }}
       />
-      <motion.div
+      <div
         className="pointer-events-none absolute inset-x-0 bottom-0 h-[5vh] origin-bottom bg-black"
-        initial={{ transform: "scaleY(0)" }}
-        animate={{ transform: "scaleY(1)" }}
-        transition={{ duration: 1.2 }}
+        style={{ animation: "film-bar 1.2s ease-out both" }}
       >
         <div
           className="absolute inset-x-0 bottom-0 h-0.5 origin-left bg-gradient-to-r from-amber-200 to-amber-400"
           style={{ animation: `intro-progress ${INTRO_DURATION}s linear forwards` }}
         />
-      </motion.div>
+      </div>
 
       {/* Narration */}
       <div
         className="pointer-events-none absolute inset-x-0 flex justify-center px-5"
         style={{ bottom: "calc(env(safe-area-inset-bottom, 0px) + 8vh)" }}
       >
-        <AnimatePresence mode="wait">
-          {narration && (
-            <motion.p
-              key={narration.from}
-              initial={{ opacity: 0, transform: "translateY(6px)" }}
-              animate={{ opacity: 1, transform: "translateY(0px)" }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.6 }}
-              aria-live="polite"
-              className="max-w-md rounded-2xl bg-black/50 px-4 py-2 text-center font-heading text-sm italic leading-relaxed text-white/95 sm:text-base"
-            >
-              {tx(narration.text)}
-            </motion.p>
-          )}
-        </AnimatePresence>
+        {narration && (
+          <p
+            key={narration.from}
+            aria-live="polite"
+            className="max-w-md rounded-2xl bg-black/50 px-4 py-2 text-center font-heading text-sm italic leading-relaxed text-white/95 sm:text-base"
+            style={{
+              animation: `landing-rise 0.6s ease-out both, landing-vanish 0.4s ease-in ${Math.max(0.6, narration.to - narration.from - 0.4)}s forwards`,
+            }}
+          >
+            {tx(narration.text)}
+          </p>
+        )}
       </div>
 
       {/* Controls */}

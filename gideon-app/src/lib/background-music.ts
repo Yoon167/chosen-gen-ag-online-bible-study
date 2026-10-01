@@ -18,7 +18,7 @@ const SERVER_STATE: MusicState = { playing: false, muted: false };
 
 let state: MusicState = SERVER_STATE;
 let audio: HTMLAudioElement | null = null;
-let fadeFrame = 0;
+let fadeTimer = 0;
 const listeners = new Set<() => void>();
 
 function setState(next: Partial<MusicState>) {
@@ -40,19 +40,23 @@ function saveMuted(muted: boolean) {
   } catch {}
 }
 
+// A plain timer, not requestAnimationFrame: asking for animation frames
+// would make the browser restyle the intro's animated scene every frame
+// while the music fades in (it autoplays in the installed app).
 function fadeTo(target: number, seconds: number, then?: () => void) {
   if (!audio) return;
-  cancelAnimationFrame(fadeFrame);
+  window.clearInterval(fadeTimer);
   const el = audio;
   const from = el.volume;
   const start = performance.now();
-  const step = () => {
+  fadeTimer = window.setInterval(() => {
     const k = Math.min(1, (performance.now() - start) / (seconds * 1000));
     el.volume = from + (target - from) * k;
-    if (k < 1) fadeFrame = requestAnimationFrame(step);
-    else then?.();
-  };
-  fadeFrame = requestAnimationFrame(step);
+    if (k >= 1) {
+      window.clearInterval(fadeTimer);
+      then?.();
+    }
+  }, 50);
 }
 
 function getAudio() {
