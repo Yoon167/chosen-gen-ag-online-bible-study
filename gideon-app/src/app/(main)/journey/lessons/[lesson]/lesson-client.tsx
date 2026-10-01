@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { BookOpen, Check, PlayCircle } from "lucide-react";
+import { BookOpen, Check, PlayCircle, Users } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { cn } from "@/lib/utils";
 import { useLanguage, useTx } from "@/lib/i18n";
@@ -155,6 +155,19 @@ export function LessonClient() {
           <p className="mt-3 text-sm">{lesson.assignment[lang]}</p>
           {stepCheck("assignment", tx("I did the assignment", "Nagawa ko ang takdang-gawain"))}
         </section>
+
+        <Link
+          href={`/journey/guide?lesson=${lesson.id}`}
+          className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4 text-sm font-medium"
+        >
+          <Users className="size-5 text-primary" />
+          <span className="flex-1">
+            {tx("Use in an AG meeting", "Gamitin sa AG meeting")}
+            <span className="block text-xs font-normal text-muted-foreground">
+              {tx("A ready outline with discussion questions", "Handang outline na may mga tanong sa talakayan")}
+            </span>
+          </span>
+        </Link>
 
         <Link
           href={`/journey/levels/${level.level}`}
