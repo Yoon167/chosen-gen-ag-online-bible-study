@@ -175,6 +175,15 @@ export function cancelTourAutostart() {
   } catch {}
 }
 
+/** Whether a tour is waiting to start (without using it up). */
+export function hasTourAutostart() {
+  try {
+    return sessionStorage.getItem(AUTOSTART_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
 export function takeTourAutostart() {
   try {
     const on = sessionStorage.getItem(AUTOSTART_KEY) === "1";

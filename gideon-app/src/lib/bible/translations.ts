@@ -82,7 +82,15 @@ type HelloaoContent = string | { text?: string; noteId?: number; lineBreak?: boo
 
 /** Plain verse text from the Free Use Bible API's verse content (footnote markers dropped). */
 export function helloaoVerseText(content: HelloaoContent[]) {
-  return content.map((c) => (typeof c === "string" ? c : (c.text ?? ""))).join("").replace(/\s+/g, " ").trim();
+  // A footnote marker can sit where a space was ("only", {note}, "Son"), so
+  // pieces are joined with a space unless the next one starts with punctuation.
+  const pieces = content.map((c) => (typeof c === "string" ? c : (c.text ?? ""))).filter(Boolean);
+  let text = "";
+  for (const piece of pieces) {
+    const needsSpace = text && !/\s$/.test(text) && !/^[\s.,;:!?”’)\]]/.test(piece);
+    text += (needsSpace ? " " : "") + piece;
+  }
+  return text.replace(/\s+/g, " ").trim();
 }
 
 export interface HelloaoChapter {

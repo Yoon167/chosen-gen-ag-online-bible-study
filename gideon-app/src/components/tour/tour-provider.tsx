@@ -4,7 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState } f
 import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, RotateCcw, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { TOUR_STEPS, isTourDone, markTourDone, takeTourAutostart } from "@/lib/tour";
+import { TOUR_STEPS, hasTourAutostart, isTourDone, markTourDone, takeTourAutostart } from "@/lib/tour";
 import { cn } from "@/lib/utils";
 import { useLanguage, useTx } from "@/lib/i18n";
 
@@ -68,10 +68,13 @@ export function TourProvider({ children }: { children: React.ReactNode }) {
 export function TourAutostart() {
   const { start } = useTour();
   useEffect(() => {
-    if (takeTourAutostart() && !isTourDone()) {
-      const id = setTimeout(() => start("app"), 600);
-      return () => clearTimeout(id);
-    }
+    if (!hasTourAutostart() || isTourDone()) return;
+    // The request is used up only when the tour really starts, so an effect
+    // that is cleaned up and run again (React does this) still starts it.
+    const id = setTimeout(() => {
+      if (takeTourAutostart()) start("app");
+    }, 600);
+    return () => clearTimeout(id);
   }, [start]);
   return null;
 }
