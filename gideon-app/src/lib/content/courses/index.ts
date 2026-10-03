@@ -4,11 +4,12 @@ import { GROWTH } from "./growth";
 import { THEOLOGY } from "./theology";
 import { FREEDOM } from "./freedom";
 import { HEALING } from "./healing";
+import { HOLINESS } from "./holiness";
 
 export type { Course, CourseLesson, Text } from "./types";
 
 /** The Discipleship Courses, in suggested order: from salvation to maturity. */
-export const COURSES: Course[] = [FOUNDATION, GROWTH, THEOLOGY, FREEDOM, HEALING];
+export const COURSES: Course[] = [FOUNDATION, GROWTH, THEOLOGY, FREEDOM, HEALING, HOLINESS];
 
 export function findCourse(id: string) {
   return COURSES.find((c) => c.id === id);
