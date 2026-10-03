@@ -161,21 +161,27 @@ await t("member cannot move the slides", assertFails(updateDoc(doc(real("ana"), 
 await t("member cannot end it", assertFails(deleteDoc(doc(real("ana"), LV))));
 await t("leader ends the live study", assertSucceeds(deleteDoc(doc(real("lead"), LV))));
 
-// ---------- Course lesson assignments ----------
+// ---------- Course unlocks and presenters ----------
+const CU = `churches/${C}/courseUnlocks/foundation`;
+const cu = (extra = {}) => ({ courseId: "foundation", unlockedBy: "lead", unlockedAt: 1, ...extra });
+await t("leader unlocks a course", assertSucceeds(setDoc(doc(real("lead"), CU), cu())));
+await t("member cannot unlock a course", assertFails(setDoc(doc(real("ana"), `churches/${C}/courseUnlocks/growth`), cu({ courseId: "growth", unlockedBy: "ana" }))));
+await t("unlock id must match the course", assertFails(setDoc(doc(real("lead"), `churches/${C}/courseUnlocks/growth`), cu())));
+await t("member sees unlocked courses", assertSucceeds(getDocs(collection(real("ana"), `churches/${C}/courseUnlocks`))));
+await t("outsider cannot see them", assertFails(getDocs(collection(real("out"), `churches/${C}/courseUnlocks`))));
+await t("member cannot lock a course", assertFails(deleteDoc(doc(real("ana"), CU))));
+
 const LA = `churches/${C}/lessonAssignments/foundation__c-who-is-jesus`;
-const la = (extra = {}) => ({ courseId: "foundation", lessonId: "c-who-is-jesus", assignedBy: "lead", assignedAt: 1, ...extra });
-await t("leader opens a lesson", assertSucceeds(setDoc(doc(real("lead"), LA), la())));
-await t("member cannot open a lesson", assertFails(setDoc(doc(real("ana"), `churches/${C}/lessonAssignments/growth__c-prayer`), la({ courseId: "growth", lessonId: "c-prayer" }))));
-await t("id must match the lesson", assertFails(setDoc(doc(real("lead"), `churches/${C}/lessonAssignments/x__y`), la())));
-await t("member sees opened lessons", assertSucceeds(getDocs(collection(real("ana"), `churches/${C}/lessonAssignments`))));
-await t("outsider cannot see them", assertFails(getDocs(collection(real("out"), `churches/${C}/lessonAssignments`))));
-await t("presenter must be an active member", assertFails(updateDoc(doc(real("lead"), LA), { presenterUid: "pend", presenterName: "pend", presenterRole: "present" })));
-await t("leader assigns ana to exhort", assertSucceeds(updateDoc(doc(real("lead"), LA), { presenterUid: "ana", presenterName: "Ana", presenterRole: "exhort" })));
+const la = (extra = {}) => ({ courseId: "foundation", lessonId: "c-who-is-jesus", presenterUid: "ana", presenterName: "Ana", assignedBy: "lead", assignedAt: 1, ...extra });
+await t("presenter must be an active member", assertFails(setDoc(doc(real("lead"), LA), la({ presenterUid: "pend" }))));
+await t("member cannot assign a presenter", assertFails(setDoc(doc(real("ben"), LA), la({ presenterUid: "ben" }))));
+await t("leader assigns ana to present", assertSucceeds(setDoc(doc(real("lead"), LA), la())));
 await t("assigned member presents live", assertSucceeds(setDoc(doc(real("ana"), LV), live({ leaderUid: "ana", leaderName: "Ana", assignmentId: "foundation__c-who-is-jesus" }))));
 await t("assigned member moves slides", assertSucceeds(updateDoc(doc(real("ana"), LV), { index: 1, updatedAt: 2 })));
 await t("other member cannot present with it", assertFails(setDoc(doc(real("ben"), LV), live({ leaderUid: "ben", assignmentId: "foundation__c-who-is-jesus" }))));
 await t("assigned member ends their live study", assertSucceeds(deleteDoc(doc(real("ana"), LV))));
-await t("leader locks the lesson again", assertSucceeds(deleteDoc(doc(real("lead"), LA))));
+await t("leader removes the presenter", assertSucceeds(deleteDoc(doc(real("lead"), LA))));
+await t("leader locks the course", assertSucceeds(deleteDoc(doc(real("lead"), CU))));
 
 await env.cleanup();
 console.log(failed ? `${failed} FAILED` : "ALL PASSED");

@@ -450,18 +450,26 @@ service cloud.firestore {
           || (request.auth != null && resource.data.leaderUid == request.auth.uid);
       }
 
-      // Course lessons the AG leader opened for the AG ("{courseId}__{lessonId}"),
-      // optionally with a member asked to present or exhort it.
+      // Courses the AG leader unlocked for the AG: every lesson in them opens.
+      match /courseUnlocks/{courseId} {
+        allow read: if isAdmin() || (request.auth != null && isActiveMember(churchId, request.auth.uid));
+        allow create, update: if (isAdmin() || rankAtLeast(churchId, 3))
+          && request.resource.data.keys().hasOnly(['courseId', 'unlockedBy', 'unlockedAt'])
+          && request.resource.data.courseId == courseId
+          && request.resource.data.unlockedBy == request.auth.uid
+          && request.resource.data.unlockedAt is int;
+        allow delete: if isAdmin() || rankAtLeast(churchId, 3);
+      }
+
+      // The member a leader asked to present (and exhort) a lesson ("{courseId}__{lessonId}").
       match /lessonAssignments/{aid} {
         allow read: if isAdmin() || (request.auth != null && isActiveMember(churchId, request.auth.uid));
         allow create, update: if (isAdmin() || rankAtLeast(churchId, 3))
-          && request.resource.data.keys().hasOnly(['courseId', 'lessonId', 'assignedBy', 'assignedAt', 'presenterUid', 'presenterName', 'presenterRole'])
+          && request.resource.data.keys().hasOnly(['courseId', 'lessonId', 'presenterUid', 'presenterName', 'assignedBy', 'assignedAt'])
           && aid == request.resource.data.courseId + '__' + request.resource.data.lessonId
-          && request.resource.data.assignedAt is int
-          && (!request.resource.data.keys().hasAny(['presenterUid'])
-            || (isActiveMember(churchId, request.resource.data.presenterUid)
-              && validText(request.resource.data.presenterName, 1, 100)
-              && request.resource.data.presenterRole in ['present', 'exhort']));
+          && isActiveMember(churchId, request.resource.data.presenterUid)
+          && validText(request.resource.data.presenterName, 1, 100)
+          && request.resource.data.assignedAt is int;
         allow delete: if isAdmin() || rankAtLeast(churchId, 3);
       }
 

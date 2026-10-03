@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { COURSES, findCourse } from "@/lib/content/courses";
 import { CourseHeader, CourseLessonList } from "@/components/courses/course-client";
 import { Bi } from "@/components/courses/bi";
+import { CourseUnlockCard } from "@/components/courses/lesson-access";
 
 // Static export: every course gets its own prebuilt page.
 export function generateStaticParams() {
@@ -18,6 +19,7 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
         <p className="text-sm leading-relaxed text-foreground/85">
           <Bi t={course.summary} />
         </p>
+        <CourseUnlockCard courseId={course.id} />
         <CourseLessonList courseId={course.id} lessons={course.lessons.map((l) => ({ id: l.id, title: l.title }))} />
       </div>
     </div>

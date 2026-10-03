@@ -70,6 +70,7 @@ export function CourseCards({ courses }: { courses: CourseCard[] }) {
   const { lang } = useLanguage();
   const tx = useTx();
   const progress = useAllCourseProgress();
+  const access = useCourseAccess();
   return (
     <div className="space-y-2.5">
       {courses.map((c, i) => {
@@ -78,11 +79,14 @@ export function CourseCards({ courses }: { courses: CourseCard[] }) {
         return (
           <Link key={c.id} href={`/courses/${c.id}`} className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4">
             <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-              <Icon className="size-5" />
+              {!access.loading && !access.canOpen(c.id) ? <Lock className="size-5 text-muted-foreground" /> : <Icon className="size-5" />}
             </span>
             <span className="min-w-0 flex-1">
               <span className="block text-[0.6875rem] font-semibold uppercase tracking-wide text-muted-foreground">
                 {tx(`Course ${i + 1}`, `Kurso ${i + 1}`)} · {c.lessonIds.length} {tx("lessons", "aralin")}
+                {!access.loading &&
+                  access.churchId &&
+                  (access.isUnlocked(c.id) ? ` · ${tx("Unlocked", "Bukas")}` : ` · ${tx("Locked", "Naka-lock")}`)}
               </span>
               <span className="block font-heading text-base font-semibold leading-tight">{c.title[lang]}</span>
               <span className="mt-0.5 block line-clamp-2 text-xs text-muted-foreground">{c.summary[lang]}</span>
@@ -112,8 +116,8 @@ export function CourseLessonList({ courseId, lessons }: { courseId: string; less
       </p>
       {lessons.map((l, i) => {
         const finished = !!progress[l.id]?.completedAt;
-        const assigned = !!access.assignments[assignmentId(courseId, l.id)];
-        if (!access.loading && !access.canOpen(courseId, l.id)) {
+        const presenter = access.assignments[assignmentId(courseId, l.id)]?.presenterName;
+        if (!access.loading && !access.canOpen(courseId)) {
           return (
             <div key={l.id} className="flex items-center gap-3 rounded-2xl border border-border/50 bg-muted/40 px-4 py-3 opacity-70">
               <Lock className="size-5 shrink-0 text-muted-foreground" />
@@ -136,7 +140,7 @@ export function CourseLessonList({ courseId, lessons }: { courseId: string; less
             <span className="min-w-0 flex-1">
               <span className="block text-[0.6875rem] text-muted-foreground">
                 {tx("Lesson", "Aralin")} {i + 1}
-                {access.isLeader && access.churchId && (assigned ? ` · ${tx("Open for AG", "Bukas sa AG")}` : ` · ${tx("Locked for AG", "Naka-lock sa AG")}`)}
+                {presenter && ` · ${tx(`Presenter: ${presenter}`, `Magpe-present: ${presenter}`)}`}
               </span>
               <span className="block text-sm font-medium">{l.title[lang]}</span>
             </span>
