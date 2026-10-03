@@ -189,6 +189,10 @@ export interface UserProfile {
   bio?: string;
   photoUrl?: string;
   onboarded?: boolean;
+  /** Mobile number, optional, entered at sign-up or in Profile. */
+  mobile?: string;
+  /** False right after sign-up until the member joins an AG or picks "Not now". */
+  agStepDone?: boolean;
   /** Which Privacy Notice version the member agreed to, and when. */
   privacyConsent?: { version: string; at: number };
   bibleTranslation?: string;

@@ -15,10 +15,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { readImageAsDataUrl } from "@/lib/image";
 import type { UserProfile } from "@/types";
+import { validMobile } from "@/components/auth/auth-screen";
 
 export interface EditProfileValues {
   displayName: string;
   ministry: string;
+  mobile: string;
   bio: string;
   photoUrl: string;
 }
@@ -36,6 +38,7 @@ export function EditProfileDialog({
 }) {
   const [name, setName] = useState(profile?.displayName ?? "");
   const [ministry, setMinistry] = useState(profile?.ministry ?? "");
+  const [mobile, setMobile] = useState(profile?.mobile ?? "");
   const [bio, setBio] = useState(profile?.bio ?? "");
   const [photoUrl, setPhotoUrl] = useState(profile?.photoUrl ?? "");
   const [photoError, setPhotoError] = useState("");
@@ -48,6 +51,7 @@ export function EditProfileDialog({
     setShown({ profile, open });
     setName(profile?.displayName ?? "");
     setMinistry(profile?.ministry ?? "");
+    setMobile(profile?.mobile ?? "");
     setBio(profile?.bio ?? "");
     setPhotoUrl(profile?.photoUrl ?? "");
     setPhotoError("");
@@ -113,6 +117,14 @@ export function EditProfileDialog({
             onChange={(e) => setMinistry(e.target.value)}
             placeholder="Ministry (optional)"
           />
+          <Input
+            type="tel"
+            inputMode="tel"
+            value={mobile}
+            onChange={(e) => setMobile(e.target.value)}
+            placeholder="Mobile number (optional)"
+          />
+          {!validMobile(mobile) && <p className="text-xs text-destructive">Check the mobile number.</p>}
           <Textarea
             value={bio}
             onChange={(e) => setBio(e.target.value)}
@@ -123,9 +135,9 @@ export function EditProfileDialog({
         <DialogFooter>
           <Button
             className="w-full"
-            disabled={!name.trim()}
+            disabled={!name.trim() || !validMobile(mobile)}
             onClick={() => {
-              onSubmit({ displayName: name.trim(), ministry: ministry.trim(), bio: bio.trim(), photoUrl });
+              onSubmit({ displayName: name.trim(), ministry: ministry.trim(), mobile: mobile.trim(), bio: bio.trim(), photoUrl });
               onOpenChange(false);
             }}
           >

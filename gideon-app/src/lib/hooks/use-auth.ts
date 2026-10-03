@@ -1,54 +1,29 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {
-  onAuthStateChanged,
-  signInAnonymously,
-  type User,
-} from "firebase/auth";
+import { onIdTokenChanged, type User } from "firebase/auth";
 import { auth } from "@/lib/firebase";
-import { whenGuestSignInAllowed } from "@/lib/guest-session";
 
-// Dozens of hooks call useAuth at once when a screen opens. Each used to start
-// its own guest sign-in on seeing "no user", so a new visitor got many
-// accounts (and many empty "Beloved" profiles). Everyone shares one sign-in.
-let guestSignIn: Promise<unknown> | null = null;
-
-function ensureGuestSession() {
-  guestSignIn ??= signInAnonymously(auth).finally(() => {
-    guestSignIn = null;
-  });
-  return guestSignIn;
-}
-
+/**
+ * The signed-in member, or null. There are no guest (anonymous) sessions any
+ * more: people sign up or log in on the welcome screen. Older guest sessions
+ * still load (isAnonymous) so the welcome screen can turn them into a real
+ * account without losing their data.
+ *
+ * onIdTokenChanged (not onAuthStateChanged) also fires when a guest session
+ * becomes a real account in place, so `isAnonymous` updates.
+ */
 export function useAuth() {
-  const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [state, setState] = useState<{ user: User | null; isAnonymous: boolean; loading: boolean }>({
+    user: null,
+    isAnonymous: false,
+    loading: true,
+  });
 
-  useEffect(() => {
-    let cancelWait = () => {};
-    const unsubscribe = onAuthStateChanged(auth, (current) => {
-      cancelWait();
-      if (current) {
-        setUser(current);
-        setError(null);
-        setLoading(false);
-      } else {
-        // Not before the visitor leaves the landing page (see guest-session).
-        cancelWait = whenGuestSignInAllowed(() => {
-          ensureGuestSession().catch((err) => {
-            setError(err?.code ?? "auth/unknown");
-            setLoading(false);
-          });
-        });
-      }
-    });
-    return () => {
-      cancelWait();
-      unsubscribe();
-    };
-  }, []);
+  useEffect(
+    () => onIdTokenChanged(auth, (current) => setState({ user: current, isAnonymous: !!current?.isAnonymous, loading: false })),
+    []
+  );
 
-  return { user, uid: user?.uid ?? null, loading, error };
+  return { user: state.user, uid: state.user?.uid ?? null, isAnonymous: state.isAnonymous, loading: state.loading, error: null as string | null };
 }

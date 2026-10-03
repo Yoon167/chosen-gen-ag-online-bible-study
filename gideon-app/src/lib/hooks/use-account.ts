@@ -1,7 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { doc, setDoc } from "firebase/firestore";
 import {
+  createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
   EmailAuthProvider,
   GoogleAuthProvider,
   linkWithCredential,
@@ -11,7 +14,9 @@ import {
   signOut,
   type AuthError,
 } from "firebase/auth";
-import { auth } from "@/lib/firebase";
+import { auth, db } from "@/lib/firebase";
+import { setPendingProfile } from "@/lib/hooks/use-profile";
+import type { UserProfile } from "@/types";
 
 function mapAuthError(error: unknown): string {
   const code = (error as AuthError)?.code;
@@ -34,6 +39,8 @@ function mapAuthError(error: unknown): string {
     case "auth/wrong-password":
     case "auth/user-not-found":
       return "Email or password is incorrect.";
+    case "auth/too-many-requests":
+      return "Too many tries. Wait a few minutes and try again.";
     case "auth/unauthorized-domain":
       return "Google sign-in isn't set up for this web address yet. Please use email for now.";
     case "auth/web-storage-unsupported":
@@ -125,11 +132,49 @@ export function useAccount() {
     }
   }
 
+  // A new account with email and password, no email confirmation needed. An
+  // older guest session on this device becomes the account (same uid), so its
+  // prayers, notes and journey stay. The profile details are saved with it.
+  async function signUp(email: string, password: string, details: Partial<UserProfile>) {
+    setError("");
+    setBusy(true);
+    setPendingProfile(details);
+    try {
+      const current = auth.currentUser;
+      const user = current?.isAnonymous
+        ? (await linkWithCredential(current, EmailAuthProvider.credential(email, password))).user
+        : (await createUserWithEmailAndPassword(auth, email, password)).user;
+      await setDoc(doc(db, "users", user.uid), { uid: user.uid, ...details }, { merge: true });
+      await user.getIdToken(true);
+    } catch (e) {
+      setError(mapAuthError(e));
+      throw e;
+    } finally {
+      setPendingProfile(null);
+      setBusy(false);
+    }
+  }
+
+  async function resetPassword(email: string) {
+    setError("");
+    setBusy(true);
+    try {
+      await sendPasswordResetEmail(auth, email);
+    } catch (e) {
+      setError(mapAuthError(e));
+      throw e;
+    } finally {
+      setBusy(false);
+    }
+  }
+
   async function signOutAccount() {
     await signOut(auth);
   }
 
   return {
+    signUp,
+    resetPassword,
     backupAccount,
     signIn,
     backupWithGoogle,
