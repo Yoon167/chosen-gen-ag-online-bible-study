@@ -2,3 +2,8 @@
 .firebase/
 firestore-tests/node_modules/
 *-debug.log
+
+# Build, deploy and emulator logs
+build.log
+deploy.log
+firestore-tests/firestore-debug.log
