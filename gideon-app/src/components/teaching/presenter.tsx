@@ -11,6 +11,8 @@ export interface PresentPart {
   lines: string[];
   /** Passages to show under the lines, e.g. "John 3:16". */
   refs?: string[];
+  /** A Scripture slide: the reference and its full text (empty while loading). */
+  passage?: { ref: string; text: string };
 }
 
 /** Live state shown in the top bar: the leader can switch it, members only see it. */
@@ -88,7 +90,8 @@ export function Presenter({
       </div>
       <div key={index} className="ui-rise flex flex-1 flex-col justify-center overflow-y-auto px-8 py-6 sm:px-16">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-200">
-          {part.title} · {part.minutes} min
+          {part.title}
+          {part.minutes ? ` · ${part.minutes} min` : ""}
         </p>
         <ul className="mt-6 space-y-5">
           {part.lines.map((l) => (
@@ -98,6 +101,14 @@ export function Presenter({
           ))}
         </ul>
         {part.refs && part.refs.length > 0 && <p className="mt-6 text-lg text-amber-100 sm:text-2xl">{part.refs.join(" · ")}</p>}
+        {part.passage && (
+          <div className="mt-6">
+            <p className="text-xl font-semibold text-amber-100 sm:text-3xl">{part.passage.ref}</p>
+            <p className="mt-4 whitespace-pre-line font-heading text-xl leading-relaxed sm:text-3xl">
+              {part.passage.text || tx("Loading the passage…", "Kinukuha ang talata…")}
+            </p>
+          </div>
+        )}
       </div>
       {following !== undefined ? (
         <div className="flex items-center gap-3 px-5 pb-[calc(env(safe-area-inset-bottom,0px)+16px)]">

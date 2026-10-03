@@ -7,7 +7,7 @@ import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
 import { PassageSheet } from "@/components/bible/passage-sheet";
-import { LivePresenter } from "@/components/teaching/live-presenter";
+import { LivePresenter, type PresentSlide } from "@/components/teaching/live-presenter";
 import { useAuth } from "@/lib/hooks/use-auth";
 import { useMyChurch } from "@/lib/hooks/use-church";
 import { LEADER_RANK, NATIONAL_ADMIN_UID } from "@/lib/church";
@@ -165,7 +165,33 @@ export function TeachGuide({
     },
   ];
   const total = parts.reduce((m, p) => m + p.minutes, 0);
-  const present = parts.map((p) => ({ title: p.title, minutes: p.minutes, lines: p.lines, refs: p.refs?.map(verseLabel) }));
+  // Present mode shows everything in full: each passage on its own slide with
+  // its text, and each teaching point with its whole explanation.
+  const nPoints = lesson.teaching.length;
+  const present: PresentSlide[] = parts.flatMap((p): PresentSlide[] => {
+    if (p.refs)
+      return [
+        { title: p.title, minutes: p.minutes, lines: p.lines },
+        ...p.refs.map((r, i) => ({
+          title: { en: `Scripture ${i + 1} of ${p.refs!.length}`, tl: `Talata ${i + 1} sa ${p.refs!.length}` },
+          minutes: 0,
+          lines: [],
+          scripture: r,
+        })),
+      ];
+    if (p.title.en === "Main teaching")
+      return lesson.teaching.map((sec, i) => ({
+        title: { en: `${i + 1}/${nPoints} · ${sec.heading.en}`, tl: `${i + 1}/${nPoints} · ${sec.heading.tl}` },
+        minutes: i === 0 ? p.minutes : 0,
+        lines: sec.body,
+      }));
+    if (p.title.en === "Challenge and memory verse")
+      return [
+        { title: p.title, minutes: p.minutes, lines: p.lines },
+        { title: L("Memory verse", "Talatang isasaulo"), minutes: 0, lines: [], scripture: lesson.memoryVerse },
+      ];
+    return [{ title: p.title, minutes: p.minutes, lines: p.lines }];
+  });
 
   return (
     <div>

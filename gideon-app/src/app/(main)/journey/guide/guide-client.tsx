@@ -8,7 +8,7 @@ import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
 import { PassageSheet } from "@/components/bible/passage-sheet";
-import { LivePresenter } from "@/components/teaching/live-presenter";
+import { LivePresenter, type PresentSlide } from "@/components/teaching/live-presenter";
 import { findLesson, findLevel } from "@/lib/content/journey";
 import { verseLabel, type VerseRef } from "@/lib/bible/verse-ref";
 import { useLanguage, useTx } from "@/lib/i18n";
@@ -169,7 +169,26 @@ export function GuideClient() {
       {slide !== null && (
         <LivePresenter
           heading={lesson.title}
-          parts={parts.map((p) => ({ title: p.title, minutes: p.minutes, lines: p.lines, refs: p.verses?.map(verseLabel) }))}
+          parts={parts.flatMap((p): PresentSlide[] => {
+            // In full: each passage with its text, and every teaching paragraph.
+            if (p.verses)
+              return [
+                { title: p.title, minutes: p.minutes, lines: p.lines },
+                ...p.verses.map((v, i) => ({
+                  title: { en: `Scripture ${i + 1} of ${p.verses!.length}`, tl: `Talata ${i + 1} sa ${p.verses!.length}` },
+                  minutes: 0,
+                  lines: [],
+                  scripture: v,
+                })),
+              ];
+            if (p.title.en === "Key truths")
+              return lesson.teaching.map((para, i) => ({
+                title: { en: `Teaching ${i + 1}/${lesson.teaching.length}`, tl: `Aral ${i + 1}/${lesson.teaching.length}` },
+                minutes: i === 0 ? p.minutes : 0,
+                lines: [para],
+              }));
+            return [{ title: p.title, minutes: p.minutes, lines: p.lines }];
+          })}
           onClose={() => setSlide(null)}
         />
       )}

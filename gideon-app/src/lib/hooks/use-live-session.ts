@@ -12,6 +12,8 @@ export interface LivePart {
   minutes: number;
   lines: Text[];
   refs?: string[];
+  /** A Scripture slide: the passage read in full, in English and Tagalog. */
+  passage?: { ref: string; en: string; tl: string };
 }
 
 /**
@@ -56,11 +58,24 @@ export function useLiveSession(churchId: string | null) {
   return { session: churchId && loadedFor === churchId ? session : null, loading: !!churchId && loadedFor !== churchId };
 }
 
+// Firestore rejects undefined values, so optional fields are left out when empty.
+const clean = (parts: LivePart[]) =>
+  parts.map(({ title, minutes, lines, refs, passage }) => ({
+    title,
+    minutes,
+    lines,
+    ...(refs?.length ? { refs } : {}),
+    ...(passage ? { passage } : {}),
+  }));
+
 export function startLive(churchId: string, s: Omit<LiveSession, "startedAt" | "updatedAt">) {
   const now = Date.now();
-  // Firestore rejects undefined values, so slides without passages drop the field.
-  const parts = s.parts.map((p) => (p.refs?.length ? p : { title: p.title, minutes: p.minutes, lines: p.lines }));
-  return setDoc(liveDoc(churchId), { ...s, parts, startedAt: now, updatedAt: now });
+  return setDoc(liveDoc(churchId), { ...s, parts: clean(s.parts), startedAt: now, updatedAt: now });
+}
+
+/** Replaces the slides (e.g. once the Scripture texts have loaded) without restarting the study. */
+export function updateLiveParts(churchId: string, parts: LivePart[]) {
+  return updateDoc(liveDoc(churchId), { parts: clean(parts), updatedAt: Date.now() });
 }
 
 export function moveLive(churchId: string, index: number) {

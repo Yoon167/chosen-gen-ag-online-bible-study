@@ -104,7 +104,13 @@ export function LiveFollow() {
   return (
     <Presenter
       heading={session.heading[lang]}
-      parts={session.parts.map((p) => ({ title: p.title[lang], minutes: p.minutes, lines: p.lines.map((l) => l[lang]), refs: p.refs }))}
+      parts={session.parts.map((p) => ({
+        title: p.title[lang],
+        minutes: p.minutes,
+        lines: p.lines.map((l) => l[lang]),
+        refs: p.refs,
+        passage: p.passage && { ref: p.passage.ref, text: p.passage[lang] },
+      }))}
       index={session.index}
       onIndex={() => {}}
       onClose={() => router.push("/")}

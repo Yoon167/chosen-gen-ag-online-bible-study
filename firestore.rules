@@ -431,7 +431,7 @@ service cloud.firestore {
           && request.resource.data.leaderUid == request.auth.uid
           && request.resource.data.heading is map
           && request.resource.data.parts is list
-          && request.resource.data.parts.size() <= 30
+          && request.resource.data.parts.size() <= 40
           && request.resource.data.index is int
           && request.resource.data.index >= 0
           && request.resource.data.index < request.resource.data.parts.size()
