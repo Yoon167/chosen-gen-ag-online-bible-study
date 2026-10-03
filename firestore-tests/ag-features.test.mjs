@@ -161,6 +161,22 @@ await t("member cannot move the slides", assertFails(updateDoc(doc(real("ana"), 
 await t("member cannot end it", assertFails(deleteDoc(doc(real("ana"), LV))));
 await t("leader ends the live study", assertSucceeds(deleteDoc(doc(real("lead"), LV))));
 
+// ---------- Course lesson assignments ----------
+const LA = `churches/${C}/lessonAssignments/foundation__c-who-is-jesus`;
+const la = (extra = {}) => ({ courseId: "foundation", lessonId: "c-who-is-jesus", assignedBy: "lead", assignedAt: 1, ...extra });
+await t("leader opens a lesson", assertSucceeds(setDoc(doc(real("lead"), LA), la())));
+await t("member cannot open a lesson", assertFails(setDoc(doc(real("ana"), `churches/${C}/lessonAssignments/growth__c-prayer`), la({ courseId: "growth", lessonId: "c-prayer" }))));
+await t("id must match the lesson", assertFails(setDoc(doc(real("lead"), `churches/${C}/lessonAssignments/x__y`), la())));
+await t("member sees opened lessons", assertSucceeds(getDocs(collection(real("ana"), `churches/${C}/lessonAssignments`))));
+await t("outsider cannot see them", assertFails(getDocs(collection(real("out"), `churches/${C}/lessonAssignments`))));
+await t("presenter must be an active member", assertFails(updateDoc(doc(real("lead"), LA), { presenterUid: "pend", presenterName: "pend", presenterRole: "present" })));
+await t("leader assigns ana to exhort", assertSucceeds(updateDoc(doc(real("lead"), LA), { presenterUid: "ana", presenterName: "Ana", presenterRole: "exhort" })));
+await t("assigned member presents live", assertSucceeds(setDoc(doc(real("ana"), LV), live({ leaderUid: "ana", leaderName: "Ana", assignmentId: "foundation__c-who-is-jesus" }))));
+await t("assigned member moves slides", assertSucceeds(updateDoc(doc(real("ana"), LV), { index: 1, updatedAt: 2 })));
+await t("other member cannot present with it", assertFails(setDoc(doc(real("ben"), LV), live({ leaderUid: "ben", assignmentId: "foundation__c-who-is-jesus" }))));
+await t("assigned member ends their live study", assertSucceeds(deleteDoc(doc(real("ana"), LV))));
+await t("leader locks the lesson again", assertSucceeds(deleteDoc(doc(real("lead"), LA))));
+
 await env.cleanup();
 console.log(failed ? `${failed} FAILED` : "ALL PASSED");
 process.exit(failed ? 1 : 0);

@@ -21,11 +21,13 @@ import {
   Sprout,
   Sunrise,
   type LucideIcon,
+  Lock,
 } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { PassageSheet } from "@/components/bible/passage-sheet";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import { assignmentId, useCourseAccess } from "@/lib/hooks/use-lesson-assignments";
 import { useAllCourseProgress, useCourseProgress } from "@/lib/hooks/use-course-progress";
 import { useMemoryVerses } from "@/lib/hooks/use-memory-verses";
 import { useBibleTranslation } from "@/lib/hooks/use-bible-translation";
@@ -101,6 +103,7 @@ export function CourseLessonList({ courseId, lessons }: { courseId: string; less
   const { lang } = useLanguage();
   const tx = useTx();
   const { lessons: progress } = useCourseProgress(courseId);
+  const access = useCourseAccess();
   const done = lessons.filter((l) => progress[l.id]?.completedAt).length;
   return (
     <div className="space-y-2">
@@ -109,6 +112,20 @@ export function CourseLessonList({ courseId, lessons }: { courseId: string; less
       </p>
       {lessons.map((l, i) => {
         const finished = !!progress[l.id]?.completedAt;
+        const assigned = !!access.assignments[assignmentId(courseId, l.id)];
+        if (!access.loading && !access.canOpen(courseId, l.id)) {
+          return (
+            <div key={l.id} className="flex items-center gap-3 rounded-2xl border border-border/50 bg-muted/40 px-4 py-3 opacity-70">
+              <Lock className="size-5 shrink-0 text-muted-foreground" />
+              <span className="min-w-0 flex-1">
+                <span className="block text-[0.6875rem] text-muted-foreground">
+                  {tx("Lesson", "Aralin")} {i + 1} · {tx("Locked", "Naka-lock")}
+                </span>
+                <span className="block text-sm font-medium text-muted-foreground">{l.title[lang]}</span>
+              </span>
+            </div>
+          );
+        }
         return (
           <Link
             key={l.id}
@@ -119,6 +136,7 @@ export function CourseLessonList({ courseId, lessons }: { courseId: string; less
             <span className="min-w-0 flex-1">
               <span className="block text-[0.6875rem] text-muted-foreground">
                 {tx("Lesson", "Aralin")} {i + 1}
+                {access.isLeader && access.churchId && (assigned ? ` · ${tx("Open for AG", "Bukas sa AG")}` : ` · ${tx("Locked for AG", "Naka-lock sa AG")}`)}
               </span>
               <span className="block text-sm font-medium">{l.title[lang]}</span>
             </span>

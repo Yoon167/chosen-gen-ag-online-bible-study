@@ -11,25 +11,38 @@ import { LivePresenter, type PresentSlide } from "@/components/teaching/live-pre
 import { useAuth } from "@/lib/hooks/use-auth";
 import { useMyChurch } from "@/lib/hooks/use-church";
 import { LEADER_RANK, NATIONAL_ADMIN_UID } from "@/lib/church";
+import { useCourseAccess } from "@/lib/hooks/use-lesson-assignments";
 import { verseLabel, type VerseRef } from "@/lib/bible/verse-ref";
 import type { CourseLesson, Text } from "@/lib/content/courses/types";
 import { useLanguage, useTx } from "@/lib/i18n";
 
-/** The owner (national admin) and AG leaders (Facilitator and up) teach from these guides. */
-export function useCanTeach() {
+/**
+ * The owner (national admin) and AG leaders (Facilitator and up) teach from
+ * these guides, and so does a member their leader assigned to present or
+ * exhort this lesson.
+ */
+export function useCanTeach(courseId?: string, lessonId?: string) {
   const { uid } = useAuth();
   const my = useMyChurch();
+  const access = useCourseAccess();
   const isOwner = uid === NATIONAL_ADMIN_UID;
-  return { canTeach: isOwner || (my.active && my.rank >= LEADER_RANK), loading: my.loading && !isOwner };
+  const leader = isOwner || (my.active && my.rank >= LEADER_RANK);
+  const presenting = !leader && courseId && lessonId ? access.myPresenting(courseId, lessonId) : null;
+  return {
+    canTeach: leader || !!presenting,
+    /** Set when teaching only because of an assignment; its id goes with the live study. */
+    presenterAssignment: presenting ? presenting.id : null,
+    loading: (my.loading || access.loading) && !isOwner,
+  };
 }
 
-/** On a lesson page: a way into its Teaching Guide, only for those who teach. */
-export function TeachLink({ href }: { href: string }) {
+/** On a lesson page: a way into its Teaching Guide, only for those who teach it. */
+export function TeachLink({ courseId, lessonId }: { courseId: string; lessonId: string }) {
   const tx = useTx();
-  const { canTeach } = useCanTeach();
+  const { canTeach } = useCanTeach(courseId, lessonId);
   if (!canTeach) return null;
   return (
-    <Link href={href} className="flex items-center gap-3 rounded-2xl border border-primary/40 bg-primary/5 p-4">
+    <Link href={`/courses/${courseId}/${lessonId}/teach`} className="flex items-center gap-3 rounded-2xl border border-primary/40 bg-primary/5 p-4">
       <Presentation className="size-5 shrink-0 text-primary" />
       <span className="flex-1">
         <span className="block text-sm font-medium">{tx("Teaching Guide", "Gabay sa Pagtuturo")}</span>
@@ -62,12 +75,14 @@ interface Part {
  * discussion, application, challenge and prayer, with suggested times.
  */
 export function TeachGuide({
+  courseId,
   courseTitle,
   lessonNumber,
   opener,
   lesson,
   lessonHref,
 }: {
+  courseId: string;
   courseTitle: Text;
   lessonNumber: number;
   opener: Text;
@@ -76,7 +91,7 @@ export function TeachGuide({
 }) {
   const tx = useTx();
   const { lang } = useLanguage();
-  const { canTeach, loading } = useCanTeach();
+  const { canTeach, presenterAssignment, loading } = useCanTeach(courseId, lesson.id);
   const [slide, setSlide] = useState<number | null>(null);
   const [passage, setPassage] = useState<VerseRef | null>(null);
   const title = tx("Teaching Guide", "Gabay sa Pagtuturo");
@@ -89,7 +104,10 @@ export function TeachGuide({
         <EmptyState
           icon={GraduationCap}
           title={tx("For AG leaders", "Para sa mga AG leader")}
-          description={tx("Teaching Guides are for those who lead and teach an AG.", "Ang mga Gabay sa Pagtuturo ay para sa mga nangunguna at nagtuturo sa isang AG.")}
+          description={tx(
+            "Teaching Guides are for AG leaders and for members their leader assigned to present this lesson.",
+            "Ang mga Gabay sa Pagtuturo ay para sa mga AG leader at sa mga member na in-assign ng leader na mag-present ng araling ito."
+          )}
         />
       </div>
     );
@@ -268,7 +286,7 @@ export function TeachGuide({
       </div>
 
       {slide !== null && (
-        <LivePresenter heading={lesson.title} parts={present} onClose={() => setSlide(null)} />
+        <LivePresenter heading={lesson.title} parts={present} presenterAssignment={presenterAssignment} onClose={() => setSlide(null)} />
       )}
       <PassageSheet passage={passage} onClose={() => setPassage(null)} />
     </div>

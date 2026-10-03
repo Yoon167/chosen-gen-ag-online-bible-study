@@ -4,6 +4,7 @@ import type { Text } from "@/lib/content/courses/types";
 import { CourseHeader, LessonWorkbook, MemoryVerseButton, ScriptureChips } from "@/components/courses/course-client";
 import { Bi } from "@/components/courses/bi";
 import { TeachLink } from "@/components/courses/teach-client";
+import { LessonGate } from "@/components/courses/lesson-access";
 import { verseLabel } from "@/lib/bible/verse-ref";
 
 // Static export: every lesson gets its own prebuilt page. The text is printed
@@ -53,8 +54,9 @@ export default async function CourseLessonPage({ params }: { params: Promise<{ c
         title={lesson.title}
         subtitle={{ en: `${course.title.en} · Lesson ${index + 1}`, tl: `${course.title.tl} · Aralin ${index + 1}` }}
       />
+      <LessonGate courseId={course.id} lessonId={lesson.id}>
       <article className="space-y-4 px-5 pb-8">
-        <TeachLink href={`/courses/${course.id}/${lesson.id}/teach`} />
+        <TeachLink courseId={course.id} lessonId={lesson.id} />
         <Section title={L("Objective", "Layunin")} tone="primary">
           <p>
             <Bi t={lesson.objective} />
@@ -139,6 +141,7 @@ export default async function CourseLessonPage({ params }: { params: Promise<{ c
           next={next ? { href: `/courses/${course.id}/${next.id}`, title: next.title } : null}
         />
       </article>
+      </LessonGate>
     </div>
   );
 }

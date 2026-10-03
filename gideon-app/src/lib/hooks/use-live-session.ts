@@ -27,6 +27,8 @@ export interface LiveSession {
   index: number;
   leaderUid: string;
   leaderName: string;
+  /** Set when a member (not a leader) presents a lesson their leader assigned to them. */
+  assignmentId?: string;
   startedAt: number;
   updatedAt: number;
 }

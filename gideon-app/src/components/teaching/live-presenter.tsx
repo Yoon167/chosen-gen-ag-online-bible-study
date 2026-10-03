@@ -31,7 +31,18 @@ async function passageText(label: string, translation: string) {
  * bar turns it off for a private run-through. Scripture slides show the whole
  * passage (English and Tagalog), fetched here and sent along to members.
  */
-export function LivePresenter({ heading, parts: slides, onClose }: { heading: Text; parts: PresentSlide[]; onClose: () => void }) {
+export function LivePresenter({
+  heading,
+  parts: slides,
+  presenterAssignment,
+  onClose,
+}: {
+  heading: Text;
+  parts: PresentSlide[];
+  /** A member presenting because their leader assigned this lesson: the assignment's id. */
+  presenterAssignment?: string | null;
+  onClose: () => void;
+}) {
   const tx = useTx();
   const { lang } = useLanguage();
   const { uid } = useAuth();
@@ -39,7 +50,8 @@ export function LivePresenter({ heading, parts: slides, onClose }: { heading: Te
   const my = useMyChurch();
   const preferred = useBibleTranslation();
   const churchId = my.churchId;
-  const canLead = !!uid && !!churchId && (uid === NATIONAL_ADMIN_UID || (my.active && my.rank >= LEADER_RANK));
+  const canLead =
+    !!uid && !!churchId && (uid === NATIONAL_ADMIN_UID || (my.active && (my.rank >= LEADER_RANK || !!presenterAssignment)));
   const [index, setIndex] = useState(0);
   const [wantLive, setWantLive] = useState(true);
   const [texts, setTexts] = useState<Record<string, Text>>({});
@@ -78,19 +90,20 @@ export function LivePresenter({ heading, parts: slides, onClose }: { heading: Te
 
   // The AG this screen is live in, so a later AG switch still ends the right one.
   const liveIn = useRef<string | null>(null);
-  const latest = useRef({ heading, parts, index, name: "" });
+  const latest = useRef({ heading, parts, index, name: "", assignment: presenterAssignment ?? null });
   const name = profile?.displayName || my.membership?.displayName || "Leader";
   // Runs before the live effect below, so going live sends the current slides.
   useEffect(() => {
-    latest.current = { heading, parts, index, name };
+    latest.current = { heading, parts, index, name, assignment: presenterAssignment ?? null };
   });
 
   useEffect(() => {
     if (!live || !churchId || !uid) return;
-    const { heading: h, parts: p, index: i, name: n } = latest.current;
+    const { heading: h, parts: p, index: i, name: n, assignment } = latest.current;
     liveIn.current = churchId;
+    const session = { heading: h, parts: p, index: i, leaderUid: uid, leaderName: n, ...(assignment ? { assignmentId: assignment } : {}) };
     // If it fails (offline, no permission), the badge falls back to "Go live".
-    startLive(churchId, { heading: h, parts: p, index: i, leaderUid: uid, leaderName: n }).catch(() => setWantLive(false));
+    startLive(churchId, session).catch(() => setWantLive(false));
     return () => {
       liveIn.current = null;
       endLive(churchId).catch(() => {});
