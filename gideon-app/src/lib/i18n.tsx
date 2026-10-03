@@ -47,6 +47,7 @@ const STRINGS = {
   "qa.feelings": { en: "Verses for How I Feel", tl: "Talata sa Nararamdaman Ko" },
   "qa.victories": { en: "What God Has Done", tl: "Ginawa ng Diyos" },
   "qa.quiz": { en: "Bible Quiz", tl: "Bible Quiz" },
+  "qa.courses": { en: "Courses", tl: "Mga Kurso" },
 
   // Devotion
   "devotion.title": { en: "Daily Devotion", tl: "Pang-araw-araw na Debosyon" },

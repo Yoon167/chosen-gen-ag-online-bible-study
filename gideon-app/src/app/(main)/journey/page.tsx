@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronRight, Compass, Gift, Plus, ShieldCheck } from "lucide-react";
+import { ChevronRight, Compass, Gift, GraduationCap, Plus, ShieldCheck } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { AddMilestoneDialog } from "@/components/journey/add-milestone-dialog";
@@ -40,6 +40,24 @@ export default function JourneyPage() {
           </button>
         }
       />
+
+      <div className="px-5 pb-5">
+        <Link href="/courses" className="flex items-center gap-3 rounded-2xl border border-primary/40 bg-primary/5 p-4">
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+            <GraduationCap className="size-5" />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block font-medium">{tx("Discipleship Courses", "Mga Kurso sa Pagkadisipulo")}</span>
+            <span className="block text-xs text-muted-foreground">
+              {tx(
+                "Deep Bible studies: foundations, theology, freedom, healing, holiness, stewardship and more.",
+                "Malalim na pag-aaral ng Bibliya: pundasyon, teolohiya, kalayaan, kagalingan, kabanalan, katiwala, at iba pa."
+              )}
+            </span>
+          </span>
+          <ChevronRight className="size-4 text-muted-foreground" />
+        </Link>
+      </div>
 
       <Section title={tx("Discipleship Journey", "Discipleship Journey")} className="pb-5">
         <JoinAgNotice className="mb-3" />

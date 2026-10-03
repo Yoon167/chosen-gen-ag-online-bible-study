@@ -168,6 +168,12 @@
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 }
+/* Bilingual text printed at build time (Discipleship Courses): show the one
+   matching the page language, set by the language switch. */
+html[lang="tl"] .t-en,
+html:not([lang="tl"]) .t-tl {
+  display: none;
+}
 /* Entrance animations for the app's pages and cards. CSS keyframes on
    opacity/transform run on the GPU, so they stay smooth while a page is
    still loading its data (framer-motion's JS animations stuttered then). */

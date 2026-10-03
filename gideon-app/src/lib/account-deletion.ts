@@ -51,6 +51,7 @@ const USER_SUBCOLLECTIONS = [
   "badges",
   "sermonAnswers",
   "quizScores",
+  "courseProgress",
   "assessments",
   "vaultKeys",
 ];
