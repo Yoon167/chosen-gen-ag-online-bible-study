@@ -7,11 +7,12 @@ import { HEALING } from "./healing";
 import { HOLINESS } from "./holiness";
 import { CHAINS } from "./chains";
 import { STEWARDSHIP } from "./stewardship";
+import { TRUTH } from "./truth";
 
 export type { Course, CourseLesson, Text } from "./types";
 
 /** The Discipleship Courses, in suggested order: from salvation to maturity. */
-export const COURSES: Course[] = [FOUNDATION, GROWTH, THEOLOGY, FREEDOM, HEALING, HOLINESS, CHAINS, STEWARDSHIP];
+export const COURSES: Course[] = [FOUNDATION, GROWTH, THEOLOGY, FREEDOM, HEALING, HOLINESS, CHAINS, STEWARDSHIP, TRUTH];
 
 export function findCourse(id: string) {
   return COURSES.find((c) => c.id === id);
