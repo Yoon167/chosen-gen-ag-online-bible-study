@@ -1,10 +1,11 @@
 import type { Course, CourseLesson } from "./types";
 import { FOUNDATION } from "./foundation";
+import { GROWTH } from "./growth";
 
 export type { Course, CourseLesson, Text } from "./types";
 
 /** The Discipleship Courses, in suggested order: from salvation to maturity. */
-export const COURSES: Course[] = [FOUNDATION];
+export const COURSES: Course[] = [FOUNDATION, GROWTH];
 
 export function findCourse(id: string) {
   return COURSES.find((c) => c.id === id);
