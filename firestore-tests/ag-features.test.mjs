@@ -144,6 +144,23 @@ await t("member cannot remove someone else's hour", assertFails(deleteDoc(doc(re
 await t("member leaves their hour", assertSucceeds(deleteDoc(doc(real("ana"), `${PC}/slots/5_ana`))));
 await t("leader removes any hour", assertSucceeds(deleteDoc(doc(real("lead"), `${PC}/slots/5_ben`))));
 
+// ---------- Live study ----------
+const LV = `churches/${C}/live/current`;
+const part = { title: { en: "Welcome", tl: "Pagbati" }, minutes: 5, lines: [{ en: "Hi", tl: "Kumusta" }] };
+const live = (extra = {}) => ({ heading: { en: "L", tl: "L" }, parts: [part, part], index: 0, leaderUid: "lead", leaderName: "Pastor", startedAt: 1, updatedAt: 1, ...extra });
+await t("leader goes live", assertSucceeds(setDoc(doc(real("lead"), LV), live())));
+await t("member cannot go live", assertFails(setDoc(doc(real("ana"), LV), live({ leaderUid: "ana" }))));
+await t("leader cannot go live as someone else", assertFails(setDoc(doc(real("lead"), LV), live({ leaderUid: "ana" }))));
+await t("only the 'current' doc", assertFails(setDoc(doc(real("lead"), `churches/${C}/live/other`), live())));
+await t("member follows the live study", assertSucceeds(getDoc(doc(real("ana"), LV))));
+await t("pending member cannot follow", assertFails(getDoc(doc(real("pend"), LV))));
+await t("outsider cannot follow", assertFails(getDoc(doc(real("out"), LV))));
+await t("leader moves to the next slide", assertSucceeds(updateDoc(doc(real("lead"), LV), { index: 1, updatedAt: 2 })));
+await t("slide must exist", assertFails(updateDoc(doc(real("lead"), LV), { index: 2, updatedAt: 3 })));
+await t("member cannot move the slides", assertFails(updateDoc(doc(real("ana"), LV), { index: 0, updatedAt: 3 })));
+await t("member cannot end it", assertFails(deleteDoc(doc(real("ana"), LV))));
+await t("leader ends the live study", assertSucceeds(deleteDoc(doc(real("lead"), LV))));
+
 await env.cleanup();
 console.log(failed ? `${failed} FAILED` : "ALL PASSED");
 process.exit(failed ? 1 : 0);

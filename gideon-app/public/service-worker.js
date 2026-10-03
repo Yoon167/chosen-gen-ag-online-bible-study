@@ -84,3 +84,20 @@ async function offlinePage(url) {
   }
   return (await caches.match("/", MATCH)) || Response.error();
 }
+
+// Live-study alerts: tapping one opens (or focuses) the app on the live page.
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  const url = (event.notification.data && event.notification.data.url) || "/";
+  event.waitUntil(
+    self.clients.matchAll({ type: "window", includeUncontrolled: true }).then((wins) => {
+      for (const w of wins) {
+        if ("focus" in w) {
+          w.navigate(url);
+          return w.focus();
+        }
+      }
+      return self.clients.openWindow(url);
+    })
+  );
+});

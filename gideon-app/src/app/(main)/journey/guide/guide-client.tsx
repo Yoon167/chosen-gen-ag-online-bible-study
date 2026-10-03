@@ -8,7 +8,7 @@ import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
 import { PassageSheet } from "@/components/bible/passage-sheet";
-import { Presenter } from "@/components/teaching/presenter";
+import { LivePresenter } from "@/components/teaching/live-presenter";
 import { findLesson, findLevel } from "@/lib/content/journey";
 import { verseLabel, type VerseRef } from "@/lib/bible/verse-ref";
 import { useLanguage, useTx } from "@/lib/i18n";
@@ -121,7 +121,7 @@ export function GuideClient() {
           </p>
           <Button size="sm" onClick={() => setSlide(0)}>
             <MonitorPlay className="size-4" />
-            {tx("Present", "I-present")}
+            {tx("Present live", "I-present nang live")}
           </Button>
         </div>
 
@@ -167,11 +167,9 @@ export function GuideClient() {
       </div>
 
       {slide !== null && (
-        <Presenter
-          heading={lesson.title[lang]}
-          parts={parts.map((p) => ({ title: p.title[lang], minutes: p.minutes, lines: p.lines.map((l) => l[lang]), refs: p.verses?.map(verseLabel) }))}
-          index={slide}
-          onIndex={setSlide}
+        <LivePresenter
+          heading={lesson.title}
+          parts={parts.map((p) => ({ title: p.title, minutes: p.minutes, lines: p.lines, refs: p.verses?.map(verseLabel) }))}
           onClose={() => setSlide(null)}
         />
       )}

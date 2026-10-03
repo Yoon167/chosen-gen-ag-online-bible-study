@@ -421,6 +421,26 @@ service cloud.firestore {
         }
       }
 
+      // Live study: the slide a leader is presenting right now. Members'
+      // screens follow it; only the presenting leader moves it.
+      match /live/{docId} {
+        allow read: if isAdmin() || (request.auth != null && isActiveMember(churchId, request.auth.uid));
+        allow create, update: if docId == 'current'
+          && (isAdmin() || rankAtLeast(churchId, 3))
+          && request.resource.data.keys().hasOnly(['heading', 'parts', 'index', 'leaderUid', 'leaderName', 'startedAt', 'updatedAt'])
+          && request.resource.data.leaderUid == request.auth.uid
+          && request.resource.data.heading is map
+          && request.resource.data.parts is list
+          && request.resource.data.parts.size() <= 30
+          && request.resource.data.index is int
+          && request.resource.data.index >= 0
+          && request.resource.data.index < request.resource.data.parts.size()
+          && validText(request.resource.data.leaderName, 1, 100)
+          && request.resource.data.startedAt is int
+          && request.resource.data.updatedAt is int;
+        allow delete: if isAdmin() || rankAtLeast(churchId, 3);
+      }
+
       // Prayer chains: leaders set a stretch of hours (up to a week, e.g. a
       // 24-hour prayer day during a fast); members sign up for hours. Slot
       // doc id is "{hour}_{uid}", and several people may share an hour.
