@@ -1,7 +1,8 @@
 "use client";
 
 import { useMemo, useState, useSyncExternalStore } from "react";
-import { Sun, Heart, Share2, Check, RotateCcw } from "lucide-react";
+import Link from "next/link";
+import { Sun, Heart, Share2, Check, RotateCcw, BookOpenCheck, ChevronRight } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { Section } from "@/components/shared/section";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -11,7 +12,8 @@ import { devotionOfTheDay, type StaticDevotion } from "@/lib/content/devotions";
 import { useDevotionLog, useDevotionHistory } from "@/lib/hooks/use-devotion-log";
 import { cn } from "@/lib/utils";
 import { LanguageToggle } from "@/components/language-toggle";
-import { useLanguage } from "@/lib/i18n";
+import { useLanguage, useTx } from "@/lib/i18n";
+import { findMethod } from "@/lib/content/devotion-guide";
 
 const noSubscribe = () => () => {};
 
@@ -46,7 +48,9 @@ export default function DevotionPage() {
 function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; dateKey: string }) {
   const { entry, update } = useDevotionLog(dateKey, devotion.title);
   const { items: history } = useDevotionHistory();
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const tx = useTx();
+  const method = findMethod(entry?.method);
   // The saved note shows until you start editing; then your draft does.
   const [draft, setDraft] = useState<string | null>(null);
   const noteDirty = draft !== null;
@@ -146,6 +150,35 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
             </button>
           </div>
         </div>
+      </div>
+
+      <div className="mt-4 px-5">
+        <Link href="/devotion/guide" className="flex items-center gap-3 rounded-2xl border border-primary/40 bg-primary/5 p-4">
+          <BookOpenCheck className="size-5 shrink-0 text-primary" />
+          <span className="min-w-0 flex-1">
+            <span className="block text-sm font-medium">{tx("How to have a devotion", "Paano mag-devotion")}</span>
+            <span className="block text-xs text-muted-foreground">{tx("Steps, SOAP, HEAR, ACTS and more", "Mga hakbang, SOAP, HEAR, ACTS, at iba pa")}</span>
+          </span>
+          <ChevronRight className="size-4 shrink-0 text-muted-foreground" />
+        </Link>
+        {method && entry?.steps && (
+          <div className="mt-3 rounded-2xl border border-border/70 bg-card p-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+              {tx("My", "Aking")} {method.name[lang]} {tx("journal", "journal")}
+              {entry.passage ? ` · ${entry.passage}` : ""}
+            </p>
+            <div className="mt-2 space-y-1.5 text-sm">
+              {method.steps
+                .filter((s) => entry.steps?.[s.key]?.trim())
+                .map((s) => (
+                  <p key={s.key}>
+                    <span className="font-semibold">{s.mark} </span>
+                    {entry.steps![s.key]}
+                  </p>
+                ))}
+            </div>
+          </div>
+        )}
       </div>
 
       <Section title={t("devotion.yourNotes")} className="mt-5">

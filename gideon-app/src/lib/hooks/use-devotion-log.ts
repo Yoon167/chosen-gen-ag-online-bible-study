@@ -18,6 +18,10 @@ export interface DevotionLogEntry {
   completed: boolean;
   favorited: boolean;
   note: string;
+  /** A journal written with a devotion method (SOAP, HEAR…), by step key. */
+  method?: string;
+  passage?: string;
+  steps?: Record<string, string>;
   updatedAt: number;
 }
 
