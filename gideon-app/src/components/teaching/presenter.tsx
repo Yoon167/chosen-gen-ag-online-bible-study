@@ -34,6 +34,7 @@ export function Presenter({
   onIndex,
   onClose,
   live,
+  toolbar,
   following,
 }: {
   heading: string;
@@ -42,6 +43,8 @@ export function Presenter({
   onIndex: (i: number) => void;
   onClose: () => void;
   live?: PresenterLive;
+  /** Extra buttons in the top bar (e.g. the call link). */
+  toolbar?: React.ReactNode;
   /** The leader's name when this screen follows someone else's presentation. */
   following?: string;
 }) {
@@ -69,6 +72,7 @@ export function Presenter({
         <p className="min-w-0 flex-1 truncate text-xs text-white/60">
           {heading} · {index + 1}/{parts.length}
         </p>
+        {toolbar}
         {live &&
           (live.onToggle ? (
             <button

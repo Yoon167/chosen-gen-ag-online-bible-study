@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Check, Trash2, Users, X } from "lucide-react";
+import { Check, MessageSquare, Phone, Trash2, Users, X } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -259,6 +259,18 @@ function MemberRow({
             {m.mentorName && ` · ${tx("Mentor", "Mentor")}: ${m.mentorName}`}
             {m.partnerName && ` · ${tx("Partner", "Partner")}: ${m.partnerName}`}
           </p>
+          {m.phone && !isSelf && (
+            <p className="mt-1 flex items-center gap-3 text-xs">
+              <a href={`tel:${m.phone.replace(/[^\d+]/g, "")}`} className="inline-flex items-center gap-1 font-medium text-primary">
+                <Phone className="size-3.5" />
+                {m.phone}
+              </a>
+              <a href={`sms:${m.phone.replace(/[^\d+]/g, "")}`} className="inline-flex items-center gap-1 font-medium text-primary">
+                <MessageSquare className="size-3.5" />
+                {tx("Text", "I-text")}
+              </a>
+            </p>
+          )}
         </div>
         {canManage && (
           <button

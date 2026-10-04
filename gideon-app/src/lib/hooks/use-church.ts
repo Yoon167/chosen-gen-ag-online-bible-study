@@ -207,6 +207,11 @@ export async function setShareProgress(churchId: string, uid: string, shareProgr
   );
 }
 
+/** Shares (or stops sharing) the member's mobile number with their AG leaders. */
+export async function setSharePhone(churchId: string, uid: string, phone: string | null) {
+  await updateDoc(doc(db, "churches", churchId, "members", uid), { phone: phone ? phone : deleteField() });
+}
+
 export async function syncProgressSummary(churchId: string, uid: string, progress: ProgressSummary) {
   await updateDoc(doc(db, "churches", churchId, "members", uid), { progress });
 }

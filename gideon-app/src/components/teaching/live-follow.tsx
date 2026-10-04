@@ -3,7 +3,7 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { BellRing, Radio } from "lucide-react";
+import { BellRing, Radio, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
@@ -11,6 +11,8 @@ import { Presenter } from "@/components/teaching/presenter";
 import { useAuth } from "@/lib/hooks/use-auth";
 import { useMyChurch } from "@/lib/hooks/use-church";
 import { useLiveSession } from "@/lib/hooks/use-live-session";
+import { markAttendance } from "@/lib/hooks/use-live-attendance";
+import { useProfile } from "@/lib/hooks/use-profile";
 import { useLanguage, useTx } from "@/lib/i18n";
 
 const SEEN_KEY = "gideon-live-seen";
@@ -79,8 +81,20 @@ export function LiveFollow() {
   const { lang } = useLanguage();
   const router = useRouter();
   const my = useMyChurch();
+  const { uid } = useAuth();
+  const { profile } = useProfile();
   const { session, loading } = useLiveSession(my.active ? my.churchId : null);
   const title = tx("Live study", "Live na pag-aaral");
+
+  // Joining marks this member present for the study (the leader's attendance list).
+  const startedAt = session && session.leaderUid !== uid ? session.startedAt : null;
+  const name = profile?.displayName || my.membership?.displayName || "Member";
+  useEffect(() => {
+    if (!startedAt || !my.churchId || !uid) return;
+    markAttendance(my.churchId, startedAt, { uid, name }).catch(() => {});
+    // Once per live study.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [startedAt, my.churchId, uid]);
 
   if (my.loading || loading) return <PageHeader title={title} back />;
   if (!session) {
@@ -115,6 +129,19 @@ export function LiveFollow() {
       onIndex={() => {}}
       onClose={() => router.push("/")}
       live={{ on: true, label: "Live" }}
+      toolbar={
+        session.callUrl ? (
+          <a
+            href={session.callUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 inline-flex shrink-0 items-center gap-1 rounded-full bg-emerald-600 px-3 py-1 text-xs font-semibold text-white"
+          >
+            <Video className="size-3.5" />
+            {tx("Join call", "Sumali sa call")}
+          </a>
+        ) : undefined
+      }
       following={session.leaderName}
     />
   );
@@ -179,6 +206,17 @@ export function LiveBanner() {
             >
               {tx("Join now", "Sumali ngayon")}
             </Link>
+            {session!.callUrl && (
+              <a
+                href={session!.callUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-emerald-600 text-sm font-semibold text-emerald-700"
+              >
+                <Video className="size-4" />
+                {tx("Join the call", "Sumali sa call")}
+              </a>
+            )}
             <Button variant="ghost" className="w-full" onClick={() => setPopup(null)}>
               {tx("Later", "Mamaya")}
             </Button>

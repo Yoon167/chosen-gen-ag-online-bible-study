@@ -103,6 +103,8 @@ export interface Membership {
   shareProgress?: boolean;
   /** Written by the member only while sharing: lesson counts, never answers or notes. */
   progress?: ProgressSummary;
+  /** The member's mobile number, only if they chose to share it with AG leaders. */
+  phone?: string;
   /** Journey checkpoints confirmed by the member's mentor, keyed by level number. */
   confirmedLevels?: Record<string, { by: string; name: string; at: number }>;
 }

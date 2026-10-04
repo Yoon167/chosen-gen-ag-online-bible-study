@@ -183,6 +183,34 @@ await t("assigned member ends their live study", assertSucceeds(deleteDoc(doc(re
 await t("leader removes the presenter", assertSucceeds(deleteDoc(doc(real("lead"), LA))));
 await t("leader locks the course", assertSucceeds(deleteDoc(doc(real("lead"), CU))));
 
+// ---------- Live study attendance ----------
+await t("leader goes live again", assertSucceeds(setDoc(doc(real("lead"), LV), live({ startedAt: 100 }))));
+const LS = `churches/${C}/liveSessions/100`;
+const rec = (extra = {}) => ({ heading: { en: "L", tl: "L" }, leaderUid: "lead", leaderName: "Pastor", startedAt: 100, ...extra });
+await t("leader records the session", assertSucceeds(setDoc(doc(real("lead"), LS), rec())));
+await t("session id must match startedAt", assertFails(setDoc(doc(real("lead"), `churches/${C}/liveSessions/101`), rec())));
+await t("member cannot record a session they don't lead", assertFails(setDoc(doc(real("ana"), `churches/${C}/liveSessions/102`), rec({ leaderUid: "ana", startedAt: 102 }))));
+const ATT = (u) => `${LS}/attendees/${u}`;
+await t("member marks themselves present", assertSucceeds(setDoc(doc(real("ana"), ATT("ana")), { uid: "ana", name: "Ana", joinedAt: 1 })));
+await t("cannot mark someone else present", assertFails(setDoc(doc(real("ana"), ATT("ben")), { uid: "ben", name: "Ben", joinedAt: 1 })));
+await t("pending member cannot mark present", assertFails(setDoc(doc(real("pend"), ATT("pend")), { uid: "pend", name: "P", joinedAt: 1 })));
+await t("no attendance for a missing session", assertFails(setDoc(doc(real("ben"), `churches/${C}/liveSessions/999/attendees/ben`), { uid: "ben", name: "Ben", joinedAt: 1 })));
+await t("leader reads attendance", assertSucceeds(getDocs(collection(real("lead"), `${LS}/attendees`))));
+await t("member cannot read attendance", assertFails(getDocs(collection(real("ben"), `${LS}/attendees`))));
+await t("leader lists sessions", assertSucceeds(getDocs(collection(real("lead"), `churches/${C}/liveSessions`))));
+await t("member cannot list sessions", assertFails(getDocs(collection(real("ana"), `churches/${C}/liveSessions`))));
+await t("leader adds a call link", assertSucceeds(updateDoc(doc(real("lead"), LV), { callUrl: "https://meet.google.com/abc-defg-hij", updatedAt: 3 })));
+await t("call link must be https", assertFails(updateDoc(doc(real("lead"), LV), { callUrl: "javascript:alert(1)", updatedAt: 4 })));
+await t("leader ends it", assertSucceeds(deleteDoc(doc(real("lead"), LV))));
+
+// ---------- Shared mobile number ----------
+const MB = (u) => `churches/${C}/members/${u}`;
+await t("member shares their mobile", assertSucceeds(updateDoc(doc(real("ana"), MB("ana")), { phone: "0917 123 4567" })));
+await t("too-short number refused", assertFails(updateDoc(doc(real("ana"), MB("ana")), { phone: "123" })));
+await t("cannot set someone else's number", assertFails(updateDoc(doc(real("ana"), MB("ben")), { phone: "0917 123 4567" })));
+await t("leader sees the number in the roster", assertSucceeds(getDoc(doc(real("lead"), MB("ana")))));
+await t("other member cannot read it", assertFails(getDoc(doc(real("ben"), MB("ana")))));
+
 await env.cleanup();
 console.log(failed ? `${failed} FAILED` : "ALL PASSED");
 process.exit(failed ? 1 : 0);

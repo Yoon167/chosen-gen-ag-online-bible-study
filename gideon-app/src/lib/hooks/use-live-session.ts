@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { deleteDoc, doc, onSnapshot, setDoc, updateDoc } from "firebase/firestore";
+import { deleteDoc, deleteField, doc, onSnapshot, setDoc, updateDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 
 type Text = { en: string; tl: string };
@@ -29,6 +29,8 @@ export interface LiveSession {
   leaderName: string;
   /** Set when a member (not a leader) presents a lesson their leader assigned to them. */
   assignmentId?: string;
+  /** The video call (Meet, Zoom, Messenger) for an online study. */
+  callUrl?: string;
   startedAt: number;
   updatedAt: number;
 }
@@ -70,14 +72,21 @@ const clean = (parts: LivePart[]) =>
     ...(passage ? { passage } : {}),
   }));
 
-export function startLive(churchId: string, s: Omit<LiveSession, "startedAt" | "updatedAt">) {
+/** Goes live; resolves to the study's startedAt (also the id of its attendance record). */
+export async function startLive(churchId: string, s: Omit<LiveSession, "startedAt" | "updatedAt">) {
   const now = Date.now();
-  return setDoc(liveDoc(churchId), { ...s, parts: clean(s.parts), startedAt: now, updatedAt: now });
+  await setDoc(liveDoc(churchId), { ...s, parts: clean(s.parts), startedAt: now, updatedAt: now });
+  return now;
 }
 
 /** Replaces the slides (e.g. once the Scripture texts have loaded) without restarting the study. */
 export function updateLiveParts(churchId: string, parts: LivePart[]) {
   return updateDoc(liveDoc(churchId), { parts: clean(parts), updatedAt: Date.now() });
+}
+
+/** Sets or clears the video call link members see while following. */
+export function setLiveCall(churchId: string, callUrl: string | null) {
+  return updateDoc(liveDoc(churchId), { callUrl: callUrl ?? deleteField(), updatedAt: Date.now() });
 }
 
 export function moveLive(churchId: string, index: number) {

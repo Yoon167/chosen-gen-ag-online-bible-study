@@ -3,10 +3,14 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Presenter } from "@/components/teaching/presenter";
 import { fitSlides } from "@/components/teaching/fit-slides";
+import { recordLiveSession } from "@/lib/hooks/use-live-attendance";
 import { useAuth } from "@/lib/hooks/use-auth";
 import { useMyChurch } from "@/lib/hooks/use-church";
 import { useProfile } from "@/lib/hooks/use-profile";
-import { endLive, moveLive, startLive, updateLiveParts, type LivePart } from "@/lib/hooks/use-live-session";
+import { endLive, moveLive, setLiveCall, startLive, updateLiveParts, type LivePart } from "@/lib/hooks/use-live-session";
+import { Video } from "lucide-react";
+
+const CALL_KEY = "gideon-call-url";
 import { useBibleTranslation } from "@/lib/hooks/use-bible-translation";
 import { cleanVerseText, fetchPassage } from "@/lib/bible/api";
 import { DEFAULT_TRANSLATION, TAGALOG_TRANSLATION, translationInfo } from "@/lib/bible/translations";
@@ -56,6 +60,14 @@ export function LivePresenter({
   const [index, setIndex] = useState(0);
   const [wantLive, setWantLive] = useState(true);
   const [texts, setTexts] = useState<Record<string, Text>>({});
+  // The online study's call link, remembered on this device for next time.
+  const [callUrl, setCallUrl] = useState<string>(() => {
+    try {
+      return localStorage.getItem(CALL_KEY) ?? "";
+    } catch {
+      return "";
+    }
+  });
   const live = canLead && wantLive;
 
   // The leader's own Bible choice is used for their language; the other language uses the default.
@@ -94,20 +106,25 @@ export function LivePresenter({
 
   // The AG this screen is live in, so a later AG switch still ends the right one.
   const liveIn = useRef<string | null>(null);
-  const latest = useRef({ heading, parts, index, name: "", assignment: presenterAssignment ?? null });
+  const latest = useRef({ heading, parts, index, name: "", assignment: presenterAssignment ?? null, callUrl });
   const name = profile?.displayName || my.membership?.displayName || "Leader";
   // Runs before the live effect below, so going live sends the current slides.
   useEffect(() => {
-    latest.current = { heading, parts, index, name, assignment: presenterAssignment ?? null };
+    latest.current = { heading, parts, index, name, assignment: presenterAssignment ?? null, callUrl };
   });
 
   useEffect(() => {
     if (!live || !churchId || !uid) return;
-    const { heading: h, parts: p, index: i, name: n, assignment } = latest.current;
+    const { heading: h, parts: p, index: i, name: n, assignment, callUrl: call } = latest.current;
     liveIn.current = churchId;
-    const session = { heading: h, parts: p, index: i, leaderUid: uid, leaderName: n, ...(assignment ? { assignmentId: assignment } : {}) };
+    const session = { heading: h, parts: p, index: i, leaderUid: uid, leaderName: n, ...(assignment ? { assignmentId: assignment } : {}), ...(call ? { callUrl: call } : {}) };
     // If it fails (offline, no permission), the badge falls back to "Go live".
-    startLive(churchId, session).catch(() => setWantLive(false));
+    startLive(churchId, session)
+      .then((startedAt) =>
+        // The record that attendance is kept under; a failure here doesn't stop the live study.
+        recordLiveSession(churchId, { heading: h, leaderUid: uid, leaderName: n, startedAt }).catch(() => {})
+      )
+      .catch(() => setWantLive(false));
     return () => {
       liveIn.current = null;
       endLive(churchId).catch(() => {});
@@ -138,6 +155,34 @@ export function LivePresenter({
       index={index}
       onIndex={go}
       onClose={onClose}
+      toolbar={
+        canLead ? (
+          <button
+            onClick={() => {
+              const input = window.prompt(
+                tx("Paste the Meet, Zoom or Messenger call link for members (leave empty to remove):", "I-paste ang Meet, Zoom, o Messenger call link para sa members (iwanang blangko para alisin):"),
+                callUrl
+              );
+              if (input === null) return;
+              const url = input.trim();
+              if (url && !/^https:\/\/\S+$/.test(url)) {
+                window.alert(tx("The link should start with https://", "Dapat magsimula ang link sa https://"));
+                return;
+              }
+              setCallUrl(url);
+              try {
+                if (url) localStorage.setItem(CALL_KEY, url);
+                else localStorage.removeItem(CALL_KEY);
+              } catch {}
+              if (liveIn.current) setLiveCall(liveIn.current, url || null).catch(() => {});
+            }}
+            className={`ml-2 inline-flex shrink-0 items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold ${callUrl ? "bg-emerald-600 text-white" : "border border-white/30 text-white/70"}`}
+          >
+            <Video className="size-3.5" />
+            {callUrl ? tx("Call", "Call") : tx("Add call", "Lagyan ng call")}
+          </button>
+        ) : undefined
+      }
       live={
         canLead
           ? {

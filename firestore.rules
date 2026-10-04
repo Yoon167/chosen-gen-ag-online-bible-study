@@ -210,9 +210,11 @@ service cloud.firestore {
           // Members may update their display name, their sharing choice, and
           // (only while sharing) a summary of their journey progress.
           || (request.auth != null && request.auth.uid == uid
-            && changedOnly(['displayName', 'shareProgress', 'progress'])
+            && changedOnly(['displayName', 'shareProgress', 'progress', 'phone'])
             && (!request.resource.data.keys().hasAny(['progress'])
-              || (request.resource.data.shareProgress == true && request.resource.data.progress is map)))
+              || (request.resource.data.shareProgress == true && request.resource.data.progress is map))
+            // A mobile number the member chose to share with their leaders.
+            && (!request.resource.data.keys().hasAny(['phone']) || validText(request.resource.data.phone, 7, 20)))
           // A member's own mentor confirms journey checkpoints.
           || (request.auth != null
             && resource.data.get('mentorUid', null) == request.auth.uid
@@ -435,7 +437,9 @@ service cloud.firestore {
         allow read: if isAdmin() || (request.auth != null && isActiveMember(churchId, request.auth.uid));
         allow create, update: if docId == 'current'
           && (isAdmin() || rankAtLeast(churchId, 3) || isAssignedPresenter(churchId, request.resource.data.get('assignmentId', '')))
-          && request.resource.data.keys().hasOnly(['heading', 'parts', 'index', 'leaderUid', 'leaderName', 'assignmentId', 'startedAt', 'updatedAt'])
+          && request.resource.data.keys().hasOnly(['heading', 'parts', 'index', 'leaderUid', 'leaderName', 'assignmentId', 'callUrl', 'startedAt', 'updatedAt'])
+          && (!request.resource.data.keys().hasAny(['callUrl'])
+            || (request.resource.data.callUrl is string && request.resource.data.callUrl.size() <= 500 && request.resource.data.callUrl.matches('https://.+')))
           && request.resource.data.leaderUid == request.auth.uid
           && request.resource.data.heading is map
           && request.resource.data.parts is list
@@ -448,6 +452,35 @@ service cloud.firestore {
           && request.resource.data.updatedAt is int;
         allow delete: if isAdmin() || rankAtLeast(churchId, 3)
           || (request.auth != null && resource.data.leaderUid == request.auth.uid);
+      }
+
+      // One record per live study, kept after it ends, so leaders see attendance.
+      // The id is the live study's startedAt; whoever presented it creates it.
+      match /liveSessions/{sid} {
+        allow read: if isAdmin() || rankAtLeast(churchId, 3);
+        allow create: if request.auth != null
+          && isActiveMember(churchId, request.auth.uid)
+          && request.resource.data.keys().hasOnly(['heading', 'leaderUid', 'leaderName', 'startedAt'])
+          && request.resource.data.leaderUid == request.auth.uid
+          && request.resource.data.heading is map
+          && validText(request.resource.data.leaderName, 1, 100)
+          && request.resource.data.startedAt is int
+          && sid == string(request.resource.data.startedAt)
+          && get(/databases/$(database)/documents/churches/$(churchId)/live/current).data.leaderUid == request.auth.uid;
+        allow delete: if isAdmin() || rankAtLeast(churchId, 3);
+
+        // A member marks themselves present by joining the live study.
+        match /attendees/{uid} {
+          allow read: if isAdmin() || rankAtLeast(churchId, 3);
+          allow create, update: if request.auth != null && request.auth.uid == uid
+            && isActiveMember(churchId, uid)
+            && exists(/databases/$(database)/documents/churches/$(churchId)/liveSessions/$(sid))
+            && request.resource.data.keys().hasOnly(['uid', 'name', 'joinedAt'])
+            && request.resource.data.uid == uid
+            && validText(request.resource.data.name, 1, 100)
+            && request.resource.data.joinedAt is int;
+          allow delete: if isAdmin() || rankAtLeast(churchId, 3);
+        }
       }
 
       // Courses the AG leader unlocked for the AG: every lesson in them opens.

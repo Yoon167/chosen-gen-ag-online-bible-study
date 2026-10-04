@@ -19,6 +19,7 @@ import {
   CalendarCheck2,
   PlusCircle,
   Link2,
+  ClipboardCheck,
 } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
@@ -35,6 +36,7 @@ import {
   setShareProgress,
   switchAg,
   useMyChurch,
+  setSharePhone,
 } from "@/lib/hooks/use-church";
 import { NATIONAL_ADMIN_UID, roleInfo, type Church } from "@/lib/church";
 import { useLanguage, useTx } from "@/lib/i18n";
@@ -318,6 +320,44 @@ export default function MyChurchPage() {
                 onCheckedChange={(on) => run(() => setShareProgress(my.churchId!, uid!, on))}
               />
             </label>
+
+            <label className="flex items-start gap-3 rounded-2xl border border-border/70 bg-card p-4">
+              <span className="min-w-0 flex-1">
+                <span className="block text-sm font-medium">
+                  {tx("Share my mobile number with AG leaders", "Ibahagi ang mobile number ko sa mga AG leader")}
+                </span>
+                <span className="block text-xs text-muted-foreground">
+                  {profile?.mobile
+                    ? tx(`So your leaders can call or text you (${profile.mobile}). Only leaders see it.`, `Para matawagan o ma-text ka ng iyong mga leader (${profile.mobile}). Mga leader lang ang makakakita.`)
+                    : tx("Add your mobile number in Profile first.", "Ilagay muna ang mobile number mo sa Profile.")}
+                </span>
+                {my.membership!.phone && profile?.mobile && my.membership!.phone !== profile.mobile && (
+                  <button
+                    className="mt-1 text-xs font-medium text-primary underline underline-offset-2"
+                    disabled={busy}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      run(() => setSharePhone(my.churchId!, uid!, profile.mobile!));
+                    }}
+                  >
+                    {tx("Update to my new number", "I-update sa bago kong number")}
+                  </button>
+                )}
+              </span>
+              <Switch
+                checked={!!my.membership!.phone}
+                disabled={busy || (!profile?.mobile && !my.membership!.phone)}
+                onCheckedChange={(on) => run(() => setSharePhone(my.churchId!, uid!, on ? (profile?.mobile ?? null) : null))}
+              />
+            </label>
+
+            {my.isChurchLeader && (
+              <Link href="/church/attendance" className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4">
+                <ClipboardCheck className="size-5 text-primary" />
+                <span className="flex-1 text-sm font-medium">{tx("Live study attendance", "Attendance sa live study")}</span>
+                <ChevronRight className="size-4 text-muted-foreground" />
+              </Link>
+            )}
 
             {my.rank >= 2 && (
               <Link
