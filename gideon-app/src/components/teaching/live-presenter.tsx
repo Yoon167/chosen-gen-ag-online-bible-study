@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Presenter } from "@/components/teaching/presenter";
+import { fitSlides } from "@/components/teaching/fit-slides";
 import { useAuth } from "@/lib/hooks/use-auth";
 import { useMyChurch } from "@/lib/hooks/use-church";
 import { useProfile } from "@/lib/hooks/use-profile";
@@ -18,10 +19,10 @@ type Text = { en: string; tl: string };
 /** A slide as a guide builds it; `scripture` marks a slide that shows that passage in full. */
 export type PresentSlide = Omit<LivePart, "passage"> & { scripture?: VerseRef };
 
-/** The passage with verse numbers, e.g. "16 For God so loved… 17 For God did not…". */
+/** The passage with verse numbers, one verse per line ("16 For God so loved…"). */
 async function passageText(label: string, translation: string) {
   const p = await fetchPassage(label, translation);
-  return p.verses.map((v) => `${v.verse} ${cleanVerseText(v.text)}`).join(" ");
+  return p.verses.map((v) => `${v.verse} ${cleanVerseText(v.text)}`).join("\n");
 }
 
 /**
@@ -77,14 +78,17 @@ export function LivePresenter({
     };
   }, [labelKey, enTranslation, tlTranslation]);
 
+  // Long passages and teaching text continue on extra slides so nothing runs off the screen.
   const parts: LivePart[] = useMemo(
     () =>
-      slides.map(({ scripture, ...s }) => {
-        if (!scripture) return s;
-        const ref = verseLabel(scripture);
-        const t = texts[ref];
-        return { ...s, passage: { ref, en: t?.en ?? "", tl: t?.tl ?? "" } };
-      }),
+      fitSlides(
+        slides.map(({ scripture, ...s }) => {
+          if (!scripture) return s;
+          const ref = verseLabel(scripture);
+          const t = texts[ref];
+          return { ...s, passage: { ref, en: t?.en ?? "", tl: t?.tl ?? "" } };
+        })
+      ),
     [slides, texts]
   );
 

@@ -88,7 +88,10 @@ export function Presenter({
           <X className="size-5" />
         </button>
       </div>
-      <div key={index} className="ui-rise flex flex-1 flex-col justify-center overflow-y-auto px-8 py-6 sm:px-16">
+      {/* Scrolls when a slide is taller than the screen. The inner my-auto centers
+          short slides, but never pushes the start of long ones above the top. */}
+      <div key={index} className="ui-rise flex min-h-0 flex-1 flex-col overflow-y-auto px-8 py-6 sm:px-16">
+        <div className="my-auto">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-200">
           {part.title}
           {part.minutes ? ` · ${part.minutes} min` : ""}
@@ -109,6 +112,7 @@ export function Presenter({
             </p>
           </div>
         )}
+        </div>
       </div>
       {following !== undefined ? (
         <div className="flex items-center gap-3 px-5 pb-[calc(env(safe-area-inset-bottom,0px)+16px)]">
