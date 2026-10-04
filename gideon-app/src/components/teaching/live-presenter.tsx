@@ -9,6 +9,8 @@ import { useMyChurch } from "@/lib/hooks/use-church";
 import { useProfile } from "@/lib/hooks/use-profile";
 import { endLive, moveLive, setLiveCall, startLive, updateLiveParts, type LivePart } from "@/lib/hooks/use-live-session";
 import { Video } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { currentOccurrence, useChurchMeetings } from "@/lib/hooks/use-church-meetings";
 
 const CALL_KEY = "gideon-call-url";
 import { useBibleTranslation } from "@/lib/hooks/use-bible-translation";
@@ -60,14 +62,31 @@ export function LivePresenter({
   const [index, setIndex] = useState(0);
   const [wantLive, setWantLive] = useState(true);
   const [texts, setTexts] = useState<Record<string, Text>>({});
-  // The online study's call link, remembered on this device for next time.
-  const [callUrl, setCallUrl] = useState<string>(() => {
+  // The online study's call link. Unless the leader picks one, it is the link of
+  // the AG meeting happening now (or starting within 30 minutes), else the last
+  // link used on this device.
+  const [chosenCall, setChosenCall] = useState<string | null>(null);
+  const [remembered] = useState<string>(() => {
     try {
       return localStorage.getItem(CALL_KEY) ?? "";
     } catch {
       return "";
     }
   });
+  const [pickingCall, setPickingCall] = useState(false);
+  const meetings = useChurchMeetings(churchId);
+  const [now] = useState(() => Date.now());
+  const callMeetings = useMemo(
+    () =>
+      meetings.items
+        .filter((m) => /^https:\/\/\S+$/.test(m.link))
+        .map((m) => ({ m, occ: currentOccurrence(m, now) }))
+        .filter((x) => x.occ.status !== "ended")
+        .sort((a, b) => a.occ.start - b.occ.start),
+    [meetings.items, now]
+  );
+  const nowMeeting = callMeetings.find((x) => x.occ.status === "live" || x.occ.start - now <= 30 * 60 * 1000);
+  const callUrl = chosenCall ?? nowMeeting?.m.link ?? remembered;
   const live = canLead && wantLive;
 
   // The leader's own Bible choice is used for their language; the other language uses the default.
@@ -132,6 +151,20 @@ export function LivePresenter({
   }, [live, churchId, uid]);
 
   // Scripture texts arrive after going live: send them to members as they load.
+  // The call link reaches members as soon as it is known or changed.
+  useEffect(() => {
+    if (liveIn.current) setLiveCall(liveIn.current, callUrl || null).catch(() => {});
+  }, [callUrl]);
+
+  const pickCall = (url: string) => {
+    setChosenCall(url);
+    setPickingCall(false);
+    try {
+      if (url) localStorage.setItem(CALL_KEY, url);
+      else localStorage.removeItem(CALL_KEY);
+    } catch {}
+  };
+
   const loaded = Object.keys(texts).length;
   useEffect(() => {
     if (loaded && liveIn.current) updateLiveParts(liveIn.current, latest.current.parts).catch(() => {});
@@ -143,6 +176,7 @@ export function LivePresenter({
   };
 
   return (
+    <>
     <Presenter
       heading={heading[lang]}
       parts={parts.map((p) => ({
@@ -158,24 +192,7 @@ export function LivePresenter({
       toolbar={
         canLead ? (
           <button
-            onClick={() => {
-              const input = window.prompt(
-                tx("Paste the Meet, Zoom or Messenger call link for members (leave empty to remove):", "I-paste ang Meet, Zoom, o Messenger call link para sa members (iwanang blangko para alisin):"),
-                callUrl
-              );
-              if (input === null) return;
-              const url = input.trim();
-              if (url && !/^https:\/\/\S+$/.test(url)) {
-                window.alert(tx("The link should start with https://", "Dapat magsimula ang link sa https://"));
-                return;
-              }
-              setCallUrl(url);
-              try {
-                if (url) localStorage.setItem(CALL_KEY, url);
-                else localStorage.removeItem(CALL_KEY);
-              } catch {}
-              if (liveIn.current) setLiveCall(liveIn.current, url || null).catch(() => {});
-            }}
+            onClick={() => setPickingCall(true)}
             className={`ml-2 inline-flex shrink-0 items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold ${callUrl ? "bg-emerald-600 text-white" : "border border-white/30 text-white/70"}`}
           >
             <Video className="size-3.5" />
@@ -193,5 +210,64 @@ export function LivePresenter({
           : undefined
       }
     />
+    {pickingCall && (
+      <div className="fixed inset-0 z-[95] flex items-end justify-center bg-black/60 p-4 sm:items-center" role="dialog" aria-label={tx("Call link", "Call link")}>
+        <div className="w-full max-w-sm space-y-2 rounded-3xl bg-card p-4 text-foreground shadow-xl">
+          <p className="font-heading text-base font-semibold">{tx("Call for this study", "Call para sa pag-aaral na ito")}</p>
+          <p className="text-xs text-muted-foreground">
+            {tx("Members get a Join the call button with the slides.", "Magkakaroon ang members ng Sumali sa call kasama ng slides.")}
+          </p>
+          {callMeetings.length === 0 && (
+            <p className="rounded-xl bg-muted/60 p-3 text-xs text-muted-foreground">
+              {tx("No upcoming AG meeting has a call link. Add one in Meetings, or paste a link below.", "Walang paparating na AG meeting na may call link. Maglagay sa Meetings, o mag-paste ng link sa ibaba.")}
+            </p>
+          )}
+          {callMeetings.map(({ m, occ }) => (
+            <button
+              key={m.id}
+              onClick={() => pickCall(m.link)}
+              className={`flex w-full items-center gap-3 rounded-xl border p-3 text-left ${callUrl === m.link ? "border-emerald-600 bg-emerald-600/10" : "border-border/70"}`}
+            >
+              <Video className="size-4 shrink-0 text-emerald-700" />
+              <span className="min-w-0 flex-1">
+                <span className="block truncate text-sm font-medium">{m.title}</span>
+                <span className="block truncate text-xs text-muted-foreground">
+                  {m.platform} ·{" "}
+                  {occ.status === "live"
+                    ? tx("happening now", "nagaganap ngayon")
+                    : new Date(occ.start).toLocaleString(lang === "tl" ? "fil-PH" : "en-PH", { weekday: "short", hour: "numeric", minute: "2-digit" })}
+                </span>
+              </span>
+            </button>
+          ))}
+          <button
+            className="w-full rounded-xl border border-dashed border-border p-3 text-sm font-medium"
+            onClick={() => {
+              const input = window.prompt(tx("Paste the call link (https://…):", "I-paste ang call link (https://…):"), callUrl);
+              if (input === null) return;
+              const url = input.trim();
+              if (url && !/^https:\/\/\S+$/.test(url)) {
+                window.alert(tx("The link should start with https://", "Dapat magsimula ang link sa https://"));
+                return;
+              }
+              pickCall(url);
+            }}
+          >
+            {tx("Paste another link", "Mag-paste ng ibang link")}
+          </button>
+          <div className="flex gap-2 pt-1">
+            {callUrl && (
+              <Button variant="ghost" className="flex-1" onClick={() => pickCall("")}>
+                {tx("No call", "Walang call")}
+              </Button>
+            )}
+            <Button className="flex-1" onClick={() => setPickingCall(false)}>
+              {tx("Done", "Tapos")}
+            </Button>
+          </div>
+        </div>
+      </div>
+    )}
+    </>
   );
 }
