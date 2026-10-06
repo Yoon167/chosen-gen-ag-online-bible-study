@@ -81,12 +81,19 @@ export function LivePresenter({
       meetings.items
         .filter((m) => /^https:\/\/\S+$/.test(m.link))
         .map((m) => ({ m, occ: currentOccurrence(m, now) }))
-        .filter((x) => x.occ.status !== "ended")
-        .sort((a, b) => a.occ.start - b.occ.start),
+        // Happening now and upcoming first (soonest first), then past meetings (latest first).
+        .sort((a, b) => {
+          const ea = a.occ.status === "ended";
+          const eb = b.occ.status === "ended";
+          if (ea !== eb) return ea ? 1 : -1;
+          return ea ? b.occ.start - a.occ.start : a.occ.start - b.occ.start;
+        }),
     [meetings.items, now]
   );
-  const nowMeeting = callMeetings.find((x) => x.occ.status === "live" || x.occ.start - now <= 30 * 60 * 1000);
-  const callUrl = chosenCall ?? nowMeeting?.m.link ?? remembered;
+  const nowMeeting = callMeetings.find((x) => x.occ.status !== "ended" && (x.occ.status === "live" || x.occ.start - now <= 30 * 60 * 1000));
+  // Otherwise the latest Bible Study meeting that had a link (e.g. "Online Bible Study Part 1").
+  const lastStudy = callMeetings.find((x) => x.m.type === "bible_study") ?? callMeetings[0];
+  const callUrl = chosenCall ?? nowMeeting?.m.link ?? (remembered || lastStudy?.m.link) ?? "";
   const live = canLead && wantLive;
 
   // The leader's own Bible choice is used for their language; the other language uses the default.
@@ -219,7 +226,7 @@ export function LivePresenter({
           </p>
           {callMeetings.length === 0 && (
             <p className="rounded-xl bg-muted/60 p-3 text-xs text-muted-foreground">
-              {tx("No upcoming AG meeting has a call link. Add one in Meetings, or paste a link below.", "Walang paparating na AG meeting na may call link. Maglagay sa Meetings, o mag-paste ng link sa ibaba.")}
+              {tx("No AG meeting has a call link yet. Add one in Meetings, or paste a link below.", "Wala pang AG meeting na may call link. Maglagay sa Meetings, o mag-paste ng link sa ibaba.")}
             </p>
           )}
           {callMeetings.map(({ m, occ }) => (
@@ -235,7 +242,7 @@ export function LivePresenter({
                   {m.platform} ·{" "}
                   {occ.status === "live"
                     ? tx("happening now", "nagaganap ngayon")
-                    : new Date(occ.start).toLocaleString(lang === "tl" ? "fil-PH" : "en-PH", { weekday: "short", hour: "numeric", minute: "2-digit" })}
+                    : `${occ.status === "ended" ? tx("past", "nakaraan") + " · " : ""}${new Date(occ.start).toLocaleString(lang === "tl" ? "fil-PH" : "en-PH", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })}`}
                 </span>
               </span>
             </button>

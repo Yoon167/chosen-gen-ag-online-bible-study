@@ -171,8 +171,27 @@ export async function createAg(form: NewAgForm, me: { uid: string; name: string 
   };
   batch.set(doc(db, "churches", id, "members", me.uid), founder);
   await batch.commit();
-  switchAg(id);
+  // The app keeps showing the AG the leader was in; the new one appears in
+  // the AG switcher on My AG.
   return id;
+}
+
+/** The names of these AGs (for the AG switcher), by id. */
+export function useChurchNames(ids: string[]) {
+  const [names, setNames] = useState<Record<string, string>>({});
+  const key = [...ids].sort().join("|");
+  useEffect(() => {
+    if (!key) return;
+    const unsubs = key.split("|").map((id) =>
+      onSnapshot(
+        doc(db, "churches", id),
+        (snap) => setNames((n) => ({ ...n, [id]: (snap.data()?.name as string) ?? id })),
+        () => {}
+      )
+    );
+    return () => unsubs.forEach((u) => u());
+  }, [key]);
+  return names;
 }
 
 /** Active churches people can ask to join. */

@@ -35,6 +35,7 @@ import {
   requestToJoin,
   setShareProgress,
   switchAg,
+  useChurchNames,
   useMyChurch,
   setSharePhone,
 } from "@/lib/hooks/use-church";
@@ -63,7 +64,9 @@ export default function MyChurchPage() {
   // The invited AG goes first in the list.
   const directory = churches ? [...churches].sort((a, b) => Number(b.id === invitedId) - Number(a.id === invitedId)) : null;
 
-  const needsDirectory = !my.loading && (!my.membership || my.memberships.length > 1);
+  // Only people not in any AG yet see the directory to ask to join one.
+  const needsDirectory = !my.loading && !my.membership;
+  const agNames = useChurchNames(my.memberships.map((m) => m.churchId));
   // AG Leaders and Assistant Leaders (and the national admin) can start another AG.
   const canStartAg =
     hasAccount && (uid === NATIONAL_ADMIN_UID || my.memberships.some((m) => m.membership.status === "active" && m.membership.rank >= 5));
@@ -184,6 +187,10 @@ export default function MyChurchPage() {
 
         {/* People in more than one AG pick which one to see */}
         {my.memberships.length > 1 && (
+          <div className="space-y-1.5">
+          <p className="text-xs font-semibold text-muted-foreground">
+            {tx("Your AGs (tap to switch)", "Mga AG mo (pindutin para lumipat)")}
+          </p>
           <div className="flex gap-1.5 overflow-x-auto pb-1" role="tablist" aria-label={tx("Your AGs", "Mga AG mo")}>
             {my.memberships.map((m) => (
               <button
@@ -198,10 +205,11 @@ export default function MyChurchPage() {
                     : "shrink-0 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium disabled:opacity-50"
                 }
               >
-                {churches?.find((c) => c.id === m.churchId)?.name ?? m.churchId}
+                {agNames[m.churchId] ?? "…"}
                 {m.membership.status !== "active" && ` · ${tx("pending", "naghihintay")}`}
               </button>
             ))}
+          </div>
           </div>
         )}
 

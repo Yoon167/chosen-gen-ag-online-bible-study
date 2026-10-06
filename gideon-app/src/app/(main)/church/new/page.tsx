@@ -75,6 +75,7 @@ export default function NewAgPage() {
           setError("");
           try {
             await createAg(form, { uid, name: profile?.displayName || "AG Leader" }, isAdmin ? (leads?.churchId ?? null) : leads!.churchId);
+            // Back to My AG, still showing the current AG; the new one is in the switcher there.
             router.push("/church");
           } catch (err) {
             console.error(err);
@@ -107,8 +108,8 @@ export default function NewAgPage() {
         </label>
         <p className="text-xs text-muted-foreground">
           {tx(
-            "The new AG opens right away. Invite members from My AG; you approve each one. Switch between your AGs at the top of My AG.",
-            "Bukas agad ang bagong AG. Mag-imbita ng mga miyembro sa Aking AG; ikaw ang mag-aapruba sa bawat isa. Lumipat sa pagitan ng mga AG mo sa itaas ng Aking AG."
+            "The new AG opens right away and you stay leader of your current AG too. Switch between your AGs at the top of My AG, then invite members; you approve each one.",
+            "Bukas agad ang bagong AG at mananatili kang leader ng kasalukuyang AG mo. Lumipat sa pagitan ng mga AG mo sa itaas ng Aking AG, saka mag-imbita ng mga miyembro; ikaw ang mag-aapruba sa bawat isa."
           )}
         </p>
         {error && <p className="text-xs text-destructive">{error}</p>}
