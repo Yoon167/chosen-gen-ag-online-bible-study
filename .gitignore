@@ -9,3 +9,4 @@ deploy.log
 firestore-tests/firestore-debug.log
 out-old-*/
 build-emu.log
+functions-deploy.log
