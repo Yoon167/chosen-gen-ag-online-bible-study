@@ -1,6 +1,6 @@
 "use client";
 
-import { deleteDoc, doc, setDoc, updateDoc } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, onSnapshot, setDoc, updateDoc } from "firebase/firestore";
 import { deleteToken, getMessaging, getToken, isSupported } from "firebase/messaging";
 import { app, db } from "@/lib/firebase";
 
@@ -148,4 +148,26 @@ export async function refreshPush(uid: string, lang: "en" | "tl") {
     localStorage.setItem(marker, String(Date.now()));
   } catch {}
   await save(uid, lang, { prefs: { ...DEFAULT_PREFS, ...saved.prefs }, verseTime: saved.verseTime || "06:00" });
+}
+
+/**
+ * Asks the server to push a test notification to every device of this member.
+ * Resolves with how many devices it reached, or null if the server didn't answer.
+ */
+export async function sendTestPush(uid: string): Promise<{ sent: number; devices: number } | null> {
+  const ref = await addDoc(collection(db, "users", uid, "pushTests"), { at: Date.now() });
+  return new Promise((resolve) => {
+    const timer = setTimeout(() => {
+      stop();
+      resolve(null);
+    }, 25000);
+    const stop = onSnapshot(ref, (snap) => {
+      const d = snap.data();
+      if (d && typeof d.sent === "number") {
+        clearTimeout(timer);
+        stop();
+        resolve({ sent: d.sent, devices: d.devices ?? 0 });
+      }
+    });
+  });
 }

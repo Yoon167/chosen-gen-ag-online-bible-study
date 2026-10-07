@@ -12,6 +12,26 @@ initializeApp();
 setGlobalOptions({ region: "me-central1", maxInstances: 5, memory: "256MiB" });
 const db = () => getFirestore();
 
+// Everyone in the AG gets these, including whoever posted or went live, so
+// the poster sees exactly what members see.
+
+// ---------- Test ----------
+
+/** Profile → Notifications → Send a test: pushes to every device of that member. */
+export const onPushTest = onDocumentCreated("users/{uid}/pushTests/{id}", async (event) => {
+  const devices = await devicesOf([event.params.uid], null);
+  const sent = await sendTo(devices, {
+    title: { en: "✅ Gideon notifications work", tl: "✅ Gumagana ang notifications ng Gideon" },
+    body: {
+      en: "You'll get the daily verse, live studies, prayers and reminders here.",
+      tl: "Dito mo matatanggap ang daily verse, live study, panalangin at mga paalala.",
+    },
+    url: "/profile",
+    tag: "push-test",
+  });
+  await event.data?.ref.set({ sent, devices: devices.length, doneAt: Date.now() }, { merge: true });
+});
+
 // ---------- Live study ----------
 
 /** A leader went live: everyone else in the AG gets "Join now". */
@@ -19,8 +39,8 @@ export const onLiveStarted = onDocumentWritten("churches/{churchId}/live/current
   const before = event.data?.before.data();
   const after = event.data?.after.data();
   if (!after || before?.startedAt === after.startedAt) return;
-  const members = await activeMembers(event.params.churchId, [after.leaderUid]);
-  const devices = await devicesOf(members.map((m) => m.uid), "live");
+  const members = await activeMembers(event.params.churchId);
+  const devices = await devicesOf([...members.map((m) => m.uid), after.leaderUid], "live");
   const heading = after.heading ?? { en: "Bible study", tl: "Bible study" };
   await sendTo(devices, {
     title: { en: `🔴 Live now: ${clip(heading.en, 60)}`, tl: `🔴 Live na: ${clip(heading.tl, 60)}` },
@@ -38,8 +58,8 @@ export const onLiveStarted = onDocumentWritten("churches/{churchId}/live/current
 export const onPrayerPosted = onDocumentCreated("churches/{churchId}/prayers/{prayerId}", async (event) => {
   const p = event.data?.data();
   if (!p) return;
-  const members = await activeMembers(event.params.churchId, [p.authorUid]);
-  const devices = await devicesOf(members.map((m) => m.uid), "prayer");
+  const members = await activeMembers(event.params.churchId);
+  const devices = await devicesOf([...members.map((m) => m.uid), p.authorUid], "prayer");
   const who = p.anonymous || !p.authorName ? { en: "Someone", tl: "May isang" } : { en: p.authorName, tl: p.authorName };
   await sendTo(devices, {
     title: p.urgent
@@ -58,7 +78,7 @@ export const onPrayerPosted = onDocumentCreated("churches/{churchId}/prayers/{pr
 export const onPrayedFor = onDocumentCreated("churches/{churchId}/prayers/{prayerId}/prayedBy/{uid}", async (event) => {
   const { churchId, prayerId, uid } = event.params;
   const prayer = (await db().doc(`churches/${churchId}/prayers/${prayerId}`).get()).data();
-  if (!prayer?.authorUid || prayer.authorUid === uid) return;
+  if (!prayer?.authorUid) return;
   const member = (await db().doc(`churches/${churchId}/members/${uid}`).get()).data();
   const name = member?.displayName ?? "";
   const count = Number(prayer.prayedCount ?? 1);
@@ -77,8 +97,8 @@ export const onPrayedFor = onDocumentCreated("churches/{churchId}/prayers/{praye
 export const onPrayerChainCreated = onDocumentCreated("churches/{churchId}/prayerChains/{chainId}", async (event) => {
   const c = event.data?.data();
   if (!c) return;
-  const members = await activeMembers(event.params.churchId, [c.createdBy]);
-  const devices = await devicesOf(members.map((m) => m.uid), "prayer");
+  const members = await activeMembers(event.params.churchId);
+  const devices = await devicesOf([...members.map((m) => m.uid), c.createdBy], "prayer");
   await sendTo(devices, {
     title: { en: `⛓️ Prayer chain: ${clip(c.title, 60)}`, tl: `⛓️ Prayer chain: ${clip(c.title, 60)}` },
     body: {
@@ -95,8 +115,8 @@ export const onPrayerChainCreated = onDocumentCreated("churches/{churchId}/praye
 export const onAnnouncement = onDocumentCreated("churches/{churchId}/announcements/{id}", async (event) => {
   const a = event.data?.data();
   if (!a) return;
-  const members = await activeMembers(event.params.churchId, [a.authorUid]);
-  const devices = await devicesOf(members.map((m) => m.uid), "ag");
+  const members = await activeMembers(event.params.churchId);
+  const devices = await devicesOf([...members.map((m) => m.uid), a.authorUid], "ag");
   await sendTo(devices, {
     title: { en: `📢 ${clip(a.title, 70)}`, tl: `📢 ${clip(a.title, 70)}` },
     body: { en: clip(a.body, 140), tl: clip(a.body, 140) },

@@ -16,6 +16,7 @@ import {
   pushSupported,
   readPush,
   refreshPush,
+  sendTestPush,
   updatePushSettings,
   type PushPref,
   type PushPrefs,
@@ -43,6 +44,7 @@ export function PushSettings() {
   const [verseTime, setVerseTime] = useState("06:00");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const [test, setTest] = useState<"" | "sending" | "sent" | "none" | "noserver">("");
 
   useEffect(() => {
     let cancelled = false;
@@ -92,6 +94,13 @@ export function PushSettings() {
     setBusy(false);
   }
 
+  async function testPush() {
+    if (!uid) return;
+    setTest("sending");
+    const res = await sendTestPush(uid).catch(() => null);
+    setTest(!res ? "noserver" : res.sent > 0 ? "sent" : "none");
+  }
+
   function change(next: PushPrefs, time = verseTime) {
     setPrefs(next);
     setVerseTime(time);
@@ -133,6 +142,35 @@ export function PushSettings() {
         </Button>
       </div>
       {error && <p className="text-xs text-destructive">{error}</p>}
+
+      {on && (
+        <div className="space-y-1.5">
+          <Button variant="outline" className="w-full" disabled={test === "sending"} onClick={testPush}>
+            {test === "sending" ? tx("Sending…", "Ipinapadala…") : tx("Send a test notification", "Magpadala ng test notification")}
+          </Button>
+          {test === "sent" && (
+            <p className="text-xs text-muted-foreground">
+              {tx(
+                "Sent. Check your notification bar. If nothing shows, allow Gideon/Chrome notifications in Android Settings → Apps → Chrome → Notifications, and turn off battery saver for Chrome.",
+                "Naipadala na. Tingnan ang notification bar mo. Kung walang lumabas, payagan ang notifications ng Gideon/Chrome sa Android Settings → Apps → Chrome → Notifications, at i-off ang battery saver para sa Chrome."
+              )}
+            </p>
+          )}
+          {test === "none" && (
+            <p className="text-xs text-destructive">
+              {tx("This device isn't registered yet. Turn notifications off and on again.", "Hindi pa naka-register ang device na ito. I-off at i-on ulit ang notifications.")}
+            </p>
+          )}
+          {test === "noserver" && (
+            <p className="text-xs text-destructive">
+              {tx(
+                "The notification server didn't answer. It may not be set up yet (Blaze plan), or you're offline.",
+                "Hindi sumagot ang notification server. Baka hindi pa ito naka-set up (Blaze plan), o offline ka."
+              )}
+            </p>
+          )}
+        </div>
+      )}
 
       {on && (
         <div className="divide-y divide-border rounded-2xl border border-border/70 bg-card">

@@ -39,7 +39,8 @@ const db = () => getFirestore();
 /** A switch counts as on unless the member turned it off. */
 export const wants = (t: PushToken, pref: Pref) => t.prefs?.[pref] !== false;
 
-export async function devicesOf(uids: Iterable<string>, pref: Pref): Promise<Device[]> {
+/** Devices of these members that want `pref` (null: all of them). */
+export async function devicesOf(uids: Iterable<string>, pref: Pref | null): Promise<Device[]> {
   const unique = [...new Set(uids)].filter(Boolean);
   const lists = await Promise.all(
     unique.map((uid) =>
@@ -50,7 +51,7 @@ export async function devicesOf(uids: Iterable<string>, pref: Pref): Promise<Dev
         .catch(() => [] as Device[])
     )
   );
-  return lists.flat().filter((t) => t.token && wants(t, pref));
+  return lists.flat().filter((t) => t.token && (pref === null || wants(t, pref)));
 }
 
 /** Active members of an AG, optionally leaving some out (e.g. whoever posted). */
