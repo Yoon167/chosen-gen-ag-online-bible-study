@@ -79,9 +79,13 @@ export async function startLive(churchId: string, s: Omit<LiveSession, "startedA
   return now;
 }
 
-/** Replaces the slides (e.g. once the Scripture texts have loaded) without restarting the study. */
-export function updateLiveParts(churchId: string, parts: LivePart[]) {
-  return updateDoc(liveDoc(churchId), { parts: clean(parts), updatedAt: Date.now() });
+/**
+ * Replaces the slides (e.g. once the Scripture texts have loaded) without
+ * restarting the study. The leader's slide goes along in the same write, so
+ * members never see new slides with an old position.
+ */
+export function updateLiveParts(churchId: string, parts: LivePart[], index: number) {
+  return updateDoc(liveDoc(churchId), { parts: clean(parts), index: Math.min(index, parts.length - 1), updatedAt: Date.now() });
 }
 
 /** Sets or clears the video call link members see while following. */

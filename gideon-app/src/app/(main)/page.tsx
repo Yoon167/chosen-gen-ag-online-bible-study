@@ -22,6 +22,7 @@ import { encouragementOfTheDay } from "@/lib/content/encouragements";
 import { LanguageToggle } from "@/components/language-toggle";
 import { MusicToggle } from "@/components/music-toggle";
 import { InviteCard } from "@/components/invite-card";
+import { WhatsNewCard } from "@/components/home/whats-new-card";
 import { useLanguage, useTx, type StringKey } from "@/lib/i18n";
 
 function greetingKey(): StringKey {
@@ -98,6 +99,7 @@ export default function HomePage() {
 
       <Section title={tx("Your next step", "Ang susunod mong hakbang")} href="/journey" hrefLabel={tx("Journey", "Journey")}>
         <div className="space-y-2.5" data-tour="home-progress">
+          <WhatsNewCard />
           <UrgentPrayerCard />
           <PrayerChainCard />
           <AnnouncementCard />

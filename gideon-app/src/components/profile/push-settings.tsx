@@ -30,6 +30,7 @@ const KINDS: { id: PushPref; label: Text; detail: Text }[] = [
   { id: "prayer", label: { en: "Prayer wall and prayer chains", tl: "Prayer wall at prayer chain" }, detail: { en: "New requests, your prayer hour, who prayed for you", tl: "Bagong request, oras mo sa chain, sino ang nanalangin para sa iyo" } },
   { id: "meetings", label: { en: "Meeting reminders", tl: "Paalala sa meeting" }, detail: { en: "30 minutes before", tl: "30 minuto bago magsimula" } },
   { id: "checkin", label: { en: "Check-ins and follow-up", tl: "Check-in at follow-up" }, detail: { en: "Your partner's check-in, and a Sunday nudge", tl: "Check-in ng partner mo, at paalala tuwing Linggo" } },
+  { id: "updates", label: { en: "Gideon app updates", tl: "Updates ng Gideon app" }, detail: { en: "New features and improvements", tl: "Mga bagong feature at pagpapabuti" } },
   { id: "ag", label: { en: "AG news", tl: "Balita ng AG" }, detail: { en: "Announcements, join requests, approvals", tl: "Anunsyo, gustong sumali, pag-apruba" } },
 ];
 

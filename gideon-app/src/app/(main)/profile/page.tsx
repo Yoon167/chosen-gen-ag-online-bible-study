@@ -23,6 +23,7 @@ import {
   Award,
   Palette,
   Map as MapIcon,
+  Sparkles,
 } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Section } from "@/components/shared/section";
@@ -226,6 +227,11 @@ export default function ProfilePage() {
               </SettingRow>
             </Link>
           )}
+          <Link href="/whats-new" className="block">
+            <SettingRow icon={Sparkles} label={lang === "tl" ? "Ano'ng bago sa Gideon" : "What's new in Gideon"}>
+              <ChevronRight className="size-4 text-muted-foreground" />
+            </SettingRow>
+          </Link>
           <Link href="/offline" className="block">
             <SettingRow icon={CloudDownload} label={lang === "tl" ? "Offline Download" : "Offline Download"}>
               <ChevronRight className="size-4 text-muted-foreground" />

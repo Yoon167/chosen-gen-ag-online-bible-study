@@ -6,6 +6,7 @@ import { onSchedule } from "firebase-functions/v2/scheduler";
 import { activeMembers, clip, devicesOf, sendTo, wants, type Device, type PushToken } from "./push";
 import { HOUR, QUARTER, dayOfYear, daySlot, localParts, nextStart, runStart, weekKeyIn, weekSlot } from "./time";
 import { VERSE_POOL, verseText } from "./verses";
+import { LATEST_RELEASE } from "./release";
 
 initializeApp();
 // Firestore triggers must run where the database is (Doha).
@@ -196,7 +197,7 @@ export const every15Minutes = onSchedule(
   { schedule: "every 15 minutes", timeZone: "Etc/UTC", timeoutSeconds: 300, region: "asia-southeast1" },
   async () => {
     const at = runStart(Date.now());
-    const jobs = await Promise.allSettled([dailyVerse(at), meetingReminders(at), chainHours(at), checkinFollowUp(at)]);
+    const jobs = await Promise.allSettled([dailyVerse(at), meetingReminders(at), chainHours(at), checkinFollowUp(at), releaseNotice()]);
     jobs.forEach((j, i) => j.status === "rejected" && logger.error(`job ${i} failed`, j.reason));
   }
 );
@@ -301,4 +302,20 @@ async function checkinFollowUp(at: number) {
     url: "/church/checkin",
     tag: "weekly-checkin",
   });
+}
+
+/** A new app release: one push to every device that wants updates, exactly once. */
+async function releaseNotice() {
+  try {
+    // create() fails if this release was already announced, so it is sent once.
+    await db().doc(`appReleases/${LATEST_RELEASE.id}`).create({ announcedAt: Date.now() });
+  } catch {
+    return;
+  }
+  const snap = await db().collectionGroup("pushTokens").get();
+  const devices = snap.docs
+    .map((d) => ({ ...(d.data() as PushToken), path: d.ref.path }))
+    .filter((d) => d.token && wants(d, "updates"));
+  const sent = await sendTo(devices, { title: LATEST_RELEASE.title, body: LATEST_RELEASE.body, url: "/whats-new", tag: "app-release" });
+  logger.info(`release ${LATEST_RELEASE.id} announced to ${sent} devices`);
 }

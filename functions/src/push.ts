@@ -3,7 +3,7 @@ import { getMessaging } from "firebase-admin/messaging";
 import { logger } from "firebase-functions";
 
 /** What each device can switch on or off (Profile → Notifications). */
-export type Pref = "verse" | "live" | "prayer" | "ag" | "meetings" | "checkin";
+export type Pref = "verse" | "live" | "prayer" | "ag" | "meetings" | "checkin" | "updates";
 
 /** users/{uid}/pushTokens/{id}: one per device with notifications on. */
 export interface PushToken {

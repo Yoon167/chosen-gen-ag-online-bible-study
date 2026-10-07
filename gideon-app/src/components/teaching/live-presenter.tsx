@@ -172,14 +172,37 @@ export function LivePresenter({
     } catch {}
   };
 
-  const loaded = Object.keys(texts).length;
+  // Whenever the slides change while live (a passage loaded, the language's
+  // text arrived), members get the new slides together with the current one.
+  // A failed write is retried with the next change and shown to the leader.
+  const [syncFailed, setSyncFailed] = useState(false);
+  const partsKey = useMemo(() => JSON.stringify(parts), [parts]);
+  const sentKey = useRef("");
   useEffect(() => {
-    if (loaded && liveIn.current) updateLiveParts(liveIn.current, latest.current.parts).catch(() => {});
-  }, [loaded]);
+    if (!liveIn.current || sentKey.current === partsKey) return;
+    if (!sentKey.current) {
+      // The first slides went out with startLive.
+      sentKey.current = partsKey;
+      return;
+    }
+    sentKey.current = partsKey;
+    updateLiveParts(liveIn.current, latest.current.parts, latest.current.index)
+      .then(() => setSyncFailed(false))
+      .catch(() => setSyncFailed(true));
+  }, [partsKey]);
 
   const go = (i: number) => {
     setIndex(i);
-    if (liveIn.current) moveLive(liveIn.current, i).catch(() => {});
+    if (!liveIn.current) return;
+    const church = liveIn.current;
+    moveLive(church, i)
+      .then(() => setSyncFailed(false))
+      // A missed move resends everything so members catch up.
+      .catch(() =>
+        updateLiveParts(church, latest.current.parts, i)
+          .then(() => setSyncFailed(false))
+          .catch(() => setSyncFailed(true))
+      );
   };
 
   return (
@@ -198,6 +221,20 @@ export function LivePresenter({
       onClose={onClose}
       toolbar={
         canLead ? (
+          <>
+          {live && syncFailed && (
+            <button
+              onClick={() => {
+                if (!liveIn.current) return;
+                updateLiveParts(liveIn.current, latest.current.parts, latest.current.index)
+                  .then(() => setSyncFailed(false))
+                  .catch(() => setSyncFailed(true));
+              }}
+              className="ml-2 inline-flex shrink-0 items-center gap-1 rounded-full bg-red-600 px-3 py-1 text-xs font-semibold text-white"
+            >
+              {tx("Not synced · tap to resend", "Hindi naka-sync · pindutin para ipadala ulit")}
+            </button>
+          )}
           <button
             onClick={() => setPickingCall(true)}
             className={`ml-2 inline-flex shrink-0 items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold ${callUrl ? "bg-emerald-600 text-white" : "border border-white/30 text-white/70"}`}
@@ -205,6 +242,7 @@ export function LivePresenter({
             <Video className="size-3.5" />
             {callUrl ? tx("Call", "Call") : tx("Add call", "Lagyan ng call")}
           </button>
+          </>
         ) : undefined
       }
       live={
