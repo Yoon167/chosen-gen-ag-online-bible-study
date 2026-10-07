@@ -1053,4 +1053,268 @@ export const DEEP: DeepSet = {
       "Panginoong Hesus, hinirang Mo ako upang mamunga ng bungang mananatili. Patawarin Mo ako sa pagsukat ng tagumpay ayon sa pinahahanga ng tao. Siyasatin Mo ang puso ko at ipakita kung saan ko iniwan ang unang pag-ibig. Turuan Mo akong bilangin ang binibilang Mo: nagbagong buhay, tapat na lingkod, lumalagong alagad, mas malalim na pag-ibig. Palayain Mo ako sa paghahambing at pagmamataas. Tulungan Mo akong magtayo gamit ang ginto, pilak at mamahaling bato, at manatili ang gawa ko kapag sinubok ng apoy. Sa Iyo ang lahat ng kaluwalhatian. Sa Iyong pangalan, Amen."
     ),
   },
+
+  "being-a-peacemaker": {
+    revelation: t(
+      "Peace is not the absence of conflict; it is the presence of a mediator willing to pay the price, and that is exactly who Jesus was for us.",
+      "Ang kapayapaan ay hindi ang kawalan ng away; ito ay ang presensya ng tagapamagitang handang magbayad ng halaga, at ganyan mismo si Hesus para sa atin."
+    ),
+    mainTruth: t(
+      "\"Blessed are the peacemakers, for they will be called children of God\" (Matthew 5:9). Notice Jesus did not say peace-lovers or peace-keepers, but peacemakers: people who get involved. Paul showed it in his letter to Philemon, pleading for the runaway slave Onesimus: \"If he has done you any wrong or owes you anything, charge it to me\" (Philemon 1:18). That is the heart of the gospel, because God has reconciled us to Himself through Christ and given us the ministry of reconciliation (2 Corinthians 5:18-20).",
+      "\"Mapapalad ang mga tagapamayapa, sapagkat sila'y tatawaging mga anak ng Diyos\" (Mateo 5:9). Pansinin na hindi sinabi ni Hesus na mga mahilig sa kapayapaan o tahimik lang, kundi mga tagapamayapa: mga taong nakikialam nang tama. Ipinakita ito ni Pablo sa liham kay Filemon, na nakiusap para sa tumakas na aliping si Onesimo: \"Kung may nagawa siyang masama sa iyo o may utang siya sa iyo, ako ang singilin mo\" (Filemon t. 18). Iyan ang puso ng ebanghelyo, dahil pinagkasundo tayo ng Diyos sa Kanyang sarili kay Kristo at ibinigay sa atin ang ministeryo ng pakikipagkasundo (2 Corinto 5:18-20)."
+    ),
+    insight: [
+      t(
+        "Most of us confuse keeping the peace with making peace. The keeper smiles in the meeting and complains in the parking lot. The two sisters stop talking, everyone notices, and the leader says, \"Let's just pray and move on.\" Quiet is not peace. Under the silence the wound is still festering. Paul did not pretend the Onesimus problem would go away; he wrote a real letter, took a real risk and put his own name on the debt.",
+        "Marami sa atin ang nalilito sa pag-iwas sa gulo at sa paggawa ng kapayapaan. Ang taga-iwas ay ngumingiti sa pulong at nagrereklamo sa labas. Hindi na nag-uusap ang dalawang magkapatid sa iglesia, napapansin ng lahat, at sasabihin ng lider, \"Magdasal na lang tayo at kalimutan na.\" Ang katahimikan ay hindi kapayapaan. Sa ilalim ng katahimikan, may sugat pa ring nagnanana. Hindi nagkunwari si Pablo na mawawala na lang ang problema ni Onesimo; sumulat siya ng totoong liham, sumugal nang totoo at isinulat ang pangalan niya sa utang."
+      ),
+      t(
+        "Notice also how Paul did it. He did not take sides in secret, he did not shame Philemon in public, and he did not excuse what Onesimus did. He appealed to love, spoke to each one with dignity and pointed both toward Christ, who had already made them brothers. A true peacemaker carries two things at once: truth that does not water down the wrong and grace that does not give up on the person.",
+        "Pansinin din kung paano ito ginawa ni Pablo. Hindi siya palihim na kumampi, hindi niya ipinahiya si Filemon sa harap ng iba, at hindi niya binigyang-katwiran ang ginawa ni Onesimo. Umapela siya sa pag-ibig, kinausap ang bawat isa nang may dignidad at itinuro ang dalawa kay Kristo na gumawa na sa kanilang magkapatid. Ang tunay na tagapamayapa ay may dalawang dala nang sabay: katotohanang hindi nagpapaliit sa mali, at biyayang hindi sumusuko sa tao."
+      ),
+    ],
+    life: [
+      t(
+        "Imagine a Filipino church abroad, a small fellowship that meets in a rented hall on Fridays. Two worship team members, both good people, had a misunderstanding over a Facebook comment. Within a month the whole group knew, and everyone had chosen a side in the group chat. The leader finally sat with each one separately, over coffee, and just listened. Then he asked each, \"What part is mine to own?\" Both cried. The reconciliation did not happen in a meeting; it started in a listening ear.",
+        "Isipin ang isang Filipino church sa abroad, maliit na fellowship na nagtitipon tuwing Biyernes sa inuupahang hall. Dalawang miyembro ng worship team, parehong mabubuting tao, ang nagkaroon ng hindi pagkakaunawaan dahil sa isang comment sa Facebook. Sa loob ng isang buwan, alam na ng buong grupo at bawat isa ay pumili na ng kampi sa group chat. Sa wakas, umupo ang lider kasama ang bawat isa nang hiwalay, habang nagkakape, at nakinig lang. Saka niya tinanong ang bawat isa, \"Ano ang bahagi ko na dapat kong akuin?\" Pareho silang umiyak. Hindi nangyari ang pagkakasundo sa isang pulong; nagsimula ito sa taingang nakikinig."
+      ),
+      t(
+        "It works the same in the family. When your mother and your sibling are not talking about the padala, the inheritance or an old insult, you are the one standing in the middle on every Christmas video call. You can pretend, you can take a side or you can become the bridge. Jesus calls the bridge a child of God, because bridges look like their Father.",
+        "Ganyan din sa pamilya. Kapag hindi nag-uusap ang nanay mo at ang kapatid mo dahil sa padala, sa mana o sa lumang sama ng loob, ikaw ang nasa gitna tuwing Christmas video call. Puwede kang magkunwari, puwede kang kumampi, o puwede kang maging tulay. Tinatawag ni Hesus na anak ng Diyos ang tulay, dahil ang mga tulay ay kamukha ng kanilang Ama."
+      ),
+    ],
+    twist: t(
+      "We think the peacemaker is the one who stays safe and neutral. But the Kingdom peacemaker is the one who takes the cost. Paul said, \"Charge it to me.\" That is a picture of the cross: Jesus did not stay neutral between us and God; He put our debt on His own account. Real peace always costs someone, and the Kingdom way is that the peacemaker volunteers.",
+      "Akala natin ang tagapamayapa ay ang nananatiling ligtas at walang kinikilingan. Pero ang tagapamayapa ng Kaharian ay ang umaako ng gastos. Sabi ni Pablo, \"Ako ang singilin mo.\" Larawan iyan ng krus: hindi nanatiling neutral si Hesus sa pagitan natin at ng Diyos; inilagay Niya sa Kanyang sariling account ang utang natin. Ang tunay na kapayapaan ay laging may nagbabayad, at sa paraan ng Kaharian, ang tagapamayapa ang nagboboluntaryo."
+    ),
+    confirm: [
+      t("Romans 12:18: as far as it depends on you, live at peace with everyone.", "Roma 12:18: hangga't maaari, at hanggang nasa iyo, makipagpayapaan sa lahat."),
+      t("Matthew 5:23-24: leave your gift and first be reconciled with your brother.", "Mateo 5:23-24: iwan ang iyong handog at makipagkasundo muna sa kapatid mo."),
+      t("Ephesians 2:14-16: Christ is our peace, breaking down the wall of hostility.", "Efeso 2:14-16: si Kristo ang ating kapayapaan, na gumiba sa pader ng pagkakaaway."),
+      t("Acts 15:36-41: Paul and Barnabas parted, yet later Mark was restored to useful service.", "Gawa 15:36-41: naghiwalay sina Pablo at Bernabe, ngunit kalaunan ay naibalik si Marcos sa kapaki-pakinabang na paglilingkod."),
+    ],
+    heart: [
+      t(
+        "Let go of the comfort of staying out of it. If God has put you near two people in conflict, you are not there by accident. Ask Him for courage to step in, and for gentleness so that you do not make it worse.",
+        "Bitiwan ang kaginhawahan ng pag-iwas. Kung inilapit ka ng Diyos sa dalawang taong may alitan, hindi iyon aksidente. Humingi sa Kanya ng tapang na pumagitna, at ng kaamuan para hindi mo ito lalong palalain."
+      ),
+      t(
+        "Become a person who listens first, speaks privately and never carries stories from one side to the other. Your reputation should be that people feel safer after talking with you.",
+        "Maging taong nakikinig muna, nakikipag-usap nang sarilinan at hindi nagdadala ng kuwento mula sa isang panig patungo sa kabila. Dapat maging pangalan mo na mas panatag ang tao pagkatapos ka nilang makausap."
+      ),
+    ],
+    questions: [
+      t("Who around you is at odds with someone, and what have you done about it besides notice?", "Sino sa paligid mo ang may alitan sa iba, at ano na ang nagawa mo bukod sa mapansin ito?"),
+      t("Are you a peace-keeper who avoids conflict or a peacemaker who resolves it? Be honest.", "Ikaw ba ay tagapanatili ng katahimikan na umiiwas sa gulo o tagapamayapa na nagpapaayos nito? Maging tapat."),
+      t("Is there someone you need to reconcile with yourself before you help anyone else?", "May tao bang kailangan mo munang makasundo bago ka tumulong sa iba?"),
+      t("What would it cost you to say \"charge it to me\" for someone, and are you willing?", "Magkano ang magiging kapalit para sa iyo ng pagsasabing \"ako ang singilin mo\" para sa isang tao, at handa ka ba?"),
+    ],
+    actions: [
+      t("Make a list of any broken relationships in your group or family, and pray over each name today.", "Gumawa ng listahan ng mga sirang relasyon sa grupo o pamilya, at ipanalangin ang bawat pangalan ngayon."),
+      t("Meet privately with each person in a conflict this week and just listen without taking sides.", "Makipagkita nang sarilinan sa bawat taong may alitan ngayong linggo at makinig lang nang hindi kumakampi."),
+      t("Apologize first to someone you have wronged, without adding \"but you also...\".", "Mauna kang humingi ng tawad sa taong nasaktan mo, nang walang \"pero ikaw din...\"."),
+    ],
+    prayer: t(
+      "Father, thank You for making peace with me through the blood of Jesus. You came to me when I was Your enemy. Make me like Your Son. Give me courage to step into hard conversations, ears that listen before I speak and a heart that cares more for people than for being right. Show me who needs reconciliation near me and use me as a bridge. Keep me from gossip and from taking sides in pride. Make me a child who looks like You. In Jesus' name, Amen.",
+      "Ama, salamat po at nakipagpayapaan Ka sa akin sa dugo ni Hesus. Lumapit Ka sa akin noong kaaway pa Kita. Gawin Mo akong katulad ng Iyong Anak. Bigyan Mo ako ng tapang na pumasok sa mahihirap na usapan, tainga na nakikinig bago magsalita, at pusong mas inuuna ang tao kaysa ang pagiging tama. Ipakita Mo kung sino ang kailangang magkasundo sa paligid ko at gamitin Mo akong tulay. Iligtas Mo ako sa tsismis at sa pagkampi dahil sa pagmamataas. Gawin Mo akong anak na kamukha Mo. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+
+  "protecting-the-flock": {
+    revelation: t(
+      "The flock does not belong to the shepherd; it belongs to God, and every leader will answer for how the weakest were treated.",
+      "Ang kawan ay hindi pag-aari ng pastol; pag-aari ito ng Diyos, at sasagot ang bawat lider kung paano tinrato ang pinakamahihina."
+    ),
+    mainTruth: t(
+      "In Ezekiel 34:1-6 God thunders against shepherds who feed themselves, who do not strengthen the weak, heal the sick or bring back the strays, so that \"my sheep were scattered.\" Jesus is just as serious: \"If anyone causes one of these little ones who believe in me to stumble, it would be better for them to have a large millstone hung around their neck and to be drowned\" (Matthew 18:6). And Proverbs 31:8-9 commands us to \"speak up for those who cannot speak for themselves.\" Leadership is not a privilege to enjoy; it is a trust to guard.",
+      "Sa Ezekiel 34:1-6, mariing sinaway ng Diyos ang mga pastol na nagpapakain sa sarili, na hindi nagpapalakas sa mahihina, hindi gumagamot sa maysakit, at hindi naghahanap sa naligaw, kaya \"nangalat ang aking mga tupa.\" Kasing-seryoso rin si Hesus: \"Kung sinuman ang magpatisod sa isa sa maliliit na ito na sumasampalataya sa Akin, mas mabuti pang bitinan siya ng malaking gilingang bato sa leeg at ihulog sa dagat\" (Mateo 18:6). At iniuutos ng Kawikaan 31:8-9, \"Magsalita ka para sa mga hindi makapagsalita para sa sarili.\" Ang pamumuno ay hindi pribilehiyong tinatamasa; ito ay tiwalang binabantayan."
+    ),
+    insight: [
+      t(
+        "Many leaders think protection means defending the ministry's image. God's rebuke in Ezekiel shows the opposite: a shepherd who protects his own comfort and reputation is a bad shepherd even if the church looks successful. When harm happens, the instinct is to quiet it, to say \"Let's not spoil the church's name.\" But a name protected by silence is a name built on the suffering of a little one. The Lord hears that.",
+        "Iniisip ng maraming lider na ang proteksyon ay pagtatanggol sa imahe ng ministeryo. Ipinakikita ng sumbat ng Diyos sa Ezekiel ang kabaligtaran: ang pastol na nag-iingat ng sariling ginhawa at reputasyon ay masamang pastol kahit mukhang matagumpay ang iglesia. Kapag may nangyaring pinsala, ang unang reaksyon ay patahimikin ito, sabihing \"Huwag nating sirain ang pangalan ng iglesia.\" Pero ang pangalang iningatan ng katahimikan ay pangalang itinayo sa paghihirap ng isang maliit. Naririnig iyon ng Panginoon."
+      ),
+      t(
+        "Protection is also ordinary and practical, not dramatic. It looks like two adults in the children's room, an open door in counseling, a clear way to report concerns, a background check for those who work with kids and a leader who believes a child who finally speaks. Protecting the flock means building walls before the wolf comes, not apologizing after.",
+        "Ang proteksyon ay karaniwan din at praktikal, hindi dramatiko. Ito ay dalawang adulto sa silid ng mga bata, bukas na pinto sa pagpapayo, malinaw na paraan ng pag-uulat, background check sa mga nagtatrabaho kasama ang bata, at lider na naniniwala sa batang sa wakas ay nagsalita. Ang pagprotekta sa kawan ay pagtatayo ng bakod bago dumating ang lobo, hindi paghingi ng tawad pagkatapos."
+      ),
+    ],
+    life: [
+      t(
+        "Think of the sari-sari store owner in a small barangay. Everyone knows the old man who gives kids free candy and a lot of attention. A wise neighbor does not wait for proof of a crime; she makes it a rule that the children never go with him alone, and she tells the kagawad. Some people called her harsh. But no child in that street was ever harmed. That is the posture of a shepherd: alert, not paranoid; loving, not naive.",
+        "Isipin ang may-ari ng sari-sari store sa isang maliit na barangay. Alam ng lahat ang matandang lalaki na namimigay ng libreng kendi sa mga bata at sobrang atensyon. Hindi naghintay ang matalinong kapitbahay ng patunay ng krimen; ginawa niyang patakaran na hindi sasama ang mga bata sa kanya nang mag-isa, at sinabi niya sa kagawad. May mga tumawag sa kanyang mahigpit. Pero walang batang nasaktan sa kalyeng iyon. Iyan ang tindig ng pastol: alisto pero hindi praning; mapagmahal pero hindi inosente."
+      ),
+      t(
+        "Among OFWs the vulnerable are often hidden: the kasambahay who is not allowed to rest, the young worker whose employer holds the passport, the teenager left with relatives while parents work abroad. A church that truly protects its flock notices these people, listens, connects them with help and does not look away from what is uncomfortable.",
+        "Sa mga OFW, madalas nakatago ang mahihina: ang kasambahay na hindi pinapahinga, ang batang manggagawa na hawak ng amo ang pasaporte, ang tin-edyer na naiwan sa mga kamag-anak habang nasa abroad ang magulang. Ang iglesiang tunay na nagpoprotekta sa kawan ay nakakapansin sa kanila, nakikinig, iniuugnay sila sa tulong at hindi umiiwas sa hindi komportableng katotohanan."
+      ),
+    ],
+    twist: t(
+      "We imagine that a strong leader is one who never admits problems exist. In the Kingdom, the strong shepherd is the one who goes looking for the missing sheep and is not afraid to say, \"We have a problem and we will deal with it.\" Jesus left the ninety-nine to find one. Willingness to expose darkness is not weakness; it is the fruit of a shepherd who loves the sheep more than his own image.",
+      "Akala natin ang malakas na lider ay ang hindi kailanman umaaming may problema. Sa Kaharian, ang malakas na pastol ay ang humahanap sa nawawalang tupa at hindi natatakot sabihing, \"May problema tayo at haharapin natin ito.\" Iniwan ni Hesus ang siyamnapu't siyam para hanapin ang isa. Ang kahandaang ilantad ang kadiliman ay hindi kahinaan; bunga ito ng pastol na mas mahal ang tupa kaysa sa sariling imahe."
+    ),
+    confirm: [
+      t("Psalm 82:3-4: defend the weak and the fatherless; rescue them from the hand of the wicked.", "Awit 82:3-4: ipagtanggol ang mahihina at ulila; iligtas sila sa kamay ng masama."),
+      t("Mark 10:13-16: Jesus welcomes the children and is indignant at those who hinder them.", "Marcos 10:13-16: tinanggap ni Hesus ang mga bata at nagalit sa mga humahadlang sa kanila."),
+      t("John 10:11-13: the good shepherd lays down his life; the hired hand runs when the wolf comes.", "Juan 10:11-13: ibinibigay ng mabuting pastol ang kanyang buhay; tumatakbo ang upahan kapag dumating ang lobo."),
+      t("Acts 20:28-29: keep watch over yourselves and the flock, for savage wolves will come.", "Gawa 20:28-29: magbantay kayo sa sarili at sa kawan, dahil darating ang mababangis na lobo."),
+    ],
+    heart: [
+      t(
+        "Repent of any time you chose comfort or image over a vulnerable person. Ask God for a shepherd's heart: tender toward the hurting and firm toward what harms them.",
+        "Magsisi sa anumang pagkakataong pinili mo ang ginhawa o imahe kaysa sa mahinang tao. Humingi sa Diyos ng puso ng pastol: malambot sa nasasaktan at matatag laban sa nananakit."
+      ),
+      t(
+        "Become a person who can be trusted with secrets that protect and who refuses secrets that hide harm. Learn to say, \"I believe you, and we will get help.\"",
+        "Maging taong mapagkakatiwalaan sa mga lihim na nagpoprotekta at tumatanggi sa mga lihim na nagtatago ng pinsala. Matutong magsabi ng, \"Naniniwala ako sa iyo, at hahanap tayo ng tulong.\""
+      ),
+    ],
+    questions: [
+      t("Who are the quiet, easily overlooked people in your church, family or workplace?", "Sino ang mga tahimik at madaling makaligtaang tao sa iglesia, pamilya o trabaho mo?"),
+      t("If someone reported abuse to you today, would you know exactly what to do?", "Kung may magsumbong ng pang-aabuso sa iyo ngayon, alam mo ba kung ano ang gagawin?"),
+      t("Have you ever stayed silent to protect a reputation? What did that silence cost someone?", "Nanahimik ka na ba para protektahan ang reputasyon? Ano ang naging kapalit ng katahimikang iyon sa isang tao?"),
+      t("In what way are you feeding yourself instead of strengthening the weak?", "Sa anong paraan mo pinapakain ang sarili sa halip na palakasin ang mahihina?"),
+    ],
+    actions: [
+      t("Ask your pastor whether your ministry has written safety and reporting guidelines; offer to help prepare them.", "Itanong sa pastor kung may nakasulat na patnubay sa kaligtasan at pag-uulat ang ministeryo; mag-alok na tumulong sa paghahanda."),
+      t("Never be alone with a minor in a closed space, and commit to the two-adult rule in every activity.", "Huwag kailanman mapag-isa sa saradong lugar kasama ang menor de edad, at mangakong susundin ang dalawang-adulto na patakaran sa bawat gawain."),
+      t("Look for one vulnerable person near you (a lonely worker, a child, a widow) and visit or call this week.", "Humanap ng isang mahinang tao malapit sa iyo (malungkot na manggagawa, bata, biyuda) at dalawin o tawagan ngayong linggo."),
+    ],
+    prayer: t(
+      "Good Shepherd, You know every sheep by name and You laid down Your life for us. Forgive me for the times I protected my comfort or my image instead of the weak. Give me eyes to see those who are hidden and hurting, and courage to speak up when it is costly. Make our church a safe place where the wounded find healing and wolves find no room. Teach me to lead the way You lead: with gentleness, truth and a willingness to sacrifice. In Jesus' name, Amen.",
+      "Mabuting Pastol, kilala Mo ang bawat tupa sa pangalan at inialay Mo ang Iyong buhay para sa amin. Patawarin Mo ako sa mga panahong iniingatan ko ang aking ginhawa o imahe kaysa ang mahihina. Bigyan Mo ako ng mga matang makakita sa mga nakatago at nasasaktan, at tapang na magsalita kahit magastos. Gawin Mong ligtas na lugar ang aming iglesia kung saan ang sugatan ay gumagaling at ang mga lobo ay walang puwang. Turuan Mo akong mamuno gaya ng pamumuno Mo: may kaamuan, katotohanan at kahandaang magsakripisyo. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+
+  "leading-with-joy": {
+    revelation: t(
+      "Joy is not a mood you wait for; it is the strength God gives leaders who keep looking at what He is doing in people.",
+      "Ang kagalakan ay hindi mood na hinihintay; ito ang lakas na ibinibigay ng Diyos sa mga lider na patuloy na tumitingin sa ginagawa Niya sa mga tao."
+    ),
+    mainTruth: t(
+      "Paul wrote Philippians from prison, yet it is the most joyful letter he ever wrote: \"I thank my God every time I remember you. In all my prayers for all of you, I always pray with joy\" (Philippians 1:3-4). His joy came from partnership in the gospel and from confidence that \"he who began a good work in you will carry it on to completion\" (1:6). Nehemiah 8:10 says, \"The joy of the Lord is your strength.\" And Hebrews 13:17 tells us that leaders should do their work \"with joy and not with grief, for that would be of no benefit to you.\"",
+      "Isinulat ni Pablo ang Filipos mula sa bilangguan, pero ito ang pinakamasayang liham na isinulat niya: \"Nagpapasalamat ako sa aking Diyos tuwing naaalala ko kayo. Sa lahat ng aking panalangin para sa inyong lahat, lagi akong nananalangin nang may galak\" (Filipos 1:3-4). Ang kanyang kagalakan ay galing sa pakikiisa sa ebanghelyo at sa pagtitiwalang \"ang nagsimula ng mabuting gawa sa inyo ay siyang magtatapos nito\" (1:6). Sabi ng Nehemias 8:10, \"Ang kagalakan ng Panginoon ang inyong lakas.\" At sinasabi ng Hebreo 13:17 na dapat gawin ng mga lider ang kanilang tungkulin \"nang may galak at hindi nang may hinaing, sapagkat wala itong pakinabang sa inyo.\""
+    ),
+    insight: [
+      t(
+        "Many leaders quietly assume that heavy faces equal deep commitment. We carry the burden, we sigh, we mention how tired we are, and somehow that feels spiritual. But Hebrews says a groaning leader is of no benefit to the people. Tired is not the problem; resentful tired is. People can feel whether you lead them as a gift or as a load.",
+        "Tahimik na iniisip ng maraming lider na ang mabigat na mukha ay katumbas ng malalim na dedikasyon. Pasan natin ang pasanin, bumubuntong-hininga tayo, binabanggit kung gaano tayo pagod, at kahit papaano ay parang espirituwal iyon. Pero sabi ng Hebreo, walang pakinabang sa tao ang lider na may hinaing. Hindi pagod ang problema; ang pagod na may hinanakit. Nararamdaman ng mga tao kung pinamumunuan mo sila bilang regalo o bilang pabigat."
+      ),
+      t(
+        "Notice where Paul's joy came from. Not from his circumstances (chains), not from the results (some preached out of rivalry), but from remembering people and from trusting God's faithfulness to finish what He started. Joyless leadership often means we have stopped remembering what God has already done and started carrying what only He can finish. Joy returns when we put back on God what was never ours to carry.",
+        "Pansinin kung saan galing ang kagalakan ni Pablo. Hindi sa kanyang sitwasyon (kadena), hindi sa resulta (may nangaral dahil sa kompetisyon), kundi sa pag-alaala sa mga tao at pagtitiwala sa katapatan ng Diyos na tapusin ang Kanyang sinimulan. Madalas, ang pamumunong walang kagalakan ay nangangahulugang huminto na tayong alalahanin ang nagawa ng Diyos at nagsimula nang pasanin ang tanging Siya lang ang makakatapos. Bumabalik ang kagalakan kapag ibinabalik natin sa Diyos ang hindi naman natin pasanin."
+      ),
+    ],
+    life: [
+      t(
+        "A children's ministry teacher in Dubai works ten-hour shifts all week and teaches Sunday school on her one day off. Some Sundays she arrives exhausted. One day she started a simple habit: before class she prayed for each child by name, and after class she wrote one thing she saw God do. Within a month her tiredness was the same, but her heart was different. She said, \"I used to count how much I gave. Now I count what I get to see.\"",
+        "Isang guro sa children's ministry sa Dubai ang may sampung oras na trabaho buong linggo at nagtuturo ng Sunday school sa nag-iisa niyang day off. May mga Linggong pagod na pagod siyang dumarating. Isang araw, nagsimula siya ng simpleng ugali: bago ang klase ipinapanalangin niya ang bawat bata sa pangalan, at pagkatapos ng klase nagsusulat siya ng isang nakita niyang ginawa ng Diyos. Sa loob ng isang buwan, pareho pa rin ang pagod niya pero iba na ang puso niya. Sabi niya, \"Dati binibilang ko kung gaano karami ang ibinigay ko. Ngayon binibilang ko kung ano ang nasasaksihan ko.\""
+      ),
+      t(
+        "At home it is the same. A father abroad can send money like a duty, or he can call his children with joy and let them feel they are a delight and not a burden. Leaders at church, at work and in the home set the emotional weather. When joy is missing, people shrink; when joy is present, they grow.",
+        "Ganyan din sa bahay. Ang amang nasa abroad ay puwedeng magpadala ng pera na parang tungkulin lang, o tumawag sa mga anak nang may galak at ipadama na sila ay kasiyahan at hindi pabigat. Ang mga lider sa iglesia, trabaho at tahanan ang nagtatakda ng panahon ng damdamin. Kapag wala ang galak, lumiliit ang tao; kapag naroon ang galak, lumalago sila."
+      ),
+    ],
+    twist: t(
+      "We think joy is the reward at the end of a successful ministry. The Kingdom says joy is the fuel that makes ministry possible. Jesus endured the cross \"for the joy set before him\" (Hebrews 12:2). Joy is not what you receive when the work is done; it is the strength you draw on to do it. Leaders who wait for joy until things go well may wait forever; leaders who draw joy from God can keep going when things do not.",
+      "Akala natin ang kagalakan ay gantimpala sa dulo ng matagumpay na ministeryo. Sabi ng Kaharian, ang kagalakan ang gasolina na nagpapagana ng ministeryo. Tiniis ni Hesus ang krus \"alang-alang sa kagalakang inilagay sa harap Niya\" (Hebreo 12:2). Ang kagalakan ay hindi natatanggap pagkatapos ng gawain; ito ang lakas na pinagkukunan para magawa ito. Ang mga lider na naghihintay ng kagalakan hanggang maging maayos ang lahat ay baka maghintay nang walang hanggan; ang mga kumukuha ng kagalakan sa Diyos ay patuloy na nakakapagpatuloy kahit hindi maayos ang lahat."
+    ),
+    confirm: [
+      t("Psalm 16:11: in Your presence there is fullness of joy.", "Awit 16:11: sa Iyong harapan ay may ganap na kagalakan."),
+      t("Luke 10:17-21: the seventy return with joy, and Jesus rejoices in the Spirit.", "Lucas 10:17-21: bumalik na may galak ang pitumpu, at nagalak si Hesus sa Espiritu."),
+      t("Acts 13:52: the disciples were filled with joy and with the Holy Spirit.", "Gawa 13:52: ang mga alagad ay napuno ng kagalakan at ng Espiritu Santo."),
+      t("3 John 1:4: no greater joy than to hear that my children walk in the truth.", "3 Juan 1:4: walang higit na kagalakan kaysa marinig na lumalakad sa katotohanan ang aking mga anak."),
+    ],
+    heart: [
+      t(
+        "Stop wearing weariness as a badge. Bring your tiredness honestly to Jesus and receive His rest, so that what you give to others flows from fullness and not from resentment.",
+        "Itigil ang pagsusuot ng pagod na parang medalya. Dalhin nang tapat kay Hesus ang iyong pagod at tanggapin ang Kanyang kapahingahan, upang ang ibinibigay mo sa iba ay mula sa kasaganaan at hindi sa hinanakit."
+      ),
+      t(
+        "Practice gratitude out loud. Tell people specifically what you thank God for in them. Joy grows when it is spoken.",
+        "Magsanay ng pasasalamat nang malakas. Sabihin sa mga tao nang tiyak kung ano ang ipinagpapasalamat mo sa Diyos tungkol sa kanila. Lumalago ang kagalakan kapag ito ay sinasabi."
+      ),
+    ],
+    questions: [
+      t("When people meet you in ministry, do they feel they are a gift or a burden to you?", "Kapag nakakasalamuha ka ng mga tao sa ministeryo, nararamdaman ba nilang sila ay regalo o pabigat sa iyo?"),
+      t("What are you carrying right now that only God can finish?", "Ano ang pasan mo ngayon na Diyos lang ang makakatapos?"),
+      t("When did you last rest in a way that truly refreshed you?", "Kailan ka huling nagpahinga sa paraang tunay na nagpalakas sa iyo?"),
+      t("Who can you thank today, specifically, like Paul thanked the Philippians?", "Sino ang maaari mong pasalamatan ngayon, nang tiyak, gaya ng pagpapasalamat ni Pablo sa mga taga-Filipos?"),
+    ],
+    actions: [
+      t("Write down three things God has done through your ministry in the last month and thank Him aloud.", "Isulat ang tatlong bagay na ginawa ng Diyos sa pamamagitan ng iyong ministeryo nitong nakaraang buwan at pasalamatan Siya nang malakas."),
+      t("Send a message to one person you lead, naming something specific you are grateful for in them.", "Magpadala ng mensahe sa isang taong pinamumunuan mo, na binabanggit ang tiyak na bagay na ipinagpapasalamat mo sa kanila."),
+      t("Schedule one real rest time this week and protect it, treating it as obedience and not laziness.", "Magtakda ng isang tunay na oras ng pahinga ngayong linggo at ingatan ito, bilang pagsunod at hindi katamaran."),
+    ],
+    prayer: t(
+      "Lord, I confess that I have sometimes led with sighs and not with songs. Forgive me for carrying what only You can carry. Fill me again with the joy of the Lord, that it may be my strength. Open my eyes to what You are doing in the people I serve, and let thanksgiving rise in my heart. Help me rest in You and serve from fullness. Let those I lead feel they are a gift. Thank You that You will finish the good work You began. In Jesus' name, Amen.",
+      "Panginoon, inaamin kong minsan ay namuno ako nang may buntong-hininga at hindi may awit. Patawarin Mo ako sa pagpasan ng bagay na Ikaw lang ang makapagpapasan. Punuin Mo akong muli ng kagalakan ng Panginoon, upang ito ang maging lakas ko. Buksan Mo ang aking mga mata sa ginagawa Mo sa mga pinaglilingkuran ko, at hayaang umusbong ang pasasalamat sa puso ko. Tulungan Mo akong magpahinga sa Iyo at maglingkod mula sa kasaganaan. Ipadama Mo sa mga pinamumunuan ko na sila ay regalo. Salamat po na tatapusin Mo ang mabuting gawang sinimulan Mo. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+
+  "passing-the-baton": {
+    revelation: t(
+      "Success in ministry is not measured by how long you stay in front but by how well those behind you can carry on without you.",
+      "Ang tagumpay sa ministeryo ay hindi sinusukat sa haba ng pananatili mo sa harapan kundi sa kakayahan ng mga nasa likod mo na magpatuloy kahit wala ka."
+    ),
+    mainTruth: t(
+      "Moses knew he would not enter the Promised Land, so he asked, \"May the Lord ... appoint someone over this community ... so the Lord's people will not be like sheep without a shepherd\" (Numbers 27:16-17). God pointed to Joshua, and Moses laid hands on him in front of everyone (27:18-23). Then he said, \"Be strong and courageous ... the Lord himself goes before you\" (Deuteronomy 31:7-8). Elisha asked for a double portion of Elijah's spirit, took up the fallen mantle and the prophets saw that \"the spirit of Elijah is resting on Elisha\" (2 Kings 2:9-15).",
+      "Alam ni Moises na hindi siya makakapasok sa Lupang Pangako, kaya nanalangin siya, \"Magtalaga nawa ang Panginoon ... ng taong mamumuno sa bayan ... upang ang bayan ng Panginoon ay hindi maging parang mga tupang walang pastol\" (Bilang 27:16-17). Itinuro ng Diyos si Josue, at ipinatong ni Moises ang kanyang kamay sa kanya sa harap ng lahat (27:18-23). Pagkatapos ay sinabi niya, \"Magpakalakas ka at magpakatapang ... ang Panginoon mismo ang nangunguna sa iyo\" (Deuteronomio 31:7-8). Humingi si Eliseo ng dobleng bahagi ng espiritu ni Elias, pinulot ang nalaglag na balabal, at nakita ng mga propeta na \"ang espiritu ni Elias ay nasa kay Eliseo\" (2 Hari 2:9-15)."
+    ),
+    insight: [
+      t(
+        "Notice that Moses prayed for his successor before anyone asked him to. He did not feel threatened by someone rising; he feared a people left leaderless. Many leaders quietly believe, \"If I leave, it will fall apart,\" and mistake that for importance. In truth, a ministry that falls apart when you leave was never built well. The best sign of a good leader is a team that can continue with joy after the leader is gone.",
+        "Pansinin na ipinanalangin ni Moises ang kanyang kahalili bago pa siya hilingan ng kahit sino. Hindi siya nabahala sa pag-angat ng iba; ang kinatatakutan niya ay ang bayang walang lider. Tahimik na iniisip ng maraming lider, \"Kapag umalis ako, guguho ito,\" at napagkakamalan nilang kahalagahan iyon. Sa totoo, ang ministeryong guguho kapag umalis ka ay hindi naitayo nang maayos. Ang pinakamagandang tanda ng mabuting lider ay ang team na kayang magpatuloy nang may galak pagkatapos niyang umalis."
+      ),
+      t(
+        "Passing the baton is not a single ceremony; it is a long preparation. Moses taught Joshua for forty years. Elijah let Elisha serve him, walk with him and watch him up close before the mantle fell. The mantle was received by someone who had first been a servant. And note the order: the successor must also ask God for his own anointing. We pass on a calling, not a copy of ourselves.",
+        "Ang pagpasa ng baton ay hindi iisang seremonya; ito ay mahabang paghahanda. Apatnapung taong tinuruan ni Moises si Josue. Hinayaan ni Elias na maglingkod sa kanya si Eliseo, makasama siya at mapanood nang malapitan bago nahulog ang balabal. Ang balabal ay tinanggap ng taong una munang naging lingkod. At pansinin ang pagkakasunod-sunod: ang kahalili ay dapat humingi rin sa Diyos ng sarili niyang pagpapahid. Ipinapasa natin ang tawag, hindi ang kopya ng ating sarili."
+      ),
+    ],
+    life: [
+      t(
+        "Think of a pastor in a small Filipino community church who served for thirty years. At sixty, he began handing over preaching, then the finances, then the home visits to younger leaders. People teased him that he was \"retiring early.\" He answered, \"I am not leaving; I am multiplying.\" When he got sick, the church did not panic. Three young leaders stepped up, and the church grew. At his funeral, someone said, \"He taught us to carry him out.\"",
+        "Isipin ang isang pastor sa maliit na simbahang Pilipino na naglingkod nang tatlumpung taon. Sa edad na animnapu, sinimulan niyang ipasa ang pangangaral, pagkatapos ang pananalapi, pagkatapos ang pagdalaw sa mga bahay sa mga nakababatang lider. Tinukso siya ng mga tao na \"maagang nagre-retire.\" Sagot niya, \"Hindi ako aalis; nagpaparami ako.\" Nang magkasakit siya, hindi nag-panic ang iglesia. Tatlong kabataang lider ang humakbang at lumago ang iglesia. Sa burol niya, may nagsabi, \"Tinuruan niya kaming buhatin siya.\""
+      ),
+      t(
+        "It applies to every OFW too: the supervisor who trains a replacement, the mother who teaches her daughter to run the household, the elder who shares skills with a new worker. Whatever God has given you is not meant to end with you. Who is standing close enough to catch what you carry?",
+        "Totoo rin ito sa bawat OFW: ang supervisor na nagsasanay ng kapalit, ang inang nagtuturo sa anak na babae ng pamamahala sa bahay, ang nakatatandang nagbabahagi ng kasanayan sa bagong manggagawa. Ang anumang ibinigay sa iyo ng Diyos ay hindi para matapos sa iyo. Sino ang nakatayo malapit para saluhin ang dala mo?"
+      ),
+    ],
+    twist: t(
+      "We think a leader who steps aside is losing something. The Kingdom says the opposite: Moses's greatest final act was not crossing the Jordan but commissioning the one who would. A leader who raises others never loses his reward; he multiplies his fruit. Jesus Himself said it is to our advantage that He goes away (John 16:7), and then He trusted twelve ordinary men with the whole mission.",
+      "Akala natin ang lider na umaatras ay may nawawala. Sabi ng Kaharian, kabaligtaran ito: ang pinakadakilang huling gawa ni Moises ay hindi ang pagtawid ng Jordan kundi ang pagtatalaga sa taong tatawid dito. Ang lider na nagpapalaki ng iba ay hindi nawawalan ng gantimpala; pinararami niya ang kanyang bunga. Si Hesus mismo ay nagsabing nakabubuti sa atin ang Kanyang pag-alis (Juan 16:7), at pagkatapos ay ipinagkatiwala Niya ang buong misyon sa labindalawang karaniwang lalaki."
+    ),
+    confirm: [
+      t("2 Timothy 2:2: entrust to faithful people who will be able to teach others.", "2 Timoteo 2:2: ipagkatiwala sa mga tapat na may kakayahang magturo sa iba."),
+      t("Exodus 18:17-23: Jethro urges Moses to share the load with capable leaders.", "Exodo 18:17-23: pinayuhan ni Jetro si Moises na ibahagi ang pasanin sa mga may kakayahang lider."),
+      t("Acts 13:1-3: the church at Antioch sends out Barnabas and Saul.", "Gawa 13:1-3: isinugo ng iglesia sa Antioquia sina Bernabe at Saulo."),
+      t("Acts 20:17-38: Paul entrusts the elders of Ephesus to God and His grace.", "Gawa 20:17-38: ipinagkatiwala ni Pablo sa Diyos at sa Kanyang biyaya ang mga matatanda sa Efeso."),
+    ],
+    heart: [
+      t(
+        "Deal with the fear that you are indispensable. Release your grip on titles and applause. Ask God to make you glad when others rise, even higher than you.",
+        "Harapin ang takot na ikaw ay hindi mapapalitan. Bitiwan ang kapit sa titulo at palakpak. Hilingin sa Diyos na gawin kang masaya kapag umaangat ang iba, kahit mas mataas pa sa iyo."
+      ),
+      t(
+        "Become a mentor who invests in people now, not later. Share the stage, share the keys and let others make small mistakes with you nearby.",
+        "Maging mentor na namumuhunan sa tao ngayon, hindi mamaya. Ibahagi ang entablado, ibahagi ang susi, at hayaang magkamali nang kaunti ang iba habang nasa malapit ka."
+      ),
+    ],
+    questions: [
+      t("If you left your role tomorrow, what would collapse and why?", "Kung iiwan mo ang tungkulin mo bukas, ano ang guguho at bakit?"),
+      t("Who is already watching how you serve, and what are they learning?", "Sino ang nakamasid na sa paraan ng paglilingkod mo, at ano ang natututunan nila?"),
+      t("What fear or pride keeps you from handing responsibility to someone else?", "Anong takot o pagmamataas ang pumipigil sa iyong ipasa ang pananagutan sa iba?"),
+      t("What \"mantle\" has God given you that should live beyond you?", "Anong \"balabal\" ang ibinigay sa iyo ng Diyos na dapat mabuhay pagkatapos mo?"),
+    ],
+    actions: [
+      t("Write the name of one person you are training, or ask God to show you one this week.", "Isulat ang pangalan ng isang taong sinasanay mo, o hilingin sa Diyos na ipakita sa iyo ang isa ngayong linggo."),
+      t("Hand over one real responsibility to someone this month, and stay available to coach them.", "Ipasa ang isang tunay na pananagutan sa isang tao ngayong buwan, at manatiling handang gumabay."),
+      t("Document your role (steps, contacts, lessons learned) so that someone else can step in.", "Isulat ang iyong tungkulin (mga hakbang, kontak, natutunan) para may ibang makakahalili."),
+    ],
+    prayer: t(
+      "Lord of the harvest, You are the Shepherd of Your people and You never leave them without a leader. Thank You for those who passed the faith to me. Free me from the fear of being replaced and from the pride of needing to be needed. Show me whom to train, whom to trust and when to step aside. Give me the joy of Moses who prayed for his successor, and the humility to celebrate when others carry the work further than I did. Let what You began in me continue after me, for Your glory. In Jesus' name, Amen.",
+      "Panginoon ng ani, Ikaw ang Pastol ng Iyong bayan at hindi Mo sila iniiwang walang lider. Salamat po sa mga nagpasa ng pananampalataya sa akin. Palayain Mo ako sa takot na mapalitan at sa pagmamataas na kailangang kailanganin. Ipakita Mo kung sino ang sasanayin, pagkakatiwalaan at kailan aatras. Ibigay Mo sa akin ang kagalakan ni Moises na ipinanalangin ang kanyang kahalili, at ang kababaang-loob na magdiwang kapag mas malayo ang naidadala ng iba sa gawain kaysa sa akin. Hayaang magpatuloy pagkatapos ko ang sinimulan Mo sa akin, para sa Iyong kaluwalhatian. Sa pangalan ni Hesus, Amen."
+    ),
+  },
 };

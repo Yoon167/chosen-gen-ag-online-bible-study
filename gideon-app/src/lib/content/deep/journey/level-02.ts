@@ -1051,4 +1051,268 @@ export const DEEP: DeepSet = {
       "Panginoong Hesus, sinasabi kong iniibig Kita. Patawarin Mo ako sa mga panahong iba ang sinasabi ng buhay ko. Palambutin Mo ang puso ko at ipakita kung saan ako nagpaliban ng pagsunod sa Iyo. Sa pamamagitan ng Iyong Espiritu, bigyan Mo ako ng lakas na gawin ang hinihiling Mo, nang mabilis at masaya. Nais Kitang makilala, makita at lumakad gaya ng paglakad Mo. Gawin Mo akong tagagawa ng Iyong salita at hindi lang tagapakinig. Sa Iyong pangalan, Amen."
     ),
   },
+
+  "persistent-prayer": {
+    revelation: t(
+      "Delay is not denial; God often uses the waiting to build the one who is praying before He answers the prayer.",
+      "Ang pagkaantala ay hindi pagtanggi; madalas, ang paghihintay ang ginagamit ng Diyos para hubugin ang nananalangin bago Niya sagutin ang panalangin."
+    ),
+    mainTruth: t(
+      "Jesus told the parable of the persistent widow \"to show them that they should always pray and not give up\" (Luke 18:1). If a judge who neither feared God nor cared about people finally gave justice to a woman who kept coming, how much more will our loving Father respond to His own children (Luke 18:6-8; 11:9-13). The point is not that God is reluctant; it is that He is good, and that faith keeps knocking until the door opens. \"Devote yourselves to prayer, being watchful and thankful\" (Colossians 4:2).",
+      "Isinalaysay ni Hesus ang talinghaga ng matiyagang balo \"upang ipakita na dapat silang laging manalangin at huwag manghinawa\" (Lucas 18:1). Kung ang hukom na hindi natatakot sa Diyos at walang malasakit sa tao ay nagbigay rin ng katarungan sa babaeng paulit-ulit na lumalapit, gaano pa kaya ang mapagmahal nating Ama sa Kanyang mga anak (Lucas 18:6-8; 11:9-13). Hindi ang punto na atubili ang Diyos; ang punto ay mabuti Siya, at ang pananampalataya ay patuloy na kumakatok hanggang bumukas ang pinto. \"Magpakatatag kayo sa pananalangin, na may pagbabantay at pasasalamat\" (Colosas 4:2)."
+    ),
+    insight: [
+      t(
+        "Notice what Jesus contrasts. He is not comparing God to the unjust judge; He is contrasting them. The judge had to be worn down. God does not. Our persistence is not meant to change God's mind but to deepen our hearts. Many believers pray once or twice, feel nothing, and quietly conclude, \"Maybe it is not His will.\" Sometimes that is wisdom; very often it is just tiredness wearing the clothes of humility.",
+        "Pansinin kung ano ang pinaghahambing ni Hesus. Hindi Niya inihahalintulad ang Diyos sa di-makatarungang hukom; ipinagkokontra Niya sila. Ang hukom ay kailangang pagurin. Ang Diyos ay hindi. Ang ating pagtitiyaga ay hindi para baguhin ang isip ng Diyos kundi para palalimin ang ating puso. Maraming mananampalataya ang nananalangin nang minsan o makalawa, walang nararamdaman, at tahimik na nagsasabi, \"Siguro hindi iyon ang kalooban Niya.\" Minsan karunungan iyon; madalas, pagod lang na nakadamit ng kababaang-loob."
+      ),
+      t(
+        "Look at the friend at midnight in Luke 11. He gets bread not because of friendship alone but because of his bold, shameless asking. Heaven honors holy boldness. And Paul adds two guards to persistence: watchfulness and thankfulness. Watchfulness keeps us alert to how God is already moving; thankfulness keeps our hearts soft while we wait, so persistence does not turn into complaining.",
+        "Tingnan ang kaibigan sa hatinggabi sa Lucas 11. Nakakuha siya ng tinapay hindi dahil sa pagkakaibigan lang kundi dahil sa kanyang matapang at walang-hiyang paghingi. Pinararangalan ng langit ang banal na katapangan. At dalawang bantay ang idinagdag ni Pablo sa pagtitiyaga: pagbabantay at pasasalamat. Ang pagbabantay ay nagpapaalerto sa atin kung paano na kumikilos ang Diyos; ang pasasalamat ay nagpapalambot ng puso habang naghihintay, para ang pagtitiyaga ay hindi maging reklamo."
+      ),
+    ],
+    life: [
+      t(
+        "Aling Nena, a domestic worker in Kuwait, has prayed for eleven years that her husband back home would come to Christ. Some nights she wanted to stop. But she kept a small notebook: \"Asked. Thank You for his job. Asked again.\" One Christmas video call, her husband said quietly, \"Can you pray for me?\" She did not get a thunderclap; she got a door opening that eleven years of knocking had been leaning on.",
+        "Si Aling Nena, kasambahay sa Kuwait, ay labing-isang taon nang nananalangin na lumapit kay Cristo ang asawa niya sa Pilipinas. May mga gabing gusto na niyang tumigil. Pero may maliit siyang notebook: \"Humingi. Salamat sa trabaho niya. Humingi ulit.\" Isang Pasko, sa video call, mahinang sinabi ng asawa niya, \"Ipagdasal mo naman ako.\" Hindi kulog ang dumating; isang pintong bumukas na matagal nang sinasandalan ng labing-isang taong pagkatok."
+      ),
+      t(
+        "Think of the jeepney driver who keeps tapping the horn and inching forward in heavy traffic on EDSA. He is not angry; he simply knows the road eventually opens. Prayer needs that kind of stubborn hope. Are you still in the lane, or have you parked and gone home?",
+        "Isipin ang tsuper ng jeepney na patuloy na bumubusina at umuusad nang kaunti-kaunti sa mabigat na trapiko sa EDSA. Hindi siya galit; alam lang niyang magbubukas din ang daan. Ganyang matigas na pag-asa ang kailangan ng panalangin. Nasa linya ka pa ba, o nag-park ka na at umuwi?"
+      ),
+    ],
+    twist: t(
+      "The Kingdom twist: the widow had no power, no money and no status, and yet she is the hero of the story. In God's Kingdom, weakness that keeps coming is stronger than strength that gives up. Your helplessness is not a disqualification; it is the very posture heaven responds to. Jesus ends with a question, \"When the Son of Man comes, will He find faith on the earth?\" (Luke 18:8). Persistent prayer is how faith stays alive.",
+      "Ang twist ng Kaharian: ang balo ay walang kapangyarihan, pera o katayuan, pero siya ang bayani ng kuwento. Sa Kaharian ng Diyos, mas malakas ang kahinaang patuloy na lumalapit kaysa lakas na sumusuko. Ang kawalan mo ng magagawa ay hindi diskwalipikasyon; iyon mismo ang tindig na tinutugon ng langit. Nagtapos si Hesus sa tanong, \"Pagbalik ng Anak ng Tao, makakatagpo kaya Siya ng pananampalataya sa lupa?\" (Lucas 18:8). Ang matiyagang panalangin ang nagpapanatiling buhay sa pananampalataya."
+    ),
+    confirm: [
+      t("Genesis 32:26: Jacob wrestles and says, \"I will not let You go unless You bless me.\"", "Genesis 32:26: nakipagbuno si Jacob at sinabi, \"Hindi Kita pakakawalan hangga't hindi Mo ako pinagpapala.\""),
+      t("1 Samuel 1:10-20: Hannah pours out her heart year after year and Samuel is born.", "1 Samuel 1:10-20: ibinuhos ni Ana ang puso niya taon-taon at isinilang si Samuel."),
+      t("Acts 12:5-12: the church prays earnestly and Peter walks out of prison.", "Gawa 12:5-12: taimtim na nanalangin ang iglesia at lumabas si Pedro sa bilangguan."),
+      t("James 5:16-18: the prayer of a righteous person is powerful; Elijah prayed again and again for rain.", "Santiago 5:16-18: makapangyarihan ang panalangin ng matuwid; paulit-ulit na nanalangin si Elias para sa ulan."),
+    ],
+    heart: [
+      t(
+        "Trade the question \"Why is God slow?\" for \"What is God doing in me while I wait?\" Let patience grow where complaint used to live.",
+        "Palitan ang tanong na \"Bakit mabagal ang Diyos?\" ng \"Ano ang ginagawa ng Diyos sa akin habang naghihintay ako?\" Hayaang tumubo ang pasensya kung saan dating nakatira ang reklamo."
+      ),
+      t(
+        "Become a person of prayer, not only a person with prayer requests. Keep coming, keep thanking, keep watching, and trust the Father's timing and goodness.",
+        "Maging taong mapanalangin, hindi lang taong may listahan ng hiling. Patuloy na lumapit, magpasalamat, magbantay, at magtiwala sa panahon at kabutihan ng Ama."
+      ),
+    ],
+    questions: [
+      t("What prayer have you quietly stopped praying, and why?", "Anong panalangin ang tahimik mong itinigil, at bakit?"),
+      t("Do you tend to give up because of doubt about God's goodness or because of tiredness?", "Sumusuko ka ba dahil sa pagdududa sa kabutihan ng Diyos o dahil sa pagod?"),
+      t("What are you thankful for right now that could carry you through the waiting?", "Ano ang pinasasalamatan mo ngayon na maaaring magdala sa iyo sa paghihintay?"),
+      t("Who could pray with you so you are not waiting alone?", "Sino ang maaaring manalangin kasama mo para hindi ka mag-isang naghihintay?"),
+    ],
+    actions: [
+      t("Write down one prayer you gave up on and pray it again today.", "Isulat ang isang panalanging sinukuan mo at ipanalangin itong muli ngayon."),
+      t("Start a simple prayer notebook with the date asked and space for the date answered.", "Magsimula ng simpleng prayer notebook na may petsa ng paghingi at espasyo para sa petsa ng sagot."),
+      t("Ask a friend or your AG to agree with you in prayer for that need every week.", "Hilingin sa isang kaibigan o sa iyong AG na makiisa sa iyo sa panalangin para sa pangangailangang iyon bawat linggo."),
+    ],
+    prayer: t(
+      "Father, You are not like the unjust judge; You are good, and You hear me. Forgive me for the prayers I abandoned when answers were slow. Teach me to keep asking, seeking and knocking with a watchful and thankful heart. While I wait, shape my character and keep my faith alive until Jesus returns. I bring You again the request I let go of, and I trust Your love and Your timing. In Jesus' name, Amen.",
+      "Ama, hindi Ka tulad ng di-makatarungang hukom; mabuti Ka, at dinirinig Mo ako. Patawarin Mo ako sa mga panalangin kong iniwan nang mabagal ang sagot. Turuan Mo akong patuloy na humingi, humanap at kumatok nang may pagbabantay at pasasalamat. Habang naghihintay ako, hubugin Mo ang aking pagkatao at panatilihing buhay ang aking pananampalataya hanggang sa pagbabalik ni Hesus. Muli kong dinadala sa Iyo ang hiling na binitawan ko, at nagtitiwala ako sa Iyong pag-ibig at panahon. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+
+  "what-is-faith": {
+    revelation: t(
+      "Faith is not believing harder; it is trusting Someone good enough to obey before you can see.",
+      "Ang pananampalataya ay hindi ang mas matinding paniniwala; ito ay pagtitiwala sa Isang sapat na mabuti para sundin mo bago mo pa makita."
+    ),
+    mainTruth: t(
+      "\"Now faith is confidence in what we hope for and assurance about what we do not see\" (Hebrews 11:1). Abraham \"obeyed and went, even though he did not know where he was going\" (Hebrews 11:8). Faith always has an object: it is anchored in the character of the God who calls. And it has a source: \"Faith comes from hearing the message, and the message is heard through the word about Christ\" (Romans 10:17).",
+      "\"Ang pananampalataya ay ang katiyakan sa mga bagay na inaasahan, ang pagkakatiyak sa mga bagay na hindi nakikita\" (Hebreo 11:1). Si Abraham \"ay sumunod at umalis, kahit hindi niya alam kung saan siya pupunta\" (Hebreo 11:8). Ang pananampalataya ay laging may pinagtitiwalaan: nakaangkla ito sa katangian ng Diyos na tumatawag. At may pinanggagalingan ito: \"Ang pananampalataya ay nanggagaling sa pakikinig, at ang pakikinig ay sa pamamagitan ng salita tungkol kay Cristo\" (Roma 10:17)."
+    ),
+    insight: [
+      t(
+        "Many people think faith is a feeling of certainty or the power to talk yourself into an outcome. Scripture never describes it that way. Faith is a response. God speaks, and faith answers with trust that shows up as action. Abraham did not feel confident about the map; he was confident about the One who handed him the journey.",
+        "Iniisip ng maraming tao na ang pananampalataya ay pakiramdam ng katiyakan o kakayahang kumbinsihin ang sarili sa isang resulta. Hindi ganyan inilalarawan ng Kasulatan. Ang pananampalataya ay pagtugon. Nagsasalita ang Diyos, at sumasagot ang pananampalataya ng pagtitiwalang lumilitaw bilang kilos. Hindi tiwala si Abraham sa mapa; tiwala siya sa Isang nag-abot sa kanya ng paglalakbay."
+      ),
+      t(
+        "This is why small faith can move great things. Jesus said faith the size of a mustard seed is enough, because the power was never in the seed; it is in the One it is planted toward. And since faith comes by hearing, a believer who is starved of the Word will find faith shrinking, however many times they say they believe.",
+        "Kaya ang maliit na pananampalataya ay kayang gumalaw ng malalaking bagay. Sinabi ni Hesus na sapat na ang pananampalatayang kasinliit ng buto ng mustasa, dahil ang kapangyarihan ay wala sa buto kundi sa Isang pinagtitiwalaan nito. At dahil ang pananampalataya ay nanggagaling sa pakikinig, ang mananampalatayang nagugutom sa Salita ay makikitang lumiliit ang pananampalataya, gaano man niya kadalas sabihing naniniwala siya."
+      ),
+    ],
+    life: [
+      t(
+        "Consider a young Filipino nurse accepting a job offer in Dubai. She has never been there, she is leaving her family, and she cannot see the future. She boards the plane because she trusts the agency, the contract and the people who vouched for it. Now think: God has a far better record than any agency. When He says, \"Go,\" His contract never fails.",
+        "Isipin ang batang Pilipinang nars na tumatanggap ng trabaho sa Dubai. Hindi pa siya nakararating doon, iiwan niya ang pamilya, at hindi niya nakikita ang hinaharap. Sumasakay siya ng eroplano dahil nagtitiwala siya sa ahensya, sa kontrata at sa mga taong nagpatunay rito. Ngayon, isipin: mas maganda ang rekord ng Diyos kaysa sa anumang ahensya. Kapag sinabi Niyang, \"Humayo ka,\" hindi kailanman pumapalya ang Kanyang kontrata."
+      ),
+      t(
+        "Faith in daily life is smaller than people think: paying tithes when the budget is tight, forgiving someone who has not said sorry, telling your coworker about Jesus, staying honest when cutting corners would be easier. Each is a small \"going out\" toward an unseen promise.",
+        "Mas maliit sa akala ng iba ang pananampalataya sa araw-araw: pagbibigay ng ikapu kahit masikip ang budget, pagpapatawad sa taong hindi pa humihingi ng tawad, pagsasabi kay Hesus sa katrabaho, pananatiling tapat kahit mas madaling mandaya. Bawat isa ay maliit na \"paglabas\" tungo sa pangakong hindi pa nakikita."
+      ),
+    ],
+    twist: t(
+      "We usually say, \"I will believe when I see.\" The Kingdom reverses it: \"You will see when you believe.\" Hebrews 11:3 says, \"By faith we understand that the universe was formed at God's command.\" Even understanding starts with trust. Seeing follows obeying, and it often follows the first step, not the last.",
+      "Madalas nating sabihin, \"Maniniwala ako kapag nakita ko.\" Binabaligtad ito ng Kaharian: \"Makikita mo kapag naniwala ka.\" Sabi ng Hebreo 11:3, \"Sa pananampalataya, nauunawaan nating ang sansinukob ay nabuo sa utos ng Diyos.\" Maging ang pag-unawa ay nagsisimula sa pagtitiwala. Ang pagkakita ay kasunod ng pagsunod, at madalas ay kasunod ng unang hakbang, hindi ng huli."
+    ),
+    confirm: [
+      t("Hebrews 11:6: without faith it is impossible to please God; he who comes must believe that He exists and rewards those who seek Him.", "Hebreo 11:6: kung walang pananampalataya ay imposibleng bigyang-lugod ang Diyos; ang lumalapit ay dapat maniwalang may Diyos at ginagantimpalaan Niya ang naghahanap."),
+      t("Romans 4:20-21: Abraham was fully persuaded that God had power to do what He promised.", "Roma 4:20-21: lubos na nakatiyak si Abraham na may kapangyarihan ang Diyos na gawin ang Kanyang ipinangako."),
+      t("Mark 9:24: \"I do believe; help my unbelief!\" Honest, small faith is welcome.", "Marcos 9:24: \"Naniniwala ako; tulungan Mo ang aking kakulangan ng pananampalataya!\" Tinatanggap ang tapat at maliit na pananampalataya."),
+      t("James 2:17: faith without works is dead; real faith shows itself in obedience.", "Santiago 2:17: patay ang pananampalatayang walang gawa; ang tunay na pananampalataya ay nakikita sa pagsunod."),
+    ],
+    heart: [
+      t(
+        "Stop measuring your faith by how you feel and start measuring it by whom you trust. Fix your eyes on the character of God, not the size of the problem.",
+        "Itigil ang pagsukat ng pananampalataya mo sa nararamdaman mo at simulang sukatin ito sa kung sino ang pinagtitiwalaan mo. Ituon ang mata sa katangian ng Diyos, hindi sa laki ng problema."
+      ),
+      t(
+        "Feed your faith daily with the Word, and let it become action. Choose one concrete step of obedience instead of waiting for perfect certainty.",
+        "Pakainin ang pananampalataya mo araw-araw ng Salita, at hayaang maging kilos ito. Pumili ng isang tiyak na hakbang ng pagsunod sa halip na maghintay ng perpektong katiyakan."
+      ),
+    ],
+    questions: [
+      t("Where is God asking you to step out before you see the whole road?", "Saan ka hinihiling ng Diyos na humakbang bago mo makita ang buong daan?"),
+      t("Do you tend to define faith as a feeling? How does Hebrews 11 correct that?", "Madalas mo bang ituring na pakiramdam ang pananampalataya? Paano ito itinatama ng Hebreo 11?"),
+      t("How much time in God's Word is feeding your faith each week?", "Gaano karaming oras sa Salita ng Diyos ang nagpapakain sa pananampalataya mo bawat linggo?"),
+      t("What promise of God do you need to trust more than your circumstances?", "Anong pangako ng Diyos ang kailangan mong pagtiwalaan nang higit sa iyong kalagayan?"),
+    ],
+    actions: [
+      t("Identify one step of obedience you have been postponing and take it this week.", "Tukuyin ang isang hakbang ng pagsunod na pinapaliban mo at gawin ito ngayong linggo."),
+      t("Read Hebrews 11 slowly and underline every \"by faith\" that applies to your life.", "Basahin nang dahan-dahan ang Hebreo 11 at salungguhitan ang bawat \"sa pananampalataya\" na akma sa buhay mo."),
+      t("Share your step with someone in your AG so they can pray and cheer you on.", "Ibahagi ang hakbang mo sa isang tao sa iyong AG para maipanalangin ka nila at palakasin ang loob mo."),
+    ],
+    prayer: t(
+      "Lord, I confess that my faith is small, and often it is more about my feelings than about You. Help my unbelief. Grow my faith through Your Word, and fix my eyes on who You are rather than on what I cannot see. Give me courage to obey You, like Abraham, even when I do not have the whole map. I trust You with my family, my work and my future. Lead me one step at a time. In Jesus' name, Amen.",
+      "Panginoon, inaamin kong maliit ang pananampalataya ko, at madalas ay nakabatay ito sa damdamin ko kaysa sa Iyo. Tulungan Mo ang aking kakulangan ng pananampalataya. Palaguin Mo ito sa pamamagitan ng Iyong Salita, at ituon Mo ang aking mata sa kung sino Ka kaysa sa hindi ko nakikita. Bigyan Mo ako ng lakas ng loob na sumunod sa Iyo, tulad ni Abraham, kahit wala akong buong mapa. Ipinagkakatiwala ko sa Iyo ang aking pamilya, trabaho at kinabukasan. Akayin Mo ako, isang hakbang sa bawat pagkakataon. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+
+  "the-kingdom-of-god": {
+    revelation: t(
+      "The Kingdom is not a place you go to someday; it is a King you submit to today, and everything else is rearranged around Him.",
+      "Ang Kaharian ay hindi lugar na pupuntahan mo balang araw; ito ay Haring pinasusukuan mo ngayon, at ang lahat ay nag-aayos muli sa palibot Niya."
+    ),
+    mainTruth: t(
+      "Jesus opened His ministry with one message: \"The time has come. The kingdom of God has come near. Repent and believe the good news!\" (Mark 1:15). The Kingdom is God's rule and reign breaking into the world through Jesus. It begins small like a mustard seed and works quietly like yeast (Matthew 13:31-33), and it is so precious that a person joyfully sells everything to possess it (Matthew 13:44-46).",
+      "Sinimulan ni Hesus ang Kanyang ministeryo sa iisang mensahe: \"Dumating na ang takdang panahon. Malapit na ang kaharian ng Diyos. Magsisi kayo at sumampalataya sa mabuting balita!\" (Marcos 1:15). Ang Kaharian ay ang paghahari ng Diyos na pumapasok sa mundo sa pamamagitan ni Hesus. Nagsisimula itong maliit gaya ng buto ng mustasa at tahimik na kumikilos gaya ng lebadura (Mateo 13:31-33), at napakahalaga nito kaya masayang ipinagbibili ng isang tao ang lahat para angkinin ito (Mateo 13:44-46)."
+    ),
+    insight: [
+      t(
+        "Many believers think of the Kingdom only as heaven after death. Jesus said it has already come near. It is both \"already\" and \"not yet\": already, because the King is here and His power heals, forgives and sets people free; not yet, because evil and death still remain until He returns. Living between the two means we neither despair at what is broken nor pretend everything is finished.",
+        "Iniisip ng maraming mananampalataya na ang Kaharian ay langit lang pagkamatay. Sinabi ni Hesus na malapit na ito. Ito ay \"narito na\" at \"hindi pa ganap\": narito na, dahil narito ang Hari at ang Kanyang kapangyarihan ay nagpapagaling, nagpapatawad at nagpapalaya; hindi pa ganap, dahil nananatili pa ang kasamaan at kamatayan hanggang sa Kanyang pagbabalik. Ang pamumuhay sa pagitan nito ay nangangahulugang hindi tayo nawawalan ng pag-asa sa sira, at hindi rin nagkukunwaring tapos na ang lahat."
+      ),
+      t(
+        "Notice the first word of the message: repent. You cannot enter a new kingdom while still living by the old one's rules. Repentance is not just feeling sorry; it is changing allegiance, turning from being king of your own life to being a citizen under the King. And the two parables of the treasure and the pearl show that this surrender is not a loss but the best bargain ever made.",
+        "Pansinin ang unang salita ng mensahe: magsisi. Hindi ka makapapasok sa bagong kaharian habang nabubuhay pa sa batas ng luma. Ang pagsisisi ay hindi lang pagsisisi sa damdamin; ito ay pagbabago ng pagsunod, paglayo sa pagiging hari ng sarili mong buhay tungo sa pagiging mamamayan sa ilalim ng Hari. At ipinakikita ng dalawang talinghaga ng kayamanan at perlas na ang pagsukong ito ay hindi pagkawala kundi ang pinakamagandang kalakal kailanman."
+      ),
+    ],
+    life: [
+      t(
+        "A small sari-sari store owner in Batangas begins to give credit to neighbors who cannot pay, and quietly refuses to sell cigarettes to children. She never preaches; she simply lets the King run her store. Over time, neighbors begin to ask why. A mustard seed has grown into a tree that gives shade to the whole street.",
+        "Isang maliit na may-ari ng sari-sari store sa Batangas ang nagsimulang magpautang sa mga kapitbahay na walang pambayad, at tahimik na tumangging magbenta ng sigarilyo sa mga bata. Hindi siya nangangaral; hinahayaan lang niyang ang Hari ang magpatakbo ng tindahan niya. Sa paglipas ng panahon, nagsimulang magtanong ang mga kapitbahay kung bakit. Ang buto ng mustasa ay naging punong nagbibigay-lilim sa buong kalye."
+      ),
+      t(
+        "For an OFW far from home, the Kingdom is not an abstract idea. Your cramped room, your shift and your video calls are all territory where the King can rule. You may feel unseen, but yeast works hidden in the dough. Your honesty, kindness and prayer are small things the King is multiplying.",
+        "Para sa isang OFW na malayo sa tahanan, ang Kaharian ay hindi abstraktong ideya. Ang masikip mong kuwarto, ang iyong shift at ang iyong mga video call ay lahat teritoryo kung saan puwedeng maghari ang Hari. Maaaring pakiramdam mo hindi ka nakikita, pero ang lebadura ay kumikilos nang nakatago sa masa. Ang iyong katapatan, kabaitan at panalangin ay maliliit na bagay na pinararami ng Hari."
+      ),
+    ],
+    twist: t(
+      "We expect a kingdom to arrive with armies and noise. Jesus said it arrives like seed and yeast, quiet, slow and hidden, yet unstoppable. The biggest things in God's Kingdom usually begin as things the world would overlook: a baby in a manger, a twelve-man team, a small act of obedience. Do not despise small beginnings; they are the Kingdom's favorite way to start.",
+      "Inaasahan natin na ang kaharian ay darating na may hukbo at ingay. Sabi ni Hesus, dumarating ito na parang binhi at lebadura, tahimik, mabagal at nakatago, pero hindi mapipigilan. Ang pinakamalalaking bagay sa Kaharian ng Diyos ay karaniwang nagsisimula sa mga bagay na hindi pinapansin ng mundo: isang sanggol sa sabsaban, isang pangkat ng labindalawa, isang maliit na pagsunod. Huwag hamakin ang maliliit na simula; iyon ang paboritong paraan ng Kaharian na magsimula."
+    ),
+    confirm: [
+      t("Matthew 6:33: seek first His kingdom and His righteousness, and all these things will be given to you.", "Mateo 6:33: hanapin muna ang Kanyang kaharian at ang Kanyang katuwiran, at idaragdag sa inyo ang lahat ng ito."),
+      t("Luke 17:20-21: the kingdom of God is in your midst.", "Lucas 17:20-21: ang kaharian ng Diyos ay nasa gitna ninyo."),
+      t("Romans 14:17: the kingdom is righteousness, peace and joy in the Holy Spirit.", "Roma 14:17: ang kaharian ay katuwiran, kapayapaan at kagalakan sa Espiritu Santo."),
+      t("Colossians 1:13: He rescued us from the dominion of darkness and brought us into the kingdom of His Son.", "Colosas 1:13: iniligtas Niya tayo sa kapangyarihan ng kadiliman at inilipat sa kaharian ng Kanyang Anak."),
+    ],
+    heart: [
+      t(
+        "Ask who is truly on the throne of your plans, your money and your time. Let repentance be a joyful turning back to the rightful King, not a heavy religious duty.",
+        "Tanungin kung sino talaga ang nasa trono ng iyong mga plano, pera at oras. Gawing masayang pagbabalik sa tunay na Hari ang pagsisisi, hindi mabigat na tungkuling panrelihiyon."
+      ),
+      t(
+        "Learn to value the Kingdom as the treasure it is. When something competes for first place, remember the man in the field who sold everything with joy.",
+        "Matutong pahalagahan ang Kaharian bilang kayamanan na ito talaga. Kapag may nakikipagpaligsahan sa unang pwesto, alalahanin ang taong nasa bukid na ipinagbili ang lahat nang may kagalakan."
+      ),
+    ],
+    questions: [
+      t("What area of your life are you still ruling yourself instead of letting the King rule?", "Anong bahagi ng buhay mo ang pinamamahalaan mo pa rin sa halip na hayaang maghari ang Hari?"),
+      t("What small seed of obedience has God put in your hand to plant?", "Anong maliit na buto ng pagsunod ang inilagay ng Diyos sa kamay mo para itanim?"),
+      t("What are you tempted to value above the Kingdom?", "Ano ang natutukso kang pahalagahan nang higit sa Kaharian?"),
+      t("Where could you be \"yeast\" in your workplace or home this week?", "Saan ka maaaring maging \"lebadura\" sa trabaho o tahanan mo ngayong linggo?"),
+    ],
+    actions: [
+      t("Pray slowly, \"Your kingdom come, Your will be done,\" over your day each morning this week.", "Ipanalangin nang dahan-dahan ang \"Dumating nawa ang Iyong kaharian, mangyari nawa ang Iyong kalooban\" tuwing umaga ngayong linggo."),
+      t("Choose one priority to rearrange so that seeking God's kingdom comes first.", "Pumili ng isang priyoridad na aayusin muli para mauna ang paghahanap sa kaharian ng Diyos."),
+      t("Do one quiet act of Kingdom kindness that no one will see.", "Gumawa ng isang tahimik na kabutihan ng Kaharian na walang makakakita."),
+    ],
+    prayer: t(
+      "King Jesus, Your kingdom has come near, and I want to live under Your rule. Forgive me for the places where I have been my own king. Give me eyes to see the Kingdom as the greatest treasure, and joy to give up whatever stands in its way. Use my small obedience like seed and yeast, quietly and surely. Let Your kingdom come in my home, my work and my country. In Your name, Amen.",
+      "Haring Hesus, malapit na ang Iyong kaharian, at nais kong mamuhay sa ilalim ng Iyong paghahari. Patawarin Mo ako sa mga bahagi kung saan ako ang sarili kong hari. Bigyan Mo ako ng mata para makita ang Kaharian bilang pinakadakilang kayamanan, at kagalakang isuko ang anumang humahadlang dito. Gamitin Mo ang maliit kong pagsunod gaya ng binhi at lebadura, tahimik at tiyak. Dumating nawa ang Iyong kaharian sa aking tahanan, trabaho at bansa. Sa Iyong pangalan, Amen."
+    ),
+  },
+
+  "jesus-is-coming-again": {
+    revelation: t(
+      "Because Jesus is certainly coming back, the right response is not speculation but faithful, joyful readiness today.",
+      "Dahil tiyak na babalik si Hesus, ang tamang tugon ay hindi hula-hula kundi tapat at masayang paghahanda ngayon."
+    ),
+    mainTruth: t(
+      "As the disciples stared into the sky, two angels said, \"This same Jesus, who has been taken from you into heaven, will come back in the same way you have seen Him go\" (Acts 1:11). Nobody knows the day or the hour (Matthew 24:36), so Jesus tells us to \"keep watch\" (Matthew 24:42). The delay is not slowness but mercy: \"He is patient with you, not wanting anyone to perish, but everyone to come to repentance\" (2 Peter 3:9). And we look forward to \"a new heaven and a new earth, where righteousness dwells\" (2 Peter 3:13).",
+      "Habang nakatingin sa langit ang mga alagad, sinabi ng dalawang anghel, \"Ang Hesus na ito, na kinuha sa inyo paakyat sa langit, ay babalik sa gayunding paraan na nakita ninyo Siyang umakyat\" (Gawa 1:11). Walang nakaaalam ng araw o oras (Mateo 24:36), kaya sinabi ni Hesus na \"magbantay kayo\" (Mateo 24:42). Ang pagkaantala ay hindi kabagalan kundi awa: \"Matiyaga Siya sa inyo, hindi Niya nais na may mapahamak, kundi lahat ay magsisi\" (2 Pedro 3:9). At inaasam natin ang \"bagong langit at bagong lupa, na tinatahanan ng katuwiran\" (2 Pedro 3:13)."
+    ),
+    insight: [
+      t(
+        "Notice what the angels did: they stopped the sky-gazing. Looking up in wonder is right, but standing still is not. Believers have always been tempted in two directions: to obsess over timelines and charts, or to forget that He is coming at all. Jesus gave a third way: stay awake, stay holy, stay busy with the mission until He arrives.",
+        "Pansinin ang ginawa ng mga anghel: pinatigil nila ang pagtitig sa langit. Tama ang tumingala nang may pagkamangha, pero hindi tama ang manatiling nakatayo lang. Laging natutukso ang mga mananampalataya sa dalawang direksyon: ang mahumaling sa mga petsa at tsart, o ang makalimutan na darating Siya. Nagbigay si Hesus ng ikatlong daan: manatiling gising, manatiling banal, at manatiling abala sa misyon hanggang sa Kanyang pagdating."
+      ),
+      t(
+        "Good Christians differ on the details of the end times, and that is fine. What all agree on is the center: Jesus will return personally, visibly and in glory, He will judge with perfect justice, and He will make all things new. Hold the details loosely and hold the hope tightly. Peter's goal is practical: \"What kind of people ought you to be?\" (2 Peter 3:11).",
+        "Nagkakaiba ang mabubuting Kristiyano sa mga detalye ng mga huling panahon, at ayos lang iyon. Ang pinagkakasunduan ng lahat ay ang sentro: personal, nakikita at maluwalhating babalik si Hesus, hahatol Siya nang may ganap na katarungan, at gagawin Niyang bago ang lahat. Maluwag na hawakan ang mga detalye at mahigpit na hawakan ang pag-asa. Praktikal ang layunin ni Pedro: \"Anong uri ng tao ang dapat ninyong maging?\" (2 Pedro 3:11)."
+      ),
+    ],
+    life: [
+      t(
+        "Think of a family at the airport waiting for their OFW father who is coming home for good after ten years. For weeks, the house is cleaned, the table is planned, the kids practice what to say. Nobody sits in the corner whining that the plane is late; they prepare because he is truly coming. That is the attitude of those who await Jesus.",
+        "Isipin ang isang pamilya sa airport na naghihintay sa amang OFW na uuwi na nang tuluyan matapos ang sampung taon. Ilang linggo bago nito, nilinis ang bahay, pinlano ang hapag, nag-ensayo ang mga bata ng sasabihin. Walang nakaupo sa sulok na nagrereklamong late ang eroplano; naghahanda sila dahil tunay siyang darating. Ganyan ang tindig ng mga naghihintay kay Hesus."
+      ),
+      t(
+        "Ask a simple question each Sunday night: \"If Jesus came this week, what would I wish I had done?\" Perhaps forgive your sibling, speak to your coworker about Christ, return what you owe, or restore your devotion. The return of Jesus is not meant to frighten believers but to wake us up and fill us with hope.",
+        "Magtanong ng simpleng tanong tuwing Linggo ng gabi: \"Kung dumating si Hesus ngayong linggo, ano ang nais kong nagawa ko na?\" Baka patawarin ang kapatid, magsalita sa katrabaho tungkol kay Cristo, ibalik ang utang, o ibalik ang debosyon. Ang pagbabalik ni Hesus ay hindi para takutin ang mananampalataya kundi para gisingin tayo at punuin ng pag-asa."
+      ),
+    ],
+    twist: t(
+      "We often read the delay as God being late. Peter says the opposite: every extra day is another day of mercy, with His arms still open to someone you love who has not yet believed. The waiting is not wasted time; it is an invitation. Your neighbor still has time because God is patient, and you are the person He may use to tell them.",
+      "Madalas nating basahin ang pagkaantala bilang pagiging huli ng Diyos. Kabaligtaran ang sabi ni Pedro: bawat dagdag na araw ay dagdag na araw ng awa, na bukas pa rin ang Kanyang bisig sa taong mahal mo na hindi pa naniniwala. Ang paghihintay ay hindi nasasayang na oras; ito ay paanyaya. May oras pa ang kapitbahay mo dahil matiyaga ang Diyos, at ikaw ang taong maaaring gamitin Niya para sabihin sa kanila."
+    ),
+    confirm: [
+      t("John 14:3: \"I will come back and take you to be with Me.\"", "Juan 14:3: \"Babalik Ako at isasama Ko kayo sa Akin.\""),
+      t("1 Thessalonians 4:16-18: the Lord Himself will descend, and we encourage one another with these words.", "1 Tesalonica 4:16-18: Siya mismong Panginoon ay bababa, at nagpapalakasan tayo ng loob sa mga salitang ito."),
+      t("Titus 2:11-14: the blessed hope trains us to say no to ungodliness and to be eager to do good.", "Tito 2:11-14: ang pinagpalang pag-asa ay nagsasanay sa ating tumanggi sa kasamaan at maging sabik sa paggawa ng mabuti."),
+      t("Revelation 22:20: \"Yes, I am coming soon.\" Amen. Come, Lord Jesus.", "Pahayag 22:20: \"Oo, madali Akong darating.\" Amen. Pumarito Ka, Panginoong Hesus."),
+    ],
+    heart: [
+      t(
+        "Let the hope of His return loosen your grip on temporary things and tighten your grip on people and mission. Live as someone who is expecting a Guest, not someone fearing an inspection.",
+        "Hayaang paluwagin ng pag-asa sa Kanyang pagbabalik ang kapit mo sa mga pansamantalang bagay at higpitan ang kapit mo sa mga tao at misyon. Mamuhay na gaya ng may inaasahang Panauhin, hindi ng natatakot sa inspeksyon."
+      ),
+      t(
+        "Choose holiness out of love, not fear: you are getting ready for the One you love. And stay generous with the gospel while the door of mercy is still open.",
+        "Piliin ang kabanalan dahil sa pag-ibig, hindi takot: naghahanda ka para sa Isang minamahal mo. At manatiling bukas-palad sa ebanghelyo habang bukas pa ang pinto ng awa."
+      ),
+    ],
+    questions: [
+      t("Does the thought of Jesus returning stir more joy or more fear in you? Why?", "Mas kagalakan o mas takot ba ang dulot sa iyo ng pag-iisip na babalik si Hesus? Bakit?"),
+      t("What has been replacing watchfulness in your life: busyness, entertainment, worry?", "Ano ang pumalit sa pagbabantay sa buhay mo: pagiging abala, libangan, pag-aalala?"),
+      t("Who in your life still needs more time to hear the gospel?", "Sino sa buhay mo ang nangangailangan pa ng panahon para marinig ang ebanghelyo?"),
+      t("What would you do differently if you knew He was coming next month?", "Ano ang gagawin mo nang iba kung alam mong darating Siya sa susunod na buwan?"),
+    ],
+    actions: [
+      t("Pray \"Come, Lord Jesus\" at the start of your day and ask Him to find you faithful.", "Manalangin ng \"Pumarito Ka, Panginoong Hesus\" sa simula ng araw mo at hilingin na matagpuan ka Niyang tapat."),
+      t("Settle one unfinished matter: a conflict, a debt, a promise, or a habit.", "Ayusin ang isang hindi pa tapos na usapin: alitan, utang, pangako, o ugali."),
+      t("Tell one person this week why you hope in Jesus.", "Sabihin sa isang tao ngayong linggo kung bakit ka umaasa kay Hesus."),
+    ],
+    prayer: t(
+      "Lord Jesus, You ascended in glory, and You promised to return. Keep me watchful and holy while I wait, not frightened but filled with hope. Forgive me for the times I forgot You are coming. Use Your patience to soften my heart toward the people I love who do not yet know You, and give me boldness to speak. Find me faithful when You appear. Even so, come, Lord Jesus. In Your name, Amen.",
+      "Panginoong Hesus, umakyat Ka sa kaluwalhatian, at ipinangako Mong babalik Ka. Panatilihin Mo akong mapagbantay at banal habang naghihintay, hindi natatakot kundi puno ng pag-asa. Patawarin Mo ako sa mga panahong nalimutan kong darating Ka. Gamitin Mo ang Iyong pagtitiis para palambutin ang puso ko sa mga mahal ko na hindi pa nakakakilala sa Iyo, at bigyan Mo ako ng katapangang magsalita. Matagpuan Mo sana akong tapat sa Iyong paglitaw. Oo, pumarito Ka, Panginoong Hesus. Sa Iyong pangalan, Amen."
+    ),
+  },
 };

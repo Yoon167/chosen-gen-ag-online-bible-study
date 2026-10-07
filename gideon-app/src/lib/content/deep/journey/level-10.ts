@@ -1053,4 +1053,264 @@ export const DEEP: DeepSet = {
       "Panginoong Hesus, Ikaw ang dahilan ng aming pagtitipon. Tulungan Mo akong pangunahan ang Iyong bayan tungo sa Iyong presensya, hindi sa palabas. Bigyan Mo ako ng gutom sa Iyong Salita, pag-ibig sa kaayusan at pagtanggap, at kababaang-loob sa lahat ng ginagawa ko. Ituro nawa Kayo ng bawat awit, panalangin, pagbasa at mensahe. Dalhin Mo ang mga nawawala at pagod sa aming mga pinto at hayaan silang magsabi, \"Tunay ngang nasa gitna ninyo ang Diyos.\" Patibayin Mo ang Iyong iglesia. Sa Iyong pangalan, Amen."
     ),
   },
+  "baptism-and-communion-as-a-pastor": {
+    revelation: t(
+      "Baptism and the Lord's Supper are not rituals we perform; they are the gospel made visible, and the pastor's task is to let people see Jesus in them.",
+      "Ang bautismo at ang Hapunan ng Panginoon ay hindi mga ritwal na ginagawa lang natin; ito ang ebanghelyong nakikita ng mata, at gawain ng pastor na hayaang makita ng mga tao si Hesus sa mga ito."
+    ),
+    mainTruth: t(
+      "Before He ascended, Jesus commanded His church to go and make disciples, \"baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you\" (Matthew 28:19-20). On the day of Pentecost, Peter called the crowd to repent and be baptized, and \"those who accepted his message were baptized\" and added to the church (Acts 2:38-41). On the night He was betrayed, Jesus took bread and a cup and said, \"Do this in remembrance of me\" (1 Corinthians 11:23-26). Baptism says, \"I belong to Jesus.\" The Supper says, \"I live by Jesus.\" Both point to His death and resurrection, and a pastor handles them with reverence because they are not ours; they are His.",
+      "Bago Siya umakyat sa langit, inutusan ni Hesus ang Kanyang iglesia na humayo at gumawa ng mga alagad, \"bautismuhan sila sa pangalan ng Ama at ng Anak at ng Espiritu Santo, at turuan silang sundin ang lahat ng iniutos Ko sa inyo\" (Mateo 28:19-20). Sa araw ng Pentecostes, tinawag ni Pedro ang karamihan na magsisi at magpabautismo, at \"ang mga tumanggap ng kanyang mensahe ay nabautismuhan\" at idinagdag sa iglesia (Gawa 2:38-41). Sa gabing ipinagkanulo Siya, kumuha si Hesus ng tinapay at saro at nagsabi, \"Gawin ninyo ito bilang pag-alaala sa Akin\" (1 Corinto 11:23-26). Sinasabi ng bautismo, \"Kay Hesus ako.\" Sinasabi ng Hapunan, \"Kay Hesus ako nabubuhay.\" Parehong itinuturo ng dalawa ang Kanyang kamatayan at muling pagkabuhay, at itinuturing ng pastor ang mga ito nang may paggalang dahil hindi ito atin; Kanya ang mga ito."
+    ),
+    insight: [
+      t(
+        "Many pastors treat baptism as an event on the calendar and Communion as the thing we do on the first Sunday of the month. But look at how Scripture treats them. Baptism is the believer's public \"yes\" to Christ, the moment a private faith steps into the open. In the Philippines, where family and community pressure is strong, standing in front of relatives and neighbors and going under the water is a real act of courage. A pastor who prepares the candidate well, with a clear gospel, a clear testimony and honest teaching about what it costs to follow Jesus, protects that moment from becoming only a tradition or a photo opportunity.",
+        "Maraming pastor ang tinatrato ang bautismo bilang event sa kalendaryo at ang Komunyon bilang gawain tuwing unang Linggo ng buwan. Pero tingnan kung paano ito tinitingnan ng Kasulatan. Ang bautismo ay hayagang \"oo\" ng mananampalataya kay Kristo, ang sandaling lumalabas sa liwanag ang pribadong pananampalataya. Sa Pilipinas, kung saan malakas ang presyon ng pamilya at komunidad, tunay na katapangan ang tumayo sa harap ng mga kamag-anak at kapitbahay at lumubog sa tubig. Ang pastor na mahusay maghanda sa kandidato, na may malinaw na ebanghelyo, malinaw na patotoo at tapat na pagtuturo kung ano ang halaga ng pagsunod kay Hesus, ay iniingatan ang sandaling iyon na hindi maging tradisyon lang o pagkakataon para sa litrato."
+      ),
+      t(
+        "Paul's warning about the Lord's Supper in Corinth is sobering: the rich ate their fill while the poor went hungry, and the table of unity had become a table of division (1 Corinthians 11:17-22, 27-29). Examining ourselves is not an invitation to wallow in guilt; it is an invitation to be reconciled before we eat. A wise pastor opens the Supper with the cross, calls people to honest repentance and to making peace with a brother or sister, and then lets the joy of forgiveness fill the room. Different churches practice these ordinances in different ways, and you should follow your own church's conviction with gentleness. What we all agree on is that both must be shaped by the gospel and by Scripture, not by habit.",
+        "Nakakaseryoso ang babala ni Pablo tungkol sa Hapunan ng Panginoon sa Corinto: busog ang mayayaman habang gutom ang mahihirap, at ang hapag ng pagkakaisa ay naging hapag ng pagkakahati (1 Corinto 11:17-22, 27-29). Ang pagsusuri sa sarili ay hindi imbitasyon na lumubog sa pagkakasala; ito ay imbitasyon na makipagkasundo bago kumain. Ang matalinong pastor ay binubuksan ang Hapunan sa krus, tinatawag ang mga tao sa tapat na pagsisisi at sa pakikipagpayapaan sa kapatid, at saka hinahayaang punuin ng galak ng kapatawaran ang silid. Magkakaiba ang paraan ng pagsasagawa ng iba't ibang iglesia sa mga ordinansang ito, at dapat mong sundin nang mahinahon ang paninindigan ng sarili mong iglesia. Ang pinagkakaisahan nating lahat ay dapat hubugin ang dalawa ng ebanghelyo at ng Kasulatan, hindi ng nakagawian."
+      ),
+    ],
+    life: [
+      t(
+        "Picture Mang Rodel, a jeepney driver who came to Christ after years of drinking. On the day of his baptism, his wife and grown children stood at the edge of the beach. Before he went into the water, the pastor asked him to say in his own words what Jesus had done. His voice shook as he said, \"I was drowning in bottles; Jesus pulled me out.\" When he came up from the water, his eldest daughter, who had not spoken to him in two years, ran into the waves and hugged him. That is what baptism can be when a pastor has prepared the heart and not only the schedule.",
+        "Isipin si Mang Rodel, isang jeepney driver na lumapit kay Kristo matapos ang maraming taon ng paglalasing. Sa araw ng bautismo niya, nakatayo sa gilid ng dalampasigan ang asawa at mga anak niyang malalaki na. Bago siya pumasok sa tubig, hiniling ng pastor na sabihin niya sa sarili niyang salita kung ano ang ginawa ni Hesus. Nanginginig ang boses niya nang sabihin, \"Nalulunod ako sa mga bote; hinila ako ni Hesus palabas.\" Pag-ahon niya mula sa tubig, ang panganay niyang anak na dalawang taon nang hindi siya kinakausap ay tumakbo sa mga alon at niyakap siya. Ganyan ang bautismo kapag inihanda ng pastor ang puso at hindi lang ang iskedyul."
+      ),
+      t(
+        "Now think of an OFW fellowship in a rented flat in Doha. There is no church building, only a tablet, a small table, a loaf of bread and some grape juice. The pastor says, \"Before we eat, let us remember that Jesus' body was broken for us. If there is someone here you have wronged, or someone who has wronged you, let us set it right before we take this bread.\" Two sisters who had been quarreling over a loan slip out to the kitchen and are crying and hugging within minutes. The meal that follows is simple, but it is holy. The size of the room never decided how much of Jesus was in it.",
+        "Isipin naman ang isang OFW fellowship sa inuupahang flat sa Doha. Walang gusali ng simbahan, may tablet lang, maliit na mesa, isang tinapay at kaunting grape juice. Sabi ng pastor, \"Bago tayo kumain, alalahanin natin na ang katawan ni Hesus ay pinira-piraso para sa atin. Kung may taong nasaktan ninyo dito, o nanakit sa inyo, ayusin natin ito bago natin kainin ang tinapay.\" Dalawang sister na nag-aaway dahil sa utang ay lumabas sa kusina at sa loob ng ilang minuto ay umiiyak at nagyayakapan na. Simple ang sumunod na pagkain, pero banal ito. Hindi kailanman nagpasya ang laki ng silid kung gaano karami si Hesus doon."
+      ),
+    ],
+    twist: t(
+      "We tend to think a pastor's job at the baptism pool and the Communion table is to stand in front and run the ceremony. The Kingdom twist is that in both, the pastor is basically a servant who steps aside. In baptism, the candidate goes down and comes up, and the focus is Christ's death and resurrection, not the pastor's hands. At the table, Jesus is the Host and we are all guests who have been invited by grace. The pastor who understands this leads with humility and does not make himself the center of what only Jesus can do.",
+      "Akala natin ang trabaho ng pastor sa pool ng bautismo at sa hapag ng Komunyon ay tumayo sa harap at patakbuhin ang seremonya. Ang twist ng Kaharian ay sa dalawa, ang pastor ay lingkod na tumatabi. Sa bautismo, bumababa at umaahon ang kandidato, at ang pokus ay ang kamatayan at muling pagkabuhay ni Kristo, hindi ang kamay ng pastor. Sa hapag, si Hesus ang Punong-abala at tayong lahat ay mga bisitang inanyayahan ng biyaya. Ang pastor na nakauunawa nito ay namumuno nang may kababaang-loob at hindi ginagawang sentro ang sarili sa bagay na si Hesus lang ang makagagawa."
+    ),
+    confirm: [
+      t("Romans 6:3-4: we were buried with Christ in baptism so that we too may walk in newness of life.", "Roma 6:3-4: inilibing tayong kasama ni Kristo sa bautismo upang lumakad din tayo sa bagong buhay."),
+      t("Acts 8:36-39: the Ethiopian official believes and is baptized right away, then goes on his way rejoicing.", "Gawa 8:36-39: naniwala ang opisyal na taga-Etiopia at agad na nabautismuhan, saka nagpatuloy na nagagalak."),
+      t("1 Corinthians 10:16-17: the cup and the bread are a sharing in Christ, and we who are many are one body.", "1 Corinto 10:16-17: ang saro at ang tinapay ay pakikibahagi kay Kristo, at tayong marami ay iisang katawan."),
+      t("Luke 22:19-20: Jesus gives thanks, breaks the bread and speaks of the new covenant in His blood.", "Lucas 22:19-20: nagpasalamat si Hesus, pinira-piraso ang tinapay at nagsalita tungkol sa bagong tipan sa Kanyang dugo."),
+    ],
+    heart: [
+      t(
+        "Let go of routine. Come to every baptism and every Communion as if it were the first, with wonder that Jesus loves sinners. Stay low in your own heart: you are not the gatekeeper of grace; you are one of the guests who has been forgiven much.",
+        "Bitawan ang nakagawian. Lumapit sa bawat bautismo at bawat Komunyon na parang una mo ito, may pagkamangha na iniibig ni Hesus ang mga makasalanan. Manatiling mababa ang puso: hindi ikaw ang bantay-pinto ng biyaya; isa ka sa mga bisitang pinatawad nang malaki."
+      ),
+      t(
+        "Prepare people with patience. Teach clearly, listen to testimonies, and invite those who are not ready to keep seeking without shame. Honor the unity of the body at the table by welcoming the weak, the poor and the repentant, and by making peace first in your own relationships.",
+        "Ihanda ang mga tao nang may pasensya. Magturo nang malinaw, makinig sa mga patotoo, at anyayahan ang hindi pa handa na magpatuloy sa paghahanap nang walang hiya. Parangalan ang pagkakaisa ng katawan sa hapag sa pagtanggap sa mahihina, mahihirap at nagsisisi, at sa pakikipagpayapaan muna sa sarili mong mga relasyon."
+      ),
+    ],
+    questions: [
+      t("Do I prepare baptism candidates with the gospel and their own testimony, or only with a schedule?", "Inihahanda ko ba ang mga kandidato sa bautismo sa ebanghelyo at sa sarili nilang patotoo, o sa iskedyul lang?"),
+      t("When was the last time Communion made me stop and examine my own heart?", "Kailan ang huling beses na pinahinto ako ng Komunyon para suriin ang sarili kong puso?"),
+      t("Is there someone I need to reconcile with before I serve the table again?", "May kailangan ba akong pakipagkasundo bago ako muling maglingkod sa hapag?"),
+      t("How can I make these moments clearer to visitors and new believers?", "Paano ko magagawang mas malinaw ang mga sandaling ito para sa mga bisita at bagong mananampalataya?"),
+    ],
+    actions: [
+      t("Write a four-session baptism class outline: the gospel, repentance and faith, what baptism means, and the new life that follows.", "Sumulat ng balangkas ng klase sa bautismo na may apat na sesyon: ang ebanghelyo, pagsisisi at pananampalataya, kahulugan ng bautismo, at ang bagong buhay na kasunod."),
+      t("Prepare a five-minute Communion meditation that begins at the cross, invites reconciliation and ends in thanksgiving.", "Maghanda ng limang-minutong pagninilay sa Komunyon na nagsisimula sa krus, nag-aanyaya ng pakikipagkasundo at nagtatapos sa pasasalamat."),
+      t("Invite a recent convert to share how he or she came to Christ, and plan how to make their baptism a joyful witness.", "Anyayahan ang isang bagong mananampalataya na ibahagi kung paano siya lumapit kay Kristo, at planuhin kung paano gagawing masayang patotoo ang bautismo niya."),
+    ],
+    prayer: t(
+      "Lord Jesus, thank You for the gospel You painted in water, bread and wine. Forgive me for every time I handled these holy things as routine. Teach me to prepare Your people with truth and patience. Let every baptism be a bold confession of Your name, and every Communion a meeting at Your table where Your people are forgiven, reconciled and strengthened. Keep me humble, a servant who steps aside so that others can see You. In Your name, Amen.",
+      "Panginoong Hesus, salamat sa ebanghelyong inilarawan Mo sa tubig, tinapay at alak. Patawarin Mo ako sa bawat pagkakataong ginawa kong nakagawian ang mga banal na bagay na ito. Turuan Mo akong ihanda ang Iyong bayan sa katotohanan at pasensya. Maging matapang na pagpapahayag ng Iyong pangalan ang bawat bautismo, at pagkikita sa Iyong hapag ang bawat Komunyon kung saan pinapatawad, pinagkakasundo at pinalalakas ang Iyong bayan. Gawin Mo akong mapagpakumbaba, lingkod na tumatabi upang makita ka ng iba. Sa Iyong pangalan, Amen."
+    ),
+  },
+  "raising-your-successor": {
+    revelation: t(
+      "A ministry is not finished when you finish; it is finished when someone else can carry it further than you did.",
+      "Hindi tapos ang ministeryo kapag natapos ka na; tapos ito kapag may iba nang makapagdadala nito nang mas malayo kaysa sa nagawa mo."
+    ),
+    mainTruth: t(
+      "Paul told Timothy, \"The things you have heard me say in the presence of many witnesses entrust to reliable people who will also be qualified to teach others\" (2 Timothy 2:1-2). That sentence holds four generations: Paul, Timothy, reliable people, and others. Moses did the same with Joshua. God told him to take Joshua, \"a man in whom is the spirit of leadership,\" lay hands on him, and \"give him some of your authority\" in front of the whole assembly (Numbers 27:18-20). After Moses died, \"Joshua son of Nun was filled with the spirit of wisdom because Moses had laid his hands on him. So the Israelites listened to him\" (Deuteronomy 34:9). Succession in the Bible is not an accident; it is a mission handed on deliberately and publicly.",
+      "Sinabi ni Pablo kay Timoteo, \"Ang mga bagay na narinig mo mula sa akin sa harap ng maraming saksi ay ipagkatiwala mo sa mga taong mapagkakatiwalaan na magiging may kakayahang magturo rin sa iba\" (2 Timoteo 2:1-2). Apat na henerasyon ang laman ng pangungusap na iyan: si Pablo, si Timoteo, ang mga mapagkakatiwalaan, at ang iba pa. Ganoon din ang ginawa ni Moises kay Josue. Sinabi ng Diyos na kunin si Josue, \"isang taong may espiritu ng pamumuno,\" ipatong ang kamay sa kanya, at \"ibigay sa kanya ang ilan sa iyong awtoridad\" sa harap ng buong kapulungan (Bilang 27:18-20). Pagkamatay ni Moises, \"si Josue na anak ni Nun ay napuspos ng espiritu ng karunungan dahil ipinatong ni Moises ang kanyang mga kamay sa kanya. Kaya nakinig sa kanya ang mga Israelita\" (Deuteronomio 34:9). Ang paghalili sa Biblia ay hindi aksidente; ito ay misyong sadya at hayagang ipinapasa."
+    ),
+    insight: [
+      t(
+        "Many leaders quietly believe that being needed is the same as being important. If everything depends on me, I must be valuable. But that is a trap. Moses was not insecure about Joshua; he trained him on the mountain, in the tent and in the battle (Exodus 17:9-13; 33:11). Joshua stood beside Moses for forty years before he stood in front. The healthiest pastors do not ask, \"How do I keep my position?\" They ask, \"Who am I preparing, and how can I give them real responsibility now, not only when I am gone?\"",
+        "Maraming lider ang tahimik na naniniwala na ang pagiging kailangan ay kapareho ng pagiging mahalaga. Kung ako ang sandigan ng lahat, mahalaga ako. Pero bitag iyan. Hindi nainsecure si Moises kay Josue; sinanay niya ito sa bundok, sa tolda at sa labanan (Exodo 17:9-13; 33:11). Apatnapung taong nakatayo si Josue sa tabi ni Moises bago siya tumayo sa harap. Hindi tinatanong ng pinakamalusog na mga pastor, \"Paano ko iingatan ang posisyon ko?\" Ang tanong nila, \"Sino ang inihahanda ko, at paano ko siya mabibigyan ng tunay na responsibilidad ngayon, hindi lang kapag wala na ako?\""
+      ),
+      t(
+        "Notice also that Timothy was not chosen for talent alone. Paul looked for \"reliable people,\" the faithful ones. Skill can be taught; character must be seen over time. And notice that Moses made the transfer public. Private promises create rumors; open commissioning creates trust. Many church splits are born in the vacuum of a leader who left without telling anyone who would lead. A clear, prayerful, shared process with elders and the congregation protects the flock and honors the person you have raised.",
+        "Pansinin din na hindi lang sa talento pinili si Timoteo. Hinanap ni Pablo ang \"mapagkakatiwalaan,\" ang mga tapat. Naituturo ang kakayahan; ang karakter ay kailangang makita sa paglipas ng panahon. At pansinin na ginawang hayagan ni Moises ang paglilipat. Ang pribadong pangako ay lumilikha ng tsismis; ang hayagang pagtatalaga ay lumilikha ng tiwala. Maraming hatian sa simbahan ay isinilang sa kawalan ng lider na umalis nang hindi sinabi kung sino ang mamumuno. Ang malinaw, mapanalangin at pinagsamang proseso kasama ang mga elder at kongregasyon ay nagpoprotekta sa kawan at nagpaparangal sa taong inihanda mo."
+      ),
+    ],
+    life: [
+      t(
+        "Think of Aling Nena, who ran a sari-sari store for thirty years. She knew every customer, every supplier and exactly who owed what. When her health failed, the store nearly closed because everything lived in her head. Her neighbor's store, run by a man who had taught his teenage son the books and the suppliers from the age of twelve, kept going without a hiccup when he got sick. The second family did not love their store less; they loved it enough to make sure it would outlive them. A church is far more precious than a store.",
+        "Isipin si Aling Nena na nagpatakbo ng sari-sari store sa loob ng tatlumpung taon. Kilala niya ang bawat suki, bawat supplier at kung sino ang may utang. Nang humina ang kalusugan niya, halos magsara ang tindahan dahil nasa ulo lang niya ang lahat. Ang katabing tindahan ng isang lalaking tinuruan ang tin-edyer niyang anak ng libro at mga supplier mula edad dose ay tuloy-tuloy ang takbo nang magkasakit siya. Hindi mas mahal ng ikalawang pamilya ang tindahan nila; sapat ang pagmamahal nila para tiyaking mabubuhay ito nang higit sa kanila. Mas mahalaga pa ang simbahan kaysa sa tindahan."
+      ),
+      t(
+        "Succession is not only for senior pastors. A cell group leader who trains an assistant, a worship leader who mentors a young musician, an OFW fellowship head who prepares a replacement before her contract ends: these are all Joshua-and-Moses moments. Many overseas fellowships lose leaders to a transfer or the end of a contract and then fall apart. A leader who has been quietly raising the next one turns that departure into a handoff instead of a collapse.",
+        "Hindi lang para sa senior pastor ang paghalili. Ang lider ng cell group na nagsasanay ng assistant, ang worship leader na nagme-mentor sa batang musikero, ang pinuno ng OFW fellowship na naghahanda ng kapalit bago matapos ang kontrata niya: pawang mga sandaling Moises-at-Josue ang mga ito. Maraming fellowship sa ibang bansa ang nawawalan ng lider dahil sa paglipat o pagtatapos ng kontrata at saka nawawasak. Ang lider na tahimik na nagbabangon ng susunod ay ginagawang paglilipat ang pag-alis sa halip na pagbagsak."
+      ),
+    ],
+    twist: t(
+      "The world measures a leader by how long he stays and how much depends on him. The Kingdom twist is that a great leader is measured by how well things go after he is gone. Jesus Himself said His disciples would do \"even greater things\" than He did (John 14:12), and then He went to the Father and left the work with eleven ordinary men. Raising a successor is not losing your place; it is multiplying your fruit. Your legacy is not your name on a building but the names of the people who will stand where you once stood.",
+      "Sinusukat ng mundo ang lider sa kung gaano siya katagal at gaano karami ang nakasalalay sa kanya. Ang twist ng Kaharian ay sinusukat ang dakilang lider sa kung gaano kahusay ang takbo ng mga bagay kapag wala na siya. Sinabi mismo ni Hesus na gagawa ang Kanyang mga alagad ng \"mas dakilang mga bagay\" kaysa sa ginawa Niya (Juan 14:12), at pagkatapos ay pumunta Siya sa Ama at iniwan ang gawain sa labing-isang ordinaryong lalaki. Ang pagbangon ng kahalili ay hindi pagkawala ng lugar mo; ito ay pagpaparami ng bunga mo. Ang pamana mo ay hindi ang pangalan mo sa gusali kundi ang mga pangalan ng mga taong tatayo sa kinatatayuan mo noon."
+    ),
+    confirm: [
+      t("1 Kings 19:19-21: Elijah calls Elisha, who follows him and serves him before inheriting his mantle.", "1 Hari 19:19-21: tinawag ni Elias si Eliseo, na sumunod at naglingkod sa kanya bago manahin ang kanyang balabal."),
+      t("Acts 13:1-3: the church at Antioch sets apart Barnabas and Saul and sends them out.", "Gawa 13:1-3: inihiwalay ng iglesia sa Antioquia sina Bernabe at Saulo at isinugo sila."),
+      t("Titus 1:5: Paul left Titus in Crete to appoint elders in every town.", "Tito 1:5: iniwan ni Pablo si Tito sa Creta upang magtalaga ng mga elder sa bawat bayan."),
+      t("John 17:6-8: Jesus prays that the words the Father gave Him have been given to His disciples.", "Juan 17:6-8: ipinapanalangin ni Hesus na naibigay na sa Kanyang mga alagad ang mga salitang ibinigay sa Kanya ng Ama."),
+    ],
+    heart: [
+      t(
+        "Deal with the fear in your heart. Ask God to heal any need to be needed, any jealousy when someone younger shines, and any worry about who you will be when you are not at the front. Your identity is a child of God, not a position.",
+        "Harapin ang takot sa puso mo. Hilingin sa Diyos na pagalingin ang pangangailangang maging kailangan, ang inggit kapag may nakababatang kumikinang, at ang pag-aalala kung sino ka kapag wala ka sa harap. Ang pagkakakilanlan mo ay anak ng Diyos, hindi posisyon."
+      ),
+      t(
+        "Become generous with your platform. Share the pulpit, share credit, share decisions, and allow others to fail and learn under your covering. Celebrate every step they take beyond you. A true father in the faith rejoices when his sons and daughters go further.",
+        "Maging bukas-palad sa iyong plataporma. Ibahagi ang pulpito, ang papuri, ang mga desisyon, at hayaan ang iba na magkamali at matuto sa ilalim ng iyong pangangalaga. Ipagdiwang ang bawat hakbang nila na lampas sa iyo. Ang tunay na ama sa pananampalataya ay nagagalak kapag mas malayo ang narating ng kanyang mga anak."
+      ),
+    ],
+    questions: [
+      t("Do I secretly want to be needed more than I want the church to be healthy after me?", "Lihim ko bang gustong mas kailanganin ako kaysa sa maging malusog ang iglesia pagkatapos ko?"),
+      t("Who in my church shows faithfulness, a teachable heart and a love for God's people?", "Sino sa iglesia ko ang nagpapakita ng katapatan, pusong handang matuto at pagmamahal sa bayan ng Diyos?"),
+      t("What real responsibility could I give them this month?", "Anong tunay na responsibilidad ang maibibigay ko sa kanila ngayong buwan?"),
+      t("If I were gone tomorrow, who would care for the flock, and have I told anyone?", "Kung mawala ako bukas, sino ang mag-aalaga sa kawan, at may sinabihan na ba ako?"),
+    ],
+    actions: [
+      t("Write down two or three names of people God may be raising up, and pray for each by name this week.", "Isulat ang dalawa o tatlong pangalan ng mga taong maaaring ibinabangon ng Diyos, at ipanalangin ang bawat isa sa pangalan ngayong linggo."),
+      t("Give one potential successor a real task, such as preaching, leading a meeting or a visit, and meet afterwards to encourage and coach.", "Bigyan ang isang posibleng kahalili ng tunay na gawain, tulad ng pangangaral, pamumuno sa pulong o pagdalaw, at magkita pagkatapos para palakasin ang loob at gabayan."),
+      t("Talk with your elders or leadership team about a simple, written succession plan, and pray over it together.", "Makipag-usap sa mga elder o pangkat ng pamunuan tungkol sa simple at nakasulat na plano sa paghalili, at ipanalangin ito nang sama-sama."),
+    ],
+    prayer: t(
+      "Father, thank You for the leaders who invested in me. Search my heart for pride, fear and the need to be needed. Open my eyes to the ones You are raising up, and give me wisdom to train them with patience and honesty. Help me to share the work, the credit and the joy. Let this church flourish long after I am gone, and let my greatest legacy be people who follow Jesus more faithfully than I ever did. In Jesus' name, Amen.",
+      "Ama, salamat sa mga lider na namuhunan sa akin. Siyasatin Mo ang puso ko sa pagmamataas, takot at pangangailangang maging kailangan. Buksan Mo ang aking mga mata sa mga ibinabangon Mo, at bigyan Mo ako ng karunungang sanayin sila nang may pasensya at katapatan. Tulungan Mo akong ibahagi ang gawain, ang papuri at ang galak. Magpatuloy nawang yumabong ang iglesiang ito matagal na matapos akong mawala, at maging pinakadakilang pamana ko ang mga taong mas tapat na sumusunod kay Hesus kaysa sa akin. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "guarding-against-a-fall": {
+    revelation: t(
+      "No one falls in a day; every great fall is the end of a hundred small, unguarded steps.",
+      "Walang nahuhulog sa isang araw; ang bawat malaking pagkahulog ay dulo ng sandaang maliliit na hakbang na walang bantay."
+    ),
+    mainTruth: t(
+      "\"In the spring, at the time when kings go off to war, David sent Joab... But David remained in Jerusalem\" (2 Samuel 11:1). From that quiet decision to stay home, David's eyes wandered from the roof, his power took what it wanted, and a man of God became an adulterer and a murderer (2 Samuel 11:2-5). Proverbs 5 warns the same way: \"Keep to a path far from her, do not go near the door of her house\" (Proverbs 5:8), and the wasted man at the end groans, \"How I hated discipline! ... I would have been completely ruined\" (Proverbs 5:12-14). And Paul writes to leaders and everyone else: \"If you think you are standing firm, be careful that you don't fall! ... God is faithful; he will not let you be tempted beyond what you can bear. But when you are tempted, he will also provide a way out\" (1 Corinthians 10:12-13).",
+      "\"Nang tagsibol, sa panahong lumalabas ang mga hari sa digmaan, ipinadala ni David si Joab... Ngunit nanatili si David sa Jerusalem\" (2 Samuel 11:1). Mula sa tahimik na desisyong manatili sa bahay, gumala ang mga mata ni David mula sa bubungan, kinuha ng kapangyarihan niya ang gusto nito, at ang taong ayon sa puso ng Diyos ay naging mangangalunya at mamamatay-tao (2 Samuel 11:2-5). Ganito rin ang babala ng Kawikaan 5: \"Lumayo ka sa daan niya, huwag kang lumapit sa pintuan ng kanyang bahay\" (Kawikaan 5:8), at ang nasirang lalaki sa dulo ay dumadaing, \"Kay laki ng galit ko sa disiplina! ... Halos ako ay lubusang nawasak\" (Kawikaan 5:12-14). At sumulat si Pablo sa mga lider at sa lahat: \"Kung sa palagay mo ay matatag kang nakatayo, mag-ingat ka na hindi mahulog! ... Tapat ang Diyos; hindi Niya hahayaang tuksuhin kayo nang higit sa kaya ninyo. Kapag tinukso kayo, maglalaan din Siya ng daang matatakasan\" (1 Corinto 10:12-13)."
+    ),
+    insight: [
+      t(
+        "Notice where David was: not in the battle, but at home, bored and unaccountable. Leaders do not usually fall when they are at their most active in ministry; they fall in the gaps, when they are tired, lonely, praised too much, or quietly sure that they are too mature to be tempted. Paul's warning begins with the person who thinks he is standing firm. Confidence in my own strength is the first crack in the wall. The humble leader says, \"I am as capable of falling as anyone,\" and builds accordingly.",
+        "Pansinin kung nasaan si David: wala sa labanan, kundi nasa bahay, naiinip at walang pananagutan. Karaniwang hindi nahuhulog ang mga lider kapag pinakaabala sila sa ministeryo; nahuhulog sila sa mga puwang, kapag pagod, nag-iisa, sobrang pinupuri, o tahimik na kampanteng sobra na silang matured para matukso. Nagsisimula ang babala ni Pablo sa taong nag-aakalang matatag siya. Ang tiwala sa sarili kong lakas ang unang bitak sa pader. Sinasabi ng mapagpakumbabang lider, \"Kaya kong mahulog tulad ng sinuman,\" at nagtatayo siya ayon dito."
+      ),
+      t(
+        "Secondly, notice that the way out is promised, but it is meant to be taken early. Joseph ran (Genesis 39:12); David lingered. Most moral failures are not sudden. They begin with private habits, secrecy about money or phones, long unmonitored conversations, emotional closeness with someone other than your spouse, exhaustion and skipped rest. Hedges built before temptation come are far stronger than resolve summoned in the middle of it. Fences are not signs of weakness or suspicion; they are signs that a leader loves his family and the flock enough to protect them from himself.",
+        "Pangalawa, pansinin na ipinangako ang daang matatakasan, pero para ito sa maagang paggamit. Tumakbo si Jose (Genesis 39:12); nagtagal si David. Karamihan ng pagbagsak sa moralidad ay hindi biglaan. Nagsisimula ito sa pribadong gawi, paglilihim sa pera o cellphone, mahahabang usapang walang nakababantay, emosyonal na paglapit sa iba bukod sa asawa, pagod at pagpapabaya sa pahinga. Mas malakas ang mga bakod na itinayo bago dumating ang tukso kaysa sa determinasyong pinipilit sa gitna nito. Hindi tanda ng kahinaan o kawalan ng tiwala ang mga bakod; tanda ito na mahal ng lider ang pamilya at kawan niya nang sapat para protektahan sila mula sa sarili niya."
+      ),
+    ],
+    life: [
+      t(
+        "Consider a pastor I will call Ben. He was loved, gifted and always busy. Late at night, he began messaging a church member who was going through a hard marriage. At first it was only prayer requests. Then it was encouragement, then confidences, then a feeling that she understood him better than anyone. No one else knew. Only when his wife noticed that his phone was always face down did the thread come out into the light. Because he confessed early and his elders surrounded him, the story did not end in a scandal. It could have. The fall was never one night; it was the months before.",
+        "Isipin ang isang pastor na tatawagin kong Ben. Mahal siya, may kaloob at laging abala. Sa gabi, nagsimula siyang makipag-message sa isang miyembrong dumaraan sa mahirap na pag-aasawa. Sa simula, prayer request lang. Tapos pampalakas-loob, tapos mga lihim, tapos pakiramdam na mas naiintindihan siya nito kaysa sinuman. Walang ibang nakaaalam. Nang mapansin ng asawa niya na laging nakataob ang phone niya saka lumabas sa liwanag ang usapan. Dahil maaga siyang nagtapat at pinaligiran siya ng mga elder niya, hindi nauwi sa iskandalo ang kuwento. Maaari sana. Ang pagkahulog ay hindi isang gabi; ito ay ang mga buwan bago nito."
+      ),
+      t(
+        "For OFW leaders the risks wear different clothes: loneliness far from a spouse, long hours, shared housing, a phone full of late-night chats, and the temptation to hide struggles because \"I'm the leader.\" The same wisdom applies. Choose one or two trusted people who may ask you hard questions. Keep your phone and finances open. Guard your day off with real rest and real worship. Pursue your marriage, even over a video call, as your first ministry. Hedges are not heavy; they are what let a leader finish well.",
+        "Para sa mga lider na OFW, iba ang suot ng panganib: lungkot na malayo sa asawa, mahahabang oras ng trabaho, shared na tirahan, phone na puno ng late-night chat, at tuksong itago ang pakikibaka dahil \"ako ang lider.\" Pareho ang karunungang naaangkop. Pumili ng isa o dalawang mapagkakatiwalaan na maaaring magtanong ng mahihirap na tanong sa iyo. Panatilihing bukas ang phone at pera mo. Ingatan ang day-off mo sa tunay na pahinga at tunay na pagsamba. Habulin ang pag-aasawa mo, kahit sa video call, bilang unang ministeryo mo. Hindi mabigat ang mga bakod; ito ang tumutulong sa lider na magtapos nang mabuti."
+      ),
+    ],
+    twist: t(
+      "We usually imagine the strongest leaders as those who need no help. The Kingdom twist is the opposite: the strongest are those who invite others to watch their backs. David fell when he was isolated, and he rose again only when Nathan spoke truth to him and he said, \"I have sinned against the Lord\" (2 Samuel 12:13). Even in failure, grace is real: God forgives the repentant, and Psalm 51 was written from that place. But grace is not an excuse to be careless. The wise leader receives forgiveness as a gift and accountability as a guard, and does not wait to need either.",
+      "Karaniwang iniisip natin na ang pinakamalalakas na lider ay ang hindi nangangailangan ng tulong. Kabaligtaran ang twist ng Kaharian: ang pinakamalakas ay ang nag-aanyaya sa iba na bantayan ang likod nila. Nahulog si David nang mag-isa, at bumangon lang siya nang magsalita ng katotohanan si Natan at sinabi niya, \"Nagkasala ako laban sa Panginoon\" (2 Samuel 12:13). Kahit sa pagkabigo, tunay ang biyaya: pinapatawad ng Diyos ang nagsisisi, at mula sa lugar na iyon isinulat ang Awit 51. Pero hindi dahilan ang biyaya para maging pabaya. Tinatanggap ng matalinong lider ang kapatawaran bilang regalo at ang pananagutan bilang bantay, at hindi naghihintay na kailanganin ang alinman."
+    ),
+    confirm: [
+      t("Genesis 39:7-12: Joseph refuses and flees from Potiphar's wife, leaving his cloak behind.", "Genesis 39:7-12: tumanggi si Jose at tumakas sa asawa ni Potifar, iniwan ang kanyang balabal."),
+      t("Job 31:1: Job made a covenant with his eyes not to look lustfully at a young woman.", "Job 31:1: nakipagtipan si Job sa kanyang mga mata na huwag tumingin nang may pagnanasa sa dalaga."),
+      t("Proverbs 4:23: above all else, guard your heart, for everything you do flows from it.", "Kawikaan 4:23: higit sa lahat, ingatan mo ang iyong puso, sapagkat mula rito dumadaloy ang lahat ng ginagawa mo."),
+      t("1 Timothy 4:16: watch your life and doctrine closely, for in doing so you will save both yourself and your hearers.", "1 Timoteo 4:16: bantayan mong mabuti ang iyong buhay at aral, sapagkat sa paggawa nito ay maliligtas mo ang iyong sarili at ang mga nakikinig sa iyo."),
+    ],
+    heart: [
+      t(
+        "Let go of the idea that you are the exception. Humbly ask God to show you the places in your life that are unguarded: the late-night habits, the secrets, the flattery you enjoy a little too much. Confess what you find early, while it is still small.",
+        "Bitawan ang ideyang ikaw ang eksepsyon. Humiling nang mapagpakumbaba sa Diyos na ipakita ang mga bahagi ng buhay mong walang bantay: ang gawi sa gabi, ang mga lihim, ang papuring medyo labis mong ikinatutuwa. Aminin nang maaga ang matutuklasan mo, habang maliit pa ito."
+      ),
+      t(
+        "Build a life that is open and rested. Keep your marriage warm, your prayer alive and your friendships honest. Welcome questions from people who love you. When you fall short, run to Jesus and to your brothers quickly; the way back is always shorter when you do not hide.",
+        "Magtayo ng buhay na bukas at nagpapahinga. Panatilihing mainit ang pag-aasawa, buhay ang panalangin at tapat ang pakikipagkaibigan. Tanggapin ang mga tanong ng mga taong nagmamahal sa iyo. Kapag nagkulang ka, tumakbo agad kay Hesus at sa mga kapatid mo; mas maikli ang daan pabalik kapag hindi ka nagtatago."
+      ),
+    ],
+    questions: [
+      t("Where am I most tempted to think, \"That could never happen to me\"?", "Saan ako pinakatinutukso na isiping, \"Hindi mangyayari iyan sa akin\"?"),
+      t("Which of my habits or relationships has no one else's eyes on it?", "Alin sa mga gawi o relasyon ko ang walang ibang nakatingin?"),
+      t("When am I most tired, lonely or praised, and what do I do then?", "Kailan ako pinakapagod, nag-iisa o pinupuri, at ano ang ginagawa ko tuwing ganoon?"),
+      t("Who has permission to ask me the hardest questions, and when did they last ask?", "Sino ang may pahintulot na magtanong sa akin ng pinakamahirap na tanong, at kailan sila huling nagtanong?"),
+    ],
+    actions: [
+      t("Write down your personal hedges: for time alone, devices, money, opposite-sex relationships and rest.", "Isulat ang iyong mga personal na bakod: para sa oras na mag-isa, device, pera, relasyon sa kabilang kasarian at pahinga."),
+      t("Share them with one trusted brother or sister and give them permission to ask about each one regularly.", "Ibahagi ang mga ito sa isang mapagkakatiwalaang kapatid at bigyan sila ng pahintulot na regular na itanong ang bawat isa."),
+      t("Plan a date, call or good time with your spouse this week, and set one protected rest day on your calendar.", "Magplano ng date, tawag o magandang oras kasama ang asawa mo ngayong linggo, at maglagay ng isang protektadong araw ng pahinga sa kalendaryo."),
+    ],
+    prayer: t(
+      "Lord, You see everything in me, and I am not afraid to be known by You. Search my heart and show me where I am unguarded. Keep me from the first small compromise. Give me honest friends, a faithful marriage and a love for Your holiness that is stronger than any temptation. When I am weak, show me the way out and give me courage to take it. Let me finish my race with a clean conscience and a faithful flock. In Jesus' name, Amen.",
+      "Panginoon, nakikita Mo ang lahat sa akin, at hindi ako natatakot na makilala Mo. Siyasatin Mo ang puso ko at ipakita kung saan ako walang bantay. Ilayo Mo ako sa unang maliit na kompromiso. Bigyan Mo ako ng tapat na kaibigan, tapat na pag-aasawa at pag-ibig sa Iyong kabanalan na mas malakas kaysa anumang tukso. Kapag mahina ako, ipakita Mo ang daang matatakasan at bigyan ako ng tapang na tahakin ito. Hayaan Mong matapos ko ang takbuhin ko nang may malinis na budhi at tapat na kawan. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "the-chief-shepherds-reward": {
+    revelation: t(
+      "The reward of shepherding is not applause on earth; it is the day you stand before Jesus with the people you loved, and hear Him say it was worth it.",
+      "Ang gantimpala ng pagpapastol ay hindi palakpak sa lupa; ito ang araw na tatayo ka sa harap ni Hesus kasama ang mga taong minahal mo, at maririnig Siyang magsabing sulit ito."
+    ),
+    mainTruth: t(
+      "Peter, an elder writing to elders, says: \"Be shepherds of God's flock that is under your care, watching over them, not because you must, but because you are willing, as God wants you to be; not pursuing dishonest gain, but eager to serve; not lording it over those entrusted to you, but being examples to the flock. And when the Chief Shepherd appears, you will receive the crown of glory that will never fade away\" (1 Peter 5:2-4). The writer of Hebrews reminds us that leaders \"keep watch over you as those who must give an account\" (Hebrews 13:17). And Paul tells the Thessalonians, \"What is our hope, our joy, or the crown in which we will glory in the presence of our Lord Jesus when he comes? Is it not you?\" (1 Thessalonians 2:19-20). The flock is never ours; it belongs to the Chief Shepherd, and one day He will ask about every sheep.",
+      "Si Pedro, isang elder na sumusulat sa mga elder, ay nagsasabi: \"Maging mga pastol kayo ng kawan ng Diyos na nasa inyong pangangalaga, nagbabantay, hindi dahil sapilitan kundi dahil kusang-loob, ayon sa kalooban ng Diyos; hindi naghahangad ng maruming pakinabang kundi sabik na maglingkod; hindi nagpapanginoon sa mga ipinagkatiwala sa inyo kundi nagiging halimbawa sa kawan. At kapag nahayag ang Punong Pastol, tatanggapin ninyo ang korona ng kaluwalhatiang hindi kumukupas\" (1 Pedro 5:2-4). Ipinaaalala ng manunulat ng Hebreo na ang mga lider ay \"nagbabantay sa inyo bilang mga mananagot\" (Hebreo 13:17). At sinabi ni Pablo sa mga taga-Tesalonica, \"Ano ang aming pag-asa, kagalakan, o koronang ipagmamalaki sa harap ng ating Panginoong Hesus sa Kanyang pagdating? Hindi ba kayo?\" (1 Tesalonica 2:19-20). Hindi kailanman atin ang kawan; pag-aari ito ng Punong Pastol, at balang araw itatanong Niya ang bawat tupa."
+    ),
+    insight: [
+      t(
+        "Peter's three contrasts are a mirror for every pastor: willing, not forced; eager, not greedy; examples, not bosses. Each pair names a real temptation. Ministry can become a duty we resent, a job we use to pay the bills, or a stage on which we control people. But the pastor Peter describes serves because he loves the Chief Shepherd and therefore loves His sheep. When the motive is pure, the weariness of ministry is easier to bear because we are not performing for the sheep; we are serving the One who bought them with His blood.",
+        "Salamin para sa bawat pastor ang tatlong pagkokontrast ni Pedro: kusang-loob, hindi pilit; sabik, hindi sakim; halimbawa, hindi amo. Pangalan ng tunay na tukso ang bawat pares. Maaaring maging tungkuling kinasusuklaman ang ministeryo, trabahong ginagamit pambayad ng bills, o entabladong pinagkokontrolan natin ang tao. Pero ang pastor na inilalarawan ni Pedro ay naglilingkod dahil mahal niya ang Punong Pastol at kaya mahal niya ang Kanyang mga tupa. Kapag dalisay ang motibo, mas madaling pasanin ang pagod ng ministeryo dahil hindi tayo nagtatanghal para sa mga tupa; naglilingkod tayo sa Isang bumili sa kanila ng Kanyang dugo."
+      ),
+      t(
+        "Many pastors are tempted to measure reward by what they can see now: attendance, offerings, invitations, compliments. But the reward Peter promises is a crown that does not fade, and Paul says his crown is people. That means the reward is not first about us at all; it is the joy of seeing a former drunkard sober, a lonely OFW part of a family, a skeptic singing in worship, a child of a believer now a leader. And Hebrews 13:17 adds weight: leaders will give an account. That truth should make us serious, not afraid, because the same Chief Shepherd who audits also forgives and equips.",
+        "Natutukso ang maraming pastor na sukatin ang gantimpala sa nakikita ngayon: attendance, handog, imbitasyon, papuri. Pero ang gantimpalang ipinangako ni Pedro ay korona na hindi kumukupas, at sinasabi ni Pablo na ang kanyang korona ay ang mga tao. Ibig sabihin, hindi muna tungkol sa atin ang gantimpala; ito ay ang galak na makitang matino na ang dating lasenggo, bahagi na ng pamilya ang nag-iisang OFW, umaawit sa pagsamba ang dating nagdududa, lider na ang anak ng isang mananampalataya. At nagdaragdag ng bigat ang Hebreo 13:17: mananagot ang mga lider. Dapat gawin tayong seryoso ng katotohanang ito, hindi takot, dahil ang Punong Pastol na nag-aaudit ay Siya ring nagpapatawad at nagbibigay-kakayahan."
+      ),
+    ],
+    life: [
+      t(
+        "Think of a pastor in a small town, Pastor Lito, who served for thirty years in a church that never grew past eighty people. He never had a big platform. But at his funeral, a doctor, two teachers, a seaman, a nurse in Dubai and a mayor all stood to say, \"He prayed for me when I was nobody.\" None of them was famous, but together they were a crown. That is what Paul meant. The reward is not the size of the flock but the faithfulness of the shepherd and the lives that were touched along the way.",
+        "Isipin ang isang pastor sa maliit na bayan, si Pastor Lito, na naglingkod sa loob ng tatlumpung taon sa isang iglesia na hindi lumampas sa walumpung tao. Hindi siya nagkaroon ng malaking plataporma. Pero sa libing niya, tumayo ang isang doktor, dalawang guro, isang marino, isang nars sa Dubai at isang alkalde para sabihin, \"Ipinanalangin niya ako noong wala pa akong kuwenta.\" Wala sa kanila ang sikat, pero magkakasama silang korona. Iyan ang ibig sabihin ni Pablo. Ang gantimpala ay hindi ang laki ng kawan kundi ang katapatan ng pastol at ang mga buhay na nahipo sa daan."
+      ),
+      t(
+        "On discouraging days, when the members complain, the offering is small and the sermon feels flat, it is easy to forget this. A pastor who serves only for results will burn out or become bitter. A pastor who serves for the Chief Shepherd can keep on feeding, visiting and praying when no one notices. Many OFW pastors work full-time jobs and shepherd on weekends and night calls. Their pay is small in this world. Their crown, if they stay faithful, will not fade.",
+        "Sa mga araw na nakapanghihina, kapag nagrereklamo ang mga miyembro, maliit ang handog at pakiramdam mo'y matabang ang sermon, madaling kalimutan ito. Ang pastor na naglilingkod para lang sa resulta ay mapapagod o mamumuhi. Ang pastor na naglilingkod para sa Punong Pastol ay makapagpapatuloy sa pagpapakain, pagdalaw at pananalangin kahit walang nakakapansin. Maraming OFW pastor ang may full-time na trabaho at nagpapastol tuwing weekend at sa mga tawag sa gabi. Maliit ang suweldo nila sa mundong ito. Ang korona nila, kung mananatili silang tapat, ay hindi kukupas."
+      ),
+    ],
+    twist: t(
+      "We think of the \"crown\" as something we wear to be seen. But in Revelation, the elders cast their crowns before the throne (Revelation 4:10). The Kingdom twist is that the greatest reward of a shepherd is to lay everything down at Jesus' feet, with the people He gave. The crown is not for our glory; it is a gift we get to give back. Even the reward points us away from ourselves and straight to Him.",
+      "Iniisip nating ang \"korona\" ay isinusuot natin para makita. Pero sa Pahayag, inihahagis ng mga elder ang kanilang mga korona sa harap ng trono (Pahayag 4:10). Ang twist ng Kaharian ay ang pinakadakilang gantimpala ng pastol ay ang ilapag ang lahat sa paanan ni Hesus, kasama ang mga taong ibinigay Niya. Ang korona ay hindi para sa ating kaluwalhatian; ito ay regalong maibabalik natin. Kahit ang gantimpala ay ibinabaling tayo palayo sa sarili at diretso sa Kanya."
+    ),
+    confirm: [
+      t("John 10:11: the Good Shepherd lays down His life for the sheep.", "Juan 10:11: ibinibigay ng Mabuting Pastol ang Kanyang buhay para sa mga tupa."),
+      t("Ezekiel 34:1-6: God rebukes shepherds who feed themselves and not the flock.", "Ezekiel 34:1-6: sinasaway ng Diyos ang mga pastol na nagpapakain sa sarili at hindi sa kawan."),
+      t("2 Timothy 4:7-8: Paul has finished the race and awaits the crown of righteousness.", "2 Timoteo 4:7-8: natapos ni Pablo ang takbuhin at naghihintay ng korona ng katuwiran."),
+      t("1 Corinthians 15:58: your labor in the Lord is not in vain.", "1 Corinto 15:58: hindi walang kabuluhan ang iyong pagpapagal sa Panginoon."),
+    ],
+    heart: [
+      t(
+        "Purify your motives before the Chief Shepherd. Ask Him to remove the love of money, the hunger for recognition and the habit of controlling. Choose to serve willingly, even when it is hidden, because He sees and remembers.",
+        "Linisin ang iyong mga motibo sa harap ng Punong Pastol. Hilingin sa Kanyang alisin ang pag-ibig sa pera, gutom sa pagkilala at ugaling magkontrol. Piliing maglingkod nang kusang-loob, kahit hindi nakikita, dahil nakikita at inaalala Niya."
+      ),
+      t(
+        "Take the people God gave you seriously, not as a burden but as a treasure. Pray for them by name. Pursue the wandering and strengthen the weak. When you are tired, remember that the day is coming when you will see them before His throne and know that nothing you gave Him was wasted.",
+        "Seryosohin ang mga taong ibinigay ng Diyos sa iyo, hindi bilang pasanin kundi bilang kayamanan. Ipanalangin sila sa pangalan. Habulin ang naliligaw at palakasin ang mahihina. Kapag pagod ka na, alalahanin na darating ang araw na makikita mo sila sa harap ng Kanyang trono at malalamang walang nasayang sa ibinigay mo sa Kanya."
+      ),
+    ],
+    questions: [
+      t("Which of Peter's contrasts, willing, eager or example, do I most need to ask God for?", "Alin sa mga pagkokontrast ni Pedro, kusang-loob, sabik o halimbawa, ang pinakakailangan kong hilingin sa Diyos?"),
+      t("What do I secretly hope people will say about my ministry?", "Ano ang lihim kong inaasahang sasabihin ng mga tao tungkol sa ministeryo ko?"),
+      t("How does knowing I will give an account change the way I treat the flock?", "Paano binabago ng pagkaalam na mananagot ako ang pakikitungo ko sa kawan?"),
+      t("Who are the people I hope to see before Jesus' throne, and am I praying for them?", "Sino ang mga taong inaasahan kong makita sa harap ng trono ni Hesus, at ipinapanalangin ko ba sila?"),
+    ],
+    actions: [
+      t("Write a short letter to yourself about why you shepherd, and keep it where you will read it when you are discouraged.", "Sumulat ng maikling liham sa sarili tungkol sa kung bakit ka nagpapastol, at itago ito kung saan mababasa mo kapag nanghihina ka."),
+      t("Make a list of ten people you are shepherding and write one sentence of thanks to God for each.", "Gumawa ng listahan ng sampung taong pinapastol mo at sumulat ng isang pangungusap ng pasasalamat sa Diyos para sa bawat isa."),
+      t("Offer your ministry to the Chief Shepherd in prayer today, and ask Him to examine your motives.", "Ialay ang iyong ministeryo sa Punong Pastol sa panalangin ngayon, at hilingin sa Kanyang suriin ang iyong mga motibo."),
+    ],
+    prayer: t(
+      "Chief Shepherd, these sheep are Yours, not mine. Thank You for trusting me with them. Purify my motives: take away greed, pride and the need to control. Make me willing and eager, a true example. Forgive me for the times I served for applause. When I am tired and unseen, remind me that You see. Let me stand one day before You with the people I love and lay my crown at Your feet, saying, \"Everything was from You.\" In Jesus' name, Amen.",
+      "Punong Pastol, Iyo ang mga tupang ito, hindi akin. Salamat sa pagtitiwala Mo sa akin sa kanila. Linisin Mo ang aking mga motibo: alisin ang kasakiman, pagmamataas at pangangailangang magkontrol. Gawin Mo akong kusang-loob at sabik, isang tunay na halimbawa. Patawarin Mo ako sa mga panahong naglingkod ako para sa palakpak. Kapag pagod ako at hindi nakikita, ipaalala Mong nakikita Mo. Hayaan Mong tumayo ako balang araw sa harap Mo kasama ang mga taong mahal ko at ilapag ang aking korona sa Iyong paanan, nagsasabing, \"Lahat ay mula sa Iyo.\" Sa pangalan ni Hesus, Amen."
+    ),
+  },
 };

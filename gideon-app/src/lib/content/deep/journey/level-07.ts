@@ -923,136 +923,6 @@ export const DEEP: DeepSet = {
       "Ama ng habag at Diyos ng buong kaaliwan, salamat po dahil malapit Kayo sa mga bagbag ang puso. Salamat dahil lumuha si Hesus at nauunawaan Niya ang bawat luha. Pagalingin Mo ang mga nagluluksa ngayong gabi, lalo na ang mga malayo sa tahanan. Turuan Mo akong maging naroroon, makinig at magmahal nang hindi nagmamadali. Gamitin Mo ang aliw na tinanggap ko upang umaliw ng iba. Gawing malumanay ang aking mga salita at maliwanag ang aking pag-asa, hanggang sa araw na papahirin Mo ang bawat luha. Sa pangalan ni Hesus, Amen."
     ),
   },
-  "humility-before-god": {
-    revelation: t(
-      "Humility is not thinking less of yourself; it is finally agreeing with God about who He is and who you are, and that is where grace flows.",
-      "Ang kababaang-loob ay hindi pag-iisip na mababa ka; ito ay ang pagsang-ayon sa Diyos kung sino Siya at sino ka, at doon dumadaloy ang biyaya."
-    ),
-    mainTruth: t(
-      "\"God opposes the proud but gives grace to the humble\" (James 4:6; 1 Peter 5:5). James calls us to submit to God, draw near to Him, cleanse our hands and purify our hearts, and promises, \"Humble yourselves before the Lord, and he will exalt you\" (James 4:10). Peter adds that we can cast all our anxieties on Him because He cares for us (1 Peter 5:7). In Luke 18, the tax collector who beat his chest and said, \"God, be merciful to me, a sinner\" went home justified, not the religious man who listed his achievements.",
-      "\"Kinalaban ng Diyos ang mayabang, ngunit nagbibigay Siya ng biyaya sa mapagpakumbaba\" (Santiago 4:6; 1 Pedro 5:5). Tinatawag tayo ni Santiago na magpasakop sa Diyos, lumapit sa Kanya, linisin ang mga kamay at dalisayin ang puso, at nangangako, \"Magpakumbaba kayo sa harap ng Panginoon, at itataas Niya kayo\" (Santiago 4:10). Idinagdag ni Pedro na maaari nating ipasan sa Kanya ang lahat ng alalahanin dahil nagmamalasakit Siya sa atin (1 Pedro 5:7). Sa Lucas 18, ang maniningil ng buwis na dumadagok sa dibdib at nagsabing, \"Diyos, maawa Ka sa akin na isang makasalanan\" ang umuwing pinawalang-sala, hindi ang relihiyosong nagbilang ng kanyang mga nagawa."
-    ),
-    insight: [
-      t(
-        "Pride rarely announces itself. It hides in \"I can handle it myself,\" in refusing to ask for help, in comparing ourselves to someone worse, in needing to be right, and even in being proud of how humble we are. The Pharisee in Luke 18 prayed \"to himself\" and thanked God that he was not like other men. He used God's name but trusted in himself. Pride is self-reliance wearing religious clothes.",
-        "Bihirang magpakilala ang pride. Nagtatago ito sa \"Kaya ko 'to mag-isa,\" sa pagtangging humingi ng tulong, sa pagkukumpara sa mas masama, sa pangangailangang laging tama, at maging sa pagmamalaki kung gaano tayo kababa. Ang Pariseo sa Lucas 18 ay nanalangin \"sa kanyang sarili\" at nagpasalamat na hindi siya gaya ng ibang tao. Ginamit niya ang pangalan ng Diyos pero sa sarili siya nagtiwala. Ang pride ay pagsasarili na nakadamit-relihiyoso."
-      ),
-      t(
-        "Notice the order in James 4: submit, resist the devil, draw near. Humility is the door to every other victory. Many of us try to resist the devil in our own strength while keeping our own throne. Spiritual warfare begins with surrender, not with shouting. Peter's anxiety command sits right inside the humility command because worry is often pride in disguise: it says, \"It all depends on me.\"",
-        "Pansinin ang pagkakasunod sa Santiago 4: magpasakop, labanan ang diyablo, lumapit. Ang kababaang-loob ang pintuan ng bawat tagumpay. Marami sa atin ang sumusubok labanan ang diyablo sa sariling lakas habang hawak pa ang sariling trono. Ang spiritual warfare ay nagsisimula sa pagsuko, hindi sa pagsigaw. Ang utos ni Pedro tungkol sa pag-aalala ay nasa loob mismo ng utos tungkol sa kababaang-loob dahil ang pag-aalala ay madalas pride na nakabalatkayo: sinasabi nitong, \"Nakasalalay ang lahat sa akin.\""
-      ),
-    ],
-    life: [
-      t(
-        "Think of a supervisor abroad who is promoted and suddenly forgets the days when he was the new worker. He stops greeting the cleaners and corrects people in front of others. Everyone nods, but no one trusts him. Compare him with the foreman who still carries tools alongside his men and says, \"Tulungan ko kayo.\" Both have authority; only one has influence.",
-        "Isipin ang isang supervisor sa abroad na na-promote at biglang nakalimot sa panahong siya ang bagong worker. Hindi na siya bumabati sa mga tagalinis at pinapagalitan ang mga tao sa harap ng iba. Tumatango ang lahat, pero walang nagtitiwala. Ikumpara sa foreman na bumubuhat pa rin ng gamit kasama ng mga tauhan niya at nagsasabing, \"Tulungan ko kayo.\" Parehong may awtoridad; isa lang ang may impluwensiya."
-      ),
-      t(
-        "In church, humility sounds like \"I was wrong,\" \"Please pray for me,\" \"I need help.\" It is the sister who admits she is struggling instead of posting only her good days, and the leader who thanks the one who corrected him. Those words are small, but they open the door for grace that pride keeps locked.",
-        "Sa simbahan, ang kababaang-loob ay parang \"Mali ako,\" \"Ipanalangin ninyo ako,\" \"Kailangan ko ng tulong.\" Ito ang kapatid na umaaming nahihirapan siya sa halip na puro magagandang araw lang ang ipinopost, at ang lider na nagpapasalamat sa nagtama sa kanya. Maliliit ang mga salitang iyon, pero binubuksan nito ang pintong sinasarhan ng pride para sa biyaya."
-      ),
-    ],
-    twist: t(
-      "We believe we rise by promoting ourselves. The Kingdom twist is that God's way up is down. Jesus, who was equal with God, took the form of a servant, and \"therefore God has highly exalted him\" (Philippians 2:5-9). If you want to be lifted, stop climbing; kneel. And if you hold on to your position, God will let you hold it alone; but if you give it up, He will give you His own.",
-      "Naniniwala tayong aangat tayo sa pagpo-promote sa sarili. Ang twist ng Kaharian: ang daan pataas ng Diyos ay pababa. Si Hesus, na kapantay ng Diyos, ay kumuha ng anyo ng alipin, at \"kaya lubos Siyang itinaas ng Diyos\" (Filipos 2:5-9). Kung gusto mong maitaas, tumigil ka sa pag-akyat; lumuhod ka. At kung kakapit ka sa posisyon mo, hahayaan kang humawak nito nang mag-isa ng Diyos; pero kung isusuko mo, ibibigay Niya ang sarili Niyang upuan."
-    ),
-    confirm: [
-      t("Isaiah 66:2: God looks to the one who is humble and contrite in spirit and trembles at His word.", "Isaias 66:2: tumitingin ang Diyos sa mapagpakumbaba at nagsisising espiritu na nanginginig sa Kanyang salita."),
-      t("Micah 6:8: walk humbly with your God.", "Mikas 6:8: lumakad nang mapagpakumbaba sa iyong Diyos."),
-      t("Daniel 4:30-37: Nebuchadnezzar was humbled until he praised the King of heaven.", "Daniel 4:30-37: pinababa si Nabucodonosor hanggang purihin niya ang Hari ng langit."),
-      t("John 13:3-5: Jesus, knowing He came from God, washed the disciples' feet.", "Juan 13:3-5: alam ni Hesus na galing Siya sa Diyos, ngunit hinugasan Niya ang mga paa ng mga alagad."),
-    ],
-    heart: [
-      t(
-        "Take your place before God. Say honestly, \"Lord, I am the one who needs You; You are the One I need.\" Stop performing, and let Him be God.",
-        "Pumuwesto ka sa harap ng Diyos. Sabihin nang tapat, \"Panginoon, ako ang nangangailangan Sa Iyo; Ikaw ang kailangan ko.\" Tigilan ang pag-arte, at hayaang maging Diyos Siya."
-      ),
-      t(
-        "Practice humility with people: thank them, ask for advice, admit mistakes, and celebrate others' success without comparing.",
-        "Isabuhay ang kababaang-loob sa tao: magpasalamat, humingi ng payo, umamin ng pagkakamali, at ipagdiwang ang tagumpay ng iba nang hindi ikinukumpara."
-      ),
-    ],
-    questions: [
-      t("In what area of life am I trying to be my own savior or my own god?", "Sa anong bahagi ng buhay ako nagsusubok maging sarili kong tagapagligtas o sarili kong diyos?"),
-      t("When was the last time I said \"I was wrong\" and meant it?", "Kailan ko huling nasabi ang \"Mali ako\" at taos-puso ko ito?"),
-      t("Whose success do I secretly find hard to celebrate, and why?", "Kaninong tagumpay ang lihim kong nahihirapang ipagdiwang, at bakit?"),
-      t("Which worry am I still carrying that I could cast on Jesus today?", "Anong alalahanin ang dala-dala ko pa na puwede ko nang ipasa kay Hesus ngayon?"),
-    ],
-    actions: [
-      t("Kneel or bow your head today and tell God plainly, \"I need You,\" about one specific thing.", "Lumuhod o yumuko ngayon at sabihin nang malinaw sa Diyos, \"Kailangan Kita,\" tungkol sa isang tiyak na bagay."),
-      t("Ask someone you trust for correction or advice this week, and receive it without defending yourself.", "Humingi ng pagtutuwid o payo sa taong pinagkakatiwalaan mo ngayong linggo, at tanggapin ito nang hindi ipinagtatanggol ang sarili."),
-      t("Do a hidden act of service today, and tell no one about it.", "Gumawa ng lihim na paglilingkod ngayon, at huwag itong sabihin kaninuman."),
-    ],
-    prayer: t(
-      "Lord Jesus, You humbled Yourself to the cross for me, and I have so often lifted myself up. Forgive my pride, my need to be right, and my trust in my own strength. I submit to You today. Be the King of my plans, my money, my family and my reputation. I cast every anxiety on You because You care for me. Teach me to serve, to listen and to rejoice in others. Lift me up in Your time, and let me be content to be low. In Your name, Amen.",
-      "Panginoong Hesus, ibinaba Mo ang Iyong sarili hanggang sa krus para sa akin, at madalas kong itinaas ang sarili ko. Patawarin Mo ang pride ko, ang pangangailangan kong laging tama, at ang pagtitiwala ko sa sariling lakas. Nagpapasakop ako sa Iyo ngayon. Maging Hari Ka ng mga plano ko, pera ko, pamilya ko at reputasyon ko. Ipinapasa ko sa Iyo ang bawat alalahanin dahil nagmamalasakit Ka sa akin. Turuan Mo akong maglingkod, making at magalak para sa iba. Itaas Mo ako sa takdang panahon Mo, at bigyan Mo akong kasiyahang manatiling mababa. Sa pangalan Mo, Amen."
-    ),
-  },
-  "a-grateful-heart": {
-    revelation: t(
-      "Gratitude is not a mood that follows good circumstances; it is a decision that opens your eyes to the God who has been giving all along.",
-      "Ang pasasalamat ay hindi damdaming sumusunod sa magagandang pangyayari; ito ay desisyong nagbubukas ng mata mo sa Diyos na patuloy na nagbibigay."
-    ),
-    mainTruth: t(
-      "\"Bless the Lord, O my soul, and forget not all his benefits\" (Psalm 103:2). David preaches to his own soul, listing forgiveness, healing, redemption, love and renewal (Psalm 103:3-5). In Luke 17, Jesus healed ten lepers, but only one, a Samaritan, came back, fell at His feet and gave thanks; the other nine received a gift but missed the Giver. Paul adds, \"Let the peace of Christ rule in your hearts... and be thankful\" (Colossians 3:15-17), and whatever we do, to do it in Jesus' name, giving thanks to the Father.",
-      "\"Purihin mo ang Panginoon, O kaluluwa ko, at huwag mong kalimutan ang lahat Niyang kabutihan\" (Awit 103:2). Sinesermunan ni David ang sarili niyang kaluluwa, at inililista ang kapatawaran, kagalingan, pagtubos, pag-ibig at bagong lakas (Awit 103:3-5). Sa Lucas 17, sampung ketongin ang pinagaling ni Hesus, pero isa lang, isang Samaritano, ang bumalik, lumuhod sa Kanyang paanan at nagpasalamat; ang siyam ay tumanggap ng regalo pero hindi nakilala ang Nagbigay. Idinagdag ni Pablo, \"Maghari sa inyong mga puso ang kapayapaan ni Cristo... at magpasalamat kayo\" (Colosas 3:15-17), at anuman ang gawin, gawin sa pangalan ni Hesus, na nagpapasalamat sa Ama."
-    ),
-    insight: [
-      t(
-        "Notice that all ten lepers were healed, but only one was made whole. Jesus told the thankful Samaritan, \"Your faith has made you well\" (Luke 17:19); the word carries the sense of being saved, not just cured. The nine got their miracle and went back to normal life. The one who returned got the miracle and the Person. Thanksgiving turns a blessing into a relationship.",
-        "Pansinin na sampu ang gumaling, pero isa lang ang naging buo. Sinabi ni Hesus sa nagpapasalamat na Samaritano, \"Pinagaling ka ng iyong pananampalataya\" (Lucas 17:19); ang salitang ito ay may kahulugang iniligtas, hindi lang pinagaling. Ang siyam ay nakuha ang himala at bumalik sa dating buhay. Ang isang bumalik ay nakuha ang himala at ang Persona. Ginagawang ugnayan ng pasasalamat ang pagpapala."
-      ),
-      t(
-        "Forgetfulness is the root of ingratitude. That is why David has to command his soul, \"forget not.\" Israel forgot the Red Sea within weeks and complained about the menu. We forget answered prayers and carry around a thick file of unanswered ones. A grateful heart is trained, not born; it is built by remembering out loud.",
-        "Ang pagkalimot ang ugat ng kawalan ng pasasalamat. Kaya kailangang utusan ni David ang kaluluwa niya, \"huwag kalimutan.\" Nakalimutan ng Israel ang Dagat na Pula sa loob ng ilang linggo at nagreklamo na sa pagkain. Nalilimutan natin ang mga sinagot na dasal at bitbit natin ang makapal na folder ng mga hindi pa nasasagot. Ang mapagpasalamat na puso ay sinasanay, hindi ipinanganganak; binubuo ito ng malakas na pag-aalaala."
-      ),
-    ],
-    life: [
-      t(
-        "An OFW sits in a bunk bed after a twelve-hour shift, tired and missing home. She can scroll through her phone and see everyone else's better life, or she can remember: a job that is feeding her family, a roof over her head, a friend who messaged today, a God who has not left. Nothing about her situation changed in that moment. Everything about her eyes did.",
-        "Isang OFW ang nakaupo sa double-deck na kama pagkatapos ng labindalawang oras na duty, pagod at nangungulila. Puwede siyang mag-scroll sa telepono at makita ang mas magandang buhay ng iba, o puwede niyang alalahanin: trabahong nagpapakain sa pamilya, bubong sa ulo, kaibigang nag-message ngayong araw, Diyos na hindi umalis. Walang nagbago sa sitwasyon niya sa sandaling iyon. Ang nagbago ay ang mga mata niya."
-      ),
-      t(
-        "At the table, in a family of any size, a simple \"Salamat po, Lord\" before a plain meal teaches children that food comes from a Father, not only from a paycheck. Gratitude is also the quiet cure for complaining. It is hard to grumble about a cold room and thank God for a warm bed in the same breath.",
-        "Sa hapag, sa pamilyang malaki man o maliit, ang simpleng \"Salamat po, Lord\" bago kumain ng payak na pagkain ay nagtuturo sa mga bata na galing sa Ama ang pagkain, hindi lang sa suweldo. Ang pasasalamat din ang tahimik na gamot sa reklamo. Mahirap magreklamo sa malamig na kuwarto at magpasalamat sa mainit na higaan sa iisang hininga."
-      ),
-    ],
-    twist: t(
-      "We say, \"I will give thanks when things get better.\" The Kingdom twist is that thanks comes first and often causes the shift. Paul and Silas gave thanks in prison at midnight (Acts 16:25), and the chains broke. Thanksgiving is not the reward of a good life; it is a weapon for a hard one. It moves your attention from what is missing to who is present.",
-      "Sinasabi natin, \"Magpapasalamat ako kapag gumanda na ang lahat.\" Ang twist ng Kaharian: nauuna ang pasasalamat at kadalasan ito ang nagdudulot ng pagbabago. Nagpuri sina Pablo at Silas sa bilangguan sa hatinggabi (Gawa 16:25), at nabali ang mga tanikala. Ang pasasalamat ay hindi gantimpala ng magandang buhay; ito ay sandata para sa mahirap na buhay. Inililipat nito ang tingin mo mula sa kulang tungo sa Diyos na narito."
-    ),
-    confirm: [
-      t("1 Thessalonians 5:18: give thanks in all circumstances, for this is God's will for you.", "1 Tesalonica 5:18: magpasalamat sa lahat ng bagay, sapagkat ito ang kalooban ng Diyos para sa inyo."),
-      t("Psalm 100:4: enter His gates with thanksgiving and His courts with praise.", "Awit 100:4: pumasok sa Kanyang mga pintuan nang may pasasalamat at sa Kanyang mga bulwagan nang may papuri."),
-      t("Daniel 6:10: Daniel gave thanks three times a day, even when it was illegal.", "Daniel 6:10: nagpasalamat si Daniel tatlong beses sa isang araw, kahit ipinagbabawal ito."),
-      t("Romans 1:21: the root of darkness is that people did not honor God or give thanks.", "Roma 1:21: ang ugat ng kadiliman ay hindi nila pinarangalan ang Diyos o nagpasalamat sa Kanya."),
-    ],
-    heart: [
-      t(
-        "Turn complaining into remembering. When you catch a grumble, answer it with one specific thing God has done for you.",
-        "Gawing pag-aalaala ang pagrereklamo. Kapag nahuli mo ang sarili mong nagrereklamo, sagutin ito ng isang tiyak na ginawa ng Diyos para sa iyo."
-      ),
-      t(
-        "Be the one who comes back. Let thanks become worship, and tell others what God has done, not just what you have received.",
-        "Maging ang isang bumalik. Hayaang maging pagsamba ang pasasalamat, at ibahagi sa iba ang ginawa ng Diyos, hindi lang ang tinanggap mo."
-      ),
-    ],
-    questions: [
-      t("Am I more aware of what I lack than of what God has already given?", "Mas alam ko ba ang kulang sa akin kaysa sa ibinigay na ng Diyos?"),
-      t("Which answered prayer have I forgotten to thank Him for?", "Aling sinagot na panalangin ang nakalimutan kong pasalamatan sa Kanya?"),
-      t("Who has blessed me, and have I told them thank you?", "Sino ang naging pagpapala sa akin, at nasabihan ko na ba sila ng salamat?"),
-      t("Do I thank God only for the gift, or also for the Giver Himself?", "Nagpapasalamat ba ako sa Diyos para lang sa regalo, o para rin sa Mismong Nagbigay?"),
-    ],
-    actions: [
-      t("Write down ten things you are thankful for tonight and read them aloud to God.", "Isulat ngayong gabi ang sampung bagay na ipinagpapasalamat mo at basahin nang malakas sa Diyos."),
-      t("Thank two people personally this week by message or in person, naming something specific.", "Pasalamatan nang personal ang dalawang tao ngayong linggo sa pamamagitan ng mensahe o harapan, at magbanggit ng tiyak na bagay."),
-      t("Begin each meal this week with a real, specific thanks, not just a routine line.", "Simulan ang bawat pagkain ngayong linggo ng totoo at tiyak na pasasalamat, hindi lang nakagawiang linya."),
-    ],
-    prayer: t(
-      "Father, forgive me for the many times I received Your gifts and walked away without a word of thanks. Open my eyes to Your goodness in the small and the large: my breath, my family, my work, my salvation. I remember You today. Let gratitude replace my complaining and let peace rule my heart. Like the Samaritan, I come back to fall at Jesus' feet. Thank You for forgiving me, healing me and holding me. Make me a thankful person wherever You place me. In Jesus' name, Amen.",
-      "Ama, patawarin Mo ako sa maraming beses na tinanggap ko ang Iyong mga regalo at lumakad ako nang walang salamat. Imulat Mo ang mga mata ko sa Iyong kabutihan sa maliit at malaki: sa hininga ko, pamilya, trabaho at kaligtasan ko. Inaalala Kita ngayon. Hayaang palitan ng pasasalamat ang reklamo ko at maghari ang kapayapaan sa puso ko. Gaya ng Samaritano, bumabalik ako para lumuhod sa paanan ni Hesus. Salamat sa pagpapatawad, pagpapagaling at pag-aalaga Mo sa akin. Gawin Mo akong mapagpasalamat saan mo man ako ilagay. Sa pangalan ni Hesus, Amen."
-    ),
-  },
   "order-in-gods-house": {
     revelation: t(
       "Order is not the enemy of the Spirit; it is the vessel that lets His life flow without waste and without confusion.",
@@ -1183,134 +1053,268 @@ export const DEEP: DeepSet = {
       "Panginoon ng ani, salamat po sa pagpapadala ng mga manggagawa sa mga bukirin. Salamat sa pribilehiyong makibahagi sa kanilang pagpapagal. Ingatan at palakasin Mo ang bawat misyonero, lalo na ang mga nakadaramang nalimutan sila. Turuan Mo akong magbigay nang masaya, manalangin nang tapat at magmahal nang praktikal. Gawin Mong iglesiang nagpapadala ang aming simbahan na may pusong pandaigdig. Huwag hayaang masayang ang anumang ibinibigay namin, at makilala Ka ng mga bansa. Narito ako, isugo Mo ako, o hayaan Mong ako ang magpadala sa mga tinatawag Mo. Sa pangalan ni Hesus, Amen."
     ),
   },
-  "rhythms-of-grace": {
+
+  "restoring-with-love-and-order": {
     revelation: t(
-      "A life with God is not built by occasional bursts of zeal but by a gentle, repeated rhythm of meeting Him, because grace is received daily like bread.",
-      "Ang buhay kasama ang Diyos ay hindi binubuo ng paminsan-minsang sigla kundi ng banayad at paulit-ulit na ritmo ng pakikipagkita sa Kanya, dahil ang biyaya ay tinatanggap araw-araw gaya ng tinapay."
+      "Real love does not look away from sin and does not throw away the sinner; it tells the truth in order to bring the person home.",
+      "Ang tunay na pag-ibig ay hindi nagbubulag-bulagan sa kasalanan at hindi nagtatapon sa makasalanan; sinasabi nito ang katotohanan upang iuwi ang tao."
     ),
     mainTruth: t(
-      "\"Rising very early in the morning, while it was still dark, he departed and went out to a desolate place, and there he prayed\" (Mark 1:35). Jesus, with crowds waiting and needs everywhere, still withdrew regularly to lonely places to pray (Luke 5:15-16). Daniel knelt three times a day, praying and giving thanks to his God, as he had done before (Daniel 6:10). The pattern is not a law to earn favor; it is a rhythm to receive it. We do not pray to be loved; we pray because we are loved.",
-      "\"Maaga pa, madilim pa, bumangon Siya at pumunta sa isang ilang na lugar, at doon nanalangin\" (Marcos 1:35). Si Hesus, kahit may mga taong naghihintay at maraming pangangailangan, ay regular pa ring humihiwalay sa mga tahimik na lugar para manalangin (Lucas 5:15-16). Si Daniel ay lumuluhod tatlong beses isang araw, nananalangin at nagpapasalamat sa kanyang Diyos, gaya ng nakagawian niya (Daniel 6:10). Ang huwaran ay hindi batas para kumita ng pabor; ito ay ritmo para tanggapin ito. Hindi tayo nananalangin para mahalin; nananalangin tayo dahil mahal na tayo."
+      "In 1 Corinthians 5:1-5 Paul calls a proud, tolerant church to deal with open, unrepentant immorality, with the goal \"that his spirit may be saved.\" Then in 2 Corinthians 2:5-11, when the person has repented, Paul urges the same church, \"You ought to forgive and comfort him, so that he will not be overwhelmed by excessive sorrow. I urge you, therefore, to reaffirm your love for him.\" And Galatians 6:1 gives the spirit of it all: \"Brothers and sisters, if someone is caught in a sin, you who live by the Spirit should restore that person gently.\" The goal is never punishment; it is restoration.",
+      "Sa 1 Corinto 5:1-5, tinawag ni Pablo ang isang mapagmataas at nagpapalampas na iglesia na harapin ang hayagan at hindi pinagsisisihang kasalanang sekswal, na may layuning \"mailigtas ang kanyang espiritu.\" Pagkatapos, sa 2 Corinto 2:5-11, nang magsisi na ang tao, hinikayat ni Pablo ang parehong iglesia, \"Dapat ninyo siyang patawarin at aliwin, upang hindi siya malunod sa labis na kalungkutan. Kaya nakikiusap ako na pagtibayin ninyo ang inyong pag-ibig sa kanya.\" At ibinibigay ng Galacia 6:1 ang diwa ng lahat: \"Mga kapatid, kung may mahuli sa kasalanan, kayong mga namumuhay ayon sa Espiritu ay dapat siyang ibalik nang buong kahinahunan.\" Ang layunin ay hindi kailanman ang parusa; ito ay ang pagpapanumbalik."
     ),
     insight: [
       t(
-        "Notice that Jesus' demands were greater than ours, yet He did not skip His time with the Father; He treated it as His source. The busier life became, the more He withdrew (Luke 5:15-16). Many of us do the reverse: when life gets full, prayer is the first thing we cut. But a branch does not abide in the vine only when it has free time (John 15:4-5).",
-        "Pansinin na mas mabigat ang hinihingi sa buhay ni Hesus kaysa sa atin, pero hindi Niya nilaktawan ang oras kasama ang Ama; itinuring Niya itong pinagmumulan. Habang lalong naging abala ang buhay, lalo Siyang umalis para manalangin (Lucas 5:15-16). Marami sa atin ang kabaligtaran: kapag napupuno ang buhay, panalangin ang unang tinatanggal. Pero hindi lang kapag may libreng oras nananatili ang sanga sa puno ng ubas (Juan 15:4-5)."
+        "Two ditches line this road. One is the church that says, \"We love everyone, so we say nothing,\" and lets sin spread like yeast. Paul was angry at the Corinthians not because they were harsh but because they were proud of their tolerance. The other ditch is the church that is quick to expel and slow to welcome back, making a sinner an outcast forever. Paul warned about that too: Satan outwits us when we refuse to forgive.",
+        "May dalawang kanal sa tabi ng daang ito. Ang isa ay ang iglesiang nagsasabing, \"Mahal natin ang lahat, kaya wala tayong sasabihin,\" at hinahayaang kumalat ang kasalanan na parang lebadura. Nagalit si Pablo sa mga taga-Corinto hindi dahil sa kanilang pagiging malupit kundi dahil ipinagmamalaki pa nila ang kanilang pagpapalampas. Ang kabilang kanal ay ang iglesiang mabilis magpalayas at mabagal tumanggap muli, na ginagawang itinakwil habambuhay ang makasalanan. Binalaan din ni Pablo iyan: nalilinlang tayo ni Satanas kapag tumatanggi tayong magpatawad."
       ),
       t(
-        "Rhythm is different from rigid ritual. Ritual says, \"I have done my quota.\" Rhythm says, \"I am returning to the One I love.\" Your rhythm may be a ten-minute prayer on the train, a verse at lunch, an evening review of the day, a Sunday gathering. A small, faithful habit beats a heroic one that lasts three days. What matters is that it is regular, honest and joyful.",
-        "Iba ang ritmo sa mahigpit na ritwal. Sabi ng ritwal, \"Tapos ko na ang quota ko.\" Sabi ng ritmo, \"Bumabalik ako sa Minamahal ko.\" Ang ritmo mo ay maaaring sampung minutong dasal sa tren, isang talata sa tanghalian, pagbabalik-tanaw sa araw sa gabi, pagtitipon tuwing Linggo. Mas matimbang ang maliit at tapat na ugali kaysa sa magiting na tumatagal lang ng tatlong araw. Ang mahalaga ay regular, tapat at masaya."
+        "Restoration needs order, not only emotion. It is led by pastors, follows the pattern of Matthew 18 (go privately first, then with witnesses, then the church), guards confidentiality and keeps the vulnerable safe. A church worker's job is not to investigate, comment or spread. It is to pray, to stay available, to welcome and to hold the confidence that the shepherd entrusted. Gossip kills restoration faster than sin does.",
+        "Ang pagpapanumbalik ay nangangailangan ng kaayusan, hindi lang damdamin. Pinangungunahan ito ng mga pastor, sumusunod sa huwaran ng Mateo 18 (puntahan muna nang sarilinan, saka may mga saksi, saka ang iglesia), iniingatan ang pagiging lihim, at pinananatiling ligtas ang mahihina. Hindi trabaho ng manggagawa ng iglesia na mag-imbestiga, magkomento o magkalat. Trabaho niyang manalangin, manatiling available, tumanggap, at ingatan ang lihim na ipinagkatiwala ng pastol. Mas mabilis pumatay ng pagpapanumbalik ang tsismis kaysa sa kasalanan."
       ),
     ],
     life: [
       t(
-        "Take Kuya Allan, who works rotating shifts as a security guard in the Gulf. He cannot keep the same time every day, so he anchors his rhythm to something fixed: his first sip of coffee is a prayer, his lunch is a verse and thanks, and before sleeping he tells God about his day in two minutes. Some days he misses one. He does not quit; he simply picks it up at the next anchor.",
-        "Isipin si Kuya Allan, na nagtatrabaho nang paiba-iba ang shift bilang security guard sa Gitnang Silangan. Hindi niya mapapanatili ang parehong oras araw-araw, kaya ang ritmo niya ay nakakabit sa nakapirming bagay: ang unang higop ng kape ay dasal, ang tanghalian ay talata at pasasalamat, at bago matulog ay dalawang minuto niyang ikinukuwento sa Diyos ang araw niya. May araw na nakakaligtaan niya ang isa. Hindi siya sumusuko; kinukuha lang niya ito sa susunod na angkla."
+        "Picture a youth leader in a Gulf-based fellowship who fell into a hidden relationship and was found out. Pastors met with him privately, asked him to step down for a season and provided a mature older brother to walk with him. Many in the group wanted to talk. A few sisters said, \"We will not repeat anything; we will only pray.\" Ten months later he was back, humbled, helping other young men. His testimony: \"The discipline hurt, but the welcome healed.\"",
+        "Isipin ang isang youth leader sa fellowship sa Gulf na nahulog sa lihim na relasyon at nabisto. Pribadong nakipagpulong ang mga pastor sa kanya, hiniling na bumaba muna sa posisyon sa isang panahon, at nagbigay ng isang mature na nakatatandang kapatid na sasama sa kanya. Marami sa grupo ang gustong magkuwentuhan. May ilang kapatid na nagsabi, \"Hindi namin uulitin ang anuman; magdadasal lang kami.\" Makalipas ang sampung buwan, bumalik siya, mapagpakumbaba, tumutulong sa ibang kabataang lalaki. Patotoo niya: \"Masakit ang disiplina, pero ang pagtanggap ang gumamot.\""
       ),
       t(
-        "For parents, the rhythm may be shared: a short prayer with the kids before they leave for school, a thank-you at supper, a bedtime blessing. For singles, it may be a quiet corner and a worship song. The point is not to copy someone else's schedule but to build a doable pattern that fits your real life and then guard it kindly.",
-        "Para sa mga magulang, puwedeng sama-sama ang ritmo: maikling dasal kasama ang mga bata bago pumasok sa school, pasasalamat sa hapunan, basbas bago matulog. Para sa mga single, puwedeng tahimik na sulok at awit ng pagsamba. Ang punto ay hindi kopyahin ang iskedyul ng iba kundi bumuo ng magagawang pattern na akma sa totoo mong buhay at bantayan ito nang buong lambing."
+        "This also shapes how we treat each other at home and at work. When a sibling who has failed returns, do we keep reminding him of the old mistake or do we welcome him like the father welcomed the prodigal? Restoration is not pretending nothing happened; it is refusing to let the worst thing someone did become their name.",
+        "Humuhubog din ito sa pagtrato natin sa isa't isa sa bahay at trabaho. Kapag bumalik ang kapatid na nabigo, patuloy ba nating ipapaalala ang lumang pagkakamali o tatanggapin natin siya gaya ng pagtanggap ng ama sa alibughang anak? Ang pagpapanumbalik ay hindi pagkukunwaring walang nangyari; ito ay pagtangging hayaang maging pangalan ng tao ang pinakamasamang ginawa niya."
       ),
     ],
     twist: t(
-      "We imagine that spiritual people are the ones with the most dramatic experiences. The Kingdom twist is that most of God's work in you happens through ordinary faithfulness. Manna fell daily, enough for that day only (Exodus 16:19-21). Grace is not a savings account you fill on Sunday and draw from all week; it is daily bread. The person who returns every morning will, over years, look more like Jesus than the one who visits the mountain top once.",
-      "Iniisip natin na ang mga espirituwal ay ang may pinakadramatikong karanasan. Ang twist ng Kaharian: karamihan ng gawain ng Diyos sa iyo ay nangyayari sa pamamagitan ng karaniwang katapatan. Araw-araw bumabagsak ang manna, sapat lang para sa araw na iyon (Exodo 16:19-21). Ang biyaya ay hindi savings account na pinupuno tuwing Linggo at hinuhugot buong linggo; ito ay pang-araw-araw na tinapay. Ang taong bumabalik tuwing umaga ay, sa paglipas ng mga taon, mas magmumukhang si Hesus kaysa sa taong minsan lang umakyat sa tuktok ng bundok."
+      "We assume that grace means no discipline and that discipline means no grace. In the Kingdom, discipline is an expression of grace: a surgeon's cut that wounds to heal. And forgiveness is not the soft option; refusing to forgive a repentant person is actually serious, because it gives the enemy an opening (2 Corinthians 2:11). The church that does both, firm and warm, looks the most like the Father.",
+      "Inaakala nating ang biyaya ay nangangahulugang walang disiplina at ang disiplina ay nangangahulugang walang biyaya. Sa Kaharian, ang disiplina ay pagpapahayag ng biyaya: hiwa ng siruhano na sumusugat para gumaling. At ang pagpapatawad ay hindi ang madaling daan; ang pagtangging patawarin ang nagsisising tao ay seryoso, dahil binibigyan nito ng butas ang kaaway (2 Corinto 2:11). Ang iglesiang gumagawa ng dalawa, matatag at mainit, ang pinakakamukha ng Ama."
     ),
     confirm: [
-      t("Lamentations 3:22-23: His mercies are new every morning; great is His faithfulness.", "Panaghoy 3:22-23: bago tuwing umaga ang Kanyang awa; dakila ang Kanyang katapatan."),
-      t("Matthew 6:11: \"Give us this day our daily bread.\"", "Mateo 6:11: \"Ibigay Mo sa amin ngayon ang aming pang-araw-araw na pagkain.\""),
-      t("Psalm 55:17: evening, morning and noon I cry out, and He hears my voice.", "Awit 55:17: gabi, umaga at tanghali ako dumadaing, at dinirinig Niya ang aking tinig."),
-      t("Acts 2:42: the first believers devoted themselves to the teaching, fellowship, breaking of bread and prayers.", "Gawa 2:42: nagpatuloy ang mga unang mananampalataya sa turo, pagsasamahan, pagpipira-piraso ng tinapay at mga panalangin."),
+      t("Matthew 18:15-17: go to your brother privately first; the aim is to win him back.", "Mateo 18:15-17: puntahan muna nang sarilinan ang kapatid; ang layunin ay mabawi siya."),
+      t("Luke 15:20-24: the father runs to welcome the returning son.", "Lucas 15:20-24: tumakbo ang ama para salubungin ang nagbabalik na anak."),
+      t("James 5:19-20: whoever turns a sinner from error saves him from death.", "Santiago 5:19-20: ang magbalik sa makasalanan mula sa kamalian ay nagliligtas sa kanya mula sa kamatayan."),
+      t("John 21:15-19: Jesus restores Peter after his denial and re-commissions him.", "Juan 21:15-19: pinanumbalik ni Hesus si Pedro pagkatapos ng pagkakaila at muling binigyan ng misyon."),
     ],
     heart: [
       t(
-        "Release the guilt about missed days. Grace invites you back every morning; you do not have to \"make up\" for yesterday.",
-        "Bitiwan ang guilt sa mga araw na nalaktawan. Inaanyayahan ka ng biyaya pabalik tuwing umaga; hindi mo kailangang \"bumawi\" sa kahapon."
+        "Search your own heart before you look at another's. \"Watch yourselves, or you also may be tempted\" (Galatians 6:1). Restoring is done with trembling, not with superiority.",
+        "Siyasatin muna ang sariling puso bago tingnan ang sa iba. \"Mag-ingat kayo, baka kayo naman ang matukso\" (Galacia 6:1). Ang pagpapanumbalik ay ginagawa nang may panginginig, hindi may pagmamataas."
       ),
       t(
-        "Make meeting with God your first love, not your last leftover. Guard the time and let everything else arrange itself around Him.",
-        "Gawing unang pag-ibig ang pakikipagkita sa Diyos, hindi huling tira. Bantayan ang oras at hayaang ang lahat ng iba pa ay umayos sa palibot Niya."
+        "Choose to be a safe person: someone who can hold a confession without spreading it, and who welcomes the repentant without conditions of shame.",
+        "Piliing maging ligtas na tao: yung kayang tumanggap ng pag-amin nang hindi ito ikinakalat, at yung tumatanggap sa nagsisisi nang walang kondisyong kahihiyan."
       ),
     ],
     questions: [
-      t("What does my current daily rhythm with God look like, honestly?", "Ano ang hitsura ng kasalukuyang pang-araw-araw kong ritmo kasama ang Diyos, kung tapat ako?"),
-      t("What gets in the way, and what could I change to protect this time?", "Ano ang humahadlang, at ano ang puwede kong baguhin para maprotektahan ang oras na ito?"),
-      t("Do I come to God out of duty and guilt, or out of love and need?", "Lumalapit ba ako sa Diyos dahil sa tungkulin at guilt, o dahil sa pag-ibig at pangangailangan?"),
-      t("Who can walk with me and keep me accountable in this rhythm?", "Sino ang puwedeng sumama sa akin at magpanagot sa akin sa ritmong ito?"),
+      t("Where has your church or group tolerated something God calls serious?", "Saan nagpalampas ang iglesia o grupo mo ng bagay na tinatawag ng Diyos na seryoso?"),
+      t("Have you ever refused to welcome back someone who truly repented? Why?", "Tumanggi ka na bang tumanggap muli sa taong tunay na nagsisi? Bakit?"),
+      t("Do you tend to react to another's fall with gossip, judgment or prayer?", "Ano ang karaniwan mong reaksyon sa pagkahulog ng iba: tsismis, paghatol o panalangin?"),
+      t("What areas of your own life need accountability so you do not need to be exposed first?", "Anong bahagi ng sarili mong buhay ang kailangan ng pananagutan para hindi ka na mabisto muna?"),
     ],
     actions: [
-      t("Pick one fixed anchor in your day (waking, commute, lunch or bedtime) and attach ten minutes with God to it.", "Pumili ng isang nakapirming angkla sa araw mo (paggising, biyahe, tanghalian o bago matulog) at ikabit rito ang sampung minuto kasama ang Diyos."),
-      t("Keep it simple: read a short passage, write one line you learned, and pray for three people.", "Gawing simple: magbasa ng maikling talata, magsulat ng isang aral, at ipanalangin ang tatlong tao."),
-      t("Tell one friend your plan and ask them to ask you about it on Sunday.", "Sabihin sa isang kaibigan ang plano mo at hilingin na kumustahin ka nila tungkol dito sa Linggo."),
+      t("Choose one person who has fallen or failed, and send an encouraging message, with no gossip, this week.", "Pumili ng isang taong nahulog o nabigo, at padalhan siya ng nakapagpapalakas na mensahe, walang tsismis, ngayong linggo."),
+      t("Ask your pastor how restoration is handled in your church so you know your role.", "Itanong sa pastor kung paano hinahawakan ang pagpapanumbalik sa inyong iglesia para malaman mo ang iyong papel."),
+      t("Find an accountability partner and agree to ask each other hard questions monthly.", "Humanap ng accountability partner at magkasundong magtanong sa isa't isa ng mahihirap na tanong buwan-buwan."),
     ],
     prayer: t(
-      "Lord Jesus, You walked in a rhythm of prayer even when the crowds pressed in. Forgive me for crowding You out with hurry. I do not want a spirituality of bursts and crashes; I want to walk with You every day. Help me to find a simple pattern I can keep, and when I fail, remind me that Your mercies are new each morning. Be my daily bread. Draw me back, again and again, to Your presence. In Your name, Amen.",
-      "Panginoong Hesus, lumakad Ka sa ritmo ng panalangin kahit dinudumog Ka ng mga tao. Patawarin Mo ako sa pagsisiksik sa Iyo palabas dahil sa pagmamadali. Ayokong magkaroon ng espirituwalidad na paputok at bagsak; gusto Kitang makasama araw-araw. Tulungan Mo akong makahanap ng simpleng pattern na kaya kong panindigan, at kapag nabigo ako, ipaalala Mo na bago ang Iyong awa tuwing umaga. Maging pang-araw-araw kong tinapay Ka. Hilahin Mo akong pabalik, paulit-ulit, sa Iyong presensiya. Sa pangalan Mo, Amen."
+      "Father, You are holy and You are merciful. Thank You that You did not leave me in my sin, but sent Your Son to bring me home. Give our church the courage to speak truth and the tenderness to welcome back the repentant. Guard me from pride, from gossip and from cold judgment. Where someone has fallen, let me be a safe and gentle friend. Where I have fallen, give me humility to be restored. Make us a family where grace and truth meet. In Jesus' name, Amen.",
+      "Ama, Ikaw ay banal at maawain. Salamat po na hindi Mo ako iniwan sa aking kasalanan kundi isinugo Mo ang Iyong Anak para iuwi ako. Bigyan Mo ang aming iglesia ng tapang na magsabi ng katotohanan at ng kalambutan na tanggapin muli ang nagsisisi. Ingatan Mo ako sa pagmamataas, tsismis at malamig na paghatol. Kung may nahulog, gawin Mo akong ligtas at mahinahong kaibigan. Kung ako ang nahulog, bigyan Mo ako ng kababaang-loob para mapanumbalik. Gawin Mo kaming pamilyang kung saan nagtatagpo ang biyaya at katotohanan. Sa pangalan ni Hesus, Amen."
     ),
   },
-  "hope-when-god-seems-silent": {
+
+  "serving-under-authority": {
     revelation: t(
-      "God's silence is not His absence; it is often the place where faith learns to stand on who He is rather than on what He says.",
-      "Ang katahimikan ng Diyos ay hindi Niya pagkawala; madalas ito ang lugar kung saan natututong tumayo ang pananampalataya sa kung sino Siya, hindi lang sa sinasabi Niya."
+      "You can only carry authority safely if you have learned, with joy, to live under it.",
+      "Ligtas mo lang madadala ang awtoridad kung natutunan mong mabuhay sa ilalim nito nang may galak."
     ),
     mainTruth: t(
-      "David cries, \"How long, O Lord? Will you forget me forever? How long will you hide your face from me?\" and yet ends with \"I have trusted in your steadfast love; my heart shall rejoice in your salvation\" (Psalm 13:1-6). Habakkuk says that even if the fig tree does not blossom and the fields yield no food, \"yet I will rejoice in the Lord\" (Habakkuk 3:17-19). Paul says the sufferings of this present time are not worth comparing with the glory to be revealed, and that God works all things together for good for those who love Him (Romans 8:18-28).",
-      "Humihiyaw si David, \"Hanggang kailan, Panginoon? Kalilimutan Mo ba ako magpakailanman? Hanggang kailan Mo ikukubli ang Iyong mukha sa akin?\" at gayon pa man nagtatapos ng \"Nagtiwala ako sa Iyong tapat na pag-ibig; magagalak ang puso ko sa Iyong pagliligtas\" (Awit 13:1-6). Sabi ni Habakuk, kahit hindi mamulaklak ang puno ng igos at walang ani ang bukid, \"gayunman ay magagalak ako sa Panginoon\" (Habakuk 3:17-19). Sabi ni Pablo, hindi maihahambing ang mga pagdurusa sa kasalukuyan sa kaluwalhatiang ihahayag, at pinagsasama-sama ng Diyos ang lahat ng bagay para sa ikabubuti ng nagmamahal sa Kanya (Roma 8:18-28)."
+      "David had Saul, the king who was hunting him, alone and defenseless in a cave. His men whispered, \"This is the day the Lord spoke of.\" Yet David refused: \"The Lord forbid that I should do such a thing to my master, the Lord's anointed\" (1 Samuel 24:6). Peter says, \"Young men, in the same way submit yourselves to your elders. All of you, clothe yourselves with humility toward one another\" (1 Peter 5:5), and Hebrews 13:17 says to \"obey your leaders and submit to their authority ... so that their work will be a joy, not a burden.\" God Himself is the One who raises up and brings down.",
+      "May pagkakataon si David na patayin si Saul, ang haring tumutugis sa kanya, na mag-isa at walang laban sa isang yungib. Bumulong ang kanyang mga tauhan, \"Ito na ang araw na sinabi ng Panginoon.\" Pero tumanggi si David: \"Ipagbawal ng Panginoon na gawin ko iyon sa aking panginoon, ang pinahiran ng Panginoon\" (1 Samuel 24:6). Sabi ni Pedro, \"Kayong mga kabataan, magpasakop kayo sa mga matatanda. Lahat kayo, magbihis ng kababaang-loob sa isa't isa\" (1 Pedro 5:5), at sinasabi ng Hebreo 13:17, \"Sundin ninyo ang inyong mga lider at magpasakop kayo ... upang ang kanilang gawain ay maging kagalakan, hindi pabigat.\" Ang Diyos mismo ang nagtataas at nagbababa."
     ),
     insight: [
       t(
-        "Notice that Scripture does not hide the cry. The Bible includes honest laments, and God keeps them in His Book. You do not have to pretend to be fine to be faithful. David's prayer moves in three steps: complaint (verses 1-2), request (verses 3-4) and trust (verses 5-6). The feelings do not disappear, but they are brought to God instead of away from Him.",
-        "Pansinin na hindi itinatago ng Kasulatan ang hiyaw. Kasama sa Bibliya ang mga tapat na panaghoy, at iniingatan ito ng Diyos sa Kanyang Aklat. Hindi mo kailangang magkunwaring okay para maging tapat. Tatlong hakbang ang panalangin ni David: reklamo (t. 1-2), kahilingan (t. 3-4) at pagtitiwala (t. 5-6). Hindi nawawala ang damdamin, pero dinadala ito sa Diyos sa halip na palayo sa Kanya."
+        "Notice what David's refusal teaches. He was right that Saul was wrong. He had been anointed. He had a real opportunity. His men had a spiritual-sounding reason. And still he did not take it. David understood that how you get to a position matters as much as what you do there. A shortcut to promotion through undermining leaders produces a person who will undermine others when they hold the keys.",
+        "Pansinin ang itinuturo ng pagtanggi ni David. Tama siya na mali si Saul. Pinahiran na siya ng langis. May tunay siyang pagkakataon. May katwirang mukhang espirituwal ang kanyang mga tauhan. Pero hindi pa rin niya ito kinuha. Naunawaan ni David na ang paraan ng pagdating sa posisyon ay kasinghalaga ng ginagawa mo roon. Ang shortcut tungo sa promosyon sa pamamagitan ng pagpapabagsak ng mga lider ay lumilikha ng taong magpapabagsak din sa iba kapag hawak na niya ang susi."
       ),
       t(
-        "Romans 8 gives a deeper comfort: in our weakness the Spirit intercedes for us with groanings too deep for words (Romans 8:26). When you have no words left, you are not praying alone. And the God who did not spare His own Son (Romans 8:32) has already shown you what His heart is, even when circumstances look cold. The cross is the proof that silence is not indifference.",
-        "Mas malalim na kaaliwan ang bigay ng Roma 8: sa ating kahinaan, namamagitan ang Espiritu para sa atin sa mga daing na hindi maisasalita (Roma 8:26). Kapag wala ka nang masabi, hindi ka nananalangin nang mag-isa. At ang Diyos na hindi nagtira ng sarili Niyang Anak (Roma 8:32) ay naipakita na sa iyo ang Kanyang puso, kahit malamig tingnan ang kalagayan. Ang krus ang patunay na hindi kawalang-pakialam ang katahimikan."
+        "Submission is not silence and it is not blind obedience. David respectfully called out Saul's wrong to his face (24:8-15), and Scripture never asks us to obey a leader into sin or to hide abuse. The line is clear: we disagree honestly, privately and respectfully, we pray, and we leave the outcome to God; where there is abuse or crime, we report it. A humble, loyal spirit is not weak; it is the posture that makes a team joyful rather than anxious.",
+        "Ang pagpapasakop ay hindi katahimikan at hindi bulag na pagsunod. Magalang na hinarap ni David si Saul tungkol sa kamalian nito (24:8-15), at hindi kailanman hinihiling ng Kasulatan na sumunod tayo sa lider tungo sa kasalanan o itago ang pang-aabuso. Malinaw ang hangganan: hindi tayo sumasang-ayon nang tapat, sarilinan at magalang, nananalangin tayo, at ipinauubaya natin sa Diyos ang kalalabasan; kung may pang-aabuso o krimen, iuulat natin ito. Ang mapagpakumbaba at tapat na espiritu ay hindi mahina; ito ang tindig na gumagawa sa team na masaya sa halip na balisa."
       ),
     ],
     life: [
       t(
-        "Think of a mother abroad whose child at home is seriously ill. She prays, fasts, begs, and still hears nothing; the phone brings only hard news. At night she wonders if God has gone quiet on her. In that very hour, the Spirit is groaning with her, and the Father who gave His Son is not distant. She may not receive an explanation, but she can receive His nearness.",
-        "Isipin ang isang inang nasa abroad na may malubhang sakit ang anak sa bahay. Nananalangin siya, nag-aayuno, nagmamakaawa, at wala pa ring naririnig; puro mabigat na balita ang dala ng telepono. Sa gabi, iniisip niya kung tumahimik na ang Diyos sa kanya. Sa mismong oras na iyon, ang Espiritu ay dumaraing kasama niya, at ang Amang nagbigay ng Kanyang Anak ay hindi malayo. Maaaring hindi siya tumanggap ng paliwanag, pero makatatanggap siya ng Kanyang paglapit."
+        "Think of a worship team member in a small Filipino church who strongly disagreed with a song schedule set by the pastor. In the group chat, others grumbled. She chose instead to ask for a short private meeting, said \"Pastor, here is how I see it; I will follow whatever you decide,\" and then did follow it. Two months later the pastor adjusted the plan, and made her a team coordinator. He said, \"I trusted her because she knew how to disagree and still be loyal.\"",
+        "Isipin ang isang miyembro ng worship team sa maliit na simbahang Pilipino na lubos na hindi sang-ayon sa iskedyul ng kanta na itinakda ng pastor. Sa group chat, nagreklamo ang iba. Pinili niyang humiling ng maikling pribadong pulong, sinabing \"Pastor, ganito po ang tingin ko; susundin ko po ang anumang pasya ninyo,\" at talagang sinunod niya ito. Makalipas ang dalawang buwan, inayos ng pastor ang plano, at ginawa siyang coordinator ng team. Sabi niya, \"Pinagkatiwalaan ko siya dahil marunong siyang hindi sumang-ayon at manatiling tapat.\""
       ),
       t(
-        "Silent seasons also come to the faithful servant: a ministry that does not grow, a prayer unanswered for years, a dry heart in worship. In those seasons, keep the simple things: open the Bible even when you feel nothing, gather with believers, thank Him for what you know to be true. Feelings follow faith slowly, but they do follow.",
-        "Dumarating din ang mga panahon ng katahimikan sa tapat na lingkod: ministeryong hindi lumalago, panalanging walang sagot sa loob ng ilang taon, tuyong puso sa pagsamba. Sa mga panahong iyon, panatilihin ang mga simpleng bagay: buksan ang Bibliya kahit wala kang nararamdaman, makisama sa mga mananampalataya, magpasalamat sa alam mong totoo. Dahan-dahang sumusunod ang damdamin sa pananampalataya, pero sumusunod ito."
+        "It is the same in the workplace abroad. The OFW who respects a hard supervisor, does excellent work and speaks up wisely when something is wrong often earns influence that complaining never gives. Joseph under Potiphar, Daniel under Nebuchadnezzar: they honored authority and God honored them.",
+        "Ganyan din sa trabaho sa abroad. Ang OFW na gumagalang sa mahirap na supervisor, mahusay ang trabaho at nagsasalita nang matalino kapag may mali, madalas nagkakaroon ng impluwensya na hindi kailanman maibibigay ng pagrereklamo. Si Jose sa ilalim ni Potifar, si Daniel sa ilalim ni Nabucodonosor: ginalang nila ang awtoridad at pinarangalan sila ng Diyos."
       ),
     ],
     twist: t(
-      "We assume that if God loved us, He would speak immediately and clearly. The Kingdom twist is that the silence of Holy Saturday came right before the greatest act in history. The disciples could hear nothing, and yet God was working in the dark. Seeds are planted in darkness; the tomb was the womb of resurrection. When heaven is silent, something is being prepared that you cannot yet see.",
-      "Akala natin kung mahal tayo ng Diyos, agad at malinaw Siyang magsasalita. Ang twist ng Kaharian: ang katahimikan ng Sabado de Gloria ay dumating mismo bago ang pinakamalaking gawa sa kasaysayan. Wala ring marinig ang mga alagad, ngunit gumagawa ang Diyos sa dilim. Itinatanim ang mga binhi sa dilim; ang libingan ang sinapupunan ng muling pagkabuhay. Kapag tahimik ang langit, may inihahanda na hindi mo pa nakikita."
+      "We think power comes by taking opportunities. The Kingdom says power is given to those who refuse to grab it. David waited years after the cave and finally became king without a stain on his hands. The way up in God's house is down: Jesus, who had all authority, \"learned obedience\" (Hebrews 5:8). If the Son submitted to the Father, none of us is above submitting to those whom God has placed over us.",
+      "Akala natin ang kapangyarihan ay nakukuha sa pagsunggab ng pagkakataon. Sabi ng Kaharian, ibinibigay ang kapangyarihan sa mga tumangging agawin ito. Naghintay si David ng ilang taon pagkatapos ng yungib at sa wakas ay naging hari nang walang bahid sa kanyang mga kamay. Ang daan pataas sa bahay ng Diyos ay pababa: si Hesus, na may lahat ng awtoridad, ay \"natutong sumunod\" (Hebreo 5:8). Kung nagpasakop ang Anak sa Ama, wala sa atin ang higit pa sa pagpapasakop sa mga inilagay ng Diyos sa itaas natin."
     ),
     confirm: [
-      t("Psalm 22:1-5: Jesus Himself cried out in abandonment, yet the psalm ends in trust.", "Awit 22:1-5: si Hesus mismo ay sumigaw sa pakiramdam ng pag-iwan, gayunman nagtatapos sa pagtitiwala ang awit."),
-      t("Isaiah 50:10: let him who walks in darkness and has no light trust in the name of the Lord.", "Isaias 50:10: magtiwala sa pangalan ng Panginoon ang lumalakad sa dilim at walang liwanag."),
-      t("John 11:5-6, 40: Jesus deliberately waited two days, and Lazarus was raised.", "Juan 11:5-6, 40: sadyang naghintay si Hesus ng dalawang araw, at nabuhay si Lazaro."),
-      t("Job 23:8-10: \"He knows the way that I take; when he has tried me, I shall come out as gold.\"", "Job 23:8-10: \"Alam Niya ang daang tinatahak ko; kapag nasubok Niya ako, lalabas akong parang ginto.\""),
+      t("Romans 13:1-2: there is no authority except what God has established.", "Roma 13:1-2: walang awtoridad maliban sa itinatag ng Diyos."),
+      t("Acts 5:29: we must obey God rather than men when they contradict Him.", "Gawa 5:29: dapat tayong sumunod sa Diyos kaysa sa tao kapag sumasalungat sila sa Kanya."),
+      t("1 Thessalonians 5:12-13: respect those who labor among you and esteem them highly in love.", "1 Tesalonica 5:12-13: igalang ang mga nagpapagal sa inyo at mataas silang pahalagahan sa pag-ibig."),
+      t("Luke 7:1-10: the centurion understood authority and Jesus marveled at his faith.", "Lucas 7:1-10: naunawaan ng senturyon ang awtoridad at namangha si Hesus sa kanyang pananampalataya."),
     ],
     heart: [
       t(
-        "Pray honestly. Tell God exactly how you feel, and then choose to say what you know about Him. Move from complaint to trust, even slowly.",
-        "Manalangin nang tapat. Sabihin sa Diyos kung ano talaga ang nararamdaman mo, saka piliing sabihin ang alam mo tungkol sa Kanya. Lumipat mula sa reklamo tungo sa tiwala, kahit dahan-dahan."
+        "Let God deal with your resentment toward a leader. Replace complaint with prayer and gossip with honest, respectful conversation.",
+        "Hayaang harapin ng Diyos ang hinanakit mo sa isang lider. Palitan ang reklamo ng panalangin at ang tsismis ng tapat at magalang na pag-uusap."
       ),
       t(
-        "Hold on to Christ's character, not your current feelings. Anchor your hope in the cross and the resurrection, which already prove His love.",
-        "Kumapit sa karakter ni Cristo, hindi sa kasalukuyan mong damdamin. Ihulog ang angkla ng pag-asa sa krus at sa muling pagkabuhay na patunay na ng Kanyang pag-ibig."
+        "Become the kind of person leaders are glad to have: loyal in public, honest in private and eager to make their load lighter.",
+        "Maging taong ikinagagalak ng mga lider na kasama: tapat sa publiko, matapat sa pribado, at sabik gumaan ang kanilang pasanin."
       ),
     ],
     questions: [
-      t("Where do I feel that God is silent right now, and what have I been telling Him about it?", "Saan ko nararamdamang tahimik ang Diyos ngayon, at ano ang sinasabi ko sa Kanya tungkol dito?"),
-      t("What do I know to be true about God that does not depend on how I feel?", "Ano ang alam kong totoo tungkol sa Diyos na hindi nakasalalay sa nararamdaman ko?"),
-      t("Have I withdrawn from church or prayer because of disappointment?", "Lumayo na ba ako sa simbahan o panalangin dahil sa pagkabigo?"),
-      t("Who could walk with me and pray for me in this season?", "Sino ang puwedeng sumama sa akin at manalangin para sa akin sa panahong ito?"),
+      t("When you disagree with a leader, who do you talk to first?", "Kapag hindi ka sumasang-ayon sa lider, sino ang unang kinakausap mo?"),
+      t("Is there any area where you are quietly undermining someone in authority?", "May bahagi ba kung saan palihim mong pinahihina ang isang nasa awtoridad?"),
+      t("Where might God be testing you in a \"cave\" moment, when you have a chance to take a shortcut?", "Saan ka maaaring sinusubukan ng Diyos sa isang \"yungib\" na sandali, kung kailan may pagkakataon kang mag-shortcut?"),
+      t("How do you pray for the people over you, especially the hard ones?", "Paano mo ipinapanalangin ang mga nasa itaas mo, lalo na ang mahihirap pakisamahan?"),
     ],
     actions: [
-      t("Write your own short lament to God today, following Psalm 13: complaint, request, trust.", "Sumulat ngayon ng sarili mong maikling panaghoy sa Diyos ayon sa Awit 13: reklamo, kahilingan, tiwala."),
-      t("List three times God has been faithful to you before, and read them aloud when doubt comes.", "Ilista ang tatlong beses na naging tapat sa iyo ang Diyos noon, at basahin nang malakas kapag dumating ang duda."),
-      t("Tell one trusted believer how you are really doing and ask them to pray with you this week.", "Sabihin sa isang mapagkakatiwalaang mananampalataya kung kumusta ka talaga at hilingin na ipanalangin ka nila ngayong linggo."),
+      t("Pray by name for your pastor and each of your leaders every day this week.", "Ipanalangin sa pangalan ang pastor at bawat lider mo araw-araw ngayong linggo."),
+      t("Ask for a private conversation if you have concerns, and begin by sharing something you appreciate.", "Humiling ng pribadong usapan kung may alalahanin ka, at magsimula sa pagbabahagi ng pinahahalagahan mo."),
+      t("Stop one habit of venting about leaders in group chats or among friends.", "Itigil ang isang ugali ng pagbubunyag ng hinaing tungkol sa mga lider sa group chat o sa mga kaibigan."),
     ],
     prayer: t(
-      "Father, You see my heart, and You know that there are days when I cannot hear You. I bring You my honest questions and tired tears. Thank You that You do not leave me, even when I cannot feel You. Holy Spirit, pray for me where I have no words. I choose to trust Your steadfast love. Anchor my hope in the cross and the empty tomb. Keep me close to Your people until the morning comes. Let me rejoice in You even before I see the answer. In Jesus' name, Amen.",
-      "Ama, nakikita Mo ang puso ko, at alam Mong may mga araw na hindi Kita marinig. Dinadala ko sa Iyo ang tapat kong mga tanong at pagod na luha. Salamat dahil hindi Mo ako iniiwan, kahit hindi Kita nararamdaman. Banal na Espiritu, ipanalangin Mo ako kung saan wala akong salita. Pinipili kong magtiwala sa Iyong tapat na pag-ibig. Ihulog Mo ang angkla ng aking pag-asa sa krus at sa walang lamang libingan. Ingatan Mo akong malapit sa Iyong bayan hanggang dumating ang umaga. Hayaan Mo akong magalak sa Iyo bago ko pa makita ang sagot. Sa pangalan ni Hesus, Amen."
+      "Lord Jesus, You were obedient even to death on a cross, and You trusted the Father with the outcome. Teach me to submit with joy and to disagree with love. Forgive me for the times I resisted, complained or undermined those over me. Bless my pastor and every leader You have placed in my life, and give them wisdom. Guard me from impatience and pride. Let me wait for Your timing, like David, with clean hands and a humble heart. In Your name I pray, Amen.",
+      "Panginoong Hesus, masunurin Ka hanggang kamatayan sa krus, at ipinagkatiwala Mo sa Ama ang kalalabasan. Turuan Mo akong magpasakop nang may galak at tumutol nang may pag-ibig. Patawarin Mo ako sa mga panahong lumaban, nagreklamo o nagpahina ako sa mga nasa itaas ko. Pagpalain Mo ang aking pastor at bawat lider na inilagay Mo sa buhay ko, at bigyan Mo sila ng karunungan. Ingatan Mo ako sa kawalan ng tiyaga at pagmamataas. Hayaan Mo akong maghintay sa Iyong panahon, gaya ni David, na may malinis na kamay at mapagpakumbabang puso. Sa Iyong pangalan ako nananalangin, Amen."
+    ),
+  },
+
+  "boundaries-and-ethics": {
+    revelation: t(
+      "Boundaries are not walls against love; they are the guardrails that keep love pure and the ministry trusted.",
+      "Ang mga hangganan ay hindi pader laban sa pag-ibig; ito ang mga bakod na nagpapanatiling dalisay sa pag-ibig at pinagkakatiwalaan ang ministeryo."
+    ),
+    mainTruth: t(
+      "Paul told Timothy to treat \"older men as fathers, younger men as brothers, older women as mothers, and younger women as sisters, with absolute purity\" (1 Timothy 5:1-2). To the Thessalonians he could say, \"Our appeal does not spring from error or impure motives, nor are we trying to trick you ... We never used flattery, nor did we put on a mask to cover up greed\" (1 Thessalonians 2:3-5), and \"you are witnesses, and so is God, of how holy, righteous and blameless we were\" (2:10). In 2 Corinthians 8:20-21 he even set up careful handling of money: \"We want to avoid any criticism ... for we are taking pains to do what is right, not only in the eyes of the Lord but also in the eyes of man.\"",
+      "Sinabi ni Pablo kay Timoteo na ituring ang \"matatandang lalaki bilang ama, ang kabataang lalaki bilang kapatid, ang matatandang babae bilang ina, at ang kabataang babae bilang kapatid, nang may ganap na kalinisan\" (1 Timoteo 5:1-2). Sa mga taga-Tesalonica, nasabi niya, \"Ang aming pananawagan ay hindi galing sa kamalian o maruming motibo, ni pandaraya ... Hindi kami gumamit ng pambobola, ni nagsuot ng maskara upang takpan ang kasakiman\" (1 Tesalonica 2:3-5), at \"kayo ang mga saksi, at ang Diyos din, kung gaano kami naging banal, matuwid at walang kapintasan\" (2:10). Sa 2 Corinto 8:20-21, nagtakda pa siya ng maingat na paghawak ng pera: \"Iniiwasan naming mapintasan ... sapagkat pinagsisikapan naming gawin ang tama, hindi lang sa paningin ng Panginoon kundi pati sa paningin ng tao.\""
+    ),
+    insight: [
+      t(
+        "Almost no ministry collapses in one day. It collapses in small, unguarded moments: a late-night chat that grew too personal, an envelope of money handled by one person with no one checking, a counseling session behind a closed door, a quiet shift from serving people to using them. Leaders who fall rarely planned to; they simply never planned not to. Paul shows that the wise leader puts rails in place when everything is still fine.",
+        "Halos walang ministeryong gumuguho sa isang araw. Gumuguho ito sa maliliit na sandaling walang bantay: late-night chat na naging masyadong personal, sobreng may pera na isang tao lang ang humahawak at walang sumusuri, pagpapayo sa likod ng saradong pinto, tahimik na paglipat mula sa paglilingkod sa tao tungo sa paggamit sa kanila. Bihirang planuhin ng mga lider na nahulog ang pagkahulog; hindi lang nila kailanman pinlanong hindi mahulog. Ipinakikita ni Pablo na ang matalinong lider ay naglalagay ng bakod habang maayos pa ang lahat."
+      ),
+      t(
+        "Notice also that Paul cared about appearances in 2 Corinthians 8: not to impress, but because a testimony is easily wounded. Integrity has two faces: being clean before God and being clearly clean before people. Transparency is not distrust; it is love for the reputation of Christ. And boundaries serve the people we help, who deserve safety more than our good intentions.",
+        "Pansinin din na nag-alala si Pablo sa anyo sa 2 Corinto 8: hindi para magpabilib, kundi dahil madaling masugatan ang patotoo. May dalawang mukha ang integridad: malinis sa harap ng Diyos at malinaw na malinis sa harap ng tao. Ang pagiging bukas ay hindi kawalan ng tiwala; ito ay pag-ibig sa reputasyon ni Kristo. At pinaglilingkuran ng mga hangganan ang mga taong tinutulungan natin, na mas karapat-dapat sa kaligtasan kaysa sa mabuti nating intensyon."
+      ),
+    ],
+    life: [
+      t(
+        "A church treasurer in a Filipino congregation abroad insisted that two people always count the offering together and that a third person reviews the monthly report. A visitor once asked why such a \"strict\" system for a small church. He smiled: \"I do not do it because I do not trust myself; I do it because I want to be trusted by everyone for twenty years.\" That church has never had a financial scandal.",
+        "Isang treasurer sa isang Filipino congregation sa abroad ang nagpumilit na laging dalawang tao ang magbibilang ng handog at may pangatlong tao na magsusuri ng buwanang ulat. Minsan, tinanong siya ng bisita kung bakit \"mahigpit\" ang sistema para sa maliit na iglesia. Ngumiti siya: \"Hindi ko ito ginagawa dahil hindi ako nagtitiwala sa sarili; ginagawa ko ito dahil gusto kong pagkatiwalaan ng lahat sa loob ng dalawampung taon.\" Walang naging iskandalo sa pera ang iglesiang iyon."
+      ),
+      t(
+        "For many OFWs, loneliness makes boundaries even more important. A lonely heart, a long shift and a phone at midnight can blur lines quickly. A wise brother says to the sister he is counseling, \"Let's meet at the church after the service, with others around,\" and a wise sister tells her leader, \"Please let's keep this in the group chat.\" That is not coldness; it is protection for both.",
+        "Para sa maraming OFW, mas lalong mahalaga ang hangganan dahil sa kalungkutan. Ang malungkot na puso, mahabang shift at phone sa hatinggabi ay mabilis na makapagpapalabo ng linya. Ang matalinong kapatid ay nagsasabi sa kapatid na babaeng pinapayuhan niya, \"Magkita tayo sa simbahan pagkatapos ng serbisyo, may ibang tao sa paligid,\" at ang matalinong kapatid na babae ay nagsasabi sa kanyang lider, \"Dito na lang po tayo sa group chat.\" Hindi iyon pagiging malamig; proteksyon iyon para sa dalawa."
+      ),
+    ],
+    twist: t(
+      "We often think that boundaries show a lack of faith: \"If I am walking with the Spirit, I should not need rules.\" But Jesus Himself told us to pray, \"Lead us not into temptation,\" and Proverbs says the wise man sees danger and hides. Setting boundaries is not distrust in God's power but obedience to His wisdom. Humble leaders know they are not above falling and build fences before the cliff.",
+      "Madalas nating isipin na ang hangganan ay palatandaan ng kawalan ng pananampalataya: \"Kung lumalakad ako sa Espiritu, hindi ko na kailangan ng patakaran.\" Pero si Hesus mismo ang nagturo sa atin na manalangin, \"Huwag Mo kaming ihatid sa tukso,\" at sinasabi ng Kawikaan na ang matalino ay nakakakita ng panganib at nagtatago. Ang pagtatakda ng hangganan ay hindi kawalan ng tiwala sa kapangyarihan ng Diyos kundi pagsunod sa Kanyang karunungan. Alam ng mapagpakumbabang lider na hindi siya mas mataas sa pagkahulog at nagtatayo ng bakod bago ang bangin."
+    ),
+    confirm: [
+      t("Proverbs 22:3: the prudent see danger and take refuge.", "Kawikaan 22:3: nakikita ng matalino ang panganib at nagkukubli."),
+      t("Job 31:1: I made a covenant with my eyes not to look lustfully.", "Job 31:1: nakipagtipan ako sa aking mga mata na huwag tumingin nang may masamang pagnanasa."),
+      t("Genesis 39:7-12: Joseph ran from Potiphar's wife and refused to sin against God.", "Genesis 39:7-12: tumakbo si Jose palayo sa asawa ni Potifar at tumangging magkasala laban sa Diyos."),
+      t("1 Peter 5:2-3: shepherd willingly, not for shameful gain, not lording it over those entrusted.", "1 Pedro 5:2-3: mag-alaga nang kusang-loob, hindi para sa kahiya-hiyang pakinabang, hindi nagpapanginoon sa ipinagkatiwala."),
+    ],
+    heart: [
+      t(
+        "Drop the idea that you are the exception. Welcome accountability as a gift, not an insult. Invite someone to ask you the hard questions.",
+        "Bitiwan ang akalang ikaw ay exception. Tanggapin ang pananagutan bilang regalo, hindi insulto. Anyayahan ang isang tao na magtanong sa iyo ng mahihirap na tanong."
+      ),
+      t(
+        "Let your motives be clean. Check why you serve: for people's good, for God's glory, or for applause, comfort or control?",
+        "Panatilihing malinis ang iyong motibo. Suriin kung bakit ka naglilingkod: para sa kabutihan ng tao, kaluwalhatian ng Diyos, o para sa palakpak, ginhawa o kontrol?"
+      ),
+    ],
+    questions: [
+      t("Where do you most easily relax your guard: money, private conversations, messaging, time alone?", "Saan ka pinakamadaling magrelaks ng bantay: pera, pribadong usapan, messaging, oras na mag-isa?"),
+      t("Who currently has permission to ask you honest questions about your conduct?", "Sino ang kasalukuyang may pahintulot na magtanong sa iyo nang tapat tungkol sa iyong asal?"),
+      t("Is there anything in your ministry you would be uncomfortable to have fully visible?", "May bahagi ba ng ministeryo mo na hindi ka komportableng makita nang buo?"),
+      t("What step could protect someone you serve from a situation that feels harmless now?", "Anong hakbang ang makapagpoprotekta sa taong pinaglilingkuran mo mula sa sitwasyong mukhang walang masama ngayon?"),
+    ],
+    actions: [
+      t("Write three clear personal boundaries (time, messaging, money, counseling) and share them with an accountability partner.", "Sumulat ng tatlong malinaw na personal na hangganan (oras, messaging, pera, pagpapayo) at ibahagi sa accountability partner."),
+      t("Make sure any money handled in your ministry is counted and recorded by at least two people.", "Tiyaking ang anumang perang hinahawakan sa ministeryo mo ay binibilang at itinatala ng hindi bababa sa dalawang tao."),
+      t("Move any private, late-night ministry conversations to open spaces or group settings starting this week.", "Ilipat ang anumang pribado at hatinggabing usapang pang-ministeryo sa bukas na lugar o group setting simula ngayong linggo."),
+    ],
+    prayer: t(
+      "Holy Father, search my heart and show me the places where I have left the door open. Thank You for Your Word, which is a lamp to my feet. Keep my motives clean and my conduct above reproach before You and before people. Give me humility to receive accountability, and wisdom to build fences before temptation arrives. Protect those I serve from any harm through my weakness. Let my life be a testimony that adorns the gospel and honors Your name. In Jesus' name, Amen.",
+      "Banal na Ama, siyasatin Mo ang puso ko at ipakita Mo ang mga lugar na nabuksan ko ang pinto. Salamat po sa Iyong Salita na ilawan sa aking mga paa. Panatilihin Mong malinis ang aking motibo at walang kapintasan ang aking asal sa harap Mo at sa harap ng tao. Bigyan Mo ako ng kababaang-loob na tumanggap ng pananagutan, at karunungang magtayo ng bakod bago dumating ang tukso. Ingatan Mo ang mga pinaglilingkuran ko mula sa anumang pinsala dahil sa kahinaan ko. Gawin Mong patotoo ang buhay ko na nagpapaganda sa ebanghelyo at nagpaparangal sa Iyong pangalan. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+
+  "faithful-online": {
+    revelation: t(
+      "Your online life is not a separate world; it is the same heart speaking through a new microphone, and God hears every word.",
+      "Ang buhay mo online ay hindi hiwalay na mundo; ito ay ang parehong puso na nagsasalita sa bagong mikropono, at naririnig ng Diyos ang bawat salita."
+    ),
+    mainTruth: t(
+      "Jesus said, \"I tell you that everyone will have to give account on the day of judgment for every empty word they have spoken\" (Matthew 12:36). Words reveal the heart (12:34), and today many of our words are typed, shared and screenshotted. Proverbs 10:19 says, \"Sin is not ended by multiplying words, but the prudent hold their tongues.\" And Philippians 4:8 gives the filter: \"Whatever is true, whatever is noble, whatever is right, whatever is pure, whatever is lovely, whatever is admirable ... think about such things.\" What we post, like, share and comment on is part of our witness.",
+      "Sinabi ni Hesus, \"Sinasabi ko sa inyo, ang bawat tao ay mananagot sa araw ng paghuhukom sa bawat walang kabuluhang salitang sinabi niya\" (Mateo 12:36). Inilalantad ng mga salita ang puso (12:34), at ngayon marami sa ating mga salita ay tina-type, ibinabahagi at ini-screenshot. Sabi ng Kawikaan 10:19, \"Sa maraming salita ay hindi nawawala ang kasalanan, ngunit ang matalino ay nagpipigil ng labi.\" At ibinibigay ng Filipos 4:8 ang salaan: \"Anumang totoo, anumang marangal, anumang matuwid, anumang malinis, anumang kaibig-ibig, anumang kapuri-puri ... ay isipin ninyo.\" Ang ipino-post, linalike, shine-share at kinokomentuhan natin ay bahagi ng ating patotoo."
+    ),
+    insight: [
+      t(
+        "We often treat the screen as a place where the normal rules are suspended. We say things we would never say face to face, we share things we have not verified and we scroll into things we would never bring into church. But Jesus did not limit accountability to spoken words in public; He said \"every empty word.\" The speed of the internet makes careless words travel farther than anything our grandparents could say in a lifetime.",
+        "Madalas nating ituring ang screen na lugar kung saan hindi umiiral ang karaniwang patakaran. Nagsasabi tayo ng mga bagay na hindi natin sasabihin nang harapan, nagbabahagi ng hindi pa napatutunayan, at nag-i-scroll sa mga bagay na hindi natin dadalhin sa simbahan. Pero hindi nililimitahan ni Hesus ang pananagutan sa mga salitang sinasabi sa publiko; sinabi Niya, \"bawat walang kabuluhang salita.\" Ang bilis ng internet ang nagpapalayo sa pagbiyahe ng pabayang salita nang higit sa kayang sabihin ng ating mga lolo't lola sa buong buhay nila."
+      ),
+      t(
+        "The online world also forms us. What we feed our eyes and minds on shapes what we love and how we respond. Philippians 4:8 is not only a posting filter; it is a filter for consumption. A leader's online presence is read as an extension of the church's. So the question is not only \"Is this allowed?\" but \"Does this reflect the One I follow, and will it help or harm someone watching?\"",
+        "Hinuhubog din tayo ng online na mundo. Ang pinapakain natin sa mga mata at isip ay humuhubog sa kung ano ang minamahal natin at kung paano tayo tumutugon. Ang Filipos 4:8 ay hindi lang salaan sa pag-post; salaan din ito sa pagkonsumo. Binabasa ang online presence ng lider bilang extension ng iglesia. Kaya ang tanong ay hindi lang \"Pinapayagan ba ito?\" kundi \"Sinasalamin ba nito ang Sinusundan ko, at makatutulong o makasasakit ba ito sa nanonood?\""
+      ),
+    ],
+    life: [
+      t(
+        "A young OFW nurse in Qatar was furious about a conflict at work. She typed a long, bitter post on Facebook, naming her supervisor. Her finger was on the button when her roommate, a believer, said, \"Sis, sleep on it.\" The next morning she deleted it and instead prayed. A week later, the supervisor apologized without being asked. She says, \"If I had posted, I would have burned the bridge God was about to rebuild.\"",
+        "Isang batang OFW na nurse sa Qatar ang galit na galit sa isang alitan sa trabaho. Nag-type siya ng mahaba at mapait na post sa Facebook, na pinangalanan ang kanyang supervisor. Nasa button na ang daliri niya nang sabihin ng roommate niyang mananampalataya, \"Sis, tulugan mo muna.\" Kinabukasan, binura niya ito at nanalangin na lang. Makalipas ang isang linggo, humingi ng tawad ang supervisor kahit hindi hiningan. Sabi niya, \"Kung nag-post ako, nasunog ko sana ang tulay na muling itatayo ng Diyos.\""
+      ),
+      t(
+        "The same goes for the group chats we belong to: the forwarded message with no source, the \"just joking\" meme at someone's expense, the comment under a post meant to win rather than to love. A believer can be the quiet, steady voice in a noisy feed: the one who encourages, shares truth with gentleness and knows when to log off.",
+        "Ganyan din sa mga group chat na kinabibilangan natin: ang forwarded message na walang pinagmulan, ang \"joke lang\" na meme na nang-aalipusta, ang comment sa ilalim ng post na ang layunin ay manalo at hindi magmahal. Ang mananampalataya ay maaaring maging tahimik at matatag na tinig sa maingay na feed: yung nagpapalakas-loob, nagbabahagi ng katotohanan nang may kahinahunan, at marunong mag-log off."
+      ),
+    ],
+    twist: t(
+      "We assume that being faithful online means posting more Bible verses. Often the more powerful witness is what you do not post: the reaction you hold back, the argument you refuse, the rumor you do not pass on. Jesus was silent before His accusers (Isaiah 53:7), and His silence preached louder than a thousand replies. Sometimes the holiest thing you can do on social media is nothing.",
+      "Akala natin ang pagiging tapat online ay ang pag-post ng mas maraming talata ng Biblia. Madalas, mas makapangyarihang patotoo ang hindi mo ipino-post: ang reaksyong pinipigil mo, ang pagtatalong tinatanggihan mo, ang tsismis na hindi mo ipinapasa. Tahimik si Hesus sa harap ng Kanyang mga nag-akusa (Isaias 53:7), at mas malakas ang pangaral ng Kanyang katahimikan kaysa sa libong sagot. Minsan ang pinakabanal na magagawa mo sa social media ay wala."
+    ),
+    confirm: [
+      t("James 1:19: be quick to listen, slow to speak and slow to become angry.", "Santiago 1:19: maging mabilis makinig, mabagal magsalita at mabagal magalit."),
+      t("Ephesians 4:29: let no unwholesome talk come out of your mouths, only what builds up.", "Efeso 4:29: huwag lumabas sa inyong bibig ang masamang salita, kundi ang nakakapagpatibay."),
+      t("Colossians 4:6: let your conversation be always full of grace, seasoned with salt.", "Colosas 4:6: maging puspos ng biyaya ang inyong pananalita, may timpla ng asin."),
+      t("Psalm 101:3: I will set before my eyes no vile thing.", "Awit 101:3: hindi ako maglalagay sa harap ng aking mga mata ng anumang karima-rimarim."),
+    ],
+    heart: [
+      t(
+        "Bring your phone under the lordship of Jesus. Ask Him to guard your eyes, your thumbs and your timing, especially when you are tired, angry or lonely.",
+        "Dalhin ang phone mo sa ilalim ng pagka-Panginoon ni Hesus. Hilingin sa Kanya na bantayan ang iyong mga mata, hinlalaki at tiyempo, lalo na kapag pagod, galit o nag-iisa ka."
+      ),
+      t(
+        "Let your online voice sound like your church voice and your home voice. One person, one Lord, one character.",
+        "Hayaang kapareho ng boses mo sa simbahan at sa bahay ang boses mo online. Isang tao, isang Panginoon, isang karakter."
+      ),
+    ],
+    questions: [
+      t("If your last ten posts or comments were read aloud in church, would you be comfortable?", "Kung babasahin nang malakas sa simbahan ang huling sampung post o comment mo, komportable ka ba?"),
+      t("What do you tend to share without checking if it is true?", "Ano ang madalas mong ibahagi nang hindi sinusuri kung totoo?"),
+      t("What content do you consume that is dulling your love for God or others?", "Anong nilalaman ang kinukonsumo mo na nagpapahina ng pag-ibig mo sa Diyos o sa iba?"),
+      t("What would your online presence say about Jesus to a non-believer?", "Ano ang sasabihin ng online presence mo tungkol kay Hesus sa isang hindi mananampalataya?"),
+    ],
+    actions: [
+      t("Review your last 20 posts, shares and comments; delete anything unkind or untrue.", "Suriin ang huli mong 20 post, share at comment; burahin ang anumang hindi mabait o hindi totoo."),
+      t("Adopt a 24-hour pause rule before posting when you are angry or hurt.", "Magpatupad ng 24-oras na pahinga bago mag-post kapag galit ka o nasasaktan."),
+      t("Post one genuine word of encouragement or Scripture this week, and send one private message to someone who needs it.", "Mag-post ng isang tunay na salita ng pampalakas-loob o Kasulatan ngayong linggo, at magpadala ng isang pribadong mensahe sa taong nangangailangan."),
+    ],
+    prayer: t(
+      "Lord Jesus, You are Lord of my words, my eyes and my phone. Forgive me for careless posts, for the things I shared without love and for what I have watched that grieved You. Guard my mouth and my thumbs. Help me to speak the truth in love, to be slow to react and quick to encourage. Let my online life shine with Your goodness, and let others see You through it. Teach me when to speak and when to be silent. In Your name I pray, Amen.",
+      "Panginoong Hesus, Ikaw ang Panginoon ng aking mga salita, mata at phone. Patawarin Mo ako sa mga pabayang post, sa mga ibinahagi kong walang pag-ibig, at sa mga pinanood kong nagpalungkot sa Iyo. Bantayan Mo ang aking bibig at mga hinlalaki. Tulungan Mo akong magsabi ng katotohanan nang may pag-ibig, maging mabagal sa reaksyon at mabilis magpalakas-loob. Hayaang magningning ang buhay ko online ng Iyong kabutihan, at hayaang makita Ka ng iba rito. Ituro Mo kung kailan magsasalita at kailan tatahimik. Sa Iyong pangalan ako nananalangin, Amen."
     ),
   },
 };

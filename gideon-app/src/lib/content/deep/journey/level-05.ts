@@ -1181,4 +1181,136 @@ export const DEEP: DeepSet = {
       "Ama, salamat at puwede kaming lumapit sa Iyo bilang mga anak. Turuan Mo akong manalangin, at turuan Mo akong magturo sa iba. Hayaang marinig ng mga dinidisipulo ko sa mga dasal ko ang tunay na ugnayan sa Iyo. Gawin Mo akong matiyaga sa mga nagsisimula at tapat sa sarili kong pakikibaka. Ipakita Mo kung paano manalangin sa Espiritu, nang may tiyaga, para sa mga banal at sa katapangan. Tulungan Mo akong manalangin kasama ng tao at hindi lang para sa kanila. Magbangon nawa ng salinlahi ng nananalanging mananampalataya sa pamamagitan ng aming buhay. Sa pangalan ni Hesus, Amen."
     ),
   },
+
+  "teaching-others-to-read-the-bible": {
+    revelation: t(
+      "A disciple maker's goal is not to feed people forever but to teach them to feed themselves from God's Word.",
+      "Ang layunin ng gumagawa ng alagad ay hindi ang pakainin ang mga tao habambuhay kundi turuan silang pakainin ang kanilang sarili mula sa Salita ng Diyos."
+    ),
+    mainTruth: t(
+      "The Ethiopian official was reading Isaiah but said, \"How can I, unless someone explains it to me?\" (Acts 8:30-31). Philip did not lecture him for hours; he climbed into the chariot, asked a question, and started with the passage in front of them. God always wanted His people to hear, learn and obey His Word, men, women, children and foreigners alike (Deuteronomy 31:12-13). Priscilla and Aquila did the same for Apollos, explaining the way of God \"more adequately\" (Acts 18:26).",
+      "Binabasa ng opisyal na taga-Etiopia ang Isaias pero sinabi niyang, \"Paano ko mauunawaan kung walang magpapaliwanag sa akin?\" (Gawa 8:30-31). Hindi siya nilektyuran ni Felipe nang ilang oras; sumakay siya sa karwahe, nagtanong, at nagsimula sa talatang nasa harap nila. Laging nais ng Diyos na ang Kanyang bayan ay makinig, matuto at sumunod sa Kanyang Salita, lalaki, babae, bata at dayuhan (Deuteronomio 31:12-13). Ganoon din ang ginawa nina Priscila at Aquila kay Apolos, na ipinaliwanag nang \"mas tiyak\" ang daan ng Diyos (Gawa 18:26)."
+    ),
+    insight: [
+      t(
+        "Many new believers own a Bible, yet it sits closed because they do not know where to begin or fear misunderstanding it. Some mature believers also hesitate to teach, thinking they must be experts first. But Philip was simply willing, and he began where the man was. Teaching Scripture is less about brilliance and more about being a patient companion.",
+        "Maraming bagong mananampalataya ang may Bibliya pero nakasara ito dahil hindi nila alam kung saan magsisimula o natatakot silang magkamali ng pag-unawa. May ilang matatagal nang mananampalataya na nag-aatubili ring magturo, iniisip na dapat muna silang maging eksperto. Pero handa lang si Felipe, at nagsimula siya kung nasaan ang tao. Ang pagtuturo ng Kasulatan ay hindi gaanong tungkol sa talino kundi sa pagiging matiyagang kasama."
+      ),
+      t(
+        "Notice the method: ask, listen, open the Word, and point to Jesus. Teach people a simple way to read: What does this say about God? What does it say about people? What is one thing I should obey? Then write one sentence and share it. A simple rhythm that a believer can repeat alone is worth more than a deep lesson they cannot reproduce.",
+        "Pansinin ang paraan: magtanong, making, buksan ang Salita, at ituro si Hesus. Turuan ang mga tao ng simpleng paraan ng pagbasa: Ano ang sinasabi nito tungkol sa Diyos? Ano ang sinasabi nito tungkol sa tao? Ano ang isang bagay na dapat kong sundin? Pagkatapos, magsulat ng isang pangungusap at ibahagi ito. Mas mahalaga ang simpleng ritmong kayang ulitin ng mananampalataya nang mag-isa kaysa sa malalim na leksyong hindi niya kayang gayahin."
+      ),
+    ],
+    life: [
+      t(
+        "Kuya Ramil, a welder in Doha, wanted to help a young Filipino coworker who had just come to Christ. He did not hand him a thick commentary. During break, they read Mark 4 on a phone, and Ramil asked only three questions. Next week the coworker came with his own answers, and a year later he was leading another new believer through Mark 1.",
+        "Si Kuya Ramil, isang welder sa Doha, ay gustong tulungan ang batang kababayang katrabaho na bagong tanggap si Cristo. Hindi siya nag-abot ng makapal na komentaryo. Sa break, binasa nila ang Marcos 4 sa cellphone, at tatlong tanong lang ang itinanong ni Ramil. Sa susunod na linggo, dumating ang katrabaho dala ang sarili niyang mga sagot, at pagkaraan ng isang taon, siya na ang gumagabay sa isa pang bagong mananampalataya sa Marcos 1."
+      ),
+      t(
+        "Parents can do this at home, too. Five minutes of reading around the dinner table, one verse and one question, can shape children more than we realize. Kitchen tables have raised more disciples than pulpits sometimes. The goal is not a perfect lesson; it is a repeated habit.",
+        "Magagawa rin ito ng mga magulang sa bahay. Limang minuto ng pagbasa sa hapag-kainan, isang talata at isang tanong, ay maaaring humubog sa mga anak nang higit sa inaakala natin. Minsan, mas maraming alagad ang napalaki ng mesa sa kusina kaysa ng pulpito. Ang layunin ay hindi perpektong aralin kundi paulit-ulit na gawi."
+      ),
+    ],
+    twist: t(
+      "We often think the best teacher is the one who knows the most. In God's Kingdom, the best teacher is the one whose students no longer need them. John the Baptist said, \"He must become greater; I must become less\" (John 3:30). When your disciple opens the Word on their own and hears God's voice, you have succeeded, even if they never need your answers again.",
+      "Madalas nating isipin na ang pinakamahusay na guro ay ang pinakamaraming alam. Sa Kaharian ng Diyos, ang pinakamahusay na guro ay ang hindi na kailangan ng kanyang mga estudyante. Sinabi ni Juan Bautista, \"Kailangang lumaki Siya at ako ay lumiit\" (Juan 3:30). Kapag ang disipulo mo ay nagbubukas na ng Salita nang mag-isa at naririnig ang tinig ng Diyos, nagtagumpay ka na, kahit hindi na nila kailangan ang mga sagot mo."
+    ),
+    confirm: [
+      t("Nehemiah 8:8: they read the Law clearly and gave the meaning so people understood.", "Nehemias 8:8: binasa nila nang malinaw ang Kautusan at ibinigay ang kahulugan para maunawaan ng mga tao."),
+      t("2 Timothy 3:16-17: all Scripture is God-breathed and equips for every good work.", "2 Timoteo 3:16-17: ang buong Kasulatan ay hinihingahan ng Diyos at nagbibigay-kakayahan sa bawat mabuting gawa."),
+      t("Acts 17:11: the Bereans received the message eagerly and examined the Scriptures daily.", "Gawa 17:11: masiglang tinanggap ng mga taga-Berea ang mensahe at sinuri ang Kasulatan araw-araw."),
+      t("2 Timothy 2:2: entrust to faithful people who will teach others also.", "2 Timoteo 2:2: ipagkatiwala sa mga tapat na magtuturo rin sa iba."),
+    ],
+    heart: [
+      t(
+        "Lay down the fear that you are not qualified. You do not need to be the expert; you need to be a willing companion who points to Jesus.",
+        "Bitiwan ang takot na hindi ka kwalipikado. Hindi mo kailangang maging eksperto; kailangan mo lang maging handang kasama na nagtuturo kay Hesus."
+      ),
+      t(
+        "Practice patience with slow learners and humility with hard questions. It is fine to say, \"I do not know; let us find out together.\"",
+        "Magsanay ng pasensya sa mabagal matuto at kababaang-loob sa mahihirap na tanong. Ayos lang sabihing, \"Hindi ko alam; alamin natin nang magkasama.\""
+      ),
+    ],
+    questions: [
+      t("Who taught you to love the Bible, and how can you pass that on?", "Sino ang nagturo sa iyong mahalin ang Bibliya, at paano mo ito maipapasa?"),
+      t("What keeps you from reading the Bible with another person?", "Ano ang pumipigil sa iyong magbasa ng Bibliya kasama ang ibang tao?"),
+      t("Do the people you disciple depend on you or on God's Word?", "Umaasa ba sa iyo o sa Salita ng Diyos ang mga dinidisipulo mo?"),
+      t("What simple method could you teach someone this week?", "Anong simpleng paraan ang maaari mong ituro sa isang tao ngayong linggo?"),
+    ],
+    actions: [
+      t("Choose one person and invite them to read a short passage of Mark with you.", "Pumili ng isang tao at anyayahan siyang magbasa ng maikling talata ng Marcos kasama mo."),
+      t("Teach them the three questions: about God, about people, what to obey.", "Ituro sa kanila ang tatlong tanong: tungkol sa Diyos, tungkol sa tao, at ano ang susundin."),
+      t("Next week, let them lead and you listen.", "Sa susunod na linggo, hayaan silang manguna at ikaw ang making."),
+    ],
+    prayer: t(
+      "Father, thank You for giving us Your Word. Forgive me when I have kept it closed or kept it to myself. Give me the heart of Philip: ready to run, to ask, to listen and to point to Jesus. Open the eyes of the people I disciple, and give them a hunger for Scripture that no one can satisfy but You. Help me raise up readers who will teach others. May Your Word dwell richly among us. In Jesus' name, Amen.",
+      "Ama, salamat po sa pagbibigay Mo ng Iyong Salita. Patawarin Mo ako kapag isinara ko ito o inilihim sa sarili ko. Bigyan Mo ako ng puso ni Felipe: handang tumakbo, magtanong, making at ituro si Hesus. Imulat Mo ang mga mata ng mga dinidisipulo ko, at bigyan Mo sila ng pagkagutom sa Kasulatan na Ikaw lang ang makabubusog. Tulungan Mo akong magpalaki ng mga mambabasang magtuturo rin sa iba. Manahan nawa nang sagana ang Iyong Salita sa aming gitna. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+
+  "when-a-disciple-drifts": {
+    revelation: t(
+      "God's heart goes after the one who walks away, and He asks us to carry that same heart.",
+      "Ang puso ng Diyos ay humahabol sa isang lumalayo, at hinihiling Niya sa ating dalhin ang gayunding puso."
+    ),
+    mainTruth: t(
+      "The shepherd leaves the ninety-nine to find one lost sheep, and when he finds it he lifts it onto his shoulders and rejoices (Luke 15:3-7). \"If one of you should wander from the truth and someone should bring that person back, remember this: Whoever turns a sinner from the error of their way will save them from death\" (James 5:19-20). And Hebrews warns us to \"encourage one another daily... so that none of you may be hardened by sin's deceitfulness\" (Hebrews 3:13).",
+      "Iniiwan ng pastol ang siyamnapu't siyam upang hanapin ang isang nawawalang tupa, at kapag natagpuan niya ito, ipinapasan niya ito sa kanyang balikat at nagagalak (Lucas 15:3-7). \"Kung ang isa sa inyo ay maligaw sa katotohanan at may magbalik sa kanya, alalahanin ito: ang sinumang magbalik sa makasalanan mula sa maling daan ay magliligtas sa kanya mula sa kamatayan\" (Santiago 5:19-20). At pinaaalalahanan tayo ng Hebreo na \"magpalakasan kayo ng loob araw-araw... upang walang sinuman sa inyo ang tumigas dahil sa panlilinlang ng kasalanan\" (Hebreo 3:13)."
+    ),
+    insight: [
+      t(
+        "People rarely drift in one dramatic moment. It is usually small: a missed Sunday, an unanswered text, a hurt that was never spoken, a quiet sin left uncovered, a season of exhaustion. Many leave because no one noticed they were gone. The church that only celebrates the ninety-nine may never realize the one has stopped coming.",
+        "Bihirang lumayo ang tao sa isang dramatikong sandali. Karaniwan, maliit ito: nalaktawang Linggo, hindi nasagot na text, sakit na hindi naisalita, tahimik na kasalanang hindi naitama, panahon ng pagod. Marami ang umaalis dahil walang nakapansin na wala na sila. Ang iglesiang nagdiriwang lang para sa siyamnapu't siyam ay maaaring hindi mapansing tumigil nang pumunta ang isa."
+      ),
+      t(
+        "Notice how the shepherd acts: he searches until he finds, he does not scold the sheep, and he carries it home. Our instinct is often to lecture or to give up. Jesus models something else: go personally, show love first, and carry the person back. Daily encouragement is the best prevention, because hearts harden slowly when they are left alone.",
+        "Pansinin ang kilos ng pastol: naghahanap siya hanggang makita, hindi niya pinagagalitan ang tupa, at pinapasan niya ito pauwi. Madalas, instinct natin ang manermon o sumuko. Iba ang halimbawa ni Hesus: pumunta nang personal, ipakita muna ang pag-ibig, at pasanin pabalik ang tao. Ang araw-araw na pagpapalakas ng loob ang pinakamahusay na pag-iwas, dahil dahan-dahang tumitigas ang puso kapag iniwang mag-isa."
+      ),
+    ],
+    life: [
+      t(
+        "Ate Joy was a faithful AG member in Singapore until her contract was cut and her mother got sick back home. She stopped replying in the group chat, ashamed that she was no longer \"strong.\" Two weeks later, Ate Marites showed up at her door with pancit and said only, \"We miss you. Eat first, we can talk later.\" Joy cried. She was back in fellowship that Sunday, not because she was lectured, but because she was found.",
+        "Si Ate Joy ay tapat na kasapi ng AG sa Singapore hanggang maputol ang kontrata niya at magkasakit ang nanay niya sa Pilipinas. Tumigil siya sa pagsagot sa group chat, nahihiya dahil hindi na siya \"malakas.\" Pagkaraan ng dalawang linggo, dumating si Ate Marites sa pintuan niya na may dalang pancit at ang sabi lang, \"Namimiss ka namin. Kumain ka muna, mamaya na tayo mag-usap.\" Umiyak si Joy. Nakabalik siya sa fellowship nung Linggong iyon, hindi dahil sinermunan siya, kundi dahil natagpuan siya."
+      ),
+      t(
+        "Who in your life has gone quiet? Maybe it is a cousin who stopped attending, a coworker who stopped answering your invitations, or a disciple whose messages have become short. Your gentle message today might be the shepherd's voice they need to hear.",
+        "Sino sa buhay mo ang tumahimik? Baka isang pinsang tumigil sa pagdalo, katrabahong hindi na sumasagot sa mga paanyaya mo, o disipulong naging maikli na ang mga mensahe. Ang banayad mong mensahe ngayon ay maaaring ang tinig ng pastol na kailangan nilang marinig."
+      ),
+    ],
+    twist: t(
+      "We often think a drifting person needs correction first. Jesus shows they need to be found first. The lost sheep did not repent before the shepherd came; the shepherd came, and the sheep was carried. Love goes before truth is welcomed, and truth spoken within love is what restores (Galatians 6:1). You might be tempted to wait for them to return; the Kingdom says go and look.",
+      "Madalas nating isiping kailangan munang itama ang lumalayo. Ipinapakita ni Hesus na kailangan muna silang matagpuan. Hindi nagsisi ang nawawalang tupa bago dumating ang pastol; dumating ang pastol, at pinasan ang tupa. Nauuna ang pag-ibig bago tanggapin ang katotohanan, at ang katotohanang sinasabi sa loob ng pag-ibig ang nagpapanumbalik (Galacia 6:1). Baka matukso kang hintayin silang bumalik; sinasabi ng Kaharian, pumunta ka at hanapin sila."
+    ),
+    confirm: [
+      t("Ezekiel 34:11-16: God Himself will search for His sheep and bring back the strays.", "Ezekiel 34:11-16: Siya mismo ang maghahanap sa Kanyang mga tupa at ibabalik ang mga naligaw."),
+      t("Luke 15:20: the father saw his son while he was still far off and ran to him.", "Lucas 15:20: nakita ng ama ang anak niya habang malayo pa at tumakbo siya rito."),
+      t("Galatians 6:1: restore gently, watching yourselves so you are not tempted.", "Galacia 6:1: ibalik nang malumanay, na nag-iingat din kayo sa sarili upang hindi matukso."),
+      t("John 21:15-19: Jesus restored Peter after his failure and gave him a new calling.", "Juan 21:15-19: ibinalik ni Hesus si Pedro matapos ang pagkabigo nito at binigyan ng bagong tungkulin."),
+    ],
+    heart: [
+      t(
+        "Let your heart break for the one who is missing. Replace judgment with longing, and gossip with prayer.",
+        "Hayaang masaktan ang puso mo para sa isang nawawala. Palitan ang paghatol ng pananabik, at ang tsismis ng panalangin."
+      ),
+      t(
+        "Be a daily encourager so that no one around you hardens in silence. And stay humble: you also can wander, and you also will need someone to come find you.",
+        "Maging araw-araw na tagapagpalakas ng loob upang walang tumigas sa katahimikan sa paligid mo. At manatiling mapagpakumbaba: maaari ka ring maligaw, at kakailanganin mo rin ang taong hahanap sa iyo."
+      ),
+    ],
+    questions: [
+      t("Have you ever drifted? Who or what brought you back?", "Lumayo ka na ba? Sino o ano ang nagbalik sa iyo?"),
+      t("Who in your circle has been absent, and what have you done about it?", "Sino sa grupo mo ang matagal nang wala, at ano ang ginawa mo tungkol dito?"),
+      t("What stops you from reaching out: fear, pride, busyness?", "Ano ang pumipigil sa iyong makipag-ugnayan: takot, pagmamataas, pagiging abala?"),
+      t("How can your AG notice absences sooner and respond with care?", "Paano mapapansin ng AG ninyo nang mas maaga ang pagkawala at tutugon nang may malasakit?"),
+    ],
+    actions: [
+      t("Write down the names of two people who have drifted and pray for them daily this week.", "Isulat ang pangalan ng dalawang taong lumayo at ipanalangin sila araw-araw ngayong linggo."),
+      t("Send one warm message without any agenda: \"I miss you. How are you really?\"", "Magpadala ng isang mainit na mensahe nang walang ibang agenda: \"Namimiss kita. Kumusta ka talaga?\""),
+      t("Offer a simple act of care, like a meal, a call or a visit.", "Mag-alok ng simpleng pagmamalasakit, tulad ng pagkain, tawag o pagdalaw."),
+    ],
+    prayer: t(
+      "Good Shepherd, thank You for coming after me when I wandered. Give me Your heart for those who have drifted away. Forgive me for the times I judged instead of loved, or forgot instead of prayed. Show me whom to reach out to, and give me gentle words and patient hands. Bring every lost sheep home, and help us be a family that notices and welcomes. Keep me close to You, too. In Jesus' name, Amen.",
+      "Mabuting Pastol, salamat po sa paghabol Mo sa akin nang maligaw ako. Ibigay Mo sa akin ang Iyong puso para sa mga lumayo. Patawarin Mo ako sa mga panahong humatol ako sa halip na magmahal, o nakalimot sa halip na manalangin. Ipakita Mo kung sino ang aabutan ko, at bigyan Mo ako ng malumanay na salita at matiyagang kamay. Iuwi Mo ang bawat nawawalang tupa, at tulungan Mo kaming maging pamilyang nakapapansin at tumatanggap. Panatilihin Mo rin akong malapit sa Iyo. Sa pangalan ni Hesus, Amen."
+    ),
+  },
 };

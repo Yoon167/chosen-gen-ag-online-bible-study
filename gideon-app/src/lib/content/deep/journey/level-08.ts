@@ -1237,4 +1237,70 @@ export const DEEP: DeepSet = {
       "Ama, salamat po sa regalo ng pag-aasawa at sa pagpapakita ng pag-ibig ni Cristo sa pamamagitan nito. Palakasin Mo ang bawat pag-aasawa sa aming iglesia, lalo na ang mga pinaghiwalay ng layo. Pagalingin Mo ang sira at ingatan ang mga nasa panganib. Turuan Mo ang mga asawang lalaki na magmahal nang may sakripisyo at ang mga asawang babae na maparangalan at igalang. Tulungan Mo akong parangalan ang pag-aasawa sa sarili kong buhay at suportahan ang iba. Nawa'y maging patotoo ng Iyong katapatan ang aming mga pag-aasawa. Sa pangalan ni Hesus, Amen."
     ),
   },
+
+  "tentmakers": {
+    revelation: t(
+      "Your workplace is not the opposite of your calling; it is the mission field God has already placed you in.",
+      "Ang iyong pinagtatrabahuhan ay hindi kabaligtaran ng iyong tungkulin; ito ang mission field na inilagay na ng Diyos sa iyo."
+    ),
+    mainTruth: t(
+      "In Corinth, Paul found Aquila and Priscilla, \"and because he was a tentmaker as they were, he stayed and worked with them. Every Sabbath he reasoned in the synagogue, trying to persuade Jews and Greeks\" (Acts 18:1-4). He told the Thessalonians, \"We worked night and day, labouring and toiling so that we would not be a burden to anyone while we preached the gospel of God to you\" (1 Thessalonians 2:9), and he set an example of diligence (2 Thessalonians 3:7-9). Paul's daily work and his gospel witness were one life.",
+      "Sa Corinto, natagpuan ni Pablo sina Aquila at Priscila, \"at dahil siya ay gumagawa rin ng tolda tulad nila, nanatili siya at nagtrabaho kasama nila. Tuwing Sabbath, nakikipagkatuwiranan siya sa sinagoga, nagsisikap na hikayatin ang mga Judio at Griyego\" (Gawa 18:1-4). Sinabi niya sa mga taga-Tesalonica, \"Nagtrabaho kami araw at gabi, nagpapagal at nagsisikap upang hindi maging pabigat kaninuman habang ipinangangaral namin sa inyo ang ebanghelyo ng Diyos\" (1 Tesalonica 2:9), at nagbigay siya ng halimbawa ng sipag (2 Tesalonica 3:7-9). Isang buhay ang pang-araw-araw na trabaho ni Pablo at ang kanyang pagpapatotoo sa ebanghelyo."
+    ),
+    insight: [
+      t(
+        "Many believers divide life into \"sacred\" and \"secular\": church on Sunday is holy, work from Monday to Saturday is just survival. Paul refused that division. His workbench was a pulpit in disguise. It gave him credibility, relationships, a place to listen, and freedom from being seen as someone who preached for money. Tentmaking is not Plan B for missions; it has always been one of God's best methods.",
+        "Maraming mananampalataya ang naghahati ng buhay sa \"sagrado\" at \"sekular\": banal ang simbahan tuwing Linggo, pero pagtawid lang ng buhay ang trabaho mula Lunes hanggang Sabado. Tinanggihan ni Pablo ang paghahating iyon. Ang kanyang mesa ng trabaho ay pulpitong nakabalatkayo. Binigyan siya nito ng kredibilidad, mga relasyon, lugar para making, at kalayaan sa paratang na nangangaral siya para sa pera. Ang tentmaking ay hindi Plan B ng misyon; isa ito sa pinakamahusay na pamamaraan ng Diyos mula pa noon."
+      ),
+      t(
+        "Notice also that Paul worked with believers, Aquila and Priscilla. Tentmaking is not a lone-ranger adventure. They gave him partnership, hospitality and a home base, and later they themselves taught Apollos. Whoever works in a hard place needs a team, a fellowship and accountability, so that the work serves the witness and does not swallow it.",
+        "Pansinin din na nagtrabaho si Pablo kasama ang mga mananampalataya, sina Aquila at Priscila. Ang tentmaking ay hindi pakikipagsapalarang mag-isa. Binigyan nila siya ng pakikipagtulungan, mabuting pagtanggap at tahanan, at kalaunan sila mismo ang nagturo kay Apolos. Ang sinumang nagtatrabaho sa mahirap na lugar ay kailangan ng pangkat, fellowship at pananagutan, upang paglingkuran ng trabaho ang pagpapatotoo at hindi lamunin ito."
+      ),
+    ],
+    life: [
+      t(
+        "Think of Ate Lorna, a caregiver in Taiwan who works twelve-hour days. She cannot hold public meetings, but every night she prays for the elderly woman she cares for, and every day she serves with a gentleness that the family cannot explain. When the grandmother asks one day, \"Why are you different?\" the door opens. Her work is her witness.",
+        "Isipin si Ate Lorna, isang caregiver sa Taiwan na labindalawang oras kung magtrabaho. Hindi siya makapagdaraos ng pampublikong pagtitipon, pero gabi-gabi ay ipinagdarasal niya ang matandang inaalagaan niya, at araw-araw ay naglilingkod siya nang may kabaitang hindi maipaliwanag ng pamilya. Isang araw, nagtanong ang lola, \"Bakit ka kakaiba?\" Doon bumukas ang pinto. Ang trabaho niya ang kanyang patotoo."
+      ),
+      t(
+        "Or take a Filipino engineer in the Gulf who is known on site for finishing on time, never cutting corners and never joining the office gossip. Colleagues who would never enter a church watch him instead. In many countries where open evangelism is restricted, excellent and faithful work, along with a small fellowship, is how the gospel travels. Millions of Filipinos abroad are already in that position.",
+        "O isang inhinyerong Pilipino sa Gulf na kilala sa site na natatapos sa oras, hindi nandaraya at hindi sumasali sa tsismisan sa opisina. Ang mga katrabahong hindi kailanman papasok sa simbahan ay siya ang pinapanood. Sa maraming bansang limitado ang hayagang pangangaral, ang mahusay at tapat na trabaho, kasama ang maliit na fellowship, ang daan ng ebanghelyo. Milyon-milyong Pilipino sa ibang bansa ang nasa posisyong iyon na."
+      ),
+    ],
+    twist: t(
+      "We tend to think that serving God means leaving the ordinary for something bigger. The Kingdom says the ordinary is the platform. Jesus spent about thirty years as a carpenter before three years of public ministry. Colossians 3:23 says whatever you do, work at it with all your heart as working for the Lord. Your clock-in time, your uniform and your lunch break can all be worship.",
+      "Madalas nating isipin na ang paglilingkod sa Diyos ay pag-alis sa karaniwan para sa mas malaki. Sinasabi ng Kaharian na ang karaniwan ang plataporma. Mga tatlumpung taong naging karpintero si Hesus bago ang tatlong taon ng hayagang ministeryo. Sabi ng Colosas 3:23, anuman ang gawin ninyo, gawin nang buong puso na parang para sa Panginoon. Ang oras ng pasok mo, uniporme mo at lunch break mo ay maaaring lahat ay pagsamba."
+    ),
+    confirm: [
+      t("Colossians 3:23-24: work heartily as for the Lord, not for people.", "Colosas 3:23-24: gawin nang buong puso na para sa Panginoon, hindi para sa tao."),
+      t("1 Peter 2:12: live such good lives among unbelievers that they glorify God.", "1 Pedro 2:12: mamuhay nang mabuti sa piling ng mga hindi sumasampalataya upang luwalhatiin nila ang Diyos."),
+      t("Genesis 39:2-5: Joseph prospered in a foreign land and Potiphar saw that the Lord was with him.", "Genesis 39:2-5: umunlad si Jose sa dayuhang lupain at nakita ni Potifar na kasama niya ang Panginoon."),
+      t("Daniel 6:3-5: Daniel's excellence and integrity gave him influence in a foreign court.", "Daniel 6:3-5: ang kahusayan at katapatan ni Daniel ay nagbigay sa kanya ng impluwensya sa dayuhang palasyo."),
+    ],
+    heart: [
+      t(
+        "Let go of the idea that your job is a delay in your real calling. Offer it to God as worship, and work with excellence, honesty and joy.",
+        "Bitiwan ang ideyang ang trabaho mo ay pagkaantala sa tunay mong tungkulin. Ihandog ito sa Diyos bilang pagsamba, at magtrabaho nang may kahusayan, katapatan at kagalakan."
+      ),
+      t(
+        "Stay wise and respectful in places with restrictions, and stay connected to fellow believers so you do not witness or suffer alone.",
+        "Maging marunong at magalang sa mga lugar na may mga limitasyon, at manatiling konektado sa kapwa mananampalataya upang hindi ka nag-iisang nagpapatotoo o naghihirap."
+      ),
+    ],
+    questions: [
+      t("Do you see your work as ministry or only as a paycheck?", "Tinitingnan mo ba ang trabaho mo bilang ministeryo o suweldo lang?"),
+      t("What does your work ethic say about Jesus to people who never attend church?", "Ano ang sinasabi ng work ethic mo tungkol kay Hesus sa mga taong hindi pumupunta sa simbahan?"),
+      t("Who are your \"Aquilas and Priscillas\", your partners in faith where you are?", "Sino ang iyong \"Aquila at Priscila\", mga kasama mo sa pananampalataya kung nasaan ka?"),
+      t("What wise, respectful way could you share your faith in your workplace?", "Anong marunong at magalang na paraan ang maaari mong gamitin para ibahagi ang pananampalataya mo sa trabaho?"),
+    ],
+    actions: [
+      t("Offer your work to God every morning before you start your shift.", "Ihandog ang trabaho mo sa Diyos tuwing umaga bago ang iyong shift."),
+      t("Pray by name for two coworkers and look for one way to serve them this week.", "Ipanalangin sa pangalan ang dalawang katrabaho at humanap ng isang paraan para paglingkuran sila ngayong linggo."),
+      t("Write to an OFW friend or relative to encourage their faith and witness.", "Sumulat sa isang kaibigan o kamag-anak na OFW para palakasin ang kanilang pananampalataya at pagpapatotoo."),
+    ],
+    prayer: t(
+      "Lord, thank You for placing me where I work, and for the dignity of honest labor. Forgive me for treating my job as separate from my calling. Make me excellent, faithful and kind, so that people see You in my work. Give me wisdom for hard places and open doors for natural conversations about Jesus. Surround me and my fellow workers abroad with fellowship and protection. May my whole day be worship. In Jesus' name, Amen.",
+      "Panginoon, salamat po sa paglalagay Mo sa akin kung saan ako nagtatrabaho, at sa dangal ng tapat na paggawa. Patawarin Mo ako sa pagturing sa trabaho ko na hiwalay sa aking tungkulin. Gawin Mo akong mahusay, tapat at mabait, upang makita ng mga tao Ikaw sa aking gawa. Bigyan Mo ako ng karunungan sa mahihirap na lugar at mga bukas na pintong natural na makapag-usap tungkol kay Hesus. Palibutan Mo ako at ang mga kapwa ko manggagawa sa ibang bansa ng fellowship at proteksyon. Maging pagsamba nawa ang buong araw ko. Sa pangalan ni Hesus, Amen."
+    ),
+  },
 };

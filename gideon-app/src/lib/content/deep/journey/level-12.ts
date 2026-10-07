@@ -1111,4 +1111,134 @@ export const DEEP: DeepSet = {
       "Ama, Ikaw ang naghihintay at tumatakbo. Salamat po at tumakbo Ka papunta sa akin noong malayo ako. Itinataas ko sa Iyo ang aking mga alibugha, ang mga mahal ko na lumayo sa Iyo at sa akin. Ingatan Mo sila, akitin, at iuwi. Panatilihin Mong malambot ang aking puso at malaya sa kapaitan, malaya sa galit ng nakatatandang kapatid. Bigyan Mo ako ng biyayang maghintay nang may pag-asa, magsalita nang may pag-ibig, at magdiwang nang may galak kapag nagbalik sila. Gawin Mong lugar na laging bukas ang pinto ang aking tahanan. Sa pangalan ni Hesus, Amen."
     ),
   },
+  "ready-to-go-home": {
+    revelation: t(
+      "The believer does not walk toward an ending; he walks toward home, and that changes how he lives, how he grieves and how he dies.",
+      "Hindi papunta sa katapusan ang mananampalataya; papunta siya sa tahanan, at binabago nito kung paano siya mabuhay, magdalamhati at mamatay."
+    ),
+    mainTruth: t(
+      "Paul writes, \"We know that if the earthly tent we live in is destroyed, we have a building from God, an eternal house in heaven, not built by human hands\" (2 Corinthians 5:1). He would rather \"be away from the body and at home with the Lord\" (2 Corinthians 5:8), yet he lives to please Him because we will all appear before Christ's judgment seat (2 Corinthians 5:9-10). In Philippians 1:21-24 he says, \"For to me, to live is Christ and to die is gain,\" torn between longing to depart and staying for the church's sake. And Moses prays, \"Teach us to number our days, that we may gain a heart of wisdom\" (Psalm 90:12). Death is real, but for those in Christ it is not the end; it is the doorway to our Father's house.",
+      "Sumusulat si Pablo, \"Alam nating kung masira ang lupang tolda na tinitirhan natin, mayroon tayong gusali mula sa Diyos, isang walang hanggang bahay sa langit na hindi gawa ng kamay ng tao\" (2 Corinto 5:1). Mas gusto pa niyang \"mawalay sa katawan at makapiling ang Panginoon\" (2 Corinto 5:8), ngunit nabubuhay siya para bigyang-lugod Siya dahil lahat tayo ay haharap sa hukumang-luklukan ni Kristo (2 Corinto 5:9-10). Sa Filipos 1:21-24, sinasabi niya, \"Sapagkat para sa akin, ang mabuhay ay si Kristo at ang mamatay ay pakinabang,\" nahahati sa pagnanais na umalis at manatili alang-alang sa iglesia. At nananalangin si Moises, \"Turuan Mo kaming bilangin ang aming mga araw upang magkaroon kami ng pusong marunong\" (Awit 90:12). Totoo ang kamatayan, pero sa mga na kay Kristo, hindi ito katapusan; ito ang pintuan patungo sa bahay ng ating Ama."
+    ),
+    insight: [
+      t(
+        "Notice that Paul is not casual about death, and he is not afraid of it either. He calls the body a tent: a temporary shelter that gets tired, leaks and wears out. Anyone who has watched a parent grow frail knows the groaning Paul describes (2 Corinthians 5:2-4). But he does not want to escape the body; he wants to be \"clothed\" with something better. The Christian hope is not a ghost story; it is the promise of the Lord Jesus, who has gone to prepare a place and will come again to take us to Himself (John 14:2-3).",
+        "Pansinin na hindi pabaya si Pablo sa kamatayan, at hindi rin siya takot dito. Tinatawag niyang tolda ang katawan: pansamantalang kanlungang napapagod, tumatagas at nasisira. Alam ng sinumang nakakita sa magulang na humihina ang daing na inilalarawan ni Pablo (2 Corinto 5:2-4). Pero hindi niya gustong takasan ang katawan; gusto niyang \"mabihisan\" ng mas mahusay. Ang pag-asa ng Kristiyano ay hindi kuwento ng multo; ito ang pangako ng Panginoong Hesus, na pumunta para maghanda ng lugar at babalik para isama tayo sa Kanya (Juan 14:2-3)."
+      ),
+      t(
+        "Second, readiness to die makes us wise about how we live. \"Teach us to number our days\" is not morbid; it is a prayer for clarity. When we remember that life is short, we stop wasting it on grudges and delay. We say the \"I love you\" and \"I'm sorry\" now. We bless our children, forgive our parents, settle our debts, write down where the documents are, and tell people what we want. A pastor who has prepared for his own departure leaves his family with peace instead of confusion, and his church with a final sermon preached by his life.",
+        "Pangalawa, ang kahandaang mamatay ay nagpapatalino sa atin kung paano mabuhay. Ang \"Turuan Mo kaming bilangin ang aming mga araw\" ay hindi nakapangingilabot; ito ay panalangin ng linaw. Kapag naaalala nating maikli ang buhay, tumitigil tayong sayangin ito sa sama ng loob at pagpapaliban. Sinasabi natin ngayon ang \"mahal kita\" at \"patawad.\" Pinagpapala natin ang mga anak, pinapatawad ang mga magulang, binabayaran ang mga utang, isinusulat kung nasaan ang mga dokumento, at sinasabi sa mga tao ang gusto natin. Ang pastor na naghanda sa sarili niyang pag-alis ay nag-iiwan sa pamilya ng kapayapaan sa halip na kalituhan, at sa iglesia ng huling sermon na ipinangaral ng buhay niya."
+      ),
+    ],
+    life: [
+      t(
+        "Think of Lola Pacing, who spent forty years as a domestic worker abroad before coming back to her province. When she learned she was ill, she called her children and grandchildren, one by one. She asked for forgiveness for the years she was away. She told each one a verse she was praying for them. She asked them to sing \"Amazing Grace\" with her on the video call and then asked that her funeral be a service of thanksgiving. When she died, no one was fighting over land or money. Her children sat together and said, \"She prepared us to let her go.\" Her death was a sermon.",
+        "Isipin si Lola Pacing na apatnapung taong naging kasambahay sa ibang bansa bago bumalik sa kanyang probinsya. Nang malaman niyang may sakit siya, tinawag niya isa-isa ang mga anak at apo niya. Humingi siya ng tawad sa mga taong wala siya. Sinabi niya sa bawat isa ang talatang ipinapanalangin niya para sa kanila. Hiniling niyang kantahin nila ang \"Amazing Grace\" kasama niya sa video call at hiniling na maging serbisyo ng pasasalamat ang kanyang libing. Nang pumanaw siya, walang nag-aaway sa lupa o pera. Magkakasamang nakaupo ang mga anak niya at nagsabing, \"Inihanda niya kami para pakawalan siya.\" Sermon ang kamatayan niya."
+      ),
+      t(
+        "Many of us work abroad with the quiet fear, \"What if something happens to me here, far from home?\" Paul's words answer that fear at the deepest level: wherever you are, if you are in Christ, you are going home. That does not remove the practical steps: update your insurance, tell your family where your documents are, write a simple will, and choose someone to speak for you. Faith and good planning are friends. Preparing is not unbelief; it is love for the people you will leave behind.",
+        "Marami sa atin ang nagtatrabaho sa ibang bansa na may tahimik na takot, \"Paano kung may mangyari sa akin dito, malayo sa tahanan?\" Sinasagot ng mga salita ni Pablo ang takot na iyon sa pinakamalalim na antas: saan ka man naroroon, kung na kay Kristo ka, pauwi ka na. Hindi nito inaalis ang mga praktikal na hakbang: i-update ang insurance, sabihin sa pamilya kung nasaan ang mga dokumento, sumulat ng simpleng habilin at pumili ng taong magsasalita para sa iyo. Magkaibigan ang pananampalataya at maayos na pagpaplano. Hindi kawalan ng pananampalataya ang paghahanda; ito ay pag-ibig sa mga maiiwan mo."
+      ),
+    ],
+    twist: t(
+      "We talk about death as a loss, and for those who grieve it is. But Paul calls it \"gain.\" The Kingdom twist is that the greatest loss is not dying, but living without Christ; and the greatest gain is not more years, but more of Him. The one who is ready to go home is often the most alive on earth, because he is free from the fear of losing everything. He can love fully, give freely and serve boldly, since nothing that matters can be taken from him.",
+      "Sinasabi nating pagkawala ang kamatayan, at para sa mga nagdadalamhati, ganoon nga. Pero tinatawag ito ni Pablo na \"pakinabang.\" Ang twist ng Kaharian ay ang pinakamalaking kawalan ay hindi ang mamatay, kundi ang mabuhay nang walang Kristo; at ang pinakamalaking pakinabang ay hindi dagdag na taon, kundi dagdag na Siya. Ang handa nang umuwi ay madalas ang pinakabuhay sa lupa, dahil malaya na siya sa takot na mawala ang lahat. Maaari siyang magmahal nang buo, magbigay nang malaya at maglingkod nang matapang, dahil walang mahalagang bagay na maaaring kunin sa kanya."
+    ),
+    confirm: [
+      t("John 11:25-26: Jesus is the resurrection and the life; whoever believes in Him will live even though they die.", "Juan 11:25-26: si Hesus ang pagkabuhay na mag-uli at ang buhay; ang sumasampalataya sa Kanya ay mabubuhay kahit mamatay."),
+      t("1 Thessalonians 4:13-14: we do not grieve like those who have no hope.", "1 Tesalonica 4:13-14: hindi tayo nagdadalamhati tulad ng mga walang pag-asa."),
+      t("Luke 23:42-43: Jesus tells the thief, \"Today you will be with me in paradise.\"", "Lucas 23:42-43: sinabi ni Hesus sa magnanakaw, \"Ngayon din ay makakasama Kita sa paraiso.\""),
+      t("Hebrews 11:13-16: the faithful were strangers on earth, longing for a better country, a heavenly one.", "Hebreo 11:13-16: mga dayuhan sa lupa ang mga tapat, nananabik sa mas mabuting bayan, isang makalangit."),
+    ],
+    heart: [
+      t(
+        "Let go of the fear of death by clinging to the Lord of life. Do not pretend you feel no sorrow; Jesus Himself wept at a grave. But bring your questions and fears to Him until they are replaced by trust. Ask Him to make heaven more real to you than the fear.",
+        "Bitawan ang takot sa kamatayan sa pagkapit sa Panginoon ng buhay. Huwag magkunwaring wala kang lungkot; si Hesus mismo ay umiyak sa libingan. Pero dalhin ang mga tanong at takot mo sa Kanya hanggang mapalitan ng tiwala. Hilingin sa Kanyang gawing mas totoo sa iyo ang langit kaysa sa takot."
+      ),
+      t(
+        "Live today as someone who is going home. Reconcile what can be reconciled, say what needs to be said, give generously, and put your affairs in order so that your death can be a gift, not a burden, to those you love.",
+        "Mabuhay ngayon bilang taong pauwi na. Ayusin ang maaaring ayusin, sabihin ang dapat sabihin, magbigay nang bukas-palad, at ayusin ang iyong mga gawain upang ang kamatayan mo ay maging regalo, hindi pabigat, sa mga mahal mo."
+      ),
+    ],
+    questions: [
+      t("What do I feel when I think about my own death: fear, peace, avoidance?", "Ano ang nararamdaman ko kapag iniisip ko ang sarili kong kamatayan: takot, kapayapaan, pag-iwas?"),
+      t("Whom do I need to forgive or ask forgiveness from before it is too late?", "Sino ang kailangan kong patawarin o hingan ng tawad bago mahuli?"),
+      t("What would I like my family and church to remember about how I lived and died?", "Ano ang nais kong maalala ng pamilya at iglesia ko tungkol sa kung paano ako nabuhay at namatay?"),
+      t("Which practical affairs, such as documents, insurance or wishes, still need my attention?", "Aling praktikal na bagay, tulad ng dokumento, insurance o habilin, ang kailangan pa ng pansin ko?"),
+    ],
+    actions: [
+      t("Pray Psalm 90:12 slowly today and write down what God shows you about how to use your days.", "Ipanalangin nang dahan-dahan ang Awit 90:12 ngayon at isulat kung ano ang ipinapakita ng Diyos tungkol sa paggamit ng iyong mga araw."),
+      t("Write a letter of blessing to your family, to be read one day, with a verse for each person.", "Sumulat ng liham ng pagpapala sa pamilya mo na babasahin balang araw, may talata para sa bawat isa."),
+      t("Take one practical step this week: update your documents, share where they are, or write a simple will.", "Gumawa ng isang praktikal na hakbang ngayong linggo: i-update ang mga dokumento, sabihin kung nasaan ang mga ito, o sumulat ng simpleng habilin."),
+    ],
+    prayer: t(
+      "Father, thank You that my life is hidden with Christ and my home is with You. Teach me to number my days and to love people while I have them. Heal the fear in me, and let heaven become real to my heart. Show me whom to forgive, what to say and how to prepare, so that when my time comes I can leave peace behind. Help me live today as someone who is going home. In Jesus' name, Amen.",
+      "Ama, salamat na ang buhay ko ay nakatago kasama ni Kristo at ang tahanan ko ay sa Iyo. Turuan Mo akong bilangin ang aking mga araw at mahalin ang mga tao habang kasama ko pa sila. Pagalingin Mo ang takot sa akin, at gawing totoo ang langit sa puso ko. Ipakita Mo kung sino ang papatawarin, ano ang sasabihin at paano maghahanda, upang pagdating ng oras ko ay makapag-iwan ako ng kapayapaan. Tulungan Mo akong mabuhay ngayon bilang taong pauwi na. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "well-done-good-and-faithful": {
+    revelation: t(
+      "At the end of everything, Jesus will not ask how famous you were; He will ask whether you were faithful with what He gave you.",
+      "Sa katapusan ng lahat, hindi itatanong ni Hesus kung gaano ka katanyag; itatanong Niya kung naging tapat ka sa ibinigay Niya sa iyo."
+    ),
+    mainTruth: t(
+      "In the parable of the talents, the master returns and says to the servant who doubled what he was given, \"Well done, good and faithful servant! You have been faithful with a few things; I will put you in charge of many things. Come and share your master's happiness!\" (Matthew 25:21, 23). The same words are given to the one with two talents as to the one with five. Paul encourages us, \"Stand firm. Let nothing move you. Always give yourselves fully to the work of the Lord, because you know that your labor in the Lord is not in vain\" (1 Corinthians 15:58). And Jesus says, \"Look, I am coming soon! My reward is with me, and I will give to each person according to what they have done\" (Revelation 22:12). The goal of the journey is not fame, but faithfulness; and the prize is Jesus Himself.",
+      "Sa talinghaga ng mga talento, bumabalik ang panginoon at sinasabi sa aliping nagdoble ng ibinigay sa kanya, \"Magaling, mabuti at tapat na alipin! Naging tapat ka sa kaunting bagay; ilalagay kita sa marami. Halika at makibahagi sa kagalakan ng iyong panginoon!\" (Mateo 25:21, 23). Pareho ang mga salitang ibinigay sa may dalawang talento at sa may lima. Hinihikayat tayo ni Pablo, \"Manindigan kayo. Huwag kayong patinag. Laging ibigay ang sarili nang lubusan sa gawain ng Panginoon, sapagkat alam ninyong hindi walang kabuluhan ang inyong pagpapagal sa Panginoon\" (1 Corinto 15:58). At sinasabi ni Hesus, \"Narito, malapit na Akong dumating! Kasama Ko ang Aking gantimpala, at ibibigay Ko sa bawat isa ayon sa kanyang ginawa\" (Pahayag 22:12). Ang layunin ng paglalakbay ay hindi katanyagan, kundi katapatan; at ang premyo ay si Hesus Mismo."
+    ),
+    insight: [
+      t(
+        "Look closely at the two servants in Matthew 25. One was given five talents and the other two, \"each according to his ability.\" Their results were different: five more and two more. Yet the master's words are exactly the same. Heaven's measure is not the size of the result but the faithfulness of the heart. This frees us from comparison. You do not need to be the loudest, the most visible or the most gifted. You need to be faithful with what is in your hands: your home, your workplace, your small group, your prayers, your time.",
+        "Tingnan nang mabuti ang dalawang alipin sa Mateo 25. Isa ang binigyan ng limang talento at isa ng dalawa, \"ayon sa kanyang kakayahan.\" Magkaiba ang kinalabasan: lima pa at dalawa pa. Gayunman, eksaktong pareho ang mga salita ng panginoon. Ang sukatan ng langit ay hindi laki ng resulta kundi katapatan ng puso. Pinalalaya tayo nito mula sa paghahambing. Hindi mo kailangang maging pinakamaingay, pinakakilala o pinakamahusay. Kailangan mong maging tapat sa nasa kamay mo: ang tahanan mo, trabaho, maliit na grupo, panalangin at oras."
+      ),
+      t(
+        "The master says, \"Come and share your master's happiness.\" Notice that the reward is not only a promotion; it is joy, and the joy belongs to the Master. Faithfulness leads us into a deeper friendship with Jesus. Paul's \"your labor is not in vain\" tells us that nothing done in His name is wasted: the meal you cooked for a sick member, the prayer you whispered on a night shift, the lesson you taught to one discouraged person. Even what is forgotten by people is kept by God. We labor in a world that forgets; we serve a Lord who remembers.",
+        "Sinasabi ng panginoon, \"Halika at makibahagi sa kagalakan ng iyong panginoon.\" Pansinin na ang gantimpala ay hindi lang promosyon; ito ay kagalakan, at ang kagalakan ay pag-aari ng Panginoon. Ang katapatan ay nagdadala sa atin sa mas malalim na pakikipagkaibigan kay Hesus. Ang \"hindi walang kabuluhan ang pagpapagal\" ni Pablo ay nagsasabing walang nasayang sa anumang ginawa sa Kanyang pangalan: ang pagkaing niluto mo para sa maysakit na miyembro, ang panalanging ibinulong mo sa night shift, ang aral na itinuro mo sa isang nanghihinang tao. Kahit ang nakalimutan ng tao ay iniingatan ng Diyos. Nagpapagal tayo sa mundong nakalilimot; naglilingkod tayo sa Panginoong nakaaalala."
+      ),
+    ],
+    life: [
+      t(
+        "Picture Ate Mylene, a caregiver in Singapore who has never preached a sermon in her life. Every Sunday on her day off, she cooks pancit and invites four lonely kababayan to her room-sharing flat, reads a psalm with them and prays for each by name. She has never been on a stage. But two of those women came to Christ, and one now leads a small group of her own. Ate Mylene does not know it, but the Master has written down every pot of noodles. On that day He will say, \"Well done.\"",
+        "Isipin si Ate Mylene, isang caregiver sa Singapore na kailanman ay hindi pa nakapangaral. Tuwing Linggo, sa araw ng day-off niya, nagluluto siya ng pancit at inaanyayahan ang apat na malulungkot na kababayan sa kanyang shared na flat, nagbabasa ng awit kasama nila at ipinapanalangin ang bawat isa sa pangalan. Hindi pa siya nakatayo sa entablado. Pero dalawa sa mga babaeng iyon ay lumapit kay Kristo, at ang isa ay may sarili nang maliit na grupo. Hindi alam ni Ate Mylene, pero isinulat ng Panginoon ang bawat kaldero ng pansit. Sa araw na iyon sasabihin Niya, \"Magaling.\""
+      ),
+      t(
+        "As you finish this journey, you may feel tired, a bit unfinished, or aware of how much you still lack. That is normal. Faithfulness is not perfection; it is showing up again after a bad day, getting back up after failing, and giving Jesus whatever you have. This final lesson is not an ending but a commissioning. The same Lord who walked you through twelve levels is calling you to take what you have received and give it to someone else.",
+        "Sa pagtatapos ng paglalakbay na ito, maaaring pagod ka, medyo hindi pa tapos ang pakiramdam, o napapansin mo kung gaano pa ang kulang sa iyo. Normal iyan. Ang katapatan ay hindi kasakdalan; ito ay muling pagsipot pagkatapos ng masamang araw, pagbangon pagkatapos mabigo, at pagbibigay kay Hesus ng anumang mayroon ka. Ang huling aral na ito ay hindi katapusan kundi pagsusugo. Ang Panginoong gumabay sa iyo sa labindalawang level ay tumatawag sa iyong kunin ang natanggap mo at ibigay sa iba."
+      ),
+    ],
+    twist: t(
+      "We expect the reward for faithful service to be rest, and rest it is. But the master's promise is surprising: \"I will put you in charge of many things.\" The reward for faithfulness is more responsibility in a kingdom where service is joy. Heaven is not retirement; it is an eternity of joyful, fruitful work in the presence of the One we love. What we do with small things now is training for a larger life to come. So the \"ordinary\" faithful days are never small in God's eyes.",
+      "Inaasahan natin na ang gantimpala ng tapat na paglilingkod ay pahinga, at pahinga nga ito. Pero nakagugulat ang pangako ng panginoon: \"Ilalagay kita sa marami.\" Ang gantimpala ng katapatan ay mas maraming responsibilidad sa Kahariang ang paglilingkod ay galak. Hindi pagreretiro ang langit; ito ay walang hanggang masaya at mabungang gawain sa harapan ng Isang minamahal natin. Ang ginagawa natin sa maliliit na bagay ngayon ay pagsasanay para sa mas malaking buhay na darating. Kaya hindi kailanman maliit sa mata ng Diyos ang mga \"karaniwang\" tapat na araw."
+    ),
+    confirm: [
+      t("Luke 16:10: whoever can be trusted with very little can also be trusted with much.", "Lucas 16:10: ang mapagkakatiwalaan sa napakaliit ay mapagkakatiwalaan din sa marami."),
+      t("2 Timothy 4:7-8: Paul has fought the good fight, finished the race and kept the faith.", "2 Timoteo 4:7-8: nakipaglaban si Pablo ng mabuting laban, tinapos ang takbuhin at iningatan ang pananampalataya."),
+      t("Hebrews 6:10: God is not unjust; He will not forget your work and the love you have shown.", "Hebreo 6:10: hindi hindi-makatarungan ang Diyos; hindi Niya kalilimutan ang inyong gawa at pag-ibig na ipinakita ninyo."),
+      t("Galatians 6:9: let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up.", "Galacia 6:9: huwag tayong mapagod sa paggawa ng mabuti, sapagkat sa tamang panahon ay aani tayo kung hindi tayo susuko."),
+    ],
+    heart: [
+      t(
+        "Let go of comparison and the hunger to be seen. Receive the Master's smile as your goal. Be faithful in what is small, hidden and repeated, and trust Him to count what no one else notices.",
+        "Bitawan ang paghahambing at ang gutom na makita. Tanggapin ang ngiti ng Panginoon bilang layunin mo. Maging tapat sa maliit, nakatago at paulit-ulit, at magtiwala sa Kanyang bilangin ang hindi napapansin ng iba."
+      ),
+      t(
+        "Finish well. Keep standing firm when you are tired, keep giving yourself to the Lord's work and keep your eyes on the day He returns. Thank Him for the people who walked with you, and commit to walking with others.",
+        "Magtapos nang mabuti. Manatiling matatag kapag pagod ka, patuloy na ibigay ang sarili sa gawain ng Panginoon at ituon ang mga mata sa araw ng Kanyang pagbabalik. Pasalamatan Siya sa mga taong lumakad kasama mo, at mangakong lumakad kasama ang iba."
+      ),
+    ],
+    questions: [
+      t("Where have I seen God's faithfulness most clearly in this journey?", "Saan ko pinakamalinaw na nakita ang katapatan ng Diyos sa paglalakbay na ito?"),
+      t("What are the \"few things\" He has trusted me with right now?", "Ano ang \"kaunting bagay\" na ipinagkatiwala Niya sa akin ngayon?"),
+      t("Am I tempted to compare myself with others, and what does the master's equal \"well done\" say to me?", "Natutukso ba akong ihambing ang sarili ko sa iba, at ano ang sinasabi sa akin ng pantay na \"magaling\" ng panginoon?"),
+      t("Whom will I disciple next, and what is my first step?", "Sino ang susunod kong idi-disipulo, at ano ang una kong hakbang?"),
+    ],
+    actions: [
+      t("Write a short testimony of what God has done in you through these twelve levels, and share it with someone this week.", "Sumulat ng maikling patotoo kung ano ang ginawa ng Diyos sa iyo sa labindalawang level na ito, at ibahagi ito sa isang tao ngayong linggo."),
+      t("Share your journey with your AG or small group and ask them to pray for your next season.", "Ibahagi ang iyong paglalakbay sa iyong AG o maliit na grupo at hilingin na ipanalangin ang susunod mong panahon."),
+      t("Choose one person to disciple through Level 1 and invite them this week.", "Pumili ng isang tao na idi-disipulo sa Level 1 at anyayahan siya ngayong linggo."),
+    ],
+    prayer: t(
+      "Lord Jesus, thank You for walking with me every step of this journey. I offer my whole life again: my home, my work, my time and my ministry. Make me faithful in small things and steady when I am tired. Keep my eyes on the day You return. Let me hear the words every servant longs for, \"Well done.\" Until then, send me to someone who needs what You have given me. I give You everything again. In Your name, Amen.",
+      "Panginoong Hesus, salamat sa paglakad Mo kasama ko sa bawat hakbang ng paglalakbay na ito. Muli kong ialay ang buong buhay ko: ang tahanan, trabaho, oras at ministeryo ko. Gawin Mo akong tapat sa maliliit na bagay at matatag kapag pagod. Ituon Mo ang aking mga mata sa araw ng Iyong pagbabalik. Hayaan Mong marinig ko ang mga salitang inaasam ng bawat lingkod, \"Magaling.\" Hanggang sa araw na iyon, isugo Mo ako sa taong nangangailangan ng ibinigay Mo sa akin. Muli kong ibinibigay sa Iyo ang lahat. Sa Iyong pangalan, Amen."
+    ),
+  },
 };
