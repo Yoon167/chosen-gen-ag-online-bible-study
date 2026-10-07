@@ -1,3 +1,5 @@
-import type { DeepSet } from "../types";
+import { t, type DeepSet } from "../types";
 
-export const DEEP: DeepSet = {};
+/** Advanced Christian Walk: the Spirit-led teaching for each lesson. */
+export const DEEP: DeepSet = {
+};

@@ -793,4 +793,264 @@ export const DEEP: DeepSet = {
       "Panginoon, Ikaw ay siya ring kahapon, ngayon at magpakailanman, kahit nagbabago ang lahat sa paligid ko. Salamat sa pag-una Mo sa akin sa bawat bagong panahon. Patawarin Mo ako sa pagkapit sa nakaraan dahil sa takot. Gawin Mo akong matatag at matapang, hindi dahil alam ko ang daan, kundi dahil kasama Kita saanman ako pumunta. Tulungan Mo akong pangunahan ang iba nang may tiyaga at pagmamahal tungo sa bagong bagay na ginagawa Mo, para sa kaluwalhatian ni Hesus. Amen."
     ),
   },
+  "leading-volunteers": {
+    revelation: t(
+      "Volunteers are not free labor; they are people God has gifted and called, and leading them well means honoring their hearts before using their hands.",
+      "Ang mga boluntaryo ay hindi libreng manggagawa; sila ay mga taong may kaloob at tawag mula sa Diyos, at ang mahusay na pamumuno sa kanila ay paggalang sa kanilang puso bago gamitin ang kanilang kamay."
+    ),
+    mainTruth: t(
+      "In Nehemiah 3, the wall of Jerusalem rose because \"next to him\" and \"next to them\" ordinary people repaired the section in front of their own houses: priests, goldsmiths, perfume-makers, rulers, daughters. In Romans 16:1-7 Paul names Phoebe, Priscilla, Aquila, Andronicus and Junia, honoring them as co-workers and \"fellow workers in Christ.\" And he says of Timothy, \"I have no one else like him, who will show genuine concern for your welfare\" (Philippians 2:19-22). Volunteers flourish when they are seen, named, trusted and given meaningful work.",
+      "Sa Nehemias 3, tumaas ang pader ng Jerusalem dahil \"sunod sa kanya\" at \"sunod sa kanila\" ay inayos ng mga karaniwang tao ang bahaging nasa harap ng sarili nilang bahay: mga pari, panday ng ginto, gumagawa ng pabango, mga pinuno, mga anak na babae. Sa Roma 16:1-7, pinangalanan ni Pablo sina Febe, Priscila, Aquila, Andronico at Junia, at pinarangalan sila bilang mga katuwang at \"kamanggagawa kay Cristo.\" At sinabi niya tungkol kay Timoteo, \"Wala na akong ibang tulad niya, na tunay na nagmamalasakit sa inyong kapakanan\" (Filipos 2:19-22). Umuunlad ang mga boluntaryo kapag sila ay nakikita, pinangangalanan, pinagkakatiwalaan at binibigyan ng makabuluhang gawain."
+    ),
+    insight: [
+      t(
+        "Nehemiah 3 is one of the least-read chapters in the Bible, and one of the most important for leaders. It records names. Dozens of them. God thought the names of ordinary builders were worth preserving forever. Notice also that each family worked near its own home, which means they were invested. Good leaders match people to the work they care about. Dull rosters kill passion; real ownership ignites it.",
+        "Ang Nehemias 3 ay isa sa pinakakaunting binabasang kabanata ng Biblia, at isa sa pinakamahalaga para sa mga lider. Itinatala nito ang mga pangalan. Dose-dosena. Inisip ng Diyos na dapat ingatan magpakailanman ang pangalan ng mga karaniwang tagapagtayo. Pansinin din na bawat pamilya ay gumawa malapit sa sarili nilang bahay, ibig sabihin ay may pakialam sila. Ang mahusay na lider ay iniuugnay ang tao sa gawaing minamahal nila. Pinapatay ng nakakabagot na listahan ang sigla; pinaaalab ito ng tunay na pagmamay-ari."
+      ),
+      t(
+        "Paul's greetings in Romans 16 read like a thank-you card: \"Greet Mary, who worked very hard among you.\" Leaders who forget to thank their volunteers will eventually lose them. Also, Philippians 2 shows that the best volunteers are the ones whose concern is for the welfare of others, not for their own credit. Look for that heart, grow it, and protect it from burnout.",
+        "Ang pagbati ni Pablo sa Roma 16 ay parang thank-you card: \"Batiin ninyo si Maria, na nagpagal nang husto para sa inyo.\" Ang lider na nakakalimot magpasalamat sa mga boluntaryo ay mawawalan din sa huli. Ipinapakita rin ng Filipos 2 na ang pinakamahusay na mga boluntaryo ay yaong nagmamalasakit sa kapakanan ng iba, hindi sa sariling kredito. Hanapin ang pusong iyon, paunlarin, at ingatan mula sa pagkapagod."
+      ),
+    ],
+    life: [
+      t(
+        "Ate Cora leads the hospitality team in a Filipino fellowship in Kuwait. Her team has a teacher, a driver, a nurse and a household helper who gets only one day off a month. Ate Cora learned the day off was precious, so she never schedules that helper for the heavy Sundays. She texts, \"Thank you for coming when you can. You are not a worker to me; you are family.\" That helper has never missed a fellowship since.",
+        "Si Ate Cora ang namumuno sa hospitality team ng isang Filipino fellowship sa Kuwait. Ang team niya ay may guro, drayber, nars at kasambahay na isang araw lang ang day off sa isang buwan. Natutunan ni Ate Cora na mahalaga ang day off na iyon, kaya hindi niya isinasama ang kasambahay sa mabibigat na Linggo. Nag-text siya, \"Salamat sa pagdating kapag kaya mo. Hindi ka manggagawa sa akin; pamilya ka.\" Hindi na nawala ang kasambahay sa fellowship mula noon."
+      ),
+      t(
+        "Practical habits for leading volunteers: clarify the task and the finish line, match the work to the gift and the season of life, train before you trust, give freedom within clear boundaries, express thanks often and publicly, and give people permission to rest or step back without guilt. Never forget that a volunteer's time is a sacrifice, since they have other jobs and families.",
+        "Mga praktikal na gawi sa pamumuno ng mga boluntaryo: linawin ang gawain at ang hangganan, iangkop ang gawain sa kaloob at yugto ng buhay, sanayin bago pagkatiwalaan, magbigay ng kalayaan sa loob ng malinaw na hangganan, magpasalamat nang madalas at hayagan, at bigyan ng pahintulot ang tao na magpahinga o umatras nang walang guilt. Huwag kalimutan na ang oras ng boluntaryo ay sakripisyo, dahil may iba silang trabaho at pamilya."
+      ),
+    ],
+    twist: t(
+      "We think volunteers serve the vision of the leader. In God's Kingdom the leader serves the people so that the people can fulfill God's vision. Jesus said, \"The Son of Man did not come to be served, but to serve\" (Mark 10:45). The twist: your success as a ministry leader is measured not by how much the team does for you, but by how much the team grows because of you.",
+      "Akala natin, naglilingkod ang mga boluntaryo sa pangitain ng lider. Sa Kaharian ng Diyos, naglilingkod ang lider sa mga tao para matupad ng mga tao ang pangitain ng Diyos. Sabi ni Hesus, \"Ang Anak ng Tao ay hindi naparito upang paglingkuran, kundi upang maglingkod\" (Marcos 10:45). Ang twist: ang tagumpay mo bilang lider ng ministeryo ay hindi sinusukat sa dami ng ginagawa ng team para sa iyo, kundi sa dami ng paglago ng team dahil sa iyo."
+    ),
+    confirm: [
+      t("Exodus 35:30-35: God filled Bezalel and Oholiab with skill, so gifted volunteers built the tabernacle.", "Exodo 35:30-35: pinuno ng Diyos sina Bezaleel at Aholiab ng kasanayan, kaya mga may-kaloob na boluntaryo ang nagtayo ng tabernakulo."),
+      t("1 Corinthians 12:14-22: the body has many parts, and none can say, \"I do not need you.\"", "1 Corinto 12:14-22: maraming bahagi ang katawan, at walang makapagsasabi, \"Hindi kita kailangan.\""),
+      t("Acts 6:1-6: seven Spirit-filled volunteers were chosen to serve, and the Word spread.", "Gawa 6:1-6: pitong puspos ng Espiritu ang pinili para maglingkod, at lumaganap ang Salita."),
+      t("1 Thessalonians 5:12-13: honor those who work hard among you and hold them in highest regard in love.", "1 Tesalonica 5:12-13: igalang ang mga masisipag sa inyo at pahalagahan sila nang lubos sa pag-ibig."),
+    ],
+    heart: [
+      t(
+        "Thank people sincerely and specifically. See each volunteer as a person with a story, not a slot on a schedule.",
+        "Magpasalamat nang taos at tiyak. Tingnan ang bawat boluntaryo bilang taong may kuwento, hindi lang puwesto sa iskedyul."
+      ),
+      t(
+        "Let go of control and perfection. Trust your team to do the work, and celebrate it when they do it differently from the way you would have.",
+        "Bitawan ang kontrol at perpeksyon. Pagkatiwalaan ang team na gawin ang gawain, at ipagdiwang kapag iba ang paraan nila sa paraan mo."
+      ),
+    ],
+    questions: [
+      t("Do my volunteers feel seen, thanked and trusted, or just used?", "Nararamdaman ba ng mga boluntaryo ko na sila ay nakikita, pinasasalamatan at pinagkakatiwalaan, o ginagamit lang?"),
+      t("Am I matching people to their gifts and passions?", "Iniuugnay ko ba ang tao sa kanilang kaloob at pagnanais?"),
+      t("Who is quietly burning out on my team, and what would help?", "Sino ang tahimik na napapagod sa team ko, at ano ang makatutulong?"),
+      t("What is one thing I could stop doing so someone else can grow?", "Ano ang isang bagay na maaari kong itigil para may ibang lumago?"),
+    ],
+    actions: [
+      t("Write a personal thank-you note or message to each volunteer this week, naming something specific they did.", "Sumulat ng personal na thank-you note o mensahe sa bawat boluntaryo ngayong linggo, na may binabanggit na tiyak nilang ginawa."),
+      t("Sit down with one volunteer and ask, \"What do you enjoy, and what drains you?\" Adjust accordingly.", "Umupo kasama ang isang boluntaryo at itanong, \"Ano ang nagpapasaya sa iyo, at ano ang umuubos sa iyo?\" Mag-ayos ayon dito."),
+      t("Write clear job descriptions and end dates for each role on your team.", "Sumulat ng malinaw na paglalarawan ng gawain at petsa ng pagtatapos para sa bawat papel sa team mo."),
+    ],
+    prayer: t(
+      "Lord, thank You for every person who gives their time to serve in Your house. Forgive me for the times I used people instead of loving them. Teach me to see each volunteer as Your gift, to match them with their calling and to honor them with real thanks. Protect them from burnout and give me wisdom to know when to push and when to rest. Help me lead as a servant, like Jesus. Build Your Church through ordinary people doing ordinary tasks with extraordinary love. In Jesus' name, Amen.",
+      "Panginoon, salamat po sa bawat taong naglalaan ng oras para maglingkod sa Iyong bahay. Patawarin Mo ako sa mga pagkakataong ginamit ko ang tao sa halip na mahalin sila. Turuan Mo akong makita ang bawat boluntaryo bilang Iyong kaloob, iugnay sila sa kanilang tawag at parangalan ng tunay na pasasalamat. Ingatan Mo sila mula sa pagkapagod at bigyan ako ng karunungang malaman kung kailan itutulak at kailan magpapahinga. Tulungan Mo akong mamuno bilang lingkod, tulad ni Hesus. Itayo Mo ang Iyong Iglesya sa pamamagitan ng mga karaniwang taong gumagawa ng karaniwang gawain nang may pambihirang pag-ibig. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "a-praying-ministry": {
+    revelation: t(
+      "A ministry that prays is not one that adds prayer to its activities; it is one whose activities are born from prayer and carried by it.",
+      "Ang ministeryong nananalangin ay hindi yaong dinaragdagan lang ng panalangin ang mga gawain; ito ay yaong ang mga gawain ay isinilang mula sa panalangin at dinadala nito."
+    ),
+    mainTruth: t(
+      "\"Peter was kept in prison, but the church was earnestly praying to God for him\" (Acts 12:5). When an angel freed him, he went to the house of Mary, \"where many people had gathered and were praying\" (12:12). Before Pentecost, the believers \"all joined together constantly in prayer\" (Acts 1:14). And Epaphras was \"always wrestling in prayer\" for the Colossians that they would \"stand firm in all the will of God, mature and fully assured\" (Colossians 4:12). A praying ministry prays together, persistently and specifically for people.",
+      "\"Nakakulong si Pedro, ngunit masugid na ipinananalangin siya ng iglesya sa Diyos\" (Gawa 12:5). Nang palayain siya ng anghel, pumunta siya sa bahay ni Maria, \"kung saan maraming tao ang nagtipon at nananalangin\" (12:12). Bago ang Pentecostes, ang mga mananampalataya ay \"nagkakaisang laging nananalangin\" (Gawa 1:14). At si Epafras ay \"laging nakikipagbuno sa panalangin\" para sa mga taga-Colosas na \"manatiling matatag sa lahat ng kalooban ng Diyos, hinog at lubos na tiyak\" (Colosas 4:12). Ang ministeryong nananalangin ay nananalangin nang sama-sama, matiyaga at tiyak para sa tao."
+    ),
+    insight: [
+      t(
+        "Acts 12 is both funny and sobering. The church was praying for Peter all night, yet when Rhoda announced he was at the gate, they said, \"You're out of your mind\" (12:15). We often pray and are surprised when God answers. The story reminds us that God answers through weak, wavering faith, because the power is in the One who is prayed to, not in the quality of our praying.",
+        "Nakakatawa at nakakapukaw ng isip ang Gawa 12. Magdamag na ipinapanalangin ng iglesya si Pedro, pero nang ibalita ni Roda na nasa pintuan siya, sinabi nila, \"Nababaliw ka.\" (12:15). Madalas tayong manalangin at nagugulat kapag sumasagot ang Diyos. Ipinapaalala ng kuwento na sumasagot ang Diyos sa pamamagitan ng mahina at nanginginig na pananampalataya, dahil ang kapangyarihan ay nasa Pinananalanginan, hindi sa husay ng ating pananalangin."
+      ),
+      t(
+        "Notice Epaphras: a hidden servant who is never recorded preaching a sermon, yet history remembers him for \"wrestling in prayer.\" Every ministry has visible leaders and hidden intercessors, and the hidden ones often carry the weight. Leaders who build a praying ministry make room for these quiet warriors, give them real requests and tell them when God answers.",
+        "Pansinin si Epafras: lingkod na nakatago na hindi nakatalang nangaral ng sermon, pero naaalala ng kasaysayan dahil sa \"pakikipagbuno sa panalangin.\" Bawat ministeryo ay may nakikitang lider at nakatagong tagapamagitan, at ang mga nakatago ang madalas na nagdadala ng bigat. Ang lider na bumubuo ng ministeryong nananalangin ay naglalaan ng lugar para sa mga tahimik na mandirigmang ito, binibigyan sila ng tunay na kahilingan at sinasabihan kapag sumagot ang Diyos."
+      ),
+    ],
+    life: [
+      t(
+        "A small Filipino church in Bahrain started a 5:30 AM prayer call on Zoom for those who work night shifts or odd hours. At first only three people joined: a nurse, a cleaner and a driver. They prayed for their members by name, for their employers, for families back home. Six months later, forty people were joining, several marriages had been restored, and two members got their visas approved after years of delay. The church leaders said, \"We did not plan a program. We just kept showing up to pray.\"",
+        "Ang isang maliit na Filipino church sa Bahrain ay nagsimula ng 5:30 ng umaga na prayer call sa Zoom para sa mga nagtatrabaho sa gabi o kakaibang oras. Sa simula tatlo lang ang sumali: isang nars, isang tagalinis at isang drayber. Ipinanalangin nila ang mga miyembro sa pangalan, ang mga amo nila, ang mga pamilya sa Pilipinas. Pagkalipas ng anim na buwan, apatnapu na ang sumasali, ilang pagsasama ang naibalik, at dalawang miyembro ang naaprubahan ang visa matapos ang mga taon ng pagkaantala. Sabi ng mga lider, \"Wala kaming pinlanong programa. Nagpatuloy lang kaming sumipot para manalangin.\""
+      ),
+      t(
+        "To build a praying ministry: begin every meeting with real prayer, not a formality. Keep a simple prayer list and a record of answers. Invite intercessors to pray for specific events, leaders and members. Pray before you plan, not only after. And lead by example; your people will pray as much as they see you pray.",
+        "Para bumuo ng ministeryong nananalangin: simulan ang bawat pulong sa tunay na panalangin, hindi pormalidad lang. Magtago ng simpleng listahan ng panalangin at talaan ng mga sagot. Anyayahan ang mga tagapamagitan na ipanalangin ang mga partikular na pagtitipon, lider at miyembro. Manalangin bago magplano, hindi lang pagkatapos. At manguna sa halimbawa; mananalangin ang mga tao mo ayon sa nakikita nilang pananalangin mo."
+      ),
+    ],
+    twist: t(
+      "We treat prayer as preparation for the real work. The Kingdom says prayer is the real work and the rest is the harvest of it. The early church had prayer meetings before it had buildings, budgets or programs, and the whole Roman world felt it. The twist: the busiest ministry is not the most fruitful one; the most prayerful one is. If you feel stuck, do not add another event; add another hour on your knees.",
+      "Itinuturing nating paghahanda lang ang panalangin para sa tunay na gawain. Sinasabi ng Kaharian na ang panalangin ang tunay na gawain at ang iba ay ani nito. May mga pagtitipon na ang unang iglesya para manalangin bago pa ito magkaroon ng gusali, badyet o programa, at ramdam ito ng buong daigdig ng Roma. Ang twist: ang pinakaabalang ministeryo ay hindi ang pinakamabunga; ang pinakamanalangin. Kung pakiramdam mo ay nakabara, huwag magdagdag ng isa pang event; magdagdag ng isa pang oras sa pagluhod."
+    ),
+    confirm: [
+      t("Luke 11:1: the disciples did not ask, \"Teach us to preach,\" but \"Lord, teach us to pray.\"", "Lucas 11:1: hindi hiniling ng mga alagad, \"Turuan Mo kaming mangaral,\" kundi \"Panginoon, turuan Mo kaming manalangin.\""),
+      t("Acts 13:1-3: the church prayed and fasted, and the Spirit sent out Barnabas and Saul.", "Gawa 13:1-3: nanalangin at nag-ayuno ang iglesya, at isinugo ng Espiritu sina Bernabe at Saulo."),
+      t("Matthew 18:19-20: where two or three gather in My name, I am with them.", "Mateo 18:19-20: kung saan may dalawa o tatlong nagtitipon sa Aking pangalan, naroon Ako sa gitna nila."),
+      t("Ephesians 6:18: pray in the Spirit on all occasions with all kinds of prayers and requests.", "Efeso 6:18: manalangin kayo sa Espiritu sa lahat ng pagkakataon na may lahat ng uri ng panalangin at kahilingan."),
+    ],
+    heart: [
+      t(
+        "Choose dependence over self-sufficiency. Admit that without Him you can do nothing (John 15:5), and let that truth shape your calendar.",
+        "Piliin ang pag-asa sa Diyos kaysa pagsasarili. Aminin na kung wala Siya ay wala kang magagawa (Juan 15:5), at hayaang hubugin ng katotohanang iyon ang kalendaryo mo."
+      ),
+      t(
+        "Honor the hidden intercessors. Pray for people with love, not as a performance, and keep praying even when answers are slow.",
+        "Parangalan ang mga nakatagong tagapamagitan. Ipanalangin ang mga tao nang may pag-ibig, hindi bilang pagtatanghal, at magpatuloy kahit mabagal ang sagot."
+      ),
+    ],
+    questions: [
+      t("Is prayer the foundation of my ministry or an item at the top of the agenda?", "Ang panalangin ba ang pundasyon ng ministeryo ko o isang aytem lang sa itaas ng agenda?"),
+      t("Who are the hidden intercessors in my ministry, and have I thanked them?", "Sino ang mga nakatagong tagapamagitan sa ministeryo ko, at napasalamatan ko na ba sila?"),
+      t("Do my people see me praying, or only organizing?", "Nakikita ba ng mga tao ko na nananalangin ako, o nag-oorganisa lang?"),
+      t("What answered prayers should we celebrate together?", "Anong mga sagot sa panalangin ang dapat nating ipagdiwang nang magkakasama?"),
+    ],
+    actions: [
+      t("Start or join a weekly 30-minute prayer meeting for your ministry, in person or online.", "Magsimula o sumali sa lingguhang 30-minutong prayer meeting para sa ministeryo mo, personal man o online."),
+      t("Begin a simple prayer journal with requests and answered prayers, and share a testimony monthly.", "Magsimula ng simpleng prayer journal na may mga kahilingan at sagot, at magbahagi ng patotoo bawat buwan."),
+      t("Ask two or three intercessors to pray for you and your team regularly, and share real needs with them.", "Hilingin sa dalawa o tatlong tagapamagitan na ipanalangin kayo ng team mo nang regular, at ibahagi ang tunay na pangangailangan."),
+    ],
+    prayer: t(
+      "Lord, teach us to pray. Forgive us for the times we planned without asking You and worked without waiting on You. Raise up intercessors in our ministry who wrestle in prayer for Your people. Make us a house of prayer, where hearts are united, requests are real and answers are celebrated. Let every plan come out of Your presence. Give me a faithful, hungry heart for prayer, and let Your Church be carried by it. In Jesus' name, Amen.",
+      "Panginoon, turuan Mo kaming manalangin. Patawarin Mo kami sa mga pagkakataong nagplano kami nang hindi nagtatanong sa Iyo at gumawa nang hindi naghihintay sa Iyo. Magbangon Ka ng mga tagapamagitan sa aming ministeryo na nakikipagbuno sa panalangin para sa Iyong bayan. Gawin Mo kaming bahay-panalanginan, kung saan nagkakaisa ang puso, totoo ang mga kahilingan at ipinagdiriwang ang mga sagot. Hayaang bawat plano ay manggaling sa Iyong presensya. Bigyan Mo ako ng tapat at gutom na pusong manalangin, at nawa'y madala ng panalangin ang Iyong Iglesya. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "leading-in-worship": {
+    revelation: t(
+      "Worship leading is not performing for a crowd; it is going ahead of God's people into His presence and bringing them with you.",
+      "Ang pamumuno sa pagsamba ay hindi pagtatanghal sa karamihan; ito ay ang pangunguna sa bayan ng Diyos tungo sa Kanyang presensya at pagdadala sa kanila kasama mo."
+    ),
+    mainTruth: t(
+      "\"Come, let us sing for joy to the Lord... Come, let us bow down in worship, let us kneel before the Lord our Maker; for he is our God and we are the people of his pasture, the flock under his care\" (Psalm 95:1, 6-7). When the trumpeters and singers \"joined in unison to give praise and thanks to the Lord... the temple of the Lord was filled with a cloud, and the priests could not perform their service because of the cloud, for the glory of the Lord filled the temple of God\" (2 Chronicles 5:13-14). \"Through Jesus, therefore, let us continually offer to God a sacrifice of praise, the fruit of lips that openly profess his name\" (Hebrews 13:15).",
+      "\"Halina, umawit tayo nang may kagalakan sa Panginoon... Halina, yumukod tayo sa pagsamba, lumuhod tayo sa harap ng Panginoon na Lumikha sa atin; sapagkat Siya ang ating Diyos at tayo ang bayan ng Kanyang pastulan, ang kawan na Kanyang inaalagaan\" (Awit 95:1, 6-7). Nang \"magkaisa ang mga tagapagpatunog ng trumpeta at mang-aawit sa pagpupuri at pagpapasalamat sa Panginoon... napuno ng ulap ang templo ng Panginoon, at hindi makapaglingkod ang mga pari dahil sa ulap, sapagkat napuno ng kaluwalhatian ng Panginoon ang templo ng Diyos\" (2 Cronica 5:13-14). \"Kaya't sa pamamagitan ni Hesus, patuloy tayong maghandog sa Diyos ng hain ng papuri, ang bunga ng mga labing hayagang nagpapahayag ng Kanyang pangalan\" (Hebreo 13:15)."
+    ),
+    insight: [
+      t(
+        "Notice the key phrase in 2 Chronicles 5: \"in unison.\" The glory came when musicians and singers sounded \"as one.\" This was not about the best voices, but about unity and a united focus on the Lord. Worship leaders often stress about sound, lights and song selection. These matter, but God honors hearts that are united and directed to Him. A band can be technically perfect and spiritually empty, or simple and filled with His glory.",
+        "Pansinin ang mahalagang parirala sa 2 Cronica 5: \"nagkakaisa.\" Dumating ang kaluwalhatian nang tumugtog at umawit ang mga manunugtog at mang-aawit nang \"iisa.\" Hindi ito tungkol sa pinakamagagandang boses, kundi sa pagkakaisa at nagkakaisang pokus sa Panginoon. Madalas na nababahala ang mga worship leader sa tunog, ilaw at pagpili ng awit. Mahalaga ang mga iyon, pero pinararangalan ng Diyos ang pusong nagkakaisa at nakadirekta sa Kanya. Ang banda ay maaaring perpekto sa teknikal pero walang laman sa espiritu, o simple pero puno ng Kanyang kaluwalhatian."
+      ),
+      t(
+        "Psalm 95 gives a pattern: sing, shout, bow, kneel, then listen (v. 7-8). Worship is not only music; it is a posture of the whole person before God, and it ends with listening. A worship leader is a shepherd who leads the flock to the water of God's presence, not a performer who leads them to admire the leader. The congregation should walk away talking about Jesus, not about the band.",
+        "Nagbibigay ang Awit 95 ng padron: awit, sigaw, yukod, luhod, saka pakikinig (t. 7-8). Ang pagsamba ay hindi lang musika; ito ay tindig ng buong tao sa harap ng Diyos, at nagtatapos ito sa pakikinig. Ang worship leader ay pastol na nagdadala sa kawan sa tubig ng presensya ng Diyos, hindi performer na nagdadala sa kanila para hangaan ang lider. Dapat umalis ang kongregasyon na si Hesus ang pinag-uusapan, hindi ang banda."
+      ),
+    ],
+    life: [
+      t(
+        "Ben leads a small worship team in a Filipino church in Abu Dhabi. After a stressful week, he nearly canceled practice because of tiredness and a quarrel with a bandmate. Instead, he asked the team to start by confessing and praying for each other. They wept, forgave, and sang with a different heart on Sunday. A man at the back, who had come only to \"see what Filipinos do on Fridays,\" raised his hands for the first time in years. Reconciled hearts sing different songs.",
+        "Si Ben ay namumuno ng maliit na worship team sa isang Filipino church sa Abu Dhabi. Pagkatapos ng nakakapagod na linggo, muntik niyang kanselahin ang practice dahil sa pagod at pag-aaway nila ng kasamahan sa banda. Sa halip, hiniling niya sa team na magsimula sa pag-amin at pagdarasal para sa isa't isa. Umiyak sila, nagpatawaran, at umawit nang may ibang puso noong Linggo. Isang lalaki sa likod, na pumunta lang para \"makita kung ano ang ginagawa ng mga Pilipino tuwing Biyernes,\" ay itinaas ang mga kamay sa unang pagkakataon sa loob ng maraming taon. Ang mga pusong nagkasundo ay umaawit ng ibang awit."
+      ),
+      t(
+        "Leading worship also means leading the people: choosing songs that the congregation can actually sing, in a key they can reach, with words that match Scripture; giving space for silence and the Word; and prepping spiritually, not just musically. Remember the OFW sitting at the back who feels tired and alone: give them songs of hope and truth, and let them know that God is near.",
+        "Ang pamumuno sa pagsamba ay pamumuno rin sa mga tao: pagpili ng mga awit na talagang kaya nilang awitin, sa key na abot nila, na may mga salitang tugma sa Kasulatan; pagbibigay ng espasyo sa katahimikan at sa Salita; at paghahanda sa espiritu, hindi lang sa musika. Alalahanin ang OFW na nakaupo sa likod na pagod at nag-iisa: bigyan sila ng mga awit ng pag-asa at katotohanan, at ipaalam na malapit ang Diyos."
+      ),
+    ],
+    twist: t(
+      "We often think worship happens when the music is good and the mood is high. But Hebrews calls it a \"sacrifice of praise,\" which means it costs something, and it is offered even when we do not feel like it. Paul and Silas sang in prison at midnight (Acts 16:25). The twist: the sweetest worship is often offered in the dark, and it frees the singer more than the audience.",
+      "Madalas nating isipin na nangyayari ang pagsamba kapag maganda ang musika at mataas ang mood. Pero tinatawag ito ng Hebreo na \"hain ng papuri,\" ibig sabihin may kapalit ito, at inihahandog kahit ayaw nating gawin. Umawit sina Pablo at Silas sa bilangguan sa hatinggabi (Gawa 16:25). Ang twist: ang pinakamatamis na pagsamba ay madalas inihahandog sa dilim, at mas pinalalaya nito ang umaawit kaysa sa nakikinig."
+    ),
+    confirm: [
+      t("John 4:23-24: the Father seeks worshipers who worship in spirit and truth.", "Juan 4:23-24: hinahanap ng Ama ang mga sumasamba sa espiritu at katotohanan."),
+      t("2 Samuel 6:14-22: David danced before the Lord with all his might, unashamed.", "2 Samuel 6:14-22: sumayaw si David sa harap ng Panginoon nang buong lakas, walang hiya."),
+      t("Isaiah 6:1-8: a vision of God's holiness leads to confession, cleansing and sending.", "Isaias 6:1-8: ang pangitain ng kabanalan ng Diyos ay humahantong sa pagtatapat, paglilinis at pagsusugo."),
+      t("Colossians 3:16: sing psalms, hymns and songs from the Spirit with gratitude in your hearts.", "Colosas 3:16: umawit ng mga salmo, himno at awit mula sa Espiritu nang may pasasalamat sa puso."),
+    ],
+    heart: [
+      t(
+        "Let go of performance and applause. Come as a worshiper first, and a leader second. Pray for a clean heart before you pick up the mic or the guitar.",
+        "Bitawan ang pagtatanghal at palakpak. Dumating bilang sumasamba muna, bago bilang lider. Manalangin para sa malinis na puso bago humawak ng mikropono o gitara."
+      ),
+      t(
+        "Love your team and congregation. Resolve conflicts quickly, and lead them with humility, always pointing to Jesus.",
+        "Mahalin ang team at kongregasyon mo. Lutasin agad ang mga alitan, at pamunuan sila nang may kababaang-loob, laging ituro si Hesus."
+      ),
+    ],
+    questions: [
+      t("Am I leading people to Jesus or to my own gifts?", "Dinadala ko ba ang mga tao kay Hesus o sa sarili kong mga kaloob?"),
+      t("Is my own heart worshiping when I stand to lead others?", "Sumasamba ba ang sarili kong puso kapag tumatayo ako para mamuno sa iba?"),
+      t("Are there unresolved conflicts in my team that block unity?", "May mga hindi pa naaayos na alitan ba sa team ko na humaharang sa pagkakaisa?"),
+      t("Are our songs and words faithful to Scripture and singable for our people?", "Tapat ba sa Kasulatan at kayang awitin ng mga tao natin ang ating mga awit at salita?"),
+    ],
+    actions: [
+      t("Begin each rehearsal with prayer, Scripture and confession before music.", "Simulan ang bawat rehearsal sa panalangin, Kasulatan at pagtatapat bago ang musika."),
+      t("Review your set list for biblical truth, simplicity and singability.", "Suriin ang set list mo para sa katotohanan ng Biblia, pagiging simple at madaling awitin."),
+      t("Spend 15 minutes each day this week in personal worship, without any performance in mind.", "Gumugol ng 15 minuto bawat araw ngayong linggo sa personal na pagsamba, nang walang iniisip na pagtatanghal."),
+    ],
+    prayer: t(
+      "Lord, You are worthy of all praise. Cleanse my heart so that I come to You as a worshiper before I lead. Forgive me for seeking applause. Unite our team in love and unity, and let Your glory fill our gatherings. Help us to choose songs that exalt Jesus and strengthen Your people. Teach me to offer a sacrifice of praise even in hard seasons. May everyone who comes to worship meet You. In Jesus' name, Amen.",
+      "Panginoon, Ikaw ay karapat-dapat sa lahat ng papuri. Linisin Mo ang puso ko upang lumapit ako sa Iyo bilang sumasamba bago mamuno. Patawarin Mo ako sa paghahanap ng palakpak. Pag-isahin Mo ang aming team sa pag-ibig at pagkakaisa, at punuin ng Iyong kaluwalhatian ang aming mga pagtitipon. Tulungan Mo kaming pumili ng mga awit na nagtataas kay Hesus at nagpapatibay sa Iyong bayan. Turuan Mo akong maghandog ng hain ng papuri kahit sa mahihirap na panahon. Nawa'y makatagpo Ka ng bawat dumarating para sumamba. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "measuring-what-matters": {
+    revelation: t(
+      "Heaven's scoreboard counts fruit, faithfulness and love, not attendance, applause or the size of the building.",
+      "Ang scoreboard ng langit ay nagbibilang ng bunga, katapatan at pag-ibig, hindi ng dami ng dumalo, palakpak o laki ng gusali."
+    ),
+    mainTruth: t(
+      "\"You did not choose me, but I chose you and appointed you so that you might go and bear fruit, fruit that will last\" (John 15:16). Paul warns every builder: \"Each one should build with care... their work will be shown for what it is, because the Day will bring it to light. It will be revealed with fire\" (1 Corinthians 3:10-15). And the Lord's word to Ephesus is sharp: \"I know your deeds, your hard work and your perseverance... Yet I hold this against you: You have forsaken the love you had at first\" (Revelation 2:2-4). Ministry is measured by lasting fruit, quality of work and love for Christ.",
+      "\"Hindi kayo ang pumili sa Akin, kundi Ako ang pumili sa inyo at humirang sa inyo upang humayo kayo at mamunga, bungang mananatili\" (Juan 15:16). Binabalaan ni Pablo ang bawat tagapagtayo: \"Mag-ingat ang bawat isa sa pagtatayo... ang gawa ng bawat isa ay mahahayag kung ano ito, sapagkat ihahayag ito ng Araw. Ihahayag ito ng apoy\" (1 Corinto 3:10-15). At matalas ang salita ng Panginoon sa Efeso: \"Alam Ko ang inyong mga gawa, ang inyong pagpapagal at pagtitiis... Ngunit may laban Ako sa iyo: iniwan mo ang unang pag-ibig mo\" (Pahayag 2:2-4). Ang ministeryo ay sinusukat sa pangmatagalang bunga, kalidad ng gawa at pag-ibig kay Cristo."
+    ),
+    insight: [
+      t(
+        "Ephesus was a busy, doctrinally sound, hardworking church, and yet Jesus said, \"Remember how far you have fallen.\" Their metrics were excellent; their love had cooled. It is possible to run a growing ministry and lose the very thing it was meant for. Numbers can describe activity, but only Christ can see the heart. So the first measure of a healthy ministry is: Are we still in love with Jesus and with the people He loves?",
+        "Ang Efeso ay abalang iglesya, mahusay sa doktrina at masipag, pero sinabi ni Hesus, \"Alalahanin mo kung gaano ka kalayo nahulog.\" Mahusay ang kanilang mga sukatan; lumamig ang kanilang pag-ibig. Posibleng magpatakbo ng lumalagong ministeryo at mawala ang mismong layunin nito. Maaaring ilarawan ng mga numero ang aktibidad, pero si Cristo lang ang nakakakita ng puso. Kaya ang unang panukat ng malusog na ministeryo ay: Umiibig pa ba tayo kay Hesus at sa mga taong minamahal Niya?"
+      ),
+      t(
+        "1 Corinthians 3 says our work will be tested by fire. Gold, silver and costly stones survive; wood, hay and straw burn. That does not mean numbers are bad; it means we should ask what lasts: changed lives, mature disciples, healthy families, leaders raised up, the gospel carried further. Track attendance if it helps you serve people, but never mistake the number for the harvest.",
+        "Sinasabi ng 1 Corinto 3 na susubukin ng apoy ang ating gawa. Nananatili ang ginto, pilak at mamahaling bato; nasusunog ang kahoy, dayami at pinagtabasan. Hindi ibig sabihin na masama ang mga numero; ibig sabihin ay dapat nating itanong kung ano ang tatagal: nabagong buhay, hinog na mga alagad, malulusog na pamilya, mga lider na naitaas, ebanghelyong dinala nang mas malayo. Subaybayan ang dami ng dumalo kung nakakatulong ito sa paglilingkod sa tao, pero huwag ipagkamali ang numero sa ani."
+      ),
+    ],
+    life: [
+      t(
+        "Pastor Rey leads a growing fellowship in Dubai. Attendance doubled in a year, and everyone applauded. But one night an older brother asked him, \"Pastor, how many of these people can pray with their families? How many are sharing Christ at work?\" Pastor Rey went home sleepless. He changed the scoreboard: from \"How many came?\" to \"Who is growing, who is serving, who is making disciples?\" That year the numbers dipped slightly, but the fruit multiplied.",
+        "Si Pastor Rey ay namumuno sa lumalagong fellowship sa Dubai. Dumoble ang dumalo sa loob ng isang taon, at pumalakpak ang lahat. Pero isang gabi, tinanong siya ng nakatatandang kapatid, \"Pastor, ilan sa mga taong ito ang kayang manalangin kasama ang pamilya? Ilan ang nagbabahagi kay Cristo sa trabaho?\" Umuwi si Pastor Rey na hindi makatulog. Binago niya ang scoreboard: mula \"Ilan ang dumating?\" tungo sa \"Sino ang lumalago, sino ang naglilingkod, sino ang gumagawa ng alagad?\" Noong taong iyon, bahagyang bumaba ang numero, pero dumami ang bunga."
+      ),
+      t(
+        "Ask better questions in your ministry review: Are people growing in Christ? Are new leaders emerging? Are the hurting being cared for? Are we praying together? Is the gospel being shared? Are we healthy and united? Then thank God for the fruit, repent where needed and keep your first love burning.",
+        "Magtanong ng mas mabubuting tanong sa pagsusuri ng ministeryo mo: Lumalago ba ang tao kay Cristo? May lumilitaw bang bagong lider? Inaalagaan ba ang mga nasasaktan? Nananalangin ba tayo nang magkakasama? Naibabahagi ba ang ebanghelyo? Malusog at nagkakaisa ba tayo? Pagkatapos ay pasalamatan ang Diyos sa bunga, magsisi kung kinakailangan at panatilihing nag-aapoy ang unang pag-ibig."
+      ),
+    ],
+    twist: t(
+      "We assume that if something is not measurable, it is not important. Jesus taught the opposite: the widow's two coins, the hidden prayer, the cup of cold water, a seed growing secretly (Mark 4:26-29). The twist: the most important things in the Kingdom are usually the least countable. God is not asking, \"How big is your ministry?\" but, \"Were you faithful and did you love?\"",
+      "Akala natin kung hindi ito nasusukat ay hindi ito mahalaga. Kabaligtaran ang itinuro ni Hesus: ang dalawang barya ng balo, ang lihim na panalangin, ang basong tubig, ang binhing tumutubong palihim (Marcos 4:26-29). Ang twist: ang pinakamahalagang bagay sa Kaharian ay karaniwang hindi mabibilang. Hindi itinatanong ng Diyos, \"Gaano kalaki ang ministeryo mo?\" kundi, \"Naging tapat ka ba at umibig ka ba?\""
+    ),
+    confirm: [
+      t("Galatians 5:22-23: the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness and self-control.", "Galacia 5:22-23: ang bunga ng Espiritu ay pag-ibig, kagalakan, kapayapaan, pagtitiis, kabaitan, kabutihan, katapatan, kahinahunan at pagpipigil sa sarili."),
+      t("Matthew 7:16-20: you will recognize them by their fruit.", "Mateo 7:16-20: makikilala ninyo sila sa kanilang bunga."),
+      t("2 Samuel 24:1-10: David numbered the people in pride, and it displeased the Lord.", "2 Samuel 24:1-10: binilang ni David ang bayan dahil sa pagmamataas, at hindi ito ikinalugod ng Panginoon."),
+      t("Luke 10:17-20: Jesus told the seventy to rejoice that their names are written in heaven, not in their success.", "Lucas 10:17-20: sinabi ni Hesus sa pitumpu na magalak na nakasulat ang kanilang pangalan sa langit, hindi sa tagumpay."),
+    ],
+    heart: [
+      t(
+        "Release the need to look successful. Choose to be faithful, and trust that God will count what He chooses to count.",
+        "Bitawan ang pangangailangang magmukhang matagumpay. Piliing maging tapat, at magtiwalang bibilangin ng Diyos ang pipiliin Niyang bilangin."
+      ),
+      t(
+        "Return to your first love. Let the question \"Do I love Jesus?\" come before \"How is the ministry doing?\"",
+        "Bumalik sa unang pag-ibig. Hayaang mauna ang tanong na \"Mahal ko ba si Hesus?\" bago ang \"Kumusta ang ministeryo?\""
+      ),
+    ],
+    questions: [
+      t("What am I measuring right now, and does it reflect God's priorities?", "Ano ang sinusukat ko ngayon, at sumasalamin ba ito sa mga prayoridad ng Diyos?"),
+      t("Can I name the lives that have changed through our ministry this year?", "Mapapangalanan ko ba ang mga buhay na nagbago sa pamamagitan ng ministeryo namin ngayong taon?"),
+      t("Has my love for Jesus cooled while my activity has grown?", "Lumamig ba ang pag-ibig ko kay Hesus habang dumami ang aktibidad ko?"),
+      t("Who are the hidden servants whose work does not show up on any chart?", "Sino ang mga nakatagong lingkod na ang gawa ay hindi lumilitaw sa anumang tsart?"),
+    ],
+    actions: [
+      t("List five \"fruit questions\" for your team (growth, service, care, prayer, outreach) and review them quarterly.", "Maglista ng limang \"tanong tungkol sa bunga\" para sa team mo (paglago, paglilingkod, pag-aalaga, panalangin, pag-abot) at suriin bawat quarter."),
+      t("Write down three stories of changed lives from this year and thank God for each.", "Isulat ang tatlong kuwento ng nagbagong buhay ngayong taon at pasalamatan ang Diyos sa bawat isa."),
+      t("Spend an hour alone with Jesus to ask, \"Have I left my first love?\" and listen.", "Gumugol ng isang oras na mag-isa kasama si Hesus at itanong, \"Iniwan ko ba ang unang pag-ibig ko?\" at makinig."),
+    ],
+    prayer: t(
+      "Lord Jesus, You chose me to bear fruit that lasts. Forgive me for measuring success by what impresses people. Search my heart and show me where I have left my first love. Teach me to count what You count: changed lives, faithful servants, growing disciples, deeper love. Free me from comparison and pride. Help me build with gold, silver and precious stones, and let my work stand when it is tested by fire. To You be all the glory. In Your name, Amen.",
+      "Panginoong Hesus, hinirang Mo ako upang mamunga ng bungang mananatili. Patawarin Mo ako sa pagsukat ng tagumpay ayon sa pinahahanga ng tao. Siyasatin Mo ang puso ko at ipakita kung saan ko iniwan ang unang pag-ibig. Turuan Mo akong bilangin ang binibilang Mo: nagbagong buhay, tapat na lingkod, lumalagong alagad, mas malalim na pag-ibig. Palayain Mo ako sa paghahambing at pagmamataas. Tulungan Mo akong magtayo gamit ang ginto, pilak at mamahaling bato, at manatili ang gawa ko kapag sinubok ng apoy. Sa Iyo ang lahat ng kaluwalhatian. Sa Iyong pangalan, Amen."
+    ),
+  },
 };

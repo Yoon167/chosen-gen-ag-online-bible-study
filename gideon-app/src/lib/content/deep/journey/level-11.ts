@@ -529,4 +529,784 @@ export const DEEP: DeepSet = {
       "Banal na Espiritu, Ikaw ang Panginoon ng anihan at ang tumatawag at nagsusugo. Inaamin kong minsan masyadong mahigpit ang hawak ko sa mga taong pinalaki ko. Binubuksan ko na ang aking mga kamay. Isugo Mo sila saan Mo man naisin. Bigyan Mo ako ng kagalakan, hindi inggit, kapag lumayo sila nang higit sa narating ko. Magbangon Ka ng bagong mga lider kapalit nila, at panatilihin Mo kaming magkaugnay sa pag-ibig at panalangin saan Mo man sila isugo. Sa pangalan ni Hesus, Amen."
     ),
   },
+  "leading-leaders": {
+    revelation: t(
+      "The leaders you lead do not need a boss; they need a shepherd who is a living example of what he asks them to become.",
+      "Ang mga lider na pinamumunuan mo ay hindi nangangailangan ng amo; nangangailangan sila ng pastol na buhay na halimbawa ng hinihiling niyang tularan nila."
+    ),
+    mainTruth: t(
+      "When Paul called the Ephesian elders to Miletus, he did not give them a lecture on technique. He pointed to his own life: \"You know how I lived the whole time I was with you... I served the Lord with great humility and with tears... I have not hesitated to preach anything that would be helpful to you\" (Acts 20:18-20). Peter says the same to elders: \"Be shepherds of God's flock... not lording it over those entrusted to you, but being examples to the flock\" (1 Peter 5:2-3). Leading leaders is not leading from above; it is leading from alongside, with a life open enough to be copied. Timothy is the picture of the result: \"I have no one else like him, who will show genuine concern for your welfare... he has served with me in the work of the gospel like a son with his father\" (Philippians 2:20-22).",
+      "Nang tawagin ni Pablo ang mga matatanda ng Efeso sa Mileto, hindi siya nagbigay ng lektyur tungkol sa teknik. Itinuro niya ang sarili niyang buhay: \"Alam ninyo kung paano ako namuhay sa buong panahong kasama ninyo... Naglingkod ako sa Panginoon nang buong kababaang-loob at may mga luha... hindi ako nag-atubiling ipangaral ang anumang makatutulong sa inyo\" (Gawa 20:18-20). Ganito rin ang sabi ni Pedro sa mga matatanda: \"Pastulan ninyo ang kawan ng Diyos... huwag ninyong pagharian ang mga ipinagkatiwala sa inyo, kundi maging halimbawa kayo sa kawan\" (1 Pedro 5:2-3). Ang pamumuno sa mga lider ay hindi pamumuno mula sa itaas; ito ay pamumuno mula sa tabi, na may buhay na bukas para tularan. Si Timoteo ang larawan ng bunga nito: \"Wala na akong ibang katulad niya na tunay na nagmamalasakit sa kapakanan ninyo... naglingkod siyang kasama ko sa ebanghelyo gaya ng anak sa ama\" (Filipos 2:20-22)."
+    ),
+    insight: [
+      t(
+        "Many leaders assume that once someone becomes a leader, they no longer need leading. In truth, leaders are the most under-shepherded people in the church. Everybody brings them problems; hardly anybody asks, \"How is your soul?\" The leader of leaders is often the only person who ever asks that question, and when he does not, burnout and hidden sin grow in the dark.",
+        "Maraming lider ang nag-aakalang kapag naging lider na ang isang tao, hindi na niya kailangang pamunuan. Ang totoo, ang mga lider ang pinakakulang sa pagpapastol sa iglesia. Lahat ay nagdadala sa kanila ng problema; halos walang nagtatanong, \"Kumusta ang kaluluwa mo?\" Madalas, ang lider ng mga lider ang tanging taong nagtatanong niyon, at kapag hindi niya ito ginawa, lumalaki sa dilim ang pagod at ang nakatagong kasalanan."
+      ),
+      t(
+        "Notice what Paul says he gave the elders: not a title, not instructions only, but himself, his tears, his time, even his house-to-house presence (Acts 20:20). Leaders learn leadership far more by watching how you handle conflict, money and weariness than by hearing how you teach about them. What you tolerate in yourself, they will quietly give themselves permission to tolerate too.",
+        "Pansinin kung ano ang sinasabi ni Pablo na ibinigay niya sa mga matatanda: hindi titulo, hindi lang mga tagubilin, kundi ang sarili niya, ang kanyang mga luha, oras, at pagpunta pa sa bahay-bahay (Gawa 20:20). Mas natututo ang mga lider sa panonood kung paano mo hinaharap ang away, pera at pagod kaysa sa pakikinig sa itinuturo mo tungkol dito. Ang tinitiis mo sa sarili mo, tahimik nilang papayagan din sa kanilang sarili."
+      ),
+    ],
+    life: [
+      t(
+        "Think of Kuya Rodel, a seasoned AG leader who works as a driver abroad. His small-group leaders adore him, and not because he is the best speaker. Every Friday after duty, he sends a voice message to each of them: \"How are you? How is your family? What can I pray for?\" When one of them stumbled badly, Rodel did not announce it or drop him. He sat with him, wept with him, and walked him back. Years later, those same leaders are doing exactly that for their own people.",
+        "Isipin si Kuya Rodel, isang batikang lider ng AG na nagtatrabaho bilang driver sa abroad. Mahal siya ng mga lider ng kanyang small group, hindi dahil siya ang pinakamahusay na tagapagsalita. Tuwing Biyernes pagkatapos ng duty, nagpapadala siya ng voice message sa bawat isa: \"Kumusta ka? Kumusta ang pamilya mo? Ano ang maipagdarasal ko?\" Nang matisod nang husto ang isa sa kanila, hindi ito ipinagsabi ni Rodel ni itinapon. Umupo siya kasama nito, umiyak kasama nito, at inalalayan siyang makabalik. Pagkalipas ng ilang taon, ginagawa na rin ng mga lider na iyon ang ganoon sa sarili nilang mga tao."
+      ),
+      t(
+        "Your leaders will rarely say, \"Please check on me.\" They will say, \"I'm fine, just busy.\" Learn to hear the tired voice behind the message. A ten-minute call, a coffee, a shared meal on a day off can protect a leader from months of hidden struggle.",
+        "Bihirang sabihin ng iyong mga lider, \"Pakikumusta naman ako.\" Ang sasabihin nila, \"Okay lang ako, busy lang.\" Matutong marinig ang pagod na tinig sa likod ng mensahe. Ang sampung minutong tawag, kape, o sabay na pagkain sa day-off ay maaaring magligtas sa isang lider mula sa buwan-buwang tagong pakikibaka."
+      ),
+    ],
+    twist: t(
+      "We think leading leaders means having more authority. Peter says the opposite: the Chief Shepherd's reward goes to those who do NOT lord it over others (1 Peter 5:3-4). The more influence you carry, the more your leadership must look like service. In God's Kingdom the leader of leaders is the one whose leaders feel safest being honest with him.",
+      "Akala natin, ang pamumuno sa mga lider ay nangangahulugang mas malaking awtoridad. Kabaligtaran ang sabi ni Pedro: ang gantimpala ng Punong Pastol ay para sa mga HINDI nagpapakapanginoon sa iba (1 Pedro 5:3-4). Habang lumalaki ang impluwensya mo, lalo dapat maging paglilingkod ang anyo ng pamumuno mo. Sa Kaharian ng Diyos, ang lider ng mga lider ay ang taong pinakaligtas na pagsabihan ng katotohanan ng kanyang mga lider."
+    ),
+    confirm: [
+      t("John 21:15-17: Jesus restores Peter with one command, \"Feed My sheep,\" because shepherding begins with love.", "Juan 21:15-17: ibinabalik ni Hesus si Pedro sa iisang utos, \"Pakainin mo ang Aking mga tupa,\" dahil nagsisimula ang pagpapastol sa pag-ibig."),
+      t("2 Timothy 1:3-4: Paul prays for Timothy night and day and longs to see him.", "2 Timoteo 1:3-4: ipinagdarasal ni Pablo si Timoteo araw at gabi at nasasabik siyang makita ito."),
+      t("1 Thessalonians 2:7-8: \"We were gentle among you, like a mother caring for her children... we shared our very lives.\"", "1 Tesalonica 2:7-8: \"Naging maamo kami sa inyo, gaya ng inang nag-aalaga sa kanyang mga anak... ibinahagi namin ang aming mismong buhay.\""),
+      t("Hebrews 13:7: \"Consider the outcome of their way of life and imitate their faith.\"", "Hebreo 13:7: \"Isaalang-alang ninyo ang bunga ng kanilang pamumuhay at tularan ang kanilang pananampalataya.\""),
+    ],
+    heart: [
+      t(
+        "Let go of the idea that leaders are tools to accomplish your vision. They are people God has entrusted to you, with families, fears and fatigue. Replace \"What can they do for the ministry?\" with \"What does this person need to stay close to Jesus?\"",
+        "Bitawan ang ideyang ang mga lider ay kasangkapan para maabot ang pangarap mo. Sila ay mga taong ipinagkatiwala sa iyo ng Diyos, may pamilya, takot at pagod. Palitan ang \"Ano ang magagawa nila para sa ministeryo?\" ng \"Ano ang kailangan ng taong ito para manatiling malapit kay Hesus?\""
+      ),
+      t(
+        "Choose transparency. Let them see you repent, ask for help and rest. A leader who never admits weakness teaches his team to hide theirs.",
+        "Piliin ang pagiging bukas. Hayaan silang makita kang nagsisisi, humihingi ng tulong at nagpapahinga. Ang lider na hindi kailanman umaamin ng kahinaan ay nagtuturo sa kanyang team na itago ang sa kanila."
+      ),
+    ],
+    questions: [
+      t("When did I last ask one of my leaders about his or her soul, not just the ministry report?", "Kailan ako huling nagtanong sa isa kong lider tungkol sa kanyang kaluluwa, hindi lang sa ulat ng ministeryo?"),
+      t("Would my leaders say I lead by example or by pressure?", "Sasabihin kaya ng aking mga lider na pinamumunuan ko sila sa halimbawa o sa presyon?"),
+      t("Which leader is quietly tired, and have I noticed?", "Aling lider ang tahimik na pagod na pagod, at napansin ko ba?"),
+      t("Is there a part of my own life I would not want my leaders to copy?", "May bahagi ba ng sarili kong buhay na ayaw kong tularan ng aking mga lider?"),
+    ],
+    actions: [
+      t("Message each leader you oversee this week with one question: \"How is your heart?\"", "Padalhan ng mensahe ang bawat lider na pinangangasiwaan mo ngayong linggo na may isang tanong: \"Kumusta ang puso mo?\""),
+      t("Schedule one unhurried meal or call with the leader you have neglected most.", "Mag-iskedyul ng isang di-nagmamadaling pagkain o tawag sa lider na pinakanapabayaan mo."),
+      t("Tell your leaders about a recent struggle or mistake of yours, and what God taught you.", "Ikuwento sa iyong mga lider ang kamakailang pakikibaka o pagkakamali mo, at kung ano ang itinuro ng Diyos sa iyo."),
+    ],
+    prayer: t(
+      "Chief Shepherd, You have entrusted me with leaders who carry heavy loads. Forgive me for treating them as tools and for neglecting their hearts. Teach me to lead as Paul did, with humility, tears and an open life. Give me eyes to see who is weary, courage to be honest about my own weakness, and love that serves instead of controlling. Let my example point them to You and not to me. Make our team a safe place to grow. In Jesus' name, Amen.",
+      "Punong Pastol, ipinagkatiwala Mo sa akin ang mga lider na may mabibigat na pasanin. Patawarin Mo ako sa pagtrato ko sa kanila bilang kasangkapan at sa pagpapabaya sa kanilang puso. Turuan Mo akong mamuno gaya ni Pablo, may kababaang-loob, luha at bukas na buhay. Bigyan Mo ako ng mga matang makakita kung sino ang pagod, tapang na maging tapat sa sarili kong kahinaan, at pag-ibig na naglilingkod at hindi nagkokontrol. Hayaang ituro ng halimbawa ko ang mga lider sa Iyo at hindi sa akin. Gawin Mong ligtas na lugar ng paglago ang aming team. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "keeping-leaders-united": {
+    revelation: t(
+      "Unity among leaders is not a nice extra for the church; it is the very evidence the world uses to decide whether Jesus was really sent by the Father.",
+      "Ang pagkakaisa ng mga lider ay hindi dagdag-ganda lang sa iglesia; ito ang mismong ebidensyang ginagamit ng mundo para malaman kung tunay ngang isinugo ng Ama si Hesus."
+    ),
+    mainTruth: t(
+      "On the night before the cross, Jesus prayed for those who would believe through the disciples' message: \"that all of them may be one, Father, just as You are in Me and I am in You... so that the world may believe that You have sent Me\" (John 17:20-21). Our oneness is not built by sameness but by the Spirit: \"Make every effort to keep the unity of the Spirit through the bond of peace\" (Ephesians 4:3). Notice the word \"keep.\" The Spirit gives the unity; we guard it. Paul shows how: humility, gentleness, patience, bearing with one another in love (Ephesians 4:2), and the mind of Christ that looks \"not only to your own interests, but also to the interests of others\" (Philippians 2:3-4).",
+      "Sa gabi bago ang krus, ipinanalangin ni Hesus ang mga sasampalataya sa pamamagitan ng mensahe ng mga alagad: \"na silang lahat ay maging isa, Ama, gaya Mo na nasa Akin at Ako na nasa Iyo... upang maniwala ang mundo na Ikaw ang nagsugo sa Akin\" (Juan 17:20-21). Ang ating pagkakaisa ay hindi nabubuo sa pagiging pare-pareho kundi sa Espiritu: \"Sikapin ninyong ingatan ang pagkakaisa ng Espiritu sa bigkis ng kapayapaan\" (Efeso 4:3). Pansinin ang salitang \"ingatan.\" Ang Espiritu ang nagbibigay ng pagkakaisa; tayo ang nagbabantay nito. Ipinakikita ni Pablo kung paano: kababaang-loob, kahinahunan, pagtitiis, at pagtanggap sa isa't isa sa pag-ibig (Efeso 4:2), at ang pag-iisip ni Cristo na tumitingin \"hindi lang sa sariling kapakanan kundi pati sa kapakanan ng iba\" (Filipos 2:3-4)."
+    ),
+    insight: [
+      t(
+        "Most church splits do not begin with doctrine. They begin with a small private offense that nobody addressed: a comment in a group chat, a decision made without consulting someone, a leader who felt passed over. Unity rarely dies in one explosion; it dies by a hundred unspoken hurts. That is why Paul says to make EVERY effort. Unity takes work, like a garden that never weeds itself.",
+        "Karamihan ng paghihiwalay sa iglesia ay hindi nagsisimula sa doktrina. Nagsisimula ito sa maliit at pribadong sama ng loob na walang tumugon: isang komento sa group chat, isang desisyong hindi ipinaalam sa isa, isang lider na nakaramdam na nilampasan siya. Bihirang mamatay ang pagkakaisa sa isang malakas na pagsabog; namamatay ito sa daan-daang hindi nasabing sakit. Kaya sinasabi ni Pablo na sikapin ang BAWAT paraan. Kailangan ng pagpapagal ang pagkakaisa, parang hardin na hindi kusang nagbubunot ng sariling damo."
+      ),
+      t(
+        "Unity is also not silence. A team that never disagrees is usually a team where one person decides and everyone else complies. Healthy unity says, \"We see it differently, we will speak the truth in love, and then we will stand together.\" The unity Jesus prayed for is the unity of the Father and the Son: distinct persons, one purpose.",
+        "Hindi rin katahimikan ang pagkakaisa. Ang team na hindi kailanman nagkakaiba ng pananaw ay madalas na team na iisa ang nagpapasya at sumusunod ang lahat. Sinasabi ng malusog na pagkakaisa, \"Magkaiba ang tingin natin, sasabihin natin ang katotohanan nang may pag-ibig, at pagkatapos ay magkakatabi tayong tatayo.\" Ang pagkakaisang ipinanalangin ni Hesus ay ang pagkakaisa ng Ama at ng Anak: magkaibang persona, iisang layunin."
+      ),
+    ],
+    life: [
+      t(
+        "In a Dubai fellowship, two leaders, Marissa and Jun, stopped talking after a disagreement over who should lead the weekend prayer meeting. Neither said anything harsh; they just got polite and distant. Their volunteers felt it. Attendance dipped, and people began choosing sides. The pastor did not call a meeting about \"the problem.\" He invited the two of them for dinner, prayed, and asked each to say, \"Here is how I hurt you.\" It was uncomfortable and holy. By the end, they were laughing, and the prayer meeting grew stronger than before.",
+        "Sa isang fellowship sa Dubai, tumigil mag-usap sina Marissa at Jun na parehong lider matapos magkaiba ng pananaw kung sino ang mamumuno sa prayer meeting tuwing weekend. Walang nagsabi ng masakit; naging magalang at malayo lang sila. Naramdaman ito ng mga volunteer. Bumaba ang dumadalo, at nagsimulang pumili ng kampi ang mga tao. Hindi nagpatawag ng pulong ang pastor tungkol sa \"problema.\" Inanyayahan niya ang dalawa sa hapunan, nanalangin, at pinasabi sa bawat isa, \"Ito ang paraan kung paano kita nasaktan.\" Hindi komportable pero banal. Pagdating ng huli, nagtatawanan na sila, at mas lumakas ang prayer meeting kaysa dati."
+      ),
+      t(
+        "In a house where relatives live under one roof and share expenses, you know how a small unaddressed irritation can poison supper. Church leadership works the same way. Deal with it quickly, privately and kindly, before it becomes the story everyone tells.",
+        "Sa bahay na magkakamag-anak ang nakatira at nagsasalo sa gastos, alam mo kung paano nilalason ng maliit na inis na hindi tinugunan ang hapunan. Ganito rin ang pamumuno sa iglesia. Harapin agad, pribado at may kabaitan, bago pa maging kuwentong pinag-uusapan ng lahat."
+      ),
+    ],
+    twist: t(
+      "We imagine that the way to protect unity is to avoid conflict. Jesus teaches that peace is made by going toward the person who is hurt: \"If you are offering your gift... and there remember that your brother has something against you... first go and be reconciled\" (Matthew 5:23-24). Notice He does not say, \"if you have something against him.\" Even when the other person's grievance is against YOU, you go. The peacemaker is not the one who stays quiet but the one who walks first.",
+      "Akala natin, para maprotektahan ang pagkakaisa ay dapat umiwas sa alitan. Itinuturo ni Hesus na ang kapayapaan ay ginagawa sa pagpunta sa taong nasaktan: \"Kung maghahandog ka... at maalala mong may reklamo laban sa iyo ang iyong kapatid... magpunta ka muna at makipagkasundo\" (Mateo 5:23-24). Pansinin: hindi Niya sinabing \"kung may reklamo ka laban sa kanya.\" Kahit ang hinanakit ng iba ay laban sa IYO, ikaw ang pupunta. Ang tagapamayapa ay hindi ang tahimik lang, kundi ang unang naglalakad."
+    ),
+    confirm: [
+      t("Psalm 133:1-3: where brothers dwell in unity, \"there the Lord bestows His blessing.\"", "Awit 133:1-3: kung saan nagkakaisang namumuhay ang magkakapatid, \"doon ipinagkakaloob ng Panginoon ang Kanyang pagpapala.\""),
+      t("Acts 15:36-41: Paul and Barnabas disagreed sharply, yet God later redeemed the relationship (2 Timothy 4:11).", "Gawa 15:36-41: matindi ang di-pagkakasundo nina Pablo at Bernabe, pero kalaunan ay hinilom ito ng Diyos (2 Timoteo 4:11)."),
+      t("Romans 12:18: \"If it is possible, as far as it depends on you, live at peace with everyone.\"", "Roma 12:18: \"Kung maaari, hangga't nasa inyo, mamuhay kayong payapa sa lahat.\""),
+      t("Proverbs 17:9: whoever covers an offense promotes love, but whoever repeats the matter separates close friends.", "Kawikaan 17:9: ang tumatakip ng pagkakasala ay nagpapalago ng pag-ibig, ngunit ang nagpapabalik-balik ng usapin ay naghihiwalay sa magkakaibigan."),
+    ],
+    heart: [
+      t(
+        "Decide today that you will be a guardian of unity, not a carrier of grievances. When someone complains about another leader to you, ask gently, \"Have you talked to him?\" Refuse to be the bridge for gossip.",
+        "Magpasya ngayon na ikaw ay magiging tagapagbantay ng pagkakaisa, hindi tagapagdala ng hinanakit. Kapag may nagreklamo sa iyo tungkol sa ibang lider, tanungin nang malumanay, \"Nakausap mo na ba siya?\" Tanggihan ang pagiging tulay ng tsismis."
+      ),
+      t(
+        "Practice humility in small things: giving credit, asking opinions, apologizing first. Unity is built far less by big speeches than by many small acts of dying to yourself.",
+        "Magsanay ng kababaang-loob sa maliliit na bagay: pagbibigay ng papuri, paghingi ng opinyon, paghingi ng tawad nang una. Mas nabubuo ang pagkakaisa sa maraming maliit na pagtanggi sa sarili kaysa sa malalaking talumpati."
+      ),
+    ],
+    questions: [
+      t("Is there a leader I have grown distant from, and what has gone unsaid?", "May lider ba akong lumayo ang loob ko, at ano ang hindi pa nasasabi?"),
+      t("Do I speak about my fellow leaders the same way when they are absent?", "Pareho ba ang pagsasalita ko tungkol sa kapwa lider kapag wala sila?"),
+      t("Where am I protecting my preferences more than the unity of the team?", "Saan ko mas pinoprotektahan ang gusto ko kaysa sa pagkakaisa ng team?"),
+      t("What small habits could keep our leaders honest and close?", "Anong maliliit na gawi ang magpapanatiling tapat at malapit ang aming mga lider?"),
+    ],
+    actions: [
+      t("Reach out today to the leader with whom you feel the most tension, and ask for a coffee or a call.", "Lapitan ngayon ang lider na pinakamabigat ang pakiramdam mo, at yayain sa kape o tawag."),
+      t("Agree with your team on a simple rule: \"We speak TO each other, not ABOUT each other.\"", "Magkasundo ang inyong team sa simpleng patakaran: \"Kinakausap natin ang isa't isa, hindi pinag-uusapan.\""),
+      t("Pray John 17:20-23 aloud together at your next leaders' meeting.", "Ipanalangin nang malakas nang sama-sama ang Juan 17:20-23 sa susunod ninyong pulong ng mga lider."),
+    ],
+    prayer: t(
+      "Lord Jesus, You prayed that we would be one so the world might believe. Forgive me for the times I have chosen pride, silence or gossip over peace. Give me the courage to go first to those I have hurt and to those who have hurt me. Make me a guardian of unity, quick to listen, slow to take offense, and ready to honor my fellow leaders. Let our oneness show the world that the Father sent You. Bind our hearts by Your Spirit, and keep us together in love. Amen.",
+      "Panginoong Hesus, ipinanalangin Mo na maging isa kami upang maniwala ang mundo. Patawarin Mo ako sa mga pagkakataong pinili ko ang pagmamataas, katahimikan o tsismis kaysa sa kapayapaan. Bigyan Mo ako ng tapang na unang lumapit sa mga nasaktan ko at sa mga nakasakit sa akin. Gawin Mo akong tagapagbantay ng pagkakaisa, mabilis makinig, mabagal magtampo, at laging handang igalang ang kapwa ko lider. Hayaang ipakita ng aming pagkakaisa sa mundo na Ikaw ay isinugo ng Ama. Itali Mo ang aming mga puso sa pamamagitan ng Iyong Espiritu, at panatilihin Mo kaming magkasama sa pag-ibig. Amen."
+    ),
+  },
+  "simple-tools-that-multiply": {
+    revelation: t(
+      "What multiplies is not the most impressive method but the simplest one that an ordinary believer can pass on to the next person without you in the room.",
+      "Ang dumarami ay hindi ang pinakamagarang paraan kundi ang pinakasimpleng kayang ipasa ng karaniwang mananampalataya sa susunod na tao kahit wala ka sa silid."
+    ),
+    mainTruth: t(
+      "Paul wrote, \"Follow my example, as I follow the example of Christ\" (1 Corinthians 11:1), and \"Whatever you have learned or received or heard from me, or seen in me, put it into practice\" (Philippians 4:9). Then he gave Timothy the multiplication formula: \"The things you have heard me say in the presence of many witnesses entrust to reliable people who will also be qualified to teach others\" (2 Timothy 2:2). Four generations are in that one verse: Paul, Timothy, reliable people, others. A method that only the original leader can do is a performance. A method that the fourth generation can still do is a movement.",
+      "Isinulat ni Pablo, \"Tularan ninyo ako, gaya ng pagtulad ko kay Cristo\" (1 Corinto 11:1), at \"Ang anumang natutunan ninyo, tinanggap, narinig mula sa akin, o nakita sa akin, gawin ninyo\" (Filipos 4:9). Pagkatapos ay ibinigay niya kay Timoteo ang pormula ng pagpaparami: \"Ang mga narinig mo sa akin sa harap ng maraming saksi ay ipagkatiwala mo sa mga taong mapagkakatiwalaan na magiging may kakayahang magturo rin sa iba\" (2 Timoteo 2:2). Apat na henerasyon ang nasa isang talatang iyan: Pablo, Timoteo, mga mapagkakatiwalaan, at ang iba. Ang paraang ang orihinal na lider lang ang kayang gumawa ay isang palabas. Ang paraang kaya pa ring gawin ng ikaapat na henerasyon ay isang kilusan."
+    ),
+    insight: [
+      t(
+        "Leaders love to build what is impressive: a polished program, a complicated curriculum, a slide deck only they can present. But complexity is the enemy of multiplication. Every extra step, every special skill required, every expensive resource is a gate that most people cannot walk through. Jesus trained fishermen and a tax collector with a few simple practices: come, follow Me, watch, pray, go, tell.",
+        "Mahilig ang mga lider na bumuo ng kahanga-hanga: magarang programa, komplikadong kurikulum, presentasyong sila lang ang kayang magdala. Pero kaaway ng pagpaparami ang pagiging komplikado. Bawat dagdag na hakbang, espesyal na kasanayan, o mamahaling gamit ay pintuang hindi kayang daanan ng karamihan. Sinanay ni Hesus ang mga mangingisda at isang maniningil ng buwis sa ilang simpleng gawi: halika, sumunod ka sa Akin, manood, manalangin, humayo, magsabi."
+      ),
+      t(
+        "Notice also that Paul says \"example\" before \"tool.\" The best tool in the world fails in the hands of a leader whose life does not match it. People copy lives first and methods second. A simple tool carried by an authentic person will outlast a brilliant tool carried by a hypocrite.",
+        "Pansinin din na \"halimbawa\" ang nauuna kaysa \"kasangkapan\" sa sinabi ni Pablo. Pumapalpak ang pinakamahusay na kasangkapan sa kamay ng lider na hindi tugma ang buhay. Buhay muna ang kinokopya ng mga tao, saka paraan. Mas tatagal ang simpleng kasangkapang dala ng tunay na tao kaysa sa napakahusay na kasangkapang dala ng mapagkunwari."
+      ),
+    ],
+    life: [
+      t(
+        "Consider a disciple-making group among Filipino workers in Kuwait. The leader, Ate Lorna, did not hand out a thick manual. She taught every leader one rhythm for a weekly gathering: share what God did this week, read a short passage together, ask \"What is God saying to me? What will I do about it?\" and then pray for one person who does not yet know Jesus. That is all. Because it fits on one palm and needs no projector, a cook, a cleaner and a nurse each started their own groups in different labor camps and apartments.",
+        "Isipin ang isang grupong gumagawa ng alagad sa mga manggagawang Pilipino sa Kuwait. Hindi namigay ng makapal na manwal ang lider na si Ate Lorna. Itinuro niya sa bawat lider ang isang ritmo para sa lingguhang pagtitipon: ibahagi ang ginawa ng Diyos ngayong linggo, magbasa ng maikling talata nang sama-sama, itanong, \"Ano ang sinasabi ng Diyos sa akin? Ano ang gagawin ko tungkol dito?\" at ipanalangin ang isang taong hindi pa nakakakilala kay Hesus. Iyon lang. Dahil kasya ito sa palad at hindi nangangailangan ng projector, nagsimula ng sarili nilang grupo ang isang cook, isang kasambahay at isang nurse sa iba't ibang labor camp at apartment."
+      ),
+      t(
+        "Think of how a good recipe spreads in a barangay. It uses ingredients anyone can buy and steps anyone can follow, and so everyone's lola cooks it. Ministry tools spread the same way. Ask of every method: Can a new believer do this with what he has, in the place where he lives?",
+        "Isipin kung paano kumakalat sa barangay ang isang masarap na resipe. Gumagamit ito ng sangkap na kayang bilhin ng sinuman at hakbang na kayang sundan ng kahit sino, kaya lahat ng lola ay nagluluto nito. Ganito rin kumakalat ang mga kasangkapan sa ministeryo. Itanong sa bawat paraan: Kaya ba itong gawin ng bagong mananampalataya sa kung anong mayroon siya, sa lugar na tinitirhan niya?"
+      ),
+    ],
+    twist: t(
+      "We assume that giving people something simple means we have cheapened the gospel. The opposite is true: Jesus said the Kingdom is like a mustard seed, the smallest of seeds, yet it grows into a tree where the birds nest (Matthew 13:31-32). Smallness is not weakness; it is the shape of things designed to spread. God hides His greatest power inside the simplest, most reproducible things: a seed, a loaf, a word, a person's story.",
+      "Akala natin, kapag simple ang ibinigay natin sa tao ay pinababa natin ang halaga ng ebanghelyo. Kabaligtaran ang totoo: sinabi ni Hesus na ang Kaharian ay tulad ng buto ng mustasa, ang pinakamaliit sa mga buto, pero lumalaki itong puno na tinitirhan ng mga ibon (Mateo 13:31-32). Ang pagiging maliit ay hindi kahinaan; ito ang hugis ng mga bagay na ginawa para kumalat. Itinatago ng Diyos ang Kanyang pinakamalaking kapangyarihan sa pinakasimple at pinakamadaling ulitin: buto, tinapay, salita, kuwento ng isang tao."
+    ),
+    confirm: [
+      t("Mark 6:41-44: five loaves and two fish multiplied in the hands of ordinary disciples who simply distributed them.", "Marcos 6:41-44: dumami ang limang tinapay at dalawang isda sa kamay ng mga ordinaryong alagad na namahagi lamang nito."),
+      t("Acts 4:13: the council saw the courage of Peter and John, \"unschooled, ordinary men,\" and recognized they had been with Jesus.", "Gawa 4:13: nakita ng kapulungan ang tapang nina Pedro at Juan, mga \"walang pinag-aralan at karaniwang tao,\" at nakilala nilang sumama sila kay Hesus."),
+      t("Luke 10:1-9: Jesus sent the seventy-two with a simple message and a simple method.", "Lucas 10:1-9: isinugo ni Hesus ang pitumpu't dalawa na may simpleng mensahe at simpleng paraan."),
+      t("Matthew 28:19-20: \"Teach them to obey everything I have commanded you,\" a command meant to be passed on.", "Mateo 28:19-20: \"Turuan ninyo silang sundin ang lahat ng iniutos Ko sa inyo,\" isang utos na dapat ipasa."),
+    ],
+    heart: [
+      t(
+        "Release your need to look impressive. Humility is willing to teach something so simple that the student can soon do it better than you. That is not loss; that is multiplication.",
+        "Bitawan ang pangangailangang magmukhang kahanga-hanga. Ang kababaang-loob ay handang magturo ng bagay na napakasimple kaya malapit nang magawa ito ng estudyante nang mas mahusay kaysa sa iyo. Hindi iyon pagkatalo; iyon ay pagpaparami."
+      ),
+      t(
+        "Live what you teach. Before you hand someone a tool, let them see it working in your own home, your own prayer life and your own workplace.",
+        "Isabuhay ang itinuturo mo. Bago ka magbigay ng kasangkapan sa iba, hayaan silang makita itong gumagana sa sarili mong tahanan, panalangin at trabaho."
+      ),
+    ],
+    questions: [
+      t("Which of my methods could only I run, and why?", "Alin sa mga paraan ko ang ako lang ang kayang magpatakbo, at bakit?"),
+      t("Can a new believer repeat what I teach in under five minutes of explanation?", "Kaya bang ulitin ng bagong mananampalataya ang itinuturo ko sa wala pang limang minutong paliwanag?"),
+      t("Am I building people who copy my life or only my programs?", "Bumubuo ba ako ng mga taong kumokopya ng buhay ko o ng mga programa ko lang?"),
+      t("How many generations deep has my ministry reached, one, two, three, four?", "Ilang henerasyon na ang naabot ng ministeryo ko: isa, dalawa, tatlo, apat?"),
+    ],
+    actions: [
+      t("Write your core practice on one index card in five lines or fewer, such as share, read, obey, pray, tell.", "Isulat ang pangunahing gawi mo sa isang index card sa limang linya o mas kaunti, gaya ng ibahagi, basahin, sundin, ipanalangin, ipasabi."),
+      t("Teach it to one person this week and ask them to teach it to someone else within a month.", "Ituro ito sa isang tao ngayong linggo at ipagawa sa kanyang ituro ito sa iba sa loob ng isang buwan."),
+      t("Remove one unnecessary step or requirement from your ministry that blocks ordinary people.", "Alisin ang isang di-kailangang hakbang o rekisito sa ministeryo mo na humaharang sa mga ordinaryong tao."),
+    ],
+    prayer: t(
+      "Lord Jesus, You trained ordinary people with simple things and changed the world. Forgive me for loving what looks impressive more than what multiplies. Teach me to keep my teaching clear and my methods light so that others can carry them. Let my own life be a worthy example of what I teach. Raise up reliable people who will teach others, and let the gospel travel farther than I ever could alone. Use what is small in my hands, as You used the loaves and the fish. Amen.",
+      "Panginoong Hesus, sinanay Mo ang mga ordinaryong tao sa pamamagitan ng mga simpleng bagay at binago Mo ang mundo. Patawarin Mo ako sa pagmamahal sa mukhang kahanga-hanga higit sa nagpaparami. Turuan Mo akong gawing malinaw ang aking pagtuturo at magaan ang aking mga paraan upang madala ito ng iba. Hayaang maging karapat-dapat na halimbawa ng itinuturo ko ang sarili kong buhay. Magbangon Ka ng mga taong mapagkakatiwalaan na magtuturo rin sa iba, at hayaang lumakbay nang mas malayo ang ebanghelyo kaysa kaya kong abutin nang mag-isa. Gamitin Mo ang maliit sa aking mga kamay, gaya ng paggamit Mo sa tinapay at isda. Amen."
+    ),
+  },
+  "honoring-every-members-gift": {
+    revelation: t(
+      "There is no ordinary member in the Body of Christ; every person you lead carries something from God that the rest of the church cannot live without.",
+      "Walang ordinaryong miyembro sa Katawan ni Cristo; bawat taong pinamumunuan mo ay may dalang bagay mula sa Diyos na hindi kayang ipagwalang-bahala ng iglesia."
+    ),
+    mainTruth: t(
+      "Paul writes, \"Just as each of us has one body with many members, and these members do not all have the same function, so in Christ we, though many, form one body, and each member belongs to all the others. We have different gifts, according to the grace given to each of us\" (Romans 12:4-6). The gifts are grace, not talent shows: prophecy, serving, teaching, encouraging, giving, leading, showing mercy (Romans 12:6-8). Then in Romans 16 Paul does something beautiful: he names people. Phoebe, who served and helped many; Priscilla and Aquila, who risked their necks; Mary, who worked very hard (Romans 16:1-7). Even the four daughters of Philip are remembered for prophesying (Acts 21:8-9). The apostle honored by name the people no one else would have noticed.",
+      "Isinulat ni Pablo, \"Kung paanong ang bawat isa sa atin ay may isang katawan na maraming bahagi, at hindi pare-pareho ang gawain ng mga bahaging ito, gayundin sa Kristo, kahit marami tayo ay iisang katawan, at ang bawat bahagi ay kabilang sa lahat ng iba. May iba't ibang kaloob tayo ayon sa biyayang ibinigay sa bawat isa\" (Roma 12:4-6). Ang mga kaloob ay biyaya, hindi talent show: pagpapahayag ng propesiya, paglilingkod, pagtuturo, paghimok, pagbibigay, pamumuno, pagpapakita ng awa (Roma 12:6-8). Pagkatapos, sa Roma 16, gumagawa si Pablo ng napakagandang bagay: pinangangalanan niya ang mga tao. Si Febe na naglingkod at tumulong sa marami; sina Priscila at Aquila na isinapanganib ang kanilang buhay; si Maria na nagpagal nang husto (Roma 16:1-7). Maging ang apat na anak na dalaga ni Felipe ay naaalala dahil sa pagpapahayag ng propesiya (Gawa 21:8-9). Pinarangalan ng apostol sa pangalan ang mga taong hindi mapapansin ng iba."
+    ),
+    insight: [
+      t(
+        "Most leaders unconsciously honor only the gifts that look like their own. A preacher admires preachers; a musician admires musicians. Meanwhile the woman who remembers every sick person's name, the man who quietly fixes the sound system, and the teenager who befriends the lonely newcomer are carrying the church and hearing no thanks. Paul says the parts that seem weaker are indispensable and deserve special honor (1 Corinthians 12:22-23).",
+        "Karamihan sa mga lider ay hindi namamalayang mga kaloob lang na kamukha ng sarili nila ang pinaparangalan. Hinahangaan ng mangangaral ang mangangaral; hinahangaan ng musikero ang musikero. Samantala, ang babaeng nakaaalala sa pangalan ng bawat maysakit, ang lalaking tahimik na nag-aayos ng sound system, at ang tinedyer na nakikipagkaibigan sa nag-iisang bagong dating ay siyang bumubuhat sa iglesia at walang nakakapagpasalamat. Sabi ni Pablo, ang mga bahaging tila mahina ay kailangang-kailangan at karapat-dapat sa natatanging parangal (1 Corinto 12:22-23)."
+      ),
+      t(
+        "Honoring a gift also means developing it. It is not enough to say \"thank you.\" A leader who truly honors a person asks: What is God growing in you? How can I give you room, training and trust to use it? A gift unnamed and unopened is a loss for the whole church.",
+        "Ang pagpaparangal sa kaloob ay nangangahulugan din ng pagpapaunlad nito. Hindi sapat ang \"salamat.\" Ang lider na tunay na nagpaparangal ay nagtatanong: Ano ang pinalalago ng Diyos sa iyo? Paano kita mabibigyan ng espasyo, pagsasanay at tiwala para magamit ito? Ang kaloob na hindi napangalanan at hindi nabuksan ay kawalan ng buong iglesia."
+      ),
+    ],
+    life: [
+      t(
+        "In a small church of domestic workers in Beirut, Tita Baby had no title and never spoke from the front. But every Sunday she arrived early, boiled water for coffee and quietly asked each newcomer where they worked and how they were holding up. A new pastor noticed what many had missed: half of their regulars had first been welcomed by Tita Baby. He gave her an official hospitality team, trained two helpers under her, and publicly thanked her. Within months the church's welcome became its strongest ministry.",
+        "Sa isang maliit na iglesia ng mga kasambahay sa Beirut, walang titulo si Tita Baby at hindi kailanman nagsalita sa harap. Pero tuwing Linggo, maaga siyang dumarating, nagpapakulo ng tubig para sa kape, at tahimik na nagtatanong sa bawat bagong dating kung saan sila nagtatrabaho at kumusta sila. Napansin ng bagong pastor ang hindi napansin ng marami: kalahati ng kanilang mga regular ay unang sinalubong ni Tita Baby. Binigyan niya ito ng opisyal na hospitality team, nagsanay ng dalawang katulong sa ilalim niya, at pampublikong nagpasalamat. Sa loob ng ilang buwan, naging pinakamalakas na ministeryo ng iglesia ang kanilang pagtanggap."
+      ),
+      t(
+        "Take a look at your own group this week. Who is always there, always helping, and rarely thanked? Who has a gift that does not fit your usual program, and so no one knows about it? A short, specific word, such as \"I saw how you comforted her; that is God's gift in you,\" can awaken a person for years.",
+        "Tingnan ang sarili mong grupo ngayong linggo. Sino ang laging nandiyan, laging tumutulong, at bihirang pasalamatan? Sino ang may kaloob na hindi akma sa karaniwan ninyong programa kaya walang nakaaalam? Ang maikli at tiyak na salita, gaya ng \"Nakita ko kung paano mo siya inaliw; kaloob iyan ng Diyos sa iyo,\" ay maaaring gumising sa isang tao sa loob ng maraming taon."
+      ),
+    ],
+    twist: t(
+      "We think honoring a gift means putting someone on the platform. Paul's list in Romans 16 shows the reverse: the people he honors were mostly not on a platform at all. They hosted a church in their house, carried a letter across the sea, worked hard in the background. In God's Kingdom the true measure of a gift is not how many see it but how much it builds up the body. The hidden hands are often holding the whole house up.",
+      "Akala natin, ang pagpaparangal sa kaloob ay ang pagpapatayo ng tao sa entablado. Ipinakikita ng listahan ni Pablo sa Roma 16 ang kabaligtaran: karamihan sa mga pinarangalan niya ay wala talaga sa entablado. Nagpatuloy sila ng iglesia sa kanilang bahay, nagdala ng liham sa kabila ng dagat, nagpagal nang tahimik sa likod. Sa Kaharian ng Diyos, ang tunay na sukatan ng kaloob ay hindi kung ilan ang nakakakita kundi kung gaano nito pinalalago ang katawan. Ang mga nakatagong kamay ang madalas na nakaalalay sa buong bahay."
+    ),
+    confirm: [
+      t("1 Corinthians 12:12-27: the eye cannot say to the hand, \"I don't need you.\"", "1 Corinto 12:12-27: hindi masasabi ng mata sa kamay, \"Hindi kita kailangan.\""),
+      t("1 Peter 4:10: \"Each of you should use whatever gift you have received to serve others, as faithful stewards of God's grace.\"", "1 Pedro 4:10: \"Gamitin ng bawat isa sa inyo ang anumang kaloob na tinanggap upang maglingkod sa iba, bilang tapat na katiwala ng biyaya ng Diyos.\""),
+      t("Exodus 31:1-6: God filled Bezalel with His Spirit for craftsmanship; practical skill is also a gift.", "Exodo 31:1-6: pinuno ng Diyos si Bezalel ng Kanyang Espiritu para sa pagkakayari; ang praktikal na husay ay kaloob din."),
+      t("Acts 9:36-39: Dorcas was remembered for her sewing, and a whole room wept at her death.", "Gawa 9:36-39: naalala si Dorcas dahil sa kanyang pananahi, at iniyakan siya ng buong silid nang mamatay."),
+    ],
+    heart: [
+      t(
+        "Repent of favoritism for the visible gifts. Ask God to give you His eyes, which see the person at the back who prays through the whole service and the one who stacks the chairs.",
+        "Magsisi sa pagtatangi sa mga kaloob na nakikita. Hilingin sa Diyos na ibigay sa iyo ang Kanyang mga mata, na nakakakita sa taong nasa likuran na nananalangin sa buong serbisyo at sa nag-aayos ng mga upuan."
+      ),
+      t(
+        "Let your words be specific. General praise fades, but \"God is using your patience with the children\" stays in a heart. Give honor early, publicly and by name.",
+        "Gawing tiyak ang iyong mga salita. Nawawala ang pangkalahatang papuri, pero nananatili sa puso ang \"Ginagamit ng Diyos ang pasensya mo sa mga bata.\" Magbigay ng parangal nang maaga, hayagan, at sa pangalan."
+      ),
+    ],
+    questions: [
+      t("Which gifts do I naturally honor, and which do I accidentally ignore?", "Anong mga kaloob ang likas kong pinaparangalan, at alin ang hindi ko sinasadyang binabalewala?"),
+      t("Who in my group is serving faithfully without being thanked?", "Sino sa aking grupo ang tapat na naglilingkod nang hindi napapasalamatan?"),
+      t("Have I ever helped someone discover and name their gift?", "Natulungan ko na ba ang isang tao na tuklasin at pangalanan ang kanyang kaloob?"),
+      t("What stops me from giving room to others to use their gifts?", "Ano ang pumipigil sa akin na bigyan ng espasyo ang iba para magamit ang kanilang kaloob?"),
+    ],
+    actions: [
+      t("Write a short, specific note of thanks to three people who serve quietly, naming the gift you see in them.", "Sumulat ng maikli at tiyak na pasasalamat sa tatlong taong tahimik na naglilingkod, at pangalanan ang kaloob na nakikita mo sa kanila."),
+      t("Ask one member, \"What do you love doing that helps others?\" and listen for the gift.", "Tanungin ang isang miyembro, \"Ano ang gusto mong gawin na nakatutulong sa iba?\" at pakinggan ang kaloob."),
+      t("Give one person a small, real responsibility this month that fits what you have seen in them.", "Bigyan ang isang tao ng maliit ngunit tunay na responsibilidad ngayong buwan na akma sa nakita mo sa kanya."),
+    ],
+    prayer: t(
+      "Father, thank You for giving every member of Your Body a gift and a place. Forgive me for the times I have admired only what is loud and visible and overlooked the faithful ones in the background. Open my eyes to see what You have placed in each person I lead. Teach me to name, thank and train them. Break any envy or control in me, and help me make room for gifts that are different from mine. Let the whole Body be built up as each part does its work. In Jesus' name, Amen.",
+      "Ama, salamat po dahil binigyan Mo ng kaloob at lugar ang bawat bahagi ng Iyong Katawan. Patawarin Mo ako sa mga panahong ang maingay at nakikita lang ang hinangaan ko at napabayaan ko ang mga tapat sa likod. Buksan Mo ang aking mga mata upang makita ang inilagay Mo sa bawat taong pinamumunuan ko. Turuan Mo akong pangalanan, pasalamatan at sanayin sila. Sirain Mo sa akin ang anumang inggit o pagkontrol, at tulungan Mo akong magbigay-daan sa mga kaloob na iba sa akin. Hayaang matayo ang buong Katawan habang ginagawa ng bawat bahagi ang tungkulin nito. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "leading-across-generations": {
+    revelation: t(
+      "God never designed His church to be run by one generation; His Spirit is poured out on young and old together because each carries what the other lacks.",
+      "Hindi dinisenyo ng Diyos ang Kanyang iglesia para patakbuhin ng iisang henerasyon; ibinubuhos ng Kanyang Espiritu ang sarili Niya sa bata at matanda nang magkasama dahil bawat isa ay may dalang kulang sa isa."
+    ),
+    mainTruth: t(
+      "\"One generation commends Your works to another; they tell of Your mighty acts\" (Psalm 145:4). God's plan is a relay, not a solo run. Through Joel He promised, \"I will pour out My Spirit on all people. Your sons and daughters will prophesy, your old men will dream dreams, your young men will see visions\" (Joel 2:28). Notice the order: the old dream, the young see visions. Dreams carry wisdom and long hope; visions carry fresh energy and sight. Paul tells Titus to build this into church life: older men and women are to live in ways that teach, and the older women are to train the younger (Titus 2:1-8). Unity across ages is not accidental; it is led.",
+      "\"Ipinupuri ng isang henerasyon ang Iyong mga gawa sa susunod; isinasalaysay nila ang Iyong makapangyarihang mga gawa\" (Awit 145:4). Ang plano ng Diyos ay takbuhang pasahan, hindi solo. Sa pamamagitan ni Joel, nangako Siya, \"Ibubuhos Ko ang Aking Espiritu sa lahat ng tao. Magpapahayag ng propesiya ang inyong mga anak na lalaki at babae, mananaginip ang inyong matatanda, at makakakita ng pangitain ang inyong mga kabataan\" (Joel 2:28). Pansinin ang pagkakasunod: ang matatanda ay nananaginip, ang kabataan ay nakakakita ng pangitain. Ang panaginip ay may dalang karunungan at mahabang pag-asa; ang pangitain ay may dalang bagong lakas at paningin. Sinasabi ni Pablo kay Tito na itatag ito sa buhay ng iglesia: ang matatandang lalaki at babae ay mamuhay nang nagtuturo, at sanayin ng matatandang babae ang mas bata (Tito 2:1-8). Ang pagkakaisa ng mga edad ay hindi aksidente; pinamumunuan ito."
+    ),
+    insight: [
+      t(
+        "Every generation is tempted to believe it is the center of God's plan. The older say, \"Young people today have no respect.\" The younger say, \"The old ones are out of touch.\" Both are partly right and fully wrong. Each generation sees what the other has blind spots about. Elders know what lasts; the young know what is changing. A church that listens to only one of them either becomes a museum or a trend.",
+        "Bawat henerasyon ay natutuksong maniwalang siya ang sentro ng plano ng Diyos. Sabi ng matatanda, \"Walang galang ang kabataan ngayon.\" Sabi ng kabataan, \"Hindi na updated ang matatanda.\" Parehong bahagyang tama at lubos na mali. Nakikita ng bawat henerasyon ang hindi nakikita ng iba. Alam ng matatanda ang tumatagal; alam ng kabataan ang nagbabago. Ang iglesiang nakikinig sa isa lang sa kanila ay nagiging museo o uso lang."
+      ),
+      t(
+        "Most generational conflict in churches is about style, not truth: music, dress, language, the length of a service. Leaders must learn to separate what Scripture commands from what a generation prefers. Hold the first with iron; hold the second with open hands.",
+        "Karamihan ng alitan ng mga henerasyon sa iglesia ay tungkol sa istilo, hindi sa katotohanan: musika, pananamit, wika, haba ng serbisyo. Dapat matutuhan ng mga lider na ihiwalay ang iniuutos ng Kasulatan sa mas gusto ng isang henerasyon. Hawakan ang una nang mahigpit; hawakan ang ikalawa nang bukas ang kamay."
+      ),
+    ],
+    life: [
+      t(
+        "Picture a Filipino church in Qatar where the worship team was all in their twenties and the prayer warriors were mostly in their fifties. The two groups were polite and separate. Then the young worship leader, Paolo, asked Lolo Ernesto, a retired seaman, to pray over the team before each Sunday. Lolo Ernesto began to tell stories of God's rescue at sea between songs. Paolo started teaching the older ladies to use the church's group chat so they could share prayer requests. A year later the church could not be told apart: grandmother and teenagers sat in the same row.",
+        "Isipin ang isang simbahang Pilipino sa Qatar kung saan lahat ng nasa worship team ay nasa edad dalawampu at karamihan ng mga prayer warrior ay nasa edad limampu. Magalang pero magkahiwalay ang dalawang grupo. Pagkatapos, inanyayahan ng batang worship leader na si Paolo si Lolo Ernesto, isang retiradong seaman, na ipanalangin ang team bago ang bawat Linggo. Nagsimulang magkuwento si Lolo Ernesto ng pagliligtas ng Diyos sa laot sa pagitan ng mga awit. Sinimulan namang turuan ni Paolo ang matatandang ginang na gamitin ang group chat ng simbahan para maibahagi nila ang kanilang prayer request. Pagkalipas ng isang taon, hindi na mapaghihiwalay ang iglesia: nakaupo sa iisang hanay ang lola at ang mga tinedyer."
+      ),
+      t(
+        "The same is true at home. Many Filipino families already live across three generations. The grandmother's rosary-worn faith, the parents' hard work and the children's smartphones can all be bridges if someone leads them to listen. Ask each age group, \"What do you wish the others understood about you?\"",
+        "Ganoon din sa tahanan. Maraming pamilyang Pilipino ang nakatira na sa tatlong henerasyon. Ang pananampalataya ng lola, ang pagsisikap ng mga magulang at ang smartphone ng mga bata ay maaaring maging tulay kung may mamumuno sa pakikinig. Tanungin ang bawat edad, \"Ano ang gusto mong maintindihan ng iba tungkol sa iyo?\""
+      ),
+    ],
+    twist: t(
+      "We think the generation gap is a problem to be fixed. The Bible treats it as a gift to be used: God is called the God of Abraham, Isaac and Jacob, three generations in one name (Exodus 3:15). He does not want to be known as the God of one generation's experience but of all of them, together. The very difference that annoys us is the way God keeps His church from becoming stuck.",
+      "Akala natin, ang agwat ng mga henerasyon ay problemang aayusin. Itinuturing ito ng Biblia na kaloob na gagamitin: tinatawag ang Diyos na Diyos nina Abraham, Isaac at Jacob, tatlong henerasyon sa iisang pangalan (Exodo 3:15). Ayaw Niyang makilala bilang Diyos ng karanasan ng isang henerasyon lang kundi ng lahat, magkakasama. Ang mismong pagkakaibang nakakainis sa atin ay paraan ng Diyos para hindi mabaon ang Kanyang iglesia sa nakasanayan."
+    ),
+    confirm: [
+      t("1 Timothy 4:12: \"Don't let anyone look down on you because you are young, but set an example.\"", "1 Timoteo 4:12: \"Huwag hayaang hamakin ninuman ang iyong kabataan, kundi maging halimbawa ka.\""),
+      t("Leviticus 19:32: \"Rise in the presence of the aged, show respect for the elderly.\"", "Levitico 19:32: \"Tumayo ka sa harap ng matanda, igalang mo ang may edad.\""),
+      t("2 Kings 12:1-2 and 2 Chronicles 34:1-3: boys like Joash and Josiah led well under godly counsel.", "2 Hari 12:1-2 at 2 Cronica 34:1-3: mga batang gaya nina Joas at Josias ay namuno nang mabuti sa ilalim ng maka-Diyos na payo."),
+      t("Psalm 78:4-7: tell the next generation, \"so that they would put their trust in God.\"", "Awit 78:4-7: sabihin sa susunod na henerasyon, \"upang magtiwala sila sa Diyos.\""),
+    ],
+    heart: [
+      t(
+        "Give honor to those older without making them feel useless, and give trust to those younger without making them feel tested forever. Honor is a language every age understands.",
+        "Magbigay ng galang sa mas nakatatanda nang hindi sila pinaparamdam na walang silbi, at magbigay ng tiwala sa mas bata nang hindi sila palaging sinusubok. Wika ng galang ang naiintindihan ng bawat edad."
+      ),
+      t(
+        "Be willing to give up a preference for the sake of another generation. Love does not insist on its own way (1 Corinthians 13:5).",
+        "Maging handang isuko ang kagustuhan alang-alang sa ibang henerasyon. Hindi namimilit ang pag-ibig sa sariling kagustuhan (1 Corinto 13:5)."
+      ),
+    ],
+    questions: [
+      t("Which generations are absent or silent in our leadership?", "Aling mga henerasyon ang wala o tahimik sa aming pamunuan?"),
+      t("What have I assumed about an older or younger generation without listening?", "Ano ang ipinagpalagay ko tungkol sa mas matanda o mas batang henerasyon nang hindi nakikinig?"),
+      t("Which of my preferences is actually a style, not a truth?", "Alin sa mga gusto ko ang istilo lang at hindi katotohanan?"),
+      t("Who is my \"Paul\" and who is my \"Timothy\" across the age gap?", "Sino ang aking \"Pablo\" at sino ang aking \"Timoteo\" sa kabila ng agwat ng edad?"),
+    ],
+    actions: [
+      t("Invite someone at least twenty years older or younger to a meal and ask about their journey with God.", "Yayain sa pagkain ang isang taong hindi bababa sa dalawampung taon ang tanda o bata sa iyo at tanungin ang paglalakbay nila sa Diyos."),
+      t("Pair an older believer with a younger one in a ministry task this month.", "Magtambal ng isang matandang mananampalataya at isang batang mananampalataya sa isang gawain ngayong buwan."),
+      t("Add one voice from a missing generation to your next leaders' discussion.", "Magdagdag ng isang tinig mula sa nawawalang henerasyon sa susunod ninyong talakayan ng mga lider."),
+    ],
+    prayer: t(
+      "God of Abraham, Isaac and Jacob, You are the God of every generation. Pour out Your Spirit on our sons and daughters, our young and our old, and let us serve together. Forgive our impatience with those who are different in age and style. Teach me to honor the old and to trust the young. Help me tell of Your mighty acts to those who come after me and listen to those who came before me. Make our church a family where every age belongs and where Your name is passed on. In Jesus' name, Amen.",
+      "Diyos nina Abraham, Isaac at Jacob, Ikaw ang Diyos ng bawat henerasyon. Ibuhos Mo ang Iyong Espiritu sa aming mga anak, sa kabataan at matatanda, at hayaan Mong magkasama kaming maglingkod. Patawarin Mo kami sa aming kawalan ng pasensya sa mga naiiba sa edad at istilo. Turuan Mo akong igalang ang matatanda at pagkatiwalaan ang kabataan. Tulungan Mo akong ipahayag ang Iyong mga dakilang gawa sa mga susunod sa akin at makinig sa mga nauna sa akin. Gawin Mong pamilya ang aming iglesia kung saan kabilang ang bawat edad at ipinapasa ang Iyong pangalan. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "thinking-strategically": {
+    revelation: t(
+      "Planning is not a lack of faith; the same God who gives the vision also gives wisdom to count the cost and a plan to carry it out.",
+      "Ang pagpaplano ay hindi kakulangan ng pananampalataya; ang Diyos na nagbibigay ng pangitain ay siya ring nagbibigay ng karunungan para tantiyahin ang gastos at ng plano para maisakatuparan ito."
+    ),
+    mainTruth: t(
+      "Jesus asked, \"Suppose one of you wants to build a tower. Won't you first sit down and estimate the cost to see if you have enough money to complete it?\" (Luke 14:28). Solomon wrote, \"The plans of the diligent lead to profit as surely as haste leads to poverty\" (Proverbs 21:5). And Nehemiah shows both sides in a single scene: when the king asked what he wanted, \"I prayed to the God of heaven, and I answered the king\" (Nehemiah 2:4-5). He had been praying for months and had already thought through timber, letters of passage and the route (Nehemiah 2:7-8). Strategy is not opposed to the Spirit. It is how a prepared heart cooperates with Him.",
+      "Tinanong ni Hesus, \"Sino sa inyo ang magtatayo ng tore na hindi muna uupo at tatantiyahin ang gastos upang makita kung sapat ang kanyang salapi para matapos ito?\" (Lucas 14:28). Isinulat ni Solomon, \"Ang mga plano ng masikap ay humahantong sa kita, kasingtiyak na ang pagmamadali ay humahantong sa kahirapan\" (Kawikaan 21:5). At ipinakikita ni Nehemias ang dalawang panig sa iisang eksena: nang itanong ng hari kung ano ang gusto niya, \"Nanalangin ako sa Diyos ng langit, at sumagot ako sa hari\" (Nehemias 2:4-5). Ilang buwan na siyang nananalangin at napag-isipan na niya ang kahoy, ang mga liham ng paglalakbay at ang ruta (Nehemias 2:7-8). Hindi kalaban ng Espiritu ang estratehiya. Ito ang paraan ng handang puso na makiisa sa Kanya."
+    ),
+    insight: [
+      t(
+        "Many ministries drift into busyness. They add one more program, one more event, one more meeting, and never ask, \"Why are we doing this?\" Being busy feels spiritual, but a leader's task is to point the team to what matters most and say a loving \"no\" to the rest. Jesus said \"no\" to crowds who wanted more miracles because He had come to preach in other towns too (Mark 1:35-38).",
+        "Maraming ministeryo ang naanod sa pagiging abala. Nagdadagdag sila ng isa pang programa, isa pang event, isa pang pulong, at hindi nagtatanong ng, \"Bakit natin ito ginagawa?\" Parang espirituwal ang pagiging busy, pero gawain ng lider na ituro sa team ang pinakamahalaga at magsabi ng mapagmahal na \"hindi\" sa iba. Nagsabi si Hesus ng \"hindi\" sa mga tao na gustong humingi pa ng himala dahil dumating Siya para mangaral din sa ibang bayan (Marcos 1:35-38)."
+      ),
+      t(
+        "Strategy begins with seeing. Nehemiah rode out at night and looked at the walls himself before he spoke to anybody (Nehemiah 2:11-16). Before asking, \"What should we do?\" ask, \"Where is God already working? Who is open? What resources has He put in our hands?\" Good strategy follows what God is doing; it does not force God to follow what we have scheduled.",
+        "Nagsisimula ang estratehiya sa pagtingin. Gabi pa lang, sumakay si Nehemias at siya mismo ang tumingin sa mga pader bago siya magsalita sa kahit sino (Nehemias 2:11-16). Bago itanong ang \"Ano ang gagawin natin?\" itanong muna ang \"Saan na kumikilos ang Diyos? Sino ang bukas? Anong yaman ang inilagay Niya sa ating mga kamay?\" Sumusunod ang mabuting estratehiya sa ginagawa ng Diyos; hindi nito pinipilit ang Diyos na sumunod sa nakaiskedyul natin."
+      ),
+    ],
+    life: [
+      t(
+        "A Filipino fellowship in Singapore was running seven weekly activities with fifteen volunteers, and everyone was exhausted. Their leader, Ate Joy, called a half-day of prayer and fasting, then laid every activity on the table and asked, \"If we could only do three things really well, what would God have us keep?\" They kept a Sunday gathering, a midweek home group and a monthly outreach to new arrivals. They stopped four things with honor and thanks. Within a year the home groups doubled, and the volunteers were smiling again.",
+        "Pitong lingguhang aktibidad ang tinatakbo ng isang fellowship na Pilipino sa Singapore na may labinlimang volunteer, at pagod na pagod ang lahat. Nagpatawag ang kanilang lider na si Ate Joy ng kalahating araw ng panalangin at pag-aayuno, inilatag ang bawat aktibidad, at nagtanong, \"Kung tatlo lang ang magagawa natin nang talagang mahusay, ano ang nais ng Diyos na panatilihin natin?\" Pinanatili nila ang Sunday gathering, midweek home group, at buwanang outreach sa mga bagong dating. Apat ang itinigil nila nang may parangal at pasasalamat. Pagkalipas ng isang taon, dumoble ang mga home group at nakangiti na ulit ang mga volunteer."
+      ),
+      t(
+        "Think of a family budget. A household that does not plan its income ends up asking, \"Where did it all go?\" at the end of the month. Time, energy and volunteers are the church's budget. Plan them in prayer, give each a purpose, and review them honestly.",
+        "Isipin ang budget ng pamilya. Ang sambahayang hindi nagpaplano ng kita ay magtatanong sa katapusan ng buwan ng, \"Saan napunta lahat?\" Ang oras, lakas at volunteer ay budget ng iglesia. Planuhin ang mga ito sa panalangin, bigyan ng layunin ang bawat isa, at suriin nang tapat."
+      ),
+    ],
+    twist: t(
+      "We think the opposite of planning is faith. But the Bible says the opposite of faith is not planning; it is fear, and sometimes laziness dressed as spirituality. Joseph in Egypt stored grain for seven years because God gave him a plan, and he saved nations (Genesis 41:33-36). A strategy is often how faith looks when it has a calendar and a pen.",
+      "Akala natin, kabaligtaran ng pagpaplano ang pananampalataya. Pero sinasabi ng Biblia na ang kabaligtaran ng pananampalataya ay hindi pagpaplano; takot ito, at kung minsan ay katamaran na nagbibihis ng espirituwalidad. Nag-imbak ng butil si Jose sa Ehipto sa loob ng pitong taon dahil binigyan siya ng Diyos ng plano, at nailigtas niya ang mga bansa (Genesis 41:33-36). Madalas, ang estratehiya ay ang anyo ng pananampalataya kapag may kalendaryo at panulat na ito."
+    ),
+    confirm: [
+      t("Proverbs 16:9: \"In their hearts humans plan their course, but the Lord establishes their steps.\"", "Kawikaan 16:9: \"Pinaplano ng tao sa kanyang puso ang kanyang daan, ngunit ang Panginoon ang nagtatatag ng kanyang mga hakbang.\""),
+      t("Habakkuk 2:2: \"Write down the revelation and make it plain on tablets so that a herald may run with it.\"", "Habakuk 2:2: \"Isulat mo ang pangitain at gawing malinaw sa mga tapyas upang makatakbo ang tagapagbalita.\""),
+      t("Acts 16:6-10: Paul's plans were redirected by the Spirit; he planned and stayed flexible.", "Gawa 16:6-10: binago ng Espiritu ang plano ni Pablo; nagplano siya at nanatiling bukas."),
+      t("Proverbs 15:22: \"Plans fail for lack of counsel, but with many advisers they succeed.\"", "Kawikaan 15:22: \"Nabibigo ang mga plano kung walang payo, ngunit sa maraming tagapayo ay nagtatagumpay.\""),
+    ],
+    heart: [
+      t(
+        "Be courageous enough to stop what is no longer fruitful. Letting a good thing die so a better thing can live is a form of obedience, not failure.",
+        "Magkaroon ng tapang na itigil ang hindi na namumunga. Ang pagpapahintulot na mamatay ang mabuti upang mabuhay ang mas mabuti ay anyo ng pagsunod, hindi pagkabigo."
+      ),
+      t(
+        "Hold your plans with open hands. Pray first, plan carefully, then submit the plan to God and to wise counsel, ready to change when the Spirit redirects.",
+        "Hawakan ang mga plano nang bukas ang kamay. Manalangin muna, magplano nang maingat, saka ipasakop ang plano sa Diyos at sa marunong na payo, handang magbago kapag inilihis ng Espiritu."
+      ),
+    ],
+    questions: [
+      t("What is the one thing God has clearly called our ministry to do?", "Ano ang iisang bagay na malinaw na itinawag ng Diyos sa aming ministeryo?"),
+      t("Which activity are we continuing only out of habit?", "Anong aktibidad ang ipinagpapatuloy namin dahil lang sa nakasanayan?"),
+      t("Where do I plan without praying, or pray without ever planning?", "Saan ako nagpaplano nang hindi nananalangin, o nananalangin nang hindi kailanman nagpaplano?"),
+      t("Who are the wise counselors I invite to look at my plans?", "Sino ang mga marunong na tagapayo na inaanyayahan kong tumingin sa aking mga plano?"),
+    ],
+    actions: [
+      t("Spend an hour in prayer this week and write down the top three priorities God shows you for your ministry.", "Gumugol ng isang oras sa panalangin ngayong linggo at isulat ang tatlong pangunahing priyoridad na ipinakikita ng Diyos sa iyong ministeryo."),
+      t("List everything your team does, and mark what to keep, adjust and stop.", "Ilista ang lahat ng ginagawa ng team ninyo, at markahan kung ano ang itatabi, aayusin, at ititigil."),
+      t("Share your plan with two trusted leaders and ask, \"What am I not seeing?\"", "Ibahagi ang plano mo sa dalawang pinagkakatiwalaang lider at itanong, \"Ano ang hindi ko nakikita?\""),
+    ],
+    prayer: t(
+      "Lord of the harvest, You see what I cannot see. Give me Nehemiah's heart, praying first and planning well. Forgive me for confusing busyness with fruitfulness and for fearing to stop what no longer serves Your purpose. Show me where You are already working, and give me wisdom to count the cost and set priorities. Help me hold every plan loosely, ready to follow when Your Spirit redirects. Give our team clarity, courage and unity as we do the few things You have called us to do. In Jesus' name, Amen.",
+      "Panginoon ng aanihin, nakikita Mo ang hindi ko nakikita. Bigyan Mo ako ng puso ni Nehemias, na nananalangin muna at nagpaplano nang mahusay. Patawarin Mo ako sa pagkalito ng pagiging abala sa pagiging mabunga at sa takot na itigil ang hindi na naglilingkod sa Iyong layunin. Ipakita Mo kung saan Ka na kumikilos at bigyan Mo ako ng karunungang tantiyahin ang gastos at magtakda ng priyoridad. Tulungan Mo akong hawakan nang maluwag ang bawat plano, handang sumunod kapag inilihis ng Iyong Espiritu. Bigyan Mo ang aming team ng linaw, tapang at pagkakaisa habang ginagawa namin ang iilang bagay na itinawag Mo sa amin. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "stewarding-growth": {
+    revelation: t(
+      "Growth is a gift from God that must be stewarded; the same increase that blesses a church will break it if the structure and the heart do not grow with it.",
+      "Ang paglago ay kaloob ng Diyos na dapat pangasiwaan; ang parehong pagdami na nagpapala sa iglesia ay babasag dito kung hindi lalago kasabay ang istruktura at ang puso."
+    ),
+    mainTruth: t(
+      "\"In those days when the number of disciples was increasing, the Hellenistic Jews among them complained against the Hebraic Jews because their widows were being overlooked in the daily distribution of food\" (Acts 6:1). Growth created a problem. The apostles did not ignore it, and they did not drop prayer and the Word to handle it themselves. They gathered the people, chose seven men \"known to be full of the Spirit and wisdom\" (Acts 6:3), and gave them the task. \"So the word of God spread. The number of disciples in Jerusalem increased rapidly\" (Acts 6:7). Jethro gave Moses the same counsel: choose capable leaders over thousands, hundreds, fifties and tens (Exodus 18:24-26). Stewarding growth means building the structure that keeps the people cared for.",
+      "\"Nang mga araw na iyon, habang dumarami ang mga alagad, nagreklamo ang mga Judiong nagsasalita ng Griyego laban sa mga Judiong Hebreo dahil napapabayaan ang kanilang mga biyuda sa araw-araw na pamamahagi ng pagkain\" (Gawa 6:1). Lumikha ng problema ang paglago. Hindi ito binalewala ng mga apostol, at hindi rin nila iniwan ang panalangin at ang Salita para sila mismo ang gumawa. Tinipon nila ang mga tao, pumili ng pitong lalaking \"kilalang puspos ng Espiritu at karunungan\" (Gawa 6:3), at ibinigay sa kanila ang gawain. \"Kaya lumaganap ang salita ng Diyos. Mabilis na dumami ang mga alagad sa Jerusalem\" (Gawa 6:7). Ganito rin ang payo ni Jetro kay Moises: pumili ng may kakayahang lider sa mga libu-libo, daan-daan, limampu at sampu (Exodo 18:24-26). Ang pangangasiwa sa paglago ay pagbuo ng istrukturang nag-aalaga sa mga tao."
+    ),
+    insight: [
+      t(
+        "Most of us pray for growth without preparing for it. We want more people, but we do not want the pain of more needs, more organization and more leaders. Growth reveals every weak place in a ministry: the unclear roles, the leader who cannot let go, the member who quietly falls through the cracks. If you ask God for more, ask also for the humility to build.",
+        "Karamihan sa atin ay nananalangin para sa paglago nang hindi naghahanda para dito. Gusto natin ng mas maraming tao, pero ayaw natin ng hirap ng mas maraming pangangailangan, mas maraming pag-oorganisa at mas maraming lider. Inilalantad ng paglago ang bawat mahinang bahagi ng ministeryo: ang hindi malinaw na tungkulin, ang lider na hindi makabitaw, ang miyembrong tahimik na nalalaglag. Kung humihingi ka sa Diyos ng higit, humingi ka rin ng kababaang-loob na magtayo."
+      ),
+      t(
+        "Notice that the early church solved a problem of widows, the most vulnerable people, and then grew. Healthy growth is not measured by the size of the gathering but by whether the smallest and weakest are still seen. The moment a church loses sight of its widows, it has outgrown its heart.",
+        "Pansinin na ang unang iglesia ay nilutas ang problema ng mga biyuda, ang pinakamahina, at saka lumago. Hindi sinusukat sa laki ng pagtitipon ang malusog na paglago kundi kung nakikita pa rin ang pinakamaliit at pinakamahina. Sa sandaling hindi na makita ng iglesia ang mga biyuda nito, lumaki na ito nang lampas sa puso nito."
+      ),
+    ],
+    life: [
+      t(
+        "A home group among Filipino workers in Jeddah grew from eight to thirty-five in a year. The leader, Kuya Dan, was thrilled and then overwhelmed: he could not remember who was sick, who had lost a job, who was lonely. Rather than close the group, he prayed with the members and chose four \"care leaders\" who each looked after eight people. The group multiplied into four smaller groups, each with someone who knew every name. People stopped slipping away, and several new believers were baptized.",
+        "Mula walo ay naging tatlumpu't lima ang isang home group ng mga manggagawang Pilipino sa Jeddah sa loob ng isang taon. Tuwang-tuwa ang lider na si Kuya Dan, pero kalaunan ay nalula siya: hindi na niya maalala kung sino ang may sakit, nawalan ng trabaho, o nalulungkot. Sa halip na isara ang grupo, nanalangin siya kasama ang mga miyembro at pumili ng apat na \"care leader\" na bawat isa ay nag-aalaga ng walong tao. Dumami ang grupo at naging apat na mas maliliit na grupo, bawat isa ay may taong kilala ang bawat pangalan. Hindi na nawawala ang mga tao, at ilang bagong mananampalataya ang nabinyagan."
+      ),
+      t(
+        "A sari-sari store owner knows this lesson. When the shop gets busy, she cannot stay at the counter and also restock and keep the books. She hires a helper, gives clear tasks, and keeps knowing her suki by name. Growth without helpers becomes chaos; helpers without a heart become a business. The church needs both structure and love.",
+        "Alam ng may-ari ng sari-sari store ang aral na ito. Kapag dumami ang bumibili, hindi na siya puwedeng manatili lang sa counter at mag-restock at mag-ayos ng libro. Kukuha siya ng katulong, magbibigay ng malinaw na gawain, at patuloy na kikilala sa mga suki sa pangalan. Ang paglagong walang katulong ay nagiging kaguluhan; ang katulong na walang puso ay nagiging negosyo lang. Kailangan ng iglesia ang istruktura at pag-ibig."
+      ),
+    ],
+    twist: t(
+      "We assume that growth proves God's blessing and slowing proves His disfavor. But in Acts, growth came AFTER the apostles refused to be everything and invited others to serve. Sometimes the key to the next level of growth is not a new strategy but a leader who is willing to give away the work he loves. What you hold too tightly caps your ministry; what you release multiplies.",
+      "Akala natin, ang paglago ay patunay ng pagpapala ng Diyos at ang pagbagal ay patunay ng Kanyang di-pagsang-ayon. Pero sa Gawa, dumating ang paglago PAGKATAPOS tumangging maging lahat ang mga apostol at anyayahan ang iba na maglingkod. Minsan, ang susi sa susunod na antas ng paglago ay hindi bagong estratehiya kundi lider na handang ipamigay ang gawaing mahal niya. Ang mahigpit mong hawak ang naglilimita sa ministeryo mo; ang pinakawalan mo ang nagpaparami."
+    ),
+    confirm: [
+      t("Acts 2:41-47: the early church grew daily as the believers devoted themselves to teaching, fellowship, bread and prayer.", "Gawa 2:41-47: araw-araw lumago ang unang iglesia habang nagtalaga ang mga mananampalataya sa pagtuturo, pakikisama, pagpuputol ng tinapay at panalangin."),
+      t("Luke 5:6-7: the nets began to break and the boats began to sink; the blessing required partners.", "Lucas 5:6-7: nagsimulang mapunit ang lambat at lumubog ang mga bangka; kinailangan ng katuwang ang pagpapala."),
+      t("1 Corinthians 3:6-7: \"I planted, Apollos watered, but God has been making it grow.\"", "1 Corinto 3:6-7: \"Ako ang nagtanim, si Apolos ang nagdilig, ngunit ang Diyos ang patuloy na nagpapalago.\""),
+      t("Acts 9:31: the church \"was strengthened,\" living in the fear of the Lord, and it \"increased in numbers.\"", "Gawa 9:31: ang iglesia ay \"pinatatag,\" namuhay sa takot sa Panginoon, at \"dumami ang bilang.\""),
+    ],
+    heart: [
+      t(
+        "Set aside your fear of losing control. If you cannot trust others with part of the work, your ministry will always be only as big as your own two hands.",
+        "Isantabi ang takot na mawalan ng kontrol. Kung hindi mo kayang pagkatiwalaan ang iba sa bahagi ng gawain, ang ministeryo mo ay palaging kasinlaki lang ng dalawa mong kamay."
+      ),
+      t(
+        "Let compassion drive your structure. Every system you build should answer one question: Who will be cared for because of this?",
+        "Hayaang ang habag ang magtulak sa iyong istruktura. Dapat sagutin ng bawat sistemang itatayo mo ang isang tanong: Sino ang maaalagaan dahil dito?"
+      ),
+    ],
+    questions: [
+      t("What problems has growth created that I have been ignoring?", "Anong mga problema ang idinulot ng paglago na binabalewala ko?"),
+      t("Who is slipping through the cracks in our group right now?", "Sino ang nalalaglag sa mga siwang ng aming grupo ngayon?"),
+      t("What work am I holding that someone else should be carrying?", "Anong gawain ang hawak ko na dapat ay dinadala ng iba?"),
+      t("How can we keep discipleship personal as the numbers increase?", "Paano namin mapananatiling personal ang pagdidisipulo habang dumarami ang bilang?"),
+    ],
+    actions: [
+      t("List every member of your group and mark who has no personal contact with a leader this month.", "Ilista ang bawat miyembro ng iyong grupo at markahan kung sino ang walang personal na ugnayan sa lider ngayong buwan."),
+      t("Choose and train one \"care leader\" to look after a small circle of people.", "Pumili at sanayin ang isang \"care leader\" na mag-aalaga sa maliit na pangkat ng mga tao."),
+      t("Give away one task you love doing to someone who is ready, and coach them through it.", "Ipamigay ang isang gawaing gusto mong gawin sa taong handa na, at gabayan siya rito."),
+    ],
+    prayer: t(
+      "Lord of the church, You are the One who gives the increase. Thank You for every person You have added to us. Forgive me for wanting growth without the work of care, and for gripping tasks I should release. Give me the wisdom of the apostles to build structures that serve people, and give me leaders full of Your Spirit and wisdom. Let no widow, no newcomer and no weary soul be overlooked among us. Keep our hearts as large as our gatherings. In Jesus' name, Amen.",
+      "Panginoon ng iglesia, Ikaw ang nagbibigay ng pagdami. Salamat sa bawat taong idinagdag Mo sa amin. Patawarin Mo ako sa paghahangad ng paglago nang walang pagsisikap mag-alaga, at sa paghawak sa mga gawaing dapat kong bitawan. Bigyan Mo ako ng karunungan ng mga apostol para magtayo ng mga istrukturang naglilingkod sa tao, at bigyan Mo ako ng mga lider na puspos ng Iyong Espiritu at karunungan. Huwag Mong hayaang may biyuda, bagong dating o pagod na kaluluwa na mapabayaan sa amin. Panatilihin Mong kasinlaki ng aming mga pagtitipon ang aming mga puso. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "helping-leaders-in-crisis": {
+    revelation: t(
+      "A leader in crisis does not first need a sermon or a replacement; he needs food, rest, a listening ear and the gentle voice of God before anything else is said.",
+      "Ang lider na nasa krisis ay hindi muna nangangailangan ng sermon o kapalit; kailangan muna niya ng pagkain, pahinga, taong makikinig at ng malumanay na tinig ng Diyos bago ang anumang sabihin."
+    ),
+    mainTruth: t(
+      "After the greatest victory of his ministry on Mount Carmel, Elijah ran from Jezebel and prayed, \"I have had enough, Lord. Take my life\" (1 Kings 19:4). God's first response was not rebuke. An angel touched him and said, \"Get up and eat\" (1 Kings 19:5), and he slept and ate twice. Only after rest did God speak, and not in the wind, the earthquake or the fire, but in \"a gentle whisper\" (1 Kings 19:12). He asked, \"What are you doing here, Elijah?\" and let him pour out his heart (1 Kings 19:9-10, 13-14). Then God gave him a task, a companion in Elisha, and the truth that he was not alone (1 Kings 19:15-18). \"The Lord is close to the brokenhearted and saves those who are crushed in spirit\" (Psalm 34:18). And Paul commands, \"If someone is caught in a sin, you who live by the Spirit should restore that person gently... Carry each other's burdens\" (Galatians 6:1-2).",
+      "Pagkatapos ng pinakamalaking tagumpay ng kanyang ministeryo sa Bundok Carmelo, tumakas si Elias kay Jezebel at nanalangin, \"Sobra na, Panginoon. Kunin Mo na ang aking buhay\" (1 Hari 19:4). Hindi saway ang unang tugon ng Diyos. Hinipo siya ng anghel at sinabing, \"Bumangon ka at kumain\" (1 Hari 19:5), at natulog at kumain siya nang dalawang beses. Pagkatapos lang ng pahinga nagsalita ang Diyos, at hindi sa hangin, lindol o apoy, kundi sa \"mahinang bulong\" (1 Hari 19:12). Tinanong Niya, \"Ano ang ginagawa mo rito, Elias?\" at hinayaan siyang ibuhos ang kanyang puso (1 Hari 19:9-10, 13-14). Saka siya binigyan ng gawain, ng kasama kay Eliseo, at ng katotohanang hindi siya nag-iisa (1 Hari 19:15-18). \"Malapit ang Panginoon sa mga wasak ang puso at inililigtas ang mga durog ang espiritu\" (Awit 34:18). At iniuutos ni Pablo, \"Kung may nahuli sa kasalanan, kayong namumuhay sa Espiritu ay ibalik siya nang malumanay... Pasanin ninyo ang mga pasanin ng isa't isa\" (Galacia 6:1-2)."
+    ),
+    insight: [
+      t(
+        "Leaders in crisis rarely look like they are in crisis. They look overly busy, irritable, withdrawn or perfectly fine. Elijah went to the desert alone, and that is often the first sign: isolation. When a faithful leader stops answering messages, starts missing meetings or speaks with cynicism, it is not rebellion yet. It is a cry. Many leaders have been lost because the church only noticed after the fall.",
+        "Bihirang magmukhang nasa krisis ang mga lider na nasa krisis. Mukha silang sobrang busy, mainitin ang ulo, atras, o maayos na maayos. Mag-isang pumunta si Elias sa disyerto, at madalas iyan ang unang palatandaan: paghihiwalay. Kapag tumigil sumagot ng mensahe ang tapat na lider, nagsimulang lumiban sa pulong, o nagsalita nang may pangungutya, hindi pa iyon paghihimagsik. Isa iyong sigaw. Maraming lider ang nawala dahil napansin lang ng iglesia pagkatapos ng pagkahulog."
+      ),
+      t(
+        "God's care for Elijah was holistic: body first (food, sleep), then heart (a listening question), then purpose (a new task), then people (Elisha). A common mistake is to jump straight to purpose, telling an exhausted leader to push on, or to condemnation, when what he needs is bread and a bed. Where there is sin, the Spirit calls for restoration with gentleness; where there is weariness, He calls for rest.",
+        "Buo ang pag-aalaga ng Diyos kay Elias: katawan muna (pagkain, tulog), saka puso (tanong na nakikinig), saka layunin (bagong gawain), saka mga tao (si Eliseo). Karaniwang pagkakamali ang tumalon agad sa layunin, na sasabihing magpatuloy ang pagod na lider, o sa paghatol, kung ang kailangan niya ay tinapay at higaan. Kung may kasalanan, tinatawag ng Espiritu ang pagpapanumbalik nang may kahinahunan; kung may pagod, tinatawag Niya ang pahinga."
+      ),
+    ],
+    life: [
+      t(
+        "Pastor Arnel noticed that Ate Mylene, his most dependable women's ministry leader in Riyadh, had missed three Fridays and stopped replying in the chat. Instead of sending a reminder about duties, he sent a short message: \"Ate, I miss you. No pressure. Can I treat you to lunch?\" Over lunch she wept: her employer had cut her salary, her husband back home was ill, and she felt like a fraud teaching others to trust God. He did not preach. He listened, prayed and arranged for the church to quietly help with the hospital bills. Two months later she was leading again, and she became the one who sat with others in the same valley.",
+        "Napansin ni Pastor Arnel na si Ate Mylene, ang pinakamaaasahan niyang lider ng ministeryo ng kababaihan sa Riyadh, ay lumiban nang tatlong Biyernes at tumigil sa pagsagot sa chat. Sa halip na magpadala ng paalala tungkol sa tungkulin, nagpadala siya ng maikling mensahe: \"Ate, nami-miss na kita. Walang pressure. Puwede ba kitang ilibre ng tanghalian?\" Sa tanghalian, umiyak siya: binawasan ng amo ang sahod niya, may sakit ang asawa niya sa Pilipinas, at pakiramdam niya ay huwad siya sa pagtuturo sa iba na magtiwala sa Diyos. Hindi nagsermon si Pastor. Nakinig siya, nanalangin, at nag-ayos na tahimik na tulungan ng iglesia ang bayarin sa ospital. Pagkalipas ng dalawang buwan, namumuno na siyang muli, at siya na ang umuupo kasama ng mga nasa parehong lambak."
+      ),
+      t(
+        "If you serve overseas, you know how loneliness, homesickness, fatigue and financial stress pile up on leaders who keep smiling. Create a place where a leader can say, \"I am not okay,\" without losing their role or respect.",
+        "Kung naglilingkod ka sa ibang bansa, alam mo kung paano nag-iipon ang kalungkutan, homesickness, pagod at presyon sa pera sa mga lider na patuloy na nakangiti. Lumikha ng lugar kung saan masasabi ng lider na, \"Hindi ako okay,\" nang hindi nawawalan ng tungkulin o respeto."
+      ),
+    ],
+    twist: t(
+      "We think the strongest leaders are those who never break. But God chose to meet the strongest prophet of His day at his breaking point, with bread and a whisper. In the Kingdom, weakness acknowledged is not the end of leadership; it is the beginning of deeper dependence. \"My power is made perfect in weakness\" (2 Corinthians 12:9). A leader who has been carried through a valley becomes the most compassionate shepherd.",
+      "Akala natin, ang pinakamatibay na lider ay ang hindi kailanman nababasag. Pero pinili ng Diyos na salubungin ang pinakamalakas na propeta ng Kanyang panahon sa sandali ng pagkabasag niya, na may tinapay at bulong. Sa Kaharian, ang kahinaang inaamin ay hindi wakas ng pamumuno; ito ang simula ng mas malalim na pag-asa. \"Ang Aking kapangyarihan ay nagiging ganap sa kahinaan\" (2 Corinto 12:9). Ang lider na dinala ng Diyos sa lambak ay nagiging pinakamahabagin na pastol."
+    ),
+    confirm: [
+      t("Psalm 42:5: \"Why, my soul, are you downcast? Put your hope in God.\" Even psalmists spoke honestly to their souls.", "Awit 42:5: \"Bakit ka nalulumbay, aking kaluluwa? Umasa ka sa Diyos.\" Maging ang mga mang-aawit ay tapat na kumausap sa sariling kaluluwa."),
+      t("Exodus 17:12: Aaron and Hur held up Moses' tired hands until sunset.", "Exodo 17:12: itinaas nina Aaron at Hur ang pagod na mga kamay ni Moises hanggang lumubog ang araw."),
+      t("John 21:15-19: Jesus restored Peter after his failure with breakfast and a conversation.", "Juan 21:15-19: ibinalik ni Hesus si Pedro pagkatapos ng pagkabigo niya sa pamamagitan ng almusal at pag-uusap."),
+      t("2 Corinthians 1:8-11: Paul despaired even of life, and God used friends' prayers to rescue him.", "2 Corinto 1:8-11: nawalan ng pag-asa maging sa buhay si Pablo, at ginamit ng Diyos ang panalangin ng mga kaibigan para iligtas siya."),
+    ],
+    heart: [
+      t(
+        "Soften your heart toward weary leaders. Resist the urge to judge quickly or replace them. Ask first, \"What is happening beneath the surface?\"",
+        "Palambutin ang puso sa mga pagod na lider. Labanan ang tuksong humusga agad o palitan sila. Magtanong muna ng, \"Ano ang nangyayari sa ilalim ng ibabaw?\""
+      ),
+      t(
+        "If you are the leader in crisis, choose to speak. Hiding is the enemy's strategy; honesty with one safe person is often the first step of rescue.",
+        "Kung ikaw ang lider na nasa krisis, piliing magsalita. Estratehiya ng kaaway ang pagtatago; ang pagiging tapat sa isang ligtas na tao ay madalas ang unang hakbang ng pagsagip."
+      ),
+    ],
+    questions: [
+      t("What warning signs do I overlook in the leaders around me?", "Anong mga babala ang nalalampasan ko sa mga lider sa paligid ko?"),
+      t("Do my leaders feel safe saying, \"I am not okay\"?", "Pakiramdam ba ng aking mga lider ay ligtas nilang masasabing, \"Hindi ako okay\"?"),
+      t("Who would I call if I were in Elijah's cave?", "Sino ang tatawagan ko kung ako ay nasa yungib ni Elias?"),
+      t("Where do I need to offer gentle restoration instead of quick judgment?", "Saan ko kailangang mag-alok ng malumanay na pagpapanumbalik sa halip na mabilis na paghatol?"),
+    ],
+    actions: [
+      t("Reach out to one leader who has gone quiet and offer a meal, not a meeting.", "Lapitan ang isang lider na tumahimik at mag-alok ng pagkain, hindi pulong."),
+      t("Identify one trusted person with whom you can be fully honest about your own struggles.", "Tukuyin ang isang pinagkakatiwalaang tao na makapagbabahagian mo nang buong tapat ng sarili mong pakikibaka."),
+      t("Agree as a team on a simple care plan: who checks on whom, how often, and when someone needs rest.", "Magkasundo bilang team sa simpleng plano ng pag-aalaga: sino ang kukumusta kanino, gaano kadalas, at kailan kailangang magpahinga ang isa."),
+    ],
+    prayer: t(
+      "Gentle Shepherd, You met Elijah in the cave with bread, rest and a whisper. Meet every leader I know who is tired, afraid or ashamed. Give me a heart that notices, ears that listen and hands that serve before I speak. Forgive me for judging struggles I have not understood. Where I am the one in the valley, give me courage to ask for help and to rest in Your care. Restore us, renew our strength, and send us out again with joy. In Jesus' name, Amen.",
+      "Mahinahong Pastol, sinalubong Mo si Elias sa yungib na may tinapay, pahinga at bulong. Salubungin Mo ang bawat lider na kilala ko na pagod, takot o nahihiya. Bigyan Mo ako ng pusong nakapapansin, tainga na nakikinig, at mga kamay na naglilingkod bago ako magsalita. Patawarin Mo ako sa paghusga sa mga pakikibakang hindi ko naunawaan. Kung ako ang nasa lambak, bigyan Mo ako ng tapang na humingi ng tulong at magpahinga sa Iyong pag-aalaga. Ibalik Mo kami, bagong-lakasin, at isugo Mo kaming muli nang may galak. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "working-together-across-churches": {
+    revelation: t(
+      "Jesus does not see many rival churches in your city; He sees one Body, and He wants the world to see it too.",
+      "Hindi nakikita ni Hesus ang maraming magkaribal na iglesia sa inyong lungsod; nakikita Niya ang isang Katawan, at nais Niyang makita rin ito ng mundo."
+    ),
+    mainTruth: t(
+      "Jesus prayed \"that all of them may be one... so that the world may believe that You have sent Me\" (John 17:21). Paul urged the Philippians to \"stand firm in the one Spirit, striving together as one for the faith of the gospel\" (Philippians 1:27). The early church shows how: when the question of Gentile believers threatened to divide Jerusalem and Antioch, leaders from different places met, listened to Peter, Barnabas and Paul, prayed, and agreed. They sent a letter that began, \"It seemed good to the Holy Spirit and to us\" (Acts 15:28). They sent respected men, Judas and Silas, with Paul and Barnabas, and the church in Antioch \"was glad for its encouraging message\" (Acts 15:31). Cooperation across communities is part of the church's DNA.",
+      "Ipinanalangin ni Hesus \"na silang lahat ay maging isa... upang maniwala ang mundo na Ikaw ang nagsugo sa Akin\" (Juan 17:21). Hinikayat ni Pablo ang mga taga-Filipos na \"manindigan sa iisang Espiritu, magkakasamang nagsisikap bilang isa para sa pananampalataya ng ebanghelyo\" (Filipos 1:27). Ipinakikita ng unang iglesia kung paano: nang magbanta ang usapin ng mga Gentil na mananampalataya na hatiin ang Jerusalem at Antioquia, nagtagpo ang mga lider mula sa iba't ibang lugar, nakinig kina Pedro, Bernabe at Pablo, nanalangin, at nagkasundo. Nagpadala sila ng liham na nagsimula sa, \"Minabuti ng Banal na Espiritu at namin\" (Gawa 15:28). Nagsugo sila ng mga iginagalang na sina Judas at Silas kasama nina Pablo at Bernabe, at ang iglesia sa Antioquia ay \"nagalak sa nakapagpapalakas ng loob na mensahe\" (Gawa 15:31). Ang pagtutulungan ng mga komunidad ay bahagi ng DNA ng iglesia."
+    ),
+    insight: [
+      t(
+        "Churches often compete without admitting it: for members, for the better building, for the more famous speaker. Yet no single congregation has all the gifts, all the resources or all the doors. In one city, one church may have strong youth, another may have teachers, another may be near a labor camp the others never reach. Isolation makes every church smaller than God intended.",
+        "Madalas na hindi inaamin ng mga iglesia na nagkokompetensya sila: para sa miyembro, sa mas magandang gusali, sa mas sikat na tagapagsalita. Pero walang iisang kongregasyon na may lahat ng kaloob, yaman o pintuan. Sa isang lungsod, maaaring malakas ang kabataan ng isang iglesia, may mga guro ang isa, at malapit ang isa sa labor camp na hindi naaabot ng iba. Pinapaliit ng pag-iisa ang bawat iglesia nang higit sa nais ng Diyos."
+      ),
+      t(
+        "Notice that at Jerusalem they did not pretend to agree on everything. They had \"much discussion\" (Acts 15:7). Cooperation does not require identical styles or every secondary belief. It requires a shared Lord, a shared gospel and a shared humility. Stay clear on the essentials, be gracious on the rest.",
+        "Pansinin na sa Jerusalem, hindi sila nagkunwaring magkasundo sa lahat. Nagkaroon sila ng \"mahabang talakayan\" (Gawa 15:7). Hindi kailangan ng pagtutulungan ang magkaparehong istilo o bawat pangalawang paniniwala. Kailangan nito ng iisang Panginoon, iisang ebanghelyo at iisang kababaang-loob. Maging malinaw sa mahahalaga, maging mapagbigay sa iba."
+      ),
+    ],
+    life: [
+      t(
+        "In one Gulf city, four small Filipino congregations met in different apartments, each with about thirty people. Their pastors rarely spoke. After a typhoon hit the Visayas, the pastors began to meet to coordinate relief. Together they raised money in two weeks that none could have raised alone. Afterwards they kept meeting. They started a shared Christmas gathering with three hundred people, a joint training day for leaders and a rotating prayer night. No church gave up its identity, and every church grew.",
+        "Sa isang lungsod sa Gulf, apat na maliliit na kongregasyong Pilipino ang nagtitipon sa iba't ibang apartment, bawat isa ay may tatlumpung tao. Bihirang mag-usap ang kanilang mga pastor. Matapos tamaan ng bagyo ang Visayas, nagsimulang magtagpo ang mga pastor para ayusin ang tulong. Magkasama silang nakalikom sa loob ng dalawang linggo ng perang walang isa sa kanila ang makalilikom nang mag-isa. Pagkatapos, patuloy silang nagtagpo. Nagsimula sila ng pinagsamang pagtitipon tuwing Pasko na may tatlong daang tao, magkasanib na araw ng pagsasanay ng mga lider, at paiba-ibang gabi ng panalangin. Walang iglesiang nawalan ng pagkakakilanlan, at lumago ang bawat isa."
+      ),
+      t(
+        "Think of how barangay neighbors pitch in for a fiesta or a wake. Nobody asks which house is the biggest; everyone brings what they have. When the church does the same, a city feels the difference.",
+        "Isipin kung paano nagtutulungan ang mga kapitbahay sa barangay sa fiesta o lamay. Walang nagtatanong kung aling bahay ang pinakamalaki; nagdadala ang lahat ng kung anong mayroon sila. Kapag ganito ang ginagawa ng iglesia, nararamdaman ito ng buong lungsod."
+      ),
+    ],
+    twist: t(
+      "We often fear that working with other churches will water down our convictions or take away our members. But Jesus linked unity to mission, not to compromise: the world believes when it sees us one. A church that gives itself to the city's good tends to be blessed with growth and not robbed by it. In the Kingdom, you do not lose by giving; \"whoever refreshes others will be refreshed\" (Proverbs 11:25).",
+      "Madalas nating katakutan na babawasan ng pakikipagtulungan sa ibang iglesia ang ating paninindigan o aagawin ang ating mga miyembro. Pero iniugnay ni Hesus ang pagkakaisa sa misyon, hindi sa kompromiso: naniniwala ang mundo kapag nakita tayong isa. Ang iglesiang nag-aalay ng sarili para sa kabutihan ng lungsod ay madalas na pinagpapala ng paglago at hindi inaagawan. Sa Kaharian, hindi ka natatalo sa pagbibigay; \"ang nagpapaginhawa sa iba ay maginhawahan din\" (Kawikaan 11:25)."
+    ),
+    confirm: [
+      t("Philippians 2:1-4: be like-minded, with the same love, one in spirit and purpose.", "Filipos 2:1-4: magkaisa ng pag-iisip, magkapareho ng pag-ibig, isa sa espiritu at layunin."),
+      t("Galatians 2:9: James, Peter and John extended \"the right hand of fellowship\" to Paul and Barnabas.", "Galacia 2:9: iniabot nina Santiago, Pedro at Juan ang \"kamay ng pakikisama\" kina Pablo at Bernabe."),
+      t("2 Corinthians 8:1-4: churches in Macedonia gave generously to help believers in Jerusalem.", "2 Corinto 8:1-4: nagbigay nang bukas-palad ang mga iglesia sa Macedonia upang tulungan ang mga mananampalataya sa Jerusalem."),
+      t("Mark 9:38-41: \"Whoever is not against us is for us.\"", "Marcos 9:38-41: \"Ang hindi laban sa atin ay kakampi natin.\""),
+    ],
+    heart: [
+      t(
+        "Repent of rivalry and quiet comparison. Pray for the success of the church down the road as you pray for your own.",
+        "Magsisi sa pagkakaribal at tahimik na paghahambing. Ipanalangin ang tagumpay ng iglesia sa kabilang kalye gaya ng pagdarasal mo sa sarili mo."
+      ),
+      t(
+        "Choose humility: be willing to go first, to visit, to listen and to share credit. Collaboration costs pride but multiplies fruit.",
+        "Piliin ang kababaang-loob: handang mauna, bumisita, makinig at magbahagi ng papuri. Ang pagtutulungan ay may kapalit na pagmamataas pero nagpaparami ng bunga."
+      ),
+    ],
+    questions: [
+      t("Do I know the pastors of the churches near me by name?", "Kilala ko ba sa pangalan ang mga pastor ng mga iglesia malapit sa akin?"),
+      t("What fear or pride keeps us from partnering?", "Anong takot o pagmamataas ang pumipigil sa aming makipagtulungan?"),
+      t("What mission in our city is too big for any one church?", "Anong misyon sa aming lungsod ang masyadong malaki para sa iisang iglesia?"),
+      t("What essentials do we agree on, and where can we be gracious?", "Anu-ano ang mahahalagang pinagkakasunduan namin, at saan kami puwedeng maging mapagbigay?"),
+    ],
+    actions: [
+      t("Contact one pastor or leader from another church this week and ask how you can pray for them.", "Kontakin ang isang pastor o lider mula sa ibang iglesia ngayong linggo at itanong kung paano mo sila maipagdarasal."),
+      t("Propose one simple joint event: a prayer night, a relief drive or a training day.", "Magmungkahi ng isang simpleng pinagsamang event: gabi ng panalangin, relief drive o araw ng pagsasanay."),
+      t("Speak well of another church in front of your own people this month.", "Magsalita nang mabuti tungkol sa ibang iglesia sa harap ng sarili mong mga tao ngayong buwan."),
+    ],
+    prayer: t(
+      "Lord Jesus, You prayed that we would be one so the world would believe. Forgive our rivalry, our comparison and our hidden pride. Open my eyes to see the churches in my city as part of Your one Body. Give me courage to reach out first and wisdom to build trust. Show us a mission we can do only together, and let our cooperation point people to You. Bless the churches near me, and let Your name be honored across our whole community. Amen.",
+      "Panginoong Hesus, ipinanalangin Mo na maging isa kami upang maniwala ang mundo. Patawarin Mo ang aming pagkakaribal, paghahambing at nakatagong pagmamataas. Buksan Mo ang aking mga mata upang makita ang mga iglesia sa aking lungsod bilang bahagi ng Iyong iisang Katawan. Bigyan Mo ako ng tapang na unang lumapit at karunungang magtayo ng tiwala. Ipakita Mo sa amin ang misyong magagawa lang namin nang magkakasama, at hayaang ituro ng aming pagtutulungan ang mga tao sa Iyo. Pagpalain Mo ang mga iglesia sa paligid ko, at parangalan ang Iyong pangalan sa buong komunidad namin. Amen."
+    ),
+  },
+  "mentoring-pastors": {
+    revelation: t(
+      "Pastors are some of the loneliest people in the church, and one faithful mentor can be the reason a shepherd stays faithful for decades.",
+      "Ang mga pastor ay ilan sa pinakanag-iisang tao sa iglesia, at ang isang tapat na mentor ay maaaring maging dahilan kung bakit mananatiling tapat ang isang pastol sa loob ng mga dekada."
+    ),
+    mainTruth: t(
+      "Paul wrote to Timothy, \"my true son in the faith\" (1 Timothy 1:2), and to Titus, \"my true son in our common faith\" (Titus 1:4). He reminded Timothy of the prophecies made about him \"so that by following them you may fight the battle well, holding on to faith and a good conscience\" (1 Timothy 1:18-19). He told Titus why he left him in Crete: \"that you might put in order what was left unfinished and appoint elders in every town\" (Titus 1:5). And in his last letter he wrote: \"You then, my son, be strong in the grace that is in Christ Jesus. ... Join with me in suffering, like a good soldier of Christ Jesus\" (2 Timothy 2:1, 3). Paul's letters were more than instructions. They were affirmation, correction, prayer and companionship in ministry.",
+      "Sumulat si Pablo kay Timoteo, \"tunay kong anak sa pananampalataya\" (1 Timoteo 1:2), at kay Tito, \"tunay kong anak sa iisa nating pananampalataya\" (Tito 1:4). Ipinaalala niya kay Timoteo ang mga propesiyang binigkas tungkol sa kanya \"upang sa pagsunod sa mga ito ay makipaglaban ka nang mabuti, nananatili sa pananampalataya at malinis na budhi\" (1 Timoteo 1:18-19). Sinabi niya kay Tito kung bakit niya ito iniwan sa Creta: \"upang ayusin mo ang mga naiwang hindi pa tapos at magtalaga ka ng mga matatanda sa bawat bayan\" (Tito 1:5). At sa huling liham niya ay isinulat niya, \"Ikaw nga, anak ko, magpakatatag ka sa biyayang kay Cristo Hesus... Makibahagi ka sa pagdurusa, gaya ng mabuting kawal ni Cristo Hesus\" (2 Timoteo 2:1, 3). Higit pa sa mga tagubilin ang mga liham ni Pablo. Pagpapatibay ito, pagtutuwid, panalangin at pakikipagkaibigan sa ministeryo."
+    ),
+    insight: [
+      t(
+        "Many pastors carry what no one sees: the late-night hospital calls, the member who left, the budget that does not stretch, the pressure to be strong for everyone. They counsel others yet have no one to counsel them. Surveys vary, but the testimony of many ministers is the same: isolation is among the greatest dangers. A pastor with a mentor is a pastor with a lifeline.",
+        "Maraming pastor ang may dalang hindi nakikita ng iba: ang mga tawag sa ospital sa kalaliman ng gabi, ang miyembrong umalis, ang budget na hindi umaabot, ang presyong maging matatag para sa lahat. Nagpapayo sila sa iba pero walang nagpapayo sa kanila. Magkakaiba ang mga survey, pero pareho ang patotoo ng maraming ministro: ang pag-iisa ay isa sa pinakamalaking panganib. Ang pastor na may mentor ay pastor na may sagip-buhay."
+      ),
+      t(
+        "A good mentor does not merely give information. Paul gave Timothy his presence, his prayers, his example and his honest words. He did not try to make Timothy a copy of himself, but an authentic servant of Christ. The mentor's goal is to help another shepherd become faithful in his own calling, not to build a following for himself.",
+        "Hindi basta nagbibigay ng impormasyon ang mabuting mentor. Ibinigay ni Pablo kay Timoteo ang kanyang presensya, panalangin, halimbawa at tapat na salita. Hindi niya sinikap gawing kopya ng sarili si Timoteo, kundi tunay na lingkod ni Cristo. Layunin ng mentor na tulungan ang isa pang pastol na maging tapat sa sarili niyang tawag, hindi bumuo ng sariling tagasunod."
+      ),
+    ],
+    life: [
+      t(
+        "A young pastor of a small Filipino church in Abu Dhabi, Pastor Gerry, almost resigned after a painful conflict over leadership. He had no one to call. A retired pastor from another city, whom he had met once at a conference, began to call him every other week. He never took over; he asked, \"How is your marriage? How is your rest? What did God say to you this week?\" He shared his own failures. He gently pointed out where Gerry was avoiding hard conversations. Five years later, Gerry is still pastoring, and he now calls two younger pastors every month.",
+        "Halos magbitiw ang isang batang pastor ng maliit na iglesiang Pilipino sa Abu Dhabi, si Pastor Gerry, matapos ang masakit na alitan sa pamumuno. Wala siyang matawagan. Isang retiradong pastor mula sa ibang lungsod, na minsan lang niyang nakilala sa kumperensya, ang nagsimulang tumawag sa kanya kada dalawang linggo. Hindi siya nang-agaw ng kontrol; nagtanong siya, \"Kumusta ang pagsasama ninyo ng asawa mo? Kumusta ang pahinga mo? Ano ang sinabi sa iyo ng Diyos ngayong linggo?\" Ibinahagi niya ang sarili niyang mga pagkabigo. Banayad niyang itinuro kung saan umiiwas si Gerry sa mahihirap na usapan. Pagkalipas ng limang taon, nagpapastor pa rin si Gerry, at dalawang mas batang pastor na ang tinatawagan niya kada buwan."
+      ),
+      t(
+        "You do not need to be a famous leader to mentor a pastor. If you have walked ten years longer in ministry, you have lessons to share. Even a regular call, a prayer, and a listening ear can keep a shepherd from quitting.",
+        "Hindi mo kailangang maging tanyag na lider para mag-mentor ng pastor. Kung sampung taon ka nang mas matagal sa ministeryo, may mga aral kang maibabahagi. Kahit ang regular na tawag, panalangin at taong nakikinig ay makapipigil sa pastol na sumuko."
+      ),
+    ],
+    twist: t(
+      "We often assume that the mentor is the one with the answers. But Paul's mentoring was full of his own weakness: he asked Timothy to come, to bring his cloak and his books, and to bring Mark because \"he is helpful to me\" (2 Timothy 4:9-13). The great apostle needed his young friends too. True mentoring is a two-way street where the older receives encouragement as well as gives it.",
+      "Madalas nating isiping ang mentor ang may lahat ng sagot. Pero puno ng sariling kahinaan ang pag-mentor ni Pablo: hiniling niya kay Timoteo na pumunta, dalhin ang kanyang balabal at mga aklat, at isama si Marcos dahil \"nakatutulong siya sa akin\" (2 Timoteo 4:9-13). Kailangan din ng dakilang apostol ang mga batang kaibigan niya. Ang tunay na pag-mentor ay dalawang-daang kalsada kung saan tumatanggap din ng lakas ang nakatatanda."
+    ),
+    confirm: [
+      t("2 Timothy 1:6-7: Paul reminds Timothy to fan into flame the gift of God, for the Spirit gives power, love and self-discipline.", "2 Timoteo 1:6-7: ipinaaalala ni Pablo kay Timoteo na pag-alabin ang kaloob ng Diyos, sapagkat ang Espiritu ay nagbibigay ng kapangyarihan, pag-ibig at pagpipigil."),
+      t("Acts 18:24-26: Priscilla and Aquila explained the way of God more adequately to the gifted Apollos.", "Gawa 18:24-26: ipinaliwanag nina Priscila at Aquila nang mas ganap ang daan ng Diyos sa mahusay na si Apolos."),
+      t("Exodus 17:12: Aaron and Hur held up Moses' arms when they grew tired.", "Exodo 17:12: itinaas nina Aaron at Hur ang mga bisig ni Moises nang mapagod ito."),
+      t("Proverbs 27:17: \"As iron sharpens iron, so one person sharpens another.\"", "Kawikaan 27:17: \"Kung paanong tinatalas ng bakal ang bakal, gayon tinatalas ng isang tao ang kapwa niya.\""),
+    ],
+    heart: [
+      t(
+        "Approach a younger pastor as a father or brother, not a critic. Listen far more than you speak. Let your words be seasoned with grace and your corrections wrapped in clear love.",
+        "Lumapit sa mas batang pastor bilang ama o kapatid, hindi kritiko. Makinig nang higit sa pagsasalita. Tinimplahan ng biyaya ang iyong mga salita at nababalot sa malinaw na pag-ibig ang iyong mga pagtutuwid."
+      ),
+      t(
+        "If you are the pastor, humble yourself and ask for a mentor. Needing help is not weakness; it is wisdom.",
+        "Kung ikaw ang pastor, magpakumbaba at humingi ng mentor. Ang pangangailangan ng tulong ay hindi kahinaan; karunungan ito."
+      ),
+    ],
+    questions: [
+      t("Which pastor in my reach is quietly struggling?", "Aling pastor sa abot ko ang tahimik na nahihirapan?"),
+      t("What have I learned in ministry that took years to learn and is worth passing on?", "Ano ang natutunan ko sa ministeryo na inabot ng mga taon at sulit na ipasa?"),
+      t("Do I have someone who asks me about my soul, family and rest?", "May tao ba akong nagtatanong tungkol sa aking kaluluwa, pamilya at pahinga?"),
+      t("How can I mentor without controlling?", "Paano ako makapag-mentor nang hindi nagkokontrol?"),
+    ],
+    actions: [
+      t("Call or message one pastor today and promise to pray for them by name this week.", "Tawagan o i-message ang isang pastor ngayon at mangakong ipagdarasal siya sa pangalan ngayong linggo."),
+      t("Set a recurring monthly time to connect with a pastor you are mentoring, or to be mentored.", "Magtakda ng buwanang oras para makipag-ugnayan sa pastor na imumentor mo, o mamumentor sa iyo."),
+      t("Write a short letter of encouragement to a pastor, recalling something God has done through them.", "Sumulat ng maikling liham ng pampalakas-loob sa isang pastor, na ipinaaalala ang ginawa ng Diyos sa pamamagitan niya."),
+    ],
+    prayer: t(
+      "Chief Shepherd, thank You for the pastors who carry Your people on their hearts. Hold the weary ones, protect their marriages and families, and surround them with faithful friends. Give me eyes to notice a shepherd in need and the humility to walk beside him. Teach me to encourage, to correct with love and to pray without ceasing. Where I am the one carrying a heavy load, send me a mentor and help me receive their care. Let a generation of faithful pastors be raised up. In Jesus' name, Amen.",
+      "Punong Pastol, salamat po sa mga pastor na dala sa puso ang Iyong bayan. Yakapin Mo ang mga pagod, ingatan ang kanilang mga pagsasama at pamilya, at palibutan sila ng mga tapat na kaibigan. Bigyan Mo ako ng mata upang mapansin ang pastol na nangangailangan at ng kababaang-loob na maglakad sa tabi niya. Turuan Mo akong magpalakas ng loob, magtuwid nang may pag-ibig at manalangin nang walang humpay. Kung ako ang may mabigat na pasan, magpadala Ka ng mentor at tulungan Mo akong tanggapin ang kanilang pag-aalaga. Magbangon Ka ng isang henerasyon ng mga tapat na pastor. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "building-a-legacy": {
+    revelation: t(
+      "A legacy is not what you build for yourself to be remembered by; it is the faith you pour into people who will carry Jesus after you are gone.",
+      "Ang pamana ay hindi ang itinayo mo para maalala ka; ito ang pananampalatayang ibinuhos mo sa mga taong magdadala kay Hesus kapag wala ka na."
+    ),
+    mainTruth: t(
+      "Paul wrote to Timothy, \"I am reminded of your sincere faith, which first lived in your grandmother Lois and in your mother Eunice and, I am persuaded, now lives in you also\" (2 Timothy 1:5). That is a legacy: faith passed through three generations by ordinary people. Hebrews 11 says of the heroes of faith, \"All these people were still living by faith when they died. They did not receive the things promised; they only saw them and welcomed them from a distance\" (Hebrews 11:13). They planted for what they would never see. And the psalmist prays, \"Even when I am old and gray, do not forsake me, my God, till I declare Your power to the next generation, Your mighty acts to all who are to come\" (Psalm 71:18).",
+      "Isinulat ni Pablo kay Timoteo, \"Naaalala ko ang iyong tapat na pananampalataya, na unang tumira sa iyong lola na si Loida at sa iyong ina na si Eunice, at nakatitiyak akong nasa iyo rin ngayon\" (2 Timoteo 1:5). Iyan ang pamana: pananampalatayang naipasa sa tatlong henerasyon ng mga karaniwang tao. Sinasabi ng Hebreo 11 tungkol sa mga bayani ng pananampalataya, \"Namuhay silang lahat sa pananampalataya hanggang sa kanilang kamatayan. Hindi nila natanggap ang mga ipinangako; nakita lamang nila ito at binati mula sa malayo\" (Hebreo 11:13). Nagtanim sila para sa hindi nila makikita. At nanalangin ang mang-aawit, \"Kahit matanda na ako at uban, huwag Mo akong pababayaan, aking Diyos, hanggang maipahayag ko ang Iyong kapangyarihan sa susunod na henerasyon, ang Iyong mga dakilang gawa sa lahat ng darating\" (Awit 71:18)."
+    ),
+    insight: [
+      t(
+        "Many people think of legacy as monuments: a building named after us, a ministry bearing our name, a plaque on the wall. But monuments last only as long as the walls do. The legacy that endures is people. Timothy outlived Paul's chains and Paul's earthly life, and the faith went on. Investing in people is the only investment that lasts into eternity.",
+        "Maraming nag-iisip na ang pamana ay mga monumento: gusaling may pangalan natin, ministeryong may ating pangalan, plake sa dingding. Pero tumatagal lang ang mga monumento hangga't tumatayo ang pader. Ang pamanang nananatili ay ang mga tao. Nabuhay pa si Timoteo pagkatapos ng tanikala at buhay ni Pablo sa lupa, at nagpatuloy ang pananampalataya. Ang pamumuhunan sa tao ang tanging pamumuhunang tumatagal hanggang sa walang hanggan."
+      ),
+      t(
+        "Legacy is built long before we think about it. It is made in the unnoticed Tuesdays: how you speak to your children, whether you pray when no one is watching, how you treat the people who cannot repay you. By the time most of us ask, \"What will I leave behind?\" the answer has been forming for years. Begin today, with the person in front of you.",
+        "Matagal na nabubuo ang pamana bago pa natin ito pag-isipan. Nabubuo ito sa mga hindi napapansing Martes: kung paano ka makipag-usap sa mga anak mo, kung nananalangin ka kapag walang nakatingin, kung paano mo tratuhin ang mga taong hindi makakabayad sa iyo. Pagdating ng oras na itanong ng karamihan sa atin ang \"Ano ang iiwan ko?\" ilang taon na palang hinuhubog ang sagot. Magsimula ngayon, sa taong nasa harapan mo."
+      ),
+    ],
+    life: [
+      t(
+        "Lola Pacing never finished high school and never spoke in front of a church. But in a small barrio, she gathered her grandchildren every evening, read one short passage from a worn Bible and prayed for each by name. Today, one grandson is a pastor in Manila, another is an OFW nurse who leads a Bible study in Dubai, and a granddaughter teaches Sunday school. At her wake, the pastor said, \"She never had a ministry. She had a family, and God used it.\" That is a legacy.",
+        "Hindi nakatapos ng high school si Lola Pacing at hindi kailanman nagsalita sa harap ng simbahan. Pero sa isang maliit na barrio, tinipon niya ang kanyang mga apo tuwing gabi, nagbasa ng isang maikling talata mula sa gula-gulanit na Biblia at ipinanalangin ang bawat isa sa pangalan. Ngayon, pastor sa Maynila ang isang apo, OFW na nurse ang isa pa na nagpapatakbo ng Bible study sa Dubai, at nagtuturo sa Sunday school ang isang apo na babae. Sa lamay niya, sabi ng pastor, \"Wala siyang ministeryo. May pamilya siya, at ginamit iyon ng Diyos.\" Iyan ang pamana."
+      ),
+      t(
+        "For OFWs, legacy often means being far away from the children you love. Remember that your legacy is not only the money you send home. A weekly call to pray together, a voice message with a Bible verse, a letter to be read years from now: these things say, \"Faith in God is the most important thing I carry.\"",
+        "Para sa mga OFW, ang pamana ay madalas na nangangahulugang malayo sa mga anak na mahal mo. Tandaan na ang pamana mo ay hindi lang ang perang ipinapadala mo sa bahay. Ang lingguhang tawag para magdasal nang magkasama, voice message na may talata ng Biblia, liham na babasahin pagkalipas ng maraming taon: sinasabi ng mga ito, \"Ang pananampalataya sa Diyos ang pinakamahalagang dala ko.\""
+      ),
+    ],
+    twist: t(
+      "We assume that a legacy is something we leave when we die. But the great biblical legacies were built by people who gave away their ministry while alive. Moses laid hands on Joshua, Elijah threw his cloak to Elisha, Paul wrote to Timothy while in prison. The best way to leave a legacy is to hand over the baton while you are still running beside the next runner. Your legacy begins when you start giving it away.",
+      "Akala natin, ang pamana ay iniiwan natin kapag namatay na tayo. Pero ang mga dakilang pamana sa Biblia ay itinayo ng mga taong ipinamigay ang kanilang ministeryo habang buhay pa. Ipinatong ni Moises ang kamay kay Josue, inihagis ni Elias ang balabal kay Eliseo, sumulat si Pablo kay Timoteo habang nasa bilangguan. Ang pinakamagandang paraan para mag-iwan ng pamana ay iabot ang baton habang tumatakbo ka pa katabi ng susunod na tumatakbo. Nagsisimula ang pamana mo kapag sinimulan mo na itong ipamigay."
+    ),
+    confirm: [
+      t("Deuteronomy 6:6-7: \"Impress them on your children. Talk about them when you sit at home and when you walk along the road.\"", "Deuteronomio 6:6-7: \"Itanim ninyo ang mga ito sa inyong mga anak. Pag-usapan ninyo ang mga ito kapag nakaupo sa bahay at kapag naglalakad sa daan.\""),
+      t("Joshua 4:6-7: the stones at the Jordan were a memorial so children would ask, \"What do they mean?\"", "Josue 4:6-7: ang mga bato sa Jordan ay alaala upang magtanong ang mga bata, \"Ano ang kahulugan ng mga ito?\""),
+      t("3 John 4: \"I have no greater joy than to hear that my children are walking in the truth.\"", "3 Juan 4: \"Wala akong higit na kagalakan kaysa marinig na lumalakad sa katotohanan ang aking mga anak.\""),
+      t("Acts 13:36: David \"served God's purpose in his own generation\" before he fell asleep.", "Gawa 13:36: si David ay \"naglingkod sa layunin ng Diyos sa kanyang sariling henerasyon\" bago siya natulog."),
+    ],
+    heart: [
+      t(
+        "Release the need to be remembered. Ask instead, \"Who will remember Jesus because of me?\" Be content to be a link in a chain that leads to Christ.",
+        "Bitawan ang pangangailangang maalala. Itanong sa halip, \"Sino ang makakaalala kay Hesus dahil sa akin?\" Makuntento na maging kawing sa tanikalang humahantong kay Cristo."
+      ),
+      t(
+        "Live today in a way you would be glad for the next generation to copy. Legacy is built by consistency, not by one grand gesture.",
+        "Mamuhay ngayon sa paraang ikalulugod mong tularan ng susunod na henerasyon. Ang pamana ay nabubuo sa pagkakatuloy-tuloy, hindi sa isang dakilang kilos."
+      ),
+    ],
+    questions: [
+      t("What do I most want to continue after I am gone?", "Ano ang pinakagusto kong magpatuloy pagkawala ko?"),
+      t("Whose faith shaped mine, and have I thanked them?", "Kaninong pananampalataya ang humubog sa akin, at napasalamatan ko na ba sila?"),
+      t("Who is receiving my best time, my prayers and my teaching right now?", "Sino ang tumatanggap ng pinakamainam kong oras, panalangin at turo ngayon?"),
+      t("What stories of God's faithfulness should I write down?", "Anong mga kuwento ng katapatan ng Diyos ang dapat kong isulat?"),
+    ],
+    actions: [
+      t("Write a letter or record a message telling someone younger how God has been faithful to you.", "Sumulat ng liham o mag-record ng mensahe para sa mas bata tungkol sa katapatan ng Diyos sa iyo."),
+      t("Thank someone whose faith shaped yours, in person if you can.", "Pasalamatan ang taong humubog sa iyong pananampalataya, nang personal kung maaari."),
+      t("Choose one person to invest in on a regular schedule this year, and put it on your calendar.", "Pumili ng isang taong paglalaanan mo ng regular na oras ngayong taon, at ilagay sa kalendaryo."),
+    ],
+    prayer: t(
+      "Faithful God, thank You for those who passed the faith to me, grandmothers, teachers, friends and pastors. Make me a worthy link in that chain. Forgive me for chasing what fades and for neglecting the people You put in my path. Teach me to invest in souls rather than monuments, and to speak of Your mighty acts to the next generation. Let my words, my example and my prayers outlive me. May those who come after me know You because I lived. In Jesus' name, Amen.",
+      "Tapat na Diyos, salamat po sa mga nagpasa ng pananampalataya sa akin, mga lola, guro, kaibigan at pastor. Gawin Mo akong karapat-dapat na kawing sa tanikalang iyon. Patawarin Mo ako sa paghabol sa nawawala at sa pagpapabaya sa mga taong inilagay Mo sa aking daan. Turuan Mo akong mamuhunan sa kaluluwa sa halip na sa monumento, at ipahayag ang Iyong mga dakilang gawa sa susunod na henerasyon. Hayaang mabuhay nang higit sa akin ang aking mga salita, halimbawa at panalangin. Nawa makilala Ka ng mga susunod sa akin dahil nabuhay ako. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "the-leader-who-decreases": {
+    revelation: t(
+      "The mark of a mature leader is not how high he rises but how gladly he steps aside so that Jesus and the people he trained can increase.",
+      "Ang tanda ng matatag na lider ay hindi kung gaano siya kataas umangat kundi kung gaano siya kagalak na umatras upang lumago si Hesus at ang mga taong sinanay niya."
+    ),
+    mainTruth: t(
+      "When John's disciples complained that everyone was now going to Jesus, John answered, \"A person can receive only what is given them from heaven... The bride belongs to the bridegroom. The friend who attends the bridegroom waits and listens for him, and is full of joy when he hears the bridegroom's voice. That joy is mine, and it is now complete. He must become greater; I must become less\" (John 3:27-30). Jesus taught the same for all who lead: \"You know that those who are regarded as rulers of the Gentiles lord it over them... Not so with you. Instead, whoever wants to become great among you must be your servant... just as the Son of Man did not come to be served, but to serve\" (Matthew 20:25-28).",
+      "Nang magreklamo ang mga alagad ni Juan na lahat ay pumupunta na kay Hesus, sumagot si Juan, \"Walang tao na makatatanggap ng anuman maliban kung ibinigay sa kanya mula sa langit... Ang nobya ay pag-aari ng nobyo. Ang kaibigan ng nobyo ay naghihintay at nakikinig sa kanya, at lubos na nagagalak kapag naririnig niya ang tinig ng nobyo. Ang kagalakang iyon ay akin, at ngayon ay ganap na. Kailangang lumaki Siya; kailangan akong lumiit\" (Juan 3:27-30). Ito rin ang itinuro ni Hesus sa lahat ng namumuno: \"Alam ninyong ang mga itinuturing na pinuno ng mga Gentil ay nagpapakapanginoon sa kanila... Hindi ganoon sa inyo. Sa halip, ang nais maging dakila sa inyo ay dapat maging lingkod ninyo... gaya ng Anak ng Tao na hindi naparito upang paglingkuran kundi upang maglingkod\" (Mateo 20:25-28)."
+    ),
+    insight: [
+      t(
+        "Most people are comfortable decreasing when they have failed. John decreased at the height of his influence. Crowds had come to the Jordan, people hung on his every word, and then someone greater arrived. He did not feel threatened. He understood that he was the friend of the bridegroom, not the bridegroom. Every ministry we have is on loan from God, and the day will come when someone else, perhaps someone we trained, will carry it farther.",
+        "Karamihan sa atin ay komportableng lumiit kapag nabigo. Lumiit si Juan sa rurok ng kanyang impluwensya. Dumagsa ang mga tao sa Jordan, nakikinig sa bawat salita niya, at saka dumating ang mas dakila. Hindi siya nakaramdam ng banta. Naunawaan niyang kaibigan siya ng nobyo, hindi ang nobyo. Hiram mula sa Diyos ang bawat ministeryong mayroon tayo, at darating ang araw na ibang tao, marahil ang sinanay natin, ang magdadala nito nang mas malayo."
+      ),
+      t(
+        "Ministry makes the ego very subtle. We can serve in the name of Jesus while quietly needing credit, titles, thanks and control. The hunger for recognition is one of the last idols to die in a servant's heart. John found a better joy: the joy of hearing the Bridegroom's voice. When our joy comes from being near Jesus rather than being noticed, stepping aside no longer feels like loss.",
+        "Napakasubtle ng ego sa ministeryo. Maaari tayong maglingkod sa pangalan ni Hesus habang tahimik na nangangailangan ng papuri, titulo, pasasalamat at kontrol. Ang gutom sa pagkilala ay isa sa mga huling diyus-diyosang namamatay sa puso ng lingkod. Natagpuan ni Juan ang mas mabuting kagalakan: ang kagalakan ng pakikinig sa tinig ng Nobyo. Kapag ang kagalakan natin ay galing sa pagiging malapit kay Hesus at hindi sa pagiging napapansin, hindi na pagkawala ang pag-atras."
+      ),
+    ],
+    life: [
+      t(
+        "Ate Carmen led a women's ministry for fifteen years in a Filipino church in Kuwait. When a younger woman, Jessa, began to teach with great gifting, many women started coming to Jessa for counsel. Carmen felt a sting. She prayed about it and chose to bless Jessa publicly, to hand her the leadership of the ministry, and to become her prayer partner. Jessa later said, \"Ate Carmen's joy when I grew taught me what a spiritual mother looks like.\" The ministry doubled, and Carmen discovered a freedom she had not known.",
+        "Labinlimang taon na pinamunuan ni Ate Carmen ang ministeryo ng kababaihan sa isang iglesiang Pilipino sa Kuwait. Nang magsimulang magturo nang may malaking kaloob ang mas batang si Jessa, marami nang babaeng lumalapit kay Jessa para sa payo. Nasaktan si Carmen. Nanalangin siya tungkol dito at pinili niyang pagpalain si Jessa nang hayagan, ibigay rito ang pamumuno sa ministeryo, at maging katuwang nito sa panalangin. Sabi ni Jessa kalaunan, \"Ang galak ni Ate Carmen noong ako ay lumago ang nagturo sa akin kung ano ang hitsura ng espirituwal na ina.\" Dumoble ang ministeryo, at natuklasan ni Carmen ang kalayaang hindi pa niya nakilala."
+      ),
+      t(
+        "Think of a parent at a child's graduation. The mother who sacrificed for years is proud when her child's name is called, not her own. Good leaders celebrate when their people surpass them. If you find yourself checking who gets the applause, that is a good place to pray.",
+        "Isipin ang magulang sa graduation ng anak. Ang inang nagsakripisyo ng maraming taon ay proud kapag tinawag ang pangalan ng anak niya, hindi ang kanya. Ang mabubuting lider ay nagdiriwang kapag nahihigitan sila ng kanilang mga tao. Kung mapansin mong sinusuri mo kung sino ang pinapalakpakan, magandang lugar iyon para manalangin."
+      ),
+    ],
+    twist: t(
+      "We believe that to increase we must hold on, and to decrease is to lose. But Jesus said, \"Unless a kernel of wheat falls to the ground and dies, it remains only a single seed. But if it dies, it produces many seeds\" (John 12:24). The leader who decreases is not shrinking into nothing; he is falling into the ground to multiply. John the Baptist's decreasing did not erase him. Jesus called him the greatest among those born of women (Matthew 11:11).",
+      "Naniniwala tayo na para lumago ay dapat kumapit, at ang paglaho ay pagkatalo. Pero sinabi ni Hesus, \"Maliban kung ang butil ng trigo ay mahulog sa lupa at mamatay, nananatili itong nag-iisang buto. Ngunit kung mamatay, namumunga ito ng maraming buto\" (Juan 12:24). Ang lider na lumiliit ay hindi lumiliit tungo sa wala; nahuhulog siya sa lupa para dumami. Hindi binura ng pagliit si Juan Bautista. Tinawag siya ni Hesus na pinakadakila sa mga ipinanganak ng babae (Mateo 11:11)."
+    ),
+    confirm: [
+      t("Philippians 2:5-8: Christ \"made Himself nothing\" by taking the nature of a servant.", "Filipos 2:5-8: si Cristo ay \"nagpakababa\" sa pagkuha ng anyo ng alipin."),
+      t("Numbers 11:26-29: Moses said, \"I wish that all the Lord's people were prophets.\"", "Bilang 11:26-29: sabi ni Moises, \"Sana'y maging propeta ang buong bayan ng Panginoon.\""),
+      t("Acts 13:36: David served his generation and then fell asleep; he did not cling to the throne beyond his time.", "Gawa 13:36: naglingkod si David sa kanyang henerasyon at saka natulog; hindi siya kumapit sa trono nang lampas sa kanyang panahon."),
+      t("1 Peter 5:5-6: \"Humble yourselves, therefore, under God's mighty hand, that He may lift you up in due time.\"", "1 Pedro 5:5-6: \"Magpakumbaba kayo sa ilalim ng makapangyarihang kamay ng Diyos, upang itaas Niya kayo sa takdang panahon.\""),
+    ],
+    heart: [
+      t(
+        "Name the places where you are seeking credit, and give them to God. Practice anonymous service: do something helpful and let no one know.",
+        "Pangalanan ang mga lugar kung saan ka naghahanap ng papuri, at ibigay ang mga iyon sa Diyos. Magsanay ng palihim na paglilingkod: gumawa ng makatutulong at huwag ipaalam kaninuman."
+      ),
+      t(
+        "Cultivate the bridegroom's friend joy. Let your delight be in Jesus' voice and in the growth of those you have served, not in your own visibility.",
+        "Palaguin ang galak ng kaibigan ng nobyo. Hayaang nasa tinig ni Hesus at sa paglago ng mga pinaglingkuran mo ang saya mo, hindi sa sarili mong pagkakakita."
+      ),
+    ],
+    questions: [
+      t("Where do I secretly want credit in ministry?", "Saan ko lihim na gusto ng papuri sa ministeryo?"),
+      t("How do I feel when someone I trained surpasses me?", "Ano ang nararamdaman ko kapag nahigitan ako ng sinanay ko?"),
+      t("What would it look like to decrease so Christ is more visible in my team?", "Ano ang hitsura ng paglaho ko upang mas makita si Kristo sa aking team?"),
+      t("What ministry am I holding that I should hand over?", "Anong ministeryo ang hawak ko na dapat ko nang ibigay?"),
+    ],
+    actions: [
+      t("Publicly thank and celebrate someone who is now doing something better than you used to.", "Pampublikong pasalamatan at ipagdiwang ang taong mas mahusay na ngayon sa ginagawa mo noon."),
+      t("Do one act of service this week that no one will know about except God.", "Gumawa ng isang paglilingkod ngayong linggo na walang makaaalam kundi ang Diyos."),
+      t("Make a plan with a younger leader to hand over one area of ministry within three months.", "Gumawa ng plano kasama ang mas batang lider para ibigay ang isang bahagi ng ministeryo sa loob ng tatlong buwan."),
+    ],
+    prayer: t(
+      "Lord Jesus, You are the Bridegroom, and I am only Your friend. Forgive me for the pride that wants to be seen and the fear that clings to roles. Teach me the joy of John, who rejoiced to hear Your voice and gladly stepped aside. Help me celebrate those who rise after me, and make me content to be hidden if You are glorified. Let me decrease so that You may increase in me, in my team and in my church. For Your name's sake, Amen.",
+      "Panginoong Hesus, Ikaw ang Nobyo, at kaibigan Mo lamang ako. Patawarin Mo ako sa pagmamataas na gustong makita at sa takot na kumapit sa tungkulin. Turuan Mo akong makaramdam ng galak ni Juan, na nagalak marinig ang Iyong tinig at masayang umatras. Tulungan Mo akong ipagdiwang ang mga umaangat pagkatapos ko, at gawin Mo akong kuntento na maitago kung Ikaw ay maluluwalhati. Hayaan Mong ako ay lumiit upang Ikaw ay lumaki sa akin, sa aking team at sa aking iglesia. Alang-alang sa Iyong pangalan, Amen."
+    ),
+  },
 };

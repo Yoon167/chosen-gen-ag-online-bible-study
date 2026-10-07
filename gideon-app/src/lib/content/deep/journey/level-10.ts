@@ -793,4 +793,264 @@ export const DEEP: DeepSet = {
       "Panginoong Hesus, nang Ikaw ay alipustain, hindi Ka gumanti. Minahal Mo ang mga tupang kumagat sa Iyo at namatay Ka para sa kanila. Pagalingin Mo ang mga sugat na dala ko mula sa mga taong pinaglingkuran ko. Bunutin Mo ang bawat ugat ng hinanakit. Gawin Mo akong maamo gaya ni Moises, mahinahon gaya ni Pablo at nagtitiwala gaya Mo. Ikaw ang maging tagapagtanggol ko, at tulungan Mo akong patuloy na magmahal, manalangin at maglingkod sa mga nanakit sa akin. Ipinagkakatiwala ko ang sarili ko sa Iyo, na humahatol nang matuwid. Sa Iyong pangalan, Amen."
     ),
   },
+  "pastoring-through-disasters": {
+    revelation: t(
+      "When the storm hits, the church is not meant to be a spectator looking for shelter; it is meant to be the shelter, because God Himself is our refuge.",
+      "Kapag humagupit ang bagyo, ang iglesia ay hindi dapat manonood na naghahanap ng silungan; dapat itong maging silungan, dahil ang Diyos mismo ang ating kanlungan."
+    ),
+    mainTruth: t(
+      "\"God is our refuge and strength, an ever-present help in trouble. Therefore we will not fear, though the earth give way and the mountains fall into the heart of the sea\" (Psalm 46:1-3). When the prophet Agabus foretold a severe famine, the disciples in Antioch \"decided to provide help for the brothers and sisters living in Judea\" and sent it through Barnabas and Saul (Acts 11:27-30). Paul taught that this kind of sharing is fairness: \"At the present time your plenty will supply what they need... that there may be equality\" (2 Corinthians 8:13-15). A pastor shepherds people not only in worship but in the worst week of their lives.",
+      "\"Ang Diyos ang ating kanlungan at kalakasan, laging handang tulong sa kagipitan. Kaya hindi tayo matatakot, kahit gumuho ang lupa at mahulog ang mga bundok sa gitna ng dagat\" (Awit 46:1-3). Nang ihula ng propetang si Agabo ang matinding taggutom, ang mga alagad sa Antioquia ay \"nagpasyang magpadala ng tulong sa mga kapatid na nakatira sa Judea\" at ipinadala ito sa pamamagitan nina Bernabe at Saulo (Gawa 11:27-30). Itinuro ni Pablo na ang ganitong pagbabahagi ay pagkakapantay-pantay: \"Sa kasalukuyan, ang inyong kasaganaan ang tutugon sa kanilang pangangailangan... upang magkaroon ng pagkakapantay-pantay\" (2 Corinto 8:13-15). Ang pastor ay nagpapastol ng mga tao hindi lang sa pagsamba kundi sa pinakamasamang linggo ng kanilang buhay."
+    ),
+    insight: [
+      t(
+        "Notice that the early church in Antioch acted before the famine came. They believed the warning, and they gave. Disaster ministry is not only emergency; it is preparation. The churches that serve best in the storm are the ones that built relationships, lists and habits of giving before it. Love in a crisis is mostly love that was already in place.",
+        "Pansinin na kumilos ang unang iglesia sa Antioquia bago pa dumating ang taggutom. Naniwala sila sa babala, at nagbigay sila. Hindi lang emergency ang ministeryo sa sakuna; ito ay paghahanda. Ang mga iglesiang pinakamahusay maglingkod sa bagyo ay yaong bumuo ng ugnayan, listahan at gawi ng pagbibigay bago ito dumating. Ang pag-ibig sa krisis ay halos pag-ibig na nasa lugar na."
+      ),
+      t(
+        "Notice also that Psalm 46 does not say the earth will not shake. It says, \"Though the earth give way,\" we will not fear. God does not promise that Filipino believers will avoid typhoons, floods, earthquakes or volcanic eruptions. He promises His presence in them. A pastor's ministry in a disaster is to be the visible sign of that presence: a face, a hand, a meal, a prayer, a listening ear, and a steady voice when everyone else is panicking.",
+        "Pansinin din na hindi sinasabi ng Awit 46 na hindi yayanig ang lupa. Sinasabi nito, \"Kahit gumuho ang lupa,\" hindi tayo matatakot. Hindi ipinangangako ng Diyos na maiiwasan ng mga Pilipinong mananampalataya ang bagyo, baha, lindol o pagputok ng bulkan. Ipinangangako Niya ang Kanyang presensya sa gitna nito. Ang ministeryo ng pastor sa sakuna ay maging nakikitang tanda ng presensyang iyon: mukha, kamay, pagkain, panalangin, taingang nakikinig, at tinig na kalmado kapag nagpapanic na ang lahat."
+      ),
+    ],
+    life: [
+      t(
+        "Picture a typhoon that floods half of a coastal town overnight. By dawn the pastor is wading through knee-deep water with a flashlight and a list of every family in the church. He finds an elderly widow on her roof, a family with no rice, and a young father who lost his tricycle, his only income. The church hall becomes an evacuation center. By afternoon, volunteers are cooking in giant pots. The barangay captain, who never visited the church before, says, \"Pastor, thank you. What church is this?\" That question opens years of conversations.",
+        "Isipin ang bagyong nagbaha sa kalahati ng isang baybaying bayan magdamag. Pagsapit ng umaga, lumulusong ang pastor sa tubig na hanggang tuhod dala ang flashlight at listahan ng bawat pamilya sa iglesia. Natagpuan niya ang matandang biyuda sa bubong, pamilyang walang bigas, at batang ama na nawalan ng tricycle, ang tanging kita niya. Naging evacuation center ang bulwagan ng iglesia. Pagsapit ng hapon, nagluluto na ang mga volunteer sa malalaking kaldero. Sinabi ng kapitan ng barangay, na hindi pa kailanman bumisita sa iglesia, \"Pastor, salamat. Anong iglesia ito?\" Ang tanong na iyon ay nagbukas ng mga taon ng pag-uusap."
+      ),
+      t(
+        "The aftermath is just as important as the storm. Trauma lingers: nightmares, fear of rain, grief for lost homes and lives, and quiet despair when the news cameras leave. A wise pastor builds a plan: a contact list, a phone tree, a safe place, a relief fund held transparently, trained listeners, and partnerships with the barangay and other churches. He also remembers OFW families: when a typhoon hits home, the member abroad is anxious and helpless, and needs a pastor who sends news and prays with him.",
+        "Kasinghalaga ng bagyo ang pagkatapos nito. Nananatili ang trauma: bangungot, takot sa ulan, pighati sa nawalang tahanan at buhay, at tahimik na pagkawalang-pag-asa kapag umalis na ang mga camera ng balita. Ang marunong na pastor ay bumubuo ng plano: listahan ng contact, phone tree, ligtas na lugar, pondong tulong na hawak nang bukas, sinanay na tagapakinig, at pakikipagtulungan sa barangay at ibang iglesia. Naaalala rin niya ang pamilya ng mga OFW: kapag tinamaan ng bagyo ang tahanan, balisa at walang magawa ang miyembrong nasa abroad, at kailangan niya ng pastor na magpapadala ng balita at mananalangin kasama niya."
+      ),
+    ],
+    twist: t(
+      "We think disaster ministry is a break from the \"real\" work of preaching and teaching. In Scripture, relief is the real work. James says faith without deeds is dead, and John asks how God's love can be in anyone who sees a brother in need and has no pity (James 2:15-17; 1 John 3:17). Often the most powerful sermon a community ever hears is a bowl of hot rice delivered through floodwater. The Kingdom twist: the church that gives away its building, its money and its sleep in a crisis gains the right to be heard.",
+      "Inaakala nating pahinga mula sa \"tunay\" na gawain ng pangangaral at pagtuturo ang ministeryo sa sakuna. Sa Kasulatan, ang pagtulong ay tunay na gawain. Sabi ni Santiago, patay ang pananampalatayang walang gawa, at tinatanong ni Juan kung paano mananatili ang pag-ibig ng Diyos sa sinumang nakakakita ng kapatid na nangangailangan at walang awa (Santiago 2:15-17; 1 Juan 3:17). Madalas, ang pinakamakapangyarihang sermon na narinig ng isang komunidad ay mangkok ng mainit na kanin na dinala sa gitna ng baha. Ang twist ng Kaharian: ang iglesiang nagbibigay ng gusali, pera at tulog nito sa krisis ay nagkakaroon ng karapatang pakinggan."
+    ),
+    confirm: [
+      t("Acts 11:27-30: the believers send relief to Judea in advance of the famine.", "Gawa 11:27-30: nagpadala ng tulong ang mga mananampalataya sa Judea bago ang taggutom."),
+      t("Matthew 25:35-40: when you fed the hungry and sheltered the stranger, you did it for Jesus.", "Mateo 25:35-40: nang pinakain ninyo ang gutom at kinupkop ang dayuhan, para kay Hesus ninyo ito ginawa."),
+      t("Romans 12:15: rejoice with those who rejoice; mourn with those who mourn.", "Roma 12:15: makigalak sa nagagalak; makiiyak sa umiiyak."),
+      t("Isaiah 43:2: when you pass through the waters, I will be with you.", "Isaias 43:2: kapag dumaan ka sa tubig, sasaiyo Ako."),
+    ],
+    heart: [
+      t(
+        "Let the Spirit give you a shepherd's heart that moves toward pain instead of away from it. When others ask, \"Is it safe?\" a pastor also asks, \"Who needs me?\" Use wisdom, but do not let fear for your comfort override love for your flock.",
+        "Hayaang bigyan ka ng Espiritu ng puso ng pastol na lumalapit sa sakit sa halip na lumayo rito. Kapag tinatanong ng iba, \"Ligtas ba?\" tinatanong din ng pastor, \"Sino ang nangangailangan sa akin?\" Gumamit ng karunungan, pero huwag hayaang manaig ang takot para sa kaginhawaan mo sa pag-ibig sa iyong kawan."
+      ),
+      t(
+        "Be a steward of what is given. Disaster giving tempts waste and suspicion. Keep records, share reports and give help without favoritism, to church members and neighbors alike. Let your honesty protect the gospel.",
+        "Maging tagapangasiwa ng ibinibigay. Natutukso sa pag-aaksaya at paghihinala ang pagbibigay sa sakuna. Magtala, magbahagi ng ulat at magbigay ng tulong nang walang kinikilingan, sa mga miyembro at kapitbahay. Hayaang ingatan ng katapatan mo ang ebanghelyo."
+      ),
+    ],
+    questions: [
+      t("If a typhoon hit tonight, do I have a way to reach every family in my church?", "Kung tatamaan tayo ng bagyo mamayang gabi, may paraan ba akong maabot ang bawat pamilya sa iglesia ko?"),
+      t("Is our church building and team ready to serve as a shelter or relief center?", "Handa ba ang gusali at pangkat ng aming iglesia na maging silungan o relief center?"),
+      t("Who in our flock is still hurting from a past disaster and has been forgotten?", "Sino sa aming kawan ang nasasaktan pa rin mula sa nakaraang sakuna at nakalimutan na?"),
+      t("Do I trust God as my refuge, or only say so?", "Nagtitiwala ba ako sa Diyos bilang kanlungan ko, o sinasabi ko lang?"),
+    ],
+    actions: [
+      t("Make an updated contact list of every member, including their barangay, evacuation area and relatives abroad.", "Gumawa ng na-update na listahan ng contact ng bawat miyembro, kasama ang kanilang barangay, evacuation area at kamag-anak sa abroad."),
+      t("Meet with your leaders this month to write a one-page emergency plan with roles, supplies and a safe place.", "Makipagpulong sa inyong mga lider ngayong buwan upang sumulat ng one-page na emergency plan na may mga papel, suplay at ligtas na lugar."),
+      t("Set up a transparent relief fund and name two members to help record and report how it is used.", "Magtatag ng bukas na pondong tulong at magtalaga ng dalawang miyembro na tutulong magtala at mag-ulat kung paano ito ginagamit."),
+    ],
+    prayer: t(
+      "Lord, You are our refuge and strength, a very present help in trouble. When the waters rise and the ground shakes, let me not run first for my own safety but move toward Your people. Give me wisdom to prepare before the storm and tenderness to stay with the grieving after. Make our church a shelter, a kitchen and a light in our community. Thank You that You are with us even in the flood. In Jesus' name, Amen.",
+      "Panginoon, Ikaw ang aming kanlungan at kalakasan, laging handang tulong sa kagipitan. Kapag tumataas ang tubig at yumayanig ang lupa, huwag Mo akong hayaang unahing tumakbo para sa sarili kong kaligtasan kundi lumapit sa Iyong bayan. Bigyan Mo ako ng karunungang maghanda bago ang bagyo at lambing na samahan ang nagdadalamhati pagkatapos. Gawin Mong silungan, kusina at ilaw sa aming komunidad ang aming iglesia. Salamat na kasama Ka namin kahit sa baha. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "protecting-the-pastors-home": {
+    revelation: t(
+      "Your family is not a side issue to your ministry; it is your first congregation and the clearest proof of your message.",
+      "Ang pamilya mo ay hindi pangalawang usapin sa ministeryo mo; ito ang una mong kongregasyon at pinakamalinaw na patunay ng mensahe mo."
+    ),
+    mainTruth: t(
+      "\"Children are a heritage from the Lord, offspring a reward from him\" (Psalm 127:3). Paul's test for an overseer is sobering: \"He must manage his own family well and see that his children obey him with proper respect. (If anyone does not know how to manage his own family, how can he take care of God's church?)\" (1 Timothy 3:4-5). And the household code of Colossians 3 calls each member to love, respect and gentleness: \"Husbands, love your wives... Fathers, do not embitter your children, or they will become discouraged\" (Colossians 3:18-21). God did not call pastors to win the church and lose the home.",
+      "\"Ang mga anak ay mana mula sa Panginoon, gantimpala mula sa Kanya\" (Awit 127:3). Seryoso ang panukat ni Pablo para sa tagapangasiwa: \"Dapat niyang mapamahalaan nang mahusay ang sariling pamilya at mapasunod ang mga anak nang may wastong paggalang. (Kung hindi niya alam kung paano pamahalaan ang sariling pamilya, paano niya aalagaan ang iglesia ng Diyos?)\" (1 Timoteo 3:4-5). At tinatawag ng alituntunin ng sambahayan sa Colosas 3 ang bawat miyembro sa pag-ibig, paggalang at kahinahunan: \"Mga lalaki, ibigin ninyo ang inyong mga asawa... Mga ama, huwag ninyong galitin ang inyong mga anak, baka mawalan sila ng loob\" (Colosas 3:18-21). Hindi tinawag ng Diyos ang mga pastor na magwagi ng iglesia at mawalan ng tahanan."
+    ),
+    insight: [
+      t(
+        "Notice what Paul says: the home is the training ground for ministry. Not a perfect home, but a managed one: a home where love, order and discipline are real. A man who is gentle with his wife, patient with his children and honest in private is proving the character he will need at the pulpit. The hardest congregation to pastor is the one that sees you in pajamas.",
+        "Pansinin ang sinasabi ni Pablo: ang tahanan ay lugar ng pagsasanay para sa ministeryo. Hindi perpektong tahanan, kundi maayos na pinamamahalaan: tahanang totoo ang pag-ibig, kaayusan at disiplina. Ang lalaking mahinahon sa asawa, matiyaga sa mga anak at tapat sa pribado ay pinatutunayan ang karakter na kakailanganin niya sa pulpito. Ang pinakamahirap na kongregasyong pastulin ay yaong nakakakita sa iyo na naka-pajama."
+      ),
+      t(
+        "Notice also how easily ministry becomes a jealous rival. The church calls at dinner, needs you at midnight, and praises you when you sacrifice your family. Many pastors' children grow up resenting the church, and many pastors' wives carry loneliness no one sees. The enemy often does not need a scandal to damage a ministry; a neglected home will do it slowly. Protecting the home is not selfishness; it is obedience.",
+        "Pansinin din kung gaano kadaling maging selosong karibal ang ministeryo. Tumatawag ang iglesia sa oras ng hapunan, kailangan ka ng hatinggabi, at pinupuri ka kapag isinasakripisyo mo ang pamilya mo. Maraming anak ng pastor ang lumalaking may sama ng loob sa iglesia, at maraming asawa ng pastor ang may bitbit na kalungkutang walang nakakakita. Madalas hindi kailangan ng kaaway ng iskandalo para sirain ang ministeryo; mabagal na sisirain ito ng napabayaang tahanan. Ang pag-iingat sa tahanan ay hindi pagkamakasarili; ito ay pagsunod."
+      ),
+    ],
+    life: [
+      t(
+        "A pastor in a provincial town used to keep his phone on during every meal. His daughter, nine years old, once said quietly, \"Papa, are the church people more important than us?\" He felt the question like a blade. That night he began changing: no phone at dinner, a fixed family day, and one date night with his wife a week. He told the church leaders, \"I will serve you better as a husband and father who is whole.\" Surprisingly, the church respected him more.",
+        "Isang pastor sa isang bayan sa probinsya ang nakagawiang buksan ang telepono sa bawat kainan. Minsan, tahimik na sinabi ng anak niyang siyam na taong gulang, \"Papa, mas mahalaga po ba ang mga taga-iglesia kaysa sa amin?\" Parang kutsilyong tumarak sa kanya ang tanong. Nang gabing iyon, nagsimula siyang magbago: walang telepono sa hapunan, takdang araw ng pamilya, at isang date night kasama ang asawa kada linggo. Sinabi niya sa mga lider ng iglesia, \"Mas mapaglilingkuran ko kayo bilang buong asawa at ama.\" Nakagugulat na mas iginalang siya ng iglesia."
+      ),
+      t(
+        "A pastor's spouse is not an unpaid staff member or a performer for the congregation. She or he has gifts, limits and a calling of their own, and may or may not serve in visible roles. Pastors' children are not examples to be displayed but kids to be loved; let them be children, make mistakes, and have friends outside the church. Both need people who care for them apart from the ministry. For the pastor whose family is abroad, intentional daily communication and honest planning are the home protection.",
+        "Ang asawa ng pastor ay hindi walang-bayad na staff o tagapagtanghal para sa kongregasyon. May sarili siyang kaloob, hangganan at tawag, at maaaring maglingkod o hindi sa mga nakikitang tungkulin. Ang mga anak ng pastor ay hindi halimbawang ipinagmamalaki kundi mga batang dapat mahalin; hayaan silang maging bata, magkamali, at magkaroon ng kaibigan sa labas ng iglesia. Kailangan ng dalawa ang mga taong nag-aalaga sa kanila bukod sa ministeryo. Para sa pastor na ang pamilya ay nasa abroad, ang sinadyang araw-araw na komunikasyon at tapat na pagpaplano ang pag-iingat sa tahanan."
+      ),
+    ],
+    twist: t(
+      "We imagine that sacrificing our family for the Lord's work shows deep devotion. Jesus condemned the Pharisees who used \"Corban\" to excuse neglecting their parents (Mark 7:9-13), religious service used to dodge a clear duty. The Kingdom twist: loving your family well is part of serving God, not a competitor to it. A pastor's best sermon may be the one his wife and children can quietly confirm: \"Yes, he is the same man at home.\"",
+      "Iniisip nating ang pagsasakripisyo ng pamilya para sa gawain ng Panginoon ay patunay ng malalim na debosyon. Hinatulan ni Hesus ang mga Pariseo na gumamit ng \"Corban\" para palusutan ang pagpapabaya sa mga magulang (Marcos 7:9-13), ang relihiyosong paglilingkod na ginamit para takasan ang malinaw na tungkulin. Ang twist ng Kaharian: ang mahusay na pagmamahal sa pamilya ay bahagi ng paglilingkod sa Diyos, hindi kakumpitensya nito. Ang pinakamagandang sermon ng pastor ay maaaring yaong tahimik na makukumpirma ng asawa at mga anak niya: \"Oo, siya rin ang taong iyan sa bahay.\""
+    ),
+    confirm: [
+      t("Ephesians 5:25-33 and 6:1-4: Christ-like love for a wife and patient training of children.", "Efeso 5:25-33 at 6:1-4: pag-ibig na tulad ni Cristo sa asawa at matiyagang pagsasanay sa mga anak."),
+      t("1 Samuel 2:12-17, 22-25: Eli's sons were corrupt, and he failed to restrain them.", "1 Samuel 2:12-17, 22-25: masasama ang mga anak ni Eli, at nabigo siyang pigilan sila."),
+      t("Proverbs 22:6: train a child in the way he should go.", "Kawikaan 22:6: sanayin ang bata sa daang dapat niyang lakaran."),
+      t("1 Peter 3:7: husbands, be considerate and respectful so that your prayers are not hindered.", "1 Pedro 3:7: mga asawang lalaki, maging maunawain at magalang upang hindi magambala ang inyong mga panalangin."),
+    ],
+    heart: [
+      t(
+        "Ask your spouse and children, with a listening heart, \"How is it to live with me as a pastor?\" Do not defend yourself. Receive what they say as from God, confess where you have neglected them, and ask forgiveness. Repentance at home is a pastor's most important discipline.",
+        "Tanungin ang asawa at mga anak mo, nang may pusong nakikinig, \"Ano ang pakiramdam na makasama ako bilang pastor?\" Huwag ipagtanggol ang sarili. Tanggapin ang sasabihin nila na galing sa Diyos, ipagtapat kung saan mo sila napabayaan, at humingi ng tawad. Ang pagsisisi sa tahanan ay pinakamahalagang disiplina ng pastor."
+      ),
+      t(
+        "Set boundaries and teach your church to respect them. Say no without guilt. Guard a day of rest and family time as God's gift, not a favor you grant. A church that learns to honor its pastor's home is learning how to honor its own.",
+        "Magtakda ng hangganan at turuan ang iglesia mo na igalang ito. Tumanggi nang walang pagkakasala. Ingatan ang araw ng pahinga at oras ng pamilya bilang regalo ng Diyos, hindi pabor na ipinagkakaloob mo. Ang iglesiang natututong igalang ang tahanan ng pastor ay natututo kung paano igalang ang sarili nilang tahanan."
+      ),
+    ],
+    questions: [
+      t("Would my spouse and children say my ministry has loved or stolen from them?", "Sasabihin kaya ng asawa at mga anak ko na minahal sila ng ministeryo ko o ninakawan sila nito?"),
+      t("What fixed time do I protect for my family each week?", "Anong takdang oras ang iniingatan ko para sa pamilya ko bawat linggo?"),
+      t("Does my spouse have a friend who cares for them apart from the church?", "May kaibigan ba ang asawa ko na nag-aalaga sa kanya sa labas ng iglesia?"),
+      t("Where do I need to repent and ask my family's forgiveness?", "Saan ko kailangang magsisi at humingi ng tawad sa pamilya ko?"),
+    ],
+    actions: [
+      t("Schedule a weekly family day and a date night with your spouse, and tell your leaders it is off-limits except for emergencies.", "Mag-iskedyul ng lingguhang araw ng pamilya at date night kasama ang asawa, at sabihin sa mga lider mong bawal itong gambalain maliban sa emergency."),
+      t("Ask your spouse and each child one honest question about how they experience your ministry, and listen without arguing.", "Magtanong sa asawa at sa bawat anak ng isang tapat na tanong kung paano nila nararanasan ang ministeryo mo, at makinig nang hindi nakikipagtalo."),
+      t("Find one pastor-couple or mentor who can walk with your family, and ask for a regular meeting.", "Humanap ng isang pastor-couple o mentor na makakasama ng pamilya mo, at humiling ng regular na pagkikita."),
+    ],
+    prayer: t(
+      "Father, You gave me my family before You gave me a flock. Forgive me for the times I have given the church my best and my family my leftovers. Heal any wound I have caused in my home. Teach me to love my spouse as Christ loved the church, and to lead my children with patience and joy. Protect my marriage and give us friends who care for us. Let my home be the first place Your gospel is believed. In Jesus' name, Amen.",
+      "Ama, ibinigay Mo sa akin ang pamilya ko bago Mo ibinigay ang kawan. Patawarin Mo ako sa mga sandaling ibinigay ko sa iglesia ang pinakamahusay at sa pamilya ang tira-tira. Pagalingin Mo ang anumang sugat na naidulot ko sa aming tahanan. Turuan Mo akong mahalin ang asawa ko tulad ng pag-ibig ni Cristo sa iglesia, at pamunuan ang mga anak ko nang may pasensya at kagalakan. Ingatan Mo ang aming pagsasama at bigyan kami ng mga kaibigang nag-aalaga sa amin. Maging unang lugar ang aming tahanan na pinaniniwalaan ang Iyong ebanghelyo. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "stewarding-church-resources": {
+    revelation: t(
+      "Everything in the church's account, building and storeroom belongs to God, and a pastor's integrity with it is a sermon the whole community reads.",
+      "Ang lahat ng nasa account, gusali at bodega ng iglesia ay pag-aari ng Diyos, at ang katapatan ng pastor dito ay sermong binabasa ng buong komunidad."
+    ),
+    mainTruth: t(
+      "\"This, then, is how you ought to regard us: as servants of Christ and as those entrusted with the mysteries God has revealed. Now it is required that those who have been given a trust must prove faithful\" (1 Corinthians 4:1-2). Jesus said, \"Whoever can be trusted with very little can also be trusted with much... if you have not been trustworthy with someone else's property, who will give you property of your own?\" (Luke 16:10-12). Paul was careful about a large offering: \"We want to avoid any criticism of the way we administer this liberal gift. For we are taking pains to do what is right, not only in the eyes of the Lord but also in the eyes of man\" (2 Corinthians 8:20-21).",
+      "\"Ito ang dapat na pagtingin ninyo sa amin: mga lingkod ni Cristo at mga pinagkatiwalaan ng mga hiwaga ng Diyos. Ngayon, kinakailangang ang mga pinagkatiwalaan ay mapatunayang tapat\" (1 Corinto 4:1-2). Sinabi ni Hesus, \"Ang mapagkakatiwalaan sa kakaunti ay mapagkakatiwalaan din sa marami... kung hindi kayo naging tapat sa pag-aari ng iba, sino ang magbibigay sa inyo ng sarili ninyong pag-aari?\" (Lucas 16:10-12). Maingat si Pablo sa malaking handog: \"Nais naming iwasan ang anumang puna sa paraan ng pangangasiwa namin sa masaganang handog na ito. Sapagkat pinagsisikapan naming gawin ang tama, hindi lang sa paningin ng Panginoon kundi pati sa paningin ng tao\" (2 Corinto 8:20-21)."
+    ),
+    insight: [
+      t(
+        "Notice the word \"entrusted.\" Pastors are not owners but stewards. The money was given by a widow's mite, an OFW's remittance, a farmer's harvest. Every peso carries a sacrifice behind it, and every peso will be reviewed by the true Owner. A pastor who treats offerings like personal income, or who spends them with vague accounting, has forgotten whose house he is managing.",
+        "Pansinin ang salitang \"pinagkatiwalaan.\" Ang mga pastor ay hindi may-ari kundi tagapangasiwa. Ang pera ay ibinigay mula sa abuloy ng biyuda, padala ng OFW, ani ng magsasaka. Bawat piso ay may sakripisyo sa likod nito, at bawat piso ay susuriin ng tunay na May-ari. Ang pastor na tinatrato ang handog na parang sariling kita, o gumagastos nang malabo ang tala, ay nakalimutan kung kaninong bahay ang pinamamahalaan niya."
+      ),
+      t(
+        "Notice that Paul cared about appearances, \"not only in the eyes of the Lord but also in the eyes of man.\" Transparency is not a sign of distrust; it is a gift to the church and a shield for the pastor. He sent a team to carry the offering, so no one could accuse him. Good systems protect good people. Dual signatures, regular reports, a finance team, annual review and open books give both leaders and members peace of mind.",
+        "Pansinin na inalala ni Pablo ang hitsura, \"hindi lang sa paningin ng Panginoon kundi pati sa paningin ng tao.\" Ang pagiging bukas ay hindi tanda ng kawalang-tiwala; ito ay regalo sa iglesia at panangga sa pastor. Nagsugo siya ng pangkat na magdadala ng handog, upang walang makapagparatang sa kanya. Pinoprotektahan ng mabuting sistema ang mabubuting tao. Ang dalawang pirma, regular na ulat, pangkat sa pananalapi, taunang pagsusuri at bukas na tala ay nagbibigay ng kapayapaan sa mga lider at miyembro."
+      ),
+    ],
+    life: [
+      t(
+        "A church in a growing neighborhood received a large gift from a member who had just returned from overseas. Some wanted an air-conditioned sanctuary; others wanted to help flood-affected families. The pastor gathered the board, prayed for a month, shared the numbers openly and asked the congregation for input. They decided to repair the roof, use part of the gift to feed forty families for three months, and set aside a portion for a future church plant. The whole church knew where every peso went, and giving rose afterward.",
+        "Isang iglesia sa lumalagong kapitbahayan ang nakatanggap ng malaking regalo mula sa miyembrong kauuwi lang mula sa abroad. May gustong air-conditioned na sanctuary; may gustong tumulong sa mga pamilyang binaha. Tinipon ng pastor ang lupon, nanalangin nang isang buwan, ibinahagi nang bukas ang mga numero at humingi ng input sa kongregasyon. Nagpasya silang ayusin ang bubong, gamitin ang bahagi ng regalo para pakainin ang apatnapung pamilya sa loob ng tatlong buwan, at magtabi ng bahagi para sa hinaharap na church plant. Alam ng buong iglesia kung saan napunta ang bawat piso, at tumaas ang pagbibigay pagkatapos."
+      ),
+      t(
+        "Stewardship goes beyond money. It includes the church's building, sound system and vehicle, the volunteers' time, and the pastor's own salary and benefits. Pay workers fairly (1 Timothy 5:17-18). Avoid heavy debt, which can bind a church's mission for decades. Budget according to priorities: people and mission before property. And plan for the future: repairs, emergencies and succession.",
+        "Higit pa sa pera ang pangangasiwa. Kasama rito ang gusali, sound system at sasakyan ng iglesia, oras ng mga volunteer, at ang sahod at benepisyo ng pastor. Bayaran nang makatarungan ang mga manggagawa (1 Timoteo 5:17-18). Iwasan ang mabigat na utang, na maaaring magtali sa misyon ng iglesia nang ilang dekada. Mag-budget ayon sa priyoridad: tao at misyon bago ari-arian. At magplano para sa hinaharap: pagkukumpuni, emergency at paghalili."
+      ),
+    ],
+    twist: t(
+      "We assume that being generous and being careful are opposites. The Kingdom says careful stewardship is how generosity is sustained. Jesus told the parable of the faithful servant who multiplied what he was given, and said, \"Well done, good and faithful servant\" (Matthew 25:21). Orderly books, clear policies and wise budgets are not the enemy of faith; they are faith dressed for work. A church that handles money with integrity attracts more giving and gains credibility to speak about heavenly treasure.",
+      "Inaakala nating magkabaligtad ang pagiging mapagbigay at pagiging maingat. Sinasabi ng Kaharian na ang maingat na pangangasiwa ang nagpapanatili ng pagiging mapagbigay. Ikinuwento ni Hesus ang talinghaga ng tapat na alipin na pinarami ang ipinagkatiwala sa kanya, at sinabi, \"Mahusay, mabuti at tapat na alipin\" (Mateo 25:21). Ang maayos na tala, malinaw na patakaran at matalinong budget ay hindi kaaway ng pananampalataya; sila ay pananampalatayang nakadamit pantrabaho. Ang iglesiang humahawak ng pera nang may integridad ay umaakit ng mas maraming pagbibigay at nagkakaroon ng kredibilidad na magsalita tungkol sa kayamanan sa langit."
+    ),
+    confirm: [
+      t("Acts 6:1-6: the church chooses trusted, Spirit-filled men to manage the daily distribution.", "Gawa 6:1-6: pumili ang iglesia ng mapagkakatiwalaan at puspos ng Espiritung mga lalaki para pamahalaan ang pang-araw-araw na pamamahagi."),
+      t("Matthew 25:14-30: the servants are judged on how they used what the master gave.", "Mateo 25:14-30: hinuhusgahan ang mga alipin sa kung paano nila ginamit ang ibinigay ng panginoon."),
+      t("Proverbs 22:7 and Romans 13:8: be cautious with debt.", "Kawikaan 22:7 at Roma 13:8: mag-ingat sa utang."),
+      t("1 Timothy 6:9-10: the love of money is a root of all kinds of evil.", "1 Timoteo 6:9-10: ang pag-ibig sa salapi ay ugat ng lahat ng uri ng kasamaan."),
+    ],
+    heart: [
+      t(
+        "Search your heart for any love of money or any quiet entitlement: \"I have sacrificed so much; I deserve this.\" Confess it and ask God for contentment. Let Christ, not an account balance, be your security.",
+        "Siyasatin ang puso mo para sa anumang pag-ibig sa pera o tahimik na pakiramdam na may karapatan ka: \"Marami akong isinakripisyo; nararapat ito sa akin.\" Ipagtapat ito at hilingin sa Diyos ang kasiyahan. Hayaang si Kristo, hindi ang balanse sa account, ang maging seguridad mo."
+      ),
+      t(
+        "Welcome accountability with gladness. Invite members to examine the books. Receive questions as a gift, not an insult. Faithfulness in small and hidden things is what God watches most closely.",
+        "Salubungin nang masaya ang pananagutan. Anyayahan ang mga miyembro na suriin ang mga tala. Tanggapin ang mga tanong bilang regalo, hindi insulto. Ang katapatan sa maliliit at nakatagong bagay ang pinakamalapit na binabantayan ng Diyos."
+      ),
+    ],
+    questions: [
+      t("Could any member of my church see exactly where our money goes?", "Makikita ba ng sinumang miyembro ng iglesia ko kung saan eksaktong napupunta ang pera namin?"),
+      t("Does our budget reflect people and mission, or only property and comfort?", "Sumasalamin ba ang budget namin sa tao at misyon, o sa ari-arian at kaginhawaan lang?"),
+      t("Is there any area where I handle money with secrecy or carelessness?", "May bahagi ba kung saan humahawak ako ng pera nang palihim o pabaya?"),
+      t("Do I pay those who serve the church fairly and on time?", "Binabayaran ko ba nang makatarungan at sa oras ang mga naglilingkod sa iglesia?"),
+    ],
+    actions: [
+      t("Form or strengthen a small finance team with at least two trusted members, and set clear rules for counting and recording offerings.", "Bumuo o palakasin ang maliit na pangkat sa pananalapi na may hindi bababa sa dalawang pinagkakatiwalaang miyembro, at magtakda ng malinaw na patakaran sa pagbibilang at pagtatala ng handog."),
+      t("Share a simple income and expense report with the church this month.", "Magbahagi ng simpleng ulat ng kita at gastos sa iglesia ngayong buwan."),
+      t("Review your budget with your leaders and ask: what percentage supports people, mission and the poor?", "Suriin ang budget kasama ng mga lider at itanong: anong porsyento ang para sa tao, misyon at mahihirap?"),
+    ],
+    prayer: t(
+      "Lord, everything belongs to You: the money, the building, the time, and my own life. Forgive me where I have been careless or proud with what You entrusted to me. Make me faithful in the small things and transparent in the large ones. Protect me from the love of money. Help our church to give wisely and joyfully, so that every peso honors You and blesses people. Let my integrity be a testimony to this community. In Jesus' name, Amen.",
+      "Panginoon, Iyo ang lahat: ang pera, ang gusali, ang oras, at ang sarili kong buhay. Patawarin Mo ako kung saan ako naging pabaya o mayabang sa ipinagkatiwala Mo sa akin. Gawin Mo akong tapat sa maliliit na bagay at bukas sa malalaki. Ingatan Mo ako sa pag-ibig sa pera. Tulungan Mo ang aming iglesia na magbigay nang marunong at masaya, upang ang bawat piso ay magparangal sa Iyo at magpala sa mga tao. Maging patotoo nawa ang aking integridad sa komunidad na ito. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "leading-the-gathering": {
+    revelation: t(
+      "The Sunday gathering is not a show we perform for people; it is a meeting where God's people meet God and one another.",
+      "Ang pagtitipon tuwing Linggo ay hindi palabas na itinatanghal natin para sa mga tao; ito ay pagkikita kung saan nakikipagkita ang bayan ng Diyos sa Diyos at sa isa't isa."
+    ),
+    mainTruth: t(
+      "The first church \"devoted themselves to the apostles' teaching and to fellowship, to the breaking of bread and to prayer\" (Acts 2:42). When Paul corrected the chaotic gatherings in Corinth, he gave the purpose: \"Everything must be done so that the church may be built up... For God is not a God of disorder but of peace\" (1 Corinthians 14:26-33). And Colossians 3:16-17 describes the heart of it: \"Let the message of Christ dwell among you richly as you teach and admonish one another with all wisdom through psalms, hymns, and songs from the Spirit, singing to God with gratitude in your hearts.\" A pastor leads the gathering so that Christ is exalted and the people are strengthened.",
+      "Ang unang iglesia ay \"nagtalaga ng sarili sa pagtuturo ng mga apostol at sa pakikisama, sa paghahati ng tinapay at sa panalangin\" (Gawa 2:42). Nang itama ni Pablo ang magulong pagtitipon sa Corinto, ibinigay niya ang layunin: \"Dapat gawin ang lahat upang mapatibay ang iglesia... Sapagkat ang Diyos ay hindi Diyos ng kaguluhan kundi ng kapayapaan\" (1 Corinto 14:26-33). At inilalarawan ng Colosas 3:16-17 ang puso nito: \"Manahan nawa sa inyo nang sagana ang mensahe ni Cristo habang nagtuturo at nagpapaalala kayo sa isa't isa nang buong karunungan sa pamamagitan ng mga salmo, himno, at awit mula sa Espiritu, umaawit sa Diyos nang may pasasalamat sa inyong mga puso.\" Pinangungunahan ng pastor ang pagtitipon upang mapatampok si Kristo at mapalakas ang mga tao."
+    ),
+    insight: [
+      t(
+        "Notice what Acts 2:42 puts first: the apostles' teaching. Before songs, programs or lights, the gathering is shaped by the Word. A church can have excellent music and a warm atmosphere and still starve its people if Scripture is rushed, thin or missing. Pastors should plan the service around Scripture, read it, preach it, sing it, pray it, so that the Word carries the whole hour.",
+        "Pansinin kung ano ang inuuna ng Gawa 2:42: ang pagtuturo ng mga apostol. Bago ang awit, programa o ilaw, hinuhubog ng Salita ang pagtitipon. Maaaring may mahusay na musika at mainit na kapaligiran ang iglesia at gutumin pa rin ang mga tao kung minamadali, kulang o wala ang Kasulatan. Dapat planuhin ng mga pastor ang serbisyo sa paligid ng Kasulatan: basahin, ipangaral, awitin, ipanalangin, upang ang Salita ang magdala sa buong oras."
+      ),
+      t(
+        "Notice also that in 1 Corinthians 14, \"each of you\" has something to bring: a hymn, a word, a lesson. The gathering is not a one-man performance. At the same time, Paul insists on order. So the pastor's task is to open space for participation while shepherding it: prayer by members, testimonies, Scripture reading, and care for visitors, all done with preparation and kindness. A good leader is like a good host: he makes sure everyone is welcomed, fed and clear on what is happening.",
+        "Pansinin din na sa 1 Corinto 14, \"bawat isa sa inyo\" ay may maiaambag: himno, salita, aral. Ang pagtitipon ay hindi palabas ng isang tao. Kasabay nito, iginigiit ni Pablo ang kaayusan. Kaya ang gawain ng pastor ay magbukas ng espasyo para sa pakikilahok habang ito ay pinapastol: panalangin ng mga miyembro, patotoo, pagbabasa ng Kasulatan, at pag-aalaga sa mga bisita, lahat ay ginagawa nang may paghahanda at kabaitan. Ang mahusay na lider ay parang mahusay na host: tinitiyak niyang may sumasalubong, may pagkain at malinaw sa lahat ang nangyayari."
+      ),
+    ],
+    life: [
+      t(
+        "Imagine a first-time visitor, an OFW who just returned home and is nervous about church. She arrives at 9:55 a.m. A greeter smiles and shows her a seat. The service begins on time. The songs are singable, the words on the screen, the prayers simple. Someone explains Communion before it is served, so she knows she is welcome to watch or share. The Scripture is read clearly, the message is rooted in it and ends with Jesus. She leaves thinking, \"God was here.\" That experience comes from dozens of small decisions made in the week before.",
+        "Isipin ang unang beses na bisita, isang OFW na kauuwi lang at kinakabahan sa simbahan. Dumating siya nang 9:55 ng umaga. Ngumiti ang greeter at ipinakita ang upuan niya. Nagsimula ang serbisyo sa oras. Madaling awitin ang mga kanta, nasa screen ang mga salita, simple ang mga panalangin. May nagpaliwanag ng Komunyon bago ito ihain, kaya alam niyang puwede siyang manood o makibahagi. Malinaw na binasa ang Kasulatan, nakaugat dito ang mensahe at nagtapos kay Hesus. Umalis siyang iniisip, \"Naroon ang Diyos.\" Ang karanasang iyon ay mula sa dose-dosenang maliliit na desisyong ginawa sa linggo bago nito."
+      ),
+      t(
+        "Some pastors lead a gathering in a rented room, a living room, a school gym or an online meeting for scattered members abroad. The setting matters less than the heart. Whether there are three musicians or three hundred, the same questions apply: Is Christ at the center? Is the Word central? Are the people engaged? Are the visitors welcomed? Does the time begin and end with respect for people's schedules and day-off hours?",
+        "May mga pastor na nanguna sa pagtitipon sa inuupahang silid, sala ng bahay, gym ng paaralan o online meeting para sa mga miyembrong nakakalat sa abroad. Mas mahalaga ang puso kaysa sa lugar. Tatlo man o tatlong daan ang musikero, pareho ang mga tanong: Nasa sentro ba si Kristo? Sentral ba ang Salita? Nakikilahok ba ang mga tao? Nasasalubong ba ang mga bisita? Nagsisimula at nagtatapos ba ang oras nang may paggalang sa iskedyul at oras ng day-off ng mga tao?"
+      ),
+    ],
+    twist: t(
+      "We often judge a gathering by how it made us feel: moved, entertained, challenged. But in Scripture, the first audience of worship is God, and the gathering's purpose is to build up the body. A service that is quiet, simple and Christ-centered may do more than a spectacular one. The Kingdom twist is that the best gatherings are measured not by the volume of the crowd's response but by the lives changed on Monday.",
+      "Madalas hinuhusgahan natin ang pagtitipon sa kung ano ang naramdaman natin: naantig, naaliw, nahamon. Pero sa Kasulatan, ang unang tagapakinig ng pagsamba ay ang Diyos, at ang layunin ng pagtitipon ay mapatibay ang katawan. Ang serbisyong tahimik, simple at nakasentro kay Kristo ay maaaring higit pa ang magawa kaysa sa kahanga-hanga. Ang twist ng Kaharian ay sinusukat ang pinakamahusay na pagtitipon hindi sa lakas ng tugon ng karamihan kundi sa buhay na nabago pagsapit ng Lunes."
+    ),
+    confirm: [
+      t("Hebrews 10:24-25: do not give up meeting together, but encourage one another.", "Hebreo 10:24-25: huwag tumigil sa pagtitipon, kundi magpalakasan ng loob."),
+      t("Nehemiah 8:1-8: Ezra reads the Law clearly and the Levites help the people understand.", "Nehemias 8:1-8: malinaw na binasa ni Ezra ang Kautusan at tinulungan ng mga Levita ang bayan na maunawaan."),
+      t("John 4:23-24: the Father seeks worshipers who worship in Spirit and in truth.", "Juan 4:23-24: naghahanap ang Ama ng mga sumasamba sa Espiritu at sa katotohanan."),
+      t("1 Corinthians 14:24-25: an outsider who enters should fall down and say, \"God is really among you!\"", "1 Corinto 14:24-25: ang dayuhang pumasok ay dapat magpatirapa at magsabi, \"Tunay ngang nasa gitna ninyo ang Diyos!\""),
+    ],
+    heart: [
+      t(
+        "Before you plan the program, prepare your heart. A pastor who has not met with God cannot lead others to Him. Come humble, not performing. Pray for each person who will walk through the door, and for yourself to be only a servant at the door of God's presence.",
+        "Bago planuhin ang programa, ihanda ang puso. Ang pastor na hindi nakipagkita sa Diyos ay hindi makapangunguna sa iba patungo sa Kanya. Pumunta nang mapagpakumbaba, hindi nagtatanghal. Ipanalangin ang bawat taong papasok sa pinto, at ang sarili mo na maging lingkod lang sa pintuan ng presensya ng Diyos."
+      ),
+      t(
+        "Love order and welcome. Plan the flow, train the team, start on time, speak clearly and treat every guest as someone Jesus sent. Excellence is not for show; it is hospitality for the sake of the Word.",
+        "Mahalin ang kaayusan at pagtanggap. Planuhin ang daloy, sanayin ang pangkat, magsimula sa oras, magsalita nang malinaw at ituring ang bawat bisita na ipinadala ni Hesus. Hindi para sa palabas ang kahusayan; ito ay mabuting pagtanggap alang-alang sa Salita."
+      ),
+    ],
+    questions: [
+      t("Which parts of Acts 2:42 are strongest and weakest in our gathering?", "Alin sa mga bahagi ng Gawa 2:42 ang pinakamalakas at pinakamahina sa aming pagtitipon?"),
+      t("Is Scripture the backbone of everything we do on Sunday?", "Ang Kasulatan ba ang gulugod ng lahat ng ginagawa namin tuwing Linggo?"),
+      t("How would a first-time visitor experience the first fifteen minutes?", "Paano mararanasan ng unang beses na bisita ang unang labinlimang minuto?"),
+      t("Who else could be trained to lead parts of the service?", "Sino pa ang maaaring sanayin na manguna sa mga bahagi ng serbisyo?"),
+    ],
+    actions: [
+      t("Write the order of your next service and mark where Scripture is read, preached, sung and prayed.", "Isulat ang pagkakasunod-sunod ng susunod ninyong serbisyo at markahan kung saan binabasa, ipinangangaral, inaawit at ipinapanalangin ang Kasulatan."),
+      t("Ask a friend who has never attended your church to visit and give honest feedback on their experience.", "Anyayahan ang isang kaibigang hindi pa nakadadalo sa inyong iglesia na bumisita at magbigay ng tapat na puna sa karanasan niya."),
+      t("Train one new person this month to greet, read Scripture or lead prayer.", "Magsanay ng isang bagong tao ngayong buwan para bumati, magbasa ng Kasulatan o manguna sa panalangin."),
+    ],
+    prayer: t(
+      "Lord Jesus, You are the reason we gather. Help me to lead Your people into Your presence, not into a performance. Give me a hunger for Your Word, a love for order and welcome, and humility in everything I do. Let every song, prayer, reading and message point to You. Bring the lost and weary through our doors and let them say, \"God is really among you.\" Build up Your church. In Your name, Amen.",
+      "Panginoong Hesus, Ikaw ang dahilan ng aming pagtitipon. Tulungan Mo akong pangunahan ang Iyong bayan tungo sa Iyong presensya, hindi sa palabas. Bigyan Mo ako ng gutom sa Iyong Salita, pag-ibig sa kaayusan at pagtanggap, at kababaang-loob sa lahat ng ginagawa ko. Ituro nawa Kayo ng bawat awit, panalangin, pagbasa at mensahe. Dalhin Mo ang mga nawawala at pagod sa aming mga pinto at hayaan silang magsabi, \"Tunay ngang nasa gitna ninyo ang Diyos.\" Patibayin Mo ang Iyong iglesia. Sa Iyong pangalan, Amen."
+    ),
+  },
 };

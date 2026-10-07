@@ -265,4 +265,264 @@ export const DEEP: DeepSet = {
       "Mapagbigay na Ama, ibinigay Mo ang Iyong bugtong na Anak para sa akin. Ang lahat ng mayroon ako ay galing sa kamay Mo. Patawarin Mo ako sa mahigpit na paghawak sa ibinigay Mo nang libre, at sa pagbibigay dahil sa konsensya sa halip na pag-ibig. Ibinibigay ko muna ang aking sarili sa Iyo. Gawin Mo akong masayang nagbibigay, matalino at tapat sa ipinagkakatiwala Mo sa akin. Ituro nawa ng pagbibigay ko ang mga tao kay Hesus, na naging dukha para ako ay maging mayaman sa Iyo. Sa Kanyang pangalan, Amen."
     ),
   },
+  "c-work-excellence": {
+    revelation: t(
+      "Your daily work is not a detour from your calling; it is the place where you worship, because you are really working for the Lord.",
+      "Ang araw-araw mong trabaho ay hindi paglihis sa iyong tawag; ito ang lugar ng iyong pagsamba, dahil ang Panginoon talaga ang pinagsisilbihan mo."
+    ),
+    mainTruth: t(
+      "Work existed before the Fall: God put Adam in the garden \"to work it and take care of it\" (Genesis 2:15). Work is therefore not a curse, though sin made it painful. Paul tells us, \"Whatever you do, work at it with all your heart, as working for the Lord, not for human masters, since you know that you will receive an inheritance from the Lord as a reward. It is the Lord Christ you are serving\" (Colossians 3:23-24). The boss on your payslip is not your final boss.",
+      "Ang trabaho ay umiral bago pa ang pagkahulog: inilagay ng Diyos si Adan sa hardin \"upang bungkalin at ingatan ito\" (Genesis 2:15). Kaya hindi sumpa ang trabaho, bagaman ginawa itong mahirap ng kasalanan. Sabi ni Pablo, \"Anuman ang inyong gawin, gawin ninyo nang buong puso, na parang para sa Panginoon at hindi para sa tao... Si Cristong Panginoon ang inyong pinaglilingkuran\" (Colosas 3:23-24). Ang amo sa sahod mo ay hindi ang huling amo mo."
+    ),
+    insight: [
+      t(
+        "Many believers split life in two: Sunday is \"spiritual\" and Monday to Saturday is \"secular.\" That split quietly produces half-hearted workers who save their best energy for church activities. But Joseph was as anointed in Potiphar's kitchen and in prison paperwork as he later was in the palace, and Daniel was promoted because \"he was trustworthy and neither corrupt nor negligent\" (Daniel 6:4). His enemies searched for a flaw in his work and found none.",
+        "Maraming mananampalataya ang hinahati ang buhay: ang Linggo ay \"espirituwal\" at ang Lunes hanggang Sabado ay \"makamundo.\" Tahimik nitong ginagawang pabaya ang manggagawa na ang pinakamagandang lakas ay itinatabi para sa gawain sa simbahan. Pero kasing-pinahiran si Jose sa kusina ni Potifar at sa papeles ng bilangguan gaya ng sa palasyo, at tumaas si Daniel dahil \"siya ay tapat at walang kapabayaan o katiwalian\" (Daniel 6:4). Naghanap ng mali sa trabaho niya ang mga kaaway niya at wala silang nakita."
+      ),
+      t(
+        "Scripture warns against both extremes. The sluggard \"folds his hands to rest\" and poverty comes \"like a thief\" (Proverbs 6:10-11). Yet Paul also says, \"If anyone is not willing to work, let him not eat\" (2 Thessalonians 3:10), and he rebuked busybodies who would not earn their own bread. Excellence is not perfectionism or overwork; it is faithfulness, doing the task in front of you as if Jesus were the one inspecting it.",
+        "Binabalaan tayo ng Kasulatan laban sa dalawang sukdulan. Ang tamad ay \"nagkukrus ng kamay para magpahinga\" at darating ang kahirapan \"na parang magnanakaw\" (Kawikaan 6:10-11). Pero sabi rin ni Pablo, \"Kung ang sinuman ay ayaw magtrabaho, huwag siyang kumain\" (2 Tesalonica 3:10), at sinaway niya ang mga pakialamero na ayaw kumita ng sariling kain. Ang kahusayan ay hindi pagiging perpekto o pagpapakamatay sa trabaho; ito ay katapatan, ginagawa ang nasa harap mo na parang si Hesus ang nag-iinspeksyon."
+      ),
+    ],
+    life: [
+      t(
+        "Rosalie works as a caregiver for an elderly employer in Kuwait. Nobody sees her at 3 a.m. when she turns the patient and changes the sheets again. She could cut corners and no one would know. But she told her Bible study group, \"When I remember that I am serving Christ in this old man, even the night shift becomes an offering.\" Her employer's family, who are not believers, once asked, \"Why are you different?\" That was her pulpit.",
+        "Si Rosalie ay caregiver ng isang matandang amo sa Kuwait. Walang nakakakita sa kanya nang alas-tres ng madaling-araw kapag binabaligtad niya ang pasyente at nagpapalit ng kumot. Puwede siyang magtipid sa gawa at walang makakaalam. Pero sabi niya sa Bible study nila, \"Kapag naaalala kong si Cristo ang pinaglilingkuran ko sa matandang ito, pati night shift ay nagiging alay.\" Minsan, tinanong siya ng pamilya ng amo niyang hindi mananampalataya, \"Bakit iba ka?\" Iyon ang kanyang pulpito."
+      ),
+      t(
+        "Whether you drive a jeepney, run a sari-sari store, sit in an office or clean a hotel room, ask: \"Would I do this the same way if Jesus were the customer?\" Come on time. Keep your word. Refuse the shortcut that hurts someone. Do not gossip about the boss. Small, hidden faithfulness is how a witness is built.",
+        "Nagmamaneho ka man ng jeepney, nagbabantay ng sari-sari store, nasa opisina o naglilinis ng kuwarto sa hotel, itanong mo: \"Ganito ko rin ba gagawin ito kung si Hesus ang kustomer?\" Pumasok nang maaga. Tuparin ang salita. Iwasan ang shortcut na makakasakit ng iba. Huwag magchismis tungkol sa amo. Sa maliit at lihim na katapatan itinatayo ang patotoo."
+      ),
+    ],
+    twist: t(
+      "We think we must escape the workplace to serve God \"full time.\" But Jesus spent about thirty years in ordinary life, working as a carpenter, before three years of public ministry. The Father declared Himself well pleased with His Son before a single miracle happened. In the Kingdom, faithfulness in the hidden place is not the waiting room for your calling; it is part of it.",
+      "Akala natin kailangan nating umalis sa trabaho para maglingkod sa Diyos nang \"full time.\" Pero mga tatlumpung taon si Hesus sa ordinaryong buhay, karpintero, bago ang tatlong taon ng hayag na ministeryo. Sinabi na ng Ama na lugod na lugod Siya sa Kanyang Anak bago pa ang unang himala. Sa Kaharian, ang katapatan sa lihim na lugar ay hindi silid-hintayan ng tawag mo; bahagi na ito ng tawag."
+    ),
+    confirm: [
+      t("Genesis 39:2-4: the Lord was with Joseph, and his master saw it in his work.", "Genesis 39:2-4: sumakanya ang Panginoon, at nakita ng kanyang amo sa kanyang trabaho."),
+      t("Proverbs 22:29: the one skilled in work will stand before kings.", "Kawikaan 22:29: ang sanay sa gawain ay haharap sa mga hari."),
+      t("Exodus 31:1-5: God filled Bezalel with His Spirit for craftsmanship.", "Exodo 31:1-5: pinuspos ng Diyos si Bezalel ng Kanyang Espiritu para sa husay sa paggawa."),
+      t("Ephesians 4:28: work honestly so you have something to share with the needy.", "Efeso 4:28: magtrabaho nang tapat upang may maibahagi sa nangangailangan."),
+    ],
+    heart: [
+      t(
+        "Repent of half-heartedness. If you have been coasting, showing up late, wasting office hours or constantly complaining, bring it to Jesus and ask for a fresh heart for the work He has given you.",
+        "Magsisi sa pagiging pabaya. Kung nagpapabaya ka, nahuhuli, nag-aaksaya ng oras o laging nagrereklamo, dalhin ito kay Hesus at humingi ng bagong puso para sa trabahong ibinigay Niya."
+      ),
+      t(
+        "Let go of the idol of work too. Your worth is not your job title or your overtime. You work from rest in Christ, not to earn His love, and you keep a rhythm of rest for family and worship.",
+        "Bitawan din ang diyus-diyosan ng trabaho. Ang halaga mo ay wala sa titulo o sa overtime. Nagtatrabaho ka mula sa kapahingahan kay Cristo, hindi para kitain ang Kanyang pag-ibig, at may ritmo ka ng pahinga para sa pamilya at pagsamba."
+      ),
+    ],
+    questions: [
+      t("Do I work differently when no one is watching? What does that reveal about who I am really working for?", "Iba ba ang paraan ng trabaho ko kapag walang nakatingin? Ano ang sinasabi nito kung para kanino talaga ako nagtatrabaho?"),
+      t("Where have I cut corners or wasted time that I need to make right?", "Saan ako nagtipid sa gawa o nag-aksaya ng oras na kailangan kong ituwid?"),
+      t("Has work become my identity or my idol, crowding out God and family?", "Naging pagkakakilanlan ko o diyus-diyosan na ba ang trabaho, na tumutulak sa Diyos at pamilya?"),
+      t("What would my coworkers say about the way I work and speak?", "Ano ang masasabi ng mga katrabaho ko sa paraan ng aking pagtatrabaho at pananalita?"),
+    ],
+    actions: [
+      t("Tomorrow morning, dedicate your workday to Jesus in one sentence of prayer before you start.", "Bukas ng umaga, ialay mo kay Hesus ang buong araw mo sa isang maikling panalangin bago magsimula."),
+      t("Choose one task you usually rush or avoid and do it with full excellence this week.", "Pumili ng isang gawain na madalas mong minamadali o iniiwasan at gawin ito nang buong husay ngayong linggo."),
+      t("Quietly bless one coworker or your employer: a kind word, help with a task or a prayer for them.", "Tahimik na pagpalain ang isang katrabaho o ang amo mo: mabuting salita, tulong sa gawain o panalangin para sa kanila."),
+    ],
+    prayer: t(
+      "Lord Jesus, thank You that my work matters to You. Forgive me for the times I worked for applause, for money or out of laziness. Teach me to serve You in every task, seen or unseen. Give me skill, honesty and joy, and let my coworkers see You in how I work. Keep me from making work my god, and bring me to rest in Your love. Be glorified in my Monday as much as my Sunday. In Your name I pray, Amen.",
+      "Panginoong Hesus, salamat po na mahalaga sa Inyo ang aking trabaho. Patawarin Mo ako sa mga panahong nagtrabaho ako para sa palakpak, sa pera o dahil sa katamaran. Turuan Mo akong maglingkod sa Iyo sa bawat gawain, nakikita man o hindi. Bigyan Mo ako ng husay, katapatan at galak, at hayaang makita Ka ng mga katrabaho ko sa paraan ng paggawa ko. Ilayo Mo akong gawing diyos ang trabaho, at dalhin Mo ako sa kapahingahan sa Iyong pag-ibig. Maluwalhati Ka sa Lunes ko gaya ng sa Linggo ko. Sa Iyong pangalan, Amen."
+    ),
+  },
+  "c-financial-stewardship": {
+    revelation: t(
+      "Nothing in your wallet is truly yours; you are a manager of God's money, and how you handle small amounts reveals whether He can trust you with true riches.",
+      "Walang laman ang wallet mo na tunay na iyo; tagapamahala ka ng pera ng Diyos, at ang paghawak mo sa maliit ay nagpapakita kung mapagkakatiwalaan ka Niya sa tunay na kayamanan."
+    ),
+    mainTruth: t(
+      "\"The earth is the Lord's, and everything in it\" (Psalm 24:1). If God is owner, we are stewards, and a steward is judged by faithfulness, not by size. Jesus said, \"Whoever can be trusted with very little can also be trusted with much\" (Luke 16:10), and \"You cannot serve both God and money\" (Luke 16:13). Money is a wonderful servant and a terrible master.",
+      "\"Sa Panginoon ang lupa at ang lahat ng laman nito\" (Awit 24:1). Kung ang Diyos ang may-ari, tagapamahala tayo, at ang tagapamahala ay hinahatulan sa katapatan, hindi sa laki. Sabi ni Hesus, \"Ang tapat sa kaunti ay tapat din sa marami\" (Lucas 16:10), at \"Hindi kayo maaaring maglingkod sa Diyos at sa salapi\" (Lucas 16:13). Ang pera ay mahusay na alipin pero kakila-kilabot na panginoon."
+    ),
+    insight: [
+      t(
+        "Many believers think finances are \"unspiritual,\" so they pray about money only in emergencies. Yet Jesus spoke about money constantly, because money shows what we really trust. Notice that Luke 16 links money to \"true riches.\" The way you handle a small paycheck is the Father's training ground for greater responsibility.",
+        "Maraming mananampalataya ang nag-iisip na \"hindi espirituwal\" ang pera, kaya sa emergency lang sila nagdarasal tungkol dito. Pero madalas pag-usapan ni Hesus ang pera dahil ipinapakita nito kung saan talaga tayo nagtitiwala. Pansinin na iniuugnay ng Lucas 16 ang pera sa \"tunay na kayamanan.\" Ang paghawak mo sa maliit na sahod ay pagsasanay ng Ama para sa mas malaking responsibilidad."
+      ),
+      t(
+        "The Bible gives plain wisdom: \"The wise store up choice food and olive oil, but fools gulp theirs down\" (Proverbs 21:20). \"The borrower is slave to the lender\" (Proverbs 22:7). Count the cost before you build (Luke 14:28-30). And provide for your family: whoever does not do so \"has denied the faith\" (1 Timothy 5:8). Planning is not lack of faith; it is obedience.",
+        "May payak na karunungan ang Biblia: \"Ang marunong ay nag-iimpok ng piling pagkain at langis, ngunit nilulunok ito ng mangmang\" (Kawikaan 21:20). \"Ang umuutang ay alipin ng nagpapautang\" (Kawikaan 22:7). Bilangin ang gastos bago magtayo (Lucas 14:28-30). At buhayin ang pamilya: ang hindi gumagawa nito ay \"itinakwil na ang pananampalataya\" (1 Timoteo 5:8). Hindi kakulangan ng pananampalataya ang pagpaplano; pagsunod ito."
+      ),
+    ],
+    life: [
+      t(
+        "Ben, an OFW in Dubai, earned well but his family back home was always short. Every payday he sent money, then spent the rest on gadgets and loans for relatives. After a friend taught him to write a simple budget, he set aside his giving first, then savings, then remittance, and the rest for living. In a year he had an emergency fund and had paid off a debt. \"I did not earn more,\" he said. \"I just started managing it like it was God's.\"",
+        "Si Ben, OFW sa Dubai, malaki ang kita pero laging kapos ang pamilya niya sa Pilipinas. Tuwing sahod, magpapadala siya, tapos uubusin ang natira sa gadgets at pautang sa kamag-anak. Nang turuan siya ng kaibigan na gumawa ng simpleng budget, inuna niya ang pagbibigay, saka ipon, saka padala, at ang natira ay para sa gastusin. Sa isang taon, may emergency fund na siya at nabayaran ang isang utang. \"Hindi tumaas ang kita ko,\" sabi niya. \"Nagsimula lang akong mamahala na parang pera ng Diyos ito.\""
+      ),
+      t(
+        "Start where you are: write down income and expenses, give first, save something even if small, avoid loans for wants, and pay debts steadily. If you are drowning, talk with a trusted pastor or mature believer. Stewardship is not about being rich; it is about being faithful and free.",
+        "Magsimula kung nasaan ka: isulat ang kita at gastos, magbigay muna, mag-ipon kahit maliit, iwasan ang utang para sa luho, at bayaran nang tuloy-tuloy ang mga utang. Kung nalulunod ka na, kausapin ang pinagkakatiwalaang pastor o maturing mananampalataya. Hindi tungkol sa pagyaman ang pamamahala; tungkol ito sa katapatan at kalayaan."
+      ),
+    ],
+    twist: t(
+      "We think a budget is a cage that limits our freedom. In the Kingdom, it is the opposite: a plan is how you say yes to what matters most. Jesus' story of the faithful servant shows that the reward for good management is not retirement but more responsibility and the master's joy (Matthew 25:21). Faithfulness with money is training for sharing in Christ's rule.",
+      "Akala natin ang budget ay hawla na naglilimita sa kalayaan. Sa Kaharian, kabaligtaran: ang plano ang paraan ng pagsabi ng oo sa pinakamahalaga. Ipinakikita ng talinghaga ni Hesus tungkol sa tapat na alipin na ang gantimpala ng mahusay na pamamahala ay hindi pagreretiro kundi mas malaking responsibilidad at kagalakan ng panginoon (Mateo 25:21). Ang katapatan sa pera ay pagsasanay sa pakikibahagi sa paghahari ni Cristo."
+    ),
+    confirm: [
+      t("Matthew 25:14-30: the servants were judged by faithfulness with what the master gave.", "Mateo 25:14-30: hinatulan ang mga alipin sa katapatan sa ibinigay ng panginoon."),
+      t("Proverbs 3:9-10: honor the Lord with your wealth and the firstfruits of your income.", "Kawikaan 3:9-10: parangalan ang Panginoon ng iyong kayamanan at unang bunga ng iyong kita."),
+      t("Romans 13:8: owe no one anything except to love one another.", "Roma 13:8: huwag magkautang kaninuman maliban sa pag-ibig sa isa't isa."),
+      t("Proverbs 21:5: the plans of the diligent lead to plenty.", "Kawikaan 21:5: ang plano ng masipag ay humahantong sa kasaganaan."),
+    ],
+    heart: [
+      t(
+        "Confess any hidden spending, careless habits or fear about money. Bring your whole financial picture into the light of God's wisdom and, where needed, a trusted mentor.",
+        "Ipagtapat ang anumang lihim na paggastos, pabayang gawi o takot tungkol sa pera. Dalhin ang buong larawan ng pananalapi mo sa liwanag ng karunungan ng Diyos at, kung kailangan, sa pinagkakatiwalaang tagapayo."
+      ),
+      t(
+        "Choose to be a manager, not an owner. Hold things loosely, give cheerfully, and trust that the One who owns it all will supply what you need.",
+        "Piliing maging tagapamahala, hindi may-ari. Humawak nang maluwag, magbigay nang masaya, at magtiwalang ang may-ari ng lahat ang magtutustos ng kailangan mo."
+      ),
+    ],
+    questions: [
+      t("If I looked at my bank statement, would it show that I belong to Jesus or to my wants?", "Kung titingnan ang bank statement ko, ipapakita ba nitong kay Hesus ako o sa mga luho ko?"),
+      t("Do I know where my money goes each month?", "Alam ko ba kung saan napupunta ang pera ko bawat buwan?"),
+      t("Is there a debt or financial habit I am hiding from my spouse, family or God?", "May utang o gawi sa pera ba akong itinatago sa asawa, pamilya o sa Diyos?"),
+      t("Am I generous and wise, or only one of the two?", "Mapagbigay at marunong ba ako, o isa lang sa dalawa?"),
+    ],
+    actions: [
+      t("Write a simple monthly budget this week: income, giving, savings, remittance, needs.", "Gumawa ng simpleng buwanang budget ngayong linggo: kita, handog, ipon, padala, pangangailangan."),
+      t("List your debts and choose one to pay down first; set a date.", "Ilista ang mga utang at pumili ng uunahing bayaran; magtakda ng petsa."),
+      t("Dedicate your finances to God in prayer and ask Him for wisdom for one pending money decision.", "Ialay sa Diyos sa panalangin ang pananalapi mo at humingi ng karunungan sa isang nakabinbing desisyon tungkol sa pera."),
+    ],
+    prayer: t(
+      "Father, everything I have is from You and belongs to You. Forgive me for careless spending, hidden debts and fear about tomorrow. Teach me to be faithful with little so You can trust me with more. Give me wisdom to plan, discipline to save, courage to give, and honesty with my family. Free me from the slavery of debt and the love of money. Let my wallet say that Jesus is Lord. In His name, Amen.",
+      "Ama, lahat ng mayroon ako ay galing at pag-aari Mo. Patawarin Mo ako sa pabayang paggastos, nakatagong utang at takot sa bukas. Turuan Mo akong maging tapat sa kaunti para mapagkatiwalaan Mo ako ng higit pa. Bigyan Mo ako ng karunungang magplano, disiplinang mag-ipon, tapang na magbigay at katapatan sa pamilya ko. Palayain Mo ako sa pagkaalipin ng utang at pag-ibig sa salapi. Hayaang sabihin ng wallet ko na Panginoon si Hesus. Sa Kanyang pangalan, Amen."
+    ),
+  },
+  "c-avoiding-greed": {
+    revelation: t(
+      "Greed is not about how much you have; it is about what has you, and Jesus warns that a life is never measured by its possessions.",
+      "Ang kasakiman ay hindi tungkol sa dami ng mayroon ka; tungkol ito sa kung ano ang may hawak sa iyo, at nagbababala si Hesus na ang buhay ay hindi nasusukat sa dami ng ari-arian."
+    ),
+    mainTruth: t(
+      "\"Watch out! Be on your guard against all kinds of greed; life does not consist in an abundance of possessions\" (Luke 12:15). Jesus told this to a man who wanted his share of an inheritance, and then told the story of a farmer who had a great harvest, built bigger barns and died that night, \"rich toward himself\" but not \"rich toward God\" (Luke 12:21). Paul calls greed \"idolatry\" (Colossians 3:5) because it gives to things the trust and devotion that belong to God alone.",
+      "\"Mag-ingat kayo! Iwasan ninyo ang lahat ng uri ng kasakiman; ang buhay ng tao ay hindi nakasalalay sa dami ng kanyang ari-arian\" (Lucas 12:15). Sinabi ito ni Hesus sa isang lalaking gustong makuha ang bahagi niya sa mana, at isinalaysay Niya ang magsasakang nag-ani nang sagana, nagtayo ng mas malalaking kamalig at namatay nang gabing iyon, \"mayaman para sa sarili\" pero hindi \"mayaman sa Diyos\" (Lucas 12:21). Tinatawag ni Pablo na \"pagsamba sa diyus-diyosan\" ang kasakiman (Colosas 3:5) dahil ibinibigay nito sa mga bagay ang tiwala at debosyon na sa Diyos lamang."
+    ),
+    insight: [
+      t(
+        "Notice what the rich fool never said: not one mention of another person and not one mention of God. He talks to himself: \"What shall I do? I will do this, I will tear down, I will say to my soul.\" Greed shrinks the world to one person. It also hides itself as prudence, and the farmer's plan sounded sensible. That is why Jesus says, \"Be on your guard,\" because greed rarely feels like greed from the inside.",
+        "Pansinin ang hindi sinabi ng mangmang na mayaman: walang binanggit na ibang tao at walang binanggit na Diyos. Kausap niya ang sarili: \"Ano ang gagawin ko? Gagawin ko ito, gigibain ko, sasabihin ko sa aking kaluluwa.\" Pinaliliit ng kasakiman ang mundo hanggang sa isang tao. Nagkukubli rin ito bilang pagiging maingat; makatwiran ang tunog ng plano ng magsasaka. Kaya sabi ni Hesus, \"Mag-ingat kayo,\" dahil bihirang maramdaman ang kasakiman bilang kasakiman kapag nasa loob ka nito."
+      ),
+      t(
+        "Greed is not just a rich man's sin. Achan hid a robe and silver in his tent (Joshua 7:19-21) and brought trouble on a whole nation. The rich young ruler kept the commandments but could not release his grip, and \"went away sad\" (Mark 10:22). The poor can be as greedy as the wealthy, because greed is a heart that says \"never enough,\" and it can live in a one-room house as easily as in a mansion.",
+        "Hindi lang kasalanan ng mayaman ang kasakiman. Itinago ni Acan ang balabal at pilak sa kanyang tolda (Josue 7:19-21) at nagdala ng kapahamakan sa buong bansa. Sinunod ng mayamang batang pinuno ang mga utos pero hindi mabitawan ang hawak niya at \"umalis na malungkot\" (Marcos 10:22). Ang mahirap ay puwedeng maging kasakim ng mayaman, dahil ang kasakiman ay pusong nagsasabing \"hindi pa sapat,\" at maaari itong tumira sa isang-kuwartong bahay gaya ng sa mansyon."
+      ),
+    ],
+    life: [
+      t(
+        "Think of the pressure on OFWs: the family wants a bigger house, a newer phone, a car, and the lure of a quick loan or a risky investment promising double returns is everywhere. It is not wrong to want a better life for your children. But when work swallows every Sunday, when you stop calling home because you are too tired, when you borrow what you cannot repay, ask: who is in charge, the need or the craving?",
+        "Isipin ang presyon sa mga OFW: gusto ng pamilya ang mas malaking bahay, mas bagong cellphone, sasakyan, at kahit saan may patibong ng mabilisang utang o mapanganib na investment na nangangakong doble ang balik. Hindi masama ang naisin ang mas magandang buhay para sa mga anak. Pero kapag nilamon na ng trabaho ang bawat Linggo, kapag hindi ka na tumatawag sa bahay dahil sa pagod, kapag umuutang ka ng hindi mo kayang bayaran, itanong: sino ang may hawak, ang pangangailangan o ang pagnanasa?"
+      ),
+      t(
+        "A simple test: Do I give as easily as I gather? Can I say \"enough\"? Am I willing to let a purchase, a promotion or a deal go if it would cost my integrity or my time with God? Greed loses its grip every time we give something away deliberately.",
+        "Isang simpleng pagsubok: Madali ba akong magbigay gaya ng pagkuha? Kaya ko bang sabihing \"sapat na\"? Handa ba akong bitawan ang isang bibilhin, promosyon o deal kung kapalit nito ang integridad ko o ang oras ko sa Diyos? Lumuluwag ang hawak ng kasakiman tuwing sadya tayong nagbibigay."
+      ),
+    ],
+    twist: t(
+      "We assume the cure for greed is to want less. But the cure Jesus gives is to want something better: \"Store up for yourselves treasures in heaven\" (Matthew 6:20). Notice He does not tell us to stop being treasure-seekers; He tells us to change banks. The heart follows the treasure, so the quickest way to a free heart is to move your treasure by giving, serving and investing in people who will last forever.",
+      "Akala natin ang lunas sa kasakiman ay ang pagnanais ng mas kaunti. Pero ang lunas na ibinibigay ni Hesus ay ang pagnanais ng mas mabuti: \"Mag-imbak kayo ng kayamanan sa langit\" (Mateo 6:20). Pansinin: hindi Niya sinabing tumigil tayo sa paghahanap ng kayamanan; sinabi Niyang lumipat tayo ng bangko. Sumusunod ang puso sa kayamanan, kaya ang pinakamabilis na daan sa pusong malaya ay ilipat ang kayamanan mo sa pamamagitan ng pagbibigay, paglilingkod at pamumuhunan sa mga taong mananatili magpakailanman."
+    ),
+    confirm: [
+      t("Matthew 6:19-21: where your treasure is, there your heart will be also.", "Mateo 6:19-21: kung nasaan ang kayamanan mo, naroon din ang puso mo."),
+      t("1 Timothy 6:9-10: the love of money is a root of all kinds of evil.", "1 Timoteo 6:9-10: ang pag-ibig sa salapi ang ugat ng lahat ng uri ng kasamaan."),
+      t("1 Timothy 6:17-19: be rich in good deeds, generous and willing to share.", "1 Timoteo 6:17-19: yumaman sa mabubuting gawa, mapagbigay at handang magbahagi."),
+      t("Hebrews 13:5: keep your life free from the love of money and be content.", "Hebreo 13:5: ilayo ang buhay sa pag-ibig sa salapi at masiyahan sa mayroon."),
+    ],
+    heart: [
+      t(
+        "Ask the Holy Spirit to show you where \"never enough\" is ruling you: shopping, status, side hustles, saving out of fear, or comparing yourself with others. Confess it without excuses.",
+        "Hilingin sa Banal na Espiritu na ipakita kung saan ka pinamumunuan ng \"hindi pa sapat\": pamimili, estado sa buhay, sideline, pag-iipon dahil sa takot, o pagkukumpara sa iba. Ipagtapat ito nang walang dahilan."
+      ),
+      t(
+        "Practice open-handedness. Give secretly, give before you feel ready, and celebrate others' blessings. Where there is gratitude, greed cannot breathe.",
+        "Sanayin ang bukas na kamay. Magbigay nang palihim, magbigay bago ka pa handa, at magalak sa pagpapala ng iba. Kung nasaan ang pasasalamat, hindi makahinga ang kasakiman."
+      ),
+    ],
+    questions: [
+      t("What do I think about most when my mind is free? Is that my treasure?", "Ano ang madalas kong iniisip kapag libre ang isip ko? Iyon ba ang kayamanan ko?"),
+      t("Is there something I would find it hard to give up if Jesus asked?", "May bagay ba na mahirap kong isuko kung hilingin ni Hesus?"),
+      t("Do I envy others' possessions or promotions more than I thank God for mine?", "Mas naiinggit ba ako sa ari-arian o promosyon ng iba kaysa nagpapasalamat sa akin?"),
+      t("Am I investing in what will last forever: people, the gospel, character?", "Namumuhunan ba ako sa mananatili magpakailanman: tao, ebanghelyo, karakter?"),
+    ],
+    actions: [
+      t("Give something meaningful away this week, secretly if possible.", "Magbigay ng makabuluhang bagay ngayong linggo, palihim kung maaari."),
+      t("Name one purchase you are craving; wait 30 days and pray about it before buying.", "Pangalanan ang isang gustong bilhin; maghintay ng 30 araw at ipanalangin muna bago bilhin."),
+      t("Write three things you already have and thank God out loud for each.", "Isulat ang tatlong bagay na mayroon ka na at pasalamatan ang Diyos nang malakas sa bawat isa."),
+    ],
+    prayer: t(
+      "Lord, You see the hidden places where \"more\" is calling my name. Forgive me for trusting in things, for envy and for holding too tightly to what You have given. Loosen my grip and fill my heart with Yourself. Teach me to say \"enough,\" to give with joy and to invest in what lasts. Be my greatest treasure, and let my heart rest where my treasure is, in heaven with You. In Jesus' name, Amen.",
+      "Panginoon, nakikita Mo ang mga lihim na sulok kung saan tinatawag ako ng \"mas marami pa.\" Patawarin Mo ako sa pagtitiwala sa mga bagay, sa inggit at sa mahigpit na paghawak sa ibinigay Mo. Luwagan Mo ang kapit ko at punuin Mo ng Sarili Mo ang puso ko. Turuan Mo akong sabihing \"sapat na,\" magbigay nang may galak at mamuhunan sa mananatili. Maging Ikaw ang pinakadakila kong kayamanan, at manahan ang puso ko kung nasaan ang kayamanan ko, sa langit kasama Ka. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "c-seek-first-kingdom": {
+    revelation: t(
+      "Anxiety is what happens when other things sit on the throne; peace is what happens when the Kingdom comes first and the Father takes care of the rest.",
+      "Ang pagkabalisa ay nangyayari kapag ibang bagay ang nakaupo sa trono; ang kapayapaan ay nangyayari kapag una ang Kaharian at ang Ama na ang bahala sa iba."
+    ),
+    mainTruth: t(
+      "\"But seek first his kingdom and his righteousness, and all these things will be given to you as well\" (Matthew 6:33). Jesus says this right after naming our everyday worries: food, drink, clothes. The Father knows you need them. The point is order: when God's rule and God's righteousness come first in our priorities, the basic needs of life fall under His care. This is not a promise of luxury; it is a promise that your Father will provide what you truly need.",
+      "\"Subalit unahin ninyo ang Kanyang kaharian at ang Kanyang katuwiran, at ang lahat ng ito ay idaragdag sa inyo\" (Mateo 6:33). Sinabi ito ni Hesus matapos Niyang pangalanan ang karaniwan nating ikinababahala: pagkain, inumin, damit. Alam ng Ama na kailangan mo ang mga ito. Ang punto ay ang ayos: kapag ang paghahari ng Diyos at ang Kanyang katuwiran ang nauuna sa ating mga priyoridad, ang pangunahing pangangailangan ng buhay ay nasa Kanyang pangangalaga. Hindi ito pangako ng karangyaan; pangako ito na ibibigay ng Ama ang tunay mong kailangan."
+    ),
+    insight: [
+      t(
+        "Notice that \"seek first\" does not mean \"seek only.\" Jesus does not tell us to quit our jobs and ignore our needs. He tells us what goes at the top of the list. Many believers seek the Kingdom second or third, after career, relationships and security, and then wonder why they are anxious. Anxiety is often a signal that something else has quietly taken first place.",
+        "Pansinin na ang \"unahin\" ay hindi \"ito lamang.\" Hindi sinasabi ni Hesus na iwan ang trabaho at kalimutan ang pangangailangan. Sinasabi Niya kung ano ang dapat nasa tuktok ng listahan. Maraming mananampalataya ang naghahanap ng Kaharian bilang pangalawa o pangatlo, pagkatapos ng karera, relasyon at seguridad, at nagtataka kung bakit balisa. Madalas, senyales ang pagkabalisa na may ibang bagay na tahimik na umupo sa unang puwesto."
+      ),
+      t(
+        "The people of Haggai's day built their own paneled houses while God's house lay in ruins, and they earned wages \"to put into a purse with holes\" (Haggai 1:6). When we reverse God's order, we work hard and never feel full. The kingdom of heaven is also like a treasure hidden in a field: the man \"in his joy went and sold all he had\" and bought it (Matthew 13:44). The Kingdom is not a burden to carry but a treasure to be thrilled about.",
+        "Itinayo ng mga tao noong panahon ni Hagai ang sarili nilang magagarang bahay habang wasak ang bahay ng Diyos, at kumita sila ng sahod \"para ilagay sa supot na butas-butas\" (Hagai 1:6). Kapag binaligtad natin ang ayos ng Diyos, nagsisikap tayo pero hindi nabubusog. Ang kaharian ng langit ay parang kayamanang nakatago sa bukid: ang lalaki \"sa kanyang tuwa ay ipinagbili ang lahat ng kanyang ari-arian\" at binili ito (Mateo 13:44). Ang Kaharian ay hindi pasanin kundi kayamanang nakakapagpagalak."
+      ),
+    ],
+    life: [
+      t(
+        "Marites is a nurse abroad, supporting parents, siblings and her own children. Every month she lay awake counting bills and what-ifs. One night she wrote a list of her worries and, beside it, a list titled \"What God has asked me to do today.\" She began to pray first, give first, and keep her Sunday fellowship even when her schedule was tight. Her bills did not vanish, but her fear did. \"I used to carry tomorrow,\" she said. \"Now I just carry today.\"",
+        "Si Marites ay nars sa ibang bansa, tumutulong sa magulang, kapatid at sa sarili niyang mga anak. Buwan-buwan, gising siya sa gabi, binibilang ang bayarin at mga \"paano kung.\" Isang gabi, isinulat niya ang listahan ng mga alalahanin niya at sa tabi nito, ang listahang pinamagatang \"Ang hiniling ng Diyos na gawin ko ngayon.\" Nagsimula siyang manalangin muna, magbigay muna, at panatilihin ang pakikisama sa simbahan tuwing Linggo kahit siksik ang iskedyul. Hindi nawala ang mga bayarin, pero nawala ang takot. \"Dati, binubuhat ko ang bukas,\" sabi niya. \"Ngayon, ang ngayon lang.\""
+      ),
+      t(
+        "Practical ways to seek first the Kingdom: begin the day with God before the phone, choose obedience over convenience, give and serve before you are comfortable, and make big decisions by asking, \"Will this move the Kingdom forward in my life and others'?\"",
+        "Praktikal na paraan para unahin ang Kaharian: simulan ang araw sa Diyos bago ang cellphone, piliin ang pagsunod kaysa sa kaginhawaan, magbigay at maglingkod bago ka komportable, at gumawa ng malalaking desisyon sa pagtatanong, \"Mapapalago ba nito ang Kaharian sa buhay ko at ng iba?\""
+      ),
+    ],
+    twist: t(
+      "We think trusting God means doing less and hoping more. But Jesus shows birds that work all day gathering food, yet do not carry panic (Matthew 6:26). Seeking first is not laziness; it is working without worry. The Kingdom twist is that when you stop grasping for security, you discover that you were already inside the safest place: the Father's care. And the righteousness and joy of the Kingdom are \"in the Holy Spirit\" (Romans 14:17), and cannot be bought, only received.",
+      "Akala natin ang pagtitiwala sa Diyos ay ang paggawa ng kaunti at pag-asa nang marami. Pero ipinakita ni Hesus ang mga ibon na buong araw naghahanap ng pagkain pero hindi nagpapanik (Mateo 6:26). Ang pag-una sa Kaharian ay hindi katamaran; ito ay pagtatrabaho nang walang pag-aalala. Ang Kaharian twist: kapag tumigil ka sa pagkapit sa seguridad, matutuklasan mong nasa pinakaligtas na lugar ka na pala: ang pangangalaga ng Ama. At ang katuwiran at kagalakan ng Kaharian ay \"sa Banal na Espiritu\" (Roma 14:17), hindi mabibili, tinatanggap lamang."
+    ),
+    confirm: [
+      t("Psalm 37:4-5: delight in the Lord and commit your way to Him.", "Awit 37:4-5: magalak sa Panginoon at ipaubaya sa Kanya ang iyong lakad."),
+      t("Luke 9:57-62: following Jesus means no looking back and no delayed obedience.", "Lucas 9:57-62: ang pagsunod kay Hesus ay walang lingon sa likod at walang ipinagpapaliban."),
+      t("Colossians 3:1-2: set your hearts and minds on things above.", "Colosas 3:1-2: ituon ang puso at isip sa mga bagay na nasa itaas."),
+      t("Philippians 4:6-7: present your requests to God and His peace will guard your hearts.", "Filipos 4:6-7: ihayag sa Diyos ang mga kahilingan at babantayan ng Kanyang kapayapaan ang puso ninyo."),
+    ],
+    heart: [
+      t(
+        "Name what is sitting in first place right now. Surrender it and put Jesus back on the throne, and then ask Him to reorder your calendar and budget around His priorities.",
+        "Pangalanan kung ano ang nasa unang puwesto ngayon. Isuko ito at ibalik si Hesus sa trono, at hilingin sa Kanyang ayusin muli ang kalendaryo at budget mo ayon sa Kanyang priyoridad."
+      ),
+      t(
+        "Trade worry for trust. When anxiety rises, turn it into a prayer and then do the next obedient thing. Rest in a Father who knows what you need before you ask.",
+        "Palitan ang pag-aalala ng pagtitiwala. Kapag sumisingaw ang pagkabalisa, gawin itong panalangin at gawin ang susunod na pagsunod. Magpahinga sa Amang alam ang kailangan mo bago ka pa humingi."
+      ),
+    ],
+    questions: [
+      t("What truly takes first place in my daily schedule and thoughts?", "Ano talaga ang nasa unang puwesto ng iskedyul at isip ko araw-araw?"),
+      t("What is my biggest worry, and have I handed it to the Father?", "Ano ang pinakamalaki kong alalahanin, at naipaubaya ko na ba ito sa Ama?"),
+      t("Is there an act of obedience I have been delaying?", "May pagsunod ba akong ipinagpapaliban?"),
+      t("Would my life look different if the Kingdom truly came first?", "Magkakaiba ba ang buhay ko kung talagang una ang Kaharian?"),
+    ],
+    actions: [
+      t("Give the first part of tomorrow morning to God: Scripture and prayer before your phone.", "Ibigay sa Diyos ang unang bahagi ng bukas ng umaga: Kasulatan at panalangin bago ang cellphone."),
+      t("Write your top three worries and pray over each, then tear up the list as a sign of release.", "Isulat ang tatlong pinakamalaking alalahanin, ipanalangin ang bawat isa, at punitin ang listahan bilang tanda ng pag-ubaya."),
+      t("Choose one concrete way to advance God's Kingdom this week: serve, give or share the gospel.", "Pumili ng isang konkretong paraan para isulong ang Kaharian ngayong linggo: maglingkod, magbigay o magbahagi ng ebanghelyo."),
+    ],
+    prayer: t(
+      "Father, I confess that I have put many things before Your Kingdom. Forgive my worry and my divided heart. Today I place Jesus first: my time, my money, my plans and my fears. Teach me to work without panic and to trust You as the One who feeds the birds and clothes the flowers. Let Your Kingdom come in my home, my workplace and my heart. I rest in Your care and I seek You first. In Jesus' name, Amen.",
+      "Ama, aaminin ko pong maraming bagay ang inuna ko kaysa sa Iyong Kaharian. Patawarin Mo ang pag-aalala ko at hating puso. Ngayon, inuuna ko si Hesus: ang oras ko, pera, plano at takot. Turuan Mo akong magtrabaho nang walang panik at magtiwala sa Iyo na nagpapakain sa mga ibon at nagdadamit sa mga bulaklak. Dumating nawa ang Iyong Kaharian sa tahanan ko, trabaho at puso. Nagpapahinga ako sa Iyong pangangalaga at hinahanap Kita muna. Sa pangalan ni Hesus, Amen."
+    ),
+  },
 };

@@ -793,4 +793,524 @@ export const DEEP: DeepSet = {
       "Panginoong Hesus, dumating Ka bilang isang lalaking Judio sa isang tiyak na lugar at panahon, pero Ikaw ang Tagapagligtas ng bawat bansa. Tulungan Mo akong panatilihing dalisay ang ebanghelyo at hayaan itong mag-ugat sa bawat kultura. Bigyan Mo ako ng karunungang malaman kung ano ang yayakapin at tapang na tanggihan ang hindi nagpaparangal sa Iyo. Gibain Mo ang bawat pader ng antas at rehiyon sa Iyong iglesia. Maipakita nawa ng aming mga awit, tahanan at hapag ang Iyong Kaharian. Sa Iyong pangalan, Amen."
     ),
   },
+  "facing-opposition": {
+    revelation: t(
+      "Opposition is not a sign that you missed God; very often it is the proof that the gospel is really moving.",
+      "Ang pagsalungat ay hindi palatandaang nagkamali ka ng landas; madalas, ito ang patunay na tunay na kumikilos ang ebanghelyo."
+    ),
+    mainTruth: t(
+      "When Peter and John were threatened in Jerusalem, the church did not ask God to remove the threat; they asked for boldness (Acts 4:29-31), and the place where they prayed was shaken. When Paul was stoned at Lystra and dragged out as dead, he stood up, walked back into the same city, and then returned to strengthen the disciples: \"We must go through many hardships to enter the kingdom of God\" (Acts 14:22). Paul later told Timothy plainly, \"Everyone who wants to live a godly life in Christ Jesus will be persecuted\" (2 Timothy 3:12). A church planter must expect resistance and meet it with prayer, courage and a gentle spirit.",
+      "Nang pagbantaan sina Pedro at Juan sa Jerusalem, hindi hiniling ng iglesia na alisin ang banta; humingi sila ng tapang (Gawa 4:29-31), at nayanig ang lugar na pinagdasalan nila. Nang batuhin si Pablo sa Listra at kaladkarin palabas na parang patay, bumangon siya, bumalik sa parehong lungsod, at kalaunan ay bumalik pa upang palakasin ang mga alagad: \"Kailangan nating dumaan sa maraming kapighatian upang makapasok sa kaharian ng Diyos\" (Gawa 14:22). Sinabi rin niya kay Timoteo nang tahasan, \"Ang lahat ng nagnanais mabuhay nang maka-Diyos kay Cristo Hesus ay uusigin\" (2 Timoteo 3:12). Dapat asahan ng nagtatatag ng iglesia ang pagtutol at harapin ito nang may panalangin, tapang at mahinahong espiritu."
+    ),
+    insight: [
+      t(
+        "Notice what the believers in Acts 4 did with their fear. They gathered, they lifted their voices together, and they started by remembering who God is: \"Sovereign Lord, you made the heaven and the earth.\" They did not begin with the size of the threat but with the size of God. Many planters begin their prayers with the problem and end with panic; the early church began with the Creator and ended with courage.",
+        "Pansinin kung ano ang ginawa ng mga mananampalataya sa Gawa 4 sa kanilang takot. Nagtipon sila, sabay-sabay na nanalangin, at nagsimula sa pag-alala kung sino ang Diyos: \"Makapangyarihang Panginoon, Ikaw ang lumikha ng langit at lupa.\" Hindi sila nagsimula sa laki ng banta kundi sa laki ng Diyos. Maraming nagtatatag ng iglesia ang nagsisimula ng panalangin sa problema at nagtatapos sa takot; ang unang iglesia ay nagsimula sa Lumikha at nagtapos sa katapangan."
+      ),
+      t(
+        "Also notice that opposition does not always look like stones. In many Philippine communities it looks like a family that says, \"You have betrayed our faith,\" a barangay official who refuses a permit, a neighbor who spreads rumors, or a relative who cuts off financial help. Wisdom says: obey the law where you can, honor your elders, and refuse to be needlessly offensive. The gospel itself is offensive enough; do not add your own pride, sarcasm or rudeness to it.",
+        "Pansinin din na hindi laging bato ang itsura ng pagsalungat. Sa maraming komunidad sa Pilipinas, ito ay pamilyang nagsasabing, \"Ipinagkanulo mo ang ating pananampalataya,\" opisyal ng barangay na ayaw magbigay ng permit, kapitbahay na nagkakalat ng tsismis, o kamag-anak na nagtigil ng tulong pinansyal. Ang karunungan ay: sumunod sa batas hangga't kaya, igalang ang matatanda, at huwag sadyang manakit. Sapat na ang pagkakasakit ng ebanghelyo mismo; huwag nang dagdagan ng sarili mong yabang, sarkasmo o kabastusan."
+      ),
+    ],
+    life: [
+      t(
+        "Think of a young Filipino woman who comes to Christ in a close Catholic family. Her mother stops speaking to her for two months. She does not argue or post angry messages. She keeps cooking for the family, keeps sending money home, keeps praying quietly. In the third month her mother asks, \"What is different about you?\" Opposition met with love became an open door. That is the pattern of Jesus: \"Bless those who curse you.\"",
+        "Isipin ang isang batang Pilipina na nakilala si Kristo sa loob ng malapit na pamilyang Katoliko. Hindi siya kinausap ng nanay niya nang dalawang buwan. Hindi siya nakipagtalo o nag-post ng galit na mensahe. Patuloy siyang nagluto para sa pamilya, nagpadala ng pera, at tahimik na nanalangin. Sa ikatlong buwan, tinanong siya ng nanay niya, \"Ano ang nag-iba sa iyo?\" Ang pagsalungat na sinagot ng pag-ibig ay naging bukas na pinto. Iyan ang padron ni Hesus: \"Pagpalain ninyo ang sumusumpa sa inyo.\""
+      ),
+      t(
+        "For OFW believers it may be the employer who forbids gatherings, or a host country where public evangelism is illegal. Here courage does not mean recklessness. It means living a life so honest and kind that your employer notices, gathering quietly and lawfully, and trusting that the Word spreads through changed lives faster than through loud arguments. Courage and wisdom walk together.",
+        "Para sa mga OFW na mananampalataya, maaaring ito ay amo na nagbabawal ng pagtitipon, o bansang ilegal ang hayagang pangangaral. Dito, ang tapang ay hindi pagiging pabaya. Ito ay pamumuhay na napakatapat at napakabait na mapapansin ng amo mo, tahimik at legal na pagtitipon, at pagtitiwalang mas mabilis kumalat ang Salita sa pamamagitan ng nabagong buhay kaysa sa malakas na pagtatalo. Magkasamang lumalakad ang tapang at karunungan."
+      ),
+    ],
+    twist: t(
+      "We pray, \"Lord, remove this opposition.\" Yet in Acts, the opposition became the engine of the mission: the stoning at Lystra led to strengthened disciples, and the scattering after Stephen's death carried the gospel to Samaria and Antioch. God does not waste a single stone. What the enemy throws to stop the church, God picks up and uses to build it. The question is not \"How do I escape this?\" but \"What is God building through this?\"",
+      "Nananalangin tayo, \"Panginoon, alisin Mo ang pagsalungat na ito.\" Pero sa Gawa, ang pagsalungat ang naging makina ng misyon: ang pagbato sa Listra ay nauwi sa pinatatag na mga alagad, at ang pagkakalat matapos mamatay si Esteban ay nagdala ng ebanghelyo sa Samaria at Antioquia. Walang batong nasasayang sa Diyos. Ang inihagis ng kaaway upang pigilan ang iglesia ay pinupulot ng Diyos at ginagamit upang itayo ito. Ang tanong ay hindi \"Paano ako makakatakas dito?\" kundi \"Ano ang itinatayo ng Diyos sa pamamagitan nito?\""
+    ),
+    confirm: [
+      t("Philippians 1:12-14: Paul's chains made the brothers bolder to speak.", "Filipos 1:12-14: ang mga tanikala ni Pablo ang nagpatapang sa mga kapatid na magsalita."),
+      t("1 Peter 4:12-14: do not be surprised at the fiery trial; you share in Christ's sufferings.", "1 Pedro 4:12-14: huwag magtaka sa mainit na pagsubok; nakikibahagi kayo sa mga pagdurusa ni Cristo."),
+      t("Romans 12:17-21: overcome evil with good, and live at peace as far as it depends on you.", "Roma 12:17-21: daigin ang masama ng mabuti, at makipagpayapaan hangga't kaya ninyo."),
+      t("Acts 5:41: the apostles rejoiced that they were counted worthy to suffer disgrace for the Name.", "Gawa 5:41: nagalak ang mga apostol na minarapat silang magdusa ng kahihiyan alang-alang sa Pangalan."),
+    ],
+    heart: [
+      t(
+        "Opposition tests whether you love the people or only love being right. Ask the Spirit to remove bitterness toward those who resist you. Pray for them by name. Jesus prayed for His killers from the cross, and that same Spirit can make you gentle when you want to fight.",
+        "Sinusubok ng pagsalungat kung mahal mo ba ang mga tao o mahal mo lang ang pagiging tama. Hilingin sa Espiritu na alisin ang kapaitan sa mga sumasalungat sa iyo. Ipanalangin sila sa pangalan. Ipinanalangin ni Hesus ang mga pumatay sa Kanya mula sa krus, at ang parehong Espiritu ay kayang gawin kang mahinahon kung gusto mo nang lumaban."
+      ),
+      t(
+        "Choose endurance over escape. Not every closed door is a sign to quit; sometimes it is a call to stay and pray. Build a team that prays together, so that when you are tired, someone else holds up your arms. Resilience in ministry is almost never a solo achievement.",
+        "Piliin ang pagtitiis kaysa pagtakas. Hindi lahat ng saradong pinto ay hudyat na tumigil; minsan ito ay tawag na manatili at manalangin. Bumuo ng pangkat na sama-samang nananalangin, upang kapag pagod ka na, may iba pang magtataas ng iyong mga kamay. Ang katatagan sa ministeryo ay halos hindi kailanman nagagawa nang mag-isa."
+      ),
+    ],
+    questions: [
+      t("When opposition comes, do I begin my prayer with the problem or with who God is?", "Kapag may pagsalungat, sa problema ba nagsisimula ang panalangin ko o sa kung sino ang Diyos?"),
+      t("Is there someone who resists me whom I have stopped praying for?", "May tao bang sumasalungat sa akin na hindi ko na ipinapanalangin?"),
+      t("Am I offending people with my attitude more than with the gospel?", "Mas nakakasakit ba sa mga tao ang ugali ko kaysa sa ebanghelyo?"),
+      t("Who stands with me when I am tired and discouraged?", "Sino ang kasama kong tumatayo kapag pagod at nanghihina ang loob ko?"),
+    ],
+    actions: [
+      t("Write down the three biggest forms of opposition you could face, and pray Acts 4:29 over each one with your team.", "Isulat ang tatlong pinakamalaking uri ng pagsalungat na maaari mong harapin, at ipanalangin ang Gawa 4:29 sa bawat isa kasama ng iyong pangkat."),
+      t("Choose one person who resists the gospel and do one quiet act of kindness for them this week.", "Pumili ng isang taong tumututol sa ebanghelyo at gumawa ng isang tahimik na kabutihan para sa kanya ngayong linggo."),
+      t("Learn the local laws and customs about gatherings and permits, and ask a wise elder how to honor them.", "Alamin ang lokal na batas at kaugalian tungkol sa mga pagtitipon at permit, at itanong sa isang marunong na matanda kung paano ito igagalang."),
+    ],
+    prayer: t(
+      "Sovereign Lord, You made heaven and earth, and no threat is bigger than You. When resistance comes, do not let me run in fear or fight in pride. Give me boldness to speak, gentleness to love, and endurance to stay. Let every stone thrown at Your church become a stone for building. Teach me to bless those who oppose me, and surround me with brothers and sisters who pray. In Jesus' name, Amen.",
+      "Makapangyarihang Panginoon, Ikaw ang lumikha ng langit at lupa, at walang banta na mas malaki kaysa sa Iyo. Kapag dumating ang pagsalungat, huwag Mo akong hayaang tumakbo sa takot o lumaban sa yabang. Bigyan Mo ako ng tapang magsalita, kababaang-loob umibig, at tiyaga manatili. Gawin Mong batong pantayo ang bawat batong inihahagis sa Iyong iglesia. Turuan Mo akong pagpalain ang mga sumasalungat sa akin, at palibutan Mo ako ng mga kapatid na nananalangin. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "churches-that-plant-churches": {
+    revelation: t(
+      "A church that only grows bigger is a reservoir; a church that sends is a river, and rivers bring life wherever they flow.",
+      "Ang iglesiang lumalaki lang ay parang imbakan ng tubig; ang iglesiang nagsusugo ay parang ilog, at ang ilog ay nagdadala ng buhay saanman ito dumaloy."
+    ),
+    mainTruth: t(
+      "In Antioch, while the believers were worshiping and fasting, the Holy Spirit said, \"Set apart for me Barnabas and Saul\" (Acts 13:1-3). Antioch gave away its two best teachers, and that act launched the first great mission to the nations. Later Paul could say of the Thessalonians, \"The Lord's message rang out from you,\" not only in their region but everywhere (1 Thessalonians 1:6-8). Healthy churches are made to reproduce: they make disciples who make disciples, leaders who raise leaders, and churches that start churches.",
+      "Sa Antioquia, habang sumasamba at nag-aayuno ang mga mananampalataya, sinabi ng Espiritu Santo, \"Ihiwalay ninyo para sa Akin sina Bernabe at Saulo\" (Gawa 13:1-3). Ibinigay ng Antioquia ang dalawa nilang pinakamahusay na guro, at ang gawang iyon ang naglunsad ng unang dakilang misyon sa mga bansa. Kalaunan, masasabi ni Pablo tungkol sa mga taga-Tesalonica, \"Umalingawngaw mula sa inyo ang mensahe ng Panginoon,\" hindi lang sa kanilang rehiyon kundi sa lahat ng dako (1 Tesalonica 1:6-8). Ang malulusog na iglesia ay nilikhang magparami: gumagawa ng alagad na gumagawa ng alagad, lider na nagbubunsod ng lider, at iglesiang nagtatatag ng iglesia."
+    ),
+    insight: [
+      t(
+        "Antioch was not a large or old church. It was young, mixed in background, and still learning. Yet it sent. Many congregations say, \"When we are bigger, stronger and richer, we will send.\" Antioch shows the opposite: sending is what made Antioch strong. A church that waits until it has enough will never have enough, because the heart of sending is trust, not surplus.",
+        "Hindi malaki o matanda ang iglesia sa Antioquia. Bata ito, halu-halo ang pinagmulan, at nag-aaral pa rin. Pero nagsugo ito. Maraming kongregasyon ang nagsasabing, \"Kapag mas malaki, mas matatag at mas mayaman na kami, saka kami magsusugo.\" Ipinakikita ng Antioquia ang kabaligtaran: ang pagsusugo ang nagpalakas sa Antioquia. Ang iglesiang naghihintay na magkaroon ng sapat ay hindi kailanman magkakaroon ng sapat, dahil ang puso ng pagsusugo ay pagtitiwala, hindi sobra."
+      ),
+      t(
+        "Notice also who did the sending: the Spirit spoke while they were worshiping. Multiplication is not a program; it is the fruit of a church that is near to God. And Paul spent two years in Ephesus in Acts 19:10, yet \"all the Jews and Greeks who lived in the province of Asia heard the word.\" He did not travel to every town. He trained people in one place, and they carried the message out. That is the secret of reproduction: train many, not only preach to many.",
+        "Pansinin din kung sino ang nagsugo: nagsalita ang Espiritu habang sumasamba sila. Ang pagpaparami ay hindi programa; bunga ito ng iglesiang malapit sa Diyos. At nanatili si Pablo nang dalawang taon sa Efeso sa Gawa 19:10, pero \"narinig ng lahat ng Judio at Griego sa lalawigan ng Asia ang salita.\" Hindi niya pinuntahan ang bawat bayan. Nagsanay siya ng mga tao sa isang lugar, at sila ang nagdala ng mensahe palabas. Iyan ang sikreto ng pagpaparami: magsanay ng marami, hindi lang mangaral sa marami."
+      ),
+    ],
+    life: [
+      t(
+        "Picture a small church above a sari-sari store in a provincial town. Forty members, a tight budget, one pastor. A young couple from the church gets a job in a neighboring town with no gospel church. Instead of saying, \"We will miss you,\" the pastor lays hands on them and says, \"Go and gather believers there, and we will pray, visit and support you.\" Two years later, a house church of twenty meets in that town. The mother church did not shrink; it grew in faith and in joy.",
+        "Isipin ang maliit na iglesia sa itaas ng isang sari-sari store sa isang bayan sa probinsya. Apatnapung miyembro, masikip na budget, isang pastor. Ang isang batang mag-asawa sa iglesia ay nakakuha ng trabaho sa karatig-bayan na walang iglesiang ebanghelikal. Sa halip na sabihing, \"Mami-miss namin kayo,\" ipinatong ng pastor ang kanyang mga kamay sa kanila at sinabi, \"Pumunta kayo roon at tipunin ang mga mananampalataya, at ipapanalangin, bibisitahin at susuportahan namin kayo.\" Pagkalipas ng dalawang taon, may house church na dalawampu sa bayang iyon. Hindi lumiit ang inang iglesia; lumago ito sa pananampalataya at kagalakan."
+      ),
+      t(
+        "Among OFWs, the principle is the same. A Bible study of five in a boarding house or a labor camp, led by an ordinary worker, can become the seed of three other groups if the first group is taught from the start: \"Whatever you learn, teach to someone else.\" Keep the method simple enough that a tired factory worker or a household worker on her day off can do it.",
+        "Sa mga OFW, pareho ang prinsipyo. Ang Bible study ng lima sa isang boarding house o labor camp, na pinangungunahan ng karaniwang manggagawa, ay maaaring maging binhi ng tatlo pang grupo kung tinuruan ang unang grupo mula pa sa simula: \"Anumang natutunan ninyo, ituro sa iba.\" Gawing sapat na simple ang paraan para magawa ito ng pagod na manggagawa sa pabrika o kasambahay sa kanyang day-off."
+      ),
+    ],
+    twist: t(
+      "We think sending away our best people weakens us. The Kingdom says the opposite: what you give away, God multiplies. Antioch lost Barnabas and Saul, and became the sending center of the early mission and a church known across the world. Like the loaves in the boy's hands, what is held back stays five; what is given to Jesus feeds five thousand. Your church's greatest legacy may not be its own size but the churches that exist because it let go.",
+      "Akala natin humihina tayo kapag ipinadala ang pinakamahusay nating tao. Kabaligtaran ang sinasabi ng Kaharian: ang ibinigay ay pinararami ng Diyos. Nawalan ang Antioquia ng sina Bernabe at Saulo, at naging sentro ng pagsusugo ng unang misyon at iglesiang kilala sa buong mundo. Tulad ng tinapay sa kamay ng bata, ang iniipon ay mananatiling lima; ang ibinigay kay Hesus ay nakakapagpakain ng limang libo. Ang pinakadakilang pamana ng inyong iglesia ay maaaring hindi ang laki nito kundi ang mga iglesiang umiiral dahil marunong itong bumitaw."
+    ),
+    confirm: [
+      t("2 Timothy 2:2: teach faithful people who will teach others, four generations in one verse.", "2 Timoteo 2:2: turuan ang mga tapat na magtuturo naman sa iba, apat na henerasyon sa iisang talata."),
+      t("Matthew 28:19-20: Jesus' command is to make disciples of all nations, not just a good congregation.", "Mateo 28:19-20: ang utos ni Hesus ay gumawa ng alagad sa lahat ng bansa, hindi lang magkaroon ng magandang kongregasyon."),
+      t("John 6:9-13: five loaves given to Jesus fed thousands with leftovers.", "Juan 6:9-13: ang limang tinapay na ibinigay kay Hesus ay nagpakain ng libu-libo at may natira pa."),
+      t("Acts 14:26-28: Paul and Barnabas returned to Antioch and reported all God had done.", "Gawa 14:26-28: bumalik sina Pablo at Bernabe sa Antioquia at ibinalita ang lahat ng ginawa ng Diyos."),
+    ],
+    heart: [
+      t(
+        "Repent of the hidden fear that says, \"Keep the best for ourselves.\" Ask the Lord to give you a sender's heart: generous, trusting, and joyful when others go. Release people into mission without jealousy, and celebrate when a daughter church grows beyond you.",
+        "Magsisi sa nakatagong takot na nagsasabing, \"Itago natin sa atin ang pinakamahusay.\" Hilingin sa Panginoon ang puso ng nagsusugo: mapagbigay, nagtitiwala, at masaya kapag may umaalis. Palayain ang mga tao para sa misyon nang walang inggit, at magdiwang kapag lumampas sa iyo ang anak na iglesia."
+      ),
+      t(
+        "Live as a multiplier in your own circle. Do not ask only, \"Who is helping me grow?\" but \"Who am I helping to grow, and who will they help?\" Your discipleship is not complete until what you carry is being carried by someone else.",
+        "Mamuhay bilang tagapagparami sa sarili mong bilog. Huwag lang itanong, \"Sino ang tumutulong sa akin lumago?\" kundi \"Sino ang tinutulungan kong lumago, at sino ang tutulungan nila?\" Hindi pa kumpleto ang iyong pagdidisipulo hanggang ang dala mo ay dinadala na rin ng iba."
+      ),
+    ],
+    questions: [
+      t("Does my church talk more about getting bigger or about sending?", "Mas madalas bang pag-usapan ng iglesia ko ang paglaki o ang pagsusugo?"),
+      t("What am I afraid to release for the sake of the mission?", "Ano ang natatakot akong ibigay para sa misyon?"),
+      t("Who am I training who can train someone else?", "Sino ang sinasanay ko na kayang magsanay ng iba?"),
+      t("Is our method simple enough for an ordinary believer to repeat?", "Sapat bang simple ang aming paraan para maulit ng karaniwang mananampalataya?"),
+    ],
+    actions: [
+      t("Write the names of two people you could train this year to start something new, and meet each of them this month.", "Isulat ang pangalan ng dalawang taong maaari mong sanayin ngayong taon para magsimula ng bago, at makipagkita sa bawat isa ngayong buwan."),
+      t("Ask your pastor to pray with the leaders about one place your church could plant or send a team to.", "Hilingin sa pastor na manalangin kasama ng mga lider tungkol sa isang lugar na maaaring pagtatatagan o pagsusuguan ng pangkat ng inyong iglesia."),
+      t("Teach one simple tool, such as telling your story or leading a Bible study, to a new believer this week.", "Magturo ng isang simpleng kasangkapan, tulad ng pagbabahagi ng patotoo o pagpapatakbo ng Bible study, sa bagong mananampalataya ngayong linggo."),
+    ],
+    prayer: t(
+      "Father, You sent Your Son, and Your Son sends us. Forgive me for guarding what You gave me to share. Make my church a sending church, worshiping in Your presence until Your Spirit says, \"Go.\" Give me joy when others are released, and wisdom to train people who will train others. Let Your word ring out from us to cities, islands and nations we may never see. In Jesus' name, Amen.",
+      "Ama, isinugo Mo ang Iyong Anak, at isinusugo Niya tayo. Patawarin Mo ako sa pag-iingat ng ibinigay Mo para ibahagi. Gawin Mong iglesiang nagsusugo ang aking iglesia, sumasamba sa Iyong presensya hanggang sabihin ng Iyong Espiritu, \"Humayo kayo.\" Bigyan Mo ako ng galak kapag may pinalalaya, at karunungang magsanay ng mga taong magsasanay ng iba. Umalingawngaw nawa ang Iyong salita mula sa amin patungo sa mga lungsod, isla at bansang hindi pa namin nakikita. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "reaching-islands-and-mountains": {
+    revelation: t(
+      "No island is too far, no mountain too high, and no village too small to be on the heart of the God who counts every sheep.",
+      "Walang islang napakalayo, walang bundok na napakataas, at walang nayong napakaliit para wala sa puso ng Diyos na nagbibilang ng bawat tupa."
+    ),
+    mainTruth: t(
+      "Isaiah calls on the coastlands and islands, the desert towns and the people of the mountain peaks, to sing to the Lord and declare His praise (Isaiah 42:10-12). When Jesus was surrounded by crowds in Capernaum, He did not stay: \"Let us go somewhere else, to the nearby villages, so I can preach there also. That is why I have come\" (Mark 1:38). And when persecution scattered ordinary believers, they \"preached the word wherever they went,\" and a whole city in Samaria was filled with joy (Acts 8:4-8). God's heart for the edges of the map is not a side project; it is the heart of the mission.",
+      "Tinatawag ni Isaias ang mga pulo at baybayin, ang mga bayan sa ilang at ang mga taga-tuktok ng bundok, na umawit sa Panginoon at ipahayag ang Kanyang papuri (Isaias 42:10-12). Nang pinalilibutan ng mga tao si Hesus sa Capernaum, hindi Siya nanatili: \"Pumunta tayo sa ibang lugar, sa mga kalapit na nayon, upang makapangaral din Ako roon. Iyan ang dahilan kung bakit Ako naparito\" (Marcos 1:38). At nang ikalat ng pag-uusig ang mga karaniwang mananampalataya, \"ipinangaral nila ang salita saanman sila magpunta,\" at ang buong lungsod sa Samaria ay napuno ng kagalakan (Gawa 8:4-8). Ang puso ng Diyos para sa mga dulo ng mapa ay hindi pangalawang proyekto; ito ang puso ng misyon."
+    ),
+    insight: [
+      t(
+        "Jesus had a crowd and a reputation in Capernaum, and still He said, \"Let us go.\" Ministry has a gravity: it pulls us toward the places that are easy to reach, comfortable to visit and rich in resources. Our maps quietly follow our convenience. The Spirit keeps asking, \"What about the ones who will never come to you?\" Reaching them will not be efficient. It will be slow, muddy and costly, and it is exactly where Jesus went.",
+        "May pulutong at reputasyon si Hesus sa Capernaum, pero sinabi pa rin Niya, \"Pumunta tayo.\" May gravity ang ministeryo: hinihila tayo nito sa mga lugar na madaling abutin, komportableng puntahan at maraming yaman. Tahimik na sinusundan ng ating mapa ang ating kaginhawaan. Patuloy na itinatanong ng Espiritu, \"Paano ang mga taong hindi kailanman pupunta sa inyo?\" Hindi magiging episyente ang pag-abot sa kanila. Magiging mabagal, maputik at magastos, at doon mismo pumunta si Hesus."
+      ),
+      t(
+        "Notice too that the first gospel workers in Samaria were not apostles but scattered ordinary believers. In remote places, the gospel almost never arrives by a big team with a big budget; it arrives through a teacher posted to a barrio school, a nurse, a fisherman, a trader, a relative who returns home. The planter's task is to find, train and stay with such people, and to respect the culture of the people instead of arriving as a superior outsider.",
+        "Pansinin din na ang mga unang manggagawa ng ebanghelyo sa Samaria ay hindi mga apostol kundi mga nakakalat na karaniwang mananampalataya. Sa mga liblib na lugar, halos hindi dumarating ang ebanghelyo sa pamamagitan ng malaking pangkat na may malaking pondo; dumarating ito sa pamamagitan ng gurong naitalaga sa paaralan sa barrio, nars, mangingisda, mangangalakal, kamag-anak na umuuwi. Ang gawain ng nagtatatag ay hanapin, sanayin at samahan ang mga taong ito, at igalang ang kultura ng mga tao sa halip na dumating bilang nakatataas na estranghero."
+      ),
+    ],
+    life: [
+      t(
+        "Think of a mountain village where the jeepney stops at the end of the paved road and you walk three hours more. A visiting team preaches for a weekend and leaves. Six months later nothing remains. Now imagine instead that the team finds one young father who already loves the Word, studies with him weekly by phone and visits monthly, helps him read, and trains him to gather his neighbors. Years later, a church meets under a mango tree, led by one of their own.",
+        "Isipin ang isang nayon sa bundok kung saan humihinto ang jeepney sa dulo ng sementadong daan at maglalakad ka pa nang tatlong oras. Isang pangkat ang dumalaw, nangaral nang isang weekend, at umalis. Pagkalipas ng anim na buwan, wala nang natira. Ngayon, isipin na lang na hinanap ng pangkat ang isang batang ama na mahilig na sa Salita, nag-aral kasama niya linggu-linggo sa pamamagitan ng telepono at bumisita buwan-buwan, tinulungan siyang magbasa, at sinanay siyang magtipon ng kanyang mga kapitbahay. Pagkalipas ng ilang taon, may iglesiang nagtitipon sa ilalim ng puno ng mangga, pinangungunahan ng isa sa kanila."
+      ),
+      t(
+        "For a Filipino planter or sender, this might mean a lifelong calling to the islands of the Sulu sea, a bivocational teacher in a remote barangay, or a church in the city that adopts a village for years of prayer and partnership. It may mean radio programs, audio Bibles in the local language, livelihood training, medical missions, or helping children learn to read, all offered with respect and without strings attached.",
+        "Para sa Pilipinong nagtatatag o nagsusugo, maaaring ito ay habambuhay na tawag sa mga pulo ng Dagat Sulu, gurong may dalawang trabaho sa liblib na barangay, o iglesia sa lungsod na umampon ng isang nayon para sa taon ng panalangin at pakikipagtulungan. Maaaring ito ay mga programa sa radyo, audio Bible sa lokal na wika, pagsasanay sa kabuhayan, medical mission, o pagtulong sa mga bata na matutong bumasa, lahat ay iniaalok nang may paggalang at walang kapalit."
+      ),
+    ],
+    twist: t(
+      "We often think the mission field is far away and the church is where the resources are. But Isaiah 42 pictures the far places singing with their own voices, not waiting for our songs. The Kingdom twist is that the islands and mountains are not only receivers; they become senders. Some of the greatest mission movements started in the places the world called the end of the earth. When the gospel takes root there, those same mountains and islands will send missionaries to others.",
+      "Madalas akala natin ang misyonaryong lugar ay malayo at ang iglesia ang may yaman. Pero ipinipinta ng Isaias 42 ang malalayong lugar na umaawit ng sarili nilang tinig, hindi naghihintay ng ating mga awit. Ang twist ng Kaharian ay ang mga pulo at bundok ay hindi lang tumatanggap; sila ay nagiging nagsusugo. Ang ilan sa pinakadakilang kilusan ng misyon ay nagsimula sa mga lugar na tinawag ng mundong dulo ng lupa. Kapag nag-ugat ang ebanghelyo roon, ang mga bundok at pulong iyon din ang magsusugo ng mga misyonero sa iba."
+    ),
+    confirm: [
+      t("Romans 10:14-15: how can they hear without someone preaching, and how beautiful are the feet of those who bring good news.", "Roma 10:14-15: paano sila makaririnig kung walang mangangaral, at kay ganda ng mga paa ng nagdadala ng mabuting balita."),
+      t("Revelation 7:9: people from every nation, tribe, people and language will stand before the Lamb.", "Pahayag 7:9: ang mga tao mula sa bawat bansa, lipi, bayan at wika ay tatayo sa harap ng Kordero."),
+      t("Luke 15:4-6: the shepherd leaves ninety-nine to find the one lost sheep.", "Lucas 15:4-6: iniiwan ng pastol ang siyamnapu't siyam upang hanapin ang isang nawawalang tupa."),
+      t("Acts 8:26-40: Philip leaves a revival to meet one man on a desert road.", "Gawa 8:26-40: iniwan ni Felipe ang isang pagkagising upang makipagkita sa isang lalaki sa daan sa ilang."),
+    ],
+    heart: [
+      t(
+        "Ask the Lord to move you from comfort-based ministry to mission-based ministry. Repent of the subtle pride that treats rural and indigenous believers as projects instead of brothers and sisters. Learn to listen, to eat what they eat, to learn their language, and to sit longer than is convenient.",
+        "Hilingin sa Panginoon na ilipat ka mula sa ministeryong nakabatay sa kaginhawaan tungo sa ministeryong nakabatay sa misyon. Magsisi sa pino at lihim na yabang na ituring ang mga mananampalataya sa probinsya at katutubo bilang proyekto sa halip na kapatid. Matutong makinig, kumain ng kinakain nila, matuto ng wika nila, at umupo nang mas matagal kaysa sa komportable."
+      ),
+      t(
+        "Choose faithfulness over visibility. Remote ministry rarely earns applause, photos or big offerings. Ask yourself, \"Would I still go if no one ever knew?\" The Father sees what is done in the quiet places, and He rewards it.",
+        "Piliin ang katapatan kaysa pagiging kita. Bihirang magkamit ng palakpak, litrato o malaking handog ang ministeryo sa liblib. Itanong sa sarili, \"Pupunta pa rin ba ako kahit walang makaalam?\" Nakikita ng Ama ang ginagawa sa tahimik na mga lugar, at ginagantimpalaan Niya ito."
+      ),
+    ],
+    questions: [
+      t("Does my ministry map follow God's heart or my convenience?", "Sinusunod ba ng mapa ng ministeryo ko ang puso ng Diyos o ang kaginhawaan ko?"),
+      t("Who in a remote place could I train and stay with long-term?", "Sino sa liblib na lugar ang maaari kong sanayin at samahan nang pangmatagalan?"),
+      t("Do I treat indigenous and rural believers as equals or as projects?", "Itinuturing ko ba ang mga katutubo at taga-probinsya bilang kapantay o bilang proyekto?"),
+      t("Would I serve if no one ever saw or applauded?", "Maglilingkod ba ako kahit walang makakita o pumalakpak?"),
+    ],
+    actions: [
+      t("Find one island, barangay or mountain community with little gospel witness and pray for it by name every day this week.", "Maghanap ng isang pulo, barangay o komunidad sa bundok na kaunti ang saksi ng ebanghelyo at ipanalangin ito sa pangalan araw-araw ngayong linggo."),
+      t("Contact a local believer or pastor from that area and ask how you could serve alongside them without taking over.", "Kontakin ang isang lokal na mananampalataya o pastor mula roon at itanong kung paano ka makakatulong nang hindi nangingibabaw."),
+      t("Start learning one practical tool for remote work, such as storytelling Bible lessons, audio Scripture or basic health training.", "Simulang matutunan ang isang praktikal na kasangkapan para sa liblib na gawain, tulad ng pagkukuwento ng aral ng Bibliya, audio Scripture o pangunahing pagsasanay sa kalusugan."),
+    ],
+    prayer: t(
+      "Lord of the harvest, You see every island, every ridge and every hidden village. Give me Your heart for the ones who live far from any church. Free me from the love of comfort and from pride toward those I serve. Raise up local believers who will stay, teach and love their own people. Let the islands and mountains sing Your praise in their own language. Use me where You send me, seen or unseen. In Jesus' name, Amen.",
+      "Panginoon ng anihan, nakikita Mo ang bawat pulo, bawat tagaytay at bawat nakatagong nayon. Ibigay Mo sa akin ang Iyong puso para sa mga naninirahan nang malayo sa anumang iglesia. Palayain Mo ako sa pag-ibig sa kaginhawaan at sa yabang sa mga pinaglilingkuran ko. Ibangon Mo ang mga lokal na mananampalatayang mananatili, magtuturo at magmamahal sa sarili nilang bayan. Umawit nawa ang mga pulo at bundok ng Iyong papuri sa sarili nilang wika. Gamitin Mo ako saanman Mo ako isugo, nakikita man o hindi. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "planting-in-the-city": {
+    revelation: t(
+      "The city is not the enemy's territory to escape; it is the people God loves, and He has told us to seek its peace.",
+      "Ang lungsod ay hindi teritoryo ng kaaway na dapat takasan; ito ay mga taong minamahal ng Diyos, at inutusan Niya tayong hanapin ang kapayapaan nito."
+    ),
+    mainTruth: t(
+      "To the exiles in Babylon, the greatest city of their enemies, God said: \"Build houses and settle down; ... seek the peace and prosperity of the city to which I have carried you into exile. Pray to the Lord for it, because if it prospers, you too will prosper\" (Jeremiah 29:4-7). God ended the book of Jonah with a question about Nineveh: \"Should I not have concern for the great city?\" (Jonah 4:11). And to a fearful Paul in Corinth, a city known for its vice, the Lord said, \"I have many people in this city\" (Acts 18:9-11). God has people in your city that He loves and intends to gather.",
+      "Sa mga bihag sa Babilonia, ang pinakadakilang lungsod ng kanilang mga kaaway, sinabi ng Diyos: \"Magtayo kayo ng mga bahay at manirahan; ... hanapin ninyo ang kapayapaan at kasaganaan ng lungsod na pinagdalhan Ko sa inyo bilang bihag. Ipanalangin ninyo ito sa Panginoon, sapagkat kung uunlad ito, uunlad din kayo\" (Jeremias 29:4-7). Tinapos ng Diyos ang aklat ni Jonas sa tanong tungkol sa Nineve: \"Hindi ba dapat Akong mahabag sa dakilang lungsod?\" (Jonas 4:11). At sa takot na si Pablo sa Corinto, lungsod na kilala sa bisyo, sinabi ng Panginoon, \"Marami Akong tao sa lungsod na ito\" (Gawa 18:9-11). May mga taong minamahal ng Diyos sa lungsod ninyo na balak Niyang tipunin."
+    ),
+    insight: [
+      t(
+        "Many Christians look at the city and see only noise, sin and danger, and quietly plan to escape to a quieter life. But God told His people to unpack, plant gardens, marry, and pray for the city's welfare. The word for peace there is shalom: wholeness, flourishing, justice and good for everyone. A planter in the city is not only gathering believers; he is blessing the neighborhood with his presence.",
+        "Maraming Kristiyano ang tumitingin sa lungsod at ingay, kasalanan at panganib lang ang nakikita, at tahimik na nagpaplanong tumakas tungo sa mas tahimik na buhay. Pero sinabi ng Diyos sa Kanyang bayan na mag-unpack, magtanim, mag-asawa, at ipanalangin ang kapakanan ng lungsod. Ang salitang kapayapaan doon ay shalom: kabuuan, pag-unlad, katarungan at kabutihan para sa lahat. Ang nagtatatag sa lungsod ay hindi lang nagtitipon ng mga mananampalataya; pinagpapala niya ang kapitbahayan sa pamamagitan ng kanyang presensya."
+      ),
+      t(
+        "Notice too that God spoke to Paul in the middle of his fear. Corinth was proud, wealthy and immoral, and Paul came \"in weakness and fear and with much trembling\" (1 Corinthians 2:3). Cities intimidate us, but God's promise is not that the city will be easy; it is that He already has people there, and that He is with us (Acts 18:10). Because of that, Paul stayed a year and a half.",
+        "Pansinin din na nagsalita ang Diyos kay Pablo sa gitna ng kanyang takot. Mayabang, mayaman at imoral ang Corinto, at dumating si Pablo \"na mahina, takot at nanginginig\" (1 Corinto 2:3). Tinatakot tayo ng mga lungsod, pero ang pangako ng Diyos ay hindi madali ang lungsod; ang pangako ay may mga tao Siya roon na, at kasama natin Siya (Gawa 18:10). Dahil dito, nanatili si Pablo nang isa't kalahating taon."
+      ),
+    ],
+    life: [
+      t(
+        "Imagine a young professional in Makati or Cebu who rents a small condo unit. She is not a pastor, but she opens her unit on Friday evenings for dinner and Bible reading with two coworkers, a neighbor and a delivery rider. She learns names, listens to stories and prays for each. Within a year, a small gathering of twelve meets there. No building, no sound system, just a table, the Word and open hearts.",
+        "Isipin ang isang batang propesyonal sa Makati o Cebu na umuupa ng maliit na unit sa condo. Hindi siya pastor, pero binubuksan niya ang unit tuwing Biyernes ng gabi para sa hapunan at pagbabasa ng Bibliya kasama ng dalawang katrabaho, isang kapitbahay at isang delivery rider. Natututo siya ng mga pangalan, nakikinig sa mga kuwento at ipinagdarasal ang bawat isa. Sa loob ng isang taon, may maliit na pagtitipon ng labindalawa roon. Walang gusali, walang sound system, kundi mesa, ang Salita at bukas na puso."
+      ),
+      t(
+        "City planting also means serving the poor: informal settlements, jeepney drivers, street vendors, call-center night-shifters and students living in dorms. Offer help with real needs, such as feeding programs, tutoring, counseling and job coaching, so the gospel is both heard and seen. A church that is loved by its barangay will be heard by it.",
+        "Ang pagtatatag sa lungsod ay nangangahulugan din ng paglilingkod sa mahihirap: mga informal settlement, drayber ng jeepney, tindero sa kalye, night-shift sa call center at estudyanteng nakatira sa dorm. Mag-alok ng tulong sa tunay na pangangailangan, tulad ng feeding program, tutoring, counseling at job coaching, upang ang ebanghelyo ay hindi lang marinig kundi makita rin. Ang iglesiang mahal ng kanyang barangay ay pakikinggan nito."
+      ),
+    ],
+    twist: t(
+      "We assume the city needs the church to rescue it. But God told the exiles that their own prosperity was tied to the city's: \"if it prospers, you too will prosper.\" The Kingdom twist is that when you bless your city, you are blessed. The church is not a lifeboat floating above a sinking city; it is yeast working inside the dough. A church that prays and serves for its city discovers that God has been at work there long before it arrived.",
+      "Inaakala nating kailangan tayo ng lungsod para iligtas ito. Pero sinabi ng Diyos sa mga bihag na ang kanilang pag-unlad ay nakakabit sa pag-unlad ng lungsod: \"kung uunlad ito, uunlad din kayo.\" Ang twist ng Kaharian ay kapag pinagpala mo ang iyong lungsod, napagpapala ka. Ang iglesia ay hindi bangkang sagip sa ibabaw ng lumulubog na lungsod; ito ay lebadura sa loob ng masa. Natutuklasan ng iglesiang nananalangin at naglilingkod para sa lungsod nito na gumagawa na ang Diyos doon bago pa man sila dumating."
+    ),
+    confirm: [
+      t("Matthew 13:33: the kingdom is like yeast that works through the whole batch of dough.", "Mateo 13:33: ang kaharian ay tulad ng lebadura na gumagana sa buong masa."),
+      t("Acts 17:16-34: Paul engages the intellectual city of Athens with respect and the gospel.", "Gawa 17:16-34: nakipag-usap si Pablo sa lungsod ng Atenas nang may paggalang at ebanghelyo."),
+      t("Luke 19:41: Jesus wept over Jerusalem.", "Lucas 19:41: umiyak si Hesus sa ibabaw ng Jerusalem."),
+      t("Proverbs 11:10-11: the city rejoices when the righteous prosper, and is blessed by the blessing of the upright.", "Kawikaan 11:10-11: nagagalak ang lungsod kapag umuunlad ang matuwid, at pinagpapala ng pagpapala ng mga matuwid."),
+    ],
+    heart: [
+      t(
+        "Let God change how you see the city. Instead of asking, \"How can I get out of here?\" ask, \"Who has God placed here for me to love?\" Exchange contempt, fear or fatigue for compassion, and let the crowded streets become your mission field and your prayer list.",
+        "Hayaang baguhin ng Diyos kung paano mo nakikita ang lungsod. Sa halip na itanong, \"Paano ako makakaalis dito?\" itanong, \"Sino ang inilagay ng Diyos dito para mahalin ko?\" Ipagpalit ang paghamak, takot o pagod sa habag, at hayaang ang masisikip na lansangan ay maging mission field at listahan ng panalangin mo."
+      ),
+      t(
+        "Stay and put down roots. Cities are full of people who come and go; stability is a gift. Be the neighbor who greets, the coworker who is reliable, the friend who remembers birthdays. The gospel travels along relationships built over years.",
+        "Manatili at mag-ugat. Puno ng mga taong dumarating at umaalis ang mga lungsod; regalo ang katatagan. Maging kapitbahay na bumabati, katrabahong maaasahan, kaibigang nakaaalala ng kaarawan. Ang ebanghelyo ay naglalakbay sa pamamagitan ng mga relasyong binuo sa loob ng maraming taon."
+      ),
+    ],
+    questions: [
+      t("Do I see my city as a threat or as people God loves?", "Nakikita ko ba ang lungsod ko bilang banta o bilang mga taong minamahal ng Diyos?"),
+      t("Which neighbors and coworkers could I welcome to a meal this month?", "Sinong mga kapitbahay at katrabaho ang maaari kong anyayahan sa isang kainan ngayong buwan?"),
+      t("What real needs in my city could our church help meet?", "Anong tunay na pangangailangan sa lungsod ko ang matutulungan ng aming iglesia?"),
+      t("Am I praying for the peace of my city as God commanded?", "Ipinapanalangin ko ba ang kapayapaan ng lungsod ko ayon sa utos ng Diyos?"),
+    ],
+    actions: [
+      t("Take a prayer walk through your neighborhood or workplace this week and ask God to show you who is open.", "Mag-prayer walk sa inyong kapitbahayan o pinagtatrabahuhan ngayong linggo at hilingin sa Diyos na ipakita kung sino ang bukas."),
+      t("Invite three people from different backgrounds to share a meal in your home or a nearby cafe.", "Mag-anyaya ng tatlong taong magkakaibang pinagmulan na makisalo sa inyong bahay o sa kalapit na cafe."),
+      t("Find one local need, such as tutoring or feeding, and ask a friend to serve it with you for three months.", "Humanap ng isang lokal na pangangailangan, tulad ng tutoring o feeding, at yayain ang isang kaibigan na paglingkuran ito kasama mo sa loob ng tatlong buwan."),
+    ],
+    prayer: t(
+      "Father, You love this city more than I do. Forgive me for the times I wanted to escape instead of serve. Open my eyes to the people You have here, and give me courage like Paul in Corinth. Help me seek the peace of this place, to pray for it and work for its good. Make my home a table of welcome and my life a witness. Gather Your people in this city for Your glory. In Jesus' name, Amen.",
+      "Ama, mas mahal Mo ang lungsod na ito kaysa sa akin. Patawarin Mo ako sa mga sandaling gusto kong tumakas sa halip na maglingkod. Buksan Mo ang aking mga mata sa mga taong inilagay Mo rito, at bigyan Mo ako ng tapang tulad ni Pablo sa Corinto. Tulungan Mo akong hanapin ang kapayapaan ng lugar na ito, ipanalangin ito at gumawa para sa kabutihan nito. Gawin Mong hapag ng pagtanggap ang aking tahanan at patotoo ang aking buhay. Tipunin Mo ang Iyong bayan sa lungsod na ito para sa Iyong kaluwalhatian. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "churches-among-ofws": {
+    revelation: t(
+      "Scattering is not God losing control of His people; it is God sowing His people like seed, and wherever a Filipino worker lands, a church can grow.",
+      "Ang pagkakalat ay hindi pagkawala ng kontrol ng Diyos sa Kanyang bayan; ito ay paghahasik ng Diyos sa Kanyang bayan na parang binhi, at saanman dumapo ang isang manggagawang Pilipino, maaaring tumubo ang iglesia."
+    ),
+    mainTruth: t(
+      "After Stephen's death, a great persecution scattered the believers, and \"those who had been scattered preached the word wherever they went\" (Acts 8:1-4). Some of them reached Antioch and spoke to Greeks as well; \"the Lord's hand was with them, and a great number of people believed and turned to the Lord\" (Acts 11:19-21). Peter addressed his letter to God's elect, \"strangers in the world, scattered\" across many provinces (1 Peter 1:1-2). The diaspora is not an accident to be endured but a mission field and a mission force.",
+      "Matapos mamatay si Esteban, ikinalat ng matinding pag-uusig ang mga mananampalataya, at \"ang mga nakakalat ay nangaral ng salita saanman sila magpunta\" (Gawa 8:1-4). Ang ilan sa kanila ay nakarating sa Antioquia at nagsalita rin sa mga Griego; \"ang kamay ng Panginoon ay sumasa kanila, at napakaraming sumampalataya at lumapit sa Panginoon\" (Gawa 11:19-21). Isinulat ni Pedro ang kanyang sulat sa mga hinirang ng Diyos, \"mga dayuhan sa mundo, nakakalat\" sa maraming lalawigan (1 Pedro 1:1-2). Ang diaspora ay hindi aksidenteng titiisin kundi mission field at puwersa ng misyon."
+    ),
+    insight: [
+      t(
+        "Many OFWs think of themselves as workers first, believers second, and missionaries never. But the believers in Acts 8 and 11 were ordinary people who simply could not stop talking about Jesus where they landed. The strategy of heaven often looks like a job contract: God places a nurse in a hospital, a seafarer on a ship, a domestic worker in a household, a technician in a camp. Each is a doorway no official missionary could enter.",
+        "Maraming OFW ang nag-iisip na manggagawa muna sila, mananampalataya pangalawa, at misyonero kailanman. Pero ang mga mananampalataya sa Gawa 8 at 11 ay mga karaniwang tao na hindi mapigilang magsalita tungkol kay Hesus saan man sila mapunta. Ang estratehiya ng langit ay madalas mukhang kontrata sa trabaho: inilalagay ng Diyos ang nars sa ospital, ang seaman sa barko, ang kasambahay sa sambahayan, ang technician sa kampo. Bawat isa ay pintuang hindi mapapasok ng opisyal na misyonero."
+      ),
+      t(
+        "Diaspora church life has its own challenges that stateside or hometown models often miss: limited free days, long shifts, contract endings that scatter a group overnight, loneliness and family separation, and legal limits on gatherings. A diaspora church must be portable, simple and relational: small groups, online connection, short discipleship steps, and leaders who can be replaced quickly because new ones are always being trained.",
+        "May sariling hamon ang buhay-iglesia sa diaspora na madalas hindi natutugunan ng modelo sa sariling bayan: kaunting araw ng pahinga, mahabang shift, pagtatapos ng kontrata na nagpapakalat sa grupo nang magdamag, kalungkutan at paghihiwalay sa pamilya, at limitasyon ng batas sa pagtitipon. Ang iglesia sa diaspora ay dapat madaling dalhin, simple at relasyonal: maliliit na grupo, koneksyon online, maiikling hakbang ng pagdidisipulo, at mga lider na madaling mapalitan dahil laging may bagong sinasanay."
+      ),
+    ],
+    life: [
+      t(
+        "Picture a Sunday in the Gulf. A dozen Filipino workers squeeze into a rented apartment after a six-day work week. They share rice, adobo and stories of home, then open the Bible. One brother is leaving next month; before he goes, the group commissions him and prays that he will start a Bible study in his hometown. A sister who arrived last week is already invited to lead worship. This is not a poor imitation of church; it is church as it was in the first century, in homes, among scattered people.",
+        "Isipin ang isang Linggo sa Gulf. Labindalawang manggagawang Pilipino ang nagsisiksikan sa inuupahang apartment matapos ang anim na araw na trabaho. Nagbabahagi sila ng kanin, adobo at kuwento ng bayan, saka binubuksan ang Bibliya. Aalis ang isang kapatid sa susunod na buwan; bago siya umalis, isinusugo siya ng grupo at ipinagdarasal na magsimula siya ng Bible study sa kanyang bayan. Ang kapatid na kararating lang noong nakaraang linggo ay inaanyayahan nang manguna sa pagsamba. Hindi ito mahinang kopya ng iglesia; ito ay iglesia tulad noong unang siglo, sa mga tahanan, sa gitna ng mga nakakalat na tao."
+      ),
+      t(
+        "Wisdom is needed in places where public evangelism is restricted. Obey the local laws, meet quietly and responsibly, show respect to employers and neighbors, and let your reliability and kindness be the first sermon. Pray for the nationals among whom you live; many have never met a joyful Christian. And prepare people for the day they come home, so that the faith grown abroad bears fruit in their own barangays and families.",
+        "Kailangan ang karunungan sa mga lugar na may limitasyon ang hayagang pangangaral. Sundin ang lokal na batas, magtipon nang tahimik at responsable, igalang ang mga amo at kapitbahay, at hayaang ang inyong pagiging maaasahan at kabaitan ang maging unang sermon. Ipanalangin ang mga katutubo sa lugar na tinitirhan ninyo; marami sa kanila ang hindi pa nakakakilala ng masayang Kristiyano. At ihanda ang mga tao para sa araw ng pag-uwi nila, upang ang pananampalatayang lumago sa abroad ay mamunga sa sarili nilang barangay at pamilya."
+      ),
+    ],
+    twist: t(
+      "We often pity the OFW as someone who sacrificed home to survive abroad. God sees someone sent. Joseph was sold into Egypt and later said, \"God sent me ahead of you to preserve for you a remnant\" (Genesis 45:7). Daniel was carried into Babylon and became a light to kings. What looks like exile from the human side may be a commission from the divine side. You are not only sending money home; you may be carrying the gospel to a country that has no church.",
+      "Madalas naaawa tayo sa OFW bilang taong nagsakripisyo ng tahanan para mabuhay sa abroad. Ang nakikita ng Diyos ay taong isinugo. Ipinagbili si Jose sa Ehipto at kalaunan ay nagsabi, \"Ipinadala ako ng Diyos na mauna sa inyo upang mapanatili ang isang nalalabi\" (Genesis 45:7). Dinala si Daniel sa Babilonia at naging ilaw sa mga hari. Ang mukhang pagkatapon sa paningin ng tao ay maaaring atas mula sa Diyos. Hindi ka lang nagpapadala ng pera pauwi; maaaring dala mo ang ebanghelyo sa bansang walang iglesia."
+    ),
+    confirm: [
+      t("Genesis 45:5-8: Joseph in Egypt, sent ahead by God to save many lives.", "Genesis 45:5-8: si Jose sa Ehipto, isinugo ng Diyos upang magligtas ng maraming buhay."),
+      t("Daniel 1-6: faithful exiles who served pagan kings and honored God.", "Daniel 1-6: mga tapat na bihag na naglingkod sa mga paganong hari at nagparangal sa Diyos."),
+      t("Acts 18:1-3: Aquila and Priscilla, tentmaking refugees, became partners in planting the church at Corinth.", "Gawa 18:1-3: sina Aquila at Priscila, mga gumagawa ng tolda at lumikas, ay naging katuwang sa pagtatatag ng iglesia sa Corinto."),
+      t("Jeremiah 29:7: seek the welfare of the place where you have been sent.", "Jeremias 29:7: hanapin ang kapakanan ng lugar na pinagdalhan sa inyo."),
+    ],
+    heart: [
+      t(
+        "Let the Spirit change your identity from \"worker abroad\" to \"sent one.\" Do not let loneliness drive you into compromise, and do not let busyness bury the call. Carry your faith openly in character first, and in words as God opens doors.",
+        "Hayaang baguhin ng Espiritu ang pagkakakilanlan mo mula sa \"manggagawa sa abroad\" tungo sa \"isinugo.\" Huwag hayaang itulak ka ng kalungkutan sa kompromiso, at huwag hayaang ilibing ng pagkaabala ang tawag. Dalhin ang pananampalataya mo nang hayag sa ugali muna, at sa salita habang binubuksan ng Diyos ang pinto."
+      ),
+      t(
+        "Take care of one another. Diaspora believers are family to each other when real family is far away. Welcome the new arrival, visit the sick, collect for the sister whose contract was cut. The unity of a scattered church is a powerful witness in a lonely place.",
+        "Mag-alaga sa isa't isa. Pamilya ng isa't isa ang mga mananampalataya sa diaspora kapag malayo ang tunay na pamilya. Salubungin ang bagong dating, dalawin ang maysakit, mag-ambag para sa kapatid na natapos ang kontrata. Ang pagkakaisa ng nakakalat na iglesia ay makapangyarihang patotoo sa isang malungkot na lugar."
+      ),
+    ],
+    questions: [
+      t("Do I see my workplace abroad as a job only, or as a mission field?", "Trabaho lang ba ang tingin ko sa pinagtatrabahuhan ko sa abroad, o mission field din?"),
+      t("Who in our group is lonely or in need that we have overlooked?", "Sino sa grupo namin ang nalulungkot o nangangailangan na hindi namin napansin?"),
+      t("How can we stay both bold and wise under local laws?", "Paano kami magiging matapang at marunong sa ilalim ng lokal na batas?"),
+      t("Who am I preparing to carry the faith home?", "Sino ang inihahanda ko para dalhin ang pananampalataya pauwi?"),
+    ],
+    actions: [
+      t("Pray by name this week for three coworkers or neighbors from other nations and look for one way to serve each.", "Ipanalangin sa pangalan ang tatlong katrabaho o kapitbahay mula sa ibang bansa ngayong linggo at humanap ng isang paraan para paglingkuran ang bawat isa."),
+      t("Start or join a small group that meets on your day off, with a simple plan of Word, prayer, meal and care.", "Magsimula o sumali sa maliit na grupong nagtitipon sa day-off ninyo, na may simpleng plano ng Salita, panalangin, pagkain at malasakit."),
+      t("Before your contract ends, write a plan with a leader for how your group will continue and how you will serve at home.", "Bago matapos ang kontrata, sumulat ng plano kasama ng isang lider kung paano magpapatuloy ang grupo ninyo at paano ka maglilingkod sa sariling bayan."),
+    ],
+    prayer: t(
+      "Lord, You scatter Your people like seed, and You never lose track of any of us. Help me to see my place of work as the place You sent me. Protect my heart in loneliness, and use my life to show Your love to people who have never heard Your name. Bind our little fellowships together, help us obey the laws of the land, and prepare us to carry Your gospel home. In Jesus' name, Amen.",
+      "Panginoon, ikinakalat Mo ang Iyong bayan na parang binhi, at hindi Mo kailanman nawawala sa paningin ang sinuman sa amin. Tulungan Mo akong makita ang aking pinagtatrabahuhan bilang lugar na isinugo Mo sa akin. Ingatan Mo ang puso ko sa kalungkutan, at gamitin Mo ang buhay ko upang ipakita ang Iyong pag-ibig sa mga taong hindi pa nakaririnig ng Iyong pangalan. Pagbuklurin Mo ang aming maliliit na fellowship, tulungan Mo kaming sumunod sa batas ng lupain, at ihanda Mo kaming dalhin pauwi ang Iyong ebanghelyo. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "the-planters-soul": {
+    revelation: t(
+      "The greatest threat to a church plant is not the city or the budget; it is a tired soul that tries to build for God without leaning on Him.",
+      "Ang pinakamalaking banta sa isang church plant ay hindi ang lungsod o ang budget; ito ay pagod na kaluluwa na nagtatayo para sa Diyos nang hindi sumasandal sa Kanya."
+    ),
+    mainTruth: t(
+      "\"Unless the Lord builds the house, the builders labor in vain... In vain you rise early and stay up late, toiling for food to eat, for he grants sleep to those he loves\" (Psalm 127:1-2). Paul describes ministry as treasure in jars of clay: \"We are hard pressed on every side, but not crushed; perplexed, but not in despair; ... struck down, but not destroyed\" (2 Corinthians 4:7-9). And he adds the promise: \"Let us not become weary in doing good, for at the proper time we will reap a harvest if we do not give up\" (Galatians 6:9). The planter's soul must be guarded because the planter is the primary instrument God uses.",
+      "\"Malibang ang Panginoon ang magtayo ng bahay, walang kabuluhan ang pagpapagal ng mga nagtatayo... Walang kabuluhan ang maagang pagbangon at huling pagtulog, pagpapagal para sa makakain, sapagkat nagbibigay Siya ng tulog sa mga minamahal Niya\" (Awit 127:1-2). Inilalarawan ni Pablo ang ministeryo bilang kayamanan sa mga sisidlang putik: \"Nagigipit kami sa bawat panig, pero hindi nadudurog; naguguluhan, pero hindi nawawalan ng pag-asa; ... nabubuwal, pero hindi nawawasak\" (2 Corinto 4:7-9). At idinagdag niya ang pangako: \"Huwag tayong mapagod sa paggawa ng mabuti, sapagkat sa takdang panahon ay aani tayo kung hindi tayo susuko\" (Galacia 6:9). Dapat ingatan ang kaluluwa ng nagtatatag dahil siya ang pangunahing kasangkapang ginagamit ng Diyos."
+    ),
+    insight: [
+      t(
+        "Notice that the verse says God gives sleep to those He loves. Planters often wear exhaustion like a badge: more meetings, more outreach, no day off. But Psalm 127 treats sleep as a statement of faith. When you rest, you are saying, \"The church is Yours, Lord, not mine.\" A planter who cannot rest is, without meaning to, saying that the work depends on him.",
+        "Pansinin na sinasabi ng talata na ang Diyos ay nagbibigay ng tulog sa mga minamahal Niya. Madalas isinusuot ng mga nagtatatag ang pagod na parang medalya: mas maraming pulong, mas maraming outreach, walang day-off. Pero itinuturing ng Awit 127 ang pagtulog bilang pahayag ng pananampalataya. Kapag nagpapahinga ka, sinasabi mong, \"Sa Iyo ang iglesia, Panginoon, hindi sa akin.\" Ang nagtatatag na hindi makapagpahinga ay, nang hindi sinasadya, nagsasabing nakasalalay sa kanya ang gawain."
+      ),
+      t(
+        "Notice also what Paul calls himself: a jar of clay. He did not hide his cracks; he said the weakness shows that \"this all-surpassing power is from God and not from us.\" Planting exposes every weakness: loneliness, financial pressure, slow growth, criticism, comparison with bigger ministries. These are not signs that you are failing; they are the place where God's power becomes visible. The danger is not weakness but hiding it.",
+        "Pansinin din kung ano ang itinawag ni Pablo sa sarili: sisidlang putik. Hindi niya itinago ang kanyang mga lamat; sinabi niyang ipinakikita ng kahinaan na \"ang kapangyarihang di-matutumbasan ay mula sa Diyos at hindi sa amin.\" Inilalantad ng pagtatatag ang bawat kahinaan: kalungkutan, presyon sa pera, mabagal na paglago, puna, paghahambing sa mas malalaking ministeryo. Hindi ito palatandaang bigo ka; ito ang lugar kung saan nakikita ang kapangyarihan ng Diyos. Ang panganib ay hindi ang kahinaan kundi ang pagtatago nito."
+      ),
+    ],
+    life: [
+      t(
+        "Think of a young planter in a provincial town. He works a part-time job, preaches on Sundays and counsels at night. After two years, only fifteen people attend. He sees photos of a large church in Manila on social media and begins to wonder if he has failed. His wife is worn out; his phone is full of unanswered messages. One night he stops, weeps and prays, \"Lord, this is Yours. I cannot carry it.\" The next week, he takes a day off for the first time in months, and God begins to restore his joy.",
+        "Isipin ang isang batang nagtatatag sa isang bayan sa probinsya. May part-time siyang trabaho, nangangaral tuwing Linggo at nagpapayo sa gabi. Pagkalipas ng dalawang taon, labinlimang tao lang ang dumadalo. Nakikita niya sa social media ang larawan ng malaking iglesia sa Maynila at nagsisimulang magtanong kung nabigo ba siya. Pagod na ang kanyang asawa; puno ang telepono niya ng mga mensaheng hindi pa nasasagot. Isang gabi, huminto siya, umiyak at nanalangin, \"Panginoon, Iyo ito. Hindi ko ito kayang pasanin.\" Sa sumunod na linggo, kumuha siya ng day-off sa unang pagkakataon sa loob ng ilang buwan, at nagsimulang ibalik ng Diyos ang kanyang kagalakan."
+      ),
+      t(
+        "Protect your soul with concrete habits: daily time with God that is not sermon preparation, one day of rest a week, a mentor or coach to whom you can be honest, two or three friends who care about you more than your ministry, and regular time with your family. These are not luxuries. They are the walls around the treasure.",
+        "Ingatan ang iyong kaluluwa sa pamamagitan ng konkretong gawi: araw-araw na oras sa Diyos na hindi paghahanda ng sermon, isang araw ng pahinga bawat linggo, mentor o coach na mapagbubuksan mo ng totoo, dalawa o tatlong kaibigang mas inaalala ka kaysa sa iyong ministeryo, at regular na oras kasama ang pamilya mo. Hindi ito luho. Ito ang mga pader sa palibot ng kayamanan."
+      ),
+    ],
+    twist: t(
+      "We believe that more work equals more fruit. The Kingdom says that fruit comes from abiding, not from striving: \"Apart from me you can do nothing\" (John 15:5). The planter who stops to rest, pray and be refreshed may accomplish more in the long run than the one who burns out in three years. God is not looking for people who will break themselves for Him; He is looking for people who will remain with Him.",
+      "Naniniwala tayong mas maraming gawa ay mas maraming bunga. Sinasabi ng Kaharian na ang bunga ay galing sa pananatili, hindi sa pagpupursige: \"Kung hiwalay kayo sa Akin, wala kayong magagawa\" (Juan 15:5). Ang nagtatatag na humihinto upang magpahinga, manalangin at mapanariwa ay maaaring makagawa ng higit sa pangmatagalan kaysa sa nasusunog sa loob ng tatlong taon. Hindi naghahanap ang Diyos ng mga taong wawasakin ang sarili para sa Kanya; naghahanap Siya ng mga taong mananatili sa Kanya."
+    ),
+    confirm: [
+      t("1 Kings 19:1-8: Elijah, exhausted and afraid, is given sleep and food before any new assignment.", "1 Hari 19:1-8: si Elias, pagod at takot, ay binigyan ng tulog at pagkain bago ng anumang bagong atas."),
+      t("Mark 6:31: Jesus said, \"Come with me by yourselves to a quiet place and get some rest.\"", "Marcos 6:31: sinabi ni Hesus, \"Halikayo, tayo lang, sa isang tahimik na lugar at magpahinga.\""),
+      t("Exodus 18:17-23: Jethro tells Moses that doing it all alone will wear him out.", "Exodo 18:17-23: sinabi ni Jetro kay Moises na mauubos siya kung mag-isa niyang gagawin ang lahat."),
+      t("Isaiah 40:30-31: those who wait on the Lord renew their strength.", "Isaias 40:30-31: ang mga umaasa sa Panginoon ay magpapanibago ng lakas."),
+    ],
+    heart: [
+      t(
+        "Release the need to prove yourself. Ask God to separate your worth from your numbers. You are loved as a son or daughter before you are useful as a planter, and the Father who gave you the work also holds the outcome.",
+        "Bitawan ang pangangailangang patunayan ang sarili. Hilingin sa Diyos na ihiwalay ang halaga mo sa bilang ng mga dumadalo. Mahal ka bilang anak bago ka maging kapaki-pakinabang na nagtatatag, at ang Amang nagbigay ng gawain ay Siya ring may hawak ng kalalabasan."
+      ),
+      t(
+        "Be honest about your weakness. Tell a trusted friend when you are discouraged, and let someone pray for you. Do not wait for a collapse to ask for help. Humility is not weakness in a planter; it is the doorway of God's strength.",
+        "Maging tapat sa iyong kahinaan. Sabihin sa mapagkakatiwalaang kaibigan kapag nanghihina ang loob mo, at hayaang ipanalangin ka ng iba. Huwag hintaying bumagsak bago humingi ng tulong. Ang kababaang-loob ay hindi kahinaan sa nagtatatag; ito ang pintuan ng lakas ng Diyos."
+      ),
+    ],
+    questions: [
+      t("Do I rest as an act of faith, or do I work as though everything depends on me?", "Nagpapahinga ba ako bilang gawa ng pananampalataya, o nagtatrabaho na parang nakasalalay sa akin ang lahat?"),
+      t("Who knows my real struggles and prays for me?", "Sino ang nakaaalam ng tunay kong pinagdaraanan at nananalangin para sa akin?"),
+      t("Am I comparing my ministry to others and losing joy?", "Inihahambing ko ba ang ministeryo ko sa iba at nawawalan ng kagalakan?"),
+      t("What habit is draining my soul that I need to change?", "Anong gawi ang umuubos sa kaluluwa ko na kailangan kong baguhin?"),
+    ],
+    actions: [
+      t("Take a full day of rest this week with no sermon preparation, messages or planning, and thank God for it.", "Magpahinga ng buong araw ngayong linggo na walang paghahanda ng sermon, mensahe o pagpaplano, at magpasalamat sa Diyos."),
+      t("Ask one mature leader to be your coach and set a monthly time to meet.", "Hilingin sa isang may-gulang na lider na maging coach mo at magtakda ng buwanang oras ng pagkikita."),
+      t("Write a list of five ways God has been faithful in your planting so far, and read it aloud when you are discouraged.", "Sumulat ng listahan ng limang paraan ng katapatan ng Diyos sa iyong pagtatatag hanggang ngayon, at basahin ito nang malakas kapag nanghihina ang loob mo."),
+    ],
+    prayer: t(
+      "Lord, unless You build the house, I labor in vain. Forgive me for carrying what only You can carry. I am a jar of clay, cracked and tired, yet You have placed Your treasure in me. Teach me to rest, to abide in You, and to ask for help when I need it. Guard my marriage, my family and my joy. Help me not grow weary in doing good, trusting that in due season I will reap. In Jesus' name, Amen.",
+      "Panginoon, malibang Ikaw ang magtayo ng bahay, walang kabuluhan ang aking pagpapagal. Patawarin Mo ako sa pagpasan ng bagay na Ikaw lang ang makapagpapasan. Ako ay sisidlang putik, lamat at pagod, pero inilagay Mo sa akin ang Iyong kayamanan. Turuan Mo akong magpahinga, manatili sa Iyo, at humingi ng tulong kapag kailangan ko. Ingatan Mo ang aking pag-aasawa, pamilya at kagalakan. Tulungan Mo akong huwag mapagod sa paggawa ng mabuti, nagtitiwalang sa takdang panahon ay aani ako. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "mother-and-daughter-churches": {
+    revelation: t(
+      "No church is an island; God designed His churches to be family, giving to one another and growing together.",
+      "Walang iglesiang nag-iisa; dinisenyo ng Diyos ang Kanyang mga iglesia bilang pamilya, nagbibigayan at sabay na lumalago."
+    ),
+    mainTruth: t(
+      "When the news reached the church in Jerusalem that Greeks in Antioch were believing, they sent Barnabas, who \"saw what the grace of God had done and was glad, and he encouraged them all\" (Acts 11:22-23). Barnabas then went to Tarsus to find Saul and brought him to teach for a whole year (Acts 11:25-26). Later, when a dispute arose about Gentile believers, Antioch sent delegates to Jerusalem, and the letter that came back \"brought joy\" and \"encouraged the believers\" (Acts 15:30-35). The mother church gave leaders and care; the daughter church gave joy and later gave help back.",
+      "Nang makarating sa iglesia sa Jerusalem ang balitang naniniwala ang mga Griego sa Antioquia, isinugo nila si Bernabe, na \"nakita ang ginawa ng biyaya ng Diyos at nagalak, at pinalakas ang loob ng lahat\" (Gawa 11:22-23). Pumunta si Bernabe sa Tarso upang hanapin si Saulo at dinala siya upang magturo sa loob ng isang buong taon (Gawa 11:25-26). Kalaunan, nang magkaroon ng alitan tungkol sa mga Hentil na mananampalataya, nagpadala ang Antioquia ng mga kinatawan sa Jerusalem, at ang sulat na bumalik ay \"nagdala ng kagalakan\" at \"nagpalakas ng loob ng mga mananampalataya\" (Gawa 15:30-35). Nagbigay ng mga lider at pag-aalaga ang inang iglesia; nagbigay ng kagalakan at kalaunan ng tulong pabalik ang anak na iglesia."
+    ),
+    insight: [
+      t(
+        "Notice how Jerusalem responded. The Jerusalem church could have been suspicious of a strange new movement of Greeks, and some surely were. Instead they sent a generous encourager, not a controller. Barnabas did not take over; he rejoiced, he strengthened, and then he went to bring someone better suited to teach. A healthy mother church knows how to bless something it did not design and does not own.",
+        "Pansinin kung paano tumugon ang Jerusalem. Maaaring naghinala ang iglesia sa Jerusalem sa kakaibang kilusan ng mga Griego, at tiyak na may ilan ngang naghinala. Sa halip, nagpadala sila ng mapagbigay na tagapagpalakas ng loob, hindi tagakontrol. Hindi inagaw ni Bernabe ang pamumuno; nagalak siya, nagpalakas, at pagkatapos ay humanap ng mas angkop na magtuturo. Alam ng malusog na inang iglesia kung paano magpala ng bagay na hindi nila dinisenyo at hindi nila pag-aari."
+      ),
+      t(
+        "Notice too the direction of the blessing. Mother churches often assume the flow is one way: they give, the daughter receives. But Antioch soon sent famine relief to Judea (Acts 11:29-30), and later sent Paul and Barnabas to the world. The best relationships are mutual: older churches give experience and stability; younger churches give fresh zeal, new ideas and sometimes more sacrificial faith. Pride in either direction poisons the relationship.",
+        "Pansinin din ang direksyon ng pagpapala. Madalas inaakala ng mga inang iglesia na isang direksyon lang ang daloy: sila ang nagbibigay, ang anak ang tumatanggap. Ngunit hindi nagtagal ay nagpadala ang Antioquia ng tulong sa taggutom sa Judea (Gawa 11:29-30), at kalaunan ay isinugo sina Pablo at Bernabe sa mundo. Ang pinakamagandang ugnayan ay magkabilaan: nagbibigay ang mas matatandang iglesia ng karanasan at katatagan; nagbibigay ang mas batang iglesia ng bagong sigla, bagong ideya at minsan ay mas sakripisyong pananampalataya. Nilalason ng yabang sa alinmang panig ang ugnayan."
+      ),
+    ],
+    life: [
+      t(
+        "Imagine a church of two hundred in Davao that helped plant a small congregation in a nearby town. In the first year, they sent a trained leader to preach twice a month, helped buy plastic chairs and a sound system, and prayed for the group every Sunday. As the daughter church grew, the mother church stepped back: no more weekly visits, no telling them how to spend their offerings, just a yearly gathering and an open door for advice. Five years later, the daughter church sent a young couple to a mountain barangay, and the mother church wept with joy.",
+        "Isipin ang iglesiang may dalawang daang miyembro sa Davao na tumulong magtatag ng maliit na kongregasyon sa kalapit na bayan. Sa unang taon, nagsugo sila ng sinanay na lider para mangaral dalawang beses sa isang buwan, tumulong bumili ng plastic na upuan at sound system, at ipinagdasal ang grupo tuwing Linggo. Habang lumalago ang anak na iglesia, umatras ang inang iglesia: wala nang lingguhang pagdalaw, hindi na sinasabi kung paano gagastusin ang handog nila, taunang pagtitipon na lang at bukas na pinto para sa payo. Pagkalipas ng limang taon, nagsugo ang anak na iglesia ng batang mag-asawa sa barangay sa bundok, at umiyak sa tuwa ang inang iglesia."
+      ),
+      t(
+        "The opposite story is also common: a mother church that never lets go, demanding reports and control, treating the new church as a branch office; or a daughter church that grows proud and cuts off all ties and wisdom. Neither is the way of Antioch and Jerusalem. The goal is a relationship like a healthy family, where the child grows up, leaves home, and still comes back for Sunday lunch.",
+        "Karaniwan din ang kabaligtarang kuwento: inang iglesia na hindi bumibitaw, humihingi ng ulat at kontrol, itinuturing ang bagong iglesia na parang sangay na opisina; o anak na iglesia na yumabang at pinutol ang lahat ng ugnayan at karunungan. Hindi iyan ang daan ng Antioquia at Jerusalem. Ang layunin ay ugnayang tulad ng malusog na pamilya, kung saan lumalaki ang anak, umaalis ng bahay, at bumabalik pa rin para sa tanghalian tuwing Linggo."
+      ),
+    ],
+    twist: t(
+      "We think a mother church's success is measured by the strength of what it keeps. The Kingdom measures it by the strength of what it gives birth to. A mother's joy is not in having children who never leave but in children who stand, grow and bless others. The apostle John wrote, \"I have no greater joy than to hear that my children are walking in the truth\" (3 John 4). The mother church that celebrates a daughter's independence is nearer to God's heart than the one that holds on.",
+      "Inaakala nating ang tagumpay ng inang iglesia ay sinusukat sa lakas ng pinanatili nito. Sinusukat ito ng Kaharian sa lakas ng ipinanganak nito. Ang kagalakan ng ina ay wala sa pagkakaroon ng mga anak na hindi aalis kundi sa mga anak na tumatayo, lumalago at nagpapala sa iba. Isinulat ni Juan, \"Wala akong mas dakilang kagalakan kaysa marinig na lumalakad sa katotohanan ang aking mga anak\" (3 Juan 4). Mas malapit sa puso ng Diyos ang inang iglesia na nagdiriwang sa kalayaan ng anak kaysa sa kumakapit."
+    ),
+    confirm: [
+      t("Acts 11:29-30: the disciples at Antioch sent relief to the brothers in Judea.", "Gawa 11:29-30: nagpadala ng tulong ang mga alagad sa Antioquia sa mga kapatid sa Judea."),
+      t("Romans 15:26-27: the churches of Macedonia and Achaia shared their material blessings with Jerusalem.", "Roma 15:26-27: ibinahagi ng mga iglesia ng Macedonia at Acaya ang kanilang materyal na pagpapala sa Jerusalem."),
+      t("3 John 4: no greater joy than hearing that my children walk in the truth.", "3 Juan 4: walang mas dakilang kagalakan kaysa marinig na lumalakad sa katotohanan ang aking mga anak."),
+      t("1 Corinthians 3:6-7: one plants, another waters, but God gives the growth.", "1 Corinto 3:6-7: may nagtatanim, may nagdidilig, pero ang Diyos ang nagpapalago."),
+    ],
+    heart: [
+      t(
+        "If you are part of a mother church, examine your motives: are you blessing or controlling? Ask God for the heart of Barnabas, one who rejoices at grace he did not start. If you are part of a daughter church, honor those who gave you life, receive their counsel with humility, and say thank you often.",
+        "Kung bahagi ka ng inang iglesia, suriin ang motibo mo: nagpapala ka ba o kumokontrol? Hilingin sa Diyos ang puso ni Bernabe, na nagagalak sa biyayang hindi niya sinimulan. Kung bahagi ka ng anak na iglesia, igalang ang mga nagbigay sa iyo ng buhay, tanggapin ang payo nila nang may kababaang-loob, at madalas magpasalamat."
+      ),
+      t(
+        "Choose partnership over pride. Pray for other churches in your town by name, celebrate their victories as your own, and be the first to call when they face trouble. The body of Christ is wider than your congregation.",
+        "Piliin ang pakikipagtulungan kaysa yabang. Ipanalangin ang ibang iglesia sa inyong bayan sa pangalan, ipagdiwang ang tagumpay nila na parang sa inyo, at maging unang tumawag kapag may problema sila. Mas malawak ang katawan ni Cristo kaysa sa inyong kongregasyon."
+      ),
+    ],
+    questions: [
+      t("Am I blessing the churches around me or competing with them?", "Pinagpapala ko ba ang mga iglesia sa paligid ko o nakikipagkumpitensya sa kanila?"),
+      t("What would a healthy mother church give to a new church in my area?", "Ano ang ibibigay ng malusog na inang iglesia sa bagong iglesia sa lugar namin?"),
+      t("If I lead a daughter church, who am I honoring and learning from?", "Kung pinamumunuan ko ang anak na iglesia, sino ang pinaparangalan at pinag-aaralan ko?"),
+      t("Where am I tempted to control instead of release?", "Saan ako natutuksong kumontrol sa halip na magpalaya?"),
+    ],
+    actions: [
+      t("Call or message a pastor of a nearby church this week and ask how you can pray for them.", "Tawagan o i-message ang pastor ng kalapit na iglesia ngayong linggo at itanong kung paano mo sila maipapanalangin."),
+      t("Write down what a mother church should give, and what a daughter church should give back, and discuss it with your leaders.", "Isulat kung ano ang dapat ibigay ng inang iglesia, at kung ano ang dapat ibalik ng anak na iglesia, at pag-usapan ito kasama ng inyong mga lider."),
+      t("Plan one joint activity, such as a prayer night, training or outreach, with another church this quarter.", "Magplano ng isang magkasanib na gawain, tulad ng prayer night, pagsasanay o outreach, kasama ng ibang iglesia ngayong quarter."),
+    ],
+    prayer: t(
+      "Father, You set Your people in families, and You never meant any church to stand alone. Give me the heart of Barnabas, glad at what You are doing in others, quick to encourage and slow to control. Teach older churches to give with open hands, and younger churches to receive with thankful hearts. Make us partners in the gospel, sharing leaders, prayer and resources, until Your Name is known in every town. In Jesus' name, Amen.",
+      "Ama, inilagay Mo ang Iyong bayan sa mga pamilya, at hindi Mo nilayong tumayo nang mag-isa ang anumang iglesia. Ibigay Mo sa akin ang puso ni Bernabe, masaya sa ginagawa Mo sa iba, mabilis magpalakas ng loob at mabagal kumontrol. Turuan Mo ang mga matatandang iglesia na magbigay nang bukas ang kamay, at ang mga batang iglesia na tumanggap nang may pusong nagpapasalamat. Gawin Mo kaming katuwang sa ebanghelyo, nagbabahagi ng mga lider, panalangin at yaman, hanggang makilala ang Iyong Pangalan sa bawat bayan. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "letting-the-church-stand": {
+    revelation: t(
+      "The mark of a faithful planter is not how long the church needs him, but how well it stands when he is gone.",
+      "Ang tanda ng tapat na nagtatatag ay hindi kung gaano katagal siyang kailangan ng iglesia, kundi kung gaano ito katatag kapag wala na siya."
+    ),
+    mainTruth: t(
+      "Paul's farewell to the Ephesian elders is one of the most moving scenes in Acts: \"Keep watch over yourselves and all the flock... Now I commit you to God and to the word of his grace, which can build you up and give you an inheritance\" (Acts 20:28-32). He did not say, \"I will always be here.\" He handed the church to God and His word. To Timothy he gave the pattern of multiplication: \"The things you have heard me say... entrust to reliable people who will also be qualified to teach others\" (2 Timothy 2:2). The planter's goal is a church that can stand, lead and reproduce without him.",
+      "Ang pamamaalam ni Pablo sa mga matanda sa Efeso ay isa sa pinakakaantig-antig na tagpo sa Gawa: \"Bantayan ninyo ang inyong sarili at ang buong kawan... Ngayon ay ipinagkakatiwala ko kayo sa Diyos at sa salita ng Kanyang biyaya, na makapagpapatibay sa inyo at magbibigay ng mana\" (Gawa 20:28-32). Hindi niya sinabing, \"Lagi akong nandito.\" Ipinagkatiwala niya ang iglesia sa Diyos at sa Kanyang salita. Kay Timoteo, ibinigay niya ang padron ng pagpaparami: \"Ang mga narinig mo mula sa akin... ipagkatiwala mo sa mga taong mapagkakatiwalaan na makapagtuturo rin sa iba\" (2 Timoteo 2:2). Ang layunin ng nagtatatag ay iglesiang makatatayo, makapamumuno at makapagpaparami nang wala siya."
+    ),
+    insight: [
+      t(
+        "Many founders quietly want to be needed. Being the person everyone calls, the one who makes every decision and the voice at every meeting feels like success. But it is often a hidden pride, and it keeps the church fragile. If the church collapses when you leave, you did not build a church; you built a dependency. Paul's trust in God's word and Spirit is the antidote: the same Holy Spirit who made them overseers (Acts 20:28) will keep leading them.",
+        "Maraming nagtatag ang tahimik na gustong kailanganin. Ang pagiging taong tinatawagan ng lahat, gumagawa ng bawat desisyon at tinig sa bawat pulong ay parang tagumpay. Pero madalas itong nakatagong yabang, at pinananatili nitong marupok ang iglesia. Kung bumagsak ang iglesia kapag umalis ka, hindi ka nagtayo ng iglesia; nagtayo ka ng dependency. Ang pagtitiwala ni Pablo sa salita at Espiritu ng Diyos ang panlaban: ang parehong Espiritu Santo na ginawa silang mga tagapangasiwa (Gawa 20:28) ang magpapatuloy sa pamumuno sa kanila."
+      ),
+      t(
+        "Notice that Paul spent three years with the Ephesians, \"warning each of you night and day with tears\" (Acts 20:31). His letting go was not abandonment. It followed years of teaching, modeling and loving. Releasing a church is a process: first you lead, then you lead with them, then they lead with you beside them, and finally they lead while you cheer and coach from a distance. Each step must be intentional.",
+        "Pansinin na gumugol si Pablo ng tatlong taon sa mga taga-Efeso, \"nagbababala sa bawat isa sa inyo gabi't araw nang may luha\" (Gawa 20:31). Ang pagbitaw niya ay hindi pag-abandona. Sumunod ito sa mga taon ng pagtuturo, pagiging halimbawa at pagmamahal. Ang pagpapalaya sa iglesia ay proseso: una ay ikaw ang namumuno, pagkatapos ay kasama mo sila, pagkatapos ay sila ang namumuno habang nasa tabi mo, at sa wakas ay sila na ang namumuno habang ikaw ay nagpapalakas ng loob at nagko-coach mula sa malayo. Dapat sinadya ang bawat hakbang."
+      ),
+    ],
+    life: [
+      t(
+        "Think of a founding pastor in a provincial town who sensed, after eight years, that God was calling him to a new field. He began two years earlier: sharing the pulpit with two local leaders, letting them lead the finances with a team, giving them the hard conversations, and standing in the back while they led the service. On his last Sunday, the church prayed over him and over the new pastor, and the congregation was neither shocked nor shaken. A year later the church was still growing, and he was planting again.",
+        "Isipin ang nagtatag na pastor sa isang bayan sa probinsya na naramdaman, matapos ang walong taon, na tinatawag siya ng Diyos sa bagong larangan. Nagsimula siya dalawang taon bago ang paglisan: ibinahagi ang pulpito sa dalawang lokal na lider, hinayaan silang pamahalaan ang pananalapi kasama ng pangkat, ibinigay sa kanila ang mahihirap na usapan, at tumayo sa likod habang sila ang nanguna sa serbisyo. Sa huling Linggo niya, ipinagdasal ng iglesia siya at ang bagong pastor, at hindi nabigla o nayanig ang kongregasyon. Pagkalipas ng isang taon, patuloy pa ring lumalago ang iglesia, at nagtatatag na naman siya ng bago."
+      ),
+      t(
+        "For OFW groups, letting go is a daily reality because members rotate in and out. The wise leader of a diaspora fellowship always has an apprentice, writes down simple routines, shares passwords and responsibilities, and trains people from the first month. Then, when the leader's contract ends, the fellowship keeps meeting, praying and growing without a gap.",
+        "Para sa mga grupo ng OFW, ang pagbitaw ay pang-araw-araw na katotohanan dahil paiba-iba ang mga miyembro. Ang marunong na lider ng fellowship sa diaspora ay laging may katuwang na sinasanay, nagsusulat ng simpleng gawain, nagbabahagi ng password at responsibilidad, at nagsasanay ng mga tao mula sa unang buwan. Kaya kapag natapos ang kontrata ng lider, magpapatuloy ang fellowship sa pagtitipon, pananalangin at paglago nang walang puwang."
+      ),
+    ],
+    twist: t(
+      "We think leaving shows we failed to finish the job. The Kingdom says that Jesus Himself said, \"It is for your good that I am going away\" (John 16:7). He left so that the Spirit could come and the church could grow into maturity and mission. If the Lord of the church did not stay to control it, no planter should. When you step back, space opens for the Spirit and for others to rise, and the church discovers that Christ was its foundation all along.",
+      "Akala natin ang pag-alis ay patunay na hindi natin natapos ang gawain. Sinabi mismo ni Hesus, \"Para sa ikabubuti ninyo ang Aking pag-alis\" (Juan 16:7). Umalis Siya upang dumating ang Espiritu at lumago ang iglesia tungo sa pagkamaygulang at misyon. Kung ang Panginoon ng iglesia ay hindi nanatili upang kontrolin ito, hindi rin dapat ang sinumang nagtatatag. Kapag umatras ka, nagkakaroon ng espasyo para sa Espiritu at para umangat ang iba, at natutuklasan ng iglesia na si Kristo ang pundasyon nito mula pa noon."
+    ),
+    confirm: [
+      t("John 16:7: Jesus says it is better for the disciples that He goes, so the Spirit can come.", "Juan 16:7: sinabi ni Hesus na mas mabuti para sa mga alagad na umalis Siya, upang dumating ang Espiritu."),
+      t("Titus 1:5: Paul left Titus in Crete to appoint elders in every town.", "Tito 1:5: iniwan ni Pablo si Tito sa Creta upang magtalaga ng mga matanda sa bawat bayan."),
+      t("Philippians 1:6: He who began a good work in you will carry it on to completion.", "Filipos 1:6: ang nagsimula ng mabuting gawain sa inyo ay ito rin ang magtatapos."),
+      t("Numbers 27:15-23: Moses asks God for a shepherd for the people, and hands his authority to Joshua.", "Bilang 27:15-23: humiling si Moises sa Diyos ng pastol para sa bayan, at ipinasa kay Josue ang kanyang awtoridad."),
+    ],
+    heart: [
+      t(
+        "Search for the quiet desire to be needed. Confess it, and ask God to replace it with joy in seeing others lead. Be glad when people do things differently from you, as long as they stay faithful to Christ and His word.",
+        "Siyasatin ang tahimik na pagnanais na kailanganin. Ipagtapat ito, at hilingin sa Diyos na palitan ito ng kagalakan sa pagkakita sa iba na namumuno. Maging masaya kapag iba ang paraan ng gawa ng mga tao sa paraan mo, basta tapat sila kay Cristo at sa Kanyang salita."
+      ),
+      t(
+        "Trust the Holy Spirit with what you cannot control. Let go in stages, bless people as they step up, and keep praying. Your last act as a planter may be the best sermon: to hand over the work with open hands and a thankful heart.",
+        "Ipagkatiwala sa Espiritu Santo ang hindi mo makontrol. Bumitaw nang paunti-unti, pagpalain ang mga tao habang umaangat sila, at magpatuloy sa pananalangin. Ang huling gawa mo bilang nagtatatag ay maaaring pinakamagandang sermon: ipasa ang gawain nang bukas ang kamay at may pusong nagpapasalamat."
+      ),
+    ],
+    questions: [
+      t("Would the church I serve stand if I were gone for six months?", "Makatatayo ba ang iglesiang pinaglilingkuran ko kung mawawala ako nang anim na buwan?"),
+      t("Which responsibilities have I held too long that someone else could carry?", "Anong mga responsibilidad ang matagal ko nang hawak na kaya nang dalhin ng iba?"),
+      t("Am I secretly afraid that I will no longer matter if others lead?", "Natatakot ba akong lihim na hindi na ako mahalaga kapag iba na ang namumuno?"),
+      t("What stage of release is my church in right now?", "Anong yugto ng pagpapalaya ang kinaroroonan ng iglesia ko ngayon?"),
+    ],
+    actions: [
+      t("List every task you do and choose three to hand over to someone this month, with training and support.", "Ilista ang bawat gawain mo at pumili ng tatlong ipapasa sa iba ngayong buwan, kasama ang pagsasanay at suporta."),
+      t("Ask a local leader to preach or lead a gathering, and give gentle, encouraging feedback afterward.", "Hilingin sa isang lokal na lider na mangaral o manguna sa pagtitipon, at magbigay ng mahinahon at nakapagpapalakas na puna pagkatapos."),
+      t("Write a simple release plan with dates: shared, supported, released, and share it with your leaders.", "Sumulat ng simpleng plano ng pagpapalaya na may petsa: pinagsasaluhan, sinusuportahan, pinalalaya, at ibahagi ito sa inyong mga lider."),
+    ],
+    prayer: t(
+      "Lord Jesus, You are the Chief Shepherd, and this church is Yours, not mine. Free me from the need to be needed. Teach me to train, to trust and to release, as Paul did with the Ephesians. Raise up leaders who love You more than they love me. Keep this church faithful to Your word and filled with Your Spirit, long after I am gone. Let my last act be a joyful handing over. In Your name, Amen.",
+      "Panginoong Hesus, Ikaw ang Punong Pastol, at Iyo ang iglesia na ito, hindi akin. Palayain Mo ako sa pangangailangang kailanganin. Turuan Mo akong magsanay, magtiwala at magpalaya, tulad ni Pablo sa mga taga-Efeso. Ibangon Mo ang mga lider na mas mahal Ka kaysa sa akin. Panatilihin Mong tapat sa Iyong salita at puspos ng Iyong Espiritu ang iglesia na ito, kahit matagal na akong wala. Gawin Mong masayang pagpapasa ang huli kong gawa. Sa Iyong pangalan, Amen."
+    ),
+  },
 };

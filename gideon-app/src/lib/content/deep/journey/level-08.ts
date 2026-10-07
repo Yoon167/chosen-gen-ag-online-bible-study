@@ -587,4 +587,654 @@ export const DEEP: DeepSet = {
       "Diyos ni Abraham, pinagpala Mo kami upang pagpalain ang lahat ng angkan sa lupa. Patawarin Mo ako sa pagsasarili ng Iyong pagpapala at sa pagmamaliit sa mga taong iniibig Mo. Gawin Mo akong daluyan, hindi lalagyan. Nawa'y makilala sa lupa ang Iyong daan at ang Iyong pagliligtas sa lahat ng bansa. Purihin Ka nawa ng mga bayan, O Diyos, purihin Ka nawa ng lahat ng bayan. Palakihin Mo ang aking puso hanggang tumibok ito kasabay ng sa Iyo. Gawin Mo akong ilaw sa mga bansa. Sa pangalan ni Hesus, Amen."
     ),
   },
+  "a-pastors-prayer-life": {
+    revelation: t(
+      "The ministry that lasts is born in the secret place; prayer is not preparation for the work, it is the work.",
+      "Ang ministeryong tumatagal ay isinilang sa lihim na lugar; ang panalangin ay hindi paghahanda para sa gawain, ito mismo ang gawain."
+    ),
+    mainTruth: t(
+      "When the early church was growing and the apostles were overwhelmed with practical needs, they made a decision: \"We will give our attention to prayer and the ministry of the word\" (Acts 6:4). Jesus told Peter, \"Simon, Simon, Satan has asked to sift all of you as wheat. But I have prayed for you, Simon, that your faith may not fail\" (Luke 22:31-32). And Paul's prayers for others were rich and specific: \"We have not stopped praying for you... asking God to fill you with the knowledge of his will\" (Colossians 1:9-12). A minister who leads people to God must first live with God.",
+      "Nang lumalago ang unang iglesia at nalulunod ang mga apostol sa praktikal na pangangailangan, nagpasya sila: \"Ilalaan namin ang aming sarili sa panalangin at sa ministeryo ng salita\" (Gawa 6:4). Sinabi ni Hesus kay Pedro, \"Simon, Simon, hiniling ni Satanas na salain kayong lahat na parang trigo. Ngunit ipinanalangin kita, Simon, na huwag mabigo ang iyong pananampalataya\" (Lucas 22:31-32). At ang mga panalangin ni Pablo para sa iba ay mayaman at tiyak: \"Hindi kami tumigil sa pananalangin para sa inyo... na hilingin sa Diyos na punuin kayo ng kaalaman ng Kanyang kalooban\" (Colosas 1:9-12). Ang ministrong umaakay ng mga tao sa Diyos ay dapat muna mamuhay kasama ang Diyos."
+    ),
+    insight: [
+      t(
+        "The most dangerous thing for a busy minister is not opposition; it is activity without intimacy. We can preach, counsel, organize and serve, and slowly become empty inside. The apostles saw this danger and protected prayer by giving away tasks. Notice they did not pray as a break from the ministry; they treated prayer and the Word as the ministry's engine. Any ministry that outruns its prayer life is borrowing against a fuel tank that will run dry.",
+        "Ang pinakamapanganib para sa abalang ministro ay hindi pagsalungat; ito ay aktibidad na walang pagiging malapit sa Diyos. Maaari tayong mangaral, magpayo, mag-organisa at maglingkod, at dahan-dahang maubusan ng laman sa loob. Nakita ng mga apostol ang panganib na ito at pinrotektahan ang panalangin sa pamamagitan ng pagpapasa ng mga gawain. Pansinin na hindi sila nanalangin bilang pahinga mula sa ministeryo; itinuring nilang makina ng ministeryo ang panalangin at ang Salita. Ang anumang ministeryong nauuna sa buhay-panalangin nito ay umuutang sa tangkeng mauubusan din ng gasolina."
+      ),
+      t(
+        "Notice also that Jesus prayed for Peter before the trial came. Real intercession is not only reacting to crisis; it is standing guard over people before they fall. And the greatest example is that Jesus Himself, the Son of God, rose early and went to lonely places to pray (Mark 1:35). If He needed it, we need it more.",
+        "Pansinin din na ipinanalangin ni Hesus si Pedro bago dumating ang pagsubok. Ang tunay na pamamagitan ay hindi lang reaksyon sa krisis; ito ay pagbabantay sa mga tao bago pa sila mabuwal. At ang pinakadakilang halimbawa ay si Hesus mismo, ang Anak ng Diyos, na bumangon nang maaga at pumunta sa liblib na lugar para manalangin (Marcos 1:35). Kung kailangan Niya ito, mas kailangan natin."
+      ),
+    ],
+    life: [
+      t(
+        "Pastor Ben pastors a small OFW church in Riyadh and works a full-time job as a technician. His schedule is crazy, yet every morning at 5 he spends thirty minutes in prayer, with a notebook of names. He told his team, \"I cannot be everywhere, but I can pray for everyone.\" Over the years he has seen people come back, marriages healed and a church that carries a peace you can feel the moment you enter. He says, \"The days I skip prayer, I'm more tired and less patient.\"",
+        "Si Pastor Ben ay pastor ng maliit na simbahan ng OFW sa Riyadh at nagtatrabaho nang full-time bilang technician. Magulo ang iskedyul niya, pero tuwing alas-singko ng umaga ay may tatlumpung minuto siya sa panalangin, kasama ang kuwaderno ng mga pangalan. Sinabi niya sa team niya, \"Hindi ako puwedeng nasa lahat ng lugar, pero maipapanalangin ko ang lahat.\" Sa paglipas ng mga taon, nakita niyang bumalik ang mga tao, gumaling ang mga pag-aasawa, at ang simbahan ay may kapayapaang ramdam sa pagpasok pa lang. Sabi niya, \"Sa mga araw na nilalaktawan ko ang panalangin, mas pagod ako at mas kulang sa pasensya.\""
+      ),
+      t(
+        "If you serve in any way, build a rhythm that fits your life: a short daily time with the Word, a list of people you pray for, a weekly longer time, and periodic fasting. Keep it simple and sustainable. A prayer life is not measured in hours but in faithfulness and honesty.",
+        "Kung naglilingkod ka sa anumang paraan, bumuo ng ritmong bagay sa buhay mo: maikling araw-araw na oras sa Salita, listahan ng mga taong ipinagdarasal, lingguhang mas mahabang oras, at paminsan-minsang pag-aayuno. Gawing simple at kayang ipagpatuloy. Ang buhay-panalangin ay hindi sinusukat sa oras kundi sa katapatan at pagiging totoo."
+      ),
+    ],
+    twist: t(
+      "We think prayer is what we do to get God to help our ministry. The Kingdom twist is that prayer is where God changes the minister. Often the first thing that changes when you pray for a difficult person is not them; it is you. The ministry becomes less about performing and more about abiding, and the fruit is His, not yours (John 15:5).",
+      "Akala natin ang panalangin ay ginagawa natin para tulungan ng Diyos ang ministeryo natin. Ang twist ng Kaharian ay ang panalangin ang lugar kung saan binabago ng Diyos ang ministro. Madalas, ang unang nagbabago kapag ipinanalangin mo ang mahirap na tao ay hindi sila; ikaw. Ang ministeryo ay nagiging hindi gaanong pagtatanghal at mas pananatili kay Cristo, at ang bunga ay sa Kanya, hindi sa iyo (Juan 15:5)."
+    ),
+    confirm: [
+      t("Mark 1:35: Jesus rose early and went to a solitary place to pray.", "Marcos 1:35: bumangon nang maaga si Hesus at pumunta sa liblib na lugar para manalangin."),
+      t("Exodus 17:11-13: Israel prevailed as long as Moses' hands were lifted, held up by friends.", "Exodo 17:11-13: nagtagumpay ang Israel hangga't nakataas ang mga kamay ni Moises, inalalayan ng mga kaibigan."),
+      t("Ephesians 6:18: pray in the Spirit on all occasions for all the Lord's people.", "Efeso 6:18: manalangin sa Espiritu sa lahat ng pagkakataon para sa lahat ng banal."),
+      t("Luke 5:15-16: the more His fame spread, the more Jesus withdrew to pray.", "Lucas 5:15-16: habang lumalaganap ang Kanyang kabantugan, mas lumalayo si Hesus para manalangin."),
+    ],
+    heart: [
+      t(
+        "Repent of prayerless busyness. Come back to the first love, and let the Word and prayer be your first duty, not your last.",
+        "Magsisi sa abalang walang panalangin. Bumalik sa unang pag-ibig, at gawing unang tungkulin ang Salita at panalangin, hindi huli."
+      ),
+      t(
+        "Pray for people by name and trust God with the outcome. Be faithful in the unseen place and let God reward you openly.",
+        "Ipanalangin ang mga tao sa pangalan at ipagkatiwala sa Diyos ang resulta. Maging tapat sa lihim na lugar at hayaang gantimpalaan ka ng Diyos nang hayagan."
+      ),
+    ],
+    questions: [
+      t("If I looked at my week, what does my calendar say is first: ministry activity or time with God?", "Kung titingnan ang linggo ko, ano ang nauuna sa kalendaryo: aktibidad sa ministeryo o oras kasama ang Diyos?"),
+      t("Who are the people I pray for by name regularly?", "Sino ang mga taong regular kong ipinagdarasal sa pangalan?"),
+      t("What has been robbing me of prayer: busyness, tiredness, discouragement?", "Ano ang nagnanakaw sa panalangin ko: kaabalahan, pagod, panghihina ng loob?"),
+      t("What rhythm of prayer can I realistically keep for the next month?", "Anong ritmo ng panalangin ang kaya kong panatilihin sa susunod na buwan?"),
+    ],
+    actions: [
+      t("Set a fixed daily prayer time, even 15 minutes, and protect it for seven days.", "Magtakda ng nakatakdang oras ng panalangin araw-araw, kahit 15 minuto, at ingatan ito sa loob ng pitong araw."),
+      t("Make a prayer list of ten people you serve, and pray for them using Colossians 1:9-12.", "Gumawa ng listahan ng sampung taong pinaglilingkuran mo at ipanalangin sila gamit ang Colosas 1:9-12."),
+      t("Ask someone to be your prayer partner, and pray for each other weekly.", "Humiling ng isang prayer partner at ipanalangin ang isa't isa linggu-linggo."),
+    ],
+    prayer: t(
+      "Lord Jesus, You rose early to pray, and I confess that I have often run ahead without You. Forgive my busy and prayerless service. Teach me to pray. Make the secret place the center of my life and ministry. Stand guard over the people You have entrusted to me, and let me pray for them before the storm comes. Fill me again with Your Spirit. May all the fruit be Yours alone. I abide in You today. Amen.",
+      "Panginoong Hesus, bumangon Ka nang maaga upang manalangin, at inaamin kong madalas akong nauna nang wala Ka. Patawarin Mo ang abala at walang panalangin kong paglilingkod. Turuan Mo akong manalangin. Gawin Mong sentro ng buhay at ministeryo ko ang lihim na lugar. Magbantay Ka sa mga taong ipinagkatiwala Mo sa akin, at hayaan Mong ipanalangin ko sila bago dumating ang bagyo. Punuin Mo akong muli ng Iyong Espiritu. Nawa'y ang lahat ng bunga ay sa Iyo lamang. Nananatili ako sa Iyo ngayon. Amen."
+    ),
+  },
+  "the-ministers-family": {
+    revelation: t(
+      "Your first congregation lives under your own roof, and no public success can replace a home where Christ is honored.",
+      "Ang unang kongregasyon mo ay nasa ilalim ng sarili mong bubong, at walang tagumpay sa publiko na makakapalit sa tahanang pinararangalan si Cristo."
+    ),
+    mainTruth: t(
+      "Paul's test for an overseer is striking: \"He must manage his own family well and see that his children obey him, and he must do so in a manner worthy of full respect. (If anyone does not know how to manage his own family, how can he take care of God's church?)\" (1 Timothy 3:4-5). Peter tells husbands to \"be considerate as you live with your wives, and treat them with respect... so that nothing will hinder your prayers\" (1 Peter 3:7). And Paul urges fathers: \"Do not exasperate your children; instead, bring them up in the training and instruction of the Lord\" (Ephesians 6:4).",
+      "Kapansin-pansin ang pagsubok ni Pablo para sa isang tagapangasiwa: \"Dapat niyang mapamahalaan nang mahusay ang sarili niyang sambahayan at masunod siya ng kanyang mga anak nang may buong paggalang. (Kung hindi niya alam kung paano pamahalaan ang sarili niyang sambahayan, paano niya maaalagaan ang iglesia ng Diyos?)\" (1 Timoteo 3:4-5). Sinabi ni Pedro sa mga asawang lalaki na \"maging mapagmalasakit sa pakikisama sa inyong asawa, at igalang siya... upang walang humadlang sa inyong mga panalangin\" (1 Pedro 3:7). At pinaaalalahanan ni Pablo ang mga ama: \"Huwag ninyong ginagalit ang inyong mga anak; sa halip ay palakihin sila sa disiplina at turo ng Panginoon\" (Efeso 6:4)."
+    ),
+    insight: [
+      t(
+        "Many ministers give their best energy, creativity and patience to the church and bring what is left to their family. The result: a congregation that loves them, and children who resent the very ministry their parent loves. Notice the logic of 1 Timothy 3: the home is the training ground of ministry. If love, honor and truth do not work at the dinner table, they will not work at the pulpit. Ministry is a calling, but marriage and parenting are ALSO callings, and God does not ask you to sacrifice one for the other.",
+        "Maraming ministro ang ibinibigay ang pinakamagandang lakas, pagkamalikhain at pasensya sa simbahan at iniuuwi ang natitira sa pamilya. Ang resulta: kongregasyong mahal sila, at mga anak na nagagalit sa mismong ministeryong mahal ng magulang nila. Pansinin ang lohika ng 1 Timoteo 3: ang tahanan ang training ground ng ministeryo. Kung hindi gumagana ang pag-ibig, paggalang at katotohanan sa hapag-kainan, hindi rin ito gagana sa pulpito. Ang ministeryo ay tawag, ngunit ang pag-aasawa at pagiging magulang ay TAWAG din, at hindi hinihiling ng Diyos na isakripisyo mo ang isa para sa isa."
+      ),
+      t(
+        "Peter's words to husbands carry a sobering detail: how you treat your wife affects your prayers. A minister can speak beautifully to hundreds and still be harsh at home, and heaven notices. Children also notice whether the faith their parents preach is the faith they live. They are not looking for a perfect parent; they are looking for an honest one who says sorry, who prays with them and who is present.",
+        "May nakakagulat na detalye ang salita ni Pedro sa mga asawang lalaki: ang pakikitungo mo sa asawa mo ay nakakaapekto sa iyong mga panalangin. Maaaring magsalita nang maganda ang ministro sa daan-daan at maging marahas sa bahay, at napapansin iyon ng langit. Napapansin din ng mga anak kung ang pananampalatayang ipinangangaral ng magulang ay ang pananampalatayang isinasabuhay. Hindi nila hinahanap ang perpektong magulang; hinahanap nila ang tapat na magulang na marunong humingi ng tawad, nananalangin kasama nila at nariyan."
+      ),
+    ],
+    life: [
+      t(
+        "Pastor Dan, a bi-vocational pastor working in Qatar, realized his teenage daughter hardly spoke to him. In the middle of a busy season he made a decision: Tuesday nights became family nights with no phones, and he scheduled one weekly \"date\" with his wife. One night his daughter told him, \"Papa, I thought God was more important to you than me.\" He wept, apologized, and spent the next months slowly rebuilding trust. Today she serves in the youth group, saying \"I saw my dad choose us.\"",
+        "Si Pastor Dan, isang bi-vocational pastor na nagtatrabaho sa Qatar, ay napagtantong halos hindi na siya kinakausap ng dalagitang anak niya. Sa gitna ng abalang panahon, nagpasya siya: ang Martes ng gabi ay naging family night na walang telepono, at nag-iskedyul siya ng lingguhang \"date\" kasama ang asawa. Isang gabi sinabi ng anak niya, \"Papa, akala ko mas mahalaga ang Diyos sa iyo kaysa sa akin.\" Umiyak siya, humingi ng tawad, at ginugol ang mga susunod na buwan sa dahan-dahang pagbuo muli ng tiwala. Ngayon ay naglilingkod siya sa youth group, sabi niya, \"Nakita kong pinili kami ng tatay ko.\""
+      ),
+      t(
+        "For OFW families the challenge is bigger: miles of distance, time zones and loneliness. Yet a daily call, a bedtime prayer by video, a handwritten note and honest conversations still shepherd a family. Whether you are married, single, a parent or a child, your home is your first mission field.",
+        "Para sa mga pamilya ng OFW, mas malaki ang hamon: milya-milyang layo, magkaibang oras at kalungkutan. Ngunit ang araw-araw na tawag, panalangin bago matulog sa video, sulat-kamay na tala at tapat na usapan ay pag-aalaga pa rin sa pamilya. Kasal ka man, single, magulang o anak, ang tahanan mo ang una mong mission field."
+      ),
+    ],
+    twist: t(
+      "We assume sacrificing family time for ministry shows devotion. But the Kingdom twist is that neglecting your family IS neglecting your ministry. The Lord says in 1 Timothy 5:8 that anyone who does not provide for and care for his own household \"has denied the faith.\" Your faithfulness at home is the loudest sermon your community will hear, and it will outlive every message you preach.",
+      "Akala natin ang pagsasakripisyo ng oras ng pamilya para sa ministeryo ay patunay ng debosyon. Pero ang twist ng Kaharian ay ang pagpapabaya sa pamilya ay pagpapabaya rin sa ministeryo. Sabi ng 1 Timoteo 5:8, ang sinumang hindi nagtutustos at nag-aalaga sa sarili niyang sambahayan ay \"itinatwa ang pananampalataya.\" Ang katapatan mo sa tahanan ang pinakamalakas na sermon na maririnig ng komunidad mo, at mananatili ito sa bawat mensaheng ipinangaral mo."
+    ),
+    confirm: [
+      t("Deuteronomy 6:6-7: teach God's words diligently to your children at home and on the road.", "Deuteronomio 6:6-7: ituro nang masikap ang mga salita ng Diyos sa mga anak sa bahay at sa daan."),
+      t("1 Samuel 2:12-17, 3:13: Eli's sons were corrupt and he did not restrain them.", "1 Samuel 2:12-17, 3:13: tiwali ang mga anak ni Eli at hindi niya sila pinigilan."),
+      t("Proverbs 22:6: train up a child in the way he should go.", "Kawikaan 22:6: sanayin ang bata sa daang dapat niyang lakaran."),
+      t("Joshua 24:15: as for me and my household, we will serve the LORD.", "Josue 24:15: ngunit ako at ang aking sambahayan ay maglilingkod sa Panginoon."),
+    ],
+    heart: [
+      t(
+        "Give your family not your leftovers but your best presence. Learn to say, \"I'm sorry,\" and \"I'm proud of you,\" often.",
+        "Ibigay sa pamilya mo hindi ang tira kundi ang pinakamahusay mong presensya. Matutong magsabi ng \"pasensya na\" at \"proud ako sa iyo\" nang madalas."
+      ),
+      t(
+        "Do not make ministry the reason your children resent God. Let them see a father or mother who loves Jesus and loves them.",
+        "Huwag gawing dahilan ang ministeryo para magalit sa Diyos ang mga anak mo. Hayaan silang makakita ng amang o inang mahal si Hesus at mahal sila."
+      ),
+    ],
+    questions: [
+      t("Do my spouse and children feel like my priority or like competitors with my ministry?", "Pakiramdam ba ng asawa at mga anak ko na prayoridad nila ako, o kakumpitensya sila ng ministeryo?"),
+      t("When was the last time I prayed with my family or asked for forgiveness?", "Kailan ako huling nanalangin kasama ang pamilya o humingi ng tawad?"),
+      t("What is my family seeing about God through me?", "Ano ang nakikita ng pamilya ko tungkol sa Diyos sa pamamagitan ko?"),
+      t("What one change would show them they matter most this month?", "Anong isang pagbabago ang magpapakita sa kanilang sila ang pinakamahalaga ngayong buwan?"),
+    ],
+    actions: [
+      t("Schedule a protected family time each week and tell your team about it.", "Mag-iskedyul ng protektadong oras ng pamilya bawat linggo at ipaalam sa team mo."),
+      t("Ask your spouse and children, \"How can I love you better?\" and listen without defending.", "Itanong sa asawa at mga anak, \"Paano ko kayo mamahalin nang mas mabuti?\" at makinig nang hindi nagtatanggol."),
+      t("Pray a blessing over each family member by name this week.", "Magbigay ng pagpapala sa pamamagitan ng panalangin sa bawat miyembro ng pamilya sa pangalan ngayong linggo."),
+    ],
+    prayer: t(
+      "Father, thank You for the family You have entrusted to me. Forgive me for the times I gave them my leftovers and gave the world my best. Teach me to love my spouse and children as Christ loves the church. Heal any hurt my absence has caused. Make our home a place of peace, honesty and worship. Let my children see Jesus in me and long to follow Him. Keep my ministry and my family in right order. In Jesus' name, Amen.",
+      "Ama, salamat po sa pamilyang ipinagkatiwala Ninyo sa akin. Patawarin Mo ako sa mga pagkakataong ibinigay ko sa kanila ang tira at ibinigay sa mundo ang pinakamahusay ko. Turuan Mo akong mahalin ang asawa at mga anak ko gaya ng pag-ibig ni Cristo sa iglesia. Pagalingin Mo ang anumang sugat na idinulot ng pagkawala ko. Gawin Mong lugar ng kapayapaan, katapatan at pagsamba ang aming tahanan. Hayaan Mong makita ng mga anak ko si Hesus sa akin at maghangad na sumunod sa Iyo. Panatilihin Mo sa tamang ayos ang ministeryo at pamilya ko. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "trusting-god-to-provide": {
+    revelation: t(
+      "Contentment is not having enough; it is knowing the One who is enough, and the God who sends you is the God who supplies you.",
+      "Ang kasiyahan ay hindi ang pagkakaroon ng sapat; ito ay ang pagkilala sa Isang sapat na, at ang Diyos na nagsusugo sa iyo ay siya ring nagtutustos sa iyo."
+    ),
+    mainTruth: t(
+      "Paul wrote from prison, \"I have learned to be content whatever the circumstances. I know what it is to be in need, and I know what it is to have plenty... I can do all this through him who gives me strength\" (Philippians 4:11-13). When Jesus sent out the Twelve, He said, \"Take nothing for the journey,\" because the worker is worth his keep (Matthew 10:9-10). And Paul affirms that \"the Lord has commanded that those who preach the gospel should receive their living from the gospel\" (1 Corinthians 9:13-14). God both calls us to simplicity and promises to provide.",
+      "Sumulat si Pablo mula sa bilangguan, \"Natutuhan kong makuntento sa anumang kalagayan. Alam ko kung ano ang kakulangan, at alam ko kung ano ang kasaganaan... Magagawa ko ang lahat ng ito sa pamamagitan Niyang nagpapalakas sa akin\" (Filipos 4:11-13). Nang isinugo ni Hesus ang labindalawa, sinabi Niya, \"Huwag kayong magdala ng anuman sa paglalakbay,\" sapagkat karapat-dapat sa kanyang kabuhayan ang manggagawa (Mateo 10:9-10). At pinagtitibay ni Pablo na \"iniutos ng Panginoon na ang mga nangangaral ng ebanghelyo ay dapat mabuhay mula sa ebanghelyo\" (1 Corinto 9:13-14). Tinatawag tayo ng Diyos sa kasimplehan at nangangako Siyang magtutustos."
+    ),
+    insight: [
+      t(
+        "Notice that Paul says contentment was something he LEARNED. It does not come automatically, and it is not the same as laziness or irresponsibility. He knew both plenty and hunger, and in both he found the secret: Christ is enough. Many ministers burn out because they quietly measure success by the size of the offering or the salary, and either envy those with more or panic about having less. Contentment frees the heart from the tyranny of comparison.",
+        "Pansinin na sinabi ni Pablo na ang kasiyahan ay NATUTUHAN niya. Hindi ito kusang dumarating, at hindi rin ito katulad ng katamaran o kawalan ng pananagutan. Alam niya ang kasaganaan at gutom, at sa dalawa ay natagpuan niya ang lihim: sapat si Cristo. Maraming ministro ang napapagod dahil tahimik nilang sinusukat ang tagumpay sa laki ng handog o sweldo, at naiinggit sa mas marami o nagpa-panic sa mas kaunti. Pinalalaya ng kasiyahan ang puso sa paniniil ng paghahambing."
+      ),
+      t(
+        "At the same time, the Bible is balanced. It calls us to plan, work and be honest in provision (Proverbs 6:6-8), to support those who labor in the Word, and to trust God for the rest. Trust is not presumption; it is acting faithfully and then resting. A servant of God does not serve for money, yet is not ashamed to receive honest support, and never uses ministry to get rich (1 Peter 5:2).",
+        "Kasabay nito, balanse ang Bibliya. Tinatawag tayong magplano, magtrabaho at maging tapat sa pagtustos (Kawikaan 6:6-8), suportahan ang mga nagpapagal sa Salita, at magtiwala sa Diyos para sa iba pa. Ang pagtitiwala ay hindi pagpapabaya; ito ay pagkilos nang tapat at saka pagpapahinga. Ang lingkod ng Diyos ay hindi naglilingkod dahil sa pera, ngunit hindi nahihiyang tumanggap ng tapat na suporta, at hindi kailanman ginagamit ang ministeryo para yumaman (1 Pedro 5:2)."
+      ),
+    ],
+    life: [
+      t(
+        "Ate Maribel left a stable office job to serve full-time in a campus ministry. Her family worried. For months her support was thin, and some weeks she had only rice and canned sardines. Yet she learned that God often provided at the last moment through unexpected people: a former classmate's gift, a church member's groceries, a bonus she had not planned for. \"I never had extra,\" she said, \"but I never lacked.\" Her simple lifestyle also made it easier to listen to the poor.",
+        "Si Ate Maribel ay umalis sa matatag na trabaho sa opisina para maglingkod nang full-time sa campus ministry. Nag-alala ang pamilya niya. Sa loob ng ilang buwan, kapos ang suporta niya, at may mga linggong kanin at de-latang sardinas lang ang meron siya. Pero natutuhan niyang kadalasang nagtutustos ang Diyos sa huling sandali sa pamamagitan ng mga hindi inaasahang tao: regalo ng dating kaklase, grocery ng isang miyembro ng simbahan, bonus na hindi niya inasahan. \"Hindi ako nagkaroon ng sobra,\" sabi niya, \"pero hindi rin ako nagkulang.\" Ang simple niyang pamumuhay ay nagpadali rin sa kanyang makinig sa mahihirap."
+      ),
+      t(
+        "In your life, whether you serve full-time or work a regular job and serve in your free hours, the same principles apply: live below your means, avoid debt, give generously, be honest in all money matters and let God be your Provider. When you are tempted to chase a bigger income at the cost of your family and calling, remember that \"godliness with contentment is great gain\" (1 Timothy 6:6).",
+        "Sa buhay mo, naglilingkod ka man nang full-time o may regular na trabaho at naglilingkod sa libreng oras, pareho ang mga prinsipyo: mamuhay nang mas mababa sa kita, iwasan ang utang, magbigay nang bukas-palad, maging tapat sa lahat ng bagay tungkol sa pera at hayaang ang Diyos ang maging Tagapagtustos mo. Kapag natutukso kang habulin ang mas malaking kita kapalit ng pamilya at tawag mo, tandaan na \"ang kabanalang may kasiyahan ay malaking kapakinabangan\" (1 Timoteo 6:6)."
+      ),
+    ],
+    twist: t(
+      "We often think faith means God will give us more. But Jesus' pattern is that faith means we are free to live with less. Sending the disciples out with nothing was not a punishment; it was training: the less they carried, the more they depended on Him and on the people they served. Simplicity is not poverty. It is a gift that makes room for trust, generosity and joy.",
+      "Madalas nating iniisip na ang pananampalataya ay magbibigay sa atin ng higit pa. Pero ang huwaran ni Hesus ay ang pananampalataya ay nagpapalaya sa atin na mabuhay nang may mas kaunti. Ang pagpapadala sa mga alagad nang walang dala ay hindi parusa; ito ay pagsasanay: mas kaunti ang dala, mas umaasa sila sa Kanya at sa mga taong pinaglilingkuran. Ang kasimplehan ay hindi kahirapan. Ito ay regalo na nagbibigay-daan sa pagtitiwala, pagkabukas-palad at kagalakan."
+    ),
+    confirm: [
+      t("1 Kings 17:1-16: God fed Elijah by ravens and then by a widow's jar of flour.", "1 Hari 17:1-16: pinakain ng Diyos si Elias sa pamamagitan ng mga uwak at saka ng banga ng harina ng balo."),
+      t("Matthew 6:25-33: seek first His kingdom and all these things will be given.", "Mateo 6:25-33: hanapin muna ang Kanyang kaharian at ibibigay ang lahat ng ito."),
+      t("Luke 10:7: the worker deserves his wages.", "Lucas 10:7: karapat-dapat sa kanyang sahod ang manggagawa."),
+      t("Hebrews 13:5: keep your lives free from the love of money and be content with what you have.", "Hebreo 13:5: ilayo ang buhay sa pag-ibig sa salapi at makuntento sa mayroon kayo."),
+    ],
+    heart: [
+      t(
+        "Release the fear of not having enough, and release the envy of those who have more. Ask God to teach you contentment as a daily lesson.",
+        "Bitawan ang takot na hindi magiging sapat, at bitawan ang inggit sa mga may mas marami. Hilingin sa Diyos na turuan ka ng kasiyahan bilang pang-araw-araw na aralin."
+      ),
+      t(
+        "Be honest, generous and wise with money. Avoid debt and show-off living, and keep your motives clean in ministry.",
+        "Maging tapat, bukas-palad at matalino sa pera. Iwasan ang utang at pagyayabang, at panatilihing malinis ang motibo sa ministeryo."
+      ),
+    ],
+    questions: [
+      t("Where am I anxious about provision, and have I truly brought it to God?", "Saan ako nababalisa sa pagtustos, at tunay ko na bang dinala ito sa Diyos?"),
+      t("Whom do I compare myself with, and how does it affect my heart?", "Sino ang pinaghahambing ko sa sarili, at paano ito nakakaapekto sa puso ko?"),
+      t("Is my lifestyle simple enough to leave room for generosity?", "Sapat bang simple ang pamumuhay ko para magkaroon ng puwang ang pagbibigay?"),
+      t("What does my use of money say about whom I really trust?", "Ano ang sinasabi ng paggamit ko ng pera tungkol sa tunay kong pinagkakatiwalaan?"),
+    ],
+    actions: [
+      t("Write a simple budget this week that includes giving, saving and honest accountability.", "Gumawa ng simpleng budget ngayong linggo na may kasamang pagbibigay, pag-iipon at tapat na pananagutan."),
+      t("List God's provisions over the past year and thank Him for each.", "Ilista ang mga pagtustos ng Diyos sa nakaraang taon at pasalamatan Siya sa bawat isa."),
+      t("Choose one unnecessary expense to cut and give that amount to someone in need.", "Pumili ng isang hindi kailangang gastos na babawasan at ibigay ang halagang iyon sa nangangailangan."),
+    ],
+    prayer: t(
+      "Lord, You are my Provider and my enough. Forgive me for worry, envy and the love of money. Teach me the secret of contentment in plenty and in need. Help me to live simply, give cheerfully and work honestly. Provide for my family and for those who serve You, and use my hands to bless others. I trust You today and tomorrow. Let my life say that You are enough. In Jesus' name, Amen.",
+      "Panginoon, Ikaw ang aking Tagapagtustos at aking sapat. Patawarin Mo ako sa pag-aalala, inggit at pag-ibig sa pera. Ituro Mo sa akin ang lihim ng kasiyahan sa kasaganaan at sa kakulangan. Tulungan Mo akong mamuhay nang simple, magbigay nang masaya at magtrabaho nang tapat. Itustos Mo ang aking pamilya at ang mga naglilingkod sa Iyo, at gamitin ang aking mga kamay para magpala ng iba. Nagtitiwala ako sa Iyo ngayon at bukas. Hayaan Mong ang buhay ko ang magsabing sapat Ka. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "suffering-for-the-gospel": {
+    revelation: t(
+      "Suffering for Christ is not a sign that God has left you; it is often the very place where the gospel advances and Christ is seen.",
+      "Ang pagdurusa alang-alang kay Cristo ay hindi tanda na iniwan ka ng Diyos; madalas ito ang mismong lugar kung saan umuusad ang ebanghelyo at nakikita si Cristo."
+    ),
+    mainTruth: t(
+      "Paul listed his sufferings: imprisonments, beatings, shipwrecks, danger, sleepless nights, hunger, and the daily pressure of concern for all the churches (2 Corinthians 11:23-28). Yet from prison he wrote, \"What has happened to me has actually served to advance the gospel\" (Philippians 1:12). And he told Timothy plainly, \"In fact, everyone who wants to live a godly life in Christ Jesus will be persecuted\" (2 Timothy 3:12). The gospel's path often runs through hardship, but never without God's presence and purpose.",
+      "Inilista ni Pablo ang kanyang mga pagdurusa: pagkabilanggo, paghagupit, pagkawasak ng barko, panganib, mga gabing walang tulog, gutom, at araw-araw na bigat ng pag-aalala para sa lahat ng iglesia (2 Corinto 11:23-28). Gayunpaman, mula sa bilangguan ay sumulat siya, \"Ang nangyari sa akin ay nagsilbi pa ngang pag-usad ng ebanghelyo\" (Filipos 1:12). At tahasan niyang sinabi kay Timoteo, \"Sa katunayan, ang bawat gustong mamuhay nang maka-Diyos kay Cristo Hesus ay uusigin\" (2 Timoteo 3:12). Madalas na dumaraan sa hirap ang landas ng ebanghelyo, ngunit hindi kailanman nang walang presensya at layunin ng Diyos."
+    ),
+    insight: [
+      t(
+        "We tend to read suffering as God's disapproval, or as a sign that we are doing something wrong. But Paul read his chains as a pulpit: the guards of the palace heard about Christ, and other believers became bolder because of him (Philippians 1:13-14). He even rejoiced that Christ was preached, even by those with mixed motives. His eyes were on the gospel, not on his comfort. When our focus is Christ's fame instead of our own ease, suffering loses its power to defeat us.",
+        "Madalas nating basahin ang pagdurusa bilang pagtutol ng Diyos, o tanda na may mali tayong ginagawa. Pero binasa ni Pablo ang kanyang tanikala bilang pulpito: narinig ng mga bantay ng palasyo ang tungkol kay Cristo, at naging mas matapang ang ibang mananampalataya dahil sa kanya (Filipos 1:13-14). Nagalak pa siya na naipapangaral si Cristo, kahit ng mga may halo-halong motibo. Nasa ebanghelyo ang mata niya, hindi sa kaginhawaan niya. Kapag ang pokus natin ay ang kasikatan ni Cristo sa halip na sariling ginhawa, nawawalan ng kapangyarihan ang pagdurusa na talunin tayo."
+      ),
+      t(
+        "We must also be careful and honest. Not all suffering is persecution. Some comes from our own foolishness, and some from living in a broken world. But when we suffer because of faithfulness to Jesus, there is a special promise: \"If we endure, we will also reign with him\" (2 Timothy 2:12). In many places believers pay a price for their faith, and we are called to remember and pray for them (Hebrews 13:3).",
+        "Kailangan din nating maging maingat at tapat. Hindi lahat ng pagdurusa ay pag-uusig. May ilan na nagmumula sa sarili nating kahangalan, at ang iba ay mula sa pamumuhay sa sirang mundo. Ngunit kapag nagdurusa tayo dahil sa katapatan kay Hesus, may espesyal na pangako: \"Kung magtitiis tayo, maghahari rin tayong kasama Niya\" (2 Timoteo 2:12). Sa maraming lugar, may halagang binabayaran ang mga mananampalataya para sa kanilang pananampalataya, at tinatawag tayong alalahanin at ipanalangin sila (Hebreo 13:3)."
+      ),
+    ],
+    life: [
+      t(
+        "Many Filipino believers working in strict countries face quiet suffering: no freedom to gather publicly, loneliness, mocking from co-workers, sometimes pressure from employers. Ate Lorna, a domestic worker, suffered insults and extra work after her employer learned she was a Christian. She kept serving with gentleness and prayed for the family by name. After two years her employer's wife asked, \"Why are you not angry? Tell me about your God.\" Lorna's patient suffering became her pulpit.",
+        "Maraming Pilipinong mananampalatayang nagtatrabaho sa mahihigpit na bansa ang may tahimik na pagdurusa: walang kalayaang magtipon nang hayagan, kalungkutan, panunuya ng katrabaho, minsan presyur mula sa amo. Si Ate Lorna, isang kasambahay, ay dumanas ng insulto at dagdag na trabaho nang malaman ng amo niyang Kristiyano siya. Patuloy siyang naglingkod nang may kahinahunan at ipinanalangin ang pamilya sa pangalan. Pagkalipas ng dalawang taon, tinanong siya ng asawa ng amo, \"Bakit hindi ka galit? Ikuwento mo sa akin ang Diyos mo.\" Ang matiyagang pagdurusa ni Lorna ang naging pulpito niya."
+      ),
+      t(
+        "If you are going through hardship because of your faith, or just through ordinary trials, remember: you are not forgotten. Bring your pain honestly to God, stay in fellowship, keep a clean conscience and do not repay evil with evil. And if you are not suffering now, prepare your heart by building a deep root in Christ and by praying for those who are.",
+        "Kung dumaranas ka ng hirap dahil sa pananampalataya mo, o sa karaniwang pagsubok lang, tandaan: hindi ka nakalimutan. Dalhin nang tapat ang sakit mo sa Diyos, manatili sa pagsasama-sama, panatilihing malinis ang budhi at huwag gumanti ng masama sa masama. At kung hindi ka dumaranas ngayon, ihanda ang puso sa pamamagitan ng malalim na ugat kay Cristo at pagdarasal para sa mga dumaranas."
+      ),
+    ],
+    twist: t(
+      "The world says suffering is meaningless unless it ends. The Kingdom twist is that suffering with Christ is never wasted: Paul says he wanted \"to know Christ and the power of his resurrection and the fellowship of sharing in his sufferings\" (Philippians 3:10). In suffering we meet the Man of Sorrows face to face, and the church grows like seed that is buried. The cross comes before the crown, but the crown is certain.",
+      "Sabi ng mundo, walang saysay ang pagdurusa maliban kung matapos ito. Ang twist ng Kaharian ay ang pagdurusang kasama ni Cristo ay hindi kailanman nasasayang: sabi ni Pablo, gusto niyang \"makilala si Cristo at ang kapangyarihan ng Kanyang pagkabuhay na mag-uli at ang pakikisama sa Kanyang mga pagdurusa\" (Filipos 3:10). Sa pagdurusa, nakakaharap natin ang Taong Mapagdalamhati, at lumalago ang iglesia gaya ng binhing ibinaon. Nauuna ang krus bago ang korona, ngunit tiyak ang korona."
+    ),
+    confirm: [
+      t("Acts 5:40-41: the apostles rejoiced that they were counted worthy to suffer for the Name.", "Gawa 5:40-41: nagalak ang mga apostol na itinuring silang karapat-dapat magdusa alang-alang sa Pangalan."),
+      t("1 Peter 4:12-14: do not be surprised at the fiery trial; rejoice as you share Christ's sufferings.", "1 Pedro 4:12-14: huwag magtaka sa nag-aapoy na pagsubok; magalak habang nakikibahagi sa pagdurusa ni Cristo."),
+      t("Romans 8:17-18: we suffer with Him that we may also be glorified with Him.", "Roma 8:17-18: nagdurusa tayong kasama Niya upang maluwalhati rin tayong kasama Niya."),
+      t("Matthew 5:10-12: blessed are those persecuted because of righteousness.", "Mateo 5:10-12: mapalad ang mga inuusig dahil sa katuwiran."),
+    ],
+    heart: [
+      t(
+        "Do not run from every hardship, and do not seek suffering for show. Stay faithful to Christ and let Him be your reward.",
+        "Huwag tumakbo sa bawat hirap, at huwag maghanap ng pagdurusa para magpasikat. Manatiling tapat kay Cristo at hayaan Siyang maging gantimpala mo."
+      ),
+      t(
+        "Forgive those who wrong you. Pray for your persecutors, and keep a soft heart. Let hardship make you tender, not bitter.",
+        "Patawarin ang mga umaapi sa iyo. Ipanalangin ang mga umuusig sa iyo, at panatilihing malambot ang puso. Hayaang gawin kang malambot ng hirap, hindi mapait."
+      ),
+    ],
+    questions: [
+      t("How do I usually interpret hardship: as God's absence or as God's opportunity?", "Paano ko karaniwang binibigyang-kahulugan ang hirap: pagkawala ng Diyos o pagkakataon ng Diyos?"),
+      t("Is there anyone I need to forgive who has hurt me because of my faith?", "May kailangan ba akong patawarin na nanakit sa akin dahil sa pananampalataya ko?"),
+      t("Who among my brothers and sisters is suffering that I could pray for or help?", "Sino sa mga kapatid ko ang nagdurusa na maipapanalangin o matutulungan ko?"),
+      t("Am I rooted deeply enough in Christ to endure if the cost rises?", "Sapat ba ang lalim ng ugat ko kay Cristo para magtiis kung tumaas ang halaga?"),
+    ],
+    actions: [
+      t("Pray today for persecuted believers by name or by country; use a trusted mission prayer guide.", "Ipanalangin ngayon ang mga inuusig na mananampalataya sa pangalan o bansa; gumamit ng mapagkakatiwalaang gabay sa panalangin para sa misyon."),
+      t("Write down a hardship you face and offer it to God as a place for Christ to be seen.", "Isulat ang isang hirap na kinakaharap mo at ihandog ito sa Diyos bilang lugar kung saan makikita si Cristo."),
+      t("Encourage someone who is struggling for their faith with a message or visit.", "Palakasin ang isang nahihirapan dahil sa pananampalataya sa pamamagitan ng mensahe o pagdalaw."),
+    ],
+    prayer: t(
+      "Lord Jesus, You suffered for me, and You are worthy of anything it costs to follow You. Strengthen all who suffer for Your name. Keep me faithful when it is hard, and keep my heart free from bitterness. Let my hardship serve the gospel and my patience point to You. Remember the persecuted, and comfort them with Your presence. Give me the courage to endure and the joy to know that You are with me. In Your name, Amen.",
+      "Panginoong Hesus, nagdusa Ka para sa akin, at karapat-dapat Ka sa anumang halaga ng pagsunod sa Iyo. Palakasin Mo ang lahat ng nagdurusa alang-alang sa Iyong pangalan. Panatilihin Mo akong tapat kapag mahirap, at panatilihing walang kapaitan ang puso ko. Hayaang maglingkod sa ebanghelyo ang hirap ko at ituro Ka ng aking pagtitiis. Alalahanin Mo ang mga inuusig, at aliwin sila ng Iyong presensya. Bigyan Mo ako ng lakas ng loob na magtiis at galak na malamang kasama Kita. Sa Iyong pangalan, Amen."
+    ),
+  },
+  "learning-language-and-culture": {
+    revelation: t(
+      "God Himself learned our language: in Jesus the Word became flesh and moved into our neighborhood, and that is the pattern for every messenger.",
+      "Ang Diyos mismo ang natuto ng ating wika: kay Hesus ang Salita ay naging tao at tumira sa ating kapitbahayan, at iyon ang huwaran para sa bawat mensahero."
+    ),
+    mainTruth: t(
+      "At Pentecost, people from many nations heard the wonders of God \"in our own tongues\" (Acts 2:5-11). Paul warned that if a speaker does not make himself understood, \"you will just be speaking into the air... I would be a foreigner to the speaker\" (1 Corinthians 14:9-11). And the supreme model: \"The Word became flesh and made his dwelling among us\" (John 1:14). The gospel is not a foreign product to be shipped; it is good news to be incarnated, in the language, customs and hearts of the people.",
+      "Sa Pentecostes, narinig ng mga tao mula sa maraming bansa ang mga kamangha-manghang gawa ng Diyos \"sa sarili nating wika\" (Gawa 2:5-11). Nagbabala si Pablo na kung hindi naiintindihan ang nagsasalita, \"magsasalita lang kayo sa hangin... magiging dayuhan ako sa nagsasalita\" (1 Corinto 14:9-11). At ang pinakamataas na huwaran: \"Ang Salita ay naging tao at tumahan sa gitna natin\" (Juan 1:14). Ang ebanghelyo ay hindi dayuhang produktong ipapadala; ito ay mabuting balita na dapat magkatawang-tao, sa wika, kaugalian at puso ng mga tao."
+    ),
+    insight: [
+      t(
+        "Learning a language is humbling. You sound like a child, you make mistakes, you laugh at yourself. That humility is not an obstacle to ministry; it is part of the ministry. When you struggle to speak someone's heart language, you tell them, \"You matter enough for me to become small.\" That is exactly what Jesus did. The Son of God did not shout the gospel from heaven in a language we did not understand; He came and learned to say \"Abba\" in a Galilean village.",
+        "Nakakapagpakumbaba ang pag-aaral ng wika. Para kang bata, nagkakamali ka, tinatawanan mo ang sarili mo. Hindi hadlang sa ministeryo ang kababaang-loob na iyon; bahagi ito ng ministeryo. Kapag nagsisikap kang magsalita sa wika ng puso ng iba, sinasabi mo sa kanila, \"Mahalaga kayo kaya handa akong maging maliit.\" Iyon mismo ang ginawa ni Hesus. Hindi isinigaw ng Anak ng Diyos ang ebanghelyo mula sa langit sa wikang hindi natin maintindihan; dumating Siya at natutong magsabi ng \"Abba\" sa isang nayon ng Galilea."
+      ),
+      t(
+        "Culture is more than words: it is how people greet, honor elders, share food, show respect, handle conflict, view family and time. A messenger who ignores culture may offend without meaning to, and may confuse the gospel with their own customs. The wise missionary asks, \"What in this culture reflects God's image and can be honored? What contradicts Scripture and needs gentle transformation?\" Paul became \"all things to all people\" so that by all possible means he might save some (1 Corinthians 9:22), without compromising the truth.",
+        "Higit pa sa salita ang kultura: ito ay kung paano bumabati ang mga tao, gumagalang sa matatanda, nagbabahagi ng pagkain, nagpapakita ng galang, humaharap sa alitan, at tumitingin sa pamilya at oras. Ang mensaherong hindi pinapansin ang kultura ay maaaring makasakit nang hindi sinasadya, at malito ang ebanghelyo sa sarili niyang kaugalian. Ang matalinong misyonero ay nagtatanong, \"Ano sa kulturang ito ang sumasalamin sa larawan ng Diyos at dapat pahalagahan? Ano ang sumasalungat sa Kasulatan at kailangang marahang baguhin?\" Naging \"lahat sa lahat\" si Pablo upang sa lahat ng paraan ay makapagligtas ng ilan (1 Corinto 9:22), nang hindi sinasakripisyo ang katotohanan."
+      ),
+    ],
+    life: [
+      t(
+        "A Filipino nurse in the Gulf decided to learn basic Arabic. Her patients smiled when she greeted them with \"Marhaba\" and asked about their families. Over months she learned phrases for comfort and prayer, and one older patient said, \"You speak with respect. Tell me why you are different.\" The doors that open through humble language are often the ones preaching cannot open.",
+        "Isang Pilipinang nars sa Gulf ang nagpasyang mag-aral ng pangunahing Arabic. Ngumiti ang mga pasyente niya nang batiin niya sila ng \"Marhaba\" at kumustahin ang mga pamilya nila. Sa loob ng ilang buwan, natutunan niya ang mga parirala ng aliw at panalangin, at sinabi ng isang matandang pasyente, \"Magalang kang magsalita. Sabihin mo kung bakit iba ka.\" Ang mga pintong nabubuksan ng mapagkumbabang wika ay madalas ang mga hindi mabubuksan ng pangangaral."
+      ),
+      t(
+        "Wherever you live, you are probably living among people of another language or culture, whether co-workers, neighbors or the cashier at a shop. Learn names, learn greetings, learn what they value, and listen before you speak. Never mock accents. And for your own heart, treat the Bible as a book you keep learning to read in the language of your own heart as well.",
+        "Saanman ka nakatira, malamang nasa gitna ka ng mga taong ibang wika o kultura, katrabaho man, kapitbahay o kahera sa tindahan. Alamin ang pangalan, matutong bumati, alamin ang pinahahalagahan nila, at makinig bago magsalita. Huwag kailanman libakin ang punto ng pagsasalita. At para sa sarili mong puso, ituring ang Bibliya bilang aklat na patuloy mong natututunang basahin sa wika rin ng sarili mong puso."
+      ),
+    ],
+    twist: t(
+      "We assume the missionary arrives to teach. But the Kingdom twist is that the messenger must first become a learner. Jesus spent thirty years learning before three years of public ministry. When you enter a culture as a student, you receive trust, and you often discover that God was already at work there before you arrived (Acts 17:22-28).",
+      "Akala natin dumarating ang misyonero para magturo. Pero ang twist ng Kaharian ay ang mensahero ay dapat munang maging mag-aaral. Tatlumpung taong natuto si Hesus bago ang tatlong taon ng pampublikong ministeryo. Kapag pumasok ka sa isang kultura bilang estudyante, tumatanggap ka ng tiwala, at madalas mong natutuklasang gumagawa na pala ang Diyos doon bago ka dumating (Gawa 17:22-28)."
+    ),
+    confirm: [
+      t("Acts 17:22-28: Paul began with the Athenians' own altar and poets.", "Gawa 17:22-28: sinimulan ni Pablo sa sariling altar at makata ng mga taga-Atenas."),
+      t("1 Corinthians 9:19-23: Paul became all things to all people for the gospel.", "1 Corinto 9:19-23: naging lahat sa lahat si Pablo alang-alang sa ebanghelyo."),
+      t("Revelation 7:9: a multitude from every nation, tribe, people and language before the throne.", "Pahayag 7:9: karamihang mula sa bawat bansa, lipi, bayan at wika sa harap ng trono."),
+      t("Daniel 1:4-5: Daniel learned the language and literature of Babylon yet stayed faithful.", "Daniel 1:4-5: pinag-aralan ni Daniel ang wika at panitikan ng Babilonia ngunit nanatiling tapat."),
+    ],
+    heart: [
+      t(
+        "Be willing to look foolish for love's sake. Let curiosity replace judgment, and respect replace superiority.",
+        "Maging handang magmukhang hangal alang-alang sa pag-ibig. Hayaang palitan ng kuryosidad ang paghuhusga, at ng paggalang ang pagmamataas."
+      ),
+      t(
+        "Hold your cultural preferences loosely and the gospel tightly. Do not confuse \"how we do it\" with \"what God commands.\"",
+        "Hawakan nang maluwag ang kagustuhan sa kultura at nang mahigpit ang ebanghelyo. Huwag ipagkamali ang \"kung paano namin ginagawa\" sa \"utos ng Diyos.\""
+      ),
+    ],
+    questions: [
+      t("Whom around me speaks a different language, and have I tried to learn even a few words?", "Sino sa paligid ko ang iba ang wika, at sinubukan ko na bang matuto kahit ilang salita?"),
+      t("Do I judge other cultures by my own comfort?", "Hinuhusgahan ko ba ang ibang kultura base sa sarili kong ginhawa?"),
+      t("What cultural habits of mine might confuse or offend others?", "Anong kaugalian kong pangkultura ang maaaring makalito o makasakit sa iba?"),
+      t("How can I become a learner of the people God has placed near me?", "Paano ako magiging mag-aaral ng mga taong inilagay ng Diyos malapit sa akin?"),
+    ],
+    actions: [
+      t("Learn five greetings or phrases in the language of someone near you and use them this week.", "Matuto ng limang pagbati o parirala sa wika ng taong malapit sa iyo at gamitin ito ngayong linggo."),
+      t("Ask a neighbor or co-worker of another culture about their customs, and listen without judging.", "Tanungin ang kapitbahay o katrabahong ibang kultura tungkol sa kanilang kaugalian, at makinig nang hindi humuhusga."),
+      t("Pray for a people group that has no Bible in their own language.", "Ipanalangin ang isang pangkat ng mga tao na walang Bibliya sa sarili nilang wika."),
+    ],
+    prayer: t(
+      "Lord Jesus, You became one of us and made Your home among us. Thank You for speaking to us in ways we can understand. Give me the humility to learn, the patience to listen and the love to cross every language and culture. Forgive my pride and my impatience with those who are different. Open doors through kindness and respect. Let the gospel be heard by every people in their own heart language. Use me as a bridge. In Your name, Amen.",
+      "Panginoong Hesus, naging isa Ka sa amin at tumahan sa gitna namin. Salamat po dahil nakikipag-usap Ka sa amin sa paraang nauunawaan namin. Bigyan Mo ako ng kababaang-loob na matuto, pasensya na makinig at pag-ibig na tumawid sa bawat wika at kultura. Patawarin Mo ang aking pagmamataas at kawalan ng pasensya sa mga naiiba. Magbukas Ka ng pinto sa pamamagitan ng kabaitan at paggalang. Hayaang marinig ang ebanghelyo ng bawat bayan sa sarili nilang wika ng puso. Gamitin Mo akong tulay. Sa Iyong pangalan, Amen."
+    ),
+  },
+  "partnership-in-the-gospel": {
+    revelation: t(
+      "No one finishes the mission alone; God builds His church through partners who share the load, the joy and the reward.",
+      "Walang nakakatapos ng misyon nang mag-isa; itinatayo ng Diyos ang Kanyang iglesia sa pamamagitan ng mga katuwang na nagbabahagi ng pasanin, galak at gantimpala."
+    ),
+    mainTruth: t(
+      "Paul wrote, \"I thank my God every time I remember you... because of your partnership in the gospel from the first day until now\" (Philippians 1:3-5). The Philippian church supported him again and again, \"no church shared with me in the matter of giving and receiving, except you only\" (Philippians 4:15-16). And Paul greeted Priscilla and Aquila, who \"risked their lives for me,\" and \"the church that meets at their house\" (Romans 16:3-5). The gospel advances through teams, not lone heroes.",
+      "Sumulat si Pablo, \"Nagpapasalamat ako sa aking Diyos tuwing naaalala ko kayo... dahil sa inyong pakikipagtulungan sa ebanghelyo mula sa unang araw hanggang ngayon\" (Filipos 1:3-5). Paulit-ulit siyang sinuportahan ng iglesia sa Filipos, \"walang iglesiang nakibahagi sa akin sa pagbibigay at pagtanggap kundi kayo lamang\" (Filipos 4:15-16). At binati ni Pablo sina Priscila at Aquila na \"inilagay sa panganib ang buhay nila para sa akin,\" at \"ang iglesiang nagtitipon sa kanilang bahay\" (Roma 16:3-5). Umuusad ang ebanghelyo sa pamamagitan ng mga pangkat, hindi ng nag-iisang bayani."
+    ),
+    insight: [
+      t(
+        "The Greek word koinonia, partnership, means sharing something in common. In the New Testament, gospel partnership is not a business arrangement; it is a family sharing: prayer, money, time, risk, hospitality, tears and victories. Paul's letters are full of names: Timothy, Titus, Epaphroditus, Phoebe, Aquila, Priscilla, Apollos. The great apostle never worked as a lone ranger, and he gave credit to the people God put beside him.",
+        "Ang salitang Griyego na koinonia, pakikipagtulungan, ay nangangahulugang pagbabahagi ng magkakatulad na bagay. Sa Bagong Tipan, ang pakikipagtulungan sa ebanghelyo ay hindi kasunduan sa negosyo; ito ay pagbabahaginan ng pamilya: panalangin, pera, oras, panganib, mabuting pagtanggap, luha at tagumpay. Puno ng pangalan ang mga liham ni Pablo: Timoteo, Tito, Epafrodito, Febe, Aquila, Priscila, Apolos. Hindi kailanman nagtrabahong mag-isa ang dakilang apostol, at binigyan niya ng kredito ang mga taong inilagay ng Diyos sa tabi niya."
+      ),
+      t(
+        "Partnership requires humility and trust. Pride says, \"I can do it better myself.\" The Spirit says, \"Your gift needs theirs.\" Partnership requires clarity, shared vision, honest communication and a willingness to put the mission above personal credit. Divided churches, competing ministries and jealous leaders weaken the witness of Christ's body (John 17:21). Unity is not optional decoration; it is evidence to the world.",
+        "Ang pakikipagtulungan ay nangangailangan ng kababaang-loob at tiwala. Sabi ng pagmamataas, \"Mas mahusay kong magagawa ito nang mag-isa.\" Sabi ng Espiritu, \"Kailangan ng kaloob mo ang kaloob nila.\" Ang pakikipagtulungan ay nangangailangan ng kalinawan, pinagsasaluhang pangitain, tapat na komunikasyon at kahandaang ilagay ang misyon sa itaas ng personal na kredito. Ang mga hating iglesia, nagpapaligsahang ministeryo at naiinggit na lider ay nagpapahina sa patotoo ng katawan ni Cristo (Juan 17:21). Ang pagkakaisa ay hindi palamuti; ito ay ebidensya sa mundo."
+      ),
+    ],
+    life: [
+      t(
+        "Three OFW fellowships in different cities of the Gulf decided to stop competing and start cooperating. They shared a worship team schedule, a joint prayer night and a fund for members facing emergencies back home. When one fellowship's leader went on leave, the others covered his pastoral visits. Within a year, more people were baptized across the three groups than ever before, and the leaders said, \"We were stronger together than any of us dreamed.\"",
+        "Tatlong fellowship ng mga OFW sa magkakaibang lungsod ng Gulf ang nagpasyang itigil ang kumpetisyon at magsimulang magtulungan. Nagbahagi sila ng iskedyul ng worship team, magkasamang gabi ng panalangin at pondo para sa mga miyembrong may emergency sa Pilipinas. Nang magbakasyon ang lider ng isang fellowship, saklaw ng iba ang kanyang pagdalaw bilang pastor. Sa loob ng isang taon, mas maraming nabautismuhan sa tatlong grupo kaysa dati, at sabi ng mga lider, \"Mas malakas kami nang magkakasama kaysa sa inakala ng sinuman sa amin.\""
+      ),
+      t(
+        "In your own life, who are your gospel partners? Who prays for you, supports you, shares the load? And whom do you partner with? Pray, give, and show up. Do not wait to be perfect; start with one other person with whom you can share the mission.",
+        "Sa sarili mong buhay, sino ang mga katuwang mo sa ebanghelyo? Sino ang nagdarasal para sa iyo, sumusuporta sa iyo, nagbabahagi ng pasanin? At sino ang kasama mong katuwang? Manalangin, magbigay at dumalo. Huwag hintaying maging perpekto; magsimula sa isang tao na makakasama mo sa misyon."
+      ),
+    ],
+    twist: t(
+      "We often think the one who goes is more important than the one who stays. Partnership overturns that: in the Kingdom the one who sends shares the reward equally with the one who goes. And the surprise is that partners are not just a means to the mission; they are part of the joy. Paul's \"joy\" and \"crown\" were the people he served alongside (Philippians 4:1).",
+      "Madalas nating iniisip na mas mahalaga ang pumupunta kaysa sa nananatili. Binabaligtad ito ng pakikipagtulungan: sa Kaharian, ang nagpapadala ay may pantay na gantimpala sa pumupunta. At ang nakakagulat, ang mga katuwang ay hindi lang paraan tungo sa misyon; bahagi sila ng kagalakan. Ang \"galak\" at \"korona\" ni Pablo ay ang mga taong kasamang naglingkod (Filipos 4:1)."
+    ),
+    confirm: [
+      t("Ecclesiastes 4:9-12: two are better than one, and a cord of three strands is not quickly broken.", "Eclesiastes 4:9-12: mas mabuti ang dalawa kaysa isa, at ang lubid na tatlong hibla ay hindi madaling mapatid."),
+      t("Mark 6:7: Jesus sent His disciples out two by two.", "Marcos 6:7: isinugo ni Hesus ang mga alagad nang dala-dalawa."),
+      t("Acts 13:1-3: a team of leaders at Antioch sent Barnabas and Saul together.", "Gawa 13:1-3: pangkat ng mga lider sa Antioquia ang nagsugo kina Bernabe at Saulo nang magkasama."),
+      t("Philippians 2:19-22: Timothy served with Paul like a son with his father.", "Filipos 2:19-22: naglingkod si Timoteo kasama ni Pablo na parang anak sa ama."),
+    ],
+    heart: [
+      t(
+        "Release the need to be the hero. Celebrate others' gifts and give them credit. Be easy to work with.",
+        "Bitawan ang pangangailangang maging bayani. Ipagdiwang ang kaloob ng iba at bigyan sila ng kredito. Maging madaling katrabaho."
+      ),
+      t(
+        "Choose unity over rivalry. Resolve conflicts quickly and humbly, and keep the mission bigger than any personality.",
+        "Piliin ang pagkakaisa kaysa tunggalian. Lutasin agad at mapagkumbaba ang alitan, at panatilihing mas malaki ang misyon kaysa sinumang tao."
+      ),
+    ],
+    questions: [
+      t("Who are my gospel partners, and when did I last thank them?", "Sino ang mga katuwang ko sa ebanghelyo, at kailan ko sila huling pinasalamatan?"),
+      t("Is there rivalry, jealousy or pride that keeps me from working with others?", "May tunggalian, inggit o pagmamataas ba na pumipigil sa pakikipagtulungan ko sa iba?"),
+      t("What can I contribute to a team beyond my own ministry?", "Ano ang maiaambag ko sa isang pangkat bukod sa sarili kong ministeryo?"),
+      t("Whom could I invite to partner with me in prayer or service?", "Sino ang maaari kong anyayahang makipagtulungan sa akin sa panalangin o paglilingkod?"),
+    ],
+    actions: [
+      t("Send a thank-you message to someone who has partnered with you in ministry.", "Magpadala ng mensahe ng pasasalamat sa isang taong naging katuwang mo sa ministeryo."),
+      t("Reach out to a nearby church or fellowship and suggest one thing you could do together.", "Makipag-ugnayan sa kalapit na simbahan o fellowship at magmungkahi ng isang bagay na magagawa ninyong magkasama."),
+      t("Find a prayer partner and commit to pray for each other's ministry weekly.", "Humanap ng prayer partner at mangakong ipanalangin ang ministeryo ng isa't isa linggu-linggo."),
+    ],
+    prayer: t(
+      "Father, thank You that You never meant me to serve alone. Thank You for every partner who has prayed, given and stood beside me. Forgive my pride, my competition and my independence. Knit our hearts together in love and in the gospel. Make me a good partner, humble, reliable and generous. Let the world see our unity and believe in Jesus. May Your mission advance through all of us together. In Jesus' name, Amen.",
+      "Ama, salamat po dahil hindi Ninyo ako itinakdang maglingkod nang mag-isa. Salamat sa bawat katuwang na nanalangin, nagbigay at tumayo sa tabi ko. Patawarin Mo ang aking pagmamataas, kumpetisyon at pagsasarili. Pag-isahin Mo ang aming mga puso sa pag-ibig at sa ebanghelyo. Gawin Mo akong mabuting katuwang, mapagkumbaba, maaasahan at bukas-palad. Hayaang makita ng mundo ang aming pagkakaisa at maniwala kay Hesus. Nawa'y umusad ang Iyong misyon sa pamamagitan nating lahat. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "prayer-and-power-in-mission": {
+    revelation: t(
+      "Mission is not a human project that God blesses; it is God's work that He carries out through people who pray and depend on His power.",
+      "Ang misyon ay hindi proyekto ng tao na pinagpapala ng Diyos; ito ay gawain ng Diyos na isinasagawa Niya sa pamamagitan ng mga taong nananalangin at umaasa sa Kanyang kapangyarihan."
+    ),
+    mainTruth: t(
+      "In Philippi a slave girl with a spirit of divination followed Paul for days, and finally \"Paul turned around and said to the spirit, 'In the name of Jesus Christ I command you to come out of her!' At that moment the spirit left her\" (Acts 16:16-18). Paul asked the Ephesians to pray \"that whenever I speak, words may be given me so that I will fearlessly make known the mystery of the gospel\" (Ephesians 6:18-20). And when the church was threatened, they prayed, \"Enable your servants to speak your word with great boldness\"; then the place shook, and they were filled with the Holy Spirit (Acts 4:29-31).",
+      "Sa Filipos, isang aliping babae na may espiritu ng panghuhula ang sumunod kay Pablo nang ilang araw, at sa wakas \"humarap si Pablo at sinabi sa espiritu, 'Sa pangalan ni Hesukristo, iniuutos kong lumabas ka sa kanya!' Sa sandaling iyon ay lumabas ang espiritu\" (Gawa 16:16-18). Hiniling ni Pablo sa mga taga-Efeso na ipanalangin \"na tuwing ako ay magsasalita, bigyan ako ng mga salita upang buong tapang kong maipahayag ang hiwaga ng ebanghelyo\" (Efeso 6:18-20). At nang banta-an ang iglesia, nanalangin sila, \"Bigyan Mo ang Iyong mga lingkod na magsalita ng Iyong salita nang buong tapang\"; at nayanig ang lugar, at napuno sila ng Espiritu Santo (Gawa 4:29-31)."
+    ),
+    insight: [
+      t(
+        "Notice the pattern: the early church's response to opposition was not to change the message, form a committee or give up; it was to pray for boldness, and God answered with power. Mission is spiritual warfare because the real enemy is not people but the powers that blind people to the gospel (Ephesians 6:12; 2 Corinthians 4:4). Strategy, training and money matter, but without prayer and the Spirit's power they are only machinery with no fire.",
+        "Pansinin ang huwaran: ang tugon ng unang iglesia sa pagsalungat ay hindi pagbabago ng mensahe, pagbuo ng komite o pagsuko; ito ay manalangin para sa tapang, at sumagot ang Diyos nang may kapangyarihan. Ang misyon ay espirituwal na labanan dahil ang tunay na kaaway ay hindi ang tao kundi ang mga kapangyarihang bumubulag sa mga tao sa ebanghelyo (Efeso 6:12; 2 Corinto 4:4). Mahalaga ang estratehiya, pagsasanay at pera, ngunit kung walang panalangin at kapangyarihan ng Espiritu, makina lang sila na walang apoy."
+      ),
+      t(
+        "Notice also what Paul asked for. He did not ask for safety, comfort or ease. He asked for boldness and clear words. And in Philippi, the power encounter had a cost: Paul and Silas were beaten and jailed (Acts 16:19-24). Yet at midnight they were praying and singing hymns, the prison shook, and the jailer and his whole family were saved. Power in mission is not a shortcut around suffering; it is God's presence in the middle of it.",
+        "Pansinin din kung ano ang hiningi ni Pablo. Hindi siya humingi ng kaligtasan, ginhawa o kadalian. Humingi siya ng tapang at malinaw na salita. At sa Filipos, may halaga ang pakikipagtunggali sa kapangyarihan: hinagupit at ibinilanggo sina Pablo at Silas (Gawa 16:19-24). Gayunman, sa hatinggabi ay nananalangin sila at umaawit ng mga himno, nayanig ang bilangguan, at naligtas ang tagapagbantay at ang buo niyang pamilya. Ang kapangyarihan sa misyon ay hindi shortcut para iwasan ang pagdurusa; ito ay presensya ng Diyos sa gitna nito."
+      ),
+    ],
+    life: [
+      t(
+        "A small group of OFW women in a Gulf city started meeting at 4 a.m. before their shifts to pray for their employers' households and for their neighbors. They did not preach loudly or put anyone in danger; they prayed and served. Over time a number of their employers softened, one household member became curious about Jesus, and a quiet, safe Bible study started in a kitchen. \"We did not bring them to Christ,\" said one of the women. \"Prayer did.\"",
+        "Isang maliit na grupo ng mga babaeng OFW sa isang lungsod sa Gulf ang nagsimulang magtipon nang alas-kuwatro ng umaga bago ang kanilang shift para ipanalangin ang mga sambahayan ng mga amo at ang mga kapitbahay. Hindi sila nangaral nang malakas o naglagay ng sinuman sa panganib; nanalangin at naglingkod sila. Sa paglipas ng panahon, lumambot ang ilan sa kanilang mga amo, may isang miyembro ng sambahayan na naging mausisa kay Hesus, at nagsimula ang tahimik at ligtas na Bible study sa isang kusina. \"Hindi namin sila dinala kay Cristo,\" sabi ng isa sa mga babae. \"Ang panalangin ang gumawa.\""
+      ),
+      t(
+        "Whatever your field, set up a prayer rhythm for those you hope to reach: write names, pray daily for open doors, for boldness and for protection. Be sensitive to the Spirit's leading, and be wise about local laws and cultural realities. Never use \"spiritual warfare\" as drama or as an excuse for foolishness. The authority we have is in the name of Jesus, used humbly and with love.",
+        "Anuman ang larangan mo, magtakda ng ritmo ng panalangin para sa mga nais mong maabot: isulat ang pangalan, ipanalangin araw-araw ang mga bukas na pinto, tapang at proteksyon. Maging sensitibo sa paggabay ng Espiritu, at maging marunong sa lokal na batas at kultural na katotohanan. Huwag gamitin ang \"espirituwal na labanan\" bilang drama o palusot sa kahangalan. Ang awtoridad natin ay nasa pangalan ni Hesus, ginagamit nang mapagkumbaba at may pag-ibig."
+      ),
+    ],
+    twist: t(
+      "We often wait for boldness before we pray. But Acts 4 shows the reverse: they prayed FOR boldness, because they did not have it on their own. Weakness is the doorway for power. The apostles who had just been threatened did not ask for the threats to stop; they asked God to empower them in the middle of the threats. The Kingdom twist is that God's power comes to those who admit they have none.",
+      "Madalas tayong naghihintay ng tapang bago manalangin. Pero ipinapakita ng Gawa 4 ang kabaligtaran: nanalangin sila PARA SA tapang, dahil wala sila nito sa sarili. Ang kahinaan ay pintuan ng kapangyarihan. Ang mga apostol na kababantaan lang ay hindi humiling na tumigil ang banta; hiniling nilang bigyan sila ng kapangyarihan ng Diyos sa gitna ng mga banta. Ang twist ng Kaharian ay ang kapangyarihan ng Diyos ay dumarating sa mga umaaming wala silang taglay."
+    ),
+    confirm: [
+      t("Zechariah 4:6: not by might nor by power, but by My Spirit.", "Zacarias 4:6: hindi sa lakas o kapangyarihan, kundi sa Aking Espiritu."),
+      t("Acts 1:8: you will receive power when the Holy Spirit comes on you, and you will be My witnesses.", "Gawa 1:8: tatanggap kayo ng kapangyarihan kapag dumating sa inyo ang Espiritu Santo, at kayo ay magiging Aking mga saksi."),
+      t("Acts 16:25-34: midnight prayer and singing in prison led to the jailer's salvation.", "Gawa 16:25-34: ang panalangin at pag-awit sa hatinggabi sa bilangguan ay nagdulot ng kaligtasan ng tagapagbantay."),
+      t("Colossians 4:2-4: devote yourselves to prayer, that God may open a door for the message.", "Colosas 4:2-4: italaga ang sarili sa panalangin upang magbukas ang Diyos ng pinto para sa mensahe."),
+    ],
+    heart: [
+      t(
+        "Depend on the Spirit, not on talent or technique. Ask daily to be filled and led.",
+        "Umasa sa Espiritu, hindi sa talento o pamamaraan. Hilingin araw-araw na mapuno at magabayan."
+      ),
+      t(
+        "Pray for courage and love together. Use the name of Jesus with humility, and always honor people, because the battle is not against them.",
+        "Ipanalangin ang tapang at pag-ibig nang magkasama. Gamitin ang pangalan ni Hesus nang may kababaang-loob, at laging igalang ang mga tao, dahil hindi laban sa kanila ang labanan."
+      ),
+    ],
+    questions: [
+      t("Do I plan more than I pray when I think about reaching others?", "Mas marami ba akong nagpaplano kaysa nananalangin kapag iniisip kong maabot ang iba?"),
+      t("What fear is stopping me from speaking about Jesus?", "Anong takot ang pumipigil sa akin na magsalita tungkol kay Hesus?"),
+      t("Who am I praying for to come to know Christ, by name?", "Sino ang ipinagdarasal kong makakilala kay Cristo, sa pangalan?"),
+      t("Do I seek the Spirit's power for mission, or do I rely on myself?", "Hinahanap ko ba ang kapangyarihan ng Espiritu para sa misyon, o umaasa ako sa sarili ko?"),
+    ],
+    actions: [
+      t("Write the names of five people you want to see come to Christ and pray for them daily.", "Isulat ang pangalan ng limang taong gusto mong makitang lumapit kay Cristo at ipanalangin sila araw-araw."),
+      t("Pray Acts 4:29-31 aloud and ask God for boldness and power for your specific situation.", "Ipanalangin nang malakas ang Gawa 4:29-31 at humingi ng tapang at kapangyarihan para sa partikular mong sitwasyon."),
+      t("Join or start a short prayer time with others for the mission field this week.", "Sumali o magsimula ng maikling oras ng panalangin kasama ang iba para sa mission field ngayong linggo."),
+    ],
+    prayer: t(
+      "Almighty God, the mission is Yours, and the power is Yours. Forgive me for relying on my own strength. Fill me afresh with Your Holy Spirit. Give me boldness to speak and love to serve. Open doors that no one can shut, and break the chains that keep people in darkness. Protect those who go, and strengthen those who stay. Let the name of Jesus be honored in every place. Use me as You wish. In Jesus' name, Amen.",
+      "Makapangyarihang Diyos, Iyo ang misyon, at Iyo ang kapangyarihan. Patawarin Mo ako sa pag-asa sa sarili kong lakas. Punuin Mo akong muli ng Iyong Espiritu Santo. Bigyan Mo ako ng tapang magsalita at pag-ibig maglingkod. Buksan Mo ang mga pintong walang makapagsasara, at lagutin ang tanikalang nagpapanatili sa mga tao sa kadiliman. Ingatan Mo ang mga pumupunta, at palakasin ang mga nananatili. Parangalan nawa ang pangalan ni Hesus sa bawat lugar. Gamitin Mo ako ayon sa Iyong kalooban. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "accountable-leaders": {
+    revelation: t(
+      "Accountability is not a threat to a leader; it is the gift that keeps a gifted person from destroying themselves and others.",
+      "Ang pananagutan ay hindi banta sa lider; ito ay regalong nag-iingat sa taong may kaloob na hindi masira ang sarili at ang iba."
+    ),
+    mainTruth: t(
+      "Paul and Barnabas, after their first mission journey, \"sailed back to Antioch... gathered the church together and reported all that God had done through them\" (Acts 14:26-27). Paul told Timothy, \"Do not entertain an accusation against an elder unless it is brought by two or three witnesses. But those elders who are sinning you are to reprove before everyone, so that the others may take warning\" (1 Timothy 5:19-20). And Proverbs says, \"Where there is no guidance, a people falls, but in an abundance of counselors there is safety\" (Proverbs 11:14).",
+      "Pagkatapos ng unang paglalakbay-misyon, sina Pablo at Bernabe ay \"bumalik sa Antioquia... tinipon ang iglesia at iniulat ang lahat ng ginawa ng Diyos sa pamamagitan nila\" (Gawa 14:26-27). Sinabi ni Pablo kay Timoteo, \"Huwag kang tumanggap ng paratang laban sa isang elder maliban kung may dalawa o tatlong saksi. Ngunit ang mga elder na nagkakasala ay dapat sawayin sa harap ng lahat, upang matakot ang iba\" (1 Timoteo 5:19-20). At sabi ng Kawikaan, \"Kapag walang patnubay, bumabagsak ang bayan, ngunit sa dami ng tagapayo ay may kaligtasan\" (Kawikaan 11:14)."
+    ),
+    insight: [
+      t(
+        "Even the apostles reported back to the church that sent them. Nobody in the Bible is meant to lead without being answerable to someone. Many leaders fall not because they were evil from the start but because no one was close enough to ask honest questions. Isolation, success and admiration make a dangerous mix. The healthiest leaders invite correction before it is forced on them.",
+        "Kahit ang mga apostol ay nag-ulat sa iglesiang nagsugo sa kanila. Walang sinuman sa Bibliya ang dapat mamuno nang hindi mananagot sa isang tao. Maraming lider ang bumabagsak hindi dahil masama na sila sa simula kundi dahil walang sapat na malapit para magtanong ng tapat na tanong. Mapanganib ang halo ng pag-iisa, tagumpay at paghanga. Ang pinakamalusog na lider ay inaanyayahan ang pagtutuwid bago pa ito ipilit sa kanila."
+      ),
+      t(
+        "Notice the balance in 1 Timothy 5: leaders are protected from careless accusations (two or three witnesses), but sinning leaders are also corrected openly when needed. Grace is protective and justice is protective. Accountability is not about suspicion or control; it is a structure of love: people who know you, who can ask hard questions, and who can speak truth when you are blind.",
+        "Pansinin ang balanse sa 1 Timoteo 5: iniingatan ang mga lider mula sa pabayang paratang (dalawa o tatlong saksi), ngunit itinutuwid din nang hayagan ang nagkakasalang lider kung kailangan. Ang biyaya ay nagpoprotekta at ang katarungan ay nagpoprotekta. Ang pananagutan ay hindi tungkol sa hinala o pagkontrol; ito ay istruktura ng pag-ibig: mga taong kilala ka, makakapagtanong ng mahihirap na tanong, at makakapagsabi ng katotohanan kapag bulag ka."
+      ),
+    ],
+    life: [
+      t(
+        "A gifted worship leader in a Middle East fellowship began skipping rehearsals and spending late nights with questionable company. Because the church had a small leadership team who met monthly to share honestly, two of them approached him gently. He initially got defensive, but over several conversations he broke down, confessed a growing secret and accepted a season of rest with support. Two years later he was restored and now mentors younger leaders. \"Accountability saved my ministry and maybe my life,\" he says.",
+        "Isang mahusay na worship leader sa isang fellowship sa Middle East ang nagsimulang lumiban sa rehearsal at magpuyat sa kahina-hinalang kasama. Dahil may maliit na pangkat ng pamunuan ang simbahan na nagkikita buwan-buwan para magbahagi nang tapat, dalawa sa kanila ang marahang lumapit sa kanya. Noong una ay nagtanggol siya, ngunit sa ilang usapan ay bumigay siya, ipinagtapat ang lumalaking lihim at tinanggap ang panahon ng pahinga na may suporta. Pagkaraan ng dalawang taon, naibalik siya at ngayon ay nagmementor ng mas batang lider. \"Iniligtas ng pananagutan ang ministeryo ko at marahil ang buhay ko,\" sabi niya."
+      ),
+      t(
+        "Whether you are a pastor, a cell group leader or a worker at a charity, build structures of accountability: a mentor who can ask you anything, a team that shares decisions, transparent finances, and regular honest check-ins. Give permission to be questioned, and respond with humility, not defensiveness. And if you see a leader struggling, speak up with love and humility rather than gossip.",
+        "Pastor ka man, lider ng cell group o manggagawa sa charity, bumuo ng mga istruktura ng pananagutan: mentor na puwedeng magtanong ng anuman, pangkat na nagbabahagi ng desisyon, bukas na pananalapi, at regular na tapat na kumustahan. Magbigay ng pahintulot na tanungin ka, at tumugon nang may kababaang-loob, hindi pagtatanggol. At kung may nakikita kang lider na nahihirapan, magsalita nang may pag-ibig at kababaang-loob sa halip na magtsismis."
+      ),
+    ],
+    twist: t(
+      "We think accountability is for the weak or the suspicious. The Kingdom twist is that the stronger and more gifted you are, the more you need it. Jesus, perfectly sinless, still submitted to the Father and sought His will. A leader who refuses accountability is not strong; they are alone, and the Bible says \"pride goes before destruction\" (Proverbs 16:18).",
+      "Akala natin ang pananagutan ay para sa mahihina o mapaghinala. Ang twist ng Kaharian ay mas malakas at mas may kaloob ka, mas kailangan mo ito. Si Hesus, na ganap na walang kasalanan, ay nagpasakop pa rin sa Ama at hinanap ang Kanyang kalooban. Ang lider na tumatangging managot ay hindi malakas; nag-iisa siya, at sabi ng Bibliya, \"ang kapalaluan ay nauuna sa pagkawasak\" (Kawikaan 16:18)."
+    ),
+    confirm: [
+      t("Galatians 2:1-2: Paul laid his gospel before the leaders in Jerusalem to be sure he was not running in vain.", "Galacia 2:1-2: inilahad ni Pablo ang kanyang ebanghelyo sa mga lider sa Jerusalem upang tiyaking hindi siya tumatakbo nang walang saysay."),
+      t("2 Samuel 12:1-13: David received Nathan's rebuke and repented.", "2 Samuel 12:1-13: tinanggap ni David ang saway ni Natan at nagsisi."),
+      t("Hebrews 13:17: leaders keep watch and must give an account to God.", "Hebreo 13:17: nagbabantay ang mga lider at mananagot sa Diyos."),
+      t("Proverbs 27:6: faithful are the wounds of a friend.", "Kawikaan 27:6: tapat ang mga sugat ng kaibigan."),
+    ],
+    heart: [
+      t(
+        "Welcome correction as a gift. Ask others, \"What do you see in me that I cannot see?\" and thank them for honesty.",
+        "Tanggapin ang pagtutuwid bilang regalo. Itanong sa iba, \"Ano ang nakikita ninyo sa akin na hindi ko nakikita?\" at pasalamatan sila sa katapatan."
+      ),
+      t(
+        "Do not hide, spin or excuse. Walk in the light, and choose the humility that keeps ministry clean and long-lasting.",
+        "Huwag magtago, mag-ikot ng kuwento o magdahilan. Lumakad sa liwanag, at piliin ang kababaang-loob na nagpapanatiling malinis at pangmatagalan ang ministeryo."
+      ),
+    ],
+    questions: [
+      t("Who has real permission to ask me hard questions?", "Sino ang may tunay na pahintulot na magtanong sa akin ng mahihirap na tanong?"),
+      t("How do I respond when someone corrects me?", "Paano ako tumutugon kapag may nagtutuwid sa akin?"),
+      t("Is there anything hidden I need to bring into the light?", "May nakatago ba akong kailangang ilabas sa liwanag?"),
+      t("Am I accountable for my time, my money and my relationships?", "Mananagot ba ako sa oras, pera at relasyon ko?"),
+    ],
+    actions: [
+      t("Invite one mature believer to be your accountability partner and set a monthly meeting.", "Anyayahan ang isang mature na mananampalataya na maging accountability partner mo at magtakda ng buwanang pagkikita."),
+      t("Ask your leadership team to review how decisions and finances are handled and shared.", "Hilingin sa pangkat ng pamunuan na suriin kung paano hinahawakan at ibinabahagi ang mga desisyon at pananalapi."),
+      t("Pray for your leaders by name and send them a note of gratitude and support.", "Ipanalangin ang mga lider mo sa pangalan at padalhan sila ng tala ng pasasalamat at suporta."),
+    ],
+    prayer: t(
+      "Lord, You see everything, and You love me still. Forgive my pride and my tendency to hide. Surround me with honest, loving people who will tell me the truth. Give me a humble heart to receive correction and the courage to walk in the light. Protect my leaders and help me to support them. Let our church be a place where leaders are accountable, the weak are protected and Your name is honored. In Jesus' name, Amen.",
+      "Panginoon, nakikita Mo ang lahat, at minamahal Mo pa rin ako. Patawarin Mo ang aking pagmamataas at hilig magtago. Palibutan Mo ako ng mga tapat at mapagmahal na taong magsasabi sa akin ng katotohanan. Bigyan Mo ako ng mapagpakumbabang pusong tumanggap ng pagtutuwid at lakas ng loob na lumakad sa liwanag. Ingatan Mo ang aking mga lider at tulungan akong suportahan sila. Gawin Mong lugar ang aming iglesia kung saan nananagot ang mga lider, naipagtatanggol ang mahihina at napaparangalan ang Iyong pangalan. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "lifes-big-moments": {
+    revelation: t(
+      "Weddings and funerals are the moments when hearts are most open, and a minister who is present with love can carry Christ into the center of a family's story.",
+      "Ang kasal at libing ay mga sandaling pinakabukas ang puso, at ang ministrong naroroon nang may pag-ibig ay maaaring magdala kay Cristo sa gitna ng kuwento ng isang pamilya."
+    ),
+    mainTruth: t(
+      "Jesus began His public signs at a wedding in Cana, where He saved a family from shame and revealed His glory (John 2:1-11). At a funeral in Bethany He declared, \"I am the resurrection and the life. The one who believes in me will live, even though they die... Do you believe this?\" (John 11:25-26). And Ecclesiastes reminds us that \"there is a time for everything... a time to weep and a time to laugh, a time to mourn and a time to dance\" (Ecclesiastes 3:1-8). God is present in both the celebrations and the sorrows of His people.",
+      "Sinimulan ni Hesus ang Kanyang mga tanda sa pampublikong buhay sa isang kasalan sa Cana, kung saan iniligtas Niya ang isang pamilya mula sa kahihiyan at ipinakita ang Kanyang kaluwalhatian (Juan 2:1-11). Sa isang libing sa Betania, ipinahayag Niya, \"Ako ang pagkabuhay na mag-uli at ang buhay. Ang sumasampalataya sa Akin ay mabubuhay, kahit mamatay... Sumasampalataya ka ba rito?\" (Juan 11:25-26). At ipinaaalala ng Eclesiastes na \"may panahon para sa lahat... panahon ng pag-iyak at panahon ng pagtawa, panahon ng pagluluksa at panahon ng pagsayaw\" (Eclesiastes 3:1-8). Naroroon ang Diyos sa mga pagdiriwang at kalungkutan ng Kanyang bayan."
+    ),
+    insight: [
+      t(
+        "Life's big moments, weddings, births, funerals, graduations, farewells at the airport, are doors through which many people who rarely attend church will step. They come with open hearts, soft and honest. A minister's presence at these times can leave a lifelong impression. Notice that Jesus did not preach a sermon at Cana; He noticed a need, served quietly and let His glory be seen. Often the most powerful ministry at big moments is simple, practical presence.",
+        "Ang malalaking sandali ng buhay, kasal, kapanganakan, libing, pagtatapos, paalam sa paliparan, ay mga pintuang dinaraanan ng maraming taong bihirang dumalo sa simbahan. Dumarating silang bukas, malambot at tapat ang puso. Ang presensya ng ministro sa mga panahong ito ay maaaring mag-iwan ng habambuhay na impresyon. Pansinin na hindi nangaral si Hesus sa Cana; napansin Niya ang pangangailangan, tahimik na naglingkod at hinayaang makita ang Kanyang kaluwalhatian. Madalas, ang pinakamakapangyarihang ministeryo sa mga malalaking sandali ay simpleng praktikal na presensya."
+      ),
+      t(
+        "Each moment has its own heart. At a wedding, we celebrate God's design for covenant love and call the couple to build on Christ. At a funeral, we comfort the grieving, honor the life of the one who died and proclaim hope without false promises or pressure. At a birth or dedication, we thank God and commit to support the family. A wise minister prepares with prayer, listens to the family, keeps the message short, warm and Christ-centered, and never uses a grieving moment to criticize or to manipulate.",
+        "May sariling puso ang bawat sandali. Sa kasal, ipinagdiriwang natin ang disenyo ng Diyos para sa tipanan ng pag-ibig at hinihikayat ang mag-asawa na magtayo kay Cristo. Sa libing, inaaliw natin ang nagluluksa, ginagalang ang buhay ng yumao at ipinahahayag ang pag-asa nang walang maling pangako o presyur. Sa kapanganakan o pagtatalaga, nagpapasalamat tayo sa Diyos at nangangakong susuportahan ang pamilya. Ang matalinong ministro ay naghahanda sa panalangin, nakikinig sa pamilya, pinananatiling maikli, mainit at nakasentro kay Cristo ang mensahe, at hindi ginagamit ang sandali ng pagluluksa para pumuna o manipulahin."
+      ),
+    ],
+    life: [
+      t(
+        "Pastor Joel was asked to lead the funeral of a man he barely knew, whose family were mostly not believers. He visited them the day before, listened as they told stories about the man, and learned he loved fishing and his grandchildren. At the service he spoke briefly with warmth, honored the man's life, and then shared simply about Jesus' promise of resurrection. Afterward the widow said, \"I've never heard about God like that. Could we talk more?\" Three of the family later began attending church.",
+        "Hiniling kay Pastor Joel na manguna sa libing ng isang lalaking halos hindi niya kilala, na karamihan sa pamilya ay hindi mananampalataya. Dinalaw niya sila noong nakaraang araw, nakinig sa mga kuwento nila tungkol sa lalaki, at nalaman niyang mahilig itong mangisda at mahal ang mga apo. Sa serbisyo, maikli at mainit siyang nagsalita, pinarangalan ang buhay ng lalaki, at saka simpleng ibinahagi ang pangako ni Hesus ng pagkabuhay na mag-uli. Pagkatapos, sabi ng balo, \"Hindi pa ako nakarinig tungkol sa Diyos nang ganito. Puwede pa ba tayong mag-usap?\" Tatlo sa pamilya ang kalaunan ay nagsimulang dumalo sa simbahan."
+      ),
+      t(
+        "Even if you are not a pastor, you can be present in these moments for your friends and family: show up, bring food, send a card, pray for the couple, help with arrangements, call a friend on the anniversary of a loss. For OFWs, big moments often happen while you are far away. A video call, a prayer over the phone and a small gift sent home can show love across the miles.",
+        "Kahit hindi ka pastor, maaari kang maging naroroon sa mga sandaling ito para sa mga kaibigan at pamilya mo: dumalo, magdala ng pagkain, magpadala ng card, ipanalangin ang mag-asawa, tumulong sa mga kaayusan, tawagan ang kaibigan sa anibersaryo ng pagkawala. Para sa mga OFW, madalas nangyayari ang malalaking sandali habang malayo ka. Ang video call, panalangin sa telepono at maliit na regalong ipinadala sa bahay ay nagpapakita ng pagmamahal sa kabila ng layo."
+      ),
+    ],
+    twist: t(
+      "We assume that big moments need big speeches. The Kingdom twist is that Jesus' first miracle happened in a back room with servants and jars, and almost no one knew. God's glory is often revealed in quiet service at the edges of celebration. And in sorrow, the most powerful word at the grave was not a speech but two short sentences from Jesus and then tears.",
+      "Akala natin kailangan ng malalaking talumpati ang malalaking sandali. Ang twist ng Kaharian ay ang unang himala ni Hesus ay nangyari sa likod na silid kasama ang mga tagapaglingkod at banga, at halos walang nakaalam. Madalas na nahahayag ang kaluwalhatian ng Diyos sa tahimik na paglilingkod sa gilid ng pagdiriwang. At sa kalungkutan, ang pinakamakapangyarihang salita sa libingan ay hindi talumpati kundi dalawang maikling pangungusap mula kay Hesus at saka luha."
+    ),
+    confirm: [
+      t("Genesis 2:22-24: God Himself brought the first bride to the man.", "Genesis 2:22-24: ang Diyos mismo ang nagdala ng unang kasintahang babae sa lalaki."),
+      t("Luke 2:22-24: Mary and Joseph presented the baby Jesus to the Lord.", "Lucas 2:22-24: iniharap nina Maria at Jose ang sanggol na si Hesus sa Panginoon."),
+      t("1 Corinthians 15:51-58: death is swallowed up in victory.", "1 Corinto 15:51-58: nilamon ng tagumpay ang kamatayan."),
+      t("Psalm 126:5-6: those who sow in tears will reap with songs of joy.", "Awit 126:5-6: ang naghahasik nang may luha ay aani nang may awit ng galak."),
+    ],
+    heart: [
+      t(
+        "Be present, not performing. Let your heart rejoice with those who rejoice and weep with those who weep (Romans 12:15).",
+        "Maging naroroon, hindi nagtatanghal. Hayaang magalak ang puso mo kasama ng nagagalak at umiyak kasama ng umiiyak (Roma 12:15)."
+      ),
+      t(
+        "Respect every family's customs and wishes. Speak with warmth, never with pressure or judgment, and trust God to use simple faithfulness.",
+        "Igalang ang kaugalian at kagustuhan ng bawat pamilya. Magsalita nang may init, hindi nang may presyur o paghuhusga, at magtiwala sa Diyos na gagamitin Niya ang simpleng katapatan."
+      ),
+    ],
+    questions: [
+      t("Do I show up for the big moments in the lives of people I serve?", "Dumadalo ba ako sa mga malalaking sandali ng buhay ng mga pinaglilingkuran ko?"),
+      t("How do I speak at weddings and funerals: with Christ at the center, or with my own agenda?", "Paano ako nagsasalita sa kasal at libing: nasa gitna si Cristo, o ang sarili kong agenda?"),
+      t("Who is grieving or celebrating near me this week?", "Sino ang nagluluksa o nagdiriwang malapit sa akin ngayong linggo?"),
+      t("How can I be present for family back home even from far away?", "Paano ako magiging naroroon para sa pamilya sa Pilipinas kahit malayo?"),
+    ],
+    actions: [
+      t("Write a short, warm blessing you could use at a wedding, and a short word of hope for a funeral.", "Magsulat ng maikli at mainit na basbas na magagamit sa kasal, at maikling salita ng pag-asa para sa libing."),
+      t("Contact one person who is going through a major life event and offer a practical help.", "Kontakin ang isang taong dumaraan sa malaking pangyayari sa buhay at mag-alok ng praktikal na tulong."),
+      t("Ask your pastor how you can assist in preparing for weddings or funerals at your church.", "Tanungin ang pastor mo kung paano ka makakatulong sa paghahanda ng kasal o libing sa simbahan ninyo."),
+    ],
+    prayer: t(
+      "Lord Jesus, You turned water into wine at a wedding and wept at a grave. Thank You that You are present in every joy and sorrow. Teach me to be present with love, to celebrate with those who celebrate and to mourn with those who mourn. Give me the right words and the wisdom of silence. Use the big moments of life to draw hearts to You. Comfort the grieving and bless every new beginning. In Your name, Amen.",
+      "Panginoong Hesus, ginawa Mong alak ang tubig sa isang kasalan at lumuha Ka sa libingan. Salamat po dahil naroroon Ka sa bawat saya at lungkot. Turuan Mo akong maging naroroon nang may pag-ibig, magdiwang kasama ng nagdiriwang at magluksa kasama ng nagluluksa. Bigyan Mo ako ng tamang salita at karunungan ng katahimikan. Gamitin Mo ang malalaking sandali ng buhay para akitin ang mga puso sa Iyo. Aliwin Mo ang nagluluksa at pagpalain ang bawat bagong simula. Sa Iyong pangalan, Amen."
+    ),
+  },
+  "caring-for-marriages": {
+    revelation: t(
+      "Marriage is God's first gift and His living picture of Christ and the church, so caring for marriages is caring for a testimony the world can see.",
+      "Ang pag-aasawa ay unang regalo ng Diyos at buhay na larawan ni Cristo at ng iglesia, kaya ang pag-aalaga sa mga mag-asawa ay pag-aalaga sa patotoong nakikita ng mundo."
+    ),
+    mainTruth: t(
+      "From the beginning God said, \"It is not good for the man to be alone,\" and He made a partner, so that \"a man will leave his father and mother and be united to his wife, and they will become one flesh\" (Genesis 2:18-25). Paul writes, \"Husbands, love your wives, just as Christ loved the church and gave himself up for her\" (Ephesians 5:25-33), and calls wives to respect and husbands to love, never to be harsh (Colossians 3:18-19). Marriage is a covenant of sacrificial love, not a contract of convenience.",
+      "Mula sa simula, sinabi ng Diyos, \"Hindi mabuti na mag-isa ang lalaki,\" at gumawa Siya ng katuwang, upang \"iiwan ng lalaki ang kanyang ama at ina at makikipisan sa kanyang asawa, at sila'y magiging isang laman\" (Genesis 2:18-25). Sumulat si Pablo, \"Mga asawang lalaki, ibigin ninyo ang inyong asawa, gaya ng pag-ibig ni Cristo sa iglesia at ibinigay ang Sarili para sa kanya\" (Efeso 5:25-33), at tinatawag ang mga asawang babae sa paggalang at ang mga lalaki sa pag-ibig, hindi sa kalupitan (Colosas 3:18-19). Ang pag-aasawa ay tipan ng sakripisyong pag-ibig, hindi kontrata ng kaginhawaan."
+    ),
+    insight: [
+      t(
+        "Many couples enter marriage prepared for the wedding but not for the marriage. When conflict, money pressure, in-laws, or distance arrives, they feel something is wrong with them. But Scripture presents marriage as a school of sanctification: two sinners learn to love like Christ. A caring church does not wait for a crisis; it walks with couples early, normalizes asking for help and teaches them how to communicate, forgive and serve each other.",
+        "Maraming mag-asawa ang pumapasok sa pag-aasawa na handa para sa kasal pero hindi sa pagsasama. Kapag dumating ang away, presyur sa pera, biyenan o layo, pakiramdam nila may mali sa kanila. Pero ipinapakita ng Kasulatan ang pag-aasawa bilang paaralan ng pagpapakabanal: dalawang makasalanang natututong magmahal gaya ni Cristo. Ang mapag-alagang iglesia ay hindi naghihintay ng krisis; sinasamahan nito ang mga mag-asawa nang maaga, ginagawang normal ang paghingi ng tulong at tinuturuan silang makipag-usap, magpatawad at maglingkod sa isa't isa."
+      ),
+      t(
+        "For OFW couples the stress is multiplied: long separations, temptation, loneliness, mistrust, and the feeling of being strangers when reunited. A caring minister knows these pressures, prays for these marriages and never judges. Also remember there are hurting marriages marked by abuse. Where there is violence or danger, safety comes first, and a minister must help the vulnerable person find protection and professional help, never pressure them to simply \"endure.\"",
+        "Para sa mga mag-asawang OFW, nadodoble ang stress: mahabang paghihiwalay, tukso, kalungkutan, kawalan ng tiwala, at pakiramdam na parang estranghero kapag muling nagsama. Alam ng mapag-alagang ministro ang mga presyur na ito, ipinagdarasal ang mga pag-aasawang ito at hindi kailanman humuhusga. Tandaan din na may mga nasasaktang pag-aasawa na may pang-aabuso. Kung may karahasan o panganib, nauuna ang kaligtasan, at dapat tulungan ng ministro ang bulnerable na tao na makahanap ng proteksyon at propesyonal na tulong, hindi pilitin silang basta \"magtiis.\""
+      ),
+    ],
+    life: [
+      t(
+        "Tony and Grace had been married twelve years, Tony working in Saudi and Grace home with the children. They rarely talked beyond money and school. A couple from their church invited them on a video call weekly to share one thing they were thankful for and one thing they needed from each other. At first it felt awkward; within months they were laughing and praying together again. \"We didn't need a miracle,\" Grace said. \"We needed a rhythm and someone to walk with us.\"",
+        "Sina Tony at Grace ay labindalawang taon nang kasal, si Tony ay nasa Saudi at si Grace ay nasa bahay kasama ang mga bata. Bihira silang mag-usap maliban sa pera at paaralan. Inanyayahan sila ng isang mag-asawa mula sa simbahan sa lingguhang video call para magbahagi ng isang bagay na pinasasalamatan at isang bagay na kailangan nila sa isa't isa. Noong una ay nakakailang; sa loob ng ilang buwan ay nagtatawanan at nananalangin na silang muli. \"Hindi namin kailangan ng himala,\" sabi ni Grace. \"Kailangan namin ng ritmo at taong sasama sa amin.\""
+      ),
+      t(
+        "Every believer can strengthen marriages: honor your own spouse, speak well of marriage, pray for couples you know, never gossip about their problems, and encourage them to seek help early. Singles also have a ministry to marriages by befriending, babysitting and cheering them on.",
+        "Bawat mananampalataya ay makapagpapatatag ng mga pag-aasawa: igalang ang sarili mong asawa, magsalita nang mabuti tungkol sa pag-aasawa, ipanalangin ang mga mag-asawang kilala mo, huwag magtsismis tungkol sa kanilang problema, at hikayatin silang humingi ng tulong nang maaga. May ministeryo rin ang mga single sa mga mag-asawa sa pamamagitan ng pakikipagkaibigan, pag-aalaga ng bata at pagpapalakas ng loob."
+      ),
+    ],
+    twist: t(
+      "We think marriage is meant to make us happy. The Kingdom twist is that marriage is meant to make us holy, and holiness, surprisingly, produces the deepest joy. When both spouses stop asking, \"Is my needs being met?\" and start asking, \"How can I love like Christ?\" the marriage becomes a place of life. The command to husbands to give themselves up is the most radical call to love in Scripture.",
+      "Akala natin ang pag-aasawa ay para pasayahin tayo. Ang twist ng Kaharian ay ang pag-aasawa ay para gawin tayong banal, at ang kabanalan, nakakagulat, ang nagbubunga ng pinakamalalim na galak. Kapag tumigil ang mag-asawa sa pagtatanong ng \"Natutugunan ba ang pangangailangan ko?\" at nagsimulang magtanong ng \"Paano ako magmamahal gaya ni Cristo?\" ang pag-aasawa ay nagiging lugar ng buhay. Ang utos sa mga asawang lalaki na ibigay ang sarili ang pinakamapangahas na panawagan sa pag-ibig sa Kasulatan."
+    ),
+    confirm: [
+      t("Proverbs 5:18-19: rejoice in the wife of your youth.", "Kawikaan 5:18-19: magalak ka sa asawa ng iyong kabataan."),
+      t("1 Corinthians 13:4-7: love is patient and kind, it keeps no record of wrongs.", "1 Corinto 13:4-7: ang pag-ibig ay mapagtiis at mabait, hindi nagtatala ng mga mali."),
+      t("Malachi 2:14-16: marriage is a covenant before God.", "Malakias 2:14-16: ang pag-aasawa ay tipan sa harap ng Diyos."),
+      t("Song of Songs 2:16: \"My beloved is mine and I am his.\"", "Awit ng mga Awit 2:16: \"Ang aking sinta ay akin at ako ay kanya.\""),
+    ],
+    heart: [
+      t(
+        "Honor marriage with your words and actions. Do not joke about it, and do not gossip about couples. Pray that Christ will be at the center.",
+        "Parangalan ang pag-aasawa sa salita at gawa. Huwag itong gawing biro, at huwag magtsismis tungkol sa mga mag-asawa. Ipanalangin na si Cristo ang nasa gitna."
+      ),
+      t(
+        "Be gentle and humble when helping couples in trouble. Listen to both sides, keep confidence, and always protect the vulnerable.",
+        "Maging magiliw at mapagkumbaba sa pagtulong sa mag-asawang may problema. Pakinggan ang magkabilang panig, ingatan ang lihim, at laging protektahan ang bulnerable."
+      ),
+    ],
+    questions: [
+      t("How do I honor my own marriage, or prepare for a future one?", "Paano ko pinaparangalan ang sarili kong pag-aasawa, o naghahanda para sa hinaharap?"),
+      t("Which couples around me need encouragement or support this month?", "Aling mga mag-asawa sa paligid ko ang nangangailangan ng paghikayat o suporta ngayong buwan?"),
+      t("Do I know how to respond wisely if I discover abuse or danger in a marriage?", "Alam ko ba kung paano matalinong tumugon kung may matuklasan akong pang-aabuso o panganib sa isang pag-aasawa?"),
+      t("What small habit could strengthen my relationships today?", "Anong maliit na gawi ang makapagpapatatag ng aking mga relasyon ngayon?"),
+    ],
+    actions: [
+      t("Pray for three couples by name this week and send each an encouraging message.", "Ipanalangin sa pangalan ang tatlong mag-asawa ngayong linggo at padalhan ang bawat isa ng mensaheng nakakapagpalakas."),
+      t("Offer practical help to a couple, such as babysitting, a meal or a listening ear.", "Mag-alok ng praktikal na tulong sa mag-asawa, tulad ng pag-aalaga ng bata, pagkain o nakikinig na tainga."),
+      t("Learn who in your church or community can provide safe help for marriages in crisis.", "Alamin kung sino sa simbahan o komunidad ninyo ang makapagbibigay ng ligtas na tulong sa mga pag-aasawang may krisis."),
+    ],
+    prayer: t(
+      "Father, thank You for the gift of marriage and for showing us Christ's love through it. Strengthen every marriage in our church, especially those separated by distance. Heal what is broken and protect those in danger. Teach husbands to love sacrificially and wives to be honored and respected. Help me to honor marriage in my own life and to support others. May our marriages be a testimony of Your faithfulness. In Jesus' name, Amen.",
+      "Ama, salamat po sa regalo ng pag-aasawa at sa pagpapakita ng pag-ibig ni Cristo sa pamamagitan nito. Palakasin Mo ang bawat pag-aasawa sa aming iglesia, lalo na ang mga pinaghiwalay ng layo. Pagalingin Mo ang sira at ingatan ang mga nasa panganib. Turuan Mo ang mga asawang lalaki na magmahal nang may sakripisyo at ang mga asawang babae na maparangalan at igalang. Tulungan Mo akong parangalan ang pag-aasawa sa sarili kong buhay at suportahan ang iba. Nawa'y maging patotoo ng Iyong katapatan ang aming mga pag-aasawa. Sa pangalan ni Hesus, Amen."
+    ),
+  },
 };

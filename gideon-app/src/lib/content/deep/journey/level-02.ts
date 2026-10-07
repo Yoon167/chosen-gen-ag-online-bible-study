@@ -661,4 +661,394 @@ export const DEEP: DeepSet = {
       "Banal na Diyos, ipinapahayag ko na ako ay nagkasala at hindi umabot sa Iyong kaluwalhatian. Gaya nina Adan at Eva, nagduda ako sa Iyong kabutihan, nagtago sa Iyo at nanisi ng iba. Salamat dahil hinahanap Mo pa rin ako, nagtatanong, \"Nasaan ka?\" Narito ako, Panginoon. Tinatanggap ko ang walang bayad na kaloob na buhay na walang hanggan kay Kristo Hesus. Takpan Mo ang aking hiya, linisin ang aking puso, at turuan akong magtiwala sa Iyong kabutihan. Amen."
     ),
   },
+  "declared-righteous": {
+    revelation: t(
+      "God does not wait for you to become good before He calls you righteous; at the cross, He placed your sin on Jesus and Christ's righteousness on you.",
+      "Hindi naghihintay ang Diyos na maging mabuti ka muna bago ka ituring na matuwid; sa krus, inilagay Niya ang kasalanan mo kay Hesus at ang katuwiran ni Cristo sa iyo."
+    ),
+    mainTruth: t(
+      "\"For all have sinned and fall short of the glory of God, and all are justified freely by his grace through the redemption that came by Christ Jesus\" (Romans 3:23-24). To be justified means God declares us righteous, as a judge announces \"not guilty,\" not because we earned it but because Jesus took our penalty. \"God made him who had no sin to be sin for us, so that in him we might become the righteousness of God\" (2 Corinthians 5:21). The result is peace: \"Since we have been justified through faith, we have peace with God\" (Romans 5:1).",
+      "\"Sapagkat ang lahat ay nagkasala at hindi nakaabot sa kaluwalhatian ng Diyos, at ang lahat ay inaaring-ganap nang walang bayad sa pamamagitan ng Kanyang biyaya, sa pamamagitan ng katubusang kay Cristo Hesus\" (Roma 3:23-24). Ang pag-aaring-ganap ay ang pagpapahayag ng Diyos na tayo ay matuwid, gaya ng hukom na nagsasabing \"walang sala,\" hindi dahil kinita natin kundi dahil pinasan ni Hesus ang parusa. \"Ang hindi nagkasala ay ginawa Niyang kasalanan dahil sa atin, upang tayo ay maging katuwiran ng Diyos sa Kanya\" (2 Corinto 5:21). Ang bunga ay kapayapaan: \"Yamang inaring-ganap tayo sa pamamagitan ng pananampalataya, may kapayapaan tayo sa Diyos\" (Roma 5:1)."
+    ),
+    insight: [
+      t(
+        "Many believers live like defendants still waiting for the verdict. They sin, feel guilty and assume they must start over, trying to be good enough to be accepted again. But justification is a finished verdict, not a daily performance review. God did not overlook sin; Romans 3:25-26 says He is both \"just and the one who justifies,\" because the penalty was fully paid in Christ's blood. Mercy never cancelled justice; it was satisfied by it.",
+        "Maraming mananampalataya ang namumuhay na parang nasasakdal na naghihintay pa ng hatol. Nagkakasala sila, nakokonsensya at inaakalang kailangang magsimulang muli, sinusubukang maging sapat na mabuti para tanggapin ulit. Pero ang pag-aaring-ganap ay tapos nang hatol, hindi araw-araw na performance review. Hindi nagkibit-balikat ang Diyos sa kasalanan; sabi ng Roma 3:25-26, Siya ay \"makatarungan at tagapag-aring-ganap,\" dahil lubusan nang nabayaran ang parusa sa dugo ni Cristo. Hindi pinawalang-bisa ng awa ang katarungan; natupad ito."
+      ),
+      t(
+        "Notice also the great exchange in 2 Corinthians 5:21: Jesus took what is ours (sin) and gave what is His (righteousness). It is not that God pretends we are righteous; in Christ we truly are, because we are joined to Him. That means your standing before God does not rise and fall with your best or worst day. It rests on Christ's record, not yours.",
+        "Pansinin din ang dakilang palitan sa 2 Corinto 5:21: kinuha ni Hesus ang sa atin (kasalanan) at ibinigay ang sa Kanya (katuwiran). Hindi nagkukunwari ang Diyos na matuwid tayo; kay Cristo, tunay tayong matuwid dahil nakaugnay tayo sa Kanya. Ibig sabihin, ang katayuan mo sa harap ng Diyos ay hindi tumataas o bumababa ayon sa pinakamagandang o pinakamasama mong araw. Nakasalalay ito sa talaan ni Cristo, hindi sa iyo."
+      ),
+    ],
+    life: [
+      t(
+        "Danilo, an OFW electrician, grew up believing that God kept a ledger. After a bad night of drinking with coworkers, he avoided prayer for two weeks, convinced God was angry. A friend showed him Romans 5:1. \"Peace with God is not what I feel,\" Danilo said later. \"It is what Jesus did.\" He confessed, received forgiveness and walked back in without hiding. Guilt told him to stay away; grace invited him home.",
+        "Si Danilo, OFW na electrician, lumaki sa paniniwalang may talaan ng kasalanan ang Diyos. Matapos ang masamang gabi ng inuman kasama ang mga katrabaho, dalawang linggo siyang umiwas sa panalangin, sigurado siyang galit ang Diyos. Ipinakita ng kaibigan niya ang Roma 5:1. \"Ang kapayapaan sa Diyos ay hindi ang nararamdaman ko,\" sabi niya pagkatapos. \"Iyon ang ginawa ni Hesus.\" Nagtapat siya, tumanggap ng kapatawaran at bumalik nang hindi nagtatago. Sinabi ng konsensya na lumayo; inanyayahan siya ng biyaya pauwi."
+      ),
+      t(
+        "When accusing thoughts come, \"You are a hypocrite, God is done with you,\" answer with the verdict: \"There is now no condemnation for those who are in Christ Jesus\" (Romans 8:1). Then live from acceptance, not for acceptance.",
+        "Kapag dumating ang mga paratang, \"Pakitang-tao ka, tapos na sa iyo ang Diyos,\" sagutin ng hatol: \"Wala nang hatol na parusa sa mga nakay Cristo Hesus\" (Roma 8:1). Pagkatapos, mamuhay mula sa pagtanggap, hindi para matanggap."
+      ),
+    ],
+    twist: t(
+      "We think righteousness is something we climb toward. In the Kingdom it is a gift we receive on our knees. The more you try to earn it, the less you can enjoy it; the more you receive it, the more it changes you. People who know they are forgiven much, love much (Luke 7:47). Grace does not produce lazy believers; it produces grateful ones.",
+      "Akala natin ang katuwiran ay inaakyat natin. Sa Kaharian, regalo itong tinatanggap nang nakaluhod. Habang pilit mo itong kinikita, lalong hindi mo ito nasisiyahan; habang tinatanggap mo, lalo kang nababago. Ang mga nakakaalam na marami silang pinatawad ay umiibig nang marami (Lucas 7:47). Hindi nagbubunga ng tamad na mananampalataya ang biyaya; nagbubunga ito ng mapagpasalamat."
+    ),
+    confirm: [
+      t("Genesis 15:6: Abraham believed God, and it was credited to him as righteousness.", "Genesis 15:6: sumampalataya si Abraham sa Diyos at ibinilang itong katuwiran sa kanya."),
+      t("Galatians 2:16: a person is not justified by works of the law but through faith in Christ.", "Galacia 2:16: ang tao ay hindi inaaring-ganap sa gawa ng kautusan kundi sa pananampalataya kay Cristo."),
+      t("Isaiah 61:10: He has clothed me with garments of salvation and a robe of righteousness.", "Isaias 61:10: dinamitan Niya ako ng damit ng kaligtasan at balabal ng katuwiran."),
+      t("Romans 8:33-34: who will bring a charge against God's elect? It is God who justifies.", "Roma 8:33-34: sino ang magsasakdal sa mga hinirang ng Diyos? Ang Diyos ang nag-aaring-ganap."),
+    ],
+    heart: [
+      t(
+        "Stop trying to win God's approval. Receive it. Thank Him that the verdict is already in, and let that peace quiet your fear of failure.",
+        "Itigil ang pagsusumikap na makuha ang pagsang-ayon ng Diyos. Tanggapin ito. Pasalamatan Siya na nakalabas na ang hatol, at hayaang patahimikin ng kapayapaang iyon ang takot mo sa pagkabigo."
+      ),
+      t(
+        "Extend the same grace to others. A person who knows they have been declared righteous has no reason to look down on the failing.",
+        "Ibigay rin sa iba ang parehong biyaya. Ang taong alam na inaring-ganap siya ay walang dahilan para hamakin ang nadadapa."
+      ),
+    ],
+    questions: [
+      t("Do I treat God as a judge still deciding, or as a Father who has already declared me His child?", "Itinuturing ko ba ang Diyos na hukom na nagpapasya pa, o Ama na nagpahayag nang anak Niya ako?"),
+      t("Where am I still trying to earn what Jesus already paid for?", "Saan ko pa sinusubukang kitain ang binayaran na ni Hesus?"),
+      t("What accusations do I believe that Romans 8:1 answers?", "Anong paratang ang pinaniniwalaan ko na sinasagot ng Roma 8:1?"),
+      t("How does being forgiven change how I treat others?", "Paano binabago ng pagiging pinatawad ang pakikitungo ko sa iba?"),
+    ],
+    actions: [
+      t("Read Romans 5:1-2 aloud and thank God for each blessing it names.", "Basahin nang malakas ang Roma 5:1-2 at pasalamatan ang Diyos sa bawat pagpapalang nabanggit."),
+      t("Next time guilt comes, answer it with Romans 8:1 before you do anything else.", "Sa susunod na dumating ang guilt, sagutin ito ng Roma 8:1 bago gumawa ng iba."),
+      t("Forgive one person who has been on your list of grudges.", "Patawarin ang isang taong nasa listahan mo ng tampo."),
+    ],
+    prayer: t(
+      "Father, thank You that You have declared me righteous, not because of my works but because of Jesus. Forgive my attempts to earn what You freely give. When guilt and accusation speak, remind me of Your verdict: no condemnation. Let me walk in peace with You and show that same grace to others. I rest in the finished work of Christ, my Savior. In His name, Amen.",
+      "Ama, salamat po na idineklara Mo akong matuwid, hindi dahil sa gawa ko kundi dahil kay Hesus. Patawarin Mo ako sa pagsubok kong kitain ang ibinibigay Mo nang libre. Kapag nagsalita ang guilt at paratang, ipaalala Mo ang Iyong hatol: walang hatol na parusa. Hayaan Mo akong lumakad sa kapayapaan sa Iyo at ibahagi ang parehong biyaya sa iba. Nagpapahinga ako sa natapos na gawa ni Cristo, aking Tagapagligtas. Sa Kanyang pangalan, Amen."
+    ),
+  },
+  "growing-holy": {
+    revelation: t(
+      "Holiness is not you trying harder to be good; it is God at work in you, and your part is to cooperate with Him.",
+      "Ang kabanalan ay hindi pagsusumikap mong maging mabuti; ito ay gawain ng Diyos sa iyo, at ang bahagi mo ay makipagtulungan sa Kanya."
+    ),
+    mainTruth: t(
+      "\"It is God's will that you should be sanctified\" (1 Thessalonians 4:3). The same God who justified us now shapes us. Paul says, \"Work out your salvation with fear and trembling, for it is God who works in you to will and to act in order to fulfill his good purpose\" (Philippians 2:12-13). And as we gaze at Jesus, \"we are being transformed into his image with ever-increasing glory, which comes from the Lord, who is the Spirit\" (2 Corinthians 3:18). Holiness is a lifelong, Spirit-powered becoming.",
+      "\"Ito ang kalooban ng Diyos, ang inyong pagpapakabanal\" (1 Tesalonica 4:3). Ang Diyos na nag-aaring-ganap sa atin ay Siya ring humuhubog sa atin ngayon. Sabi ni Pablo, \"Pagsikapan ninyong tamuhin ang inyong kaligtasan nang may takot at panginginig, sapagkat ang Diyos ang gumagawa sa inyo ng pagnanais at paggawa ayon sa Kanyang mabuting layunin\" (Filipos 2:12-13). At habang nakatitig tayo kay Hesus, \"binabago tayo tungo sa Kanyang wangis nang may patuloy na paglaki ng kaluwalhatian, na mula sa Panginoon, ang Espiritu\" (2 Corinto 3:18). Ang kabanalan ay habambuhay na pagiging-bago na pinapagana ng Espiritu."
+    ),
+    insight: [
+      t(
+        "Notice the two halves of Philippians 2:12-13: \"work out\" and \"God works in.\" Many believers fall into one of two ditches: passivity (\"God will do everything, I just wait\") or self-effort (\"I must fix myself\"). Biblical holiness is partnership: He supplies the desire and power; we supply the yes. The word \"holy\" means set apart for God, and it shows up in real choices, including what we do with our bodies, our relationships and our words (1 Thessalonians 4:3-8).",
+        "Pansinin ang dalawang bahagi ng Filipos 2:12-13: \"pagsikapan\" at \"ang Diyos ang gumagawa sa inyo.\" Maraming mananampalataya ang nahuhulog sa isa sa dalawang kanal: pagiging pasibo (\"Ang Diyos ang gagawa ng lahat, maghihintay lang ako\") o pagsisikap sa sarili (\"Ako ang dapat mag-ayos sa sarili ko\"). Ang kabanalan ayon sa Biblia ay pakikipagtulungan: Siya ang nagbibigay ng pagnanais at lakas; tayo ang nagbibigay ng oo. Ang \"banal\" ay itinalaga para sa Diyos, at lumilitaw ito sa tunay na mga pasya, kasama ang ginagawa natin sa katawan, relasyon at salita (1 Tesalonica 4:3-8)."
+      ),
+      t(
+        "The secret in 2 Corinthians 3:18 is that transformation comes through beholding. We become like what we gaze at. Holiness is not mostly about staring at your sin and fighting it; it is about looking at Jesus until His beauty makes sin look small and cheap.",
+        "Ang lihim sa 2 Corinto 3:18 ay ang pagbabago ay dumarating sa pagtitig. Nagiging katulad tayo ng tinititigan natin. Ang kabanalan ay hindi lang pagtitig sa kasalanan at paglaban dito; ito ay pagtingin kay Hesus hanggang sa Kanyang kagandahan ang magpaliit at magpamura sa kasalanan."
+      ),
+    ],
+    life: [
+      t(
+        "Carla struggled with a quick temper. Every promise to \"do better\" failed by the weekend. Her mentor suggested she stop only fighting the anger and start daily gazing at Jesus: reading one Gospel story each morning, asking, \"What is He like?\" and then asking the Spirit for His patience for that day. After months, the change was not dramatic but steady. Her sister said, \"Hindi ka na basta sumasabog.\" Holiness grew like a plant, quietly but really.",
+        "Mainitin ang ulo ni Carla. Bawat pangakong \"magbabago na ako\" ay nabibigo pagdating ng weekend. Iminungkahi ng mentor niya na huwag lang labanan ang galit kundi simulan ang araw-araw na pagtitig kay Hesus: magbasa ng isang kuwento sa Ebanghelyo tuwing umaga, itanong, \"Anong uri ng Panginoon Siya?\" at hilingin sa Espiritu ang Kanyang pasensya para sa araw na iyon. Pagkalipas ng ilang buwan, hindi biglaan pero tuloy-tuloy ang pagbabago. Sabi ng kapatid niya, \"Hindi ka na basta sumasabog.\" Lumago ang kabanalan na parang halaman, tahimik pero totoo."
+      ),
+      t(
+        "Practical holiness: say yes to the Spirit's prompting, flee what feeds sin, stay in fellowship, confess quickly and keep going after a fall. A fall does not cancel your sonship; it calls you back.",
+        "Praktikal na kabanalan: sumunod sa udyok ng Espiritu, lumayo sa nagpapakain ng kasalanan, manatili sa pakikipagkaisa, magtapat agad at magpatuloy matapos madapa. Hindi pinapawalang-bisa ng pagkadapa ang pagiging anak mo; tinatawag ka nitong bumalik."
+      ),
+    ],
+    twist: t(
+      "We imagine that holy people are the ones who sin less out of sheer willpower. The Kingdom twist is that holy people are often the ones who admit weakness fastest and depend on God most. Paul boasts in his weakness because \"when I am weak, then I am strong\" (2 Corinthians 12:10). Holiness grows in the soil of dependence, not self-confidence.",
+      "Akala natin ang mga banal ay yaong mas kaunti ang kasalanan dahil sa lakas ng loob. Ang Kaharian twist: ang mga banal ay madalas ang pinakamabilis umamin ng kahinaan at pinakaasa sa Diyos. Ipinagmamalaki ni Pablo ang kanyang kahinaan dahil \"kapag mahina ako, saka ako malakas\" (2 Corinto 12:10). Lumalago ang kabanalan sa lupa ng pag-asa sa Diyos, hindi sa tiwala sa sarili."
+    ),
+    confirm: [
+      t("1 Peter 1:15-16: be holy in all you do, for He who called you is holy.", "1 Pedro 1:15-16: maging banal sa lahat ng ginagawa, sapagkat banal ang tumawag sa inyo."),
+      t("Hebrews 12:14: pursue holiness; without it no one will see the Lord.", "Hebreo 12:14: hangarin ang kabanalan; kung wala nito, walang makakakita sa Panginoon."),
+      t("Galatians 5:22-23: the Spirit produces love, joy, peace, patience and self-control.", "Galacia 5:22-23: ang Espiritu ay nagbubunga ng pag-ibig, galak, kapayapaan, pasensya at pagpipigil sa sarili."),
+      t("Romans 6:11-13: count yourselves dead to sin and alive to God.", "Roma 6:11-13: ibilang ang sarili na patay sa kasalanan at buhay sa Diyos."),
+    ],
+    heart: [
+      t(
+        "Choose today one area to surrender to God, not as a burden but as an invitation: \"Lord, work here.\" Replace shame with trust that He finishes what He starts.",
+        "Pumili ngayon ng isang bahagi na isusuko sa Diyos, hindi bilang pasanin kundi paanyaya: \"Panginoon, gumawa Ka rito.\" Palitan ang hiya ng tiwalang tinatapos Niya ang sinimulan Niya."
+      ),
+      t(
+        "Pursue holiness with joy, not fear of punishment. Holiness is not less life but more of the life God designed.",
+        "Hangarin ang kabanalan nang may galak, hindi takot sa parusa. Ang kabanalan ay hindi kakulangan ng buhay kundi mas buong buhay na dinisenyo ng Diyos."
+      ),
+    ],
+    questions: [
+      t("Am I leaning toward passivity or self-effort in my spiritual growth?", "Mas nakahilig ba ako sa pagiging pasibo o sa pagsisikap sa sarili sa paglago ko?"),
+      t("What am I gazing at most each day, and what is it shaping in me?", "Ano ang pinakamadalas kong tinititigan araw-araw, at ano ang hinuhubog nito sa akin?"),
+      t("What habit or setting feeds the sin I want to leave?", "Anong gawi o lugar ang nagpapakain sa kasalanang gusto kong iwan?"),
+      t("Do I get up quickly after I fall, or do I hide?", "Mabilis ba akong bumabangon pagkatapos madapa, o nagtatago ako?"),
+    ],
+    actions: [
+      t("Spend ten minutes daily this week gazing at Jesus in a Gospel passage.", "Maglaan ng sampung minuto araw-araw ngayong linggo para titigan si Hesus sa isang talata ng Ebanghelyo."),
+      t("Identify one trigger of sin and remove or limit it this week.", "Tukuyin ang isang sanhi ng kasalanan at alisin o bawasan ito ngayong linggo."),
+      t("Tell a trusted believer about one struggle and ask them to pray and check in.", "Sabihin sa pinagkakatiwalaang kapatid ang isang pinaglalabanan mo at hilingin ang panalangin at pangungumusta niya."),
+    ],
+    prayer: t(
+      "Holy Father, thank You that You are at work in me. Forgive me for relying on my own strength or for waiting passively. Give me both the desire and the power to obey. Turn my eyes to Jesus until I look more like Him. Help me flee what harms my soul and run toward what honors You. When I fall, lift me quickly. Finish the good work You began in me. In Jesus' name, Amen.",
+      "Amang Banal, salamat po na gumagawa Ka sa akin. Patawarin Mo ako sa pag-asa sa sarili kong lakas o sa pasibong paghihintay. Bigyan Mo ako ng pagnanais at kapangyarihang sumunod. Ibaling Mo ang mga mata ko kay Hesus hanggang magmukha akong higit na katulad Niya. Tulungan Mo akong lumayo sa nakasasama sa kaluluwa ko at tumakbo tungo sa nagpaparangal sa Iyo. Kapag nadapa ako, agad Mo akong itayo. Tapusin Mo ang mabuting gawang sinimulan Mo sa akin. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "the-spirits-work": {
+    revelation: t(
+      "Jesus said it was better for Him to go, because the Holy Spirit does in every believer what Jesus could do only beside a few.",
+      "Sinabi ni Hesus na mas mabuti para sa atin ang Kanyang pag-alis, dahil ginagawa ng Banal na Espiritu sa bawat mananampalataya ang magagawa lang ni Hesus sa tabi ng iilan."
+    ),
+    mainTruth: t(
+      "\"It is for your good that I am going away. Unless I go away, the Advocate will not come to you; but if I go, I will send him to you\" (John 16:7). The Spirit convicts the world about sin, righteousness and judgment, guides us into all truth, and glorifies Jesus (John 16:8-15). He also empowers: \"You will receive power when the Holy Spirit comes on you; and you will be my witnesses\" (Acts 1:8). At Pentecost, the promise arrived (Acts 2:1-4). The Spirit is not a force but a Person, God Himself living in His people.",
+      "\"Para sa inyong ikabubuti ang Aking pag-alis. Sapagkat kung hindi Ako aalis, hindi darating sa inyo ang Katulong; ngunit kung aalis Ako, susuguin Ko Siya sa inyo\" (Juan 16:7). Kinukumbinsi ng Espiritu ang sanlibutan tungkol sa kasalanan, katuwiran at paghuhukom, ginagabayan tayo sa buong katotohanan at niluluwalhati si Hesus (Juan 16:8-15). Pinalalakas din Niya tayo: \"Tatanggap kayo ng kapangyarihan kapag dumating sa inyo ang Banal na Espiritu, at kayo'y magiging Aking mga saksi\" (Gawa 1:8). Sa Pentecostes, dumating ang pangako (Gawa 2:1-4). Ang Espiritu ay hindi puwersa kundi Persona, ang Diyos mismo na naninirahan sa Kanyang bayan."
+    ),
+    insight: [
+      t(
+        "Many believers know the Father and the Son but treat the Spirit as a mysterious extra. Yet the Spirit is the One who makes Jesus real. He convicts without crushing: His conviction leads to Jesus, not despair. The enemy accuses and condemns; the Spirit convicts and draws us home. If your sense of sin leaves you hiding from God, it is accusation; if it leads you to repentance and hope, it is the Spirit.",
+        "Maraming mananampalataya ang nakakakilala sa Ama at sa Anak pero itinuturing na misteryosong dagdag ang Espiritu. Gayunman, Siya ang nagpaparamdam kay Hesus bilang totoo. Nagkukumbinsi Siya nang hindi dumudurog: ang Kanyang pagkumbinsi ay humahantong kay Hesus, hindi sa kawalang-pag-asa. Ang kaaway ay nagpaparatang at humahatol; ang Espiritu ay nagkukumbinsi at umaakay pauwi. Kung ang pakiramdam mo ng kasalanan ay nagtatago sa iyo mula sa Diyos, paratang iyon; kung humahantong ito sa pagsisisi at pag-asa, iyon ang Espiritu."
+      ),
+      t(
+        "The Spirit also guides and glorifies. He does not draw attention to Himself but to Christ. Any teaching, experience or ministry that lifts a person above Jesus, or contradicts Scripture, is not from Him. Believers across traditions differ in how they describe His gifts and the timing of Spirit baptism, but all agree that He lives in every believer, makes us more like Jesus and empowers our witness.",
+        "Ginagabayan at niluluwalhati rin ng Espiritu. Hindi Niya inililipat ang atensyon sa Sarili kundi kay Cristo. Anumang turo, karanasan o ministeryo na nagtataas sa tao higit kay Hesus, o sumasalungat sa Kasulatan, ay hindi mula sa Kanya. Magkakaiba ang paglalarawan ng mga mananampalataya sa iba't ibang tradisyon tungkol sa Kanyang mga kaloob at oras ng bautismo sa Espiritu, pero lahat ay sumasang-ayon na naninirahan Siya sa bawat mananampalataya, ginagawa tayong higit na katulad ni Hesus at pinapalakas ang ating patotoo."
+      ),
+    ],
+    life: [
+      t(
+        "Remember the first time you felt moved to pray for a stranger, or a verse suddenly made sense, or you felt a deep sorrow over a sin you used to enjoy. That was the Spirit at work. An OFW in a crowded bunkhouse said, \"I feel alone, but when I sit in a quiet corner and talk to God, I sense that He is with me.\" That is the Comforter, the Helper, who never leaves.",
+        "Alalahanin ang unang beses na nagkaroon ka ng udyok na ipanalangin ang isang estranghero, o biglang luminaw ang isang talata, o nalungkot ka nang malalim sa kasalanang dati mong kinagigiliwan. Gawa iyon ng Espiritu. Sabi ng isang OFW sa siksikang bunkhouse, \"Pakiramdam ko mag-isa ako, pero kapag umupo ako sa tahimik na sulok at kinausap ang Diyos, nararamdaman kong kasama ko Siya.\" Siya ang Mang-aaliw, ang Katulong, na hindi umaalis."
+      ),
+      t(
+        "Make room for Him daily: invite Him in the morning, listen in Scripture, respond quickly to His promptings and ask for His power before you speak, work or serve. A believer who ignores the Spirit lives on borrowed strength; a believer who depends on Him lives on supply.",
+        "Bigyan Siya ng puwang araw-araw: anyayahan Siya sa umaga, makinig sa Kasulatan, sumunod agad sa Kanyang udyok at humingi ng Kanyang kapangyarihan bago magsalita, magtrabaho o maglingkod. Ang mananampalatayang hindi pinapansin ang Espiritu ay umaasa sa hiram na lakas; ang umaasa sa Kanya ay nabubuhay sa panustos."
+      ),
+    ],
+    twist: t(
+      "It sounds strange that it is better to have Jesus leave. But a Jesus in one body can be in one place; the Spirit brings Jesus to every place at once, including the dormitory in Jeddah and the kitchen in Manila. The Kingdom twist: you are not behind the first disciples; in one sense you are better off, because what they had beside them, you have within you.",
+      "Kakaiba ang tunog na mas mabuting umalis si Hesus. Pero ang Hesus na may isang katawan ay nasa isang lugar lang; dinadala ng Espiritu si Hesus sa lahat ng lugar nang sabay, kasama ang dormitoryo sa Jeddah at kusina sa Maynila. Ang Kaharian twist: hindi ka nahuhuli sa mga unang alagad; sa isang paraan, mas mabuti ang kalagayan mo, dahil ang kasama nilang nasa tabi ay nasa loob mo na."
+    ),
+    confirm: [
+      t("Romans 8:9-11: the Spirit of Christ lives in every believer.", "Roma 8:9-11: ang Espiritu ni Cristo ay nananahan sa bawat mananampalataya."),
+      t("Romans 8:26: the Spirit helps us in our weakness and prays for us.", "Roma 8:26: tinutulungan tayo ng Espiritu sa ating kahinaan at namamagitan para sa atin."),
+      t("Ephesians 1:13-14: the Spirit is a seal and a guarantee of our inheritance.", "Efeso 1:13-14: ang Espiritu ay tatak at garantiya ng ating mana."),
+      t("John 14:16-17: the Spirit of truth will be with you forever.", "Juan 14:16-17: ang Espiritu ng katotohanan ay sasainyo magpakailanman."),
+    ],
+    heart: [
+      t(
+        "Welcome the Spirit as a Person, not just a power. Greet Him, thank Him and listen for Him. Do not grieve Him with unrepented sin or ignore Him in your decisions.",
+        "Tanggapin ang Espiritu bilang Persona, hindi lamang kapangyarihan. Batiin Siya, pasalamatan at pakinggan. Huwag Siyang paghinagpisin ng hindi pinagsisihang kasalanan o balewalain sa mga desisyon mo."
+      ),
+      t(
+        "Depend on Him for what you cannot do: courage, wisdom, love for difficult people and words to share Christ.",
+        "Umasa sa Kanya sa hindi mo kayang gawin: tapang, karunungan, pag-ibig sa mahihirap mahalin at salita para ibahagi si Cristo."
+      ),
+    ],
+    questions: [
+      t("Do I relate to the Spirit as a Person who lives in me?", "Ugnayan ko ba ang Espiritu bilang Persona na nananahan sa akin?"),
+      t("Does my sense of conviction lead me toward Jesus or away from Him?", "Ang pagkumbinsi ba sa akin ay humahantong kay Hesus o palayo sa Kanya?"),
+      t("In what area am I trying to live by my own strength?", "Sa anong bahagi ako nabubuhay sa sarili kong lakas?"),
+      t("When did I last sense the Spirit prompting me, and how did I respond?", "Kailan ko huling naramdaman ang udyok ng Espiritu, at paano ako tumugon?"),
+    ],
+    actions: [
+      t("Begin each day this week with a short prayer: \"Holy Spirit, lead me today.\"", "Simulan ang bawat araw ngayong linggo sa maikling panalangin: \"Banal na Espiritu, gabayan Mo ako ngayon.\""),
+      t("Read John 14-16 and underline everything the Spirit does.", "Basahin ang Juan 14-16 at salungguhitan ang lahat ng ginagawa ng Espiritu."),
+      t("Obey one prompting this week: encourage someone, pray for someone or share your faith.", "Sundin ang isang udyok ngayong linggo: palakasin ang loob ng isang tao, ipanalangin siya o ibahagi ang pananampalataya."),
+    ],
+    prayer: t(
+      "Holy Spirit, thank You for living in me. Forgive me for ignoring You and for living on my own strength. Convict me gently, guide me into truth and glorify Jesus in my life. Give me power to be a witness at home, at work and wherever You send me. Teach me to hear Your voice and obey. Be my Helper, my Comforter and my guide. I welcome You today. In the name of Jesus, Amen.",
+      "Banal na Espiritu, salamat po na nananahan Ka sa akin. Patawarin Mo ako sa pagpapabaya sa Iyo at pamumuhay sa sarili kong lakas. Kumbinsihin Mo ako nang magiliw, gabayan Mo ako sa katotohanan at luwalhatiin Mo si Hesus sa buhay ko. Bigyan Mo ako ng kapangyarihang maging saksi sa bahay, trabaho at saan Mo man ako suguin. Turuan Mo akong marinig ang Iyong tinig at sumunod. Ikaw ang aking Katulong, Mang-aaliw at gabay. Tinatanggap Kita ngayon. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "filled-with-the-spirit": {
+    revelation: t(
+      "Being filled with the Spirit is not a one-time spiritual high but a daily surrender that lets Him fill every room of your life.",
+      "Ang pagiging puspos ng Espiritu ay hindi minsanang espirituwal na kasiglahan kundi araw-araw na pagsuko na hinahayaan Siyang punuin ang bawat silid ng buhay mo."
+    ),
+    mainTruth: t(
+      "\"Do not get drunk on wine, which leads to debauchery. Instead, be filled with the Spirit, speaking to one another with psalms, hymns and songs from the Spirit\" (Ephesians 5:18-19). The command is present and continuous: keep on being filled. In Acts 4:31, after the believers prayed, \"they were all filled with the Holy Spirit and spoke the word of God boldly.\" And Paul concludes, \"Since we live by the Spirit, let us keep in step with the Spirit\" (Galatians 5:25). Fullness shows up as worship, thankfulness, submission, courage and character.",
+      "\"Huwag kayong malasing sa alak, na nagdadala sa kasamaan. Sa halip, mapuspos kayo ng Espiritu, na nagsasalita sa isa't isa ng mga awit, himno at awiting espirituwal\" (Efeso 5:18-19). Ang utos ay nasa kasalukuyan at tuloy-tuloy: patuloy na mapuspos. Sa Gawa 4:31, pagkatapos manalangin ng mga mananampalataya, \"silang lahat ay napuspos ng Banal na Espiritu at buong tapang na nagsalita ng salita ng Diyos.\" At ang wika ni Pablo, \"Yamang nabubuhay tayo sa Espiritu, lumakad din tayo ayon sa Espiritu\" (Galacia 5:25). Lumilitaw ang kapuspusan bilang pagsamba, pasasalamat, pagpapasakop, tapang at karakter."
+    ),
+    insight: [
+      t(
+        "The comparison with wine is revealing. Wine controls a person from the inside, changing speech and behavior. Paul says: let the Spirit be the One who controls you instead. The point is not an emotional peak but who is in charge. Many believers have the Spirit, since every believer is sealed with Him, but are not filled, because other things are in control: worry, anger, busyness, bitterness.",
+        "Nagbubunyag ang paghahambing sa alak. Kinokontrol ng alak ang tao mula sa loob at binabago ang salita at kilos. Sabi ni Pablo: hayaang ang Espiritu ang kumontrol sa iyo. Hindi ang punto ang emosyonal na rurok kundi kung sino ang may hawak. Maraming mananampalataya ang may Espiritu, dahil bawat mananampalataya ay tinatakan Niya, pero hindi puspos, dahil ibang bagay ang may kontrol: pag-aalala, galit, pagiging abala, hinanakit."
+      ),
+      t(
+        "Notice what fullness looks like in Acts 4: not a private feeling but boldness for the mission, with threats around them. Fullness is for witness. And Galatians 5:25 gives the practical rhythm: keep in step, one step at a time. Believers differ on whether fullness is a distinct experience or a continual yielding; all agree that we need Him daily, and that His fruit, not just His gifts, proves His fullness.",
+        "Pansinin kung paano ang kapuspusan sa Gawa 4: hindi pribadong damdamin kundi tapang para sa misyon, kahit may banta sa paligid. Ang kapuspusan ay para sa pagsaksi. At ibinibigay ng Galacia 5:25 ang praktikal na ritmo: sumabay, isang hakbang bawat panahon. Magkaiba ang paniniwala ng mga mananampalataya kung ang kapuspusan ay hiwalay na karanasan o patuloy na pagsuko; lahat ay sumasang-ayon na kailangan natin Siya araw-araw, at ang Kanyang bunga, hindi lang ang kaloob, ang patunay ng Kanyang kapuspusan."
+      ),
+    ],
+    life: [
+      t(
+        "Picture a tricycle driver in the morning rush, tired and angry at the traffic. Before he starts, he whispers, \"Spirit, fill me. I give You my temper and my tongue.\" He does not become perfect, but he notices himself speaking to the passenger with kindness, and humming a worship song. A filled life sounds like gratitude and looks like gentleness, even in traffic.",
+        "Isipin ang tricycle driver sa rush hour ng umaga, pagod at galit sa trapiko. Bago magsimula, bumubulong siya, \"Espiritu, punuin Mo ako. Ibinibigay ko sa Iyo ang init ng ulo at dila ko.\" Hindi siya nagiging perpekto, pero napapansin niyang mabait siyang nakikipag-usap sa pasahero at humuhuni ng awit ng pagsamba. Ang buhay na puspos ay may tunog ng pasasalamat at hitsura ng kahinahunan, kahit sa trapiko."
+      ),
+      t(
+        "Practice fullness: confess what is in control, yield it, ask in faith, then walk in the next step of obedience. Pray as the early believers did: \"Enable your servants to speak your word with great boldness\" (Acts 4:29).",
+        "Sanayin ang kapuspusan: ipagtapat kung ano ang may kontrol, isuko ito, humingi nang may pananampalataya, at lumakad sa susunod na hakbang ng pagsunod. Manalangin gaya ng mga unang mananampalataya: \"Bigyan Mo ang Iyong mga lingkod na maipahayag ang Iyong salita nang buong tapang\" (Gawa 4:29)."
+      ),
+    ],
+    twist: t(
+      "We imagine that being filled means getting more of the Spirit. In truth, He is a Person, so you cannot get a bigger portion of Him; the question is whether He gets more of you. Fullness is not Him filling a small container; it is you opening every door in the house. The Kingdom twist: the way up is down. The more you empty yourself, the more He can fill.",
+      "Akala natin ang kapuspusan ay pagkuha ng mas maraming Espiritu. Sa totoo, Persona Siya, kaya hindi ka makakakuha ng mas malaking bahagi Niya; ang tanong ay kung makukuha Niya ang mas marami sa iyo. Hindi Siya pumupuno ng maliit na lalagyan; ikaw ang nagbubukas ng bawat pinto ng bahay. Ang Kaharian twist: pababa ang daan paitaas. Kapag mas inalis mo ang sarili, mapupunan ka Niya."
+    ),
+    confirm: [
+      t("Acts 2:4: all were filled with the Holy Spirit and began to speak.", "Gawa 2:4: silang lahat ay napuspos ng Banal na Espiritu at nagsimulang magsalita."),
+      t("Luke 11:13: the Father gives the Holy Spirit to those who ask.", "Lucas 11:13: ibinibigay ng Ama ang Banal na Espiritu sa mga humihingi."),
+      t("Galatians 5:22-23: the fruit of the Spirit grows where He is in control.", "Galacia 5:22-23: lumalago ang bunga ng Espiritu kung nasaan Siya ang may kontrol."),
+      t("Acts 6:3: the first deacons were men full of the Spirit and wisdom.", "Gawa 6:3: ang mga unang diakono ay mga taong puspos ng Espiritu at karunungan."),
+    ],
+    heart: [
+      t(
+        "Ask yourself honestly: what is controlling my reactions, my emotions and my schedule? Confess and surrender it, and ask for a fresh filling today.",
+        "Tanungin ang sarili nang tapat: ano ang kumokontrol sa reaksyon, emosyon at iskedyul ko? Ipagtapat at isuko ito, at humingi ng bagong pagpuno ngayon."
+      ),
+      t(
+        "Seek the Giver more than the gifts. Welcome the Spirit's fruit of love and self-control, and the boldness to witness, as proof of His presence.",
+        "Hanapin ang Nagbibigay kaysa sa mga kaloob. Tanggapin ang bunga ng Espiritu na pag-ibig at pagpipigil sa sarili, at ang tapang magsaksi, bilang patunay ng Kanyang presensya."
+      ),
+    ],
+    questions: [
+      t("What is really in control of me right now: worry, anger, busyness or the Spirit?", "Ano ang talagang may kontrol sa akin ngayon: pag-aalala, galit, pagiging abala o ang Espiritu?"),
+      t("Is there a room in my life I have kept locked from Him?", "May silid ba sa buhay ko na ikinandado ko mula sa Kanya?"),
+      t("Do I see more of the Spirit's fruit in my life this year than last?", "Mas marami ba akong nakikitang bunga ng Espiritu sa buhay ko ngayong taon kaysa noong nakaraan?"),
+      t("Do I ask for His filling in faith, or only when I am in trouble?", "Humihingi ba ako ng Kanyang pagpuno nang may pananampalataya, o kapag may problema lang?"),
+    ],
+    actions: [
+      t("Pray Luke 11:13 and Ephesians 5:18 each morning this week.", "Ipanalangin ang Lucas 11:13 at Efeso 5:18 tuwing umaga ngayong linggo."),
+      t("Replace one complaint or worry session with a worship song or thanksgiving.", "Palitan ang isang oras ng reklamo o alala ng awit ng pagsamba o pasasalamat."),
+      t("Ask for boldness (Acts 4:29) and take one step to share Christ or encourage someone.", "Humingi ng tapang (Gawa 4:29) at gumawa ng isang hakbang para ibahagi si Cristo o palakasin ang loob ng isang tao."),
+    ],
+    prayer: t(
+      "Holy Spirit, I open every room of my life to You. Forgive me for the things I let rule me: worry, anger, pride and busyness. Fill me afresh today. Control my tongue, my thoughts and my choices. Give me a heart full of worship and thanks, courage to witness and the fruit of Christ's character. Teach me to walk in step with You. I want more of You and less of me. In Jesus' name, Amen.",
+      "Banal na Espiritu, binubuksan ko ang bawat silid ng buhay ko sa Iyo. Patawarin Mo ako sa mga bagay na hinayaan kong mamuno sa akin: pag-aalala, galit, kayabangan at pagiging abala. Punuin Mo ako ng bago ngayon. Kontrolin Mo ang dila, isip at pasya ko. Bigyan Mo ako ng pusong puno ng pagsamba at pasasalamat, tapang magsaksi at bunga ng karakter ni Cristo. Turuan Mo akong lumakad nang kasabay Mo. Mas gusto ko ang Ikaw at mas kaunti ako. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "what-is-the-church": {
+    revelation: t(
+      "The Church is not a building you attend; it is a family of living stones, and Jesus Himself is building it, with you in it.",
+      "Ang Simbahan ay hindi gusaling pinupuntahan mo; ito ay pamilya ng mga buhay na bato, at si Hesus mismo ang nagtatayo nito, kasama ka."
+    ),
+    mainTruth: t(
+      "When Peter confessed, \"You are the Messiah, the Son of the living God,\" Jesus replied, \"I will build my church, and the gates of Hades will not overcome it\" (Matthew 16:16-18). The Church belongs to Christ and is built on the truth about Him. Paul says believers are \"no longer foreigners and strangers, but fellow citizens with God's people and also members of his household,\" with Christ Jesus as the cornerstone (Ephesians 2:19-22). And Peter calls us \"living stones... being built into a spiritual house\" (1 Peter 2:4-5).",
+      "Nang ipahayag ni Pedro, \"Ikaw ang Cristo, ang Anak ng buhay na Diyos,\" sumagot si Hesus, \"Itatayo Ko ang Aking iglesia, at hindi ito mananaig ng mga pintuan ng Hades\" (Mateo 16:16-18). Ang Iglesia ay kay Cristo at itinatayo sa katotohanan tungkol sa Kanya. Sabi ni Pablo, ang mga mananampalataya ay \"hindi na mga dayuhan at banyaga, kundi kapwa mamamayan ng bayan ng Diyos at mga kasapi ng Kanyang sambahayan,\" at si Cristo Hesus ang batong panulukan (Efeso 2:19-22). At tinatawag tayo ni Pedro na \"mga buhay na bato... na itinatayo bilang espirituwal na bahay\" (1 Pedro 2:4-5)."
+    ),
+    insight: [
+      t(
+        "The Greek word for church, ekklesia, means \"called-out assembly\": people, not property. Many believers say \"I go to church\" as if it were a location. But the New Testament says \"you are the church.\" A building can burn down and the Church remains. The Church is also not a club of the perfect; it is a hospital of the forgiven, where ex-fishermen, ex-tax collectors and ex-persecutors sit side by side.",
+        "Ang salitang Griyego para sa iglesia, ekklesia, ay \"pulong ng mga tinawag\": tao, hindi ari-arian. Maraming mananampalataya ang nagsasabing \"nagsisimba ako\" na parang lugar ito. Pero sinasabi ng Bagong Tipan na \"kayo ang iglesia.\" Puwedeng masunog ang gusali at mananatili ang Iglesia. Hindi rin ito samahan ng mga perpekto; ito ay ospital ng mga pinatawad, kung saan magkatabi ang dating mangingisda, dating maniningil ng buwis at dating mang-uusig."
+      ),
+      t(
+        "A stone alone is not a house. A living stone needs to be placed next to others, held together by the cornerstone. That is why the Christian life was never designed to be lived alone. The Spirit-gifted body needs every part (1 Corinthians 12), and your absence leaves a gap that nobody else can fill exactly. Where Christians are connected, they are strengthened; where they isolate, they drift.",
+        "Ang bato lang ay hindi bahay. Ang buhay na bato ay kailangang ilagay sa tabi ng iba, pinagbubuklod ng batong panulukan. Kaya hindi dinisenyo ang buhay-Kristiyano para mag-isa. Kailangan ng katawang may kaloob ng Espiritu ang bawat bahagi (1 Corinto 12), at ang pagkawala mo ay nag-iiwan ng puwang na hindi eksaktong mapupunan ng iba. Kung saan nakaugnay ang mga Kristiyano, lumalakas sila; kung saan nag-iisa, naaanod."
+      ),
+    ],
+    life: [
+      t(
+        "For an OFW far from home, the church is often the first family. Maribel arrived in Abu Dhabi knowing no one. A coworker invited her to a small fellowship in a rented room. That first Friday, someone brought food, someone prayed for her mother's surgery and someone asked, \"Kumusta ka talaga?\" She said later, \"The church found me before I found my way.\" The family of God is not limited by borders.",
+        "Para sa OFW na malayo sa tahanan, ang simbahan ay madalas na unang pamilya. Dumating si Maribel sa Abu Dhabi na walang kakilala. Inanyayahan siya ng katrabaho sa maliit na pagtitipon sa inuupahang kuwarto. Sa unang Biyernes na iyon, may nagdala ng pagkain, may nanalangin para sa operasyon ng nanay niya at may nagtanong, \"Kumusta ka talaga?\" Sabi niya pagkatapos, \"Nahanap ako ng simbahan bago ko natagpuan ang daan ko.\" Hindi nalilimitahan ng hangganan ang pamilya ng Diyos."
+      ),
+      t(
+        "Commit to a local fellowship: worship, give, serve and be known. Do not wait for a perfect church; be a living stone in an imperfect one. And when you are hurt by Christians, remember that Jesus is still the Head, and He is patient with all of us.",
+        "Mag-commit sa lokal na pagtitipon: sumamba, magbigay, maglingkod at makilala. Huwag maghintay ng perpektong simbahan; maging buhay na bato sa di-perpektong simbahan. At kapag nasaktan ka ng mga Kristiyano, tandaan na si Hesus pa rin ang Ulo, at matiyaga Siya sa ating lahat."
+      ),
+    ],
+    twist: t(
+      "We often ask, \"What can the church give me?\" The Kingdom turns it around: you are part of what the church gives to the world. And the gates of Hades, the powers of death and darkness, are not attacking a fortress; they are the ones on defense. The Church advances, and nothing can stop what Jesus builds, not persecution, scattering or our own weaknesses.",
+      "Madalas nating itanong, \"Ano ang maibibigay ng simbahan sa akin?\" Binabaligtad ito ng Kaharian: ikaw ay bahagi ng ibinibigay ng simbahan sa mundo. At ang mga pintuan ng Hades, ang kapangyarihan ng kamatayan at kadiliman, ay hindi umaatake sa kuta; sila ang nasa depensa. Sumusulong ang Iglesia, at walang makakapigil sa itinatayo ni Hesus, hindi pag-uusig, pagkakawatak-watak o ang sarili nating kahinaan."
+    ),
+    confirm: [
+      t("Acts 2:42-47: the first church devoted itself to teaching, fellowship, bread and prayer.", "Gawa 2:42-47: ang unang iglesia ay nagtalaga sa turo, pakikisama, paghahati ng tinapay at panalangin."),
+      t("1 Corinthians 12:12-27: one body, many parts, each needed.", "1 Corinto 12:12-27: isang katawan, maraming bahagi, kailangan ang bawat isa."),
+      t("Hebrews 10:24-25: do not give up meeting together; encourage one another.", "Hebreo 10:24-25: huwag tigilan ang pagtitipon; magpalakasan ng loob."),
+      t("Ephesians 4:11-16: Christ gave leaders to equip His people to grow together.", "Efeso 4:11-16: nagbigay si Cristo ng mga lider upang ihanda ang Kanyang bayan na lumago nang sama-sama."),
+    ],
+    heart: [
+      t(
+        "Let go of consumer thinking about church. Ask not only \"Did I enjoy it?\" but \"Whom did I serve and encourage?\" Repent of isolation and of criticizing from the outside.",
+        "Bitawan ang pag-iisip na parang kustomer sa simbahan. Itanong hindi lang \"Nasiyahan ba ako?\" kundi \"Sino ang pinaglingkuran at pinalakas ko ang loob?\" Magsisi sa pag-iisa at pamumuna mula sa labas."
+      ),
+      t(
+        "Love the people God put near you, even the difficult ones. Their rough edges are tools in His hand to shape you.",
+        "Mahalin ang mga taong inilagay ng Diyos malapit sa iyo, kahit ang mahirap pakisamahan. Ang magaspang nilang gilid ay kasangkapan sa kamay Niya para hubugin ka."
+      ),
+    ],
+    questions: [
+      t("Do I see church as a place I attend or a family I belong to?", "Tinitingnan ko ba ang simbahan bilang lugar na pinupuntahan o pamilyang kinabibilangan?"),
+      t("Where am I connected, serving and known?", "Saan ako konektado, naglilingkod at kilala?"),
+      t("Is there someone in my church I need to forgive or reach out to?", "May tao ba sa simbahan na kailangan kong patawarin o lapitan?"),
+      t("What gift has God given me for the benefit of the body?", "Anong kaloob ang ibinigay sa akin ng Diyos para sa kapakinabangan ng katawan?"),
+    ],
+    actions: [
+      t("Attend a local fellowship or small group this week and stay afterward to talk to someone new.", "Dumalo sa lokal na pagtitipon o maliit na grupo ngayong linggo at manatili pagkatapos para kausapin ang bago."),
+      t("Offer to serve in one practical way: welcome, set up, prayer or meals.", "Mag-alok na maglingkod sa isang praktikal na paraan: pagsalubong, pag-aayos, panalangin o pagkain."),
+      t("Pray for your pastor and leaders by name, and encourage one of them.", "Ipanalangin ang pastor at mga lider sa pangalan, at palakasin ang loob ng isa sa kanila."),
+    ],
+    prayer: t(
+      "Lord Jesus, thank You for building Your Church and for placing me in it. Forgive me for treating it like a service to attend and not a family to love. Connect me to a fellowship where I can give, grow and be known. Heal the hurts I have carried from people and make me a living stone that supports others. Build Your Church in my city and nation, and let the gates of hell never prevail. In Your name, Amen.",
+      "Panginoong Hesus, salamat po sa pagtatayo Mo ng Iyong Iglesia at paglalagay sa akin dito. Patawarin Mo ako sa pagturing dito na serbisyo lang na dinadaluhan at hindi pamilyang iniibig. Ikonekta Mo ako sa pagtitipon kung saan maaari akong magbigay, lumago at makilala. Pagalingin Mo ang mga sugat na dala ko mula sa tao at gawin akong buhay na batong sumusuporta sa iba. Itayo Mo ang Iyong Iglesia sa lungsod at bansa ko, at huwag manaig ang mga pintuan ng impiyerno. Sa Iyong pangalan, Amen."
+    ),
+  },
+  "loving-means-obeying": {
+    revelation: t(
+      "Love for Jesus is proved not by how loudly you sing but by how quickly you obey, and obedience is where He reveals Himself to you.",
+      "Ang pag-ibig kay Hesus ay napapatunayan hindi sa lakas ng awit kundi sa bilis ng pagsunod, at sa pagsunod Niya ipinakikilala ang Sarili Niya sa iyo."
+    ),
+    mainTruth: t(
+      "\"Whoever has my commands and keeps them is the one who loves me. The one who loves me will be loved by my Father, and I too will love them and show myself to them\" (John 14:21). John adds, \"Whoever claims to live in him must live as Jesus did\" (1 John 2:6). And Jesus warns, \"Why do you call me, 'Lord, Lord,' and do not do what I say?\" (Luke 6:46). Obedience is not the price of His love; it is the fruit and proof of ours.",
+      "\"Ang may mga utos Ko at tumutupad ng mga ito, siya ang umiibig sa Akin. At ang umiibig sa Akin ay iibigin ng Aking Ama, at iibigin Ko rin siya at ipakikilala Ko ang Aking Sarili sa kanya\" (Juan 14:21). Dagdag ni Juan, \"Ang sinumang nagsasabing nananatili sa Kanya ay dapat lumakad gaya ng paglakad Niya\" (1 Juan 2:6). At nagbabala si Hesus, \"Bakit ninyo Ako tinatawag na 'Panginoon, Panginoon,' ngunit hindi ninyo ginagawa ang sinasabi Ko?\" (Lucas 6:46). Ang pagsunod ay hindi bayad para sa Kanyang pag-ibig; ito ang bunga at patunay ng ating pag-ibig."
+    ),
+    insight: [
+      t(
+        "We sometimes set love and obedience against each other, as if love is the warm feeling and obedience is cold duty. Jesus joins them. In the upper room He says it again and again: if you love Me, keep My commands (John 14:15, 21, 23). Notice the reward: the one who obeys experiences deeper intimacy, because Jesus \"will show himself\" to them. Disobedience dulls our sense of His presence; obedience clears the glass.",
+        "Minsan pinaglalaban natin ang pag-ibig at pagsunod, na parang ang pag-ibig ay mainit na damdamin at ang pagsunod ay malamig na tungkulin. Pinagsasama ito ni Hesus. Sa silid sa itaas, paulit-ulit Niyang sinasabi: kung iniibig ninyo Ako, sundin ninyo ang Aking mga utos (Juan 14:15, 21, 23). Pansinin ang gantimpala: ang sumusunod ay nakararanas ng mas malalim na pagiging malapit, dahil \"ipakikilala\" ni Hesus ang Sarili sa kanya. Pinapalabo ng pagsuway ang pakiramdam natin sa Kanyang presensya; nililinis ng pagsunod ang salamin."
+      ),
+      t(
+        "The parable of the two builders (Luke 6:47-49) is not about two kinds of hearers but about hearing and doing. Both builders heard; only one put it into practice. Both houses faced the storm; one stood. Many believers fill notebooks with sermon notes and wonder why their lives collapse under pressure. The foundation is not knowledge but obedience.",
+        "Ang talinghaga tungkol sa dalawang magtatayo (Lucas 6:47-49) ay hindi tungkol sa dalawang uri ng nakikinig kundi sa pakikinig at paggawa. Parehong nakinig; isa lang ang nagsabuhay. Parehong hinarap ng dalawang bahay ang bagyo; isa ang nanatili. Maraming mananampalataya ang pinupuno ang notebook ng tala sa sermon at nagtataka kung bakit bumabagsak ang buhay nila sa presyon. Ang pundasyon ay hindi kaalaman kundi pagsunod."
+      ),
+    ],
+    life: [
+      t(
+        "Erwin, a seafarer, prayed for months for God to give him a clear sign about whether to forgive his brother who had cheated him. One night, reading John 14, he realized he already knew what Jesus said: forgive. He had been waiting for a feeling while heaven was waiting for a yes. He sent a message that night. \"I felt closer to God than I had in years,\" he said. Obedience, not a feeling, opened the door.",
+        "Si Erwin, isang seafarer, ay ilang buwang nanalangin na bigyan siya ng Diyos ng malinaw na tanda kung patatawarin ang kapatid niyang nandaya sa kanya. Isang gabi, habang nagbabasa ng Juan 14, napagtanto niyang alam na niya ang sinabi ni Hesus: magpatawad. Naghihintay siya ng damdamin habang naghihintay ang langit ng oo. Nagpadala siya ng mensahe nang gabing iyon. \"Mas malapit ako sa Diyos kaysa sa mga nakaraang taon,\" sabi niya. Ang pagsunod, hindi ang damdamin, ang nagbukas ng pinto."
+      ),
+      t(
+        "Ask: what is the last thing God clearly told me that I have not done? Often it is small: apologize, give, stop a habit, speak to someone. Start there, and do it today, not next week.",
+        "Itanong: ano ang huling malinaw na sinabi ng Diyos na hindi ko pa ginagawa? Madalas maliit lang: humingi ng tawad, magbigay, itigil ang gawi, kausapin ang isang tao. Magsimula roon, at gawin ngayon, hindi sa susunod na linggo."
+      ),
+    ],
+    twist: t(
+      "We think obedience makes us slaves. Jesus says it makes us friends: \"You are my friends if you do what I command\" (John 15:14). In the Kingdom, the people closest to the King are not those who shout the most but those who do what He asks. And His commands are not heavy (1 John 5:3); the heavy load is living apart from them.",
+      "Akala natin ang pagsunod ay ginagawa tayong alipin. Sabi ni Hesus, ginagawa tayong kaibigan: \"Kayo ay Aking mga kaibigan kung ginagawa ninyo ang iniuutos Ko\" (Juan 15:14). Sa Kaharian, ang pinakamalapit sa Hari ay hindi yaong pinakamalakas sumigaw kundi yaong gumagawa ng hinihiling Niya. At hindi mabigat ang Kanyang mga utos (1 Juan 5:3); ang mabigat ay ang pamumuhay na hiwalay sa mga ito."
+    ),
+    confirm: [
+      t("John 15:10: if you keep my commands, you will remain in my love.", "Juan 15:10: kung susundin ninyo ang Aking mga utos, mananatili kayo sa Aking pag-ibig."),
+      t("James 1:22: do not merely listen to the word; do what it says.", "Santiago 1:22: huwag lang makinig sa salita; gawin ang sinasabi nito."),
+      t("1 Samuel 15:22: to obey is better than sacrifice.", "1 Samuel 15:22: ang pagsunod ay higit na mabuti kaysa hain."),
+      t("Matthew 7:21: only those who do the will of my Father will enter the kingdom.", "Mateo 7:21: ang gumagawa lamang ng kalooban ng Aking Ama ang papasok sa kaharian."),
+    ],
+    heart: [
+      t(
+        "Repent of the gap between your worship and your walk. Do not defend it; bring it to Jesus and ask Him for a soft heart that says yes quickly.",
+        "Magsisi sa agwat ng pagsamba at paglakad mo. Huwag itong ipagtanggol; dalhin kay Hesus at humingi ng malambot na pusong mabilis magsabi ng oo."
+      ),
+      t(
+        "Obey out of love, not fear. Remember that the Spirit gives the power to obey, and that grace lifts you up after you stumble.",
+        "Sumunod dahil sa pag-ibig, hindi takot. Tandaan na ang Espiritu ang nagbibigay ng kapangyarihang sumunod, at ibinabangon ka ng biyaya pagkatapos madapa."
+      ),
+    ],
+    questions: [
+      t("What has Jesus clearly told me that I have not yet done?", "Ano ang malinaw na sinabi sa akin ni Hesus na hindi ko pa nagagawa?"),
+      t("Do I treat obedience as a burden or as the way to His presence?", "Itinuturing ko ba ang pagsunod na pasanin o daan tungo sa Kanyang presensya?"),
+      t("Am I more of a hearer or a doer of the word?", "Mas tagapakinig ba ako o tagagawa ng salita?"),
+      t("What delayed obedience is dulling my sense of God's nearness?", "Anong ipinagpapaliban kong pagsunod ang nagpapalabo sa pakiramdam ko ng kalapitan ng Diyos?"),
+    ],
+    actions: [
+      t("Write down the one thing God has told you to do and do it within 24 hours.", "Isulat ang isang bagay na sinabi ng Diyos na gawin at gawin ito sa loob ng 24 oras."),
+      t("Read the Sermon on the Mount (Matthew 5-7) and choose one command to practice this week.", "Basahin ang Sermon sa Bundok (Mateo 5-7) at pumili ng isang utos na isasabuhay ngayong linggo."),
+      t("Ask a friend to check in on your obedience.", "Hilingin sa kaibigan na kumustahin ang pagsunod mo."),
+    ],
+    prayer: t(
+      "Lord Jesus, I say that I love You. Forgive me for the times my life says something different. Soften my heart and show me where I have delayed obeying You. By Your Spirit, give me the strength to do what You ask, quickly and joyfully. I want to know You, to see You and to walk as You walked. Make me a doer of Your word and not only a hearer. In Your name I pray, Amen.",
+      "Panginoong Hesus, sinasabi kong iniibig Kita. Patawarin Mo ako sa mga panahong iba ang sinasabi ng buhay ko. Palambutin Mo ang puso ko at ipakita kung saan ako nagpaliban ng pagsunod sa Iyo. Sa pamamagitan ng Iyong Espiritu, bigyan Mo ako ng lakas na gawin ang hinihiling Mo, nang mabilis at masaya. Nais Kitang makilala, makita at lumakad gaya ng paglakad Mo. Gawin Mo akong tagagawa ng Iyong salita at hindi lang tagapakinig. Sa Iyong pangalan, Amen."
+    ),
+  },
 };
