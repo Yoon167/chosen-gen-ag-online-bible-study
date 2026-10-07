@@ -3,6 +3,8 @@ import { Inter, Lora } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { PwaRegister } from "@/components/pwa-register";
+import { OpenInBrowserBanner } from "@/components/open-in-browser";
+import { OPEN_IN_BROWSER_BOOT_SCRIPT } from "@/lib/open-in-browser";
 import { TEXT_SIZE_BOOT_SCRIPT } from "@/lib/text-size-boot";
 
 const sans = Inter({
@@ -77,6 +79,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${sans.variable} ${heading.variable} h-full antialiased`}
     >
       <head>
+        <script dangerouslySetInnerHTML={{ __html: OPEN_IN_BROWSER_BOOT_SCRIPT }} />
         <script dangerouslySetInnerHTML={{ __html: TEXT_SIZE_BOOT_SCRIPT }} />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
@@ -88,6 +91,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           {children}
           <PwaRegister />
+          <OpenInBrowserBanner />
         </ThemeProvider>
       </body>
     </html>
