@@ -5,6 +5,7 @@ import { LanguageProvider } from "@/lib/i18n";
 import { BackgroundMusic } from "@/lib/background-music";
 import { TourAutostart, TourProvider } from "@/components/tour/tour-provider";
 import { LiveBanner } from "@/components/teaching/live-follow";
+import { PushRefresher } from "@/components/profile/push-settings";
 
 export default function MainLayout({ children }: LayoutProps<"/">) {
   return (
@@ -21,6 +22,7 @@ export default function MainLayout({ children }: LayoutProps<"/">) {
         <BottomNav />
       </div>
       <TourAutostart />
+      <PushRefresher />
     </WelcomeGate>
     </TourProvider>
     </LanguageProvider>

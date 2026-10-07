@@ -1,4 +1,4 @@
-const CACHE_NAME = "gideon-cache-v3";
+const CACHE_NAME = "gideon-cache-v4";
 // Downloads the member chose on the Offline page (see lib/offline.ts). They
 // survive app updates; only the app's own cache is replaced.
 const OFFLINE_PREFIX = "gideon-offline-";
@@ -98,6 +98,28 @@ self.addEventListener("notificationclick", (event) => {
         }
       }
       return self.clients.openWindow(url);
+    })
+  );
+});
+
+// Push notifications from Gideon's Cloud Functions (FCM, data-only), shown the
+// same way on every browser. Tapping one opens the page in `url`.
+self.addEventListener("push", (event) => {
+  let payload = {};
+  try {
+    payload = event.data ? event.data.json() : {};
+  } catch {
+    payload = { data: { title: "Gideon", body: event.data ? event.data.text() : "" } };
+  }
+  const d = payload.data || payload.notification || {};
+  event.waitUntil(
+    self.registration.showNotification(d.title || "Gideon", {
+      body: d.body || "",
+      icon: "/icons/icon-192.png",
+      badge: "/icons/icon-192.png",
+      tag: d.tag || undefined,
+      renotify: !!d.tag,
+      data: { url: d.url || "/" },
     })
   );
 });

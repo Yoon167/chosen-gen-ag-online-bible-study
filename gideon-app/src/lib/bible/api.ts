@@ -203,9 +203,11 @@ export const VERSE_OF_THE_DAY_POOL = [
   "Nahum 1:7",
 ];
 
+// Keep this pool's order in sync with functions/src/verses.ts (the daily verse push).
 export function verseOfTheDayReference(date = new Date()) {
-  const start = Date.UTC(date.getUTCFullYear(), 0, 0);
-  const diff = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()) - start;
+  // The member's own calendar day, so the Home card and the morning push agree.
+  const start = Date.UTC(date.getFullYear(), 0, 0);
+  const diff = Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) - start;
   const dayOfYear = Math.floor(diff / 86400000);
   return VERSE_OF_THE_DAY_POOL[dayOfYear % VERSE_OF_THE_DAY_POOL.length];
 }

@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { WEEKDAYS, downloadReminder, type Weekday } from "@/lib/calendar";
 import { useHomePrefs, type HomeCard } from "@/lib/home-prefs";
+import { PushSettings } from "@/components/profile/push-settings";
 import { cn } from "@/lib/utils";
 import { useLanguage, useTx } from "@/lib/i18n";
 
@@ -113,11 +114,13 @@ export function NotificationSheet({ open, onOpenChange }: { open: boolean; onOpe
           <SheetTitle className="font-heading">{tx("Notifications & reminders", "Notifications at paalala")}</SheetTitle>
         </SheetHeader>
         <div className="space-y-5 overflow-y-auto px-4 pb-6">
+          <PushSettings />
+
           <p className="flex gap-2 rounded-xl bg-secondary/50 p-3 text-xs leading-relaxed text-foreground/80">
             <BellRing className="size-4 shrink-0 text-primary" />
             {tx(
-              "Gideon reminds you through your phone's calendar. It's free and rings even when the app is closed. (Push notifications need a paid server.)",
-              "Nagpapaalala ang Gideon sa pamamagitan ng calendar ng iyong phone. Libre ito at tumutunog kahit sarado ang app. (Kailangan ng bayad na server para sa push notifications.)"
+              "You can also add personal reminders to your phone's calendar. They ring at your own times, even offline.",
+              "Puwede ka ring maglagay ng sariling paalala sa calendar ng phone mo. Tumutunog ito sa sarili mong oras, kahit offline."
             )}
           </p>
 
