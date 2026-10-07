@@ -6,6 +6,8 @@ import { Bi } from "@/components/courses/bi";
 import { TeachLink } from "@/components/courses/teach-client";
 import { LessonGate } from "@/components/courses/lesson-access";
 import { verseLabel } from "@/lib/bible/verse-ref";
+import { DeepTeaching } from "@/components/teaching/deep-teaching";
+import { deepKey, loadDeep } from "@/lib/content/deep/load";
 
 // Static export: every lesson gets its own prebuilt page. The text is printed
 // in English and Tagalog at build time (no JavaScript for it).
@@ -47,6 +49,7 @@ export default async function CourseLessonPage({ params }: { params: Promise<{ c
   if (!found) notFound();
   const { course, lesson, index } = found;
   const next = course.lessons[index + 1];
+  const deep = await loadDeep(deepKey("course", course.id), lesson.id);
 
   return (
     <div>
@@ -66,6 +69,14 @@ export default async function CourseLessonPage({ params }: { params: Promise<{ c
         <Section title={L("Key Scriptures", "Mahahalagang Talata")}>
           <ScriptureChips refs={lesson.scriptures} />
         </Section>
+
+        {deep && <DeepTeaching deep={deep} />}
+
+        {deep && (
+          <h2 className="px-1 pt-2 font-heading text-lg font-semibold">
+            <Bi t={L("Bible study notes", "Mga tala sa pag-aaral ng Bibliya")} />
+          </h2>
+        )}
 
         <Section title={L("Historical and theological context", "Kontekstong pangkasaysayan at teolohikal")}>
           <p>
@@ -123,11 +134,13 @@ export default async function CourseLessonPage({ params }: { params: Promise<{ c
           </p>
         </Section>
 
-        <Section title={L("Closing prayer", "Pangwakas na panalangin")} tone="gold">
-          <p className="font-heading italic">
-            <Bi t={lesson.prayer} />
-          </p>
-        </Section>
+        {!deep && (
+          <Section title={L("Closing prayer", "Pangwakas na panalangin")} tone="gold">
+            <p className="font-heading italic">
+              <Bi t={lesson.prayer} />
+            </p>
+          </Section>
+        )}
 
         <Section title={L("Key takeaways", "Mahahalagang aral")}>
           <List items={lesson.takeaways} />

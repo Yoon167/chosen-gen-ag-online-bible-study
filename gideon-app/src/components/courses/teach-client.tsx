@@ -8,6 +8,9 @@ import { EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
 import { PassageSheet } from "@/components/bible/passage-sheet";
 import { LivePresenter, type PresentSlide } from "@/components/teaching/live-presenter";
+import { DEEP_PARTS, partLines } from "@/lib/content/deep/types";
+import { deepKey } from "@/lib/content/deep/load";
+import { useDeep } from "@/lib/content/deep/use-deep";
 import { useAuth } from "@/lib/hooks/use-auth";
 import { useMyChurch } from "@/lib/hooks/use-church";
 import { LEADER_RANK, NATIONAL_ADMIN_UID } from "@/lib/church";
@@ -92,6 +95,7 @@ export function TeachGuide({
   const tx = useTx();
   const { lang } = useLanguage();
   const { canTeach, presenterAssignment, loading } = useCanTeach(courseId, lesson.id);
+  const deep = useDeep(deepKey("course", courseId), lesson.id);
   const [slide, setSlide] = useState<number | null>(null);
   const [passage, setPassage] = useState<VerseRef | null>(null);
   const title = tx("Teaching Guide", "Gabay sa Pagtuturo");
@@ -114,7 +118,7 @@ export function TeachGuide({
   }
 
   const both = (f: (s: string) => string, x: Text): Text => ({ en: f(x.en), tl: f(x.tl) });
-  const parts: Part[] = [
+  const baseParts: Part[] = [
     {
       title: L("Welcome and warm-up", "Pagbati at pampasigla"),
       minutes: 10,
@@ -182,6 +186,16 @@ export function TeachGuide({
       lines: [lesson.prayer, L("Then pray in pairs for each other's challenge this week.", "Pagkatapos, manalangin nang dalawahan para sa hamon ng isa't isa ngayong linggo.")],
     },
   ];
+  // With the Spirit-led teaching, its ten parts replace the teaching,
+  // discussion, application and closing prayer (welcome, intro, opening
+  // prayer and Scriptures stay first; the challenge and memory verse close).
+  const parts: Part[] = deep
+    ? [
+        ...baseParts.slice(0, 4),
+        ...DEEP_PARTS.map((p) => ({ title: p.title, minutes: p.minutes, lines: partLines(deep, p.key) })),
+        baseParts.find((p) => p.title.en === "Challenge and memory verse")!,
+      ]
+    : baseParts;
   const total = parts.reduce((m, p) => m + p.minutes, 0);
   // Present mode shows everything in full: each passage on its own slide with
   // its text, and each teaching point with its whole explanation.

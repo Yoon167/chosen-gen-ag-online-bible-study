@@ -9,6 +9,9 @@ import { EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
 import { PassageSheet } from "@/components/bible/passage-sheet";
 import { LivePresenter, type PresentSlide } from "@/components/teaching/live-presenter";
+import { DEEP_PARTS, partLines } from "@/lib/content/deep/types";
+import { deepKey } from "@/lib/content/deep/load";
+import { useDeep } from "@/lib/content/deep/use-deep";
 import { findLesson, findLevel } from "@/lib/content/journey";
 import { verseLabel, type VerseRef } from "@/lib/bible/verse-ref";
 import { useLanguage, useTx } from "@/lib/i18n";
@@ -43,7 +46,8 @@ export function GuideClient() {
   const [passage, setPassage] = useState<VerseRef | null>(null);
   const [slide, setSlide] = useState<number | null>(null);
 
-  const parts: Part[] = lesson
+  const deep = useDeep(lesson ? deepKey("level", lesson.level) : null, lesson?.id ?? null);
+  const baseParts: Part[] = lesson
     ? [
         {
           title: { en: "Welcome and check-in", tl: "Pagbati at kumustahan" },
@@ -89,6 +93,15 @@ export function GuideClient() {
         },
       ]
     : [];
+  // With the Spirit-led teaching, its ten parts follow the Scripture reading
+  // and the week's challenge closes the meeting.
+  const parts: Part[] = deep
+    ? [
+        ...baseParts.slice(0, 3),
+        ...DEEP_PARTS.map((p) => ({ title: p.title, minutes: p.minutes, lines: partLines(deep, p.key) })),
+        ...baseParts.filter((p) => p.title.en === "This week's challenge"),
+      ]
+    : baseParts;
   const total = parts.reduce((m, p) => m + p.minutes, 0);
 
   if (!lesson || !level) {

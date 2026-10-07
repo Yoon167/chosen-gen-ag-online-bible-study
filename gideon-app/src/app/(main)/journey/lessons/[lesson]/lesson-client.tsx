@@ -17,6 +17,9 @@ import { JoinAgNotice } from "@/components/journey/join-ag-notice";
 import { ReflectionJournal } from "@/components/journey/reflection-journal";
 import { VerseQuizCard } from "@/components/journey/verse-quiz-card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { DeepTeaching } from "@/components/teaching/deep-teaching";
+import { deepKey } from "@/lib/content/deep/load";
+import { useDeep } from "@/lib/content/deep/use-deep";
 
 export function LessonClient() {
   const { lesson: lessonId } = useParams<{ lesson: string }>();
@@ -28,6 +31,7 @@ export function LessonClient() {
   useJourneySync();
   const access = useJourneyAccess();
   const lesson = findLesson(lessonId);
+  const deep = useDeep(lesson ? deepKey("level", lesson.level) : null, lesson?.id ?? null);
 
   if (!lesson) return <PageHeader title={tx("Lesson not found", "Walang ganitong aralin")} back />;
 
@@ -122,6 +126,16 @@ export function LessonClient() {
               </button>
             ))}
           </div>
+          {deep && (
+            <div className="mt-4">
+              <DeepTeaching deep={deep} />
+            </div>
+          )}
+          {deep && (
+            <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              {tx("Bible study notes", "Mga tala sa pag-aaral ng Bibliya")}
+            </p>
+          )}
           <div className="mt-4 space-y-3 text-sm leading-relaxed">
             {lesson.teaching.map((p) => (
               <p key={p.en}>{p[lang]}</p>
