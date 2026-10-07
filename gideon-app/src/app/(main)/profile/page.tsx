@@ -199,6 +199,13 @@ export default function ProfilePage() {
             </Link>
           )}
           {isNationalAdmin && (
+            <Link href="/admin/ags" className="block">
+              <SettingRow icon={Church} label={lang === "tl" ? "Lahat ng AG (Owner)" : "All AGs (Owner)"}>
+                <ChevronRight className="size-4 text-muted-foreground" />
+              </SettingRow>
+            </Link>
+          )}
+          {isNationalAdmin && (
             <Link href="/admin/applications" className="block">
               <SettingRow icon={ClipboardList} label="AG Applications">
                 <span className="flex items-center gap-1 text-xs text-muted-foreground">

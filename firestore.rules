@@ -101,13 +101,15 @@ service cloud.firestore {
       return /databases/$(database)/documents/churches/$(churchId)/members/$(uid);
     }
 
+    // The national admin (owner) counts as an active leader of every AG.
     function isActiveMember(churchId, uid) {
-      return exists(memberPath(churchId, uid))
-        && get(memberPath(churchId, uid)).data.status == 'active';
+      return uid == "KcHm9yKcLcNbkTh7qbqi5pI7AYH2"
+        || (exists(memberPath(churchId, uid))
+          && get(memberPath(churchId, uid)).data.status == 'active');
     }
 
     function rankAtLeast(churchId, rank) {
-      return request.auth != null
+      return isAdmin() || request.auth != null
         && isActiveMember(churchId, request.auth.uid)
         && get(memberPath(churchId, request.auth.uid)).data.rank >= rank;
     }

@@ -211,6 +211,12 @@ await t("cannot set someone else's number", assertFails(updateDoc(doc(real("ana"
 await t("leader sees the number in the roster", assertSucceeds(getDoc(doc(real("lead"), MB("ana")))));
 await t("other member cannot read it", assertFails(getDoc(doc(real("ben"), MB("ana")))));
 
+// ---------- Owner (national admin) leads every AG ----------
+await t("owner unlocks a course in an AG they aren't in", assertSucceeds(setDoc(doc(ADMIN, `churches/${C}/courseUnlocks/growth`), cu({ courseId: "growth", unlockedBy: "KcHm9yKcLcNbkTh7qbqi5pI7AYH2" }))));
+await t("owner reads course unlocks", assertSucceeds(getDocs(collection(ADMIN, `churches/${C}/courseUnlocks`))));
+await t("owner edits the AG details", assertSucceeds(updateDoc(doc(ADMIN, `churches/${C}`), { city: "Manila" })));
+await t("outsider still cannot unlock", assertFails(setDoc(doc(real("out"), `churches/${C}/courseUnlocks/truth`), cu({ courseId: "truth", unlockedBy: "out" }))));
+
 await env.cleanup();
 console.log(failed ? `${failed} FAILED` : "ALL PASSED");
 process.exit(failed ? 1 : 0);

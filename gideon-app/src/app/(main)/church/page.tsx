@@ -213,6 +213,20 @@ export default function MyChurchPage() {
           </div>
         )}
 
+        {my.ownerView && (
+          <div className="flex items-center gap-3 rounded-2xl border border-gold/40 bg-gold/10 p-3 text-xs">
+            <span className="min-w-0 flex-1">
+              {tx(
+                "Owner view: you are not a member of this AG, but you have full leader access.",
+                "Owner view: hindi ka member ng AG na ito, pero buo ang leader access mo."
+              )}
+            </span>
+            <Link href="/admin/ags" className="shrink-0 font-semibold text-primary underline underline-offset-2">
+              {tx("All AGs", "Lahat ng AG")}
+            </Link>
+          </div>
+        )}
+
         {/* Active member */}
         {my.active && my.church && (
           <>
@@ -310,6 +324,9 @@ export default function MyChurchPage() {
               <ChevronRight className="size-4 text-muted-foreground" />
             </Link>
 
+            {/* The owner viewing an AG they're not in has nothing of theirs to share. */}
+            {!my.ownerView && (
+            <>
             <label className="flex items-start gap-3 rounded-2xl border border-border/70 bg-card p-4">
               <span className="min-w-0 flex-1">
                 <span className="block text-sm font-medium">
@@ -358,6 +375,8 @@ export default function MyChurchPage() {
                 onCheckedChange={(on) => run(() => setSharePhone(my.churchId!, uid!, on ? (profile?.mobile ?? null) : null))}
               />
             </label>
+            </>
+            )}
 
             {my.isChurchLeader && (
               <Link href="/church/attendance" className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4">
@@ -400,7 +419,7 @@ export default function MyChurchPage() {
               </Link>
             )}
 
-            {my.membership!.role !== "senior_pastor" && (
+            {my.membership!.role !== "senior_pastor" && !my.ownerView && (
               <button
                 type="button"
                 className="w-full text-center text-xs text-muted-foreground underline underline-offset-2"

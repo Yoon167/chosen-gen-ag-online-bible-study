@@ -19,6 +19,8 @@ import { db } from "@/lib/firebase";
 import { useAuth } from "@/lib/hooks/use-auth";
 import {
   LEADER_RANK,
+  NATIONAL_ADMIN_UID,
+  OWNER_RANK,
   roleInfo,
   type Church,
   type ChurchRole,
@@ -88,7 +90,24 @@ export function useMyChurch() {
     );
   }, [uid]);
 
-  const chosen = all.find((m) => m.churchId === preferred && m.membership.status === "active") ?? all[0] ?? null;
+  // The owner (national admin) can open any AG from All AGs and leads it there
+  // even without a membership; the rules give them the same access.
+  const ownerView =
+    uid === NATIONAL_ADMIN_UID && preferred && !all.some((m) => m.churchId === preferred && m.membership.status === "active")
+      ? {
+          churchId: preferred,
+          membership: {
+            uid,
+            displayName: "Owner",
+            role: "senior_pastor",
+            rank: OWNER_RANK,
+            status: "active",
+            joinedAt: 0,
+          } as Membership,
+        }
+      : null;
+  const chosen =
+    ownerView ?? all.find((m) => m.churchId === preferred && m.membership.status === "active") ?? all[0] ?? null;
   const churchId = chosen?.churchId ?? null;
   const membership = chosen?.membership ?? null;
 
@@ -117,7 +136,9 @@ export function useMyChurch() {
     rank,
     isChurchLeader: rank >= LEADER_RANK,
     /** Every AG this person belongs to (active or pending). */
-    memberships: all,
+    memberships: ownerView ? [...all, ownerView] : all,
+    /** The owner is viewing an AG they are not a member of. */
+    ownerView: !!ownerView,
   };
 }
 
@@ -192,6 +213,28 @@ export function useChurchNames(ids: string[]) {
     return () => unsubs.forEach((u) => u());
   }, [key]);
   return names;
+}
+
+/** Every AG, active or suspended, for the owner's All AGs page. */
+export async function listAllChurches() {
+  const snap = await getDocs(collection(db, "churches"));
+  return snap.docs
+    .map((d) => ({ id: d.id, ...d.data() }) as Church)
+    .sort((a, b) => (a.name ?? "").localeCompare(b.name ?? ""));
+}
+
+/** The owner edits an AG's details or suspends/reactivates it. */
+export async function updateChurch(
+  churchId: string,
+  data: Partial<Pick<Church, "name" | "pastorName" | "city" | "province" | "country" | "denomination" | "status">>
+) {
+  await updateDoc(doc(db, "churches", churchId), data);
+}
+
+/** How many active members each AG has. */
+export async function countMembers(churchId: string) {
+  const snap = await getDocs(query(collection(db, "churches", churchId, "members"), where("status", "==", "active")));
+  return snap.size;
 }
 
 /** Active churches people can ask to join. */

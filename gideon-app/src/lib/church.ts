@@ -36,6 +36,9 @@ export const ROLES: { role: ChurchRole; rank: number; label: Text; hidden?: bool
   { role: "senior_pastor", rank: 6, label: { en: "AG Leader", tl: "AG Leader" } },
 ];
 
+/** The owner (national admin) acts above every AG role. */
+export const OWNER_RANK = 7;
+
 /** Rank needed to approve join requests and see the roster. */
 export const LEADER_RANK = 3;
 /** Rank needed to change roles, assign mentors, and remove members (ministry leader and up). */
