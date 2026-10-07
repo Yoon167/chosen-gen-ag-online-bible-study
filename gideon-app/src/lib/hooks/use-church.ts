@@ -276,7 +276,7 @@ export function useDisciples(churchId: string | null, mentorUid: string | null) 
         setItems(
           snap.docs
             .map((d) => d.data() as Membership)
-            .sort((a, b) => a.displayName.localeCompare(b.displayName))
+            .sort((a, b) => (a.displayName ?? "").localeCompare(b.displayName ?? ""))
         );
         setLoading(false);
       },
@@ -313,7 +313,11 @@ export function useRoster(churchId: string | null, enabled: boolean) {
       (snap) => {
         setItems(
           snap.docs
-            .map((d) => d.data() as Membership)
+            .map((d) => {
+              const m = d.data() as Membership;
+              // Older or partial membership docs may lack a name or rank.
+              return { ...m, uid: m.uid ?? d.id, displayName: m.displayName || "Member", rank: m.rank ?? 1 };
+            })
             .sort((a, b) => b.rank - a.rank || a.displayName.localeCompare(b.displayName))
         );
         setLoading(false);

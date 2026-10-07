@@ -65,7 +65,7 @@ export default function ChurchSetupPage() {
             include: true,
             role: (p.role === "leader" ? "associate_pastor" : "member") as ChurchRole,
           }))
-          .sort((a, b) => a.displayName.localeCompare(b.displayName))
+          .sort((a, b) => (a.displayName ?? "").localeCompare(b.displayName ?? ""))
       )
     );
   }, [isAdmin]);

@@ -211,7 +211,7 @@ export default function MembersPage() {
 function MemberAvatar({ name }: { name: string }) {
   return (
     <Avatar className="size-10">
-      <AvatarFallback className="text-xs font-semibold">{name.slice(0, 2).toUpperCase()}</AvatarFallback>
+      <AvatarFallback className="text-xs font-semibold">{(name || "?").slice(0, 2).toUpperCase()}</AvatarFallback>
     </Avatar>
   );
 }
@@ -259,7 +259,7 @@ function MemberRow({
             {m.mentorName && ` · ${tx("Mentor", "Mentor")}: ${m.mentorName}`}
             {m.partnerName && ` · ${tx("Partner", "Partner")}: ${m.partnerName}`}
           </p>
-          {m.phone && !isSelf && (
+          {typeof m.phone === "string" && m.phone && !isSelf && (
             <p className="mt-1 flex items-center gap-3 text-xs">
               <a href={`tel:${m.phone.replace(/[^\d+]/g, "")}`} className="inline-flex items-center gap-1 font-medium text-primary">
                 <Phone className="size-3.5" />

@@ -42,7 +42,8 @@ export const LEADER_RANK = 3;
 export const MANAGE_RANK = 4;
 
 export function roleInfo(role: ChurchRole) {
-  return ROLES.find((r) => r.role === role)!;
+  // An unknown or missing role reads as Member instead of crashing the roster.
+  return ROLES.find((r) => r.role === role) ?? ROLES[0];
 }
 
 export interface Church {

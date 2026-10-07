@@ -29,6 +29,13 @@ export default function MainError({ error, reset }: { error: Error & { digest?: 
             ? "A new version is ready. Reloading… / May bagong bersyon. Nagre-reload…"
             : "Please try again. / Pakisubukan ulit."}
         </p>
+        {/* The error text helps the team find the cause from a screenshot. */}
+        {!stale && (
+          <p className="mt-3 max-w-xs break-words font-mono text-[0.625rem] text-muted-foreground/80">
+            {String(error?.message ?? error).slice(0, 200)}
+            {error?.digest ? ` · ${error.digest}` : ""}
+          </p>
+        )}
       </div>
       <div className="flex gap-2">
         <Button onClick={() => (stale ? window.location.reload() : reset())}>Try again / Subukan ulit</Button>
