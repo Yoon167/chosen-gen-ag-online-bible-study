@@ -7,3 +7,5 @@ firestore-tests/node_modules/
 build.log
 deploy.log
 firestore-tests/firestore-debug.log
+out-old-*/
+build-emu.log
