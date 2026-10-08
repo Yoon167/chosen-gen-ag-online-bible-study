@@ -83,6 +83,9 @@ export function Landing({
         >
           GIDEON
         </h1>
+        <p className="mt-2 text-xs font-semibold uppercase tracking-[0.42em] text-amber-200/90" style={show(5.1, 1.2)}>
+          Discipleship Journey
+        </p>
         <p
           className="mt-3 max-w-md font-heading text-base italic leading-relaxed text-amber-50/95 sm:text-xl"
           style={{ ...show(5.3, 1.4), textShadow: "0 2px 14px rgba(0,0,0,0.6)" }}
