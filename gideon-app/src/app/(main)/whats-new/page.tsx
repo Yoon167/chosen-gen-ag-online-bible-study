@@ -6,17 +6,24 @@ import { PageHeader } from "@/components/shared/page-header";
 import { markReleaseSeen } from "@/components/home/whats-new-card";
 import { RELEASES } from "@/lib/content/whats-new";
 import { useLanguage, useTx } from "@/lib/i18n";
+import { Button } from "@/components/ui/button";
+import { useTour } from "@/components/tour/tour-provider";
 
 /** Every app update, newest first. */
 export default function WhatsNewPage() {
   const tx = useTx();
   const { lang } = useLanguage();
+  const tour = useTour();
   useEffect(() => markReleaseSeen(), []);
 
   return (
     <div>
       <PageHeader title={tx("What's new in Gideon", "Ano'ng bago sa Gideon")} icon={Sparkles} back />
       <div className="space-y-4 px-5 pb-8">
+        <Button className="w-full" onClick={() => tour.start()}>
+          <Sparkles className="size-4" />
+          {tx("Take the new App Tour", "Simulan ang bagong App Tour")}
+        </Button>
         {RELEASES.map((r, i) => (
           <section
             key={r.id}

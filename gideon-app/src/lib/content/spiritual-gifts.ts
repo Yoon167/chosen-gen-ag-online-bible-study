@@ -1,8 +1,13 @@
 /**
- * Spiritual Gifts Test: 16 gifts from Romans 12, 1 Corinthians 12,
- * Ephesians 4 and 1 Peter 4, three statements each. It covers gifts that
- * show in everyday service; members talk with their AG leader about how
- * God is using them.
+ * Spiritual Gifts Test: 24 gifts from Romans 12, 1 Corinthians 12,
+ * Ephesians 4, 1 Peter 4 and other Scripture, three statements each. It
+ * covers gifts that show in everyday service; members talk with their AG
+ * leader about how God is using them.
+ *
+ * The first 16 gifts are the original set and the last 8 were added later.
+ * Saved answers are stored in GIFT_STATEMENTS order, so the original 48
+ * statements must stay first and in the same order; new statements only go
+ * after them.
  */
 
 type Text = { en: string; tl: string };
@@ -24,7 +29,15 @@ export type GiftId =
   | "shepherding"
   | "service"
   | "teaching"
-  | "wisdom";
+  | "wisdom"
+  | "prophecy"
+  | "craftsmanship"
+  | "music"
+  | "missions"
+  | "healing"
+  | "helps"
+  | "creative"
+  | "mentoring";
 
 export interface SpiritualGift {
   id: GiftId;
@@ -325,6 +338,159 @@ export const SPIRITUAL_GIFTS: SpiritualGift[] = [
       t("My counsel usually proves to be right in the long run.", "Kadalasang napapatunayang tama ang aking payo sa katagalan."),
     ],
   },
+  // Added later. Their statements come after the original 48 in GIFT_STATEMENTS.
+  {
+    id: "prophecy",
+    name: t("Prophecy", "Propesiya"),
+    description: t(
+      "Speaking God's truth to build up, encourage and comfort others, in love and humility. It is always tested by Scripture and exercised under church leadership.",
+      "Pagsasalita ng katotohanan ng Diyos upang magpatibay, magpalakas ng loob at umaliw sa iba, nang may pag-ibig at kababaang-loob. Sinusuri ito palagi ayon sa Kasulatan at isinasagawa sa ilalim ng pamumuno ng iglesia."
+    ),
+    verse: t("1 Corinthians 14:3", "1 Corinto 14:3"),
+    serve: [
+      t("Share a word from Scripture that fits what the group is facing", "Magbahagi ng salita mula sa Kasulatan na akma sa pinagdadaanan ng grupo"),
+      t("Bring anything you sense from God to your AG leader first, and let it be tested by the Word", "Ihatid muna sa AG leader ang anumang nararamdaman mong mula sa Diyos, at hayaang suriin ito ayon sa Salita"),
+      t("Speak gently and truthfully to someone who needs to be built up", "Magsalita nang magiliw at totoo sa taong kailangang patatagin"),
+    ],
+    statements: [
+      t("Sometimes a Scripture or message comes to mind that fits someone's situation, and it helps them.", "Minsan may pumapasok sa isip kong talata o mensahe na akma sa sitwasyon ng isang tao, at nakakatulong ito sa kanya."),
+      t("I care more about building people up in love than about being right.", "Mas mahalaga sa akin ang magpatibay ng tao nang may pag-ibig kaysa ang maging tama."),
+      t("I always check what I sense against the Bible and share it with my leaders before acting on it.", "Lagi kong sinusuri sa Biblia ang nararamdaman ko at ibinabahagi sa mga lider ko bago kumilos."),
+    ],
+  },
+  {
+    id: "craftsmanship",
+    name: t("Craftsmanship", "Kasanayan sa Paggawa"),
+    description: t(
+      "Using skilled hands and a creative mind to build, make and repair things for God's work.",
+      "Paggamit ng bihasang kamay at malikhaing isip upang magtayo, gumawa at mag-ayos ng mga bagay para sa gawain ng Diyos."
+    ),
+    verse: t("Exodus 31:3-5", "Exodo 31:3-5"),
+    serve: [
+      t("Build or repair what the AG or church needs: stage, furniture, signs", "Gumawa o mag-ayos ng kailangan ng AG o iglesia: entablado, kasangkapan, karatula"),
+      t("Prepare props, decorations and set-ups for events", "Maghanda ng props, dekorasyon at set-up para sa mga event"),
+      t("Teach a practical skill to other members", "Magturo ng praktikal na kasanayan sa ibang miyembro"),
+    ],
+    statements: [
+      t("I enjoy making or fixing things with my hands, and I take pride in doing it well.", "Gusto kong gumawa o mag-ayos ng mga bagay gamit ang aking mga kamay, at sinisikap kong gawin ito nang mahusay."),
+      t("I can look at a need and picture how to build or arrange something for it.", "Kaya kong tingnan ang isang pangangailangan at maisip kung paano gagawa o mag-aayos ng bagay para dito."),
+      t("I like using my skills to build something that helps God's work.", "Gusto kong gamitin ang aking kakayahan upang makagawa ng bagay na tumutulong sa gawain ng Diyos."),
+    ],
+  },
+  {
+    id: "music",
+    name: t("Music and Worship Arts", "Musika at Sining ng Pagsamba"),
+    description: t(
+      "Leading others to worship God through singing, instruments and the arts, with skill and a humble heart.",
+      "Paggabay sa iba na sumamba sa Diyos sa pamamagitan ng awit, instrumento at sining, nang may husay at mapagpakumbabang puso."
+    ),
+    verse: t("1 Chronicles 25:1-7; Psalm 33:3", "1 Cronica 25:1-7; Awit 33:3"),
+    serve: [
+      t("Sing or play in your AG's worship time", "Kumanta o tumugtog sa worship time ng AG"),
+      t("Lead worship songs at AG meetings", "Mag-lead ng mga awit ng pagsamba sa mga pulong ng AG"),
+      t("Join the church worship team or help teach songs", "Sumali sa worship team ng iglesia o tumulong magturo ng mga awit"),
+    ],
+    statements: [
+      t("Singing, playing or creating music for God brings me close to Him.", "Napapalapit ako sa Diyos kapag kumakanta, tumutugtog o gumagawa ako ng musika para sa Kanya."),
+      t("I can help others enter into worship through the songs or music I lead.", "Natutulungan kong makapasok sa pagsamba ang iba sa pamamagitan ng mga awit o musikang pinangungunahan ko."),
+      t("I practice and work at my music because I want to offer God my best.", "Nagsasanay at pinagbubutihan ko ang aking musika dahil gusto kong ialay sa Diyos ang aking pinakamahusay."),
+    ],
+  },
+  {
+    id: "missions",
+    name: t("Cross-cultural Missions", "Misyon sa Ibang Kultura"),
+    description: t(
+      "Going or sending to share Christ among other peoples and cultures, and becoming all things to all people for the gospel.",
+      "Pagpunta o pagpapadala upang ibahagi si Kristo sa ibang lahi at kultura, at pakikibagay sa lahat ng tao alang-alang sa ebanghelyo."
+    ),
+    verse: t("Acts 13:2-3; 1 Corinthians 9:22", "Gawa 13:2-3; 1 Corinto 9:22"),
+    serve: [
+      t("Join a short-term mission or outreach trip", "Sumama sa short-term mission o outreach trip"),
+      t("Pray for and support missionaries and unreached peoples", "Ipanalangin at suportahan ang mga misyonero at ang mga taong hindi pa naaabot"),
+      t("Reach out to foreigners, migrants or other cultures near you", "Abutin ang mga dayuhan, migrante o ibang kultura sa paligid mo"),
+    ],
+    statements: [
+      t("I often think and pray about people groups who have never heard of Jesus.", "Madalas kong isipin at ipanalangin ang mga lahing hindi pa nakakarinig tungkol kay Hesus."),
+      t("I would be willing to leave my comfort zone and live among another culture for the gospel.", "Handa akong lumabas sa aking comfort zone at tumira sa ibang kultura alang-alang sa ebanghelyo."),
+      t("I enjoy learning other languages and customs so I can connect with people.", "Gusto kong matuto ng ibang wika at kaugalian para makaugnay ako sa mga tao."),
+    ],
+  },
+  {
+    id: "healing",
+    name: t("Healing Prayer", "Panalangin para sa Kagalingan"),
+    description: t(
+      "Praying with compassion for the sick and hurting, trusting God to heal as He wills. It is done in humility and love, gives all glory to Him, and never replaces medical care.",
+      "Pananalangin nang may habag para sa mga may sakit at nasasaktan, nagtitiwalang magpapagaling ang Diyos ayon sa Kanyang kalooban. Ginagawa ito nang may kababaang-loob at pag-ibig, ibinibigay ang lahat ng kaluwalhatian sa Kanya, at hindi ipinapalit sa pagpapagamot."
+    ),
+    verse: t("1 Corinthians 12:9; James 5:14-15", "1 Corinto 12:9; Santiago 5:14-15"),
+    serve: [
+      t("Pray with members who are sick or hurting, together with your AG leader", "Manalangin kasama ng mga miyembrong may sakit o nasasaktan, kasama ang AG leader"),
+      t("Visit the sick and pray with them gently, never pressuring them", "Dalawin ang may sakit at ipanalangin sila nang magiliw, nang hindi nagpipilit"),
+      t("Join the church's prayer for the sick, under its leaders", "Sumali sa panalangin ng iglesia para sa mga may sakit, sa ilalim ng mga lider nito"),
+    ],
+    statements: [
+      t("I feel drawn to pray for people who are sick or in pain, and I do it with compassion.", "Nahihikayat akong ipanalangin ang mga may sakit o nasasaktan, at ginagawa ko ito nang may habag."),
+      t("I trust God to heal as He wills, and I give Him the glory whatever happens.", "Nagtitiwala akong magpapagaling ang Diyos ayon sa Kanyang kalooban, at Siya ang pinupuri ko anuman ang mangyari."),
+      t("I have seen people helped or comforted when I prayed with them, and I stay humble about it.", "May mga taong natulungan o naaliw nang ipanalangin ko sila, at nananatili akong mapagpakumbaba tungkol dito."),
+    ],
+  },
+  {
+    id: "helps",
+    name: t("Helps", "Pagtulong"),
+    description: t(
+      "Standing beside leaders and workers to support them, so their ministry can go further.",
+      "Pagtayo sa tabi ng mga lider at manggagawa upang suportahan sila, nang mas lumawak ang kanilang ministeryo."
+    ),
+    verse: t("1 Corinthians 12:28; Romans 16:1-2", "1 Corinto 12:28; Roma 16:1-2"),
+    serve: [
+      t("Be a leader's right hand: remind, prepare and follow through", "Maging kanang kamay ng isang lider: magpaalala, maghanda at tumapos ng gawain"),
+      t("Support a person or ministry that is overloaded", "Tulungan ang taong sobrang abala o ang ministeryong nabibigatan"),
+      t("Stand with newer leaders and encourage them", "Samahan at palakasin ang loob ng mga bagong lider"),
+    ],
+    statements: [
+      t("I like coming alongside a leader or a person with a task and helping them succeed.", "Gusto kong tumabi sa isang lider o taong may gawain at tulungan siyang magtagumpay."),
+      t("I am happy to support someone else's vision and let them get the credit.", "Masaya akong suportahan ang pangitain ng iba at hayaang sila ang makakuha ng papuri."),
+      t("People often come to me when they need a dependable helper.", "Madalas akong lapitan ng mga tao kapag kailangan nila ng maaasahang katuwang."),
+    ],
+  },
+  {
+    id: "creative",
+    name: t("Creative Communication", "Malikhaing Komunikasyon"),
+    description: t(
+      "Using drama, writing, design, photo, video and media to tell the gospel and God's story in ways people connect with.",
+      "Paggamit ng drama, pagsulat, disenyo, litrato, video at media upang ibahagi ang ebanghelyo at ang kuwento ng Diyos sa paraang nakakaugnay ang mga tao."
+    ),
+    verse: t("Psalm 45:1; Colossians 4:3-4", "Awit 45:1; Colosas 4:3-4"),
+    serve: [
+      t("Design posters, social media posts or slides for AG events", "Mag-design ng poster, social media post o slides para sa mga event ng AG"),
+      t("Write or film testimonies, devotionals or short skits", "Sumulat o mag-video ng mga patotoo, debosyonal o maikling dula"),
+      t("Help the church share its story online", "Tulungan ang iglesia na ibahagi ang kuwento nito online"),
+    ],
+    statements: [
+      t("I love turning a message into a story, a drama, a design or a video.", "Gustong-gusto kong gawing kuwento, dula, disenyo o video ang isang mensahe."),
+      t("I often think of fresh, creative ways to explain the gospel so people can connect.", "Madalas akong makaisip ng bago at malikhaing paraan para ipaliwanag ang ebanghelyo."),
+      t("I want my writing, art or media to point people to Jesus.", "Gusto kong ituro ng aking sulat, sining o media ang mga tao kay Hesus."),
+    ],
+  },
+  {
+    id: "mentoring",
+    name: t("Mentoring and Discipling", "Pag-mentor at Pagdidisipulo"),
+    description: t(
+      "Investing in a few people over time, so they grow in Christ and are ready to help others grow too.",
+      "Paglalaan ng panahon sa ilang tao upang sila ay lumago kay Kristo at maging handang tumulong sa iba na lumago rin."
+    ),
+    verse: t("2 Timothy 2:2", "2 Timoteo 2:2"),
+    serve: [
+      t("Disciple one or two newer believers one-on-one", "Mag-disciple ng isa o dalawang bagong mananampalataya, one-on-one"),
+      t("Walk with a member through the Journey and pray with them", "Samahan ang isang miyembro sa Journey at ipanalangin siya"),
+      t("Train someone to lead and disciple others", "Sanayin ang isang tao na mamuno at magdisipulo ng iba"),
+    ],
+    statements: [
+      t("I enjoy meeting one-on-one to help someone grow in Jesus.", "Gusto kong makipagkita nang isa-isa para tulungan ang isang tao na lumago kay Hesus."),
+      t("I like to share my life and my mistakes, not just my knowledge, so others can learn.", "Gusto kong ibahagi ang aking buhay at pagkakamali, hindi lang ang aking kaalaman, para matuto ang iba."),
+      t("I am glad when the person I am helping grows beyond me and starts helping others.", "Natutuwa ako kapag ang taong tinutulungan ko ay lumalagpas na sa akin at nagsisimulang tumulong sa iba."),
+    ],
+  },
 ];
 
 export const GIFT_SCALE: Text[] = [
@@ -334,10 +500,22 @@ export const GIFT_SCALE: Text[] = [
   t("Very much me", "Ako talaga ito"),
 ];
 
-/** The statements in test order: one from each gift in turn, so similar statements aren't back to back. */
-export const GIFT_STATEMENTS = [0, 1, 2].flatMap((round) =>
-  SPIRITUAL_GIFTS.map((g) => ({ gift: g.id, text: g.statements[round] }))
-);
+/** The first 16 gifts in SPIRITUAL_GIFTS are the original set; the rest were added later. */
+export const ORIGINAL_GIFT_COUNT = 16;
+
+const ORIGINAL_GIFTS = SPIRITUAL_GIFTS.slice(0, ORIGINAL_GIFT_COUNT);
+const NEW_GIFTS = SPIRITUAL_GIFTS.slice(ORIGINAL_GIFT_COUNT);
+
+const inRounds = (gifts: SpiritualGift[]) =>
+  [0, 1, 2].flatMap((round) => gifts.map((g) => ({ gift: g.id, text: g.statements[round] })));
+
+/**
+ * The statements in test order: one from each gift in turn, so similar statements aren't back to back.
+ * Saved answers are stored in this order. The original 48 (rounds 0, 1, 2 over the original 16 gifts)
+ * must stay first and unchanged so old answers keep their meaning; the new gifts' statements
+ * (also round by round) come after them. Never reorder or insert before the end.
+ */
+export const GIFT_STATEMENTS = [...inRounds(ORIGINAL_GIFTS), ...inRounds(NEW_GIFTS)];
 
 export const MAX_GIFT_SCORE = 3 * (GIFT_SCALE.length - 1);
 

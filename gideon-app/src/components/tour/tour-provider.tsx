@@ -168,7 +168,7 @@ function TourOverlay({
   const pad = 8;
   // The card goes below the spotlight when it fits, above when that fits,
   // and otherwise sits at the bottom of the screen.
-  const CARD = 310;
+  const CARD = 340;
   const spaceBelow = box ? window.innerHeight - (box.top + box.height + pad) : 0;
   const spaceAbove = box ? box.top - pad : 0;
   const cardStyle: React.CSSProperties = !box
@@ -216,40 +216,45 @@ function TourOverlay({
         {/* Keyed by step so each card rises in (CSS, on the GPU) */}
         <div
           key={step.id}
-          className="ui-rise mx-auto max-w-sm rounded-3xl border border-border/70 bg-card p-5 text-card-foreground shadow-2xl"
+          className="ui-rise mx-auto max-w-sm overflow-hidden rounded-3xl border border-border/70 bg-card text-card-foreground shadow-2xl"
         >
-            <div className="flex items-start justify-between gap-3">
-              <span
-                className={cn(
-                  "flex shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-200 to-amber-400 text-[#3a2608]",
-                  box ? "size-10" : "size-14"
-                )}
-              >
-                <Icon className={box ? "size-5" : "size-7"} />
-              </span>
-              {!last && (
-                <button
-                  onClick={onClose}
-                  className="flex items-center gap-1 rounded-full px-2 py-1 text-xs font-medium text-muted-foreground"
-                >
-                  {tx("Skip", "Laktawan")}
-                  <X className="size-3.5" />
-                </button>
+          {/* A colorful header with the stop's emoji and icon. */}
+          <div className={cn("gradient-hero relative flex items-center gap-3 px-5 text-primary-foreground", box ? "py-3" : "py-5")}>
+            <div className="pointer-events-none absolute -right-6 -top-8 size-28 rounded-full bg-white/10 blur-2xl" />
+            <span
+              className={cn(
+                "ui-pop relative flex shrink-0 items-center justify-center rounded-2xl bg-white/15 shadow-inner backdrop-blur",
+                box ? "size-11 text-2xl" : "size-16 text-4xl"
               )}
+              aria-hidden
+            >
+              {step.emoji}
+            </span>
+            <div className="relative min-w-0 flex-1">
+              <p className="flex items-center gap-1 text-[0.6875rem] font-semibold uppercase tracking-wide text-primary-foreground/75">
+                <Icon className="size-3.5" />
+                {tx(`Step ${index + 1} of ${TOUR_STEPS.length}`, `Hakbang ${index + 1} sa ${TOUR_STEPS.length}`)}
+              </p>
+              <h2 className="font-heading text-xl font-semibold leading-tight">{step.title[lang]}</h2>
             </div>
-            <p className="mt-3 text-[0.6875rem] font-semibold uppercase tracking-wide text-primary">
-              {tx(`Step ${index + 1} of ${TOUR_STEPS.length}`, `Hakbang ${index + 1} sa ${TOUR_STEPS.length}`)}
-            </p>
-            <h2 className="mt-0.5 font-heading text-xl font-semibold">{step.title[lang]}</h2>
-            <p className="mt-1.5 text-sm leading-relaxed text-foreground/80">{step.body[lang]}</p>
+            {!last && (
+              <button
+                onClick={onClose}
+                aria-label={tx("Skip", "Laktawan")}
+                className="relative self-start rounded-full bg-white/15 p-1.5 text-primary-foreground/90"
+              >
+                <X className="size-4" />
+              </button>
+            )}
+          </div>
+          <div className="p-5 pt-4">
+            <p className="text-sm leading-relaxed text-foreground/85">{step.body[lang]}</p>
 
-            <div className="mt-4 flex justify-center gap-1.5" aria-hidden>
-              {TOUR_STEPS.map((s, i) => (
-                <span
-                  key={s.id}
-                  className={cn("h-1.5 rounded-full", i === index ? "w-5 bg-primary" : "w-1.5 bg-muted")}
-                />
-              ))}
+            <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-muted" aria-hidden>
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-primary to-amber-400 transition-[width] duration-500"
+                style={{ width: `${((index + 1) / TOUR_STEPS.length) * 100}%` }}
+              />
             </div>
 
             {last ? (
@@ -281,6 +286,7 @@ function TourOverlay({
                 </Button>
               </div>
             )}
+          </div>
         </div>
       </div>
     </div>

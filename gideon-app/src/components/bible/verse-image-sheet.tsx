@@ -6,6 +6,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sh
 import { Button } from "@/components/ui/button";
 import {
   VERSE_IMAGE_THEMES,
+  photoOfTheDay,
   canvasToBlob,
   drawVerseImage,
   verseImageFileName,
@@ -37,7 +38,8 @@ function Editor({ verse }: { verse: VerseForImage }) {
   const tx = useTx();
   const { lang } = useLanguage();
   const canvas = useRef<HTMLCanvasElement>(null);
-  const [themeId, setThemeId] = useState(VERSE_IMAGE_THEMES[0].id);
+  // Starts on today's photo, the same one behind the verse on Home.
+  const [themeId, setThemeId] = useState(() => photoOfTheDay());
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const canShareFiles =

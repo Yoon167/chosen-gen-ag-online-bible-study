@@ -46,7 +46,7 @@ const STRINGS = {
   "qa.help": { en: "Help in the Struggle", tl: "Tulong sa Laban" },
   "qa.feelings": { en: "Verses for How I Feel", tl: "Talata sa Nararamdaman Ko" },
   "qa.victories": { en: "What God Has Done", tl: "Ginawa ng Diyos" },
-  "qa.quiz": { en: "Bible Quiz", tl: "Bible Quiz" },
+  "qa.quiz": { en: "Bible Games", tl: "Bible Games" },
   "qa.courses": { en: "Courses", tl: "Mga Kurso" },
 
   // Devotion

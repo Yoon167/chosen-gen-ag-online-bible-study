@@ -4,10 +4,10 @@
  * the first time it sees a new id.
  */
 export const LATEST_RELEASE = {
-  id: "2026-10-08",
+  id: "2026-10-08-games",
   title: { en: "✨ New in Gideon", tl: "✨ Bago sa Gideon" },
   body: {
-    en: "Live reactions and questions in live studies, follow-up for visitors and new believers, and reminders to check on quiet members. Tap to see what's new.",
-    tl: "Reactions at tanong sa live study, follow-up para sa bisita at bagong mananampalataya, at paalala na kumustahin ang tahimik na member. Pindutin para makita ang bago.",
+    en: "New Bible Games in three levels, a fresh nature photo for the verse every day, a wider Spiritual Assessment and Gifts test, and a new App Tour. Tap to see what's new.",
+    tl: "Bagong Bible Games sa tatlong level, bagong larawan ng kalikasan sa talata araw-araw, mas malawak na Spiritual Assessment at Gifts test, at bagong App Tour. Pindutin para makita ang bago.",
   },
 };

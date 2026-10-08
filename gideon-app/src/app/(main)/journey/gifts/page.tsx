@@ -167,8 +167,8 @@ export default function GiftsPage() {
           <p className="mt-0.5 text-xs text-muted-foreground">{tx("1 Peter 4:10", "1 Pedro 4:10")}</p>
           <p className="mt-2 text-foreground/80">
             {tx(
-              `${GIFT_STATEMENTS.length} short statements, about 8 minutes. Answer by what you actually do, not what you wish you did. Your results show where God may be using you, and are best talked through with your AG leader.`,
-              `${GIFT_STATEMENTS.length} maikling pahayag, mga 8 minuto. Sumagot ayon sa talagang ginagawa mo, hindi sa gusto mong gawin. Ipapakita ng resulta kung saan ka maaaring ginagamit ng Diyos, at mainam itong pag-usapan kasama ang iyong AG leader.`
+              `${GIFT_STATEMENTS.length} short statements, about ${Math.round(GIFT_STATEMENTS.length / 6)} minutes. Answer by what you actually do, not what you wish you did. Your results show where God may be using you, and are best talked through with your AG leader.`,
+              `${GIFT_STATEMENTS.length} maikling pahayag, mga ${Math.round(GIFT_STATEMENTS.length / 6)} minuto. Sumagot ayon sa talagang ginagawa mo, hindi sa gusto mong gawin. Ipapakita ng resulta kung saan ka maaaring ginagamit ng Diyos, at mainam itong pag-usapan kasama ang iyong AG leader.`
             )}
           </p>
         </div>
@@ -283,7 +283,7 @@ function ResultView({
         ))}
 
         <section className="rounded-2xl border border-border/70 bg-card p-4">
-          <h2 className="text-sm font-semibold">{tx("All 16 gifts", "Lahat ng 16 na kaloob")}</h2>
+          <h2 className="text-sm font-semibold">{tx(`All ${SPIRITUAL_GIFTS.length} gifts`, `Lahat ng ${SPIRITUAL_GIFTS.length} na kaloob`)}</h2>
           <ul className="mt-3 space-y-2.5">
             {ranked.map(({ gift, score }) => (
               <li key={gift.id}>

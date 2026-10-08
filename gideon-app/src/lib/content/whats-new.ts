@@ -18,6 +18,29 @@ export interface Release {
 
 export const RELEASES: Release[] = [
   {
+    id: "2026-10-08-games",
+    date: "2026-10-08",
+    title: t("Bible Games, new verse photos, a wider assessment and a new tour", "Bible Games, bagong larawan sa talata, mas malawak na assessment at bagong tour"),
+    items: [
+      t(
+        "Bible Games: Quiz, Guess the Icons, Scrambled Letters, Verse Puzzle, Who Am I? and True or False, each in Easy, Medium and Hard, with over 500 puzzles. Earn points and climb from Seeker to Elder of the Word.",
+        "Bible Games: Quiz, Hulaan ang Icon, Ginulong Letra, Verse Puzzle, Sino Ako? at Tama o Mali, bawat isa sa Madali, Katamtaman at Mahirap, may higit 500 na tanong at puzzle. Mag-ipon ng puntos at umakyat mula Naghahanap hanggang Matanda sa Salita."
+      ),
+      t(
+        "The Verse of the Day now shows a new nature photo every day that slowly changes, with 42 photos to choose from when you download a verse image.",
+        "Ang Verse of the Day ay may bagong larawan ng kalikasan araw-araw na dahan-dahang nagpapalit, at 42 na larawan ang mapagpipilian kapag nag-download ng verse image."
+      ),
+      t(
+        "The Spiritual Assessment now covers 24 areas (worship, peace, anger, purity, money, sharing your faith and more), and the Spiritual Gifts test has 24 gifts.",
+        "Ang Spiritual Assessment ay may 24 na bahagi na (pagsamba, kapayapaan, galit, kalinisan, pera, pagpapatotoo at iba pa), at ang Spiritual Gifts test ay may 24 na kaloob."
+      ),
+      t(
+        "A new, more colorful App Tour with every new feature. Start it below or from Profile.",
+        "Bagong App Tour na mas makulay, kasama ang lahat ng bagong feature. Simulan sa ibaba o sa Profile."
+      ),
+    ],
+  },
+  {
     id: "2026-10-08",
     date: "2026-10-08",
     title: t("Live reactions, follow-up and caring for quiet members", "Live reactions, follow-up at pag-aalaga sa tahimik na member"),

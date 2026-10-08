@@ -1,12 +1,16 @@
 /**
- * The App Tour: ten stops across the real screens. Each stop opens its page
+ * The App Tour: stops across the real screens. Each stop opens its page
  * and spotlights the element marked with data-tour="<target>"; when that
  * element isn't on screen (e.g. not in an AG yet) the card simply shows in
  * the middle.
  */
 
 import {
+  BellRing,
   BookOpenText,
+  Gamepad2,
+  GraduationCap,
+  Radio,
   Church,
   HandHeart,
   LayoutDashboard,
@@ -28,6 +32,8 @@ export interface TourStep {
   /** data-tour value to spotlight, or null for a centered card. */
   target: string | null;
   icon: LucideIcon;
+  /** A big friendly emoji on the card. */
+  emoji: string;
   title: Text;
   body: Text;
 }
@@ -38,6 +44,7 @@ export const TOUR_STEPS: TourStep[] = [
     href: "/",
     target: null,
     icon: Sparkles,
+    emoji: "👋",
     title: { en: "Welcome to Gideon", tl: "Maligayang pagdating sa Gideon" },
     body: {
       en: "Your companion in your walk with Christ. Let's take a quick look around.",
@@ -49,6 +56,7 @@ export const TOUR_STEPS: TourStep[] = [
     href: "/",
     target: "home-progress",
     icon: LayoutDashboard,
+    emoji: "🏠",
     title: { en: "Dashboard", tl: "Dashboard" },
     body: {
       en: "Track your spiritual growth: your next Journey lesson, reading and prayer streaks, memory verses and AG news, all on Home.",
@@ -60,6 +68,7 @@ export const TOUR_STEPS: TourStep[] = [
     href: "/bible",
     target: "bible-search",
     icon: BookOpenText,
+    emoji: "📖",
     title: { en: "Bible Study", tl: "Pag-aaral ng Bibliya" },
     body: {
       en: "Study God's Word and deepen your faith. Tap any verse to highlight, memorize, or share it as an image. Listen to chapters, or download the Bible to read offline.",
@@ -67,10 +76,35 @@ export const TOUR_STEPS: TourStep[] = [
     },
   },
   {
+    id: "courses",
+    href: "/courses",
+    target: null,
+    icon: GraduationCap,
+    emoji: "🎓",
+    title: { en: "Spirit-led Courses", tl: "Spirit-led na Courses" },
+    body: {
+      en: "11 courses and a 12-level Journey. Every lesson opens with today's revelation, then the main truth, a Kingdom twist, life connection, heart change, action steps and prayer. Your AG leader unlocks each course.",
+      tl: "11 na course at 12-level na Journey. Bawat aralin ay nagsisimula sa pahayag ngayong araw, saka ang pangunahing katotohanan, Kingdom twist, ugnayan sa buhay, pagbabago ng puso, mga hakbang at panalangin. Ina-unlock ng AG leader ang bawat course.",
+    },
+  },
+  {
+    id: "games",
+    href: "/quiz",
+    target: "games-hub",
+    icon: Gamepad2,
+    emoji: "🎮",
+    title: { en: "Bible Games", tl: "Bible Games" },
+    body: {
+      en: "Quiz, Guess the Icons, Scrambled Letters, Verse Puzzle, Who Am I? and True or False, in Easy, Medium and Hard. Earn points and climb from Seeker to Elder of the Word.",
+      tl: "Quiz, Hulaan ang Icon, Ginulong Letra, Verse Puzzle, Sino Ako? at Tama o Mali, sa Madali, Katamtaman at Mahirap. Mag-ipon ng puntos at umakyat mula Naghahanap hanggang Matanda sa Salita.",
+    },
+  },
+  {
     id: "prayer",
     href: "/prayer",
     target: "prayer-journal",
     icon: HandHeart,
+    emoji: "🙏",
     title: { en: "Prayer Journal", tl: "Prayer Journal" },
     body: {
       en: "Record prayers, victories and testimonies. Mark prayers answered, pray with the prayer timer, and lift up the people in your Oikos.",
@@ -82,10 +116,11 @@ export const TOUR_STEPS: TourStep[] = [
     href: "/journey",
     target: "journey-assessment",
     icon: ShieldCheck,
-    title: { en: "Deliverance Assessment", tl: "Deliverance Assessment" },
+    emoji: "🛡️",
+    title: { en: "Spiritual Assessment and Gifts", tl: "Spiritual Assessment at Gifts" },
     body: {
-      en: "Guided questions for healing and freedom, with Scripture and prayer for each area. Private and encrypted: only you can see your answers.",
-      tl: "Mga gabay na tanong para sa kagalingan at kalayaan, may talata at panalangin sa bawat bahagi. Pribado at naka-encrypt: ikaw lang ang makakakita ng mga sagot mo.",
+      en: "24 areas of your walk with God (prayer, the Word, peace, purity, money, witness and more), each with Scripture, a lesson and a prayer. Private and encrypted. Then discover your spiritual gifts: 24 gifts to serve with.",
+      tl: "24 na bahagi ng paglakad mo kasama ang Diyos (panalangin, Salita, kapayapaan, kalinisan, pera, pagpapatotoo at iba pa), bawat isa may talata, aralin at panalangin. Pribado at naka-encrypt. Saka tuklasin ang iyong spiritual gifts: 24 na kaloob para maglingkod.",
     },
   },
   {
@@ -93,6 +128,7 @@ export const TOUR_STEPS: TourStep[] = [
     href: "/help?topic=temptation",
     target: "help-temptation",
     icon: ShieldHalf,
+    emoji: "⚔️",
     title: { en: "Temptation Support", tl: "Tulong sa Tukso" },
     body: {
       en: "Receive Biblical guidance during struggles: what to do right now, verses to stand on, a prayer, and a quick way to reach your accountability partner.",
@@ -104,6 +140,7 @@ export const TOUR_STEPS: TourStep[] = [
     href: "/help?topic=fear",
     target: "help-fear",
     icon: LifeBuoy,
+    emoji: "🕊️",
     title: { en: "Fear & Doubt", tl: "Takot at Pag-aalinlangan" },
     body: {
       en: "Strengthen your faith through Scripture when fear, anxiety or doubt comes.",
@@ -115,10 +152,35 @@ export const TOUR_STEPS: TourStep[] = [
     href: "/church",
     target: "ag-community",
     icon: Church,
+    emoji: "🤝",
     title: { en: "Community", tl: "Komunidad" },
     body: {
-      en: "Connect with fellow believers in your Accountability Group: announcements, weekly check-ins, the prayer wall, sermon notes and reading the Bible together.",
-      tl: "Makiisa sa kapwa mananampalataya sa iyong Accountability Group: mga anunsyo, lingguhang check-in, prayer wall, sermon notes at sabay-sabay na pagbasa ng Bibliya.",
+      en: "Connect with fellow believers in your Accountability Group: announcements, weekly check-ins, the prayer wall and prayer chains, meetings, and follow-up for visitors and new believers.",
+      tl: "Makiisa sa kapwa mananampalataya sa iyong Accountability Group: mga anunsyo, lingguhang check-in, prayer wall at prayer chain, mga meeting, at follow-up para sa bisita at bagong mananampalataya.",
+    },
+  },
+  {
+    id: "live",
+    href: "/church",
+    target: null,
+    icon: Radio,
+    emoji: "📡",
+    title: { en: "Live Bible Study", tl: "Live Bible Study" },
+    body: {
+      en: "When your leader presents, your screen follows the same slide, with the Meet or Zoom link. React with 🙏 ❤️ ✋ or send a question, and get a notification when your AG goes live.",
+      tl: "Kapag nag-present ang leader mo, susunod ang screen mo sa parehong slide, kasama ang link ng Meet o Zoom. Mag-react ng 🙏 ❤️ ✋ o magpadala ng tanong, at makatanggap ng notification kapag nag-live ang AG mo.",
+    },
+  },
+  {
+    id: "notifications",
+    href: "/profile",
+    target: null,
+    icon: BellRing,
+    emoji: "🔔",
+    title: { en: "Notifications", tl: "Notifications" },
+    body: {
+      en: "Turn on push notifications in Profile: the daily verse at your time, live studies, prayer requests, meeting reminders, follow-ups and app updates, even when Gideon is closed.",
+      tl: "I-on ang push notifications sa Profile: ang daily verse sa oras mo, live study, prayer request, paalala sa meeting, follow-up at updates ng app, kahit sarado ang Gideon.",
     },
   },
   {
@@ -126,6 +188,7 @@ export const TOUR_STEPS: TourStep[] = [
     href: "/profile",
     target: "profile-webapp",
     icon: UserRound,
+    emoji: "⚙️",
     title: { en: "Profile", tl: "Profile" },
     body: {
       en: "Manage your settings and install Gideon on your phone's home screen. You can restart this tour here anytime.",
@@ -137,6 +200,7 @@ export const TOUR_STEPS: TourStep[] = [
     href: "/",
     target: null,
     icon: PartyPopper,
+    emoji: "🎉",
     title: { en: "Congratulations!", tl: "Binabati kita!" },
     body: {
       en: "You are ready to continue your journey with Christ.",

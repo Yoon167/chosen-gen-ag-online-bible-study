@@ -11,6 +11,47 @@ import {
   verseOfTheDayReference,
 } from "@/lib/bible/api";
 import { useLanguage } from "@/lib/i18n";
+import { VERSE_IMAGE_THEMES, photoOfTheDay } from "@/lib/verse-image";
+
+const photoUrl = (id: string) => VERSE_IMAGE_THEMES.find((t) => t.id === id)?.photo;
+
+/**
+ * Today's photo behind the verse, slowly giving way to the next ones (every
+ * 12 seconds, a soft crossfade). Each photo loads only when its turn comes.
+ */
+function RotatingPhoto() {
+  const [step, setStep] = useState(0);
+  const [loaded, setLoaded] = useState<Record<number, boolean>>({});
+  useEffect(() => {
+    const id = setInterval(() => setStep((s) => s + 1), 12000);
+    return () => clearInterval(id);
+  }, []);
+  // Preload the next photo so the crossfade never shows a blank.
+  useEffect(() => {
+    const url = photoUrl(photoOfTheDay(step + 1));
+    if (!url) return;
+    const img = new window.Image();
+    img.src = url;
+  }, [step]);
+  return (
+    <>
+      {[step - 1, step].filter((s) => s >= 0).map((s) => {
+        const url = photoUrl(photoOfTheDay(s));
+        return url ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            key={s}
+            src={url}
+            alt=""
+            onLoad={() => setLoaded((l) => ({ ...l, [s]: true }))}
+            className={`absolute inset-0 size-full object-cover transition-opacity duration-[2000ms] ${s === step && loaded[s] ? "opacity-100" : s === step ? "opacity-0" : "opacity-100"}`}
+          />
+        ) : null;
+      })}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/40 to-black/65" />
+    </>
+  );
+}
 
 export function VerseOfTheDayCard() {
   // Today's verse in the language it was loaded for.
@@ -46,8 +87,9 @@ export function VerseOfTheDayCard() {
     <div
       className="ui-rise gradient-hero relative overflow-hidden rounded-3xl p-6 text-primary-foreground shadow-lg shadow-primary/20"
     >
-      <div className="pointer-events-none absolute -right-8 -top-8 size-36 rounded-full bg-white/10 blur-2xl" />
-      <div className="pointer-events-none absolute -bottom-10 -left-6 size-28 rounded-full bg-gold/20 blur-2xl" />
+      <div className="pointer-events-none absolute inset-0">
+        <RotatingPhoto />
+      </div>
 
       <div className="relative flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-primary-foreground/70">
         <BookOpenText className="size-3.5" />

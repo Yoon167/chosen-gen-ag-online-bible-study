@@ -1,121 +1,122 @@
 "use client";
 
-import { useState } from "react";
-import { BookOpen, Check, ChevronRight, RotateCcw, Trophy, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ChevronRight, Gamepad2, RotateCcw, Star, Trophy } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { Button } from "@/components/ui/button";
 import { PassageSheet } from "@/components/bible/passage-sheet";
+import { ChoiceGame, ScrambleGame, VerseOrderGame, WhoAmIGame, type GameResult } from "@/components/games/games";
 import { useUserCollection } from "@/lib/hooks/use-collection";
-import { QUIZ_CATEGORIES, QUIZ_QUESTIONS, type QuizCategory, type QuizQuestion, type QuizScore } from "@/lib/content/bible-quiz";
-import { verseLabel, type VerseRef } from "@/lib/bible/verse-ref";
+import { GAMES, LEVELS, poolSize, type GameId, type Level } from "@/lib/content/games";
+import type { VerseRef } from "@/lib/bible/verse-ref";
 import { useLanguage, useTx } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
-const ROUND = 10;
-
-type Pick = QuizCategory | "all";
-interface Round {
-  category: Pick;
-  questions: { question: QuizQuestion; order: number[] }[];
-  index: number;
-  chosen: number | null;
-  score: number;
+/** users/{uid}/gameScores: one row per finished round. */
+interface GameScore {
+  id: string;
+  game: GameId;
+  level: Level;
+  correct: number;
+  total: number;
+  points: number;
+  at: number;
 }
 
-function shuffle<T>(items: T[]) {
-  const a = [...items];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
+const LEVEL_KEY = "gideon-game-level";
 
-/** Ten random questions; choices shuffled so the right answer moves around. */
-function newRound(category: Pick): Round {
-  const pool = category === "all" ? QUIZ_QUESTIONS : QUIZ_QUESTIONS.filter((q) => q.category === category);
-  return {
-    category,
-    questions: shuffle(pool)
-      .slice(0, ROUND)
-      .map((question) => ({ question, order: shuffle(question.choices.map((_, i) => i)) })),
-    index: 0,
-    chosen: null,
-    score: 0,
-  };
-}
+/** Titles earned with total points across all games. */
+const RANKS = [
+  { at: 0, en: "Seeker", tl: "Naghahanap" },
+  { at: 50, en: "Disciple", tl: "Alagad" },
+  { at: 150, en: "Bible Explorer", tl: "Manlalakbay sa Bibliya" },
+  { at: 350, en: "Scripture Scholar", tl: "Iskolar ng Kasulatan" },
+  { at: 700, en: "Berean", tl: "Taga-Berea" },
+  { at: 1200, en: "Elder of the Word", tl: "Matanda sa Salita" },
+];
 
-/** Bible Quiz: a quick game for youth and everyone, with the passage behind each answer. */
-export default function QuizPage() {
+const stars = (r: GameResult) => (r.correct / Math.max(1, r.total) >= 0.9 ? 3 : r.correct / Math.max(1, r.total) >= 0.7 ? 2 : r.correct / Math.max(1, r.total) >= 0.4 ? 1 : 0);
+
+/** Bible games: quiz, icons, scrambled letters, verse puzzle, who am I and true or false, in three levels. */
+export default function GamesPage() {
   const tx = useTx();
   const { lang } = useLanguage();
-  const scores = useUserCollection<QuizScore>("quizScores", "at");
-  const [round, setRound] = useState<Round | null>(null);
+  const scores = useUserCollection<GameScore>("gameScores", "at");
+  const [level, setLevel] = useState<Level>("easy");
+  const [playing, setPlaying] = useState<{ game: GameId; key: number } | null>(null);
+  const [result, setResult] = useState<GameResult | null>(null);
   const [passage, setPassage] = useState<VerseRef | null>(null);
-  const best = (c: Pick) => Math.max(0, ...scores.items.filter((s) => s.category === c).map((s) => s.score));
 
-  if (!round) {
+  useEffect(() => {
+    const id = setTimeout(() => {
+      try {
+        const saved = localStorage.getItem(LEVEL_KEY) as Level | null;
+        if (saved && LEVELS.some((l) => l.id === saved)) setLevel(saved);
+      } catch {}
+    }, 0);
+    return () => clearTimeout(id);
+  }, []);
+
+  const pickLevel = (l: Level) => {
+    setLevel(l);
+    try {
+      localStorage.setItem(LEVEL_KEY, l);
+    } catch {}
+  };
+
+  const totalPoints = scores.items.reduce((n, s) => n + (s.points ?? 0), 0);
+  const rank = [...RANKS].reverse().find((r) => totalPoints >= r.at)!;
+  const nextRank = RANKS.find((r) => r.at > totalPoints);
+  const best = (g: GameId) => Math.max(0, ...scores.items.filter((s) => s.game === g && s.level === level).map((s) => s.points));
+  const info = playing ? GAMES.find((g) => g.id === playing.game)! : null;
+
+  const finish = (r: GameResult) => {
+    if (!playing) return;
+    setResult(r);
+    scores.add({ game: playing.game, level, correct: r.correct, total: r.total, points: r.points, at: Date.now() }).catch(() => {});
+  };
+
+  if (playing && info && result) {
+    const s = stars(result);
     return (
       <div>
-        <PageHeader title={tx("Bible Quiz", "Bible Quiz")} subtitle={tx("10 questions · see how much you know", "10 tanong · alamin kung gaano karami ang alam mo")} icon={Trophy} back />
-        <div className="space-y-2.5 px-5 pb-8">
-          {(["all", ...QUIZ_CATEGORIES.map((c) => c.id)] as Pick[]).map((c) => {
-            const label = c === "all" ? tx("Mixed (all topics)", "Halo-halo (lahat ng paksa)") : QUIZ_CATEGORIES.find((x) => x.id === c)!.label[lang];
-            const b = best(c);
-            return (
-              <button
-                key={c}
-                onClick={() => setRound(newRound(c))}
-                className="flex w-full items-center gap-3 rounded-2xl border border-border/70 bg-card p-4 text-left active:scale-[0.99]"
-              >
-                <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Trophy className="size-5" />
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block text-sm font-semibold">{label}</span>
-                  <span className="block text-xs text-muted-foreground">
-                    {b ? tx(`Best: ${b}/${ROUND}`, `Pinakamataas: ${b}/${ROUND}`) : tx("Not played yet", "Hindi pa nalalaro")}
-                  </span>
-                </span>
-                <ChevronRight className="size-4 text-muted-foreground" />
-              </button>
-            );
-          })}
-          {scores.items.length > 0 && (
-            <p className="pt-1 text-center text-xs text-muted-foreground">
-              {tx(`You have played ${scores.items.length} time(s).`, `Nakapaglaro ka na ng ${scores.items.length} beses.`)}
-            </p>
-          )}
-        </div>
-      </div>
-    );
-  }
-
-  const done = round.index >= round.questions.length;
-  if (done) {
-    const total = round.questions.length;
-    const message =
-      round.score === total
-        ? tx("Perfect! You know your Bible.", "Perpekto! Kilala mo ang Bibliya.")
-        : round.score >= total * 0.7
-          ? tx("Great job! Keep reading the Word.", "Magaling! Ituloy ang pagbasa ng Salita.")
-          : tx("Good try! Read the passages and play again.", "Magandang subok! Basahin ang mga talata at maglaro ulit.");
-    return (
-      <div>
-        <PageHeader title={tx("Bible Quiz", "Bible Quiz")} icon={Trophy} back />
+        <PageHeader title={info.title[lang]} icon={Trophy} back />
         <div className="space-y-4 px-5 pb-8 text-center">
-          <div className="ui-pop rounded-3xl border border-primary/30 bg-primary/5 p-6">
-            <Trophy className="mx-auto size-10 text-gold-foreground" />
+          <div className="ui-pop rounded-3xl border border-gold/50 bg-gradient-to-b from-gold/20 to-transparent p-6">
+            <p className="text-4xl">{s === 3 ? "🏆" : s === 2 ? "🎉" : s === 1 ? "👍" : "📖"}</p>
+            <div className="mt-2 flex justify-center gap-1">
+              {[1, 2, 3].map((i) => (
+                <Star key={i} className={cn("size-7", i <= s ? "fill-gold text-gold" : "text-muted-foreground/40")} />
+              ))}
+            </div>
             <p className="mt-2 font-heading text-4xl font-semibold tabular-nums">
-              {round.score}/{total}
+              {result.correct}/{result.total}
             </p>
-            <p className="mt-1 text-sm">{message}</p>
+            <p className="text-sm font-semibold text-primary">+{result.points} {tx("points", "puntos")}</p>
+            <p className="mt-2 text-sm">
+              {s === 3
+                ? tx("Excellent! You know your Bible.", "Napakahusay! Kilala mo ang Bibliya.")
+                : s >= 1
+                  ? tx("Well done! Keep reading the Word.", "Magaling! Ituloy ang pagbasa ng Salita.")
+                  : tx("Good try! Read the passages and play again.", "Magandang subok! Basahin ang mga talata at maglaro ulit.")}
+            </p>
           </div>
           <div className="grid grid-cols-2 gap-2">
-            <Button variant="outline" onClick={() => setRound(null)}>
-              {tx("Topics", "Mga paksa")}
+            <Button
+              variant="outline"
+              onClick={() => {
+                setPlaying(null);
+                setResult(null);
+              }}
+            >
+              {tx("All games", "Lahat ng laro")}
             </Button>
-            <Button onClick={() => setRound(newRound(round.category))}>
+            <Button
+              onClick={() => {
+                setResult(null);
+                setPlaying({ game: playing.game, key: Date.now() });
+              }}
+            >
               <RotateCcw className="size-4" />
               {tx("Play again", "Maglaro ulit")}
             </Button>
@@ -125,79 +126,93 @@ export default function QuizPage() {
     );
   }
 
-  const { question, order } = round.questions[round.index];
-  const answered = round.chosen !== null;
-  const last = round.index === round.questions.length - 1;
-
-  function choose(choiceIndex: number) {
-    if (!round || answered) return;
-    setRound({ ...round, chosen: choiceIndex, score: round.score + (choiceIndex === 0 ? 1 : 0) });
-  }
-
-  function next() {
-    if (!round) return;
-    if (last) {
-      // The score is already final here (it counted the last answer).
-      scores.add({ category: round.category, score: round.score, total: round.questions.length, at: Date.now() }).catch(() => {});
-    }
-    setRound({ ...round, index: round.index + 1, chosen: null });
+  if (playing && info) {
+    const props = { key: playing.key, level, round: info.round, onRead: setPassage, onFinish: finish };
+    const levelInfo = LEVELS.find((l) => l.id === level)!;
+    return (
+      <div>
+        <PageHeader title={`${info.emoji} ${info.title[lang]}`} subtitle={`${levelInfo.emoji} ${levelInfo.label[lang]}`} back />
+        <div className="px-5 pb-8">
+          {playing.game === "scramble" ? (
+            <ScrambleGame {...props} />
+          ) : playing.game === "verse" ? (
+            <VerseOrderGame {...props} />
+          ) : playing.game === "who" ? (
+            <WhoAmIGame {...props} />
+          ) : (
+            <ChoiceGame {...props} game={playing.game} />
+          )}
+          <button
+            className="mt-6 block w-full text-center text-xs text-muted-foreground underline underline-offset-2"
+            onClick={() => setPlaying(null)}
+          >
+            {tx("Quit", "Umalis")}
+          </button>
+        </div>
+        <PassageSheet passage={passage} onClose={() => setPassage(null)} />
+      </div>
+    );
   }
 
   return (
     <div>
-      <PageHeader title={tx("Bible Quiz", "Bible Quiz")} subtitle={`${round.index + 1} / ${round.questions.length}`} icon={Trophy} back />
+      <PageHeader title={tx("Bible Games", "Bible Games")} subtitle={tx("Play, learn and grow in the Word", "Maglaro, matuto at lumago sa Salita")} icon={Gamepad2} back />
       <div className="space-y-4 px-5 pb-8">
-        <div className="h-1.5 overflow-hidden rounded-full bg-muted">
-          <div className="h-full rounded-full bg-primary transition-[width]" style={{ width: `${(round.index / round.questions.length) * 100}%` }} />
+        <div className="gradient-hero relative overflow-hidden rounded-3xl p-5 text-primary-foreground">
+          <p className="text-xs uppercase tracking-wider text-primary-foreground/70">{tx("Your rank", "Ang ranggo mo")}</p>
+          <p className="font-heading text-2xl font-semibold">{rank[lang]}</p>
+          <p className="text-sm text-primary-foreground/80">
+            {totalPoints} {tx("points", "puntos")}
+            {nextRank && ` · ${nextRank.at - totalPoints} ${tx("to", "pa bago maging")} ${nextRank[lang]}`}
+          </p>
+          {nextRank && (
+            <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/20">
+              <div className="h-full rounded-full bg-gold" style={{ width: `${Math.min(100, (totalPoints / nextRank.at) * 100)}%` }} />
+            </div>
+          )}
         </div>
-        <p key={question.id} className="ui-rise font-heading text-xl font-semibold leading-snug">
-          {question.question[lang]}
-        </p>
-        <div className="space-y-2">
-          {order.map((choiceIndex) => {
-            const right = choiceIndex === 0;
-            const picked = round.chosen === choiceIndex;
+
+        <div className="grid grid-cols-3 gap-1 rounded-2xl bg-muted p-1" data-tour="games-hub">
+          {LEVELS.map((l) => (
+            <button
+              key={l.id}
+              onClick={() => pickLevel(l.id)}
+              className={cn("rounded-xl py-2 text-sm font-semibold", level === l.id ? "bg-background shadow-sm" : "text-muted-foreground")}
+            >
+              {l.emoji} {l.label[lang]}
+            </button>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-2 gap-2.5">
+          {GAMES.map((g) => {
+            const count = poolSize(g.id, level);
+            const b = best(g.id);
             return (
               <button
-                key={choiceIndex}
-                onClick={() => choose(choiceIndex)}
-                disabled={answered}
-                className={cn(
-                  "flex min-h-12 w-full items-center gap-3 rounded-2xl border px-4 py-3 text-left text-[0.9375rem] font-medium transition-colors",
-                  !answered && "border-border bg-card active:bg-muted",
-                  answered && right && "border-emerald-500 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300",
-                  answered && picked && !right && "border-destructive bg-destructive/10 text-destructive",
-                  answered && !right && !picked && "border-border bg-card opacity-60"
-                )}
+                key={g.id}
+                disabled={!count}
+                onClick={() => setPlaying({ game: g.id, key: Date.now() })}
+                className="flex flex-col items-start gap-1 rounded-2xl border border-border/70 bg-card p-4 text-left transition active:scale-[0.98] disabled:opacity-50"
               >
-                <span className="flex-1">{question.choices[choiceIndex][lang]}</span>
-                {answered && right && <Check className="size-5" />}
-                {answered && picked && !right && <X className="size-5" />}
+                <span className="text-3xl">{g.emoji}</span>
+                <span className="text-sm font-semibold leading-tight">{g.title[lang]}</span>
+                <span className="text-[0.6875rem] leading-snug text-muted-foreground">{g.blurb[lang]}</span>
+                <span className="mt-1 text-[0.6875rem] font-medium text-primary">
+                  {b ? tx(`Best: ${b} pts`, `Pinakamataas: ${b} puntos`) : count ? tx(`${count} to play`, `${count} na laro`) : tx("Coming soon", "Malapit na")}
+                </span>
               </button>
             );
           })}
         </div>
 
-        {answered && (
-          <div className="ui-rise space-y-3">
-            <p className={cn("text-sm font-semibold", round.chosen === 0 ? "text-emerald-600 dark:text-emerald-400" : "text-destructive")}>
-              {round.chosen === 0 ? tx("Correct!", "Tama!") : tx("Not quite.", "Mali.")}
-            </p>
-            <button
-              onClick={() => setPassage(question.ref)}
-              className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary"
-            >
-              <BookOpen className="size-3.5" />
-              {tx("Read", "Basahin")} {verseLabel(question.ref)}
-            </button>
-            <Button className="h-11 w-full" onClick={next}>
-              {last ? tx("See my score", "Tingnan ang score") : tx("Next question", "Susunod na tanong")}
-              <ChevronRight className="size-4" />
-            </Button>
-          </div>
+        {scores.items.length > 0 && (
+          <p className="flex items-center justify-center gap-1 text-xs text-muted-foreground">
+            <ChevronRight className="size-3" />
+            {tx(`You have played ${scores.items.length} round(s).`, `Nakapaglaro ka na ng ${scores.items.length} round.`)}
+          </p>
         )}
       </div>
-      <PassageSheet passage={passage} onClose={() => setPassage(null)} />
     </div>
   );
 }

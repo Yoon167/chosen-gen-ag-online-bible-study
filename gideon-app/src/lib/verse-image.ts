@@ -44,7 +44,40 @@ const PHOTOS: { id: number; name: { en: string; tl: string }; credit: string; wa
   { id: 222, name: { en: "Light from above", tl: "Liwanag mula sa itaas" }, credit: "Todd Quackenbush", wash: 0.45 },
   { id: 54, name: { en: "Open sky", tl: "Malawak na langit" }, credit: "Nicholas Swanson", wash: 0.45 },
   { id: 202, name: { en: "Road ahead", tl: "Daang tatahakin" }, credit: "Glen Carrie", wash: 0.5 },
+  { id: 10, name: { en: "Coastal pines", tl: "Mga pino sa baybayin" }, credit: "Paul Jarvis", wash: 0.5 },
+  { id: 11, name: { en: "Misty river", tl: "Ilog sa ulap" }, credit: "Paul Jarvis", wash: 0.45 },
+  { id: 13, name: { en: "Shoreline", tl: "Dalampasigan" }, credit: "Paul Jarvis", wash: 0.5 },
+  { id: 15, name: { en: "Mountain falls", tl: "Talon sa bundok" }, credit: "Paul Jarvis", wash: 0.55 },
+  { id: 17, name: { en: "Narrow path", tl: "Makitid na daan" }, credit: "Paul Jarvis", wash: 0.5 },
+  { id: 28, name: { en: "Green valley", tl: "Luntiang lambak" }, credit: "Jerry Adney", wash: 0.55 },
+  { id: 46, name: { en: "Wilderness", tl: "Ilang" }, credit: "Jeffrey Kam", wash: 0.5 },
+  { id: 62, name: { en: "Morning mist", tl: "Hamog sa umaga" }, credit: "Daniel Genser", wash: 0.5 },
+  { id: 74, name: { en: "Blue bay", tl: "Asul na look" }, credit: "Isaak Dury", wash: 0.45 },
+  { id: 93, name: { en: "Meadow", tl: "Parang" }, credit: "Caroline Sada", wash: 0.5 },
+  { id: 112, name: { en: "Harvest", tl: "Anihan" }, credit: "Zugr", wash: 0.5 },
+  { id: 128, name: { en: "Quiet lake", tl: "Tahimik na lawa" }, credit: "Matteo Minelli", wash: 0.5 },
+  { id: 162, name: { en: "Shore from above", tl: "Baybayin mula sa itaas" }, credit: "Dillon McIntosh", wash: 0.5 },
+  { id: 165, name: { en: "Wheat field", tl: "Bukid ng trigo" }, credit: "Linh Nguyen", wash: 0.45 },
+  { id: 173, name: { en: "Run the race", tl: "Takbuhin ang takbuhin" }, credit: "Linh Nguyen", wash: 0.45 },
+  { id: 176, name: { en: "Harbor light", tl: "Ilaw sa daungan" }, credit: "Good Free Photos", wash: 0.45 },
+  { id: 191, name: { en: "Mountain road", tl: "Daan sa bundok" }, credit: "Alex Talmon", wash: 0.5 },
+  { id: 198, name: { en: "Green hills", tl: "Luntiang burol" }, credit: "Sylwia Bartyzel", wash: 0.45 },
+  { id: 215, name: { en: "White sand", tl: "Puting buhangin" }, credit: "Paula Borowska", wash: 0.5 },
+  { id: 216, name: { en: "Forest trail", tl: "Daan sa gubat" }, credit: "Paul Jarvis", wash: 0.55 },
+  { id: 230, name: { en: "Still morning", tl: "Tahimik na umaga" }, credit: "Wes Carr", wash: 0.5 },
+  { id: 231, name: { en: "High places", tl: "Matataas na dako" }, credit: "Aleksandra Boguslawska", wash: 0.5 },
+  { id: 235, name: { en: "Snow peak", tl: "Bundok na may niyebe" }, credit: "Paul E. Harrer", wash: 0.5 },
+  { id: 251, name: { en: "Wide valley", tl: "Malawak na lambak" }, credit: "Tiago Gerken", wash: 0.5 },
 ];
+
+/** The photo themes, in order; the day picks one so the verse looks new each day. */
+export const PHOTO_THEME_IDS = PHOTOS.map((p) => `photo-${p.id}`);
+
+/** Today's photo theme (local day of the year), and the ones after it for a slow slideshow. */
+export function photoOfTheDay(offset = 0, date = new Date()) {
+  const day = Math.floor((Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) - Date.UTC(date.getFullYear(), 0, 0)) / 86400000);
+  return PHOTO_THEME_IDS[(day + offset) % PHOTO_THEME_IDS.length];
+}
 
 export const VERSE_IMAGE_THEMES: VerseImageTheme[] = [
   { id: "night", name: { en: "Night", tl: "Gabi" }, colors: ["#1a1638", "#3d3284"], text: "#fbfaf7", accent: "#e9c46a" },
