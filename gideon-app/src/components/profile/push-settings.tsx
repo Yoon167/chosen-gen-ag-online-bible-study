@@ -53,6 +53,11 @@ export function PushSettings() {
       if (cancelled) return;
       setSupported(ok);
       const saved = readPush();
+      // The quiet-time answer from Home's "Make Gideon yours" is the default verse time.
+      try {
+        const usual = localStorage.getItem("gideon-devotion-time");
+        if (usual && !saved) setVerseTime(usual);
+      } catch {}
       if (ok && saved && Notification.permission === "granted") {
         setOn(true);
         setPrefs({ ...DEFAULT_PREFS, ...saved.prefs });

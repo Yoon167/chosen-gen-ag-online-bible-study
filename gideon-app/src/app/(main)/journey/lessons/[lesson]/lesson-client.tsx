@@ -6,8 +6,9 @@ import { useParams } from "next/navigation";
 import { BookOpen, Check, PlayCircle, Users } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { cn } from "@/lib/utils";
+import { celebrate } from "@/lib/celebrate";
 import { useLanguage, useTx } from "@/lib/i18n";
-import { findLesson, findLevel, type LessonStep } from "@/lib/content/journey";
+import { LESSON_STEPS, findLesson, findLevel, type LessonStep } from "@/lib/content/journey";
 import { verseLabel, type VerseRef } from "@/lib/bible/verse-ref";
 import { PassageSheet } from "@/components/bible/passage-sheet";
 import { isLessonDone, useJourneyProgress } from "@/lib/hooks/use-journey-progress";
@@ -62,7 +63,11 @@ export function LessonClient() {
         key={step}
         type="button"
         aria-pressed={checked}
-        onClick={() => journey.toggleStep(lesson!.id, step)}
+        onClick={() => {
+          // The last step that completes the lesson earns a little celebration.
+          if (!checked && LESSON_STEPS.filter((s) => s !== step).every((s) => progress[s])) celebrate();
+          journey.toggleStep(lesson!.id, step);
+        }}
         className={cn(
           "mt-3 flex min-h-11 w-full items-center gap-2.5 rounded-xl border px-3 text-left text-sm transition-colors",
           checked ? "border-primary/40 bg-primary/10 text-primary" : "border-border bg-background"

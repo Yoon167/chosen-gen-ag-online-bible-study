@@ -1,5 +1,6 @@
 "use client";
 
+import { celebrate } from "@/lib/celebrate";
 import { Suspense, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
@@ -124,12 +125,13 @@ function PrayerPageInner() {
             <PrayerCard
               key={p.id}
               prayer={p}
-              onToggleAnswered={() =>
+              onToggleAnswered={() => {
+                celebrate("🙏");
                 update(p.id, {
                   answered: true,
                   answeredAt: Date.now(),
-                })
-              }
+                });
+              }}
               onDelete={() => remove(p.id)}
             />
           ))}

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -32,5 +33,14 @@ export function EmptyState({
       </div>
       {action}
     </div>
+  );
+}
+
+/** The one next step from an empty screen, as a button-like link. */
+export function EmptyAction({ href, label }: { href: string; label: string }) {
+  return (
+    <Link href={href} className="inline-flex h-9 items-center rounded-lg bg-primary px-4 text-sm font-medium text-primary-foreground">
+      {label}
+    </Link>
   );
 }

@@ -24,6 +24,7 @@ import {
 } from "@/components/bible/verse-action-drawer";
 import { Skeleton } from "@/components/ui/skeleton";
 import { BiblePicker } from "@/components/bible/bible-picker";
+import { useSwipe } from "@/lib/hooks/use-swipe";
 import { VerseImageSheet, type VerseForImage } from "@/components/bible/verse-image-sheet";
 import { AudioPlayer } from "@/components/bible/audio-player";
 import {
@@ -55,6 +56,12 @@ export function ChapterReaderClient({ bookSlug: bookProp, chapter: chapterProp }
   // The chapter/verse picker, and a verse briefly lit up after jumping to it.
   const [picker, setPicker] = useState<"chapter" | "verse" | null>(null);
   const [flash, setFlash] = useState<number | null>(null);
+  // Swipe left for the next chapter, right for the previous one.
+  const swipeTo = (direction: "next" | "prev") => {
+    const adj = getAdjacentChapter(bookSlug, chapter, direction);
+    if (adj) router.push(`/bible/${adj.bookSlug}/${adj.chapter}`);
+  };
+  const swipe = useSwipe(() => swipeTo("next"), () => swipeTo("prev"));
   const [imageVerse, setImageVerse] = useState<VerseForImage | null>(null);
 
   const recordHistory = useRecordBibleHistory();
@@ -345,7 +352,7 @@ export function ChapterReaderClient({ bookSlug: bookProp, chapter: chapterProp }
         )}
 
         {verses && (
-          <div className="space-y-0.5 font-heading text-[1.0625rem] leading-loose">
+          <div className="space-y-0.5 font-heading text-[1.0625rem] leading-loose" {...swipe}>
             {verses.map((v, i) => {
               const isHighlighted = highlightMap.has(v.verse);
               const isBeingRead = listening && speech.state !== "idle" && speech.index === i;

@@ -18,6 +18,25 @@ export interface Release {
 
 export const RELEASES: Release[] = [
   {
+    id: "2026-10-08-ui",
+    date: "2026-10-08",
+    title: t("A simpler, friendlier Gideon", "Mas simple at mas magaan na Gideon"),
+    items: [
+      t(
+        "New bottom tabs: Home, Bible, My AG, Grow and Profile. My AG shows a red dot when your AG is live, and Grow gathers every tool in color-coded groups.",
+        "Bagong tabs sa ibaba: Home, Bibliya, AG Ko, Lumago at Profile. May pulang tuldok ang AG Ko kapag live ang AG mo, at nasa Lumago ang lahat ng tools na naka-grupo ayon sa kulay."
+      ),
+      t(
+        "A simpler Home: what matters right now first (a live study or a follow-up), a Start Here checklist for new members, a Leader card for leaders, and five shortcuts.",
+        "Mas simpleng Home: inuuna ang mahalaga ngayon (live study o follow-up), may Simulan Dito para sa bagong member, Leader card para sa mga leader, at limang shortcut."
+      ),
+      t(
+        "Search everything (verses, lessons, courses and tools), swipe between Bible chapters and presentation slides, and a little celebration when you finish a lesson, answer a prayer or ace a game.",
+        "Hanapin ang lahat (talata, aralin, course at tools), mag-swipe sa pagitan ng mga kabanata at slide, at may munting selebrasyon kapag natapos ang aralin, nasagot ang panalangin o perpekto sa laro."
+      ),
+    ],
+  },
+  {
     id: "2026-10-08-games",
     date: "2026-10-08",
     title: t("Bible Games, new verse photos, a wider assessment and a new tour", "Bible Games, bagong larawan sa talata, mas malawak na assessment at bagong tour"),

@@ -11,6 +11,7 @@ import { GAMES, LEVELS, poolSize, type GameId, type Level } from "@/lib/content/
 import type { VerseRef } from "@/lib/bible/verse-ref";
 import { useLanguage, useTx } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import { celebrate } from "@/lib/celebrate";
 
 /** users/{uid}/gameScores: one row per finished round. */
 interface GameScore {
@@ -73,6 +74,7 @@ export default function GamesPage() {
   const finish = (r: GameResult) => {
     if (!playing) return;
     setResult(r);
+    if (r.correct / Math.max(1, r.total) >= 0.9) celebrate("🏆");
     scores.add({ game: playing.game, level, correct: r.correct, total: r.total, points: r.points, at: Date.now() }).catch(() => {});
   };
 

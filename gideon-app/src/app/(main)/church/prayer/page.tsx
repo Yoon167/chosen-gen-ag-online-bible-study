@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AlertTriangle, CheckCircle2, HandHeart, Plus, Trash2 } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
-import { EmptyState } from "@/components/shared/empty-state";
+import { EmptyAction, EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
@@ -54,6 +54,7 @@ export default function ChurchPrayerWallPage() {
             "Join your AG in My AG to pray together.",
             "Sumali sa iyong AG sa My AG para makapanalangin nang sama-sama."
           )}
+          action={<EmptyAction href="/church" label={tx("Find your AG", "Hanapin ang AG mo")} />}
         />
       </div>
     );

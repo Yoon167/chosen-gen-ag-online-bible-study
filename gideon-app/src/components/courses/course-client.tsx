@@ -36,6 +36,7 @@ import { verseLabel, type VerseRef } from "@/lib/bible/verse-ref";
 import type { Course, Text } from "@/lib/content/courses/types";
 import { useLanguage, useTx } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import { celebrate } from "@/lib/celebrate";
 
 export const COURSE_ICONS: Record<Course["icon"], LucideIcon> = {
   foundation: Anchor,
@@ -309,7 +310,10 @@ export function LessonWorkbook({
         className="h-12 w-full"
         variant={finished ? "secondary" : "default"}
         disabled={!loaded}
-        onClick={() => saveLesson(lessonId, finished ? { completedAt: null } : { completedAt: Date.now() })}
+        onClick={() => {
+          if (!finished) celebrate();
+          saveLesson(lessonId, finished ? { completedAt: null } : { completedAt: Date.now() });
+        }}
       >
         <Check className="size-4" />
         {finished ? tx("Finished. Tap to undo", "Tapos na. Pindutin para ibalik") : tx("Mark this lesson finished", "Markahang tapos ang araling ito")}

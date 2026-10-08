@@ -3,7 +3,7 @@
 import { useState, useSyncExternalStore } from "react";
 import { CalendarPlus, Link2, Trash2, Users } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
-import { EmptyState } from "@/components/shared/empty-state";
+import { EmptyAction, EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useAuth } from "@/lib/hooks/use-auth";
@@ -55,7 +55,7 @@ export default function PrayerChainPage() {
     return (
       <div>
         <PageHeader title={title} icon={Link2} back />
-        <EmptyState icon={Link2} title={tx("For AG members", "Para sa mga miyembro ng AG")} description={tx("Join an AG to pray in its prayer chains.", "Sumali sa isang AG para makasama sa prayer chain nito.")} />
+        <EmptyState icon={Link2} title={tx("For AG members", "Para sa mga miyembro ng AG")} description={tx("Join an AG to pray in its prayer chains.", "Sumali sa isang AG para makasama sa prayer chain nito.")} action={<EmptyAction href="/church" label={tx("Find your AG", "Hanapin ang AG mo")} />} />
       </div>
     );
   }

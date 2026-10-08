@@ -1,11 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { Sun } from "lucide-react";
+import { Search, Sun } from "lucide-react";
 import { VerseOfTheDayCard } from "@/components/home/verse-of-the-day-card";
 import { StreakCards } from "@/components/home/streak-cards";
 import { PlanProgressCard } from "@/components/home/plan-progress-card";
-import { QuickActions } from "@/components/home/quick-actions";
+import { Shortcuts } from "@/components/home/shortcuts";
+import { TodayCard } from "@/components/home/today-card";
+import { RoleCard } from "@/components/home/role-card";
+import { PersonalizeCard } from "@/components/home/personalize-card";
+import Link from "next/link";
 import { UpcomingEventCard } from "@/components/home/upcoming-event-card";
 import { NextStepCard } from "@/components/home/next-step-card";
 import { CheckinCard } from "@/components/home/checkin-card";
@@ -68,6 +72,9 @@ export default function HomePage() {
             </p>
           </div>
           <div className="flex flex-col items-end gap-2">
+            <Link href="/search" aria-label={tx("Search", "Maghanap")} className="flex size-9 items-center justify-center rounded-full bg-white/90 text-foreground shadow-sm">
+              <Search className="size-4" />
+            </Link>
             <div className="rounded-full bg-white/95 px-3 py-1.5 shadow-sm">
               <ThemeToggle />
             </div>
@@ -79,6 +86,16 @@ export default function HomePage() {
         <div className="relative px-5 pb-8 pt-6">
           <VerseOfTheDayCard />
         </div>
+      </div>
+
+      <div className="space-y-3 px-5">
+        <PersonalizeCard />
+        <TodayCard />
+        <RoleCard />
+      </div>
+
+      <div className="px-5">
+        <Shortcuts />
       </div>
 
       <div className="px-5">
@@ -115,16 +132,12 @@ export default function HomePage() {
         <WeeklySummaryCard />
       </div>
 
-      <Section title={t("home.readingPlan")}>
-        <PlanProgressCard />
-      </Section>
-
       <Section title={t("home.events")} href="/meetings" hrefLabel={t("home.meetingCenter")}>
         <UpcomingEventCard />
       </Section>
 
-      <Section title={t("home.quickActions")}>
-        <QuickActions />
+      <Section title={t("home.readingPlan")}>
+        <PlanProgressCard />
       </Section>
 
       <div className="px-5 pb-4">

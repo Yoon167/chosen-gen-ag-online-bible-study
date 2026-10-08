@@ -14,6 +14,8 @@ const STRINGS = {
   "nav.prayer": { en: "Prayer", tl: "Panalangin" },
   "nav.journey": { en: "Journey", tl: "Paglalakbay" },
   "nav.profile": { en: "Profile", tl: "Profile" },
+  "nav.ag": { en: "My AG", tl: "AG Ko" },
+  "nav.grow": { en: "Grow", tl: "Lumago" },
 
   // Home
   "home.morning": { en: "Good morning", tl: "Magandang umaga" },

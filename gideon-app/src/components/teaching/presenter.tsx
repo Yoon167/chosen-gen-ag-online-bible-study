@@ -1,5 +1,6 @@
 "use client";
 
+import { useSwipe } from "@/lib/hooks/use-swipe";
 import { useEffect } from "react";
 import { ChevronLeft, ChevronRight, Radio, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -69,6 +70,11 @@ export function Presenter({
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [index, last, onIndex, onClose, following]);
+  // Swipe through slides (not when following someone else's screen).
+  const swipe = useSwipe(
+    following !== undefined || index >= last ? null : () => onIndex(index + 1),
+    following !== undefined || index === 0 ? null : () => onIndex(index - 1)
+  );
   const part = parts[Math.min(index, last)];
   if (!part) return null;
 
@@ -100,7 +106,7 @@ export function Presenter({
       </div>
       {/* Scrolls when a slide is taller than the screen. The inner my-auto centers
           short slides, but never pushes the start of long ones above the top. */}
-      <div key={index} className="ui-rise flex min-h-0 flex-1 flex-col overflow-y-auto px-8 py-6 sm:px-16">
+      <div key={index} className="ui-rise flex min-h-0 flex-1 flex-col overflow-y-auto px-8 py-6 sm:px-16" {...swipe}>
         <div className="my-auto">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-200">
           {part.title}
