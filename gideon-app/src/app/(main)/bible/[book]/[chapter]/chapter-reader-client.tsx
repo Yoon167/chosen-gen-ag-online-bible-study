@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { ChevronLeft, ChevronRight, BookOpenText, Headphones } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, BookOpenText, Headphones } from "lucide-react";
 import { findBook, getAdjacentChapter } from "@/lib/bible/books";
 import {
   fetchChapter,
@@ -23,6 +23,7 @@ import {
   type VerseSelection,
 } from "@/components/bible/verse-action-drawer";
 import { Skeleton } from "@/components/ui/skeleton";
+import { BiblePicker } from "@/components/bible/bible-picker";
 import { VerseImageSheet, type VerseForImage } from "@/components/bible/verse-image-sheet";
 import { AudioPlayer } from "@/components/bible/audio-player";
 import {
@@ -51,6 +52,9 @@ export function ChapterReaderClient({ bookSlug: bookProp, chapter: chapterProp }
   // a chapter you already left never shows up on the new one.
   const [loaded, setLoaded] = useState<{ key: string; verses: BibleApiVerse[] | null } | null>(null);
   const [selection, setSelection] = useState<VerseSelection | null>(null);
+  // The chapter/verse picker, and a verse briefly lit up after jumping to it.
+  const [picker, setPicker] = useState<"chapter" | "verse" | null>(null);
+  const [flash, setFlash] = useState<number | null>(null);
   const [imageVerse, setImageVerse] = useState<VerseForImage | null>(null);
 
   const recordHistory = useRecordBibleHistory();
@@ -96,6 +100,33 @@ export function ChapterReaderClient({ bookSlug: bookProp, chapter: chapterProp }
     }, 0);
     return () => clearTimeout(id);
   }, [bookSlug, chapter]);
+
+  const goToVerse = (n: number) => {
+    setPicker(null);
+    document.getElementById(`v${n}`)?.scrollIntoView({ block: "center", behavior: "smooth" });
+    setFlash(n);
+    setTimeout(() => setFlash((f) => (f === n ? null : f)), 2500);
+    try {
+      history.replaceState(null, "", `${location.pathname}#v${n}`);
+    } catch {}
+  };
+
+  // Arriving from the book list asks for the verse; a #v12 link jumps to verse 12.
+  const verseCount = verses?.length ?? 0;
+  useEffect(() => {
+    if (!verseCount) return;
+    const id = setTimeout(() => {
+      const hash = location.hash.match(/^#v(\d+)$/);
+      if (new URLSearchParams(location.search).get("pick") === "verse") {
+        history.replaceState(null, "", location.pathname);
+        setPicker("verse");
+      } else if (hash) {
+        goToVerse(Number(hash[1]));
+      }
+    }, 50);
+    return () => clearTimeout(id);
+    // Once per chapter, after its verses load.
+  }, [verseCount, bookSlug, chapter]);
 
   // Keep the verse being read in view.
   useEffect(() => {
@@ -189,6 +220,21 @@ export function ChapterReaderClient({ bookSlug: bookProp, chapter: chapterProp }
 
   return (
     <div>
+      {picker && (
+        <BiblePicker
+          bookName={(isTagalog && verses?.[0]?.book_name) || book.name}
+          chapters={book.chapters}
+          chapter={chapter}
+          verseCount={verseCount}
+          initialTab={picker}
+          onChapter={(c) => {
+            setPicker(null);
+            if (c !== chapter) router.push(`/bible/${book.slug}/${c}?pick=verse`);
+          }}
+          onVerse={goToVerse}
+          onClose={() => setPicker(null)}
+        />
+      )}
       <header className="sticky top-0 z-30 border-b border-border/70 bg-background px-5 py-4 safe-top">
         <div className="flex items-center gap-3">
         <button
@@ -199,9 +245,14 @@ export function ChapterReaderClient({ bookSlug: bookProp, chapter: chapterProp }
           <ChevronLeft className="size-4.5" />
         </button>
         <div className="flex-1 text-center">
-          <p className="font-heading text-base font-semibold">
+          <button
+            onClick={() => setPicker("chapter")}
+            aria-label="Choose chapter and verse"
+            className="inline-flex items-center gap-1 rounded-full px-2 font-heading text-base font-semibold"
+          >
             {(isTagalog && verses?.[0]?.book_name) || book.name} {chapter}
-          </p>
+            <ChevronDown className="size-4 text-muted-foreground" />
+          </button>
           <select
             value={translation}
             onChange={(e) => updateProfile({ bibleTranslation: e.target.value })}
@@ -318,7 +369,8 @@ export function ChapterReaderClient({ bookSlug: bookProp, chapter: chapterProp }
                     "cursor-pointer rounded px-0.5 transition-colors",
                     isHighlighted && "bg-gold/50 dark:bg-gold/40",
                     isBookmarked && "underline decoration-primary decoration-2 underline-offset-4",
-                    isBeingRead && "bg-primary/15 ring-1 ring-primary/30"
+                    isBeingRead && "bg-primary/15 ring-1 ring-primary/30",
+                    flash === v.verse && "bg-primary/20 ring-2 ring-primary/40"
                   )}
                 >
                   <sup className="mr-1 font-sans text-[0.6875rem] font-semibold text-primary/70">
