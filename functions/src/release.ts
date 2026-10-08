@@ -4,10 +4,10 @@
  * the first time it sees a new id.
  */
 export const LATEST_RELEASE = {
-  id: "2026-10-07",
+  id: "2026-10-08",
   title: { en: "✨ New in Gideon", tl: "✨ Bago sa Gideon" },
   body: {
-    en: "Deeper Spirit-led lessons in every Course and Journey level, push notifications, and smoother live studies. Tap to see what's new.",
-    tl: "Mas malalim na Spirit-led na aralin sa bawat Course at Journey level, push notifications, at mas maayos na live study. Pindutin para makita ang bago.",
+    en: "Live reactions and questions in live studies, follow-up for visitors and new believers, and reminders to check on quiet members. Tap to see what's new.",
+    tl: "Reactions at tanong sa live study, follow-up para sa bisita at bagong mananampalataya, at paalala na kumustahin ang tahimik na member. Pindutin para makita ang bago.",
   },
 };

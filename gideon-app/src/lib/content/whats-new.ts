@@ -18,6 +18,29 @@ export interface Release {
 
 export const RELEASES: Release[] = [
   {
+    id: "2026-10-08",
+    date: "2026-10-08",
+    title: t("Live reactions, follow-up and caring for quiet members", "Live reactions, follow-up at pag-aalaga sa tahimik na member"),
+    items: [
+      t(
+        "During a live study, members can tap 🙏 ❤️ ✋ or send a question. The presenter sees the reactions float by and the questions in an inbox.",
+        "Habang live, puwedeng pumindot ang members ng 🙏 ❤️ ✋ o magpadala ng tanong. Makikita ng nagpe-present ang mga reaction at ang mga tanong sa isang inbox."
+      ),
+      t(
+        "Follow-up for visitors and new believers: leaders add them and assign someone to walk with them for a month (welcome, pray, invite, start the Journey, connect), with reminders when each step is due. Find it in My AG.",
+        "Follow-up para sa bisita at bagong mananampalataya: idinadagdag sila ng leader at ina-assign sa isang sasama sa kanila sa loob ng isang buwan (batiin, ipanalangin, imbitahan, simulan ang Journey, i-connect), may paalala kapag oras na ng bawat hakbang. Makikita ito sa My AG."
+      ),
+      t(
+        "Leaders see who hasn't opened Gideon in two weeks under Manage Members, and get a gentle Monday reminder to check on them.",
+        "Makikita ng leader sa Manage Members kung sino ang dalawang linggo nang hindi nagbubukas ng Gideon, at may mahinahong paalala tuwing Lunes para kumustahin sila."
+      ),
+      t(
+        "Links shared in WhatsApp or Messenger now open in Chrome on Android, and iPhone shows how to open them in Safari.",
+        "Ang mga link na ipinadala sa WhatsApp o Messenger ay bumubukas na sa Chrome sa Android, at may gabay sa iPhone kung paano buksan sa Safari."
+      ),
+    ],
+  },
+  {
     id: "2026-10-07",
     date: "2026-10-07",
     title: t("Spirit-led lessons, push notifications and smoother live studies", "Spirit-led na mga aralin, push notifications at mas maayos na live study"),

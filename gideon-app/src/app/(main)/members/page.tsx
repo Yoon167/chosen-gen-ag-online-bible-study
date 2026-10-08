@@ -30,6 +30,7 @@ import {
 /** The national admin outranks every church role, so they can set any role, including senior pastor. */
 const ADMIN_RANK = 7;
 import { useLanguage, useTx } from "@/lib/i18n";
+import { QuietMembers } from "@/components/church/quiet-members";
 
 const selectClass =
   "h-9 w-full rounded-lg border border-border bg-background px-2 text-xs disabled:opacity-60";
@@ -146,6 +147,10 @@ export default function MembersPage() {
           </label>
         )}
         {error && <p className="text-xs text-destructive">{error}</p>}
+
+        {churchId && uid && (
+          <QuietMembers churchId={churchId} members={roster.items} me={{ uid, name: my.membership?.displayName ?? "Leader" }} />
+        )}
 
         {pending.length > 0 && (
           <section className="space-y-2">

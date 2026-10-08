@@ -6,6 +6,7 @@ import { BackgroundMusic } from "@/lib/background-music";
 import { TourAutostart, TourProvider } from "@/components/tour/tour-provider";
 import { LiveBanner } from "@/components/teaching/live-follow";
 import { PushRefresher } from "@/components/profile/push-settings";
+import { ActivityPing } from "@/components/activity-ping";
 
 export default function MainLayout({ children }: LayoutProps<"/">) {
   return (
@@ -23,6 +24,7 @@ export default function MainLayout({ children }: LayoutProps<"/">) {
       </div>
       <TourAutostart />
       <PushRefresher />
+      <ActivityPing />
     </WelcomeGate>
     </TourProvider>
     </LanguageProvider>

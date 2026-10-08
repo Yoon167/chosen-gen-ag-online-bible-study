@@ -378,6 +378,14 @@ export default function MyChurchPage() {
             </>
             )}
 
+            {(my.isChurchLeader || my.rank >= 2) && (
+              <Link href="/church/followups" className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4">
+                <HeartHandshake className="size-5 text-primary" />
+                <span className="flex-1 text-sm font-medium">{tx("Follow-up: visitors and new believers", "Follow-up: bisita at bagong mananampalataya")}</span>
+                <ChevronRight className="size-4 text-muted-foreground" />
+              </Link>
+            )}
+
             {my.isChurchLeader && (
               <Link href="/church/attendance" className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4">
                 <ClipboardCheck className="size-5 text-primary" />

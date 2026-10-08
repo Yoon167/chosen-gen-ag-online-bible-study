@@ -189,6 +189,26 @@ export const onCheckin = onDocumentWritten("churches/{churchId}/checkins/{id}", 
   }
 });
 
+// ---------- Follow-up of visitors and new believers ----------
+
+/** A follow-up was added or handed to someone new: they hear about it right away. */
+export const onFollowUp = onDocumentWritten("churches/{churchId}/followups/{id}", async (event) => {
+  const before = event.data?.before.data();
+  const after = event.data?.after.data();
+  if (!after || after.status !== "active" || before?.assignedUid === after.assignedUid) return;
+  const devices = await devicesOf([after.assignedUid], "checkin");
+  const visitor = after.kind === "visitor";
+  await sendTo(devices, {
+    title: { en: "🤝 Someone to follow up", tl: "🤝 May bago kang sasamahan" },
+    body: {
+      en: `${after.name} (${visitor ? "visitor" : "new believer"}) is yours to walk with this month. Start today: welcome them with a call or text.`,
+      tl: `Ikaw ang sasama kay ${after.name} (${visitor ? "bisita" : "bagong mananampalataya"}) ngayong buwan. Simulan ngayon: batiin siya sa tawag o text.`,
+    },
+    url: "/church/followups",
+    tag: `followup-${event.params.id}`,
+  });
+});
+
 // ---------- Every 15 minutes: daily verse, meetings, prayer-chain hours, follow-ups ----------
 
 export const every15Minutes = onSchedule(
@@ -197,7 +217,7 @@ export const every15Minutes = onSchedule(
   { schedule: "every 15 minutes", timeZone: "Etc/UTC", timeoutSeconds: 300, region: "asia-southeast1" },
   async () => {
     const at = runStart(Date.now());
-    const jobs = await Promise.allSettled([dailyVerse(at), meetingReminders(at), chainHours(at), checkinFollowUp(at), releaseNotice()]);
+    const jobs = await Promise.allSettled([dailyVerse(at), meetingReminders(at), chainHours(at), checkinFollowUp(at), releaseNotice(), morningCare(at)]);
     jobs.forEach((j, i) => j.status === "rejected" && logger.error(`job ${i} failed`, j.reason));
   }
 );
@@ -318,4 +338,77 @@ async function releaseNotice() {
     .filter((d) => d.token && wants(d, "updates"));
   const sent = await sendTo(devices, { title: LATEST_RELEASE.title, body: LATEST_RELEASE.body, url: "/whats-new", tag: "app-release" });
   logger.info(`release ${LATEST_RELEASE.id} announced to ${sent} devices`);
+}
+
+const DAY_MS = 24 * HOUR;
+/** Keep in sync with FOLLOWUP_STEPS in gideon-app/src/lib/hooks/use-followups.ts. */
+const FOLLOWUP_STEPS: { id: string; day: number; en: string; tl: string }[] = [
+  { id: "d1", day: 1, en: "welcome", tl: "batiin" },
+  { id: "d3", day: 3, en: "pray for and send a verse to", tl: "ipanalangin at padalhan ng talata si" },
+  { id: "d7", day: 7, en: "invite to the AG", tl: "imbitahan sa AG si" },
+  { id: "d14", day: 14, en: "start Journey Level 1 with", tl: "simulan ang Journey Level 1 kasama si" },
+  { id: "d30", day: 30, en: "check on the growth of", tl: "kumustahin ang paglago ni" },
+];
+/** Keep in sync with use-activity.ts: when members count as quiet. */
+const QUIET_AFTER = 14 * DAY_MS;
+const ACTIVITY_START = Date.UTC(2026, 9, 8);
+
+/**
+ * At each member's morning (their daily verse time): follow-up steps that are
+ * due, and on Mondays, for leaders, the members who have gone quiet.
+ */
+async function morningCare(at: number) {
+  const devices = (await devicesInSlot("verseSlot", daySlot(at))).filter((d) => d.token && wants(d, "checkin"));
+  const byUser = new Map<string, Device[]>();
+  for (const d of devices) byUser.set(d.uid, [...(byUser.get(d.uid) ?? []), d]);
+
+  for (const [uid, list] of byUser) {
+    // Follow-ups assigned to this person with a step due.
+    const followups = await db().collectionGroup("followups").where("assignedUid", "==", uid).get();
+    const due: { name: string; step: (typeof FOLLOWUP_STEPS)[number] }[] = [];
+    for (const doc of followups.docs) {
+      const f = doc.data();
+      if (f.status !== "active") continue;
+      const step = FOLLOWUP_STEPS.find((s) => !f.done?.[s.id] && f.createdAt + (s.day - 1) * DAY_MS <= at);
+      if (step) due.push({ name: f.name, step });
+    }
+    if (due.length) {
+      const first = due[0];
+      await sendTo(list, {
+        title: { en: `🤝 Follow-up today${due.length > 1 ? ` (${due.length})` : ""}`, tl: `🤝 Follow-up ngayon${due.length > 1 ? ` (${due.length})` : ""}` },
+        body: {
+          en: `Today: ${first.step.en} ${first.name}${due.length > 1 ? `, and ${due.length - 1} more` : ""}.`,
+          tl: `Ngayon: ${first.step.tl} ${first.name}${due.length > 1 ? `, at ${due.length - 1} pa` : ""}.`,
+        },
+        url: "/church/followups",
+        tag: "followup-today",
+      });
+    }
+
+    // Mondays (in this member's time zone), for leaders: members who went quiet.
+    if (localParts(at, list[0].tz).weekday !== 1) continue;
+    const memberships = await db().collectionGroup("members").where("uid", "==", uid).get();
+    for (const m of memberships.docs) {
+      const me = m.data();
+      if (me.status !== "active" || (me.rank ?? 0) < 3) continue;
+      const roster = await m.ref.parent.get();
+      const quiet = roster.docs
+        .map((d) => d.data())
+        .filter((x) => x.status === "active" && x.uid !== uid)
+        .filter((x) => at - (x.lastActiveAt ?? Math.max(x.joinedAt ?? 0, ACTIVITY_START)) >= QUIET_AFTER)
+        .filter((x) => !x.caredAt || at - x.caredAt >= 7 * DAY_MS);
+      if (!quiet.length) continue;
+      const names = quiet.slice(0, 3).map((x) => x.displayName).join(", ");
+      const more = quiet.length > 3 ? quiet.length - 3 : 0;
+      await sendTo(list, {
+        title: { en: "💛 Let's check on them", tl: "💛 Kumustahin natin sila" },
+        body: {
+          en: `${quiet.length} member${quiet.length > 1 ? "s haven't" : " hasn't"} opened Gideon in two weeks: ${names}${more ? ` and ${more} more` : ""}. A call or message can mean a lot.`,
+          tl: `${quiet.length} member ang dalawang linggo nang hindi nagbubukas ng Gideon: ${names}${more ? ` at ${more} pa` : ""}. Malaking bagay ang isang tawag o mensahe.`,
+        },
+        url: "/members",
+        tag: `quiet-${m.ref.parent.parent?.id}`,
+      });
+    }
+  }
 }

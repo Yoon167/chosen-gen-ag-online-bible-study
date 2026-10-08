@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { initializeTestEnvironment, assertSucceeds, assertFails } from "@firebase/rules-unit-testing";
-import { doc, setDoc, getDoc, getDocs, deleteDoc, updateDoc, collection } from "firebase/firestore";
+import { doc, setDoc, getDoc, getDocs, deleteDoc, updateDoc, collection, query, where } from "firebase/firestore";
 
 const C = "c1";
 const env = await initializeTestEnvironment({
@@ -210,6 +210,35 @@ await t("too-short number refused", assertFails(updateDoc(doc(real("ana"), MB("a
 await t("cannot set someone else's number", assertFails(updateDoc(doc(real("ana"), MB("ben")), { phone: "0917 123 4567" })));
 await t("leader sees the number in the roster", assertSucceeds(getDoc(doc(real("lead"), MB("ana")))));
 await t("other member cannot read it", assertFails(getDoc(doc(real("ben"), MB("ana")))));
+
+// ---------- Live reactions and questions ----------
+const RX = `churches/${C}/live/current/reactions`;
+const rx = (extra = {}) => ({ uid: "ana", name: "Ana", kind: "amen", startedAt: 5, at: 6, ...extra });
+await t("member sends a reaction", assertSucceeds(setDoc(doc(real("ana"), `${RX}/r1`), rx())));
+await t("member asks a question", assertSucceeds(setDoc(doc(real("ana"), `${RX}/r2`), rx({ kind: "question", text: "Ano po ang ibig sabihin nito?" }))));
+await t("question needs text", assertFails(setDoc(doc(real("ana"), `${RX}/r3`), rx({ kind: "question" }))));
+await t("cannot react as someone else", assertFails(setDoc(doc(real("ana"), `${RX}/r4`), rx({ uid: "ben" }))));
+await t("outsider cannot react", assertFails(setDoc(doc(real("out"), `${RX}/r5`), rx({ uid: "out" }))));
+await t("leader marks a question answered", assertSucceeds(updateDoc(doc(real("lead"), `${RX}/r2`), { answered: true })));
+await t("member cannot mark answered", assertFails(updateDoc(doc(real("ben"), `${RX}/r2`), { answered: false })));
+
+// ---------- Follow-ups ----------
+const FU = `churches/${C}/followups/f1`;
+const fu = (extra = {}) => ({ name: "Bisita Uno", phone: "", kind: "visitor", note: "", assignedUid: "ana", assignedName: "Ana", createdBy: "lead", createdAt: 1, done: {}, status: "active", ...extra });
+await t("leader adds a follow-up", assertSucceeds(setDoc(doc(real("lead"), FU), fu())));
+await t("member cannot add one", assertFails(setDoc(doc(real("ana"), `churches/${C}/followups/f2`), fu({ createdBy: "ana" }))));
+await t("assignee reads theirs", assertSucceeds(getDoc(doc(real("ana"), FU))));
+await t("other member cannot read it", assertFails(getDoc(doc(real("ben"), FU))));
+await t("assignee ticks a step", assertSucceeds(updateDoc(doc(real("ana"), FU), { done: { d1: 2 } })));
+await t("assignee cannot reassign", assertFails(updateDoc(doc(real("ana"), FU), { assignedUid: "ben", assignedName: "Ben" })));
+await t("leader reassigns", assertSucceeds(updateDoc(doc(real("lead"), FU), { assignedUid: "ben", assignedName: "Ben" })));
+await t("assignee lists their follow-ups", assertSucceeds(getDocs(query(collection(real("ben"), `churches/${C}/followups`), where("assignedUid", "==", "ben")))));
+
+// ---------- Activity and checking on quiet members ----------
+await t("member records activity", assertSucceeds(updateDoc(doc(real("ana"), MB("ana")), { lastActiveAt: 123 })));
+await t("cannot record someone else's", assertFails(updateDoc(doc(real("ana"), MB("ben")), { lastActiveAt: 123 })));
+await t("leader notes they checked in", assertSucceeds(updateDoc(doc(real("lead"), MB("ben")), { caredAt: 5, caredBy: "lead", caredByName: "Lead" })));
+await t("member cannot mark cared", assertFails(updateDoc(doc(real("ana"), MB("ben")), { caredAt: 5, caredBy: "ana", caredByName: "Ana" })));
 
 // ---------- Owner (national admin) leads every AG ----------
 await t("owner unlocks a course in an AG they aren't in", assertSucceeds(setDoc(doc(ADMIN, `churches/${C}/courseUnlocks/growth`), cu({ courseId: "growth", unlockedBy: "KcHm9yKcLcNbkTh7qbqi5pI7AYH2" }))));

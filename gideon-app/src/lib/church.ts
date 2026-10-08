@@ -111,6 +111,12 @@ export interface Membership {
   phone?: string;
   /** Journey checkpoints confirmed by the member's mentor, keyed by level number. */
   confirmedLevels?: Record<string, { by: string; name: string; at: number }>;
+  /** Last day the member opened Gideon (written by their own device, at most daily). */
+  lastActiveAt?: number;
+  /** A leader reached out after the member went quiet. */
+  caredAt?: number;
+  caredBy?: string;
+  caredByName?: string;
 }
 
 export interface ProgressSummary {

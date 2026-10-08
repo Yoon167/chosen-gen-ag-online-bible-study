@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Presenter } from "@/components/teaching/presenter";
 import { fitSlides } from "@/components/teaching/fit-slides";
+import { ReactionsForPresenter } from "@/components/teaching/live-reactions";
 import { recordLiveSession } from "@/lib/hooks/use-live-attendance";
 import { useAuth } from "@/lib/hooks/use-auth";
 import { useMyChurch } from "@/lib/hooks/use-church";
@@ -61,6 +62,8 @@ export function LivePresenter({
     !!uid && !!churchId && (uid === NATIONAL_ADMIN_UID || (my.active && (my.rank >= LEADER_RANK || !!presenterAssignment)));
   const [index, setIndex] = useState(0);
   const [wantLive, setWantLive] = useState(true);
+  // The running live study's id, for members' reactions and questions.
+  const [liveStartedAt, setLiveStartedAt] = useState<number | null>(null);
   const [texts, setTexts] = useState<Record<string, Text>>({});
   // The online study's call link. Unless the leader picks one, it is the link of
   // the AG meeting happening now (or starting within 30 minutes), else the last
@@ -146,6 +149,10 @@ export function LivePresenter({
     const session = { heading: h, parts: p, index: i, leaderUid: uid, leaderName: n, ...(assignment ? { assignmentId: assignment } : {}), ...(call ? { callUrl: call } : {}) };
     // If it fails (offline, no permission), the badge falls back to "Go live".
     startLive(churchId, session)
+      .then((startedAt) => {
+        setLiveStartedAt(startedAt);
+        return startedAt;
+      })
       .then((startedAt) =>
         // The record that attendance is kept under; a failure here doesn't stop the live study.
         recordLiveSession(churchId, { heading: h, leaderUid: uid, leaderName: n, startedAt }).catch(() => {})
@@ -219,6 +226,7 @@ export function LivePresenter({
       index={index}
       onIndex={go}
       onClose={onClose}
+      overlay={live && churchId && liveStartedAt ? <ReactionsForPresenter churchId={churchId} startedAt={liveStartedAt} /> : undefined}
       toolbar={
         canLead ? (
           <>

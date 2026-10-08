@@ -212,7 +212,8 @@ service cloud.firestore {
           // Members may update their display name, their sharing choice, and
           // (only while sharing) a summary of their journey progress.
           || (request.auth != null && request.auth.uid == uid
-            && changedOnly(['displayName', 'shareProgress', 'progress', 'phone'])
+            && changedOnly(['displayName', 'shareProgress', 'progress', 'phone', 'lastActiveAt'])
+            && (!request.resource.data.keys().hasAny(['lastActiveAt']) || request.resource.data.lastActiveAt is int)
             && (!request.resource.data.keys().hasAny(['progress'])
               || (request.resource.data.shareProgress == true && request.resource.data.progress is map))
             // A mobile number the member chose to share with their leaders.
@@ -223,6 +224,12 @@ service cloud.firestore {
             && isActiveMember(churchId, request.auth.uid)
             && changedOnly(['confirmedLevels'])
             && request.resource.data.confirmedLevels is map)
+          // Leaders note that they reached out to a member who went quiet.
+          || (rankAtLeast(churchId, 3)
+            && changedOnly(['caredAt', 'caredBy', 'caredByName'])
+            && request.resource.data.caredAt is int
+            && request.resource.data.caredBy == request.auth.uid
+            && validText(request.resource.data.caredByName, 1, 100))
           // Cell leaders and up approve join requests.
           || (rankAtLeast(churchId, 3)
             && resource.data.status == 'pending'
@@ -435,6 +442,37 @@ service cloud.firestore {
 
       // Live study: the slide a leader is presenting right now. Members'
       // screens follow it; only the presenting leader moves it.
+      // Visitors and new believers, each walked through their first month by an
+      // assigned member. Leaders manage them; the assigned member reads theirs
+      // and ticks steps and notes.
+      match /followups/{followupId} {
+        allow read: if isAdmin() || rankAtLeast(churchId, 3)
+          || (request.auth != null && resource.data.assignedUid == request.auth.uid);
+        allow create: if (isAdmin() || rankAtLeast(churchId, 3))
+          && request.resource.data.keys().hasOnly(['name', 'phone', 'kind', 'note', 'assignedUid', 'assignedName', 'createdBy', 'createdAt', 'done', 'status'])
+          && validText(request.resource.data.name, 1, 100)
+          && validText(request.resource.data.phone, 0, 20)
+          && request.resource.data.kind in ['visitor', 'new_believer']
+          && validText(request.resource.data.note, 0, 1000)
+          && isActiveMember(churchId, request.resource.data.assignedUid)
+          && validText(request.resource.data.assignedName, 1, 100)
+          && request.resource.data.createdBy == request.auth.uid
+          && request.resource.data.createdAt is int
+          && request.resource.data.done is map
+          && request.resource.data.status == 'active';
+        allow update: if (((isAdmin() || rankAtLeast(churchId, 3))
+            && changedOnly(['note', 'assignedUid', 'assignedName', 'done', 'status'])
+            && isActiveMember(churchId, request.resource.data.assignedUid)
+            && validText(request.resource.data.assignedName, 1, 100))
+          || (request.auth != null && resource.data.assignedUid == request.auth.uid
+            && changedOnly(['note', 'done', 'status'])))
+          // Either way: notes stay short, steps are a map, status is known.
+          && validText(request.resource.data.note, 0, 1000)
+          && request.resource.data.done is map
+          && request.resource.data.status in ['active', 'done'];
+        allow delete: if isAdmin() || rankAtLeast(churchId, 3);
+      }
+
       match /live/{docId} {
         allow read: if isAdmin() || (request.auth != null && isActiveMember(churchId, request.auth.uid));
         allow create, update: if docId == 'current'
@@ -454,6 +492,29 @@ service cloud.firestore {
           && request.resource.data.updatedAt is int;
         allow delete: if isAdmin() || rankAtLeast(churchId, 3)
           || (request.auth != null && resource.data.leaderUid == request.auth.uid);
+
+        // Members' reactions (🙏 ❤️ ✋) and questions during a live study.
+        match /reactions/{reactionId} {
+          allow read: if isAdmin() || (request.auth != null && isActiveMember(churchId, request.auth.uid));
+          allow create: if docId == 'current'
+            && request.auth != null && isActiveMember(churchId, request.auth.uid)
+            && request.resource.data.keys().hasOnly(['uid', 'name', 'kind', 'text', 'startedAt', 'at'])
+            && request.resource.data.uid == request.auth.uid
+            && request.resource.data.kind in ['amen', 'heart', 'hand', 'question']
+            && validText(request.resource.data.name, 1, 100)
+            && request.resource.data.startedAt is int
+            && request.resource.data.at is int
+            && (request.resource.data.kind == 'question'
+              ? validText(request.resource.data.get('text', ''), 1, 300)
+              : !request.resource.data.keys().hasAny(['text']));
+          // Whoever is presenting (or a leader) marks questions answered.
+          allow update: if (isAdmin() || rankAtLeast(churchId, 3)
+              || (request.auth != null
+                && get(/databases/$(database)/documents/churches/$(churchId)/live/current).data.leaderUid == request.auth.uid))
+            && changedOnly(['answered'])
+            && request.resource.data.answered is bool;
+          allow delete: if isAdmin() || rankAtLeast(churchId, 3);
+        }
       }
 
       // One record per live study, kept after it ends, so leaders see attendance.

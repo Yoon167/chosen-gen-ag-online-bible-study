@@ -36,6 +36,8 @@ export function Presenter({
   live,
   toolbar,
   following,
+  footer,
+  overlay,
 }: {
   heading: string;
   parts: PresentPart[];
@@ -47,6 +49,10 @@ export function Presenter({
   toolbar?: React.ReactNode;
   /** The leader's name when this screen follows someone else's presentation. */
   following?: string;
+  /** Shown above the bottom controls (e.g. members' reactions bar). */
+  footer?: React.ReactNode;
+  /** Floats over the slide (e.g. reactions reaching the presenter). */
+  overlay?: React.ReactNode;
 }) {
   const tx = useTx();
   const last = parts.length - 1;
@@ -118,6 +124,8 @@ export function Presenter({
         )}
         </div>
       </div>
+      {overlay}
+      {footer}
       {following !== undefined ? (
         <div className="flex items-center gap-3 px-5 pb-[calc(env(safe-area-inset-bottom,0px)+16px)]">
           <p className="flex-1 text-sm text-white/70">{tx(`${following} is leading. Your screen follows along.`, `Si ${following} ang nangunguna. Sumusunod ang screen mo.`)}</p>

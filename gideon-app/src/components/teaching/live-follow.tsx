@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { Presenter } from "@/components/teaching/presenter";
+import { ReactionBar } from "@/components/teaching/live-reactions";
 import { useAuth } from "@/lib/hooks/use-auth";
 import { useMyChurch } from "@/lib/hooks/use-church";
 import { useLiveSession } from "@/lib/hooks/use-live-session";
@@ -129,6 +130,11 @@ export function LiveFollow() {
       onIndex={() => {}}
       onClose={() => router.push("/")}
       live={{ on: true, label: "Live" }}
+      footer={
+        my.churchId && uid && session.leaderUid !== uid ? (
+          <ReactionBar churchId={my.churchId} startedAt={session.startedAt} uid={uid} name={name} />
+        ) : undefined
+      }
       toolbar={
         session.callUrl ? (
           <a
