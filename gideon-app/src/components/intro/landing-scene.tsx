@@ -99,41 +99,121 @@ const LANE_START: Record<Walker["lane"], string> = { a: "44%", b: "56%", c: "49.
 type Leg = "left" | "right";
 type Pose = "down" | Leg;
 
-/** A person seen from behind; `lift` is the foot off the ground mid-stride. */
+/** Clothes and coloring for one person (muted, as they are backlit by the sunrise). */
+type Look = { skin: string; hair: string; top: string; bottom: string; shoe: string; pack?: string };
+
+const SKIN = "#6b4430";
+const LOOKS = {
+  father: { skin: SKIN, hair: "#16100c", top: "#2f4630", bottom: "#24242c", shoe: "#120d0a" },
+  mother: { skin: SKIN, hair: "#16100c", top: "#2d3a5e", bottom: "#2d3a5e", shoe: "#120d0a" },
+  girl: { skin: SKIN, hair: "#16100c", top: "#6a3a52", bottom: "#6a3a52", shoe: "#2a1a14" },
+  dad2: { skin: SKIN, hair: "#16100c", top: "#5a3a22", bottom: "#2a3a55", shoe: "#120d0a" },
+  boy: { skin: SKIN, hair: "#16100c", top: "#7a6326", bottom: "#2a3a55", shoe: "#1d1410" },
+  youth: { skin: SKIN, hair: "#16100c", top: "#24464a", bottom: "#2a3a55", shoe: "#d8d2c8", pack: "#3b2f22" },
+  friend: { skin: SKIN, hair: "#16100c", top: "#7a3a2a", bottom: "#7a3a2a", shoe: "#1d1410" },
+  elder: { skin: SKIN, hair: "#8a837c", top: "#4a4136", bottom: "#2b2620", shoe: "#120d0a" },
+  grandma: { skin: SKIN, hair: "#9a938c", top: "#4d3a4e", bottom: "#4d3a4e", shoe: "#120d0a" },
+  woman: { skin: SKIN, hair: "#16100c", top: "#5a2433", bottom: "#5a2433", shoe: "#120d0a" },
+  man: { skin: SKIN, hair: "#16100c", top: "#2a3550", bottom: "#1f2433", shoe: "#120d0a" },
+} satisfies Record<string, Look>;
+
+/**
+ * A person seen from behind, walking toward Jesus: hair, clothes, arms and
+ * shoes, with the shadow side a little darker and the shoulders catching the
+ * light. `lift` is the foot off the ground mid-stride; the arm on the other
+ * side swings forward. `flat` draws the plain silhouette (for the rim light).
+ */
 function Person({
   x = 0,
   scale = 1,
+  look,
   child = false,
   dress = false,
-  pack = false,
+  longHair = false,
   cane = false,
   lift,
+  flat = false,
 }: {
   x?: number;
   scale?: number;
+  look: Look;
   child?: boolean;
   dress?: boolean;
-  pack?: boolean;
+  longHair?: boolean;
   cane?: boolean;
   lift?: Leg;
+  flat?: boolean;
 }) {
-  const up = (leg: Leg) => (leg === lift ? "translate(0 -3)" : undefined);
+  const f = (c: string) => (flat ? undefined : c);
+  const legUp = (leg: Leg) => (leg === lift ? "translate(0 -3.5)" : undefined);
+  // The arm opposite the lifted foot swings forward (in, seen from behind); the other swings back (out).
+  const armTurn = (side: Leg) => (!lift ? 0 : side === lift ? 7 : -8);
+  // The body rides highest as the feet pass each other.
+  const bob = lift ? 0 : -1;
+  const shade = "rgba(0,0,0,0.28)";
+  const sheen = "rgba(255,226,180,0.28)";
   return (
-    <g transform={`translate(${x} ${100 - 100 * scale}) scale(${scale})`}>
-      {/* legs */}
-      <path d="M12.6 52 L13 97 C13 99.2 18.4 99.2 18.6 97 L19.4 56 Z" transform={up("left")} />
-      <path d="M20.6 56 L21.4 97 C21.6 99.2 27 99.2 27 97 L27.4 52 Z" transform={up("right")} />
-      {/* body */}
-      {dress ? (
-        <path d="M14.5 19.5 C11.5 20.5 10.2 22.5 10 26 L9.2 50 C9 52.5 11.2 53 11.6 51 L12.6 33 L10 80 L30 80 L27.4 33 L28.4 51 C28.8 53 31 52.5 30.8 50 L30 26 C29.8 22.5 28.5 20.5 25.5 19.5 Z" />
-      ) : (
-        <path d="M13.5 19 C10 20 8.5 22 8.3 26 L7.6 52 C7.5 54 9.8 54.5 10.2 52.6 L11.5 31 L12.2 56 L27.8 56 L28.5 31 L29.8 52.6 C30.2 54.5 32.5 54 32.4 52 L31.7 26 C31.5 22 30 20 26.5 19 Z" />
+    <g transform={`translate(${x} ${100 - 100 * scale + bob * scale}) scale(${scale})`}>
+      {/* legs: trousers (or skin under a dress) and shoes */}
+      {(["left", "right"] as Leg[]).map((leg) => {
+        const lx = leg === "left" ? 0 : 8;
+        return (
+          <g key={leg} transform={legUp(leg)}>
+            <path d={`M${12.6 + lx} 52 L${13 + lx} 95 L${18.8 + lx} 95 L${19.4 + lx} 56 Z`} fill={f(dress ? look.skin : look.bottom)} />
+            <path
+              d={`M${12.4 + lx} 94.5 L${19 + lx} 94.5 L${19.4 + lx} 98.6 C${19.4 + lx} 99.8 ${12.2 + lx} 99.8 ${12.2 + lx} 98.6 Z`}
+              fill={f(look.shoe)}
+            />
+            {leg === lift && !flat && <path d={`M${12.6 + lx} 98.8 L${19 + lx} 98.8`} stroke="rgba(230,215,195,0.6)" strokeWidth="1" />}
+          </g>
+        );
+      })}
+      {!dress && <path d="M10 50 L30 50 L28.6 60 L11.4 60 Z" fill={f(look.bottom)} />}
+      {/* arms with sleeves, and hands */}
+      {(["left", "right"] as Leg[]).map((side) => {
+        const right = side === "right";
+        const turn = armTurn(side);
+        return (
+          <g key={side} transform={`rotate(${right ? -turn : turn} ${right ? 31 : 9} 21)`}>
+            <g transform={right ? "translate(40 0) scale(-1 1)" : undefined}>
+              <path d="M9.4 20.6 C7.4 21.6 6.6 24.4 6.5 27.6 L6 48.4 L10 48.6 L11.2 30 Z" fill={f(look.top)} />
+              <ellipse cx="8" cy="50.2" rx="2.1" ry="2.6" fill={f(look.skin)} />
+            </g>
+          </g>
+        );
+      })}
+      {/* body: a shirt, or a dress down to the knees */}
+      <path
+        d={
+          dress
+            ? "M14.2 19.4 C11.2 20.3 10 22.6 9.8 26 L9.4 48 L7.6 81 L32.4 81 L30.6 48 L30.2 26 C30 22.6 28.8 20.3 25.8 19.4 Z"
+            : "M13.6 19.2 C10.4 20.1 9 22.4 8.9 26 L9.4 53 L30.6 53 L31.1 26 C31 22.4 29.6 20.1 26.4 19.2 Z"
+        }
+        fill={f(look.top)}
+      />
+      {!flat && (
+        <>
+          {/* the shadow side and a fold; light on the shoulders */}
+          <path d={dress ? "M24 21 L30.4 26 L32.2 80 L25 80 Z" : "M24 21 L31 26 L30.6 52.6 L25 52.6 Z"} fill={shade} />
+          <path d="M20 30 C19.6 38 19.8 46 20.2 52" stroke="rgba(0,0,0,0.18)" strokeWidth="0.7" fill="none" />
+          <path d="M13.8 19.6 C17 18.6 23 18.6 26.2 19.6 C24 20.8 16 20.8 13.8 19.6 Z" fill={sheen} />
+          {!dress && <path d="M9.4 50.6 L30.6 50.6" stroke="rgba(0,0,0,0.35)" strokeWidth="1.2" />}
+        </>
       )}
-      {pack && <rect x="12.5" y="23" width="15" height="22" rx="4" />}
-      {cane && <path d="M31.6 51 L35.5 98" stroke="currentColor" strokeWidth="1.6" fill="none" />}
-      {/* head and hair */}
-      <circle cx="20" cy="11" r={child ? 7 : 6.4} />
-      {dress && <path d="M13.6 11 C13.6 4 26.4 4 26.4 11 L27 24 L13 24 Z" />}
+      {look.pack && (
+        <g>
+          <rect x="12.2" y="23" width="15.6" height="21" rx="4" fill={f(look.pack)} />
+          {!flat && <rect x="14.2" y="34" width="11.6" height="7" rx="2" fill="rgba(0,0,0,0.22)" />}
+        </g>
+      )}
+      {cane && <path d="M5.4 49 L2.8 98" stroke={flat ? "currentColor" : "#4a3220"} strokeWidth="1.6" fill="none" strokeLinecap="round" />}
+      {/* neck, ears and the back of the head */}
+      <rect x="17.6" y="15.5" width="4.8" height="5" rx="1.5" fill={f(look.skin)} />
+      <ellipse cx="13.8" cy="12" rx="1.3" ry="2" fill={f(look.skin)} />
+      <ellipse cx="26.2" cy="12" rx="1.3" ry="2" fill={f(look.skin)} />
+      <circle cx="20" cy="11" r={child ? 7 : 6.4} fill={f(look.hair)} />
+      {longHair && <path d="M13.4 9.5 C13.4 3.4 26.6 3.4 26.6 9.5 L27.4 29 C24 31.2 16 31.2 12.6 29 Z" fill={f(look.hair)} />}
+      {!flat && <path d="M15.6 6.4 C18 4.8 22 4.8 24.4 6.4" stroke="rgba(255,226,180,0.35)" strokeWidth="1" fill="none" strokeLinecap="round" />}
     </g>
   );
 }
@@ -147,53 +227,58 @@ const VIEWBOX: Record<Kind, string> = {
   man: "0 0 40 100",
 };
 
-function Figures({ kind, pose }: { kind: Kind; pose: Pose }) {
+function Figures({ kind, pose, flat = false }: { kind: Kind; pose: Pose; flat?: boolean }) {
   // Neighbours step with opposite feet.
   const lift = (k: number): Leg | undefined =>
     pose === "down" ? undefined : (k % 2 === 0) === (pose === "left") ? "left" : "right";
+  const hand = flat ? "currentColor" : SKIN;
   switch (kind) {
     case "family":
       return (
         <>
-          <Person x={0} lift={lift(0)} />
-          <Person x={38} scale={0.58} child lift={lift(1)} />
-          <Person x={72} dress lift={lift(2)} />
+          <Person x={0} look={LOOKS.father} lift={lift(0)} flat={flat} />
+          <Person x={38} scale={0.58} child dress longHair look={LOOKS.girl} lift={lift(1)} flat={flat} />
+          <Person x={72} dress longHair look={LOOKS.mother} lift={lift(2)} flat={flat} />
           {/* hands held */}
-          <path d="M31 53 Q36 60 44 64" stroke="currentColor" strokeWidth="2" fill="none" />
-          <path d="M58 64 Q66 60 80 52" stroke="currentColor" strokeWidth="2" fill="none" />
+          <path d="M31 51 Q36 58 44 63" stroke={hand} strokeWidth="2" fill="none" strokeLinecap="round" />
+          <path d="M58 63 Q66 58 80 51" stroke={hand} strokeWidth="2" fill="none" strokeLinecap="round" />
         </>
       );
     case "shoulders":
       return (
         <>
           <g transform="translate(0 30)">
-            <Person lift={lift(0)} />
+            <Person look={LOOKS.dad2} lift={lift(0)} flat={flat} />
           </g>
-          {/* child riding on the father's shoulders */}
-          <g transform="translate(9 0) scale(0.55)">
-            <circle cx="20" cy="11" r="7.5" />
-            <path d="M12 20 C9 22 8 26 8 30 L2 34 C0 35 1 38 3 37 L10 34 L10 52 L2 60 L6 64 L20 55 L34 64 L38 60 L30 52 L30 34 L37 37 C39 38 40 35 38 34 L32 30 C32 26 31 22 28 20 Z" />
+          {/* a boy riding on his father's shoulders */}
+          <g transform="translate(7.6 3) scale(0.62)">
+            <path
+              d="M12 20 C9 22 8 26 8 30 L2 34 C0 35 1 38 3 37 L10 34 L10 52 L2 60 L6 64 L20 55 L34 64 L38 60 L30 52 L30 34 L37 37 C39 38 40 35 38 34 L32 30 C32 26 31 22 28 20 Z"
+              fill={flat ? undefined : LOOKS.boy.top}
+            />
+            {!flat && <path d="M10 52 L2 60 L6 64 L20 55 L34 64 L38 60 L30 52 Z" fill={LOOKS.boy.bottom} />}
+            <circle cx="20" cy="11" r="7.5" fill={flat ? undefined : LOOKS.boy.hair} />
           </g>
         </>
       );
     case "youth":
       return (
         <>
-          <Person x={0} pack lift={lift(0)} />
-          <Person x={36} scale={0.94} dress lift={lift(1)} />
+          <Person x={0} look={LOOKS.youth} lift={lift(0)} flat={flat} />
+          <Person x={36} scale={0.94} dress longHair look={LOOKS.friend} lift={lift(1)} flat={flat} />
         </>
       );
     case "elder":
       return (
         <>
-          <Person x={0} scale={0.95} cane lift={lift(0)} />
-          <Person x={38} scale={0.92} dress lift={lift(1)} />
+          <Person x={0} scale={0.95} cane look={LOOKS.elder} lift={lift(0)} flat={flat} />
+          <Person x={38} scale={0.92} dress look={LOOKS.grandma} lift={lift(1)} flat={flat} />
         </>
       );
     case "woman":
-      return <Person dress lift={lift(0)} />;
+      return <Person dress longHair look={LOOKS.woman} lift={lift(0)} flat={flat} />;
     default:
-      return <Person lift={lift(0)} />;
+      return <Person look={LOOKS.man} lift={lift(0)} flat={flat} />;
   }
 }
 
@@ -216,8 +301,8 @@ function Walking({ kind, phase }: { kind: Kind; phase: number }) {
         <svg viewBox={`0 0 ${w * 4} ${h}`} className="size-full" fill="currentColor">
           {STRIDE.map((pose, i) => (
             <g key={i} transform={`translate(${w * i} 0)`}>
-              <g fill={rim} stroke={rim} strokeWidth="1.6" strokeLinejoin="round">
-                <Figures kind={kind} pose={pose} />
+              <g fill={rim} stroke={rim} strokeWidth="1.6" strokeLinejoin="round" color={rim}>
+                <Figures kind={kind} pose={pose} flat />
               </g>
               <Figures kind={kind} pose={pose} />
             </g>
@@ -228,21 +313,46 @@ function Walking({ kind, phase }: { kind: Kind; phase: number }) {
   );
 }
 
-/** Jesus, standing with arms slightly open, facing the people. */
+/**
+ * Jesus, standing with arms slightly open, facing the people: a white tunic,
+ * a red mantle over His shoulder, a gold sash, sandals, long hair and a
+ * beard. Backlit by the sunrise, so a warm rim of light runs around Him.
+ */
 function Jesus() {
-  // Backlit by the sunrise: a warm rim of light around the edges, and a few
-  // soft folds in the robe catching it.
-  const rim = { stroke: "rgba(255,228,176,0.75)", strokeWidth: 0.7, strokeLinejoin: "round" as const };
+  const rim = { stroke: "rgba(255,236,196,0.85)", strokeWidth: 0.8, strokeLinejoin: "round" as const };
   return (
-    <svg viewBox="0 0 60 120" className="h-full overflow-visible" fill="currentColor" aria-hidden>
-      <path d="M22.5 17 C22 9 26 5.2 30 5.2 C34 5.2 38 9 37.5 17 C37.3 21 36 23 35.8 25.5 L24.2 25.5 C24 23 22.7 21 22.5 17 Z" {...rim} />
-      <path d="M24 24.5 C19 25.5 16.5 27 15 30 L7.5 58 C6.8 60.5 9.6 62 11 60 L18.5 44 L16.8 118 L43.2 118 L41.5 44 L49 60 C50.4 62 53.2 60.5 52.5 58 L45 30 C43.5 27 41 25.5 36 24.5 Z" {...rim} />
-      <g fill="none" stroke="rgba(255,226,170,0.22)" strokeWidth="0.8" strokeLinecap="round">
-        <path d="M26 30 C25 55 23 85 22 116" />
-        <path d="M34 30 C35 55 37 85 38 116" />
-        <path d="M30 34 L30 116" />
-        <path d="M21.5 48 C26 50 34 50 38.5 48" />
+    <svg viewBox="0 0 60 120" className="h-full overflow-visible" aria-hidden>
+      {/* tunic with open arms */}
+      <path
+        d="M24 24.5 C19 25.5 16.5 27 15 30 L7.5 58 C6.8 60.5 9.6 62 11 60 L18.5 44 L16.8 116 L43.2 116 L41.5 44 L49 60 C50.4 62 53.2 60.5 52.5 58 L45 30 C43.5 27 41 25.5 36 24.5 Z"
+        fill="#e9dfcc"
+        {...rim}
+      />
+      {/* soft shading and folds in the robe */}
+      <path d="M33 30 L41.5 44 L43.2 116 L35 116 Z" fill="rgba(120,96,70,0.22)" />
+      <g fill="none" stroke="rgba(120,96,70,0.32)" strokeWidth="0.7" strokeLinecap="round">
+        <path d="M26 46 C25 70 23.5 92 22.5 115" />
+        <path d="M30 48 L30 115" />
+        <path d="M34.5 46 C35.5 70 37 92 38 115" />
       </g>
+      {/* red mantle over the left shoulder, down His side */}
+      <path d="M36 24.6 C41 25.6 43.6 27.4 45 30.4 L41.5 44 L43.6 112 L36.8 113 C37.6 92 37 70 34.4 50 C33 40 31.6 32 36 24.6 Z" fill="#8f2b2b" />
+      <path d="M36.5 27 C34.5 34 35 44 37 52" stroke="rgba(60,10,10,0.45)" strokeWidth="0.8" fill="none" />
+      {/* gold sash */}
+      <path d="M18.8 47 C25 49 35 49 41.3 47 L41.4 50 C35 52 25 52 18.7 50 Z" fill="#b8893a" />
+      {/* hands */}
+      <ellipse cx="9.2" cy="60.4" rx="2.2" ry="2.8" fill="#a8744e" />
+      <ellipse cx="50.8" cy="60.4" rx="2.2" ry="2.8" fill="#a8744e" />
+      {/* sandaled feet */}
+      <path d="M22 116 L28 116 L28.4 119 L21.6 119 Z" fill="#a8744e" />
+      <path d="M32 116 L38 116 L38.4 119 L31.6 119 Z" fill="#a8744e" />
+      <path d="M22 117.4 L28.2 117.4 M31.8 117.4 L38.2 117.4" stroke="#5a3a1e" strokeWidth="0.9" />
+      {/* hair to the shoulders, face, beard */}
+      <path d="M22.2 14 C22 7.6 26 4.6 30 4.6 C34 4.6 38 7.6 37.8 14 L38.6 26.5 C36.6 27.6 34.6 27 34 25 L26 25 C25.4 27 23.4 27.6 21.4 26.5 Z" fill="#3a2414" {...rim} />
+      <ellipse cx="30" cy="15.4" rx="5.2" ry="6.4" fill="#a8744e" />
+      <path d="M24.9 16.5 C25.4 22.8 27.6 25.4 30 25.4 C32.4 25.4 34.6 22.8 35.1 16.5 C33.6 19.4 26.4 19.4 24.9 16.5 Z" fill="#2e1c10" />
+      <path d="M27.4 14.2 L28.8 14.2 M31.2 14.2 L32.6 14.2" stroke="#2a180c" strokeWidth="0.8" strokeLinecap="round" />
+      <path d="M24.8 9.6 C27 7.4 33 7.4 35.2 9.6" stroke="#3a2414" strokeWidth="2.2" fill="none" />
     </svg>
   );
 }
@@ -453,7 +563,7 @@ export function LandingScene({ settled = false }: { settled?: boolean }) {
                   "radial-gradient(closest-side, rgba(255,250,232,0.9) 0%, rgba(255,232,180,0.45) 35%, transparent 100%)",
               }}
             />
-            <div className="relative h-full text-[#1b1428]">
+            <div className="relative h-full">
               <Jesus />
             </div>
           </div>
