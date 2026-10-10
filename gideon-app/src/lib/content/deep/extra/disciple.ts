@@ -292,4 +292,86 @@ export const EXTRA: ExtraSet = {
       },
     ],
   },
+  "c-family-relationships": {
+    deeper: [
+      {
+        heading: t("\"Submit to one another\": what Ephesians 5 really asks", "\"Magpasakop sa isa't isa\": ano talaga ang hinihingi ng Efeso 5"),
+        body: [
+          t("Ephesians 5:21 comes before the instructions to wives and husbands, and it is for everyone in the church: submit to one another out of reverence for Christ. In Greek, hupotasso describes freely putting yourself under another's needs, not being crushed by force. Paul then asks the husband to love like Christ, who gave Himself up. The model for a husband is a cross, not a throne.", "Ang Efeso 5:21 ay nauuna sa mga tagubilin sa asawang babae at lalaki, at para ito sa lahat ng kapatiran: magpasakop kayo sa isa't isa dahil sa takot kay Cristo. Sa Griyego, ang hupotasso ay kusang pagpapailalim sa pangangailangan ng iba, hindi pagdurog sa pamamagitan ng puwersa. Pagkatapos, hinihiling ni Pablo na ibigin ng asawang lalaki ang asawa tulad ni Cristo na nag-alay ng sarili. Ang huwaran ng lalaki ay krus, hindi trono."),
+          t("This is often misused in both directions. Scripture never gives anyone permission to abuse, and a marriage where one person lives in fear is not what Paul describes. If there is violence, the safe and godly step is to seek protection and help from pastors and trusted people. Biblical headship is service with responsibility, answered to God.", "Madalas itong mamali sa dalawang direksyon. Hindi kailanman pinapayagan ng Kasulatan ang pang-aabuso, at ang pagsasamang may takot ang isang panig ay hindi ang inilalarawan ni Pablo. Kung may karahasan, ang ligtas at maka-Diyos na hakbang ay humingi ng proteksyon at tulong sa pastor at sa mga mapagkakatiwalaang tao. Ang tunay na pangunguna ay paglilingkod na may pananagutan sa Diyos."),
+        ],
+      },
+      {
+        heading: t("Teaching children in the rhythm of daily life (Deuteronomy 6)", "Pagtuturo sa mga anak sa araw-araw na buhay (Deuteronomio 6)"),
+        body: [
+          t("The Shema (Deuteronomy 6:4-9) tells parents to teach God's words when sitting at home, walking on the road, lying down, and rising up. Faith is handed down in ordinary moments: meals, rides, bedtime. The Hebrew shanan, \"to impress\", pictures sharpening, repeated again and again. Paul adds in Ephesians 6:4 that fathers must not provoke children to anger but bring them up in the discipline and instruction of the Lord.", "Sinasabi ng Shema (Deuteronomio 6:4-9) na ituro ng mga magulang ang salita ng Diyos kapag nakaupo sa bahay, naglalakad sa daan, nakahiga, at bumabangon. Naipapasa ang pananampalataya sa karaniwang sandali: hapag-kainan, biyahe, oras ng pagtulog. Ang Hebreong shanan, \"ikintal\", ay larawan ng pagtalas, paulit-ulit. Dagdag ni Pablo sa Efeso 6:4, huwag galitin ng mga ama ang mga anak kundi palakihin sila sa disiplina at turo ng Panginoon."),
+          t("For OFW families separated by oceans, this still works. A nightly video call, a verse shared by message, praying together over the phone, and honest words of love can keep a child's heart. Presence matters, but so does intention; no distance cancels a parent's prayers.", "Para sa pamilyang OFW na pinaghiwalay ng dagat, gumagana pa rin ito. Ang gabi-gabing video call, talatang ipinadala sa mensahe, sabay na pagdarasal sa telepono, at tapat na salita ng pagmamahal ay maaaring mag-ingat sa puso ng anak. Mahalaga ang presensya, pero mas mahalaga ang layunin; walang layo na makakapigil sa panalangin ng magulang."),
+        ],
+      },
+      {
+        heading: t("Love in the ordinary: 1 Corinthians 13 and Colossians 3 at home", "Pag-ibig sa karaniwan: 1 Corinto 13 at Colosas 3 sa tahanan"),
+        body: [
+          t("Paul wrote 1 Corinthians 13 to a church full of quarrels, not to a wedding. Patient, kind, not keeping a record of wrongs: these are daily choices. Colossians 3:12-14 says to put on compassion, humility, gentleness, and forgiveness, and over all these, love, which binds everything together in perfect unity. Clothing is chosen each morning.", "Isinulat ni Pablo ang 1 Corinto 13 sa iglesyang puno ng away, hindi para sa kasalan. Matiyaga, mabait, hindi nag-iingat ng tala ng kamalian: ito ay mga pang-araw-araw na pasya. Sinasabi ng Colosas 3:12-14 na magsuot ng habag, kababaang-loob, kahinahunan, at pagpapatawad, at higit sa lahat ng ito ay pag-ibig, na nagbubuklod sa lahat nang ganap. Ang damit ay pinipili tuwing umaga."),
+          t("Proverbs 13:20 reminds us that our closest friends shape us: whoever walks with the wise grows wise. That includes the friends we choose, the people we date, and the voices we follow online. Healthy relationships are a means of grace, so choose and become the kind of person who builds others up.", "Ipinapaalala ng Kawikaan 13:20 na hinuhubog tayo ng pinakamalapit nating kaibigan: ang lumalakad na kasama ng marunong ay nagiging marunong. Kasama rito ang mga kaibigan, ang mga nililigawan o karelasyon, at ang mga boses na sinusundan natin online. Ang malulusog na relasyon ay daluyan ng biyaya, kaya piliin at maging ang taong nagpapatibay sa iba."),
+        ],
+      },
+    ],
+    stories: [
+      {
+        title: t("Susanna Wesley: ten minutes with each child", "Susanna Wesley: oras para sa bawat anak"),
+        who: "Susanna Wesley",
+        where: t("Epworth, England", "Epworth, Inglatera"),
+        when: "Early 1700s",
+        story: [
+          t("Susanna Wesley was the wife of a rector, Samuel Wesley, and the mother of 19 children. Nine died in infancy and eight were living when she died. With little money and a very busy house, she became her children's main teacher. Formal lessons started the day after a child's fifth birthday.", "Si Susanna Wesley ay asawa ng isang rektor, si Samuel Wesley, at ina ng 19 na anak. Siyam ang namatay noong sanggol pa at walo ang buhay nang siya ay pumanaw. Sa kakaunting pera at napakaabalang bahay, siya ang naging pangunahing guro ng mga anak. Nagsisimula ang pormal na aralin sa araw pagkatapos ng ikalimang kaarawan ng bata."),
+          t("Besides teaching, she set aside time each evening to talk with one child alone, rotating through the week. She also wrote reflections on the Apostles' Creed, the Lord's Prayer and the Ten Commandments. Two of her sons, John and Charles Wesley, later became leaders of the Methodist revival and hymn writers.", "Bukod sa pagtuturo, naglaan siya ng oras bawat gabi para makausap nang mag-isa ang isang anak, paikot sa loob ng linggo. Sumulat din siya ng pagninilay sa Kredo ng mga Apostol, sa Panalangin ng Panginoon at sa Sampung Utos. Dalawa sa kanyang mga anak, sina John at Charles Wesley, ay naging mga pinuno ng Methodist revival at manunulat ng mga awit."),
+        ],
+        lesson: t("Faith is passed on through patient, personal, daily attention to each child, even in a crowded and tiring home.", "Naipapasa ang pananampalataya sa pamamagitan ng matiyaga, personal, at pang-araw-araw na atensyon sa bawat anak, kahit sa siksik at nakakapagod na tahanan."),
+        sources: [
+          { label: "Wikipedia: Susanna Wesley", url: "https://en.wikipedia.org/wiki/Susanna_Wesley" },
+        ],
+      },
+    ],
+  },
+  "c-living-on-mission": {
+    deeper: [
+      {
+        heading: t("Salt and light: what Jesus meant in Matthew 5", "Asin at ilaw: ano ang ibig sabihin ni Jesus sa Mateo 5"),
+        body: [
+          t("In Jesus' day salt preserved food and gave it flavor, and a lamp in a one-room house lit everyone inside. Jesus says \"you are\" salt and light, not \"you should try to be\". It is an identity given to His people. Salt only works when it leaves the shaker, and a lamp is not meant to be hidden under a basket.", "Noong panahon ni Jesus, ang asin ay nagpapanatili at nagbibigay-lasa sa pagkain, at ang ilawan sa maliit na bahay ay nagbibigay-liwanag sa lahat. Sinabi ni Jesus na \"kayo ay\" asin at ilaw, hindi \"subukan ninyong maging\". Ito ay pagkakakilanlang ibinigay sa Kanyang bayan. Gumagana lamang ang asin kapag lumabas sa lalagyan, at hindi dapat itago sa ilalim ng takalan ang ilawan."),
+          t("Notice that the light shows \"good works\" so that others glorify the Father (Matthew 5:16). The aim is not that people admire us, but that they see God. 1 Peter 2:12 says the same: live honorably among unbelievers so that they may glorify God. Our daily work and honesty at the office, at sea, or in a foreign home is already a witness.", "Pansinin na ang ilaw ay nagpapakita ng \"mabubuting gawa\" para luwalhatiin ng iba ang Ama (Mateo 5:16). Hindi layunin na hangaan tayo, kundi makita ang Diyos. Ganoon din ang 1 Pedro 2:12: mamuhay nang marangal sa harap ng mga hindi nananampalataya para luwalhatiin nila ang Diyos. Ang araw-araw nating trabaho at katapatan sa opisina, sa barko, o sa bahay ng among dayuhan ay patotoo na."),
+        ],
+      },
+      {
+        heading: t("Ambassadors, a scattered church, and every nation", "Mga sugo, kalat na iglesya, at bawat bansa"),
+        body: [
+          t("In 2 Corinthians 5:20 Paul calls believers \"ambassadors for Christ\". An ambassador lives in a foreign land, speaks for a king, and does not choose the message. Jesus said in John 20:21, \"As the Father has sent Me, I also send you.\" Our mission flows from His.", "Sa 2 Corinto 5:20, tinatawag ni Pablo ang mga mananampalataya na \"mga sugo ni Cristo\". Ang sugo ay nakatira sa ibang bayan, nagsasalita para sa hari, at hindi siya ang pumipili ng mensahe. Sabi ni Jesus sa Juan 20:21, \"Kung paanong sinugo Ako ng Ama, sinusugo Ko rin kayo.\" Ang ating misyon ay dumadaloy mula sa Kanya."),
+          t("Acts 8:1-4 shows that persecution scattered the church, and those scattered \"went about preaching the word\". Ordinary believers, not only apostles, carried the gospel. Today millions of Filipinos are scattered across the world for work, which is a real chance to be on mission. Revelation 7:9-10 shows where it ends: a multitude from every nation, tribe, people and language before the throne.", "Ipinakikita ng Gawa 8:1-4 na ang pag-uusig ay nagkalat sa iglesya, at ang mga nagkalat ay \"nagtungo sa iba't ibang lugar na ipinapangaral ang salita\". Ang karaniwang mananampalataya, hindi lang mga apostol, ang nagdala ng ebanghelyo. Ngayon, milyon-milyong Pilipino ang nakakalat sa mundo dahil sa trabaho, na tunay na pagkakataon para sa misyon. Ipinapakita ng Pahayag 7:9-10 ang wakas: napakaraming tao mula sa bawat bansa, lipi, bayan, at wika sa harap ng trono."),
+        ],
+      },
+      {
+        heading: t("Common misunderstandings about \"mission\"", "Mga maling akala tungkol sa \"misyon\""),
+        body: [
+          t("Many think mission is only for pastors or those who go overseas. But the new creation in 2 Corinthians 5:17 is for every believer, and the ministry of reconciliation is given to all. Others think mission means arguing people into the kingdom. Scripture shows invitation, gentleness and respect (1 Peter 3:15), with the Holy Spirit doing the convicting.", "Marami ang nag-aakalang ang misyon ay para lang sa pastor o sa pupunta sa ibang bansa. Pero ang bagong nilalang sa 2 Corinto 5:17 ay para sa bawat mananampalataya, at ang ministeryo ng pagkakasundo ay ibinigay sa lahat. May iba namang nag-aakalang ang misyon ay pakikipagtalo para mapaniwala ang tao. Ipinapakita ng Kasulatan ang paanyaya, kahinahunan at paggalang (1 Pedro 3:15), at ang Banal na Espiritu ang nagpapakilala ng kasalanan."),
+          t("A simple start: pray for three people by name, serve one of them this week, and be ready to share what Christ has done in you. Mission is not a program but a way of living wherever God has placed you.", "Simpleng simula: ipanalangin ang tatlong tao nang may pangalan, paglingkuran ang isa sa kanila ngayong linggo, at maging handang ibahagi ang ginawa ni Cristo sa iyo. Ang misyon ay hindi programa kundi paraan ng pamumuhay saan ka man inilagay ng Diyos."),
+        ],
+      },
+    ],
+    stories: [
+      {
+        title: t("Gladys Aylward: a housemaid sent to China", "Gladys Aylward: isang katulong na isinugo sa Tsina"),
+        who: "Gladys Aylward",
+        where: t("Yangcheng, Shanxi, China", "Yangcheng, Shanxi, Tsina"),
+        when: "1930-1940s",
+        story: [
+          t("Gladys Aylward was born in London in 1902 and worked as a housemaid. She was accepted for a short preparation course by the China Inland Mission, but was not offered further training because she progressed slowly in Chinese. Still, she believed God was calling her, and on 15 October 1930 she used her savings for a train ticket to Yangcheng in Shanxi, crossing Siberia on the way.", "Ipinanganak si Gladys Aylward sa London noong 1902 at nagtrabaho bilang katulong sa bahay. Tinanggap siya ng China Inland Mission sa maikling kurso, pero hindi na binigyan ng karagdagang pagsasanay dahil mabagal siyang natuto ng Chinese. Gayunman, naniwala siyang tinatawag siya ng Diyos, at noong 15 Oktubre 1930, ginamit niya ang ipon sa tiket ng tren patungong Yangcheng sa Shanxi, tumawid sa Siberia."),
+          t("In Yangcheng she and missionary Jeannie Lawson ran an inn for travelers and shared the gospel with them. Aylward also worked for the government as a foot inspector against foot-binding. When Japanese forces invaded the region, she led more than 100 orphans over the mountains to safety, though wounded and ill.", "Sa Yangcheng, kasama ang misyonerong si Jeannie Lawson, nagpatakbo siya ng bahay-panuluyan para sa mga manlalakbay at ibinahagi ang ebanghelyo. Nagtrabaho rin siya sa gobyerno bilang tagasuri laban sa pagbabalot ng paa. Nang lusubin ng mga Hapones ang rehiyon, pinangunahan niya ang mahigit 100 ulila sa ibabaw ng mga bundok tungo sa kaligtasan, kahit sugatan at may sakit."),
+        ],
+        lesson: t("God sends ordinary people with no status or training to live among others, serve them in love, and show Christ.", "Isinusugo ng Diyos ang karaniwang tao na walang katayuan o pagsasanay para manirahan sa piling ng iba, maglingkod sa pag-ibig, at ipakita si Cristo."),
+        sources: [
+          { label: "Wikipedia: Gladys Aylward", url: "https://en.wikipedia.org/wiki/Gladys_Aylward" },
+        ],
+      },
+    ],
+  },
 };

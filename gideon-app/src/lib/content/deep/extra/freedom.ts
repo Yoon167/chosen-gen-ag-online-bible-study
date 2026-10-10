@@ -252,5 +252,129 @@ export const EXTRA: ExtraSet = {
       },
     ],
   },
+  "c-generational-patterns": {
+    deeper: [
+      {
+        heading: t("What Exodus 20:5 does and does not say", "Ano ang sinasabi at hindi sinasabi ng Exodo 20:5"),
+        body: [
+          t("The second commandment says the LORD visits the iniquity of the fathers on the children to the third and fourth generation of those who hate Him, but shows steadfast love to thousands of those who love Him (Exodus 20:5-6). Notice the proportion: the consequences of sin ripple for three or four generations, while mercy reaches a thousand. Sin does shape families, through example, wounds, choices and sometimes spiritual openings, but grace is far larger.", "Sinasabi ng ikalawang utos na dinadalaw ng PANGINOON ang kasalanan ng mga ama sa mga anak hanggang sa ikatlo at ikaapat na salinlahi ng mga napopoot sa Kanya, ngunit nagpapakita ng tapat na pag-ibig sa libu-libo ng umiibig sa Kanya (Exodo 20:5-6). Pansinin ang sukat: ang bunga ng kasalanan ay umaabot sa tatlo o apat na salinlahi, ang awa ay sa sanlibo. Hinuhubog nga ng kasalanan ang mga pamilya sa pamamagitan ng halimbawa, sugat, pasya at minsan espirituwal na pagbubukas, ngunit mas malaki ang biyaya."),
+          t("Ezekiel 18 corrects the opposite error. The people were saying the fathers ate sour grapes and the children's teeth are set on edge, as if they were doomed. God answers that the soul who sins is the one who dies, and a child who sees his father's sins and does not copy them will live (Ezekiel 18:14-20). We are influenced by our family, never condemned by it.", "Itinutuwid ng Ezekiel 18 ang kabaligtarang pagkakamali. Sinasabi ng mga tao na ang mga ama ang kumain ng maasim na ubas at ang mga anak ang nangilo ang ngipin, na parang tadhana na nila ito. Sagot ng Diyos, ang kaluluwang nagkakasala ang mamamatay, at ang anak na nakakita sa mga kasalanan ng ama ngunit hindi ginaya ay mabubuhay (Ezekiel 18:14-20). Naiimpluwensyahan tayo ng pamilya, ngunit hindi hinahatulan nito."),
+        ],
+      },
+      {
+        heading: t("Redeemed from an empty way of life", "Tinubos mula sa walang kabuluhang pamumuhay"),
+        body: [
+          t("1 Peter 1:18-19 says we were ransomed from the futile way of life inherited from our forefathers, not with silver or gold but with the precious blood of Christ. The Greek word for futile, mataios, means empty, without result. Inherited patterns such as anger, addiction, fear of poverty, broken marriages, superstition or silence about abuse are real, but the cross has paid for our exit.", "Sinasabi ng 1 Pedro 1:18-19 na tayo ay tinubos mula sa walang kabuluhang pamumuhay na namana sa ating mga ninuno, hindi ng pilak o ginto kundi ng mahalagang dugo ni Kristo. Ang salitang Griyego na mataios ay walang laman, walang bunga. Totoo ang mga namanang huwaran gaya ng galit, bisyo, takot sa kahirapan, sirang pagsasama, pamahiin o pananahimik sa pang-aabuso, ngunit binayaran na ng krus ang paglabas natin."),
+          t("2 Corinthians 5:17 says anyone in Christ is a new creation. This does not erase memory or family resemblance overnight, but it changes who owns us. Many Filipino families carry beliefs about luck, curses, and what the ancestors demand. The believer can honour parents (Ephesians 6:2) while refusing what dishonours God.", "Sinasabi ng 2 Corinto 5:17 na ang sinumang na kay Kristo ay bagong nilalang. Hindi nito binubura ang alaala o pagkakahawig sa pamilya sa isang gabi, ngunit binabago nito kung sino ang may-ari sa atin. Maraming pamilyang Pilipino ang may paniniwala tungkol sa suwerte, sumpa at hinihingi ng mga ninuno. Maaaring igalang ng mananampalataya ang magulang (Efeso 6:2) habang tinatanggihan ang hindi nakapagbibigay-dangal sa Diyos."),
+        ],
+      },
+      {
+        heading: t("Practical: start a new line", "Praktikal: magsimula ng bagong linya"),
+        body: [
+          t("Joshua 24:15 is a decision that begins with one person: as for me and my house, we will serve the LORD. Name the pattern honestly, repent of your own part, forgive the generation before you, and renounce in prayer what does not belong to Christ. Then build something in its place: family devotions, blessing your children out loud, open conversation about money, anger and faith.", "Ang Josue 24:15 ay pasyang nagsisimula sa isang tao: ako at ang aking sambahayan ay maglilingkod sa PANGINOON. Pangalanan nang tapat ang huwaran, magsisi sa sarili mong bahagi, patawarin ang sinundan mong salinlahi, at itakwil sa panalangin ang hindi kay Kristo. Pagkatapos magtayo ng kapalit: family devotions, pagpapala sa mga anak nang malakas, bukas na usapan tungkol sa pera, galit at pananampalataya."),
+          t("Do not blame every struggle on ancestors; sometimes it is simply our own choice. And do not carry guilt for what your parents did. Seek counsel from a mature pastor when patterns are heavy, and be patient. Breaking a pattern is often a work of years, and you may be the first link of a new chain of blessing.", "Huwag isisi sa mga ninuno ang bawat pakikibaka; minsan sariling pasya lang natin ito. At huwag pasanin ang pagkakasala ng ginawa ng magulang mo. Humingi ng payo sa may gulang na pastor kung mabigat ang mga huwaran, at magtiyaga. Madalas taon ang paglabas sa isang huwaran, at maaaring ikaw ang unang kawing ng bagong hanay ng pagpapala."),
+        ],
+      },
+    ],
+    stories: [
+      {
+        title: t("A son prayed for before birth, and a legacy of five generations", "Anak na ipinagdasal bago isilang, at pamanang limang salinlahi"),
+        who: "Hudson Taylor",
+        where: t("Barnsley, England and China", "Barnsley, Inglatera at Tsina"),
+        when: "1832-1905",
+        story: [
+          t("James Hudson Taylor was born in Barnsley, Yorkshire, in 1832 to a Methodist family. His parents were devout, and his father had a keen interest in China. Hudson Taylor's biographers record that his parents prayed for him and dedicated him to God's service, and that as a young man he came to a personal faith that led him to give himself to China.", "Si James Hudson Taylor ay ipinanganak sa Barnsley, Yorkshire, noong 1832 sa isang Methodist na pamilya. Debotong tao ang kanyang mga magulang, at may malaking interes ang kanyang ama sa Tsina. Isinulat ng mga talambuhay na ipinagdasal siya ng mga magulang at inialay sa paglilingkod sa Diyos, at bilang binata ay dumating siya sa personal na pananampalataya na nagbunsod sa kanyang ialay ang sarili sa Tsina."),
+          t("He sailed to China in 1853 and in 1865 founded the China Inland Mission, now OMF International, which sent hundreds of missionaries to the interior. His descendants continued the work for generations, and his family line includes several missionaries in East Asia. What began as one family's prayer became a blessing for many nations.", "Naglayag siya patungong Tsina noong 1853 at noong 1865 itinatag ang China Inland Mission, ngayon ay OMF International, na nagpadala ng daan-daang misyonero sa loob ng bansa. Ipinagpatuloy ng kanyang mga inapo ang gawain sa mga salinlahi, at kabilang sa angkan niya ang ilang misyonero sa Silangang Asya. Ang nagsimula bilang dasal ng isang pamilya ay naging pagpapala sa maraming bansa."),
+        ],
+        lesson: t("A faithful household can start a line of blessing: God's love reaches to a thousand generations (Exodus 20:6).", "Ang tapat na sambahayan ay maaaring magsimula ng linya ng pagpapala: umaabot sa sanlibong salinlahi ang pag-ibig ng Diyos (Exodo 20:6)."),
+        sources: [
+          { label: "Hudson Taylor (Wikipedia)", url: "https://en.wikipedia.org/wiki/Hudson_Taylor" },
+          { label: "OMF International (Wikipedia)", url: "https://en.wikipedia.org/wiki/OMF_International" },
+        ],
+      },
+    ],
+  },
+  "c-armor-of-god": {
+    deeper: [
+      {
+        heading: t("The Roman soldier and the Old Testament warrior", "Ang sundalong Romano at ang mandirigma ng Lumang Tipan"),
+        body: [
+          t("Paul wrote Ephesians 6 as a prisoner chained to a Roman guard, so the soldier's gear was before his eyes. But the pieces come from Isaiah. In Isaiah 59:15-17 the LORD Himself puts on righteousness as a breastplate and the helmet of salvation, and in Isaiah 11:5 the Messiah is girded with righteousness and faithfulness. The armour is first God's own; He lends it to us.", "Isinulat ni Pablo ang Efeso 6 bilang bilanggong nakagapos sa isang bantay na Romano, kaya nakikita niya ang kasuotan ng sundalo. Ngunit ang mga piyesa ay mula kay Isaias. Sa Isaias 59:15-17, ang PANGINOON mismo ang nagsusuot ng katuwiran bilang baluti at ng turbante ng kaligtasan, at sa Isaias 11:5 ang Mesiyas ay nabibigkisan ng katuwiran at katapatan. Una itong baluti ng Diyos; ipinapahiram Niya sa atin."),
+          t("Ephesians 6:10 says be strong in the Lord and in the strength of His might. The verb endunamoo means to be empowered from the outside. The command to put on (endysasthe) is used again in Romans 13:12-14, where we are told to put on the Lord Jesus Christ. The armour is ultimately a person.", "Sinasabi ng Efeso 6:10 na magpakalakas kayo sa Panginoon at sa lakas ng Kanyang kapangyarihan. Ang pandiwang endunamoo ay ang pagkakaloob ng lakas mula sa labas. Ang utos na magsuot (endysasthe) ay ginamit ding muli sa Roma 13:12-14, kung saan sinasabing isuot ang Panginoong Jesu-Cristo. Sa huli, ang baluti ay isang Persona."),
+        ],
+      },
+      {
+        heading: t("Each piece, and the one weapon that strikes", "Bawat piyesa, at ang nag-iisang sandatang tumatama"),
+        body: [
+          t("Truth is the belt that holds everything together; righteousness covers the heart; the gospel of peace gives sure footing; faith is the large shield that puts out flaming arrows; salvation protects the mind; the Word is the sword. 1 Thessalonians 5:8 names faith and love as the breastplate and the hope of salvation as the helmet. The pieces describe what Christ has already given: His truth, His righteousness, His peace, His salvation.", "Ang katotohanan ang bigkis na nagtatali ng lahat; ang katuwiran ang tumatakip sa puso; ang ebanghelyo ng kapayapaan ang nagbibigay ng matibay na tayo; ang pananampalataya ang malaking kalasag na pumapatay sa naglalagablab na palaso; ang kaligtasan ang nag-iingat ng isip; ang Salita ang tabak. Pinangangalanan ng 1 Tesalonica 5:8 ang pananampalataya at pag-ibig bilang baluti at ang pag-asa ng kaligtasan bilang turbante. Inilalarawan ng mga piyesa ang naibigay na ni Kristo: ang Kanyang katotohanan, katuwiran, kapayapaan at kaligtasan."),
+          t("The sword is the only attacking piece, and the word used is rhema, the spoken word. Hebrews 4:12 says the word of God is living and active and sharper than any two-edged sword. Jesus used it exactly so in Matthew 4: it is written. Knowing Scripture by heart is what keeps the sword from being left in its sheath. And Paul ends with prayer in the Spirit at all times, for all the saints (Ephesians 6:18).", "Ang tabak ang tanging sandatang pang-atake, at ang salitang ginamit ay rhema, ang binibigkas na salita. Sinasabi ng Hebreo 4:12 na buháy at mabisa ang salita ng Diyos at higit na matalas kaysa alinmang tabak na magkabilang talim. Ganito mismo ang ginamit ni Jesus sa Mateo 4: nasusulat. Ang pagkaalam ng Kasulatan nang kabisado ang pumipigil na manatili ang tabak sa kaluban. At tinatapos ni Pablo sa panalangin sa Espiritu sa lahat ng oras, para sa lahat ng banal (Efeso 6:18)."),
+        ],
+      },
+      {
+        heading: t("Practical: dressing for the day", "Praktikal: pagbibihis para sa araw"),
+        body: [
+          t("Put the armour on in the morning, in prayer, piece by piece: I choose truth, not the lies I feel; I stand in Christ's righteousness, not my record; I take the gospel into my work; I trust God's promises; I belong to Christ; I carry His word. It takes two minutes and sets the tone for the whole day.", "Isuot ang baluti sa umaga, sa panalangin, piyesa-piyesa: pinipili ko ang katotohanan, hindi ang damdaming kasinungalingan; nakatayo ako sa katuwiran ni Kristo, hindi sa rekord ko; dadalhin ko ang ebanghelyo sa trabaho; magtitiwala ako sa mga pangako ng Diyos; kay Kristo ako; dala ko ang Kanyang salita. Dalawang minuto lang ito at nagtatakda ng tono ng buong araw."),
+          t("Notice that no piece protects the back. We are meant to stand together, side by side, as a church. Verses to memorise, a prayer partner and a weekly gathering are as much part of the armour as any piece. Paul's repeated word is stand (Ephesians 6:11, 13, 14). Standing firm, not charging ahead, is the victory.", "Pansinin na walang piyesang nagtatakip sa likod. Dapat tayong tumayong magkakatabi, bilang iglesia. Ang mga talatang kabisado, kapartner sa panalangin at lingguhang pagtitipon ay bahagi rin ng baluti. Paulit-ulit ang salita ni Pablo: tumayo (Efeso 6:11, 13, 14). Ang matatag na pagtayo, hindi ang pagsugod nang pabigla-bigla, ang tagumpay."),
+        ],
+      },
+    ],
+    stories: [
+      {
+        title: t("The Olympic runner who would not run on Sunday", "Ang Olympic runner na ayaw tumakbo tuwing Linggo"),
+        who: "Eric Liddell",
+        where: t("Paris, France and Weihsien, China", "Paris, France at Weihsien, Tsina"),
+        when: "1924-1945",
+        story: [
+          t("Eric Liddell, a Scottish athlete and the son of missionaries, was favoured to win the 100 metres at the 1924 Paris Olympics. When he learned the heats would be held on a Sunday, he refused to run because of his convictions about the Sabbath. He switched to the 400 metres, which he had not trained for as a main event, and won the gold medal in a world record time.", "Si Eric Liddell, isang Scottish na atleta at anak ng mga misyonero, ay inaasahang mananalo sa 100 metro sa 1924 Paris Olympics. Nang malaman niyang gaganapin ang heats tuwing Linggo, tumanggi siyang tumakbo dahil sa kanyang paniniwala tungkol sa Sabbath. Lumipat siya sa 400 metro, na hindi niya pangunahing pinaghandaan, at nanalo ng gintong medalya sa world record na oras."),
+          t("He then returned to China as a missionary teacher, where he had been born. During the Second World War he was interned by the Japanese at the Weihsien camp, where he taught and cared for others, especially the young. He died there in February 1945 of a brain tumour, and fellow prisoners remembered his quiet, steady faith.", "Pagkatapos ay bumalik siya sa Tsina, kung saan siya ipinanganak, bilang gurong misyonero. Noong Digmaang Pandaigdig II ay ikinulong siya ng mga Hapones sa kampong Weihsien, kung saan nagturo siya at nag-alaga ng iba, lalo na ng mga bata. Namatay siya roon noong Pebrero 1945 sa tumor sa utak, at naalala siya ng mga kapwa bilanggo dahil sa tahimik at matatag niyang pananampalataya."),
+        ],
+        lesson: t("To stand firm in the evil day is to hold your conviction when it costs you, and to keep serving afterwards (Ephesians 6:13).", "Ang tumayong matatag sa masamang araw ay panindigan ang paniniwala kahit may kapalit, at magpatuloy sa paglilingkod pagkatapos (Efeso 6:13)."),
+        sources: [
+          { label: "Eric Liddell (Wikipedia)", url: "https://en.wikipedia.org/wiki/Eric_Liddell" },
+        ],
+      },
+    ],
+  },
+  "c-maintaining-freedom": {
+    deeper: [
+      {
+        heading: t("The swept and empty house", "Ang bahay na nawalis ngunit walang laman"),
+        body: [
+          t("In Matthew 12:43-45 Jesus describes an unclean spirit who leaves a man, wanders, and returns to find the house swept, put in order but empty. It brings seven others and the last state is worse than the first. The lesson is not that freedom is fragile but that emptiness is dangerous. Tidying a life is not enough; it must be filled with Christ.", "Sa Mateo 12:43-45 inilalarawan ni Jesus ang maruming espiritu na umalis sa tao, gumala, at bumalik na nakitang walis na, nakaayos ngunit walang laman ang bahay. Nagdala ito ng pitong iba pa at ang huling kalagayan ay lalong masama kaysa una. Ang aral ay hindi na marupok ang kalayaan kundi mapanganib ang kawalan ng laman. Hindi sapat ang pag-aayos ng buhay; kailangan itong mapuno ni Kristo."),
+          t("Galatians 5:1 says stand firm and do not submit again to a yoke of slavery. Proverbs 4:23 says guard your heart above all else, for from it flow the springs of life. Keep the gates: what you watch, who you spend time with, what you allow into the home. The believer does not need paranoia, only watchfulness.", "Sinasabi ng Galacia 5:1 na manindigan kayo at huwag muling padaig sa pamatok ng pagkaalipin. Sinasabi ng Kawikaan 4:23 na higit sa lahat ay ingatan mo ang puso, sapagkat dito nagmumula ang bukal ng buhay. Bantayan ang mga pintuan: ang pinapanood, sinasamahan, at pinapapasok sa tahanan. Hindi kailangan ng mananampalataya ang paranoia, pagbabantay lamang."),
+        ],
+      },
+      {
+        heading: t("Filled with the Spirit, together", "Napuno ng Espiritu, magkakasama"),
+        body: [
+          t("Ephesians 5:15-20 gives the positive side: be careful how you walk, not as unwise but as wise, do not get drunk with wine but be filled with the Spirit, addressing one another in psalms and hymns and spiritual songs. The verb is continuous: keep on being filled. Worship, thanksgiving and the Word fill the space where the old master lived.", "Ibinibigay ng Efeso 5:15-20 ang positibong panig: mag-ingat sa paglakad, hindi gaya ng mga mangmang kundi ng marunong, huwag malasing sa alak kundi mapuno ng Espiritu, nag-aawitan ng mga salmo, himno at awiting espirituwal. Tuloy-tuloy ang pandiwa: patuloy na mapuno. Pinupuno ng pagsamba, pasasalamat at Salita ang puwang kung saan nakatira ang dating panginoon."),
+          t("Hebrews 10:23-25 adds the community: hold fast the confession of our hope, and do not neglect meeting together, but encourage one another. Many who fall do so after drifting away from the church. If you work abroad, find a fellowship, even a small online group. Freedom is rarely kept alone.", "Idinadagdag ng Hebreo 10:23-25 ang komunidad: panghawakan ang pagpapahayag ng ating pag-asa, at huwag pabayaan ang pagtitipon, kundi mag-ibayo ang pagpapalakas-loob sa isa't isa. Marami sa mga nadadapa ay nangyari ito pagkatapos lumayo sa iglesia. Kung nagtatrabaho ka sa ibang bansa, humanap ng pagtitipon, kahit maliit na online group. Bihirang mapanatili ang kalayaan nang mag-isa."),
+        ],
+      },
+      {
+        heading: t("When you fall: resist, rise, restore", "Kapag nadapa: lumaban, bumangon, ibalik"),
+        body: [
+          t("1 Peter 5:8-10 tells us to be sober-minded and watchful because the devil prowls like a roaring lion, and to resist him firm in the faith, knowing others suffer the same. Then it promises that after a little while the God of all grace will Himself restore, confirm, strengthen and establish you. The word restore, katartizo, was used for mending nets.", "Sinasabi ng 1 Pedro 5:8-10 na maging mahinahon at mapagbantay dahil ang diyablo ay gumagala na parang leong umuungal, at labanan ito nang matatag sa pananampalataya, na alam na ang iba ay nagdurusa rin ng gayon. Pagkatapos ay ipinapangako na pagkaraan ng maikling panahon ang Diyos ng lahat ng biyaya ang Siya mismong magpapanumbalik, magpapatibay, magpapalakas at magpapatatag sa iyo. Ang salitang katartizo ay ginamit sa pagkukumpuni ng lambat."),
+          t("A relapse is not the end. Confess quickly, tell a trusted friend, return to the means of grace and start again that day. The enemy wants you to hide in shame; the Father runs to meet the returning child. Keep short accounts, keep the Word daily, and keep going.", "Hindi wakas ang muling pagbagsak. Magtapat agad, sabihin sa mapagkakatiwalaang kaibigan, bumalik sa mga paraan ng biyaya at magsimulang muli sa mismong araw na iyon. Gusto ng kaaway na magtago ka sa hiya; tumatakbo ang Ama upang salubungin ang anak na bumabalik. Panatilihing maayos ang ugnayan, kunin ang Salita araw-araw, at magpatuloy."),
+        ],
+      },
+    ],
+    stories: [
+      {
+        title: t("Chased, imprisoned, and still holding on", "Hinabol, ikinulong, at nanatiling nakahawak"),
+        who: "Brother Yun",
+        where: t("Henan, China and Germany", "Henan, Tsina at Alemanya"),
+        when: "1958-2001",
+        story: [
+          t("Liu Zhenying, known as Brother Yun, was born into a poor farming family in Henan, China, in 1958. He became a Christian as a young man and soon became a leader in the house church movement, which was not officially permitted. He was arrested several times, imprisoned and beaten, and in 1997 was sentenced to a long term in prison.", "Si Liu Zhenying, kilala bilang Brother Yun, ay isinilang sa mahirap na pamilyang magsasaka sa Henan, Tsina, noong 1958. Naging Kristiyano siya noong binata at hindi nagtagal ay naging lider sa kilusang house church, na hindi opisyal na pinahihintulutan. Ilang beses siyang inaresto, ikinulong at binugbog, at noong 1997 hinatulan ng mahabang pagkabilanggo."),
+          t("His book The Heavenly Man tells how he was released from prison in 2000 in a way he described as miraculous, and in 2001 he left China for Europe. He continued to speak about the persecuted church and to urge Christians to hold on in hardship. The details of his account rest largely on his own testimony, and the book has had its critics, but his imprisonment and faith are widely reported.", "Isinasalaysay ng aklat niyang The Heavenly Man kung paano siya nakalabas ng bilangguan noong 2000 sa paraang inilarawan niyang kababalaghan, at noong 2001 ay umalis siya ng Tsina patungong Europa. Nagpatuloy siyang magsalita tungkol sa inuusig na iglesia at hikayatin ang mga Kristiyano na manatiling matatag sa hirap. Nakasalalay ang mga detalye ng salaysay niya sa kanyang sariling patotoo, at may mga kritiko ang aklat, ngunit malawak na naiulat ang kanyang pagkabilanggo at pananampalataya."),
+        ],
+        lesson: t("Freedom is kept by clinging to Christ through the long haul, in fellowship and in the Word (Hebrews 10:23).", "Napapanatili ang kalayaan sa pagkapit kay Kristo sa mahabang panahon, sa pakikisama at sa Salita (Hebreo 10:23)."),
+        sources: [
+          { label: "Brother Yun (Wikipedia)", url: "https://en.wikipedia.org/wiki/Brother_Yun" },
+        ],
+      },
+    ],
+  },
   // NEXT
 };

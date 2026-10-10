@@ -277,4 +277,142 @@ export const EXTRA: ExtraSet = {
       },
     ],
   },
+  "c-walking-in-purity": {
+    deeper: [
+      {
+        heading: t("What \"holy\" and \"pure\" really mean", "Ano talaga ang ibig sabihin ng \"banal\" at \"malinis\""),
+        body: [
+          t(
+            "The Hebrew word qadosh (holy) means set apart, belonging to God. In 1 Peter 1:15-16 God says, \"Be holy, because I am holy.\" Purity is not first about a list of forbidden things; it is about belonging. The Greek word hagnos (pure) in 1 Timothy 5:22 and 1 John 3:3 carries the idea of being clean and undivided, with a heart that is not mixed with other loves.",
+            "Ang salitang Hebreo na qadosh (banal) ay nangangahulugang inihiwalay, pag-aari ng Diyos. Sa 1 Pedro 1:15-16 sinasabi ng Diyos, \"Maging banal kayo, sapagkat Ako ay banal.\" Ang kalinisan ay hindi muna tungkol sa listahan ng mga bawal; tungkol ito sa pagiging pag-aari ng Diyos. Ang salitang Griyego na hagnos (malinis) sa 1 Timoteo 5:22 at 1 Juan 3:3 ay may kahulugang malinis at hindi hati, pusong hindi hinahaluan ng ibang pag-ibig."
+          ),
+          t(
+            "Jesus said the pure in heart will see God (Matthew 5:8). Purity includes the eyes, the thoughts and the motives, not only the body. And it is not only about sex: Paul asks us to keep clean in speech, in money and in the way we treat others (Ephesians 5:3-4).",
+            "Sinabi ni Jesus na ang may malinis na puso ay makakakita sa Diyos (Mateo 5:8). Kasama sa kalinisan ang mga mata, isip at hangarin, hindi lang ang katawan. At hindi lang ito tungkol sa sekswalidad: hinihiling ni Pablo na maging malinis tayo sa pananalita, sa pera at sa pakikitungo sa kapwa (Efeso 5:3-4)."
+          ),
+        ],
+      },
+      {
+        heading: t("Purity is for everyone: single, married, widowed", "Para sa lahat ang kalinisan: single, kasal, balo"),
+        body: [
+          t(
+            "Hebrews 13:4 says marriage should be honored by all and the marriage bed kept pure. 1 Thessalonians 4:3-8 says God's will is for us to avoid sexual immorality and to control our own bodies in holiness and honor. Single believers wait with hope, married believers stay faithful in heart and body, and widowed or separated believers stay faithful too. The call is the same; the situations are different.",
+            "Sinasabi ng Hebreo 13:4 na dapat igalang ng lahat ang kasal at panatilihing malinis ang higaan ng mag-asawa. Sinasabi ng 1 Tesalonica 4:3-8 na kalooban ng Diyos na iwasan natin ang imoralidad at pamahalaan ang sariling katawan sa kabanalan at karangalan. Naghihintay nang may pag-asa ang mga single, nananatiling tapat ang mga may-asawa sa puso at katawan, at tapat din ang mga balo o hiwalay. Iisa ang tawag; iba-iba lang ang sitwasyon."
+          ),
+          t(
+            "For many OFWs, long separation from a spouse or the loneliness of living alone makes this very real. Honesty helps: admit the loneliness, protect your video calls and chats with your family, avoid secret friendships with a coworker, and keep your phone and room free of what pulls you down.",
+            "Para sa maraming OFW, totoong-totoo ito dahil sa matagal na paghihiwalay sa asawa o sa kalungkutan ng mag-isa. Nakatutulong ang katapatan: aminin ang kalungkutan, ingatan ang video call at chat ninyo ng pamilya, iwasan ang lihim na pakikipagkaibigan sa katrabaho, at panatilihing malaya ang telepono at silid mo sa mga bagay na humihila sa iyo pababa."
+          ),
+        ],
+      },
+      {
+        heading: t("Flee and pursue", "Tumakas at ituloy"),
+        body: [
+          t(
+            "2 Timothy 2:22 gives two commands: flee youthful passions, and pursue righteousness, faith, love and peace, along with those who call on the Lord from a pure heart. Joseph is the picture of fleeing (Genesis 39:12): he did not stay to argue with temptation. Fleeing alone leaves an empty space, so pursue something good: serve, study, pray, build healthy friendships.",
+            "Dalawang utos ang ibinibigay ng 2 Timoteo 2:22: tumakas sa mga pagnanasa ng kabataan, at ituloy ang katuwiran, pananampalataya, pag-ibig at kapayapaan, kasama ng mga tumatawag sa Panginoon mula sa malinis na puso. Larawan si Jose ng pagtakas (Genesis 39:12): hindi siya nanatili para makipagtalo sa tukso. Kapag pagtakas lang, may bakanteng espasyo, kaya ituloy ang mabuti: maglingkod, mag-aral, manalangin, bumuo ng malulusog na pagkakaibigan."
+          ),
+          t(
+            "Psalm 51:10 is the prayer for the one who has failed: \"Create in me a clean heart, O God.\" Purity is not only kept; it is also given. 1 John 1:9 promises that when we confess, He cleanses us from all unrighteousness. Start again today, and do not let shame keep you away from Him.",
+            "Ang Awit 51:10 ang panalangin ng nabigo: \"Lumikha Ka sa akin ng malinis na puso, O Diyos.\" Hindi lang iningatan ang kalinisan; ibinibigay din ito. Ipinapangako ng 1 Juan 1:9 na kapag nagtapat tayo, nililinis Niya tayo sa lahat ng kalikuan. Magsimula ulit ngayon, at huwag hayaang ilayo ka ng hiya sa Kanya."
+          ),
+        ],
+      },
+    ],
+    stories: [
+      {
+        title: t("Waiting in love: Jim and Elisabeth Elliot", "Naghintay sa pag-ibig: sina Jim at Elisabeth Elliot"),
+        who: "Jim Elliot and Elisabeth Elliot",
+        where: t("United States and Ecuador", "Estados Unidos at Ecuador"),
+        when: "1948-1956",
+        story: [
+          t(
+            "Jim Elliot and Elisabeth Howard met as students and, from about 1948, kept in touch largely by letter while both felt called to missionary work. They did not rush into marriage. Each sought to put Christ first, even above their love for each other, and they spent years praying about whether and when to marry. Their daughter Valerie later published their letters in the book Devotedly.",
+            "Nagkakilala sina Jim Elliot at Elisabeth Howard bilang mga estudyante at, mula noong mga 1948, nagkaroon sila ng ugnayan sa pamamagitan ng sulat habang pareho silang tinawag sa misyon. Hindi sila nagmadali sa pag-aasawa. Sinikap ng bawat isa na unahin si Cristo, kahit higit sa pag-ibig nila sa isa't isa, at ilang taon silang nanalangin kung kailan at kung magpapakasal ba. Inilathala ng anak nilang si Valerie ang kanilang mga sulat sa aklat na Devotedly."
+          ),
+          t(
+            "They married in a civil ceremony in Quito, Ecuador, on 8 October 1953. In January 1956 Jim was killed with four other missionaries by Waorani warriors in Ecuador. Elisabeth later wrote about their courtship and her convictions on waiting on God in her book Passion and Purity (1984), which has helped many young believers.",
+            "Ikinasal sila sa isang seremonyang sibil sa Quito, Ecuador, noong Oktubre 8, 1953. Noong Enero 1956, napatay si Jim kasama ng apat pang misyonero ng mga mandirigmang Waorani sa Ecuador. Isinulat ni Elisabeth pagkatapos ang tungkol sa kanilang panliligaw at sa paniniwala niya sa paghihintay sa Diyos sa aklat na Passion and Purity (1984), na nakatulong sa maraming batang mananampalataya."
+          ),
+        ],
+        lesson: t(
+          "Purity grows when Christ is first: those who wait on Him in love and honor find that obedience is not a loss but a gift.",
+          "Lumalago ang kalinisan kapag si Cristo ang una: ang mga naghihintay sa Kanya sa pag-ibig at karangalan ay natutuklasan na ang pagsunod ay hindi pagkawala kundi regalo."
+        ),
+        sources: [
+          { label: "Wheaton Archives: Elisabeth Elliot", url: "https://exhibits.archives.wheaton.edu/to-carry-the-light-further/biographies/elisabeth-elliot.html" },
+          { label: "Wikipedia: Jim Elliot", url: "https://en.wikipedia.org/wiki/Jim_Elliot" },
+        ],
+      },
+    ],
+  },
+  "c-accountability-community": {
+    deeper: [
+      {
+        heading: t("\"One another\": the Christian life is shared", "\"Isa't isa\": ibinabahagi ang buhay Kristiyano"),
+        body: [
+          t(
+            "The New Testament uses the phrase \"one another\" dozens of times: love one another, bear one another's burdens (Galatians 6:2), confess your sins to one another (James 5:16), encourage one another daily (Hebrews 3:13). Sin is deceitful, Hebrews 3:13 says, and it hardens us when we are alone. Another believer sees what we cannot see in ourselves.",
+            "Dose-dosenang beses ginagamit ng Bagong Tipan ang pariralang \"isa't isa\": mag-ibigan, pasanin ang pasanin ng isa't isa (Galacia 6:2), magtapat ng kasalanan sa isa't isa (Santiago 5:16), mag-udyok araw-araw (Hebreo 3:13). Mapanlinlang ang kasalanan, ayon sa Hebreo 3:13, at pinatitigas tayo kapag nag-iisa. Nakikita ng ibang mananampalataya ang hindi natin nakikita sa sarili."
+          ),
+          t(
+            "Ecclesiastes 4:9-12 says two are better than one, and a cord of three strands is not quickly broken. Proverbs 27:17 says iron sharpens iron, and Proverbs 27:6 says faithful are the wounds of a friend. Real accountability is not spying or shaming; it is love that cares enough to ask the hard question.",
+            "Sinasabi ng Eclesiastes 4:9-12 na mas mabuti ang dalawa kaysa isa, at ang lubid na tatlong himaymay ay hindi madaling maputol. Sinasabi ng Kawikaan 27:17 na ang bakal ay nagpapatalas sa bakal, at ng Kawikaan 27:6 na tapat ang sugat mula sa kaibigan. Ang tunay na pananagutan ay hindi pag-espiya o pagpapahiya; pag-ibig ito na sapat ang malasakit para itanong ang mahirap na tanong."
+          ),
+        ],
+      },
+      {
+        heading: t("Confession and restoration", "Pagtatapat at pagpapanumbalik"),
+        body: [
+          t(
+            "James 5:16 links confession with healing: confess to one another and pray for one another, so that you may be healed. Galatians 6:1 says that when someone is caught in a sin, those who are spiritual should restore him gently, watching themselves. The goal is restoration, not punishment. A safe friend listens, prays, keeps confidence, and points back to Christ, not to himself.",
+            "Iniuugnay ng Santiago 5:16 ang pagtatapat sa paghilom: magtapat sa isa't isa at ipanalangin ang isa't isa, upang kayo ay gumaling. Sinasabi ng Galacia 6:1 na kapag may nahuli sa kasalanan, dapat siyang ibalik nang malumanay ng mga espirituwal, habang nagbabantay sa sarili. Ang layunin ay pagpapanumbalik, hindi parusa. Ang ligtas na kaibigan ay nakikinig, nananalangin, nag-iingat ng lihim, at itinuturo ka kay Cristo, hindi sa sarili niya."
+          ),
+          t(
+            "Choose carefully. Pick someone of the same sex, mature in faith, who is not afraid of you and who will not gossip. Pastors and church leaders have a role too (Hebrews 13:17). Matthew 18:15-17 shows a patient path for dealing with persistent sin, beginning privately.",
+            "Pumili nang maingat. Humanap ng kapareho mong kasarian, matured sa pananampalataya, hindi natatakot sa iyo at hindi tsismoso. May papel din ang mga pastor at lider ng iglesya (Hebreo 13:17). Ipinapakita ng Mateo 18:15-17 ang mahabang-pasensyang landas para sa patuloy na kasalanan, simula sa pribadong paraan."
+          ),
+        ],
+      },
+      {
+        heading: t("Community when you are far from home", "Komunidad kapag malayo ka sa tahanan"),
+        body: [
+          t(
+            "Hebrews 10:24-25 urges us not to give up meeting together, but to stir one another up to love and good works. In a foreign country, a small Bible study, an OFW fellowship or a local church can be your spiritual family. Isolation is dangerous: most secret sin grows in secret.",
+            "Hinihikayat tayo ng Hebreo 10:24-25 na huwag tumigil sa pagtitipon, kundi mag-udyok sa isa't isa sa pag-ibig at mabubuting gawa. Sa ibang bansa, ang maliit na Bible study, OFW fellowship o lokal na iglesya ay maaaring maging espirituwal mong pamilya. Mapanganib ang pag-iisa: karamihan ng lihim na kasalanan ay lumalaki sa lihim."
+          ),
+          t(
+            "Practical steps: ask one trusted person to check in weekly with three honest questions; agree on a code word for \"I need help now\"; use technology for good, such as a regular call with a brother or sister back home. Accountability does not replace the Spirit; it is one of the ways the Spirit helps us.",
+            "Praktikal na hakbang: hilingin sa isang pinagkakatiwalaang tao na mangumusta linggu-linggo sa pamamagitan ng tatlong tapat na tanong; magkasundo sa code word para sa \"kailangan ko ng tulong ngayon\"; gamitin ang teknolohiya sa mabuti, tulad ng regular na tawag sa kapatid sa pananampalataya sa Pilipinas. Hindi pinapalitan ng pananagutan ang Espiritu; isa ito sa mga paraan ng pagtulong ng Espiritu sa atin."
+          ),
+        ],
+      },
+    ],
+    stories: [
+      {
+        title: t("The Modesto agreement", "Ang kasunduan sa Modesto"),
+        who: "Billy Graham and his team",
+        where: t("Modesto, California, USA", "Modesto, California, USA"),
+        when: "1948",
+        story: [
+          t(
+            "In 1948 the young evangelist Billy Graham was holding meetings in Modesto, California, with his team: Cliff Barrows, George Beverly Shea and Grady Wilson. Graham asked each man to go to his room for an hour and list the problems that evangelists commonly face. When they came back, the lists were remarkably similar.",
+            "Noong 1948, nagdaraos ng mga pagtitipon sa Modesto, California ang batang ebanghelistang si Billy Graham kasama ang kanyang koponan: sina Cliff Barrows, George Beverly Shea at Grady Wilson. Hiniling ni Graham sa bawat isa na pumasok sa silid nila sa loob ng isang oras at ilista ang mga karaniwang problema ng mga ebanghelista. Pagbalik nila, halos magkakapareho ang mga listahan."
+          ),
+          t(
+            "Together they made a set of commitments covering money, sexual morality, publicity and cooperation with local churches. It was later called the Modesto Manifesto. Graham described it as an informal understanding among themselves. It became well known when scandals broke other ministries, and the team's habit of openness and mutual checking helped them stay above reproach for decades.",
+            "Magkakasama silang gumawa ng mga pangako tungkol sa pera, moralidad sa sekswalidad, publisidad at pakikipagtulungan sa mga lokal na iglesya. Tinawag itong Modesto Manifesto pagkatapos. Inilarawan ito ni Graham bilang di-pormal na pagkakaunawaan nila. Nakilala ito nang magkaroon ng eskandalo sa ibang ministeryo, at nakatulong ang kanilang gawi ng pagiging bukas at pagbabantayan sa isa't isa para manatiling walang kapintasan sa loob ng mga dekada."
+          ),
+        ],
+        lesson: t(
+          "Even people God uses greatly need brothers who will watch their back; accountability set up before the temptation is wiser than repentance after it.",
+          "Kahit ang mga ginagamit nang malaki ng Diyos ay nangangailangan ng mga kapatid na magbabantay sa kanila; mas matalino ang pananagutang inihanda bago ang tukso kaysa pagsisisi pagkatapos nito."
+        ),
+        sources: [
+          { label: "Billy Graham Library: The Modesto Manifesto", url: "https://billygrahamlibrary.org/on-this-date-the-modesto-manifesto/" },
+          { label: "Christianity Today: Lead Us Not Into Scandal", url: "https://christianitytoday.com/2018/02/lead-us-not-into-scandal" },
+        ],
+      },
+    ],
+  },
 };
