@@ -10,7 +10,7 @@ import { PassageSheet } from "@/components/bible/passage-sheet";
 import { LivePresenter, type PresentSlide } from "@/components/teaching/live-presenter";
 import { DEEP_PARTS, partLines } from "@/lib/content/deep/types";
 import { deepKey } from "@/lib/content/deep/load";
-import { useDeep } from "@/lib/content/deep/use-deep";
+import { useDeep, useExtra } from "@/lib/content/deep/use-deep";
 import { useAuth } from "@/lib/hooks/use-auth";
 import { useMyChurch } from "@/lib/hooks/use-church";
 import { LEADER_RANK, NATIONAL_ADMIN_UID } from "@/lib/church";
@@ -96,6 +96,7 @@ export function TeachGuide({
   const { lang } = useLanguage();
   const { canTeach, presenterAssignment, loading } = useCanTeach(courseId, lesson.id);
   const deep = useDeep(deepKey("course", courseId), lesson.id);
+  const extra = useExtra(deepKey("course", courseId), lesson.id);
   const [slide, setSlide] = useState<number | null>(null);
   const [passage, setPassage] = useState<VerseRef | null>(null);
   const title = tx("Teaching Guide", "Gabay sa Pagtuturo");
@@ -193,6 +194,13 @@ export function TeachGuide({
     ? [
         ...baseParts.slice(0, 4),
         ...DEEP_PARTS.map((p) => ({ title: p.title, minutes: p.minutes, lines: partLines(deep, p.key) })),
+        // Deeper study and true stories, each on its own slides.
+        ...(extra?.deeper ?? []).map((d) => ({ title: d.heading, minutes: 3, lines: d.body })),
+        ...(extra?.stories ?? []).map((s) => ({
+          title: { en: `True story: ${s.title.en}`, tl: `Totoong kuwento: ${s.title.tl}` },
+          minutes: 4,
+          lines: [...s.story, s.lesson],
+        })),
         baseParts.find((p) => p.title.en === "Challenge and memory verse")!,
       ]
     : baseParts;

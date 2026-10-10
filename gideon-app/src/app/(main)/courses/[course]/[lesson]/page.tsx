@@ -7,7 +7,8 @@ import { TeachLink } from "@/components/courses/teach-client";
 import { LessonGate } from "@/components/courses/lesson-access";
 import { verseLabel } from "@/lib/bible/verse-ref";
 import { DeepTeaching } from "@/components/teaching/deep-teaching";
-import { deepKey, loadDeep } from "@/lib/content/deep/load";
+import { deepKey, loadDeep, loadExtra } from "@/lib/content/deep/load";
+import { LessonExtras } from "@/components/teaching/lesson-extras";
 
 // Static export: every lesson gets its own prebuilt page. The text is printed
 // in English and Tagalog at build time (no JavaScript for it).
@@ -50,6 +51,7 @@ export default async function CourseLessonPage({ params }: { params: Promise<{ c
   const { course, lesson, index } = found;
   const next = course.lessons[index + 1];
   const deep = await loadDeep(deepKey("course", course.id), lesson.id);
+  const extra = await loadExtra(deepKey("course", course.id), lesson.id);
 
   return (
     <div>
@@ -71,6 +73,8 @@ export default async function CourseLessonPage({ params }: { params: Promise<{ c
         </Section>
 
         {deep && <DeepTeaching deep={deep} />}
+
+        {extra && <LessonExtras extra={extra} />}
 
         {deep && (
           <h2 className="px-1 pt-2 font-heading text-lg font-semibold">

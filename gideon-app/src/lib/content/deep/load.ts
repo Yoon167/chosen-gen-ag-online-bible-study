@@ -1,4 +1,5 @@
 import type { DeepLesson, DeepSet } from "./types";
+import type { ExtraSet, LessonExtra } from "./extra-types";
 
 /**
  * Each course and Journey level is its own chunk, fetched only when one of its
@@ -38,4 +39,27 @@ export async function loadDeep(group: string, lessonId: string): Promise<DeepLes
   if (!load) return null;
   const mod = await load().catch(() => null);
   return mod?.DEEP[lessonId] ?? null;
+}
+
+/** Deeper study and true stories for Course lessons, one chunk per course. */
+const EXTRA_LOADERS: Record<string, () => Promise<{ EXTRA: ExtraSet }>> = {
+  "course:foundation": () => import("./extra/foundation"),
+  "course:growth": () => import("./extra/growth"),
+  "course:theology": () => import("./extra/theology"),
+  "course:freedom": () => import("./extra/freedom"),
+  "course:healing": () => import("./extra/healing"),
+  "course:holiness": () => import("./extra/holiness"),
+  "course:chains": () => import("./extra/chains"),
+  "course:stewardship": () => import("./extra/stewardship"),
+  "course:truth": () => import("./extra/truth"),
+  "course:disciple": () => import("./extra/disciple"),
+  "course:advanced": () => import("./extra/advanced"),
+};
+
+export async function loadExtra(group: string, lessonId: string): Promise<LessonExtra | null> {
+  const load = EXTRA_LOADERS[group];
+  if (!load) return null;
+  const mod = await load().catch(() => null);
+  const extra = mod?.EXTRA[lessonId];
+  return extra && (extra.deeper.length || extra.stories.length) ? extra : null;
 }
