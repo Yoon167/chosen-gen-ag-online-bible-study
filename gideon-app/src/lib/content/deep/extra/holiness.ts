@@ -415,4 +415,73 @@ export const EXTRA: ExtraSet = {
       },
     ],
   },
+  "c-victory-over-sin": {
+    deeper: [
+      {
+        heading: t("Dead to sin, alive to God", "Patay sa kasalanan, buháy sa Diyos"),
+        body: [
+          t(
+            "Romans 6 is the great chapter of victory. Paul says we died with Christ and rose with Him, so sin is no longer our master (Romans 6:6-7, 14). The key verb in 6:11 is \"consider\" (Greek logizomai), which means to count it as true, the way you count a bank balance. We do not try to become dead to sin; we count on what Christ has already done.",
+            "Ang Roma 6 ang dakilang kabanata ng tagumpay. Sinasabi ni Pablo na namatay tayong kasama ni Cristo at muling nabuhay na kasama Niya, kaya hindi na panginoon natin ang kasalanan (Roma 6:6-7, 14). Ang pangunahing pandiwa sa 6:11 ay \"ituring\" (Griyego: logizomai), na ang ibig sabihin ay ituring na totoo, parang pagbilang ng laman ng bank account. Hindi natin sinisikap na mamatay sa kasalanan; umaasa tayo sa nagawa na ni Cristo."
+          ),
+          t(
+            "Then Paul gives the next step: offer yourselves to God as those who have been brought from death to life (Romans 6:13). Victory begins with who we are in Christ, and is lived out one choice at a time.",
+            "Pagkatapos ay ibinibigay ni Pablo ang susunod na hakbang: ihandog ang sarili sa Diyos bilang mga dinala mula sa kamatayan tungo sa buhay (Roma 6:13). Nagsisimula ang tagumpay sa kung sino tayo kay Cristo, at isinasabuhay ito sa bawat desisyon."
+          ),
+        ],
+      },
+      {
+        heading: t("The struggle is real: Romans 7 and Romans 8", "Totoo ang laban: Roma 7 at Roma 8"),
+        body: [
+          t(
+            "Romans 7:15-25 describes the cry, \"I do not do what I want, but what I hate.\" Christians have debated whether Paul describes his past or his present, but all agree that every believer knows the tension. The answer comes in Romans 8:1-2: there is no condemnation for those in Christ, and the Spirit sets us free. We fight sin from acceptance, not for acceptance.",
+            "Inilalarawan ng Roma 7:15-25 ang daing, \"Hindi ko ginagawa ang gusto ko, kundi ang kinamumuhian ko.\" Nagkakaiba ang mga Kristiyano kung ang inilalarawan ba ni Pablo ay ang nakaraan o kasalukuyan niya, pero lahat ay sumasang-ayon na nararanasan ng bawat mananampalataya ang tensyong ito. Ang sagot ay nasa Roma 8:1-2: walang hatol sa mga na kay Cristo, at pinalalaya tayo ng Espiritu. Nilalabanan natin ang kasalanan mula sa pagtanggap, hindi para matanggap."
+          ),
+          t(
+            "Romans 8:13 says that by the Spirit we put to death the deeds of the body. Notice we do it, but by the Spirit. Galatians 5:16 says walk by the Spirit and you will not carry out the desires of the flesh. Victory is not a feeling; it is a walk, a daily step with the Spirit's help.",
+            "Sinasabi ng Roma 8:13 na sa pamamagitan ng Espiritu ay pinapatay natin ang mga gawa ng katawan. Pansinin na tayo ang kumikilos, pero sa pamamagitan ng Espiritu. Sinasabi ng Galacia 5:16 na lumakad ayon sa Espiritu at hindi ninyo gagawin ang pagnanasa ng laman. Hindi damdamin ang tagumpay; paglakad ito, araw-araw na hakbang na may tulong ng Espiritu."
+          ),
+        ],
+      },
+      {
+        heading: t("Falling is not the end", "Ang pagkadapa ay hindi katapusan"),
+        body: [
+          t(
+            "Proverbs 24:16 says a righteous man falls seven times and rises again. The mark of a believer is not that he never falls but that he gets up and returns to the Lord. 1 John 2:1 gives the promise: if anyone sins, we have an advocate with the Father, Jesus Christ the righteous. Run to Him, not away from Him.",
+            "Sinasabi ng Kawikaan 24:16 na ang matuwid ay pitong ulit na mabubuwal at babangon pa rin. Ang tanda ng mananampalataya ay hindi ang hindi kailanman pagkabuwal kundi ang pagbangon at pagbabalik sa Panginoon. Ibinibigay ng 1 Juan 2:1 ang pangako: kung may magkasala, mayroon tayong Tagapamagitan sa Ama, si Jesu-Cristo na matuwid. Tumakbo ka sa Kanya, hindi palayo."
+          ),
+          t(
+            "Ephesians 6:10-18 gives the armor of God. Notice it is God's armor, not ours, and that we are told to stand. Practical habits help: Scripture every day, honest prayer, church, accountability, and a fast exit from known traps. Over time, God changes our desires and not just our behavior (Philippians 2:13).",
+            "Ibinibigay ng Efeso 6:10-18 ang baluti ng Diyos. Pansinin na baluti ito ng Diyos, hindi natin, at inuutusan tayong tumayo. Nakatutulong ang mga praktikal na gawi: Kasulatan araw-araw, tapat na panalangin, iglesya, pananagutan, at mabilis na pag-alis sa mga kilalang bitag. Sa paglipas ng panahon, binabago ng Diyos ang ating mga pagnanasa at hindi lang ang ating asal (Filipos 2:13)."
+          ),
+        ],
+      },
+    ],
+    stories: [
+      {
+        title: t("From slave ship captain to \"Amazing Grace\"", "Mula kapitan ng barkong alipin hanggang \"Amazing Grace\""),
+        who: "John Newton",
+        where: t("England and the Atlantic Ocean", "Inglatera at Karagatang Atlantiko"),
+        when: "1725-1807",
+        story: [
+          t(
+            "John Newton went to sea young and worked on slave ships, eventually captaining three voyages that carried captive Africans to the West Indies between 1750 and 1754. In March 1748, during a violent storm at sea, he cried out to God for mercy, and he marked that day as the beginning of his turning to faith for the rest of his life. His change was gradual: sources note he kept working in the slave trade for some years afterward, until poor health ended his sea career around 1754.",
+            "Bata pa si John Newton nang magsimula sa dagat at nagtrabaho sa mga barkong nagdadala ng alipin, at naging kapitan ng tatlong biyahe na nagdala ng mga bihag na Aprikano sa West Indies mula 1750 hanggang 1754. Noong Marso 1748, sa gitna ng mabangis na bagyo sa dagat, sumigaw siya sa Diyos para sa awa, at tinandaan niya ang araw na iyon bilang simula ng pagbaling niya sa pananampalataya habambuhay. Unti-unti ang kanyang pagbabago: ayon sa mga pinagkunan, ilang taon pa siyang nanatili sa kalakalan ng alipin hanggang tapusin ng masamang kalusugan ang kanyang karera sa dagat noong mga 1754."
+          ),
+          t(
+            "Newton later became an Anglican minister, wrote hymns including \"Amazing Grace\" (published in 1779), and came to speak publicly against the slave trade. He lived to see Britain abolish it in 1807. He never forgot what he had been, and saw himself as a great sinner saved by a greater Savior.",
+            "Naging ministro ng Anglican si Newton pagkatapos, sumulat ng mga himno kabilang ang \"Amazing Grace\" (nilathala noong 1779), at hayagang nagsalita laban sa kalakalan ng alipin. Nabuhay siya hanggang makita ang pagbabawal nito sa Britanya noong 1807. Hindi niya nalimutan kung ano siya noon, at itinuring ang sarili bilang malaking makasalanang iniligtas ng mas dakilang Tagapagligtas."
+          ),
+        ],
+        lesson: t(
+          "Victory over sin is often a long road of growth, but the grace that began it never leaves; no past is too dark for Christ to redeem.",
+          "Madalas mahabang landas ng paglago ang tagumpay laban sa kasalanan, pero hindi umaalis ang biyayang nagsimula nito; walang nakaraang masyadong madilim para tubusin ni Cristo."
+        ),
+        sources: [
+          { label: "Wikipedia: John Newton", url: "https://en.wikipedia.org/wiki/John_Newton" },
+          { label: "Britannica: John Newton", url: "https://www.britannica.com/biography/John-Newton" },
+        ],
+      },
+    ],
+  },
 };
