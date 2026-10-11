@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Search, Sun } from "lucide-react";
+import { Search } from "lucide-react";
 import { VerseOfTheDayCard } from "@/components/home/verse-of-the-day-card";
 import { StreakCards } from "@/components/home/streak-cards";
 import { PlanProgressCard } from "@/components/home/plan-progress-card";
@@ -27,6 +27,7 @@ import { LanguageToggle } from "@/components/language-toggle";
 import { MusicToggle } from "@/components/music-toggle";
 import { InviteCard } from "@/components/invite-card";
 import { WhatsNewCard } from "@/components/home/whats-new-card";
+import { DailyLetter, HomeNewsletter } from "@/components/home/newsletter";
 import { useLanguage, useTx, type StringKey } from "@/lib/i18n";
 
 function greetingKey(): StringKey {
@@ -99,19 +100,7 @@ export default function HomePage() {
       </div>
 
       <div className="px-5">
-        <div className="flex items-start gap-3 rounded-2xl border border-border/70 bg-secondary/40 p-4">
-          <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-gold/25 text-gold-foreground">
-            <Sun className="size-4" />
-          </span>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              {t("home.encouragement")}
-            </p>
-            <p className="mt-1 text-sm leading-relaxed text-foreground/90">
-              {encouragement}
-            </p>
-          </div>
-        </div>
+        <DailyLetter text={encouragement} />
       </div>
 
       <Section title={tx("Your next step", "Ang susunod mong hakbang")} href="/journey" hrefLabel={tx("Journey", "Journey")}>
@@ -131,6 +120,10 @@ export default function HomePage() {
         <StreakCards />
         <WeeklySummaryCard />
       </div>
+
+      <Section title={tx("Newsletter", "Newsletter")} href="/whats-new" hrefLabel={tx("All updates", "Lahat ng update")}>
+        <HomeNewsletter />
+      </Section>
 
       <Section title={t("home.events")} href="/meetings" hrefLabel={t("home.meetingCenter")}>
         <UpcomingEventCard />

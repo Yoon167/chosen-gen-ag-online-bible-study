@@ -35,20 +35,24 @@ export function WhatsNewCard() {
 
   if (!show) return null;
   return (
-    <div className="relative flex items-center gap-3 rounded-2xl border border-gold/50 bg-gold/10 p-4">
-      <Link href="/whats-new" className="flex min-w-0 flex-1 items-center gap-3" onClick={markReleaseSeen}>
-        <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-gold/30 text-gold-foreground">
-          <Sparkles className="size-5" />
+    <div className="news-paper news-unfold relative rounded-sm px-4 pb-3.5 pt-3">
+      <Link href="/whats-new" className="block" onClick={markReleaseSeen}>
+        <span className="news-rule flex items-center justify-between border-b-2 border-double pb-1.5 pr-6">
+          <span className="flex items-center gap-1.5 font-heading text-sm font-black uppercase tracking-tight">
+            <Sparkles className="size-4 text-[#a8862a]" />
+            {tx("New in", "Bago sa")} <span className="text-[#1E3A5F]">Anointed Academy</span>
+          </span>
         </span>
-        <span className="min-w-0 flex-1">
-          <span className="block text-xs font-semibold text-gold-foreground">{tx("New in Anointed Academy", "Bago sa Anointed Academy")}</span>
-          <span className="block text-sm font-medium leading-snug">{LATEST_RELEASE.title[lang]}</span>
+        <span className="mt-2 block font-heading text-base font-bold leading-snug">{LATEST_RELEASE.title[lang]}</span>
+        <span className="mt-0.5 block line-clamp-2 font-heading text-[0.8125rem] leading-relaxed opacity-80">{LATEST_RELEASE.items[0]?.[lang]}</span>
+        <span className="mt-1.5 flex items-center justify-end gap-0.5 text-[0.6875rem] font-semibold uppercase tracking-wider text-[#1E3A5F]">
+          {tx("Read the update", "Basahin ang update")}
+          <ChevronRight className="size-3.5" />
         </span>
-        <ChevronRight className="size-4 text-muted-foreground" />
       </Link>
       <button
         aria-label={tx("Dismiss", "Isara")}
-        className="absolute right-1.5 top-1.5 rounded-full p-1 text-muted-foreground"
+        className="absolute right-2 top-2.5 rounded-full p-1 opacity-60"
         onClick={() => {
           markReleaseSeen();
           setShow(false);
