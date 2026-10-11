@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Award, Check, ChevronRight, Lock } from "lucide-react";
+import { Award, Lock } from "lucide-react";
+import { BookCover } from "@/components/shared/book-cover";
 import { cn } from "@/lib/utils";
 import { useLanguage, useTx } from "@/lib/i18n";
 import { JOURNEY_LEVELS } from "@/lib/content/journey";
@@ -20,8 +21,8 @@ export function JourneyLevels() {
   const locked = !access.unlocked;
 
   return (
-    <div className="space-y-2">
-      {JOURNEY_LEVELS.map((level) => {
+    <div className="book-shelf grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3">
+      {JOURNEY_LEVELS.map((level, i) => {
         const s = journey.stats(level.level);
         const isCurrent = journey.currentLevel === level.level;
         return (
@@ -29,37 +30,46 @@ export function JourneyLevels() {
             key={level.level}
             href={locked ? "/church" : `/journey/levels/${level.level}`}
             aria-disabled={locked}
-            className={cn(
-              "flex items-center gap-3 rounded-2xl border bg-card p-3.5",
-              isCurrent && !locked ? "border-primary/50 ring-1 ring-primary/20" : "border-border/70",
-              locked && "opacity-60"
-            )}
+            className={cn("book-link group flex flex-col outline-none", locked && "opacity-70")}
           >
-            <span
-              className={cn(
-                "flex size-9 shrink-0 items-center justify-center rounded-full text-sm font-semibold",
-                s.complete ? "bg-gold text-gold-foreground" : isCurrent ? "bg-primary text-primary-foreground" : "bg-muted"
-              )}
-            >
-              {s.complete ? <Award className="size-4.5" /> : level.level}
-            </span>
-            <span className="min-w-0 flex-1">
-              <span className="block text-sm font-medium">{level.title[lang]}</span>
-              <span className="block text-xs text-muted-foreground">
-                {s.complete
-                  ? tx("Completed", "Natapos na")
-                  : `${s.done} / ${s.total} ${tx("lessons", "aralin")}${
-                      s.lessonsDone && !s.checkpointDone ? tx(" · mentor checkpoint next", " · susunod ang mentor checkpoint") : ""
-                    }`}
+            <BookCover
+              index={i}
+              kicker={tx(`Level ${level.level}`, `Antas ${level.level}`)}
+              emblem={
+                locked ? (
+                  <Lock className="size-5" />
+                ) : s.complete ? (
+                  <Award className="size-6" />
+                ) : (
+                  <span className="font-heading text-xl font-bold">{level.level}</span>
+                )
+              }
+              title={level.title[lang]}
+              ribbon={s.done > 0}
+            />
+            <span className="mt-4 block min-w-0">
+              <span
+                className={cn(
+                  "block text-[0.625rem] font-semibold uppercase tracking-wide",
+                  s.complete ? "text-gold-foreground" : isCurrent && !locked ? "text-primary" : "text-muted-foreground"
+                )}
+              >
+                {s.complete ? tx("Completed", "Natapos na") : isCurrent && !locked ? tx("You are here", "Nandito ka") : `${s.total} ${tx("lessons", "aralin")}`}
               </span>
+              <span className="mt-0.5 block font-heading text-sm font-semibold leading-snug group-hover:text-primary">{level.title[lang]}</span>
+              <span className="mt-1 block line-clamp-3 text-xs leading-relaxed text-muted-foreground">{level.summary[lang]}</span>
+              <span className="mt-2 flex items-center gap-2">
+                <span className="block h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
+                  <span className="block h-full rounded-full bg-[#D4AF37]" style={{ width: `${s.total ? (s.done / s.total) * 100 : 0}%` }} />
+                </span>
+                <span className="text-[0.625rem] tabular-nums text-muted-foreground">
+                  {s.done}/{s.total}
+                </span>
+              </span>
+              {s.lessonsDone && !s.checkpointDone && (
+                <span className="mt-1 block text-[0.625rem] text-primary">{tx("Mentor checkpoint next", "Susunod ang mentor checkpoint")}</span>
+              )}
             </span>
-            {locked ? (
-              <Lock className="size-4 text-muted-foreground" />
-            ) : s.complete ? (
-              <Check className="size-4 text-primary" />
-            ) : (
-              <ChevronRight className="size-4 text-muted-foreground" />
-            )}
           </Link>
         );
       })}
