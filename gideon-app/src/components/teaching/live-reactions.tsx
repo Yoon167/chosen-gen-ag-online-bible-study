@@ -102,7 +102,7 @@ export function ReactionsForPresenter({ churchId, startedAt }: { churchId: strin
         {questions.length > 0 && (
           <button
             onClick={() => setInbox(true)}
-            className={`inline-flex items-center gap-1 rounded-full px-3 py-1 font-semibold ${open.length ? "bg-amber-400 text-[#14112b]" : "bg-white/15 text-white"}`}
+            className={`inline-flex items-center gap-1 rounded-full px-3 py-1 font-semibold ${open.length ? "bg-amber-400 text-[#0f1d33]" : "bg-white/15 text-white"}`}
           >
             <MessageCircleQuestion className="size-3.5" />
             {open.length ? tx(`${open.length} question${open.length > 1 ? "s" : ""}`, `${open.length} tanong`) : tx("Questions", "Mga tanong")}

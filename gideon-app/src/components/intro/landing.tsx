@@ -8,7 +8,7 @@ import { toggleBackgroundMusic, useBackgroundMusic } from "@/lib/background-musi
 import { useTx } from "@/lib/i18n";
 
 /**
- * The first screen of every visit: the sunrise valley, then the Gideon name
+ * The first screen of every visit: the sunrise valley, then the Anointed Academy logo
  * and three ways in. `onboarded` is null while the profile is still loading
  * (the button then says Start; the welcome gate decides what comes next).
  */
@@ -33,7 +33,7 @@ export function Landing({
   });
 
   return (
-    <div className="fixed inset-0 z-[100] overflow-hidden bg-black text-white" role="dialog" aria-label="GIDEON">
+    <div className="fixed inset-0 z-[100] overflow-hidden bg-black text-white" role="dialog" aria-label="ANOINTED ACADEMY">
       <LandingScene settled={settled} />
 
       {/* Keep the words readable over the sky and the grass */}
@@ -66,34 +66,27 @@ export function Landing({
         className="absolute inset-x-0 flex flex-col items-center px-6 text-center"
         style={{ top: "calc(env(safe-area-inset-top, 0px) + 9vh)" }}
       >
-        <div style={show(4.4, 1.4)}>
+        <div className="relative" style={show(4.4, 1.6)}>
+          {/* Warm light behind the logo, so the deep-blue "ACADEMY" reads on the dawn sky. */}
+          <div
+            className="pointer-events-none absolute left-1/2 top-[56%] h-[115%] w-[125%] -translate-x-1/2 -translate-y-1/2 rounded-full"
+            style={{ background: "radial-gradient(closest-side, rgba(255,248,230,0.92), rgba(255,232,176,0.55) 55%, transparent)" }}
+          />
           <Image
-            src="/icon.png"
-            alt=""
-            width={72}
-            height={72}
+            src="/brand/logo.png"
+            alt="Anointed Academy"
+            width={720}
+            height={720}
             priority
-            className="rounded-2xl"
-            style={{ boxShadow: "0 0 40px rgba(255,214,140,0.55)" }}
+            className="relative h-auto w-[min(64vw,300px)]"
           />
         </div>
-        <h1
-          className="mt-4 pl-[0.3em] font-heading text-5xl font-semibold tracking-[0.3em] sm:text-7xl"
-          style={{ ...show(4.8, 1.6), textShadow: "0 0 28px rgba(255,220,160,0.6), 0 2px 16px rgba(0,0,0,0.5)" }}
-        >
-          GIDEON
-        </h1>
-        <p className="mt-2 text-xs font-semibold uppercase tracking-[0.42em] text-amber-200/90" style={show(5.1, 1.2)}>
-          Discipleship Journey
-        </p>
+        <h1 className="sr-only">Anointed Academy</h1>
         <p
           className="mt-3 max-w-md font-heading text-base italic leading-relaxed text-amber-50/95 sm:text-xl"
           style={{ ...show(5.3, 1.4), textShadow: "0 2px 14px rgba(0,0,0,0.6)" }}
         >
-          {tx(
-            "A Christian Journey of Faith, Healing, Freedom, and Growth in Christ.",
-            "Isang Paglalakbay Kristiyano ng Pananampalataya, Kagalingan, Kalayaan, at Paglago kay Cristo."
-          )}
+          {tx("Your Complete Discipleship Journey", "Ang Iyong Buong Discipleship Journey")}
         </p>
       </div>
 

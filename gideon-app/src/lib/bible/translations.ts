@@ -1,5 +1,5 @@
 /**
- * Every Bible translation Gideon offers, and helpers for the Free Use Bible
+ * Every Bible translation Anointed Academy offers, and helpers for the Free Use Bible
  * API (bible.helloao.org). Kept apart from api.ts so offline.ts can use it
  * without a circular import.
  */

@@ -16,7 +16,7 @@ import { useLanguage, useTx } from "@/lib/i18n";
 const VERSION = process.env.NEXT_PUBLIC_APP_VERSION ?? "1.0.0";
 const BUILT_AT = process.env.NEXT_PUBLIC_BUILD_TIME;
 
-/** "GIDEON WEB APP": share it, copy the link, and put it on the home screen. */
+/** "ANOINTED ACADEMY WEB APP": share it, copy the link, and put it on the home screen. */
 export function WebAppCard() {
   const tx = useTx();
   const { lang } = useLanguage();
@@ -37,7 +37,7 @@ export function WebAppCard() {
 
   async function share() {
     const data = {
-      title: "GIDEON — A Christian Journey",
+      title: "Anointed Academy — Your Complete Discipleship Journey",
       text: tx(
         "Walk with Christ every day: Bible, devotion, prayer and the Discipleship Journey.",
         "Lumakad kasama si Cristo araw-araw: Bibliya, debosyon, panalangin at ang Discipleship Journey."
@@ -63,9 +63,9 @@ export function WebAppCard() {
       <div className="flex items-center gap-3">
         <Image src="/icon.png" alt="" width={44} height={44} className="rounded-xl" />
         <div className="min-w-0">
-          <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-primary">Gideon Web App</p>
+          <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-primary">Anointed Academy Web App</p>
           <p className="text-sm leading-snug">
-            {tx("Access Gideon anytime, anywhere through your browser.", "Buksan ang Gideon kahit kailan, kahit saan sa iyong browser.")}
+            {tx("Access Anointed Academy anytime, anywhere through your browser.", "Buksan ang Anointed Academy kahit kailan, kahit saan sa iyong browser.")}
           </p>
         </div>
       </div>
@@ -73,7 +73,7 @@ export function WebAppCard() {
       <div className="mt-3 grid grid-cols-2 gap-2">
         <button onClick={share} className={button}>
           <Share2 className="size-4 text-primary" />
-          {tx("Share Gideon", "I-share ang Gideon")}
+          {tx("Share Anointed Academy", "I-share ang Anointed Academy")}
         </button>
         <button onClick={copyLink} className={button}>
           {copied ? <Check className="size-4 text-primary" /> : <Copy className="size-4 text-primary" />}

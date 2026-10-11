@@ -95,8 +95,8 @@ export default function RegisterChurchPage() {
           <>
             <p className="text-sm text-muted-foreground">
               {tx(
-                "Back up your account first. The person who registers becomes the AG leader in Gideon.",
-                "I-back up muna ang iyong account. Ang magrerehistro ang magiging AG leader sa Gideon."
+                "Back up your account first. The person who registers becomes the AG leader in Anointed Academy.",
+                "I-back up muna ang iyong account. Ang magrerehistro ang magiging AG leader sa Anointed Academy."
               )}
             </p>
             <Button className="w-full" onClick={() => setAccountOpen(true)}>
@@ -111,8 +111,8 @@ export default function RegisterChurchPage() {
             <p className="font-medium">{application.churchName}</p>
             <p className="text-sm text-muted-foreground">
               {tx(
-                "Your application is being reviewed by the Gideon team. You'll see the result here.",
-                "Sinusuri ng Gideon team ang iyong application. Makikita mo rito ang resulta."
+                "Your application is being reviewed by the Anointed Academy team. You'll see the result here.",
+                "Sinusuri ng Anointed Academy team ang iyong application. Makikita mo rito ang resulta."
               )}
             </p>
             <Button variant="outline" disabled={busy} onClick={clear}>
@@ -127,8 +127,8 @@ export default function RegisterChurchPage() {
             <p className="font-medium">{application.churchName}</p>
             <p className="text-sm">
               {tx(
-                "Approved! Your AG is now in Gideon and you are its AG leader. Invite your members to join it from My AG.",
-                "Aprubado! Nasa Gideon na ang iyong AG at ikaw ang AG leader nito. Anyayahan ang mga miyembro mo na sumali mula sa My AG."
+                "Approved! Your AG is now in Anointed Academy and you are its AG leader. Invite your members to join it from My AG.",
+                "Aprubado! Nasa Anointed Academy na ang iyong AG at ikaw ang AG leader nito. Anyayahan ang mga miyembro mo na sumali mula sa My AG."
               )}
             </p>
             <Link href="/church" className="inline-block text-sm font-medium text-primary underline">
@@ -161,8 +161,8 @@ export default function RegisterChurchPage() {
           >
             <p className="text-sm text-muted-foreground">
               {tx(
-                "The Gideon team reviews every AG before it appears in the app. Once approved, your AG gets its own space and you become its AG leader.",
-                "Sinusuri ng Gideon team ang bawat AG bago ito lumabas sa app. Kapag naaprubahan, magkakaroon ng sariling espasyo ang AG mo at ikaw ang magiging AG leader nito."
+                "The Anointed Academy team reviews every AG before it appears in the app. Once approved, your AG gets its own space and you become its AG leader.",
+                "Sinusuri ng Anointed Academy team ang bawat AG bago ito lumabas sa app. Kapag naaprubahan, magkakaroon ng sariling espasyo ang AG mo at ikaw ang magiging AG leader nito."
               )}
             </p>
             {fields.map((f) => (
@@ -186,8 +186,8 @@ export default function RegisterChurchPage() {
             ))}
             <p className="text-[0.6875rem] text-muted-foreground">
               {tx(
-                "Your email and phone are seen only by the Gideon team, never shown publicly.",
-                "Ang Gideon team lang ang makakakita ng iyong email at telepono. Hindi ito ipapakita sa publiko."
+                "Your email and phone are seen only by the Anointed Academy team, never shown publicly.",
+                "Ang Anointed Academy team lang ang makakakita ng iyong email at telepono. Hindi ito ipapakita sa publiko."
               )}
             </p>
             {error && <p className="text-xs text-destructive">{error}</p>}

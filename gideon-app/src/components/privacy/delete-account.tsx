@@ -69,7 +69,7 @@ export function DeleteAccount() {
   if (done) {
     return (
       <p className="rounded-2xl bg-primary/10 p-4 text-sm">
-        {tx("Your account and data were deleted. Thank you for walking with Gideon.", "Nabura na ang iyong account at data. Salamat sa paglalakad kasama ang Gideon.")}
+        {tx("Your account and data were deleted. Thank you for walking with Anointed Academy.", "Nabura na ang iyong account at data. Salamat sa paglalakad kasama ang Anointed Academy.")}
       </p>
     );
   }

@@ -80,7 +80,7 @@ export function photoOfTheDay(offset = 0, date = new Date()) {
 }
 
 export const VERSE_IMAGE_THEMES: VerseImageTheme[] = [
-  { id: "night", name: { en: "Night", tl: "Gabi" }, colors: ["#1a1638", "#3d3284"], text: "#fbfaf7", accent: "#e9c46a" },
+  { id: "night", name: { en: "Night", tl: "Gabi" }, colors: ["#13253d", "#1E3A5F"], text: "#fbfaf7", accent: "#e9c46a" },
   { id: "photo", name: { en: "Sky", tl: "Langit" }, colors: ["#1a1638", "#1a1638"], text: "#ffffff", accent: "#e9c46a", photo: "/hero-bg.webp" },
   { id: "dawn", name: { en: "Dawn", tl: "Bukang-liwayway" }, colors: ["#f6d365", "#fda085"], text: "#2b2118", accent: "#7a2e0e" },
   { id: "sea", name: { en: "Sea", tl: "Dagat" }, colors: ["#0f4c75", "#3282b8"], text: "#ffffff", accent: "#ffe08a" },
@@ -222,7 +222,7 @@ export async function drawVerseImage(
   ctx.fillStyle = theme.text;
   ctx.font = `700 30px ${sans}`;
   ctx.textAlign = "left";
-  ctx.fillText("GIDEON", PADDING, H - 120);
+  ctx.fillText("ANOINTED ACADEMY", PADDING, H - 120);
   ctx.globalAlpha = 0.6;
   ctx.font = `400 26px ${sans}`;
   ctx.fillText("gideon-app.web.app", PADDING, H - 80);

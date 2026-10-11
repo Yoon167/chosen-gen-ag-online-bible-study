@@ -45,7 +45,7 @@ function mapAuthError(error: unknown): string {
       return "Google sign-in isn't set up for this web address yet. Please use email for now.";
     case "auth/web-storage-unsupported":
     case "auth/operation-not-supported-in-this-environment":
-      return "This browser blocks Google sign-in. Open GIDEON in Chrome or Safari, or use email.";
+      return "This browser blocks Google sign-in. Open Anointed Academy in Chrome or Safari, or use email.";
     default:
       // Keep the code visible so a member can report it.
       return `Something went wrong${code ? ` (${code})` : ""}. Please try again.`;

@@ -2,7 +2,24 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { ChevronsRight, Volume2, VolumeX } from "lucide-react";
+import {
+  BookOpen,
+  BookOpenText,
+  ChevronsRight,
+  ClipboardCheck,
+  Crown,
+  GraduationCap,
+  HandHeart,
+  HeartHandshake,
+  Library,
+  Music,
+  Presentation,
+  Users,
+  UsersRound,
+  Volume2,
+  VolumeX,
+  type LucideIcon,
+} from "lucide-react";
 import { LandingScene } from "@/components/intro/landing-scene";
 import { useLanguage, type Language } from "@/lib/i18n";
 import { toggleBackgroundMusic, useBackgroundMusic } from "@/lib/background-music";
@@ -10,44 +27,50 @@ import { toggleBackgroundMusic, useBackgroundMusic } from "@/lib/background-musi
 type Text = Record<Language, string>;
 
 /**
- * Scene lengths in seconds. The story follows the core message: the calling,
- * Gideon (who we are), how God sees us (transformation), following and
- * growing, then making disciples, and the reveal. Keep in sync with the
- * film-cam keyframes in globals.css.
+ * Scene lengths in seconds: darkness and first light, the flight over the
+ * valley, a people who pray and learn, the glowing path, the steps along it,
+ * the kingdom revealed, then the path converging into light and the name.
+ * Keep in sync with the film-cam keyframes in globals.css.
  */
-const SCENES = [4.5, 5, 5, 5, 4.5, 6];
+const SCENES = [4, 4.5, 5, 4.5, 4.5, 3.5, 6];
 const STARTS = SCENES.map((_, i) => SCENES.slice(0, i).reduce((a, b) => a + b, 0));
 export const INTRO_DURATION = SCENES.reduce((a, b) => a + b, 0);
 
-/** One title and one quiet line per scene: no feature lists, no second caption track. */
+/** One title and one quiet line per scene: no second caption track. */
 const STORY: { title: Text; line: Text; ref?: Text }[] = [
   {
-    title: { en: "Every Journey Begins With A Calling", tl: "Bawat Paglalakbay ay Nagsisimula sa Isang Pagtawag" },
-    line: { en: "“Come, follow Me.”", tl: "“Halika, sumunod ka sa Akin.”" },
-    ref: { en: "Matthew 4:19", tl: "Mateo 4:19" },
+    title: { en: "Out Of The Darkness, A Light", tl: "Mula sa Dilim, Isang Liwanag" },
+    line: { en: "“The people walking in darkness have seen a great light.”", tl: "“Ang bayang lumalakad sa dilim ay nakakita ng dakilang liwanag.”" },
+    ref: { en: "Isaiah 9:2", tl: "Isaias 9:2" },
   },
   {
-    title: { en: "Gideon Was One Of Them", tl: "Isa si Gideon sa Kanila" },
-    line: { en: "“The Lord is with you, mighty warrior.”", tl: "“Ang Panginoon ay sumasaiyo, magiting na mandirigma.”" },
-    ref: { en: "Judges 6:12", tl: "Mga Hukom 6:12" },
+    title: { en: "Over Every Mountain And Valley", tl: "Sa Bawat Bundok at Lambak" },
+    line: { en: "From every nation, a people called by His name.", tl: "Mula sa bawat bansa, isang bayang tinawag sa Kanyang pangalan." },
   },
   {
-    title: { en: "God Sees Who You Can Become", tl: "Nakikita ng Diyos Kung Sino ang Maaari Mong Maging" },
-    line: { en: "Where others see fear, He sees faith.", tl: "Kung takot ang nakikita ng iba, pananampalataya ang nakikita Niya." },
+    title: { en: "A People Who Pray, Worship And Learn", tl: "Bayang Nananalangin, Sumasamba at Natututo" },
+    line: { en: "Together in the Word, together in His presence.", tl: "Sama-sama sa Salita, sama-sama sa Kanyang presensya." },
+    ref: { en: "Acts 2:42", tl: "Gawa 2:42" },
   },
   {
-    title: { en: "Follow. Grow. Be Transformed.", tl: "Sumunod. Lumago. Mabago." },
-    line: { en: "One step at a time, closer to Him.", tl: "Hakbang-hakbang, palapit sa Kanya." },
+    title: { en: "Follow The Path Of Growth", tl: "Sundan ang Landas ng Paglago" },
+    line: { en: "“Your word is a lamp to my feet and a light to my path.”", tl: "“Ang salita Mo ay ilawan sa aking paa at liwanag sa aking landas.”" },
+    ref: { en: "Psalm 119:105", tl: "Awit 119:105" },
   },
   {
-    title: { en: "Then Help Others Walk It Too", tl: "Saka Samahan ang Iba sa Paglakad" },
-    line: { en: "Disciples who make disciples.", tl: "Mga alagad na gumagawa ng alagad." },
+    title: { en: "Every Step Shapes A Disciple", tl: "Bawat Hakbang ay Humuhubog ng Alagad" },
+    line: { en: "Learn. Grow. Disciple. Lead.", tl: "Matuto. Lumago. Mag-disciple. Manguna." },
+  },
+  {
+    title: { en: "One Kingdom, Connected", tl: "Iisang Kaharian, Magkakaugnay" },
+    line: { en: "Disciples who make disciples, in every place.", tl: "Mga alagad na gumagawa ng alagad, sa bawat lugar." },
+    ref: { en: "Matthew 28:19", tl: "Mateo 28:19" },
   },
 ];
 
 const COPY = {
-  subtitle: { en: "Discipleship Journey", tl: "Discipleship Journey" },
-  tagline: { en: "Follow Jesus · Grow Deeper · Make Disciples", tl: "Sumunod kay Hesus · Lumalim · Gumawa ng Alagad" },
+  subtitle: { en: "Learn. Grow. Disciple. Lead.", tl: "Matuto. Lumago. Mag-disciple. Manguna." },
+  tagline: { en: "Your Complete Discipleship Journey", tl: "Ang Iyong Buong Discipleship Journey" },
   skip: { en: "Skip", tl: "Laktawan" },
   soundOn: { en: "Tap for sound", tl: "Pindutin para sa tunog" },
 } satisfies Record<string, Text>;
@@ -63,37 +86,61 @@ const fadeIn = (delay: number, duration = 1.1): React.CSSProperties => ({
   animation: `landing-appear ${duration}s ease-out ${delay}s both`,
 });
 
-/** One light becomes three, then nine: disciples making disciples. */
+/** Scene 3: the life of the people of God. */
+const GATHER: { icon: LucideIcon; label: Text }[] = [
+  { icon: HandHeart, label: { en: "Prayer", tl: "Panalangin" } },
+  { icon: Music, label: { en: "Worship", tl: "Pagsamba" } },
+  { icon: BookOpenText, label: { en: "Bible study", tl: "Bible study" } },
+  { icon: UsersRound, label: { en: "Groups", tl: "Grupo" } },
+  { icon: Presentation, label: { en: "Teaching", tl: "Pagtuturo" } },
+  { icon: HeartHandshake, label: { en: "Fellowship", tl: "Fellowship" } },
+];
+
+/** Scene 5: the steps along the path, from the bottom of the screen upward. */
+const STEPS: { icon: LucideIcon; label: Text; x: number; y: number }[] = [
+  { icon: GraduationCap, label: { en: "Learning", tl: "Pag-aaral" }, x: 50, y: 86 },
+  { icon: HandHeart, label: { en: "Prayer", tl: "Panalangin" }, x: 30, y: 78 },
+  { icon: BookOpen, label: { en: "Scripture", tl: "Salita" }, x: 66, y: 70 },
+  { icon: Users, label: { en: "Mentoring", tl: "Mentoring" }, x: 34, y: 62 },
+  { icon: Library, label: { en: "Courses", tl: "Courses" }, x: 64, y: 54 },
+  { icon: ClipboardCheck, label: { en: "Assessments", tl: "Assessments" }, x: 38, y: 46 },
+  { icon: Crown, label: { en: "Leadership", tl: "Pamumuno" }, x: 54, y: 38 },
+];
+
+/** Scene 6: one light becomes many, joined into one kingdom. */
 const LIGHTS = [
-  { x: 50, y: 42, at: 0.6 },
-  { x: 38, y: 53, at: 1.5 },
-  { x: 62, y: 51, at: 1.6 },
-  { x: 50, y: 61, at: 1.7 },
-  { x: 26, y: 63, at: 2.5 },
-  { x: 74, y: 61, at: 2.6 },
-  { x: 40, y: 71, at: 2.7 },
-  { x: 60, y: 72, at: 2.8 },
-  { x: 32, y: 79, at: 2.9 },
-  { x: 68, y: 78, at: 3.0 },
-  { x: 50, y: 82, at: 3.1 },
+  { x: 50, y: 42, at: 0.2 },
+  { x: 36, y: 50, at: 0.6 },
+  { x: 64, y: 49, at: 0.7 },
+  { x: 50, y: 58, at: 0.8 },
+  { x: 22, y: 60, at: 1.1 },
+  { x: 78, y: 59, at: 1.2 },
+  { x: 38, y: 68, at: 1.3 },
+  { x: 62, y: 69, at: 1.4 },
+  { x: 28, y: 77, at: 1.5 },
+  { x: 72, y: 76, at: 1.6 },
+  { x: 50, y: 80, at: 1.7 },
+];
+const LINKS = [
+  [0, 1], [0, 2], [0, 3], [1, 4], [1, 6], [2, 5], [2, 7], [3, 6], [3, 7], [6, 8], [7, 9], [6, 10], [7, 10], [1, 3], [2, 3],
 ];
 
 function Words({ scene, tx }: { scene: number; tx: (t: Text) => string }) {
   const s = STORY[scene];
   if (!s) return <Revelation tx={tx} />;
   return (
-    <div className="absolute inset-x-0 top-[14%] mx-auto flex max-w-lg flex-col items-center px-6 text-center" aria-live="polite">
+    <div className="absolute inset-x-0 top-[13%] mx-auto flex max-w-lg flex-col items-center px-6 text-center" aria-live="polite">
       <h2
         className="font-heading text-3xl font-semibold leading-tight tracking-wide text-white sm:text-5xl"
-        style={{ ...rise(0.5), textShadow: SHADOW }}
+        style={{ ...rise(scene === 0 ? 1.4 : 0.5), textShadow: SHADOW }}
       >
         {tx(s.title)}
       </h2>
-      <p className="mt-4 max-w-sm font-heading text-lg italic text-amber-50/95 sm:text-2xl" style={{ ...rise(1.5), textShadow: SHADOW }}>
+      <p className="mt-4 max-w-sm font-heading text-lg italic text-amber-50/95 sm:text-2xl" style={{ ...rise(scene === 0 ? 2.2 : 1.5), textShadow: SHADOW }}>
         {tx(s.line)}
       </p>
       {s.ref && (
-        <p className="mt-2 text-[0.6875rem] font-semibold uppercase tracking-[0.3em] text-amber-200/90" style={{ ...fadeIn(2.1), textShadow: SHADOW }}>
+        <p className="mt-2 text-[0.6875rem] font-semibold uppercase tracking-[0.3em] text-amber-200/90" style={{ ...fadeIn(scene === 0 ? 2.7 : 2.1), textShadow: SHADOW }}>
           {tx(s.ref)}
         </p>
       )}
@@ -101,51 +148,147 @@ function Words({ scene, tx }: { scene: number; tx: (t: Text) => string }) {
   );
 }
 
-/** Light blooms from the sun behind Jesus, and the name appears in it. */
+/** A small gold medallion with its word under it. */
+function Medal({ icon: Icon, label, style }: { icon: LucideIcon; label: string; style?: React.CSSProperties }) {
+  return (
+    <span className="flex flex-col items-center gap-1" style={style}>
+      <span
+        className="flex size-11 items-center justify-center rounded-full border border-[#D4AF37] bg-[#1E3A5F]/85 text-[#F4DC8A]"
+        style={{ boxShadow: "0 0 18px rgba(212,175,55,0.75)" }}
+      >
+        <Icon className="size-5" />
+      </span>
+      <span className="whitespace-nowrap text-[0.6875rem] font-semibold uppercase tracking-wider text-white" style={{ textShadow: SHADOW }}>
+        {label}
+      </span>
+    </span>
+  );
+}
+
+/** The glowing path converges into a brilliant light, and the name appears in it. */
 function Revelation({ tx }: { tx: (t: Text) => string }) {
   return (
     <>
       <div
-        className="pointer-events-none absolute left-1/2 top-[44%] size-[60vmax] rounded-full"
+        className="pointer-events-none absolute bottom-0 left-1/2 h-[62%] w-[46vw] -translate-x-1/2 origin-bottom"
         style={{
-          animation: "film-bloom 2.6s cubic-bezier(.2,.7,.2,1) 0.2s both",
-          background: "radial-gradient(circle, rgba(255,252,240,0.98) 0%, rgba(255,232,180,0.9) 35%, rgba(240,190,105,0.7) 65%, rgba(217,151,74,0) 72%)",
+          animation: "film-path 1.4s ease-out both, landing-vanish 0.8s ease-in 1.6s forwards",
+          background: "linear-gradient(to top, rgba(212,175,55,0.75), rgba(255,236,180,0.9) 70%, rgba(255,250,235,1))",
+          clipPath: "polygon(0 100%, 100% 100%, 52% 0, 48% 0)",
+          filter: "blur(2px)",
         }}
       />
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 pb-[6vh] text-center">
-        <div style={{ animation: "film-grow 1.4s ease-out 1.6s both" }}>
-          <Image
-            src="/icon.png"
-            alt=""
-            width={96}
-            height={96}
-            priority
-            className="rounded-3xl"
-            style={{ boxShadow: "0 0 60px rgba(255,214,130,0.95)" }}
-          />
+      <div
+        className="pointer-events-none absolute left-1/2 top-[40%] size-[60vmax] rounded-full"
+        style={{
+          animation: "film-bloom 2.4s cubic-bezier(.2,.7,.2,1) 0.9s both",
+          background: "radial-gradient(circle, rgba(255,253,245,1) 0%, rgba(255,240,205,0.95) 35%, rgba(240,205,130,0.75) 62%, rgba(212,175,55,0) 72%)",
+        }}
+      />
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-6 pb-[4vh] text-center">
+        <div style={{ animation: "film-settle 1.8s ease-out 2.0s both" }}>
+          <Image src="/brand/logo.png" alt="" width={720} height={720} priority className="h-auto w-[min(70vw,320px)]" />
         </div>
-        <h1
-          className="mt-3 pl-[0.28em] font-heading text-5xl font-semibold tracking-[0.28em] sm:text-6xl"
-          style={{
-            animation: "film-settle 1.8s ease-out 2.0s both, film-shine 2.4s ease-in-out 3.2s both",
-            backgroundImage: "linear-gradient(100deg, #3a2608 40%, #fff3d6 50%, #3a2608 60%)",
-            backgroundSize: "250% 100%",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            color: "transparent",
-          }}
-        >
-          GIDEON
-        </h1>
-        <p className="text-sm font-semibold uppercase tracking-[0.42em] text-[#5a3e12]" style={fadeIn(2.8)}>
+        <h1 className="sr-only">ANOINTED ACADEMY</h1>
+        <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#1E3A5F] sm:text-sm" style={fadeIn(3.0)}>
           {tx(COPY.subtitle)}
         </p>
-        <p className="mt-3 max-w-xs font-heading text-base italic leading-relaxed text-[#4a3210] sm:max-w-md sm:text-lg" style={rise(3.4, 1.2)}>
+        <p className="mt-2 max-w-xs font-heading text-lg italic leading-relaxed text-[#7a5a12] sm:max-w-md sm:text-xl" style={rise(3.6, 1.2)}>
           {tx(COPY.tagline)}
         </p>
       </div>
     </>
   );
+}
+
+/** What each scene adds over the valley. */
+function SceneLayer({ scene, length, tx }: { scene: number; length: number; tx: (t: Text) => string }) {
+  // 1. Darkness, then a thin line of gold on the horizon that opens into dawn.
+  if (scene === 0) {
+    return (
+      <>
+        <div className="pointer-events-none absolute inset-0 bg-black" style={{ animation: "landing-vanish 2.6s ease-in 1.2s both" }} />
+        <div
+          className="pointer-events-none absolute inset-x-0 top-[47%] mx-auto h-[3px] w-[90vw] rounded-full"
+          style={{
+            animation: "film-horizon 1.6s ease-out 0.3s both, landing-vanish 1.2s ease-in 2.8s forwards",
+            background: "linear-gradient(90deg, transparent, #D4AF37 20%, #fff4d0 50%, #D4AF37 80%, transparent)",
+            boxShadow: "0 0 30px 10px rgba(212,175,55,0.55)",
+          }}
+        />
+      </>
+    );
+  }
+  // 3. The life of God's people, one after another.
+  if (scene === 2) {
+    return (
+      <div className="pointer-events-none absolute inset-x-0 bottom-[12%] mx-auto grid max-w-sm grid-cols-3 gap-x-3 gap-y-5 px-6">
+        {GATHER.map((g, i) => (
+          <Medal key={g.label.en} icon={g.icon} label={tx(g.label)} style={{ animation: `film-glow-in 0.8s ease-out ${1.6 + i * 0.4}s both` }} />
+        ))}
+      </div>
+    );
+  }
+  // 4. The glowing path, drawn up through the valley.
+  if (scene === 3) {
+    return (
+      <div
+        className="pointer-events-none absolute bottom-0 left-1/2 h-[58%] w-[38vw] -translate-x-1/2 origin-bottom"
+        style={{
+          animation: `film-path 2.4s ease-out 0.4s both, landing-vanish 0.6s ease-in ${length - 0.6}s forwards`,
+          background: "linear-gradient(to top, rgba(212,175,55,0.7), rgba(255,236,180,0.55) 60%, rgba(255,250,235,0))",
+          clipPath: "polygon(0 100%, 100% 100%, 56% 0, 44% 0)",
+          filter: "blur(3px)",
+        }}
+      />
+    );
+  }
+  // 5. The steps along the path.
+  if (scene === 4) {
+    return (
+      <div className="pointer-events-none absolute inset-0">
+        {STEPS.map((s, i) => (
+          <span key={s.label.en} className="absolute -translate-x-1/2 -translate-y-1/2" style={{ left: `${s.x}%`, top: `${s.y}%` }}>
+            <Medal icon={s.icon} label={tx(s.label)} style={{ animation: `film-glow-in 0.7s ease-out ${0.5 + i * 0.4}s both` }} />
+          </span>
+        ))}
+      </div>
+    );
+  }
+  // 6. Ascend: lights across the land, joined into one kingdom.
+  if (scene === 5) {
+    return (
+      <div className="pointer-events-none absolute inset-0">
+        <svg className="absolute inset-0 size-full" viewBox="0 0 100 100" preserveAspectRatio="none" style={fadeIn(1.0, 1.4)}>
+          {LINKS.map(([a, b]) => (
+            <line
+              key={`${a}-${b}`}
+              x1={LIGHTS[a].x}
+              y1={LIGHTS[a].y}
+              x2={LIGHTS[b].x}
+              y2={LIGHTS[b].y}
+              stroke="rgba(255,222,150,0.6)"
+              strokeWidth="0.25"
+              vectorEffect="non-scaling-stroke"
+            />
+          ))}
+        </svg>
+        {LIGHTS.map((l) => (
+          <span
+            key={`${l.x}-${l.y}`}
+            className="absolute size-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-100"
+            style={{
+              left: `${l.x}%`,
+              top: `${l.y}%`,
+              boxShadow: "0 0 14px 6px rgba(212,175,55,0.75)",
+              animation: `film-glow-in 0.9s ease-out ${l.at}s both`,
+            }}
+          />
+        ))}
+      </div>
+    );
+  }
+  return null;
 }
 
 /* ------------------------------ Intro ------------------------------ */
@@ -157,10 +300,10 @@ function sceneAt(t: number) {
 }
 
 /**
- * "Watch Introduction": a 30-second film over the same animated sunrise
+ * "Watch Introduction": a 32-second film over the same animated sunrise
  * valley as the landing page (all SVG, nothing to download). One continuous
- * camera move; the color grade warms from dawn blue to gold as the story moves
- * from calling to transformation to disciple making.
+ * camera move; the color grade warms from night blue to gold as the story
+ * moves from first light to the path of growth to the kingdom.
  */
 export function CinematicIntro({ onDone }: { onDone: () => void }) {
   const { lang } = useLanguage();
@@ -200,7 +343,7 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
   const reveal = scene === SCENES.length - 1;
 
   return (
-    <div className="fixed inset-0 z-[100] overflow-hidden bg-black text-white" role="dialog" aria-label="GIDEON — Discipleship Journey">
+    <div className="fixed inset-0 z-[100] overflow-hidden bg-black text-white" role="dialog" aria-label="Anointed Academy — Your Complete Discipleship Journey">
       {/* One continuous camera move over the living valley (film-cam in
           globals.css). The zoom never changes, so the phone draws the scene
           once and only moves it. */}
@@ -208,17 +351,17 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
         <LandingScene />
       </div>
 
-      {/* Grade: cool dawn blue that gives way to warm gold. Opacity only. */}
-      <div className="pointer-events-none absolute inset-0 bg-[#0c1a44]" style={{ animation: `film-cool ${INTRO_DURATION}s linear both` }} />
+      {/* Grade: deep night blue that gives way to warm gold. Opacity only. */}
+      <div className="pointer-events-none absolute inset-0 bg-[#0f1d33]" style={{ animation: `film-cool ${INTRO_DURATION}s linear both` }} />
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           animation: `film-warm ${INTRO_DURATION}s linear both`,
-          background: "radial-gradient(ellipse at 50% 40%, rgba(255,200,120,0.22), rgba(120,70,20,0.18) 70%)",
+          background: "radial-gradient(ellipse at 50% 40%, rgba(255,214,130,0.22), rgba(30,58,95,0.18) 70%)",
         }}
       />
 
-      {/* God rays when Jesus is in view, and again at the reveal. */}
+      {/* God rays as the people gather, and again at the reveal. */}
       {(scene === 2 || reveal) && (
         <div
           key={`rays-${scene}`}
@@ -230,28 +373,14 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
         />
       )}
 
-      {/* Disciples making disciples: one light becomes many. */}
-      {scene === 4 && (
-        <div key="lights" className="pointer-events-none absolute inset-0">
-          {LIGHTS.map((l) => (
-            <span
-              key={`${l.x}-${l.y}`}
-              className="absolute size-2.5 rounded-full bg-amber-100"
-              style={{
-                left: `${l.x}%`,
-                top: `${l.y}%`,
-                boxShadow: "0 0 14px 6px rgba(255,214,140,0.75)",
-                animation: `film-glow-in 0.9s ease-out ${l.at}s both`,
-              }}
-            />
-          ))}
-        </div>
-      )}
+      <div key={`layer-${scene}`} className="absolute inset-0">
+        <SceneLayer scene={scene} length={length} tx={tx} />
+      </div>
 
       {/* Readable words: darken the top a little */}
       <div
         className="pointer-events-none absolute inset-0"
-        style={{ background: "linear-gradient(to bottom, rgba(6,5,16,0.6) 0%, rgba(6,5,16,0.2) 32%, transparent 48%, transparent 78%, rgba(6,5,16,0.45) 100%)" }}
+        style={{ background: "linear-gradient(to bottom, rgba(6,10,22,0.6) 0%, rgba(6,10,22,0.2) 32%, transparent 48%, transparent 78%, rgba(6,10,22,0.45) 100%)" }}
       />
 
       {/* This scene's words, fading out just before the next */}
@@ -271,13 +400,10 @@ export function CinematicIntro({ onDone }: { onDone: () => void }) {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[5vh] origin-top bg-black" style={{ animation: "film-bar 1.2s ease-out both" }} />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[5vh] origin-bottom bg-black" style={{ animation: "film-bar 1.2s ease-out both" }}>
         <div
-          className="absolute inset-x-0 bottom-0 h-0.5 origin-left bg-gradient-to-r from-amber-200 to-amber-400"
+          className="absolute inset-x-0 bottom-0 h-0.5 origin-left bg-gradient-to-r from-[#D4AF37] to-amber-200"
           style={{ animation: `intro-progress ${INTRO_DURATION}s linear forwards` }}
         />
       </div>
-
-      {/* Opens out of black once; no cuts after that. */}
-      <div className="pointer-events-none absolute inset-0 bg-black" style={{ animation: "film-open 1.6s ease-out both" }} />
 
       {/* Controls */}
       <div className="absolute inset-x-4 z-10 flex items-center justify-between" style={{ top: "calc(env(safe-area-inset-top, 0px) + 5vh + 10px)" }}>

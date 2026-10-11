@@ -157,7 +157,7 @@ function TestimonyBody({
       "",
       testimony.transformation || testimony.godsFaithfulness,
       "",
-      "— shared from GIDEON",
+      "— shared from Anointed Academy",
     ]
       .filter((line) => line !== undefined)
       .join("\n");

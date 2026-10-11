@@ -24,7 +24,7 @@ function read(): Saved {
 /**
  * Spiritual Inventory Checklist (Appendix C of "Handbook on Deliverance" by
  * Ptr. Hiram Pangilinan): family history and personal history, then a
- * summary with a prayer of confession and renunciation and the Gideon
+ * summary with a prayer of confession and renunciation and the Anointed Academy
  * lessons that speak to each area.
  */
 export default function SpiritualInventoryPage() {

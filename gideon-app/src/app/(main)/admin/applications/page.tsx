@@ -30,7 +30,7 @@ export default function ApplicationsPage() {
     return (
       <div>
         <PageHeader title="AG applications" icon={ClipboardList} back />
-        <p className="px-5 text-sm text-muted-foreground">Only the Gideon national admin can review applications.</p>
+        <p className="px-5 text-sm text-muted-foreground">Only the Anointed Academy national admin can review applications.</p>
       </div>
     );
   }

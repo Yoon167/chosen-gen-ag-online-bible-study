@@ -78,7 +78,7 @@ function Editor({ verse }: { verse: VerseForImage }) {
     setMessage(null);
     try {
       const file = await getFile();
-      await navigator.share({ files: [file], text: `${verse.reference} · GIDEON` });
+      await navigator.share({ files: [file], text: `${verse.reference} · Anointed Academy` });
     } catch (e) {
       if ((e as Error).name !== "AbortError") setMessage(tx("Couldn't share. Try Save instead.", "Hindi ma-share. Subukan ang I-save."));
     } finally {

@@ -128,5 +128,127 @@ export const EXTRA: ExtraSet = {
       },
     ],
   },
-// NEXT
+  "c-renouncing-agreements": {
+    deeper: [
+      {
+        heading: t("What an agreement is, and why renouncing matters", "Ano ang kasunduan, at bakit mahalaga ang pagtatakwil"),
+        body: [
+          t("In Scripture, our words and commitments carry weight. Numbers 30:1-2 says a person who makes a vow must keep their word. Over a lifetime we can make spoken or unspoken agreements: vows of the occult, curses we accepted, oaths of secret societies, or inner vows like \"I will never trust anyone again.\" Paul describes his own break with the past: \"we have renounced the hidden things of shame\" (2 Corinthians 4:2).", "Sa Kasulatan, may bigat ang mga salita at pangako natin. Sinasabi ng Bilang 30:1-2 na ang gumawa ng panata ay dapat tumupad. Sa buong buhay, maaari tayong makagawa ng sinabi o hindi sinabing kasunduan: panata sa okulto, sumpang tinanggap, panunumpa sa lihim na samahan, o panloob na pangako gaya ng \"Hindi na ako magtitiwala kahit kanino.\" Inilarawan ni Pablo ang pagtalikod niya sa nakaraan: \"itinakwil namin ang mga lihim na bagay na kahiya-hiya\" (2 Corinto 4:2)."),
+          t("Renouncing is simply saying out loud, before God, \"I no longer agree with this.\" It is not a magic formula. The power is in the cross of Christ, who disarmed every power against us (Colossians 2:14-15). Our part is honest repentance and a clear turning, as Joshua called Israel to put away foreign gods and choose whom they would serve (Joshua 24:14-15).", "Ang pagtatakwil ay simpleng pagsasabi nang malakas sa harap ng Diyos, \"Hindi na ako sumasang-ayon dito.\" Hindi ito mahiwagang pormula. Nasa krus ni Cristo ang kapangyarihan, na nagwalang-bisa sa lahat ng kapangyarihang laban sa atin (Colosas 2:14-15). Ang bahagi natin ay tapat na pagsisisi at malinaw na pagbaling, gaya ng panawagan ni Josue sa Israel na alisin ang mga diyos-diyosan at piliin kung sino ang paglilingkuran nila (Josue 24:14-15)."),
+        ],
+      },
+      {
+        heading: t("Fellowship, covenants and the table", "Pakikisama, tipan at ang hapag"),
+        body: [
+          t("Paul warns, \"Do not be yoked together with unbelievers\" (2 Corinthians 6:14-18), and says we cannot share the Lord's table and the table of demons (1 Corinthians 10:20-21). Isaiah 28:15 describes people who boasted, \"We have made a covenant with death.\" God's answer was that He would annul it (Isaiah 28:18). No agreement with darkness is stronger than God's word.", "Nagbabala si Pablo, \"Huwag kayong makipagtali sa mga hindi sumasampalataya\" (2 Corinto 6:14-18), at sinabi niyang hindi tayo maaaring makibahagi sa hapag ng Panginoon at sa hapag ng mga demonyo (1 Corinto 10:20-21). Inilalarawan ng Isaias 28:15 ang mga nagyabang, \"Gumawa kami ng tipan sa kamatayan.\" Sagot ng Diyos, pawawalang-bisa Niya ito (Isaias 28:18). Walang kasunduan sa kadiliman na mas malakas kaysa sa salita ng Diyos."),
+          t("This does not mean we cut off every unbelieving friend or relative. Jesus ate with sinners. It means we ask where our loyalty, worship and secret promises really lie.", "Hindi ibig sabihin na pakakawalan na natin ang bawat kaibigan o kamag-anak na hindi mananampalataya. Kumain si Jesus kasama ng mga makasalanan. Ang ibig sabihin, tinatanong natin kung saan talaga napupunta ang katapatan, pagsamba at lihim na pangako natin."),
+        ],
+      },
+      {
+        heading: t("How to renounce in practice", "Paano magtakwil sa praktikal na paraan"),
+        body: [
+          t("Ask the Holy Spirit to bring to mind any agreement. Write it down. Confess it, forgive anyone involved, and then say plainly, \"In Jesus' name I renounce this and I choose Christ.\" Destroy items tied to the agreement if there are any, as the believers in Ephesus did with their scrolls (Acts 19:18-19). Then fill the space with the Word and worship.", "Hilingin sa Banal na Espiritu na ipaalala ang anumang kasunduan. Isulat ito. Ipagtapat, patawarin ang sinumang kasangkot, at sabihin nang malinaw, \"Sa pangalan ni Jesus, itinatakwil ko ito at pinipili ko si Cristo.\" Sirain ang mga bagay na nakaugnay dito kung mayroon, gaya ng ginawa ng mga mananampalataya sa Efeso sa kanilang mga balumbon (Gawa 19:18-19). Pagkatapos, punuin ang espasyo ng Salita at pagsamba."),
+          t("Do it with a trusted pastor or mature believer if the matter is heavy. Stay calm and Christ-centered; the focus is on Jesus, not on the enemy.", "Gawin ito kasama ang pinagkakatiwalaang pastor o matured na mananampalataya kung mabigat ang usapin. Manatiling mahinahon at nakatuon kay Cristo; si Jesus ang sentro, hindi ang kaaway."),
+        ],
+      },
+    ],
+    stories: [
+      {
+        title: t("Nicky Cruz: leaving the gang and its oaths", "Nicky Cruz: paglisan sa gang at sa mga panata nito"),
+        who: "Nicky Cruz",
+        where: t("New York City, USA", "New York City, USA"),
+        when: "1958 onward",
+        story: [
+          t("Nicky Cruz, born in Puerto Rico, came to New York as a teenager and became the warlord of the Mau Maus, a violent Brooklyn street gang. A young country preacher, David Wilkerson, came into the gang's world to tell them that Jesus loved them, even when Cruz threatened him.", "Si Nicky Cruz, ipinanganak sa Puerto Rico, ay dumating sa New York noong tinedyer at naging pinuno ng Mau Maus, isang marahas na gang sa Brooklyn. Isang batang mangangaral mula sa probinsya, si David Wilkerson, ang pumasok sa mundo ng gang upang sabihing mahal sila ni Jesus, kahit pinagbantaan siya ni Cruz."),
+          t("After hearing Wilkerson speak, Cruz gave his life to Christ. He walked away from the gang, its loyalties and its violence, and later became an evangelist and author. His story, told in the book Run Baby Run, shows a man breaking a bond of loyalty that once defined him.", "Pagkarinig kay Wilkerson, ibinigay ni Cruz ang buhay niya kay Cristo. Lumayo siya sa gang, sa mga katapatan at karahasan nito, at kalaunan ay naging ebanghelista at manunulat. Ipinapakita ng kuwento niya, na isinalaysay sa aklat na Run Baby Run, ang lalaking bumasag sa tali ng katapatang dating nagbigay-kahulugan sa kanya."),
+        ],
+        lesson: t("Renouncing old loyalties is possible because Christ gives a stronger belonging.", "Posibleng itakwil ang lumang katapatan dahil nagbibigay si Cristo ng mas matibay na pagkabilang."),
+        sources: [
+          { label: "Wikipedia: Nicky Cruz", url: "https://en.wikipedia.org/wiki/Nicky_Cruz" },
+        ],
+      },
+    ],
+  },
+  "c-strongholds-through-truth": {
+    deeper: [
+      {
+        heading: t("Jericho: walls that fall by obedience", "Jerico: mga pader na bumabagsak sa pagsunod"),
+        body: [
+          t("Jericho was a fortified city, and its walls seemed impossible. God's strategy for Joshua was strange: march around the city in silence, trumpets sounding, then shout on the seventh day (Joshua 6:1-5, 20). The walls fell because God gave the city, not because of Israel's strength. Hebrews 11:30 says it fell \"by faith.\"", "Ang Jerico ay lungsod na may matitibay na pader na tila imposibleng gibain. Kakaiba ang estratehiya ng Diyos kay Josue: umikot sa lungsod nang tahimik, may tunog ng trumpeta, at sumigaw sa ikapitong araw (Josue 6:1-5, 20). Bumagsak ang mga pader dahil ibinigay ng Diyos ang lungsod, hindi dahil sa lakas ng Israel. Sabi ng Hebreo 11:30, bumagsak ito \"sa pamamagitan ng pananampalataya.\""),
+          t("Our strongholds are often thought patterns, not stone. Paul says our weapons are not of the flesh but have divine power to demolish them (2 Corinthians 10:3-5). Obedience, step after step, is how we walk around our own Jericho.", "Ang mga kuta natin ay madalas pattern ng pag-iisip, hindi bato. Sabi ni Pablo, ang ating sandata ay hindi makalaman kundi may kapangyarihang mula sa Diyos na gumigiba nito (2 Corinto 10:3-5). Ang pagsunod, hakbang kada hakbang, ang paraan ng pag-ikot natin sa sarili nating Jerico."),
+        ],
+      },
+      {
+        heading: t("The Word as a living weapon", "Ang Salita bilang buhay na sandata"),
+        body: [
+          t("Hebrews 4:12 says the word of God is living and active, sharper than any two-edged sword. Jesus answered the tempter in the wilderness with \"It is written\" (Matthew 4). Truth does not argue from feeling; it stands on what God has said.", "Sabi ng Hebreo 4:12, buhay at mabisa ang salita ng Diyos, mas matalas kaysa alinmang tabak na magkabilang talim. Sinagot ni Jesus ang manunukso sa ilang ng \"Nasusulat\" (Mateo 4). Hindi nakikipagtalo ang katotohanan batay sa damdamin; nakatayo ito sa sinabi ng Diyos."),
+          t("David called the Lord his rock, fortress and deliverer (Psalm 18:1-3), and said God trained his hands for battle (Psalm 18:34). A stronghold of fear is replaced by a stronghold in God.", "Tinawag ni David ang Panginoon na bato, kuta at tagapagligtas niya (Awit 18:1-3), at sinabing sinanay ng Diyos ang kanyang mga kamay sa digmaan (Awit 18:34). Ang kuta ng takot ay napapalitan ng kuta na ang Diyos mismo."),
+        ],
+      },
+      {
+        heading: t("Practical steps to replace a lie", "Mga praktikal na hakbang para palitan ang kasinungalingan"),
+        body: [
+          t("Name the lie (\"I am worthless\"), find a verse that answers it, write it on a card or phone note, and read it aloud daily, especially when the thought returns. Repeat for weeks; renewing the mind is a process (Romans 12:2).", "Pangalanan ang kasinungalingan (\"Wala akong halaga\"), humanap ng talatang sumasagot dito, isulat sa card o phone note, at basahin nang malakas araw-araw, lalo na kapag bumabalik ang kaisipan. Ulitin sa loob ng ilang linggo; proseso ang pagbabago ng isip (Roma 12:2)."),
+          t("Do not fight alone. Share with a brother or sister who will pray and remind you of the truth. Walls fall faster when the people of God march together.", "Huwag lumaban nang mag-isa. Ibahagi sa kapatid na magdarasal at magpapaalala ng katotohanan. Mas mabilis bumagsak ang mga pader kapag sama-samang nagmamartsa ang bayan ng Diyos."),
+        ],
+      },
+    ],
+    stories: [
+      {
+        title: t("Richard Wurmbrand: truth that prison could not break", "Richard Wurmbrand: katotohanang hindi nabali ng bilangguan"),
+        who: "Richard Wurmbrand",
+        where: t("Romania", "Romania"),
+        when: "1948-1964",
+        story: [
+          t("Richard Wurmbrand was a Romanian pastor of Jewish background. Under the communist regime he was arrested in 1948 and spent about fourteen years in prison, much of it in harsh conditions and some in solitary confinement. He and other prisoners were pressed to deny Christ and accept the regime's version of reality.", "Si Richard Wurmbrand ay pastor sa Romania na may lahing Judio. Sa ilalim ng komunistang pamahalaan, inaresto siya noong 1948 at nabilanggo nang mga labing-apat na taon, karamihan sa matitinding kondisyon at ang ilan ay nag-iisa sa selda. Pinilit siya at ang ibang bilanggo na itatwa si Cristo at tanggapin ang bersyon ng katotohanan ng rehimen."),
+          t("He held on to the Word and to prayer, and after his release was ransomed in 1964. He went to the West, wrote Tortured for Christ, and founded the ministry now known as Voice of the Martyrs to help persecuted Christians.", "Kumapit siya sa Salita at panalangin, at nang makalaya ay tinubos noong 1964. Pumunta siya sa Kanluran, isinulat ang Tortured for Christ, at itinatag ang ministeryong ngayon ay kilala bilang Voice of the Martyrs upang tulungan ang mga inuusig na Kristiyano."),
+        ],
+        lesson: t("When the mind is under siege, God's truth is a fortress that no wall of lies can overcome.", "Kapag kinukubkob ang isip, ang katotohanan ng Diyos ay kutang hindi kayang gibain ng pader ng kasinungalingan."),
+        sources: [
+          { label: "Wikipedia: Richard Wurmbrand", url: "https://en.wikipedia.org/wiki/Richard_Wurmbrand" },
+        ],
+      },
+    ],
+  },
+  "c-daily-freedom": {
+    deeper: [
+      {
+        heading: t("Abiding: the secret of staying free", "Pananatili kay Cristo: lihim ng patuloy na kalayaan"),
+        body: [
+          t("Jesus said, \"Abide in me, and I in you... apart from me you can do nothing\" (John 15:4-5). The Greek word meno means to remain, to dwell. Freedom is not a one-time event we then guard by willpower; it is a relationship we live in each day.", "Sabi ni Jesus, \"Manatili kayo sa akin, at ako sa inyo... kung hiwalay sa akin ay wala kayong magagawa\" (Juan 15:4-5). Ang salitang Griyego na meno ay nangangahulugang manatili, tumahan. Ang kalayaan ay hindi minsanang pangyayari na babantayan natin sa lakas ng loob; ito ay relasyong ginagalawan araw-araw."),
+          t("Paul adds, \"Where the Spirit of the Lord is, there is freedom\" (2 Corinthians 3:17), and we are being transformed from one degree of glory to another (verse 18). Growth is gradual, so be patient with yourself.", "Dagdag ni Pablo, \"Kung nasaan ang Espiritu ng Panginoon, naroon ang kalayaan\" (2 Corinto 3:17), at binabago tayo mula sa isang antas ng kaluwalhatian patungo sa isa pa (talata 18). Unti-unti ang paglago, kaya maging mapagpasensya sa sarili."),
+        ],
+      },
+      {
+        heading: t("New mercies every morning", "Bagong awa tuwing umaga"),
+        body: [
+          t("Lamentations 3:22-23 was written in the ruins of Jerusalem, yet it says the Lord's mercies are new every morning. If you stumble, do not wait days to return. Confess, receive mercy, and begin again the same day. David prayed, \"In the morning I lay my requests before you\" (Psalm 5:3).", "Isinulat ang Panaghoy 3:22-23 sa gitna ng guho ng Jerusalem, ngunit sinasabi nitong bago ang mga awa ng Panginoon tuwing umaga. Kung madapa ka, huwag maghintay ng ilang araw bago bumalik. Magtapat, tanggapin ang awa, at magsimulang muli sa araw ding iyon. Nanalangin si David, \"Sa umaga'y inihahain ko sa iyo ang aking mga kahilingan\" (Awit 5:3)."),
+          t("Build a simple rhythm: a few minutes of Scripture and prayer at the start of the day, a short pause at midday, and thanksgiving at night. Small steady habits protect freedom better than dramatic bursts.", "Bumuo ng simpleng ritmo: ilang minuto sa Kasulatan at panalangin sa simula ng araw, maikling paghinto sa tanghali, at pasasalamat sa gabi. Mas pinoprotektahan ng maliliit at tuloy-tuloy na gawi ang kalayaan kaysa sa paminsan-minsang matinding pagsisikap."),
+        ],
+      },
+      {
+        heading: t("Freedom to serve in love", "Kalayaang maglingkod sa pag-ibig"),
+        body: [
+          t("Galatians 5:13-14 warns that freedom is not an excuse to indulge the flesh, but a call to serve one another in love. A freed person looks outward: at the family, the church, the coworker, the neighbor.", "Nagbabala ang Galacia 5:13-14 na ang kalayaan ay hindi dahilan para sundin ang laman kundi tawag na maglingkod sa isa't isa sa pag-ibig. Ang taong napalaya ay tumitingin sa labas: sa pamilya, simbahan, katrabaho, at kapitbahay."),
+          t("As you were received in Christ, so walk in him, rooted and built up and established in the faith (Colossians 2:6-7). Stay connected to a local church; freedom grows in community.", "Gaya ng pagtanggap ninyo kay Cristo, ganoon din ang paglakad sa kanya, na nakaugat, nakatayo at matatag sa pananampalataya (Colosas 2:6-7). Manatiling konektado sa lokal na simbahan; lumalago ang kalayaan sa komunidad."),
+        ],
+      },
+    ],
+    stories: [
+      {
+        title: t("Brother Lawrence: freedom in the kitchen", "Brother Lawrence: kalayaan sa kusina"),
+        who: "Brother Lawrence",
+        where: t("Paris, France", "Paris, France"),
+        when: "17th century",
+        story: [
+          t("Nicolas Herman, known as Brother Lawrence of the Resurrection, was a lay brother in a Carmelite monastery in Paris in the 1600s. He spent much of his life working in the kitchen and repairing sandals, ordinary tasks with no recognition.", "Si Nicolas Herman, kilala bilang Brother Lawrence of the Resurrection, ay lay brother sa isang monasteryong Carmelite sa Paris noong 1600s. Malaking bahagi ng buhay niya ay ginugol sa kusina at pagkukumpuni ng sandalyas, mga karaniwang gawaing walang pagkilala."),
+          t("He learned to practice the presence of God in every moment, turning even washing dishes into worship. After his death his conversations and letters were gathered into the classic The Practice of the Presence of God, which Christians still read today.", "Natutunan niyang isabuhay ang presensya ng Diyos sa bawat sandali, at ginawang pagsamba kahit ang paghuhugas ng pinggan. Pagkamatay niya, ang kanyang mga usapan at liham ay tinipon sa klasikong The Practice of the Presence of God, na binabasa pa rin ng mga Kristiyano ngayon."),
+        ],
+        lesson: t("Daily freedom is not found in dramatic moments but in staying close to Christ in ordinary work.", "Ang araw-araw na kalayaan ay hindi nasa dramatikong sandali kundi sa pananatiling malapit kay Cristo sa karaniwang gawain."),
+        sources: [
+          { label: "Wikipedia: Brother Lawrence", url: "https://en.wikipedia.org/wiki/Brother_Lawrence" },
+        ],
+      },
+    ],
+  },
 };

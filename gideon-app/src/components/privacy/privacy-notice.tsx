@@ -9,11 +9,11 @@ type Text = { en: string; tl: string };
 
 const SECTIONS: { title: Text; body: Text[] }[] = [
   {
-    title: { en: "Why Gideon keeps your data", tl: "Bakit may data mo ang Gideon" },
+    title: { en: "Why Anointed Academy keeps your data", tl: "Bakit may data mo ang Anointed Academy" },
     body: [
       {
-        en: "Gideon helps you grow as a disciple of Jesus: reading the Bible, praying, following the discipleship journey, and walking with your Accountability Group (AG). We keep only what these features need, and we never sell your data or show ads.",
-        tl: "Tinutulungan ka ng Gideon na lumago bilang alagad ni Hesus: pagbabasa ng Bibliya, pananalangin, pagsunod sa discipleship journey, at paglakad kasama ang iyong Accountability Group (AG). Ang kailangan lang ng mga feature na ito ang iniingatan namin, at hindi namin kailanman ibinebenta ang iyong data o nagpapakita ng ads.",
+        en: "Anointed Academy helps you grow as a disciple of Jesus: reading the Bible, praying, following the discipleship journey, and walking with your Accountability Group (AG). We keep only what these features need, and we never sell your data or show ads.",
+        tl: "Tinutulungan ka ng Anointed Academy na lumago bilang alagad ni Hesus: pagbabasa ng Bibliya, pananalangin, pagsunod sa discipleship journey, at paglakad kasama ang iyong Accountability Group (AG). Ang kailangan lang ng mga feature na ito ang iniingatan namin, at hindi namin kailanman ibinebenta ang iyong data o nagpapakita ng ads.",
       },
     ],
   },
@@ -21,12 +21,12 @@ const SECTIONS: { title: Text; body: Text[] }[] = [
     title: { en: "What only you can see", tl: "Ang ikaw lang ang nakakakita" },
     body: [
       {
-        en: "Your personal prayers, notes, Bible highlights and bookmarks, devotion log, journey milestones, private testimonies, and your profile. AG leaders and Gideon administrators do not see these in the app.",
-        tl: "Ang iyong personal na panalangin, notes, highlight at bookmark sa Bibliya, devotion log, journey milestones, pribadong patotoo, at profile. Hindi ito nakikita ng mga AG leader at ng mga administrator ng Gideon sa app.",
+        en: "Your personal prayers, notes, Bible highlights and bookmarks, devotion log, journey milestones, private testimonies, and your profile. AG leaders and Anointed Academy administrators do not see these in the app.",
+        tl: "Ang iyong personal na panalangin, notes, highlight at bookmark sa Bibliya, devotion log, journey milestones, pribadong patotoo, at profile. Hindi ito nakikita ng mga AG leader at ng mga administrator ng Anointed Academy sa app.",
       },
       {
-        en: "Spiritual Assessment answers are encrypted on your phone with your vault PIN before they are saved. No one else can read them, including Gideon's administrators. If you lose both your PIN and recovery code, they cannot be recovered.",
-        tl: "Ine-encrypt sa iyong phone gamit ang vault PIN ang mga sagot sa Spiritual Assessment bago i-save. Walang ibang makakabasa nito, kasama ang mga administrator ng Gideon. Kapag nawala mo ang PIN at recovery code, hindi na ito mababawi.",
+        en: "Spiritual Assessment answers are encrypted on your phone with your vault PIN before they are saved. No one else can read them, including Anointed Academy's administrators. If you lose both your PIN and recovery code, they cannot be recovered.",
+        tl: "Ine-encrypt sa iyong phone gamit ang vault PIN ang mga sagot sa Spiritual Assessment bago i-save. Walang ibang makakabasa nito, kasama ang mga administrator ng Anointed Academy. Kapag nawala mo ang PIN at recovery code, hindi na ito mababawi.",
       },
     ],
   },
@@ -64,8 +64,8 @@ const SECTIONS: { title: Text; body: Text[] }[] = [
         tl: "Ayon sa Data Privacy Act of 2012 ng Pilipinas, maaari mong tingnan at itama ang iyong data sa app, itigil ang pagbabahagi ng progress anumang oras, umalis sa iyong AG, at burahin nang tuluyan ang iyong account at data mula sa page na ito.",
       },
       {
-        en: "Members under 18 should use Gideon with a parent's or guardian's permission. For questions or requests, talk to your AG leader, who can reach the Gideon administrator.",
-        tl: "Ang mga miyembrong wala pang 18 taong gulang ay dapat gumamit ng Gideon nang may pahintulot ng magulang o tagapag-alaga. Para sa mga tanong o kahilingan, kausapin ang iyong AG leader, na makakausap ang administrator ng Gideon.",
+        en: "Members under 18 should use Anointed Academy with a parent's or guardian's permission. For questions or requests, talk to your AG leader, who can reach the Anointed Academy administrator.",
+        tl: "Ang mga miyembrong wala pang 18 taong gulang ay dapat gumamit ng Anointed Academy nang may pahintulot ng magulang o tagapag-alaga. Para sa mga tanong o kahilingan, kausapin ang iyong AG leader, na makakausap ang administrator ng Anointed Academy.",
       },
     ],
   },

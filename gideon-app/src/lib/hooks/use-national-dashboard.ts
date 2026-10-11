@@ -128,7 +128,7 @@ export function downloadNationalCsv(items: AgStats[]) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `Gideon national report ${new Date().toISOString().slice(0, 10)}.csv`;
+  a.download = `Anointed Academy national report ${new Date().toISOString().slice(0, 10)}.csv`;
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }

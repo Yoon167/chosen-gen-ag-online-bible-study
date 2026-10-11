@@ -57,7 +57,7 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
   const noteDraft = draft ?? entry?.note ?? "";
 
   async function share() {
-    const text = `${devotion.title} (${devotion.scriptureReference})\n\n${devotion.mainLesson}\n\n— GIDEON`;
+    const text = `${devotion.title} (${devotion.scriptureReference})\n\n${devotion.mainLesson}\n\n— Anointed Academy`;
     if (navigator.share) {
       await navigator.share({ text }).catch(() => {});
     } else {

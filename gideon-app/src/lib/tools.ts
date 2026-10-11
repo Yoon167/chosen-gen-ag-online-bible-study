@@ -46,7 +46,7 @@ export interface Tool {
   blurb: Text;
 }
 
-/** Every tool in Gideon, for the Grow tab and search. */
+/** Every tool in Anointed Academy, for the Grow tab and search. */
 export const TOOLS: Tool[] = [
   { href: "/journey", icon: Compass, group: "learn", title: t("Discipleship Journey", "Discipleship Journey"), blurb: t("12 levels, from new believer to spiritual father or mother", "12 level, mula bagong mananampalataya hanggang espirituwal na ama o ina") },
   { href: "/courses", icon: Library, group: "learn", title: t("Courses", "Mga Course"), blurb: t("11 deep Bible courses", "11 malalim na Bible course") },

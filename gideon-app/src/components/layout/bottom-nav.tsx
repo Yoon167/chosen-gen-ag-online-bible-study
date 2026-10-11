@@ -12,7 +12,7 @@ import { useLiveSession } from "@/lib/hooks/use-live-session";
 import { readAnnouncementsSeen, useAnnouncements } from "@/lib/hooks/use-announcements";
 
 /**
- * Five tabs: Home, Bible, the AG (the heart of Gideon), Grow (every tool for
+ * Five tabs: Home, Bible, the AG (the heart of Anointed Academy), Grow (every tool for
  * growing: Journey, Courses, devotion, games…) and Profile. Each has its own
  * color so people always know where they are.
  */

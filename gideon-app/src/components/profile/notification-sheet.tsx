@@ -26,7 +26,7 @@ const DAY_NAMES: Record<Weekday, Text> = {
 
 /**
  * Notification preferences. Reminders go through the phone's calendar (free,
- * and they ring even when Gideon is closed); the switches choose which
+ * and they ring even when Anointed Academy is closed); the switches choose which
  * reminder cards appear on Home.
  */
 export function NotificationSheet({ open, onOpenChange }: { open: boolean; onOpenChange: (open: boolean) => void }) {
@@ -59,7 +59,7 @@ export function NotificationSheet({ open, onOpenChange }: { open: boolean; onOpe
         downloadReminder({
           time: quietTime,
           title: tx("Quiet time with God", "Quiet time kasama ang Diyos"),
-          body: tx("Open Gideon for today's devotion and Bible reading.", "Buksan ang Gideon para sa debosyon at pagbasa ng Bibliya ngayong araw."),
+          body: tx("Open Anointed Academy for today's devotion and Bible reading.", "Buksan ang Anointed Academy para sa debosyon at pagbasa ng Bibliya ngayong araw."),
           url: `${origin}/devotion`,
           fileName: "gideon-quiet-time",
         }),
@@ -74,7 +74,7 @@ export function NotificationSheet({ open, onOpenChange }: { open: boolean; onOpe
         downloadReminder({
           time: memoryTime,
           title: tx("Review your memory verses", "I-review ang iyong mga talata"),
-          body: tx("Hide God's Word in your heart. Open Gideon to review.", "Itago ang Salita ng Diyos sa iyong puso. Buksan ang Gideon para mag-review."),
+          body: tx("Hide God's Word in your heart. Open Anointed Academy to review.", "Itago ang Salita ng Diyos sa iyong puso. Buksan ang Anointed Academy para mag-review."),
           url: `${origin}/memory`,
           fileName: "gideon-memory-verses",
         }),
@@ -91,7 +91,7 @@ export function NotificationSheet({ open, onOpenChange }: { open: boolean; onOpe
           time: checkinTime,
           weekday: checkinDay,
           title: tx("Weekly check-in", "Lingguhang check-in"),
-          body: tx("Two minutes with your accountability partner in Gideon.", "Dalawang minuto kasama ang iyong accountability partner sa Gideon."),
+          body: tx("Two minutes with your accountability partner in Anointed Academy.", "Dalawang minuto kasama ang iyong accountability partner sa Anointed Academy."),
           url: `${origin}/church/checkin`,
           fileName: "gideon-weekly-checkin",
         }),

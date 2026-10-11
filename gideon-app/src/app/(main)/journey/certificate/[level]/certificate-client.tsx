@@ -49,7 +49,7 @@ export function CertificateClient() {
               Level {level.level} · {level.title[lang]}
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
-              {tx("of the Gideon Discipleship Journey", "ng Gideon Discipleship Journey")}
+              {tx("of the Anointed Academy Discipleship Journey", "ng Anointed Academy Discipleship Journey")}
             </p>
             {s.progress.checkpoint && (
               <p className="mt-6 text-xs text-muted-foreground">

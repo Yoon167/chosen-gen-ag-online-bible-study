@@ -79,7 +79,7 @@ export function Presenter({
   if (!part) return null;
 
   return (
-    <div className="fixed inset-0 z-[90] flex flex-col bg-[#14112b] text-white" role="dialog" aria-label={tx("Present", "I-present")}>
+    <div className="fixed inset-0 z-[90] flex flex-col bg-[#0f1d33] text-white" role="dialog" aria-label={tx("Present", "I-present")}>
       <div className="flex items-center justify-between px-5 pt-[calc(env(safe-area-inset-top,0px)+12px)]">
         <p className="min-w-0 flex-1 truncate text-xs text-white/60">
           {heading} · {index + 1}/{parts.length}

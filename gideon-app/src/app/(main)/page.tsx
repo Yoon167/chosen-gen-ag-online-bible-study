@@ -58,7 +58,7 @@ export default function HomePage() {
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1a1638]/80 via-[#1a1638]/70 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#13253d]/80 via-[#13253d]/70 to-background" />
         </div>
 
         <header className="relative flex items-start justify-between px-5 pt-8">

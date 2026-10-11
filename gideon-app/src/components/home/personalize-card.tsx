@@ -12,7 +12,7 @@ const DONE_KEY = "gideon-personalized";
 /** The member's usual devotion time; Notifications uses it for the daily verse. */
 export const DEVOTION_TIME_KEY = "gideon-devotion-time";
 
-/** Three quick questions the first time, so Gideon points each person to the right first step. */
+/** Three quick questions the first time, so Anointed Academy points each person to the right first step. */
 export function PersonalizeCard() {
   const tx = useTx();
   const [show, setShow] = useState(false);
@@ -85,7 +85,7 @@ export function PersonalizeCard() {
     <div className="ui-rise space-y-3 rounded-2xl border border-gold/50 bg-gradient-to-br from-gold/20 to-gold/5 p-4">
       <p className="flex items-center gap-2 font-heading text-base font-semibold">
         <Sparkles className="size-4 text-gold-foreground" />
-        {tx("Make Gideon yours", "Gawing sa iyo ang Gideon")}
+        {tx("Make Anointed Academy yours", "Gawing sa iyo ang Anointed Academy")}
       </p>
       <div className="space-y-1.5">
         <p className="text-sm">{tx("1. Are you new to following Jesus?", "1. Bago ka ba sa pagsunod kay Hesus?")}</p>

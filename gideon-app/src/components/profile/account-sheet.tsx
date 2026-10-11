@@ -107,7 +107,7 @@ export function AccountSheet({
           <div className="space-y-3 px-4 pb-6">
             <p className="text-xs text-muted-foreground">
               {mode === "backup"
-                ? "GIDEON works without an account, but adding an email keeps your prayers, notes, and journey safe if you lose this device."
+                ? "Anointed Academy works without an account, but adding an email keeps your prayers, notes, and journey safe if you lose this device."
                 : "Sign in to an account you already created, on this or another device."}
             </p>
 

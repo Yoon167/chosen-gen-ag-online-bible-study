@@ -43,13 +43,13 @@ const PLATFORMS: { id: Platform; label: Text; steps: Text[] }[] = [
     label: { en: "Computer", tl: "Computer" },
     steps: [
       { en: "Open gideon-app.web.app in Chrome or Edge.", tl: "Buksan ang gideon-app.web.app sa Chrome o Edge." },
-      { en: "Click the install icon at the right of the address bar (or ⋮ → Install Gideon).", tl: "I-click ang install icon sa kanan ng address bar (o ⋮ → Install Gideon)." },
+      { en: "Click the install icon at the right of the address bar (or ⋮ → Install Anointed Academy).", tl: "I-click ang install icon sa kanan ng address bar (o ⋮ → Install Anointed Academy)." },
       { en: "On a Mac with Safari: File → Add to Dock.", tl: "Sa Mac gamit ang Safari: File → Add to Dock." },
     ],
   },
 ];
 
-/** How to put Gideon on the home screen, with the one-tap install when the browser offers it. */
+/** How to put Anointed Academy on the home screen, with the one-tap install when the browser offers it. */
 export function InstallSheet({ open, onOpenChange }: { open: boolean; onOpenChange: (open: boolean) => void }) {
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
@@ -70,25 +70,25 @@ function InstallGuide() {
   return (
     <>
       <SheetHeader>
-        <SheetTitle className="font-heading">{tx("Add Gideon to your home screen", "Idagdag ang Gideon sa home screen")}</SheetTitle>
+        <SheetTitle className="font-heading">{tx("Add Anointed Academy to your home screen", "Idagdag ang Anointed Academy sa home screen")}</SheetTitle>
       </SheetHeader>
       <div className="space-y-4 overflow-y-auto px-4 pb-6">
         {installed ? (
           <p className="rounded-xl bg-primary/10 p-3 text-sm text-primary">
-            {tx("Gideon is already installed on this device. ✓", "Naka-install na ang Gideon sa device na ito. ✓")}
+            {tx("Anointed Academy is already installed on this device. ✓", "Naka-install na ang Anointed Academy sa device na ito. ✓")}
           </p>
         ) : (
           canInstall && (
             <Button className="h-11 w-full" onClick={promptInstall}>
               <Download />
-              {tx("Install Gideon now", "I-install ang Gideon ngayon")}
+              {tx("Install Anointed Academy now", "I-install ang Anointed Academy ngayon")}
             </Button>
           )
         )}
         <p className="text-sm text-muted-foreground">
           {tx(
-            "Gideon is a web app: install it from your browser and it opens full-screen like any app, works offline, and needs no app store.",
-            "Web app ang Gideon: i-install ito mula sa browser at bubukas ito nang full-screen na parang ibang app, gumagana offline, at hindi na kailangan ng app store."
+            "Anointed Academy is a web app: install it from your browser and it opens full-screen like any app, works offline, and needs no app store.",
+            "Web app ang Anointed Academy: i-install ito mula sa browser at bubukas ito nang full-screen na parang ibang app, gumagana offline, at hindi na kailangan ng app store."
           )}
         </p>
         <div role="tablist" className="flex flex-wrap gap-1.5">

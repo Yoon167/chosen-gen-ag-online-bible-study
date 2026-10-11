@@ -22,7 +22,7 @@ export default function MainError({ error, reset }: { error: Error & { digest?: 
       <AlertTriangle className="size-10 text-gold-foreground" />
       <div>
         <h1 className="font-heading text-lg font-semibold">
-          {stale ? "Updating Gideon… / Ina-update ang Gideon…" : "Something went wrong / May nangyaring mali"}
+          {stale ? "Updating Anointed Academy… / Ina-update ang Anointed Academy…" : "Something went wrong / May nangyaring mali"}
         </h1>
         <p className="mt-1 text-sm text-muted-foreground">
           {stale

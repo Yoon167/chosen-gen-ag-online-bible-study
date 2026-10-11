@@ -45,7 +45,7 @@ export interface Testimony {
   godsFaithfulness: string;
   scriptureReference?: string;
   photoUrl?: string;
-  /** "private" (default) = only me; "members" = every GIDEON member; "ag" = my AG only. */
+  /** "private" (default) = only me; "members" = every Anointed Academy member; "ag" = my AG only. */
   visibility?: TestimonyVisibility;
   /** The AG it is shared with when visibility is "ag". */
   agId?: string | null;

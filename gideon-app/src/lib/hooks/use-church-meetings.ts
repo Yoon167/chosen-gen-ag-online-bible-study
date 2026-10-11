@@ -213,7 +213,7 @@ export function downloadCalendarFile(m: ChurchMeeting, churchName: string) {
   const lines = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Gideon//Church Meetings//EN",
+    "PRODID:-//Anointed Academy//Church Meetings//EN",
     "BEGIN:VEVENT",
     `UID:${m.id}@gideon-app.web.app`,
     `DTSTAMP:${icsDate(Date.now())}`,

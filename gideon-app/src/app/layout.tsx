@@ -34,25 +34,25 @@ const LAUNCH_SCREENS: [number, number, number][] = [
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://gideon-app.web.app"),
-  title: "GIDEON — Strengthening Faith. Growing Disciples.",
+  title: "Anointed Academy — Learn. Grow. Disciple. Lead.",
   description:
-    "GIDEON is an all-in-one Christian discipleship and ministry platform: Bible reading plans, daily devotion, prayer, spiritual journey, notes, and more.",
+    "Anointed Academy is a complete Christian discipleship platform: structured learning, biblical teaching, courses, assessments, prayer, Bible study, follow-up, mentorship, presentations and spiritual growth tracking.",
   manifest: "/manifest.webmanifest",
   openGraph: {
     type: "website",
-    siteName: "GIDEON",
-    title: "GIDEON — A Christian Journey",
+    siteName: "Anointed Academy",
+    title: "Anointed Academy — Your Complete Discipleship Journey",
     description: "Bible, daily devotion, prayer, testimony and teaching recaps for AG members.",
     url: "/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "GIDEON — A Christian Journey",
+    title: "Anointed Academy — Your Complete Discipleship Journey",
   },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "GIDEON",
+    title: "Anointed Academy",
     // Launch screens for installed iPhones (portrait), generated from the app icon.
     startupImage: LAUNCH_SCREENS.map(([w, h, dpr]) => ({
       url: `/splash/launch-${w * dpr}x${h * dpr}.png`,
@@ -67,7 +67,7 @@ export const viewport: Viewport = {
   viewportFit: "cover",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#fbfaf7" },
-    { media: "(prefers-color-scheme: dark)", color: "#131226" },
+    { media: "(prefers-color-scheme: dark)", color: "#141b2b" },
   ],
 };
 

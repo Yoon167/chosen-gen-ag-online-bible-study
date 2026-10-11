@@ -74,8 +74,8 @@ export default function MembersPage() {
           icon={Users}
           title={tx("AG leaders only", "Para sa mga AG leader lamang")}
           description={tx(
-            "AG leaders manage members here once your AG is set up in Gideon.",
-            "Dito pinamamahalaan ng mga AG leader ang mga miyembro kapag naka-set up na ang AG mo sa Gideon."
+            "AG leaders manage members here once your AG is set up in Anointed Academy.",
+            "Dito pinamamahalaan ng mga AG leader ang mga miyembro kapag naka-set up na ang AG mo sa Anointed Academy."
           )}
         />
         {uid === NATIONAL_ADMIN_UID && (

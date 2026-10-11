@@ -15,7 +15,7 @@ export default function PrivacyPage() {
 
   return (
     <div>
-      <PageHeader title={tx("Privacy", "Privacy")} subtitle={tx("How Gideon cares for your data", "Paano iniingatan ng Gideon ang iyong data")} icon={ShieldCheck} back />
+      <PageHeader title={tx("Privacy", "Privacy")} subtitle={tx("How Anointed Academy cares for your data", "Paano iniingatan ng Anointed Academy ang iyong data")} icon={ShieldCheck} back />
       <div className="space-y-6 px-5 pb-8">
         <PrivacyNotice />
         {agreedAt && (

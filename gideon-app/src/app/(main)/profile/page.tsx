@@ -159,7 +159,7 @@ export default function ProfilePage() {
             <ThemeSelect />
           </SettingRow>
           {installed ? (
-            <SettingRow icon={Download} label={lang === "tl" ? "Naka-install ang Gideon" : "Gideon Installed"}>
+            <SettingRow icon={Download} label={lang === "tl" ? "Naka-install ang Anointed Academy" : "Anointed Academy Installed"}>
               <span className="text-xs text-muted-foreground">✓</span>
             </SettingRow>
           ) : (
@@ -167,7 +167,7 @@ export default function ProfilePage() {
               onClick={() => (canInstall ? promptInstall() : setInstallOpen(true))}
               className="block w-full text-left"
             >
-              <SettingRow icon={Download} label={lang === "tl" ? "I-install ang Gideon" : "Install Gideon"}>
+              <SettingRow icon={Download} label={lang === "tl" ? "I-install ang Anointed Academy" : "Install Anointed Academy"}>
                 <ChevronRight className="size-4 text-muted-foreground" />
               </SettingRow>
             </button>
@@ -228,7 +228,7 @@ export default function ProfilePage() {
             </Link>
           )}
           <Link href="/whats-new" className="block">
-            <SettingRow icon={Sparkles} label={lang === "tl" ? "Ano'ng bago sa Gideon" : "What's new in Gideon"}>
+            <SettingRow icon={Sparkles} label={lang === "tl" ? "Ano'ng bago sa Anointed Academy" : "What's new in Anointed Academy"}>
               <ChevronRight className="size-4 text-muted-foreground" />
             </SettingRow>
           </Link>

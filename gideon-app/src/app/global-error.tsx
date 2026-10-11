@@ -11,7 +11,7 @@ export default function GlobalError({ error }: { error: Error & { digest?: strin
   }, [error]);
   return (
     <html lang="en">
-      <body style={{ margin: 0, minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#14112b", color: "white", fontFamily: "system-ui, sans-serif", textAlign: "center", padding: 24 }}>
+      <body style={{ margin: 0, minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#0f1d33", color: "white", fontFamily: "system-ui, sans-serif", textAlign: "center", padding: 24 }}>
         <div>
           <p style={{ fontSize: 18, fontWeight: 600 }}>Something went wrong / May nangyaring mali</p>
           <p style={{ opacity: 0.7, fontSize: 14 }}>Reload to get the latest version. / I-reload para makuha ang bagong bersyon.</p>

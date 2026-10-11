@@ -77,7 +77,7 @@ export default function ChurchSetupPage() {
       <div>
         <PageHeader title="Church setup" icon={ShieldCheck} back />
         <div className="space-y-2 px-5 text-sm text-muted-foreground">
-          <p>Only the Gideon national admin can set up churches.</p>
+          <p>Only the Anointed Academy national admin can set up churches.</p>
           <p>
             Your account ID: <span className="select-all font-mono text-foreground">{uid}</span>
           </p>

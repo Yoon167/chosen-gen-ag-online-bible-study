@@ -9,11 +9,11 @@ export const APP_URL = "https://gideon-app.web.app";
 const INVITE = {
   en: {
     heading: "Invite your AG group",
-    body: "Share GIDEON with your cell group, youth or ministry team.",
+    body: "Share Anointed Academy with your cell group, youth or ministry team.",
     share: "Share Invitation",
     copied: "Copied!",
     copy: "Copy message",
-    message: `Hi! 🙏 Join me on GIDEON — our AG Christian journey app.
+    message: `Hi! 🙏 Join me on Anointed Academy — our AG Christian journey app.
 
 📖 Bible (English & Tagalog) and reading plans
 ☀️ Daily devotion
@@ -27,11 +27,11 @@ Tip: tap "Add to Home Screen" so it works like an app. God bless! ✝️`,
   },
   tl: {
     heading: "Imbitahan ang iyong AG group",
-    body: "Ibahagi ang GIDEON sa iyong cell group, youth o ministry team.",
+    body: "Ibahagi ang Anointed Academy sa iyong cell group, youth o ministry team.",
     share: "Ibahagi ang Imbitasyon",
     copied: "Nakopya na!",
     copy: "Kopyahin ang mensahe",
-    message: `Hi! 🙏 Samahan mo ako sa GIDEON — ang app natin sa AG para sa ating Christian journey.
+    message: `Hi! 🙏 Samahan mo ako sa Anointed Academy — ang app natin sa AG para sa ating Christian journey.
 
 📖 Bibliya (English at Tagalog) at reading plans
 ☀️ Pang-araw-araw na debosyon

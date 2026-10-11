@@ -22,7 +22,7 @@ const db = () => getFirestore();
 export const onPushTest = onDocumentCreated("users/{uid}/pushTests/{id}", async (event) => {
   const devices = await devicesOf([event.params.uid], null);
   const sent = await sendTo(devices, {
-    title: { en: "✅ Gideon notifications work", tl: "✅ Gumagana ang notifications ng Gideon" },
+    title: { en: "✅ Anointed Academy notifications work", tl: "✅ Gumagana ang notifications ng Anointed Academy" },
     body: {
       en: "You'll get the daily verse, live studies, prayers and reminders here.",
       tl: "Dito mo matatanggap ang daily verse, live study, panalangin at mga paalala.",
@@ -242,8 +242,8 @@ async function dailyVerse(at: number) {
     await sendTo(list, {
       title: { en: `📖 Verse of the day · ${ref}`, tl: `📖 Talata ngayong araw · ${refTl}` },
       body: {
-        en: en ? clip(en, 170) : "Open Gideon for today's verse and devotion.",
-        tl: tl ? clip(tl, 170) : "Buksan ang Gideon para sa talata at debosyon ngayong araw.",
+        en: en ? clip(en, 170) : "Open Anointed Academy for today's verse and devotion.",
+        tl: tl ? clip(tl, 170) : "Buksan ang Anointed Academy para sa talata at debosyon ngayong araw.",
       },
       url: "/devotion",
       tag: "verse-of-the-day",
@@ -403,8 +403,8 @@ async function morningCare(at: number) {
       await sendTo(list, {
         title: { en: "💛 Let's check on them", tl: "💛 Kumustahin natin sila" },
         body: {
-          en: `${quiet.length} member${quiet.length > 1 ? "s haven't" : " hasn't"} opened Gideon in two weeks: ${names}${more ? ` and ${more} more` : ""}. A call or message can mean a lot.`,
-          tl: `${quiet.length} member ang dalawang linggo nang hindi nagbubukas ng Gideon: ${names}${more ? ` at ${more} pa` : ""}. Malaking bagay ang isang tawag o mensahe.`,
+          en: `${quiet.length} member${quiet.length > 1 ? "s haven't" : " hasn't"} opened Anointed Academy in two weeks: ${names}${more ? ` and ${more} more` : ""}. A call or message can mean a lot.`,
+          tl: `${quiet.length} member ang dalawang linggo nang hindi nagbubukas ng Anointed Academy: ${names}${more ? ` at ${more} pa` : ""}. Malaking bagay ang isang tawag o mensahe.`,
         },
         url: "/members",
         tag: `quiet-${m.ref.parent.parent?.id}`,

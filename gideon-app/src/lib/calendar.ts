@@ -1,7 +1,7 @@
 /**
  * Reminders through the phone's own calendar: a repeating event with an
  * alert, saved as an .ics file the member opens and adds. It rings even when
- * Gideon is closed, with no server or push service (push needs a paid plan).
+ * Anointed Academy is closed, with no server or push service (push needs a paid plan).
  * Times are "floating" local times, so they ring at the chosen hour wherever
  * the member is.
  */
@@ -43,7 +43,7 @@ export function downloadReminder({
   const ics = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Gideon//Reminders//EN",
+    "PRODID:-//Anointed Academy//Reminders//EN",
     "BEGIN:VEVENT",
     `UID:gideon-${fileName}-${Date.now()}@gideon-app.web.app`,
     `DTSTAMP:${stamp}`,
@@ -83,7 +83,7 @@ export function downloadEvents({
   fileName: string;
 }) {
   const stamp = utc(Date.now());
-  const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Gideon//Events//EN"];
+  const lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Anointed Academy//Events//EN"];
   events.forEach((e, i) => {
     lines.push(
       "BEGIN:VEVENT",

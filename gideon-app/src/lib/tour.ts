@@ -45,7 +45,7 @@ export const TOUR_STEPS: TourStep[] = [
     target: null,
     icon: Sparkles,
     emoji: "👋",
-    title: { en: "Welcome to Gideon", tl: "Maligayang pagdating sa Gideon" },
+    title: { en: "Welcome to Anointed Academy", tl: "Maligayang pagdating sa Anointed Academy" },
     body: {
       en: "Your companion in your walk with Christ. Let's take a quick look around.",
       tl: "Ang iyong kasama sa paglakad kasama si Cristo. Silipin natin sandali ang app.",
@@ -179,8 +179,8 @@ export const TOUR_STEPS: TourStep[] = [
     emoji: "🔔",
     title: { en: "Notifications", tl: "Notifications" },
     body: {
-      en: "Turn on push notifications in Profile: the daily verse at your time, live studies, prayer requests, meeting reminders, follow-ups and app updates, even when Gideon is closed.",
-      tl: "I-on ang push notifications sa Profile: ang daily verse sa oras mo, live study, prayer request, paalala sa meeting, follow-up at updates ng app, kahit sarado ang Gideon.",
+      en: "Turn on push notifications in Profile: the daily verse at your time, live studies, prayer requests, meeting reminders, follow-ups and app updates, even when Anointed Academy is closed.",
+      tl: "I-on ang push notifications sa Profile: ang daily verse sa oras mo, live study, prayer request, paalala sa meeting, follow-up at updates ng app, kahit sarado ang Anointed Academy.",
     },
   },
   {
@@ -191,8 +191,8 @@ export const TOUR_STEPS: TourStep[] = [
     emoji: "⚙️",
     title: { en: "Profile", tl: "Profile" },
     body: {
-      en: "Manage your settings and install Gideon on your phone's home screen. You can restart this tour here anytime.",
-      tl: "Pamahalaan ang iyong mga setting at i-install ang Gideon sa home screen ng iyong phone. Maaari mong ulitin ang tour na ito dito anumang oras.",
+      en: "Manage your settings and install Anointed Academy on your phone's home screen. You can restart this tour here anytime.",
+      tl: "Pamahalaan ang iyong mga setting at i-install ang Anointed Academy sa home screen ng iyong phone. Maaari mong ulitin ang tour na ito dito anumang oras.",
     },
   },
   {

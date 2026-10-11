@@ -75,7 +75,7 @@ export function VerseOfTheDayCard() {
   const reference = current?.reference ?? "";
 
   async function share() {
-    const shareText = `"${text}" — ${reference} (GIDEON)`;
+    const shareText = `"${text}" — ${reference} (Anointed Academy)`;
     if (navigator.share) {
       await navigator.share({ text: shareText }).catch(() => {});
     } else {

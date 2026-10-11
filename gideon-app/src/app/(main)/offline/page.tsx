@@ -94,7 +94,7 @@ export default function OfflinePage() {
     <div>
       <PageHeader
         title={tx("Offline", "Offline")}
-        subtitle={tx("Use Gideon without signal", "Gamitin ang Gideon kahit walang signal")}
+        subtitle={tx("Use Anointed Academy without signal", "Gamitin ang Anointed Academy kahit walang signal")}
         back
       />
 
@@ -223,7 +223,7 @@ export default function OfflinePage() {
 
         {usedMb !== null && (
           <p className="text-center text-xs text-muted-foreground">
-            {tx(`Gideon uses about ${usedMb} MB on this phone.`, `Gumagamit ang Gideon ng mga ${usedMb} MB sa phone na ito.`)}
+            {tx(`Anointed Academy uses about ${usedMb} MB on this phone.`, `Gumagamit ang Anointed Academy ng mga ${usedMb} MB sa phone na ito.`)}
           </p>
         )}
       </div>

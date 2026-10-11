@@ -9,7 +9,7 @@
  *   data key ──AES-GCM──► each assessment (stored as { ct, iv })
  *
  * Losing both the PIN and the recovery code makes the data unreadable for
- * everyone, including Gideon's administrators. That is the guarantee.
+ * everyone, including Anointed Academy's administrators. That is the guarantee.
  */
 
 const PBKDF2_ITERATIONS = 600_000;

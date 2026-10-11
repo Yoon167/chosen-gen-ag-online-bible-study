@@ -28,7 +28,7 @@ export interface InventoryGroup {
   items: Text[];
   /** Has an "Others" box to write in. */
   others?: boolean;
-  /** A Gideon lesson that speaks to this area. */
+  /** A Anointed Academy lesson that speaks to this area. */
   lesson?: { href: string; title: Text };
 }
 

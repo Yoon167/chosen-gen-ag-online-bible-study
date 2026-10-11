@@ -22,7 +22,7 @@ const firebaseConfig = {
 
 export const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 
-// App Check (free, reCAPTCHA v3): proves requests come from the real Gideon
+// App Check (free, reCAPTCHA v3): proves requests come from the real Anointed Academy
 // app, so bots can't use the database directly. It turns on when a build sets
 // NEXT_PUBLIC_RECAPTCHA_SITE_KEY (a public key from google.com/recaptcha/admin,
 // registered under Firebase console > App Check). Requests are only refused

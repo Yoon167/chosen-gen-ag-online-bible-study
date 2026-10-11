@@ -42,8 +42,8 @@ export function InviteSheet({
   }, [open, url]);
 
   const message = tx(
-    `Join our Accountability Group "${churchName}" on Gideon: ${url}`,
-    `Sumali sa aming Accountability Group na "${churchName}" sa Gideon: ${url}`
+    `Join our Accountability Group "${churchName}" on Anointed Academy: ${url}`,
+    `Sumali sa aming Accountability Group na "${churchName}" sa Anointed Academy: ${url}`
   );
 
   return (

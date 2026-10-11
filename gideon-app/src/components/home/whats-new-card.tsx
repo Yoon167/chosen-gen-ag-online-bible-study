@@ -41,7 +41,7 @@ export function WhatsNewCard() {
           <Sparkles className="size-5" />
         </span>
         <span className="min-w-0 flex-1">
-          <span className="block text-xs font-semibold text-gold-foreground">{tx("New in Gideon", "Bago sa Gideon")}</span>
+          <span className="block text-xs font-semibold text-gold-foreground">{tx("New in Anointed Academy", "Bago sa Anointed Academy")}</span>
           <span className="block text-sm font-medium leading-snug">{LATEST_RELEASE.title[lang]}</span>
         </span>
         <ChevronRight className="size-4 text-muted-foreground" />

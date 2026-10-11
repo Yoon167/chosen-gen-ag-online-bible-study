@@ -239,8 +239,8 @@ function ResultView({
 
   async function share() {
     const text = tx(
-      `My top spiritual gifts: ${top.map((g) => g.name.en).join(", ")}. (Gideon Spiritual Gifts Test)`,
-      `Ang aking pangunahing espirituwal na kaloob: ${top.map((g) => g.name.tl).join(", ")}. (Gideon Spiritual Gifts Test)`
+      `My top spiritual gifts: ${top.map((g) => g.name.en).join(", ")}. (Anointed Academy Spiritual Gifts Test)`,
+      `Ang aking pangunahing espirituwal na kaloob: ${top.map((g) => g.name.tl).join(", ")}. (Anointed Academy Spiritual Gifts Test)`
     );
     if (navigator.share) await navigator.share({ text }).catch(() => {});
     else await navigator.clipboard.writeText(text).catch(() => {});

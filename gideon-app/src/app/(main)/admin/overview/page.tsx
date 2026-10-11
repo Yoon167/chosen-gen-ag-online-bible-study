@@ -38,7 +38,7 @@ export default function NationalDashboardPage() {
         <PageHeader title={title} icon={Globe2} back />
         <EmptyState
           icon={Globe2}
-          title={tx("For the Gideon national admin", "Para sa Gideon national admin")}
+          title={tx("For the Anointed Academy national admin", "Para sa Anointed Academy national admin")}
           description={tx("This page shows every AG's numbers.", "Ipinapakita ng page na ito ang bilang ng bawat AG.")}
         />
       </div>

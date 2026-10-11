@@ -30,7 +30,7 @@ const KINDS: { id: PushPref; label: Text; detail: Text }[] = [
   { id: "prayer", label: { en: "Prayer wall and prayer chains", tl: "Prayer wall at prayer chain" }, detail: { en: "New requests, your prayer hour, who prayed for you", tl: "Bagong request, oras mo sa chain, sino ang nanalangin para sa iyo" } },
   { id: "meetings", label: { en: "Meeting reminders", tl: "Paalala sa meeting" }, detail: { en: "30 minutes before", tl: "30 minuto bago magsimula" } },
   { id: "checkin", label: { en: "Check-ins and follow-up", tl: "Check-in at follow-up" }, detail: { en: "Your partner's check-in, and a Sunday nudge", tl: "Check-in ng partner mo, at paalala tuwing Linggo" } },
-  { id: "updates", label: { en: "Gideon app updates", tl: "Updates ng Gideon app" }, detail: { en: "New features and improvements", tl: "Mga bagong feature at pagpapabuti" } },
+  { id: "updates", label: { en: "Anointed Academy app updates", tl: "Updates ng Anointed Academy app" }, detail: { en: "New features and improvements", tl: "Mga bagong feature at pagpapabuti" } },
   { id: "ag", label: { en: "AG news", tl: "Balita ng AG" }, detail: { en: "Announcements, join requests, approvals", tl: "Anunsyo, gustong sumali, pag-apruba" } },
 ];
 
@@ -53,7 +53,7 @@ export function PushSettings() {
       if (cancelled) return;
       setSupported(ok);
       const saved = readPush();
-      // The quiet-time answer from Home's "Make Gideon yours" is the default verse time.
+      // The quiet-time answer from Home's "Make Anointed Academy yours" is the default verse time.
       try {
         const usual = localStorage.getItem("gideon-devotion-time");
         if (usual && !saved) setVerseTime(usual);
@@ -81,8 +81,8 @@ export function PushSettings() {
       setError(
         why === "blocked"
           ? tx(
-              "Notifications are blocked for Gideon. Allow them in your browser or phone settings, then try again.",
-              "Naka-block ang notifications para sa Gideon. Payagan ito sa settings ng browser o phone, saka subukan ulit."
+              "Notifications are blocked for Anointed Academy. Allow them in your browser or phone settings, then try again.",
+              "Naka-block ang notifications para sa Anointed Academy. Payagan ito sa settings ng browser o phone, saka subukan ulit."
             )
           : why === "dismissed"
             ? tx("Tap Allow when your phone asks.", "Pindutin ang Allow kapag nagtanong ang phone.")
@@ -120,12 +120,12 @@ export function PushSettings() {
       <p className="rounded-xl bg-secondary/50 p-3 text-xs leading-relaxed text-foreground/80">
         {isIos() && !isStandalone()
           ? tx(
-              "On iPhone, push notifications work once Gideon is installed: tap Share → Add to Home Screen, open Gideon from there, then come back here.",
-              "Sa iPhone, gumagana ang push notifications kapag naka-install ang Gideon: pindutin ang Share → Add to Home Screen, buksan ang Gideon mula roon, saka bumalik dito."
+              "On iPhone, push notifications work once Anointed Academy is installed: tap Share → Add to Home Screen, open Anointed Academy from there, then come back here.",
+              "Sa iPhone, gumagana ang push notifications kapag naka-install ang Anointed Academy: pindutin ang Share → Add to Home Screen, buksan ang Anointed Academy mula roon, saka bumalik dito."
             )
           : tx(
-              "This browser can't receive push notifications. Use Chrome, or install Gideon to your Home Screen.",
-              "Hindi makatanggap ng push notifications ang browser na ito. Gamitin ang Chrome, o i-install ang Gideon sa Home Screen."
+              "This browser can't receive push notifications. Use Chrome, or install Anointed Academy to your Home Screen.",
+              "Hindi makatanggap ng push notifications ang browser na ito. Gamitin ang Chrome, o i-install ang Anointed Academy sa Home Screen."
             )}
       </p>
     );
@@ -139,7 +139,7 @@ export function PushSettings() {
           <p className="text-sm font-medium">{tx("Push notifications", "Push notifications")}</p>
           <p className="text-xs text-muted-foreground">
             {on
-              ? tx("On for this device, even when Gideon is closed.", "Naka-on sa device na ito, kahit sarado ang Gideon.")
+              ? tx("On for this device, even when Anointed Academy is closed.", "Naka-on sa device na ito, kahit sarado ang Anointed Academy.")
               : tx("Get the daily verse, live studies, prayers and reminders.", "Matanggap ang daily verse, live study, panalangin at paalala.")}
           </p>
         </div>
@@ -157,8 +157,8 @@ export function PushSettings() {
           {test === "sent" && (
             <p className="text-xs text-muted-foreground">
               {tx(
-                "Sent. Check your notification bar. If nothing shows, allow Gideon/Chrome notifications in Android Settings → Apps → Chrome → Notifications, and turn off battery saver for Chrome.",
-                "Naipadala na. Tingnan ang notification bar mo. Kung walang lumabas, payagan ang notifications ng Gideon/Chrome sa Android Settings → Apps → Chrome → Notifications, at i-off ang battery saver para sa Chrome."
+                "Sent. Check your notification bar. If nothing shows, allow Anointed Academy/Chrome notifications in Android Settings → Apps → Chrome → Notifications, and turn off battery saver for Chrome.",
+                "Naipadala na. Tingnan ang notification bar mo. Kung walang lumabas, payagan ang notifications ng Anointed Academy/Chrome sa Android Settings → Apps → Chrome → Notifications, at i-off ang battery saver para sa Chrome."
               )}
             </p>
           )}

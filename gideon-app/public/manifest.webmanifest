@@ -1,13 +1,13 @@
 {
-  "name": "GIDEON — Strengthening Faith. Growing Disciples.",
-  "short_name": "GIDEON",
-  "description": "GIDEON is an all-in-one Christian discipleship and ministry platform: Bible reading plans, daily devotion, prayer, spiritual journey, notes, and more.",
+  "name": "Anointed Academy — Learn. Grow. Disciple. Lead.",
+  "short_name": "Anointed",
+  "description": "Anointed Academy is a complete Christian discipleship platform: structured learning, biblical teaching, courses, assessments, prayer, Bible study, follow-up, mentorship, presentations and spiritual growth tracking.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#131226",
-  "theme_color": "#131226",
+  "background_color": "#1E3A5F",
+  "theme_color": "#1E3A5F",
   "icons": [
     {
       "src": "icons/icon-192.png",

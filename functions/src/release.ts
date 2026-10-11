@@ -4,10 +4,10 @@
  * the first time it sees a new id.
  */
 export const LATEST_RELEASE = {
-  id: "2026-10-08-ui",
-  title: { en: "✨ New in Gideon", tl: "✨ Bago sa Gideon" },
+  id: "2026-10-11-rebrand",
+  title: { en: "✨ Welcome to Anointed Academy", tl: "✨ Maligayang pagdating sa Anointed Academy" },
   body: {
-    en: "New tabs (My AG and Grow), a simpler Home that shows what matters now, search for everything, and swipe in the Bible. Plus Bible Games in 3 levels. Tap to see what's new.",
-    tl: "Bagong tabs (AG Ko at Lumago), mas simpleng Home na inuuna ang mahalaga, paghahanap sa lahat, at swipe sa Bibliya. Kasama ang Bible Games sa 3 level. Pindutin para makita ang bago.",
+    en: "Gideon is now Anointed Academy: Learn. Grow. Disciple. Lead. New look, new welcome film, and deeper lessons with true stories. Tap to see what's new.",
+    tl: "Ang Gideon ay Anointed Academy na: Matuto. Lumago. Mag-disciple. Manguna. Bagong itsura, bagong welcome film, at mas malalim na lessons na may totoong kuwento. Pindutin para makita ang bago.",
   },
 };

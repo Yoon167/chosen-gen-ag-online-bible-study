@@ -39,8 +39,8 @@ export function VaultSetup({
       {
         icon: ShieldCheck,
         text: tx(
-          "No one else can read them: not your pastor, not your AG leaders, not Gideon's administrators.",
-          "Walang ibang makakabasa nito: hindi ang pastor mo, hindi ang mga AG leader mo, hindi ang mga administrator ng Gideon."
+          "No one else can read them: not your pastor, not your AG leaders, not Anointed Academy's administrators.",
+          "Walang ibang makakabasa nito: hindi ang pastor mo, hindi ang mga AG leader mo, hindi ang mga administrator ng Anointed Academy."
         ),
       },
       {
@@ -121,8 +121,8 @@ export function VaultSetup({
       >
         <p className="text-sm text-muted-foreground">
           {tx(
-            `Choose a vault PIN (at least ${MIN_PIN_LENGTH} characters). It is separate from your login and is never sent to Gideon.`,
-            `Pumili ng vault PIN (hindi bababa sa ${MIN_PIN_LENGTH} character). Iba ito sa login mo at hindi kailanman ipinapadala sa Gideon.`
+            `Choose a vault PIN (at least ${MIN_PIN_LENGTH} characters). It is separate from your login and is never sent to Anointed Academy.`,
+            `Pumili ng vault PIN (hindi bababa sa ${MIN_PIN_LENGTH} character). Iba ito sa login mo at hindi kailanman ipinapadala sa Anointed Academy.`
           )}
         </p>
         <Input

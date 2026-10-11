@@ -18,7 +18,7 @@ export default function WhatsNewPage() {
 
   return (
     <div>
-      <PageHeader title={tx("What's new in Gideon", "Ano'ng bago sa Gideon")} icon={Sparkles} back />
+      <PageHeader title={tx("What's new in Anointed Academy", "Ano'ng bago sa Anointed Academy")} icon={Sparkles} back />
       <div className="space-y-4 px-5 pb-8">
         <Button className="w-full" onClick={() => tour.start()}>
           <Sparkles className="size-4" />

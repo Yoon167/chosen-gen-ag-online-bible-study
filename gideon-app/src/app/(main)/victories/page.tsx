@@ -98,7 +98,7 @@ export default function VictoriesPage() {
       });
       const file = new File([await canvasToBlob(canvas)], verseImageFileName(`gideon ${v.title}`), { type: "image/png" });
       if (navigator.canShare?.({ files: [file] })) {
-        await navigator.share({ files: [file], text: tx("What God has done · GIDEON", "Ginawa ng Diyos · GIDEON") });
+        await navigator.share({ files: [file], text: tx("What God has done · Anointed Academy", "Ginawa ng Diyos · Anointed Academy") });
       } else {
         const url = URL.createObjectURL(file);
         const a = document.createElement("a");

@@ -6,7 +6,7 @@ import { IN_APP_UA } from "@/lib/open-in-browser";
 
 /**
  * Links shared in WhatsApp, Messenger, Facebook, Instagram and similar apps
- * open in that app's own browser, where sign-in, installing Gideon and push
+ * open in that app's own browser, where sign-in, installing Anointed Academy and push
  * notifications don't work well. On Android the boot script below sends the
  * page straight to Chrome; on iPhone (which can't be redirected) a banner
  * offers "Open in Safari" and the steps to do it.
@@ -46,7 +46,7 @@ export function OpenInBrowserBanner() {
           <ExternalLink className="mt-0.5 size-4 shrink-0 text-primary" />
           <div className="min-w-0 flex-1">
             <p className="font-semibold">
-              Open Gideon in {where === "ios" ? "Safari" : "Chrome"} / Buksan sa {where === "ios" ? "Safari" : "Chrome"}
+              Open Anointed Academy in {where === "ios" ? "Safari" : "Chrome"} / Buksan sa {where === "ios" ? "Safari" : "Chrome"}
             </p>
             <p className="mt-0.5 text-xs text-muted-foreground">
               {where === "ios"

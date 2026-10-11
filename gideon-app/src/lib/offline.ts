@@ -3,7 +3,7 @@
  *
  * - Bible text comes straight from getbible.net one book at a time (or, for
  *   the Free Use Bible API translations, the whole Bible in one file split
- *   into books here), so it never counts against Gideon's free hosting quota.
+ *   into books here), so it never counts against Anointed Academy's free hosting quota.
  * - App pages (Home, Journey levels and lessons, the offline Bible reader)
  *   and the scripts they need are cached so the service worker can serve
  *   them without a connection.

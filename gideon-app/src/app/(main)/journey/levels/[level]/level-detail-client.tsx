@@ -128,8 +128,8 @@ export function LevelDetailClient() {
                 </ul>
                 <p className="rounded-xl bg-primary/5 p-3 text-xs">
                   {tx(
-                    `After you meet, ${mentorName_} confirms this checkpoint in Gideon and this level completes.`,
-                    `Pagkatapos ninyong magkita, kukumpirmahin ni ${mentorName_} ang checkpoint na ito sa Gideon at matatapos ang level na ito.`
+                    `After you meet, ${mentorName_} confirms this checkpoint in Anointed Academy and this level completes.`,
+                    `Pagkatapos ninyong magkita, kukumpirmahin ni ${mentorName_} ang checkpoint na ito sa Anointed Academy at matatapos ang level na ito.`
                   )}
                   {!my.membership?.shareProgress &&
                     tx(

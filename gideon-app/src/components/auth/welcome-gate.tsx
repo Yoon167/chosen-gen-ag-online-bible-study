@@ -131,8 +131,8 @@ function ConsentScreen({ onAgree }: { onAgree: () => Promise<void> }) {
       </div>
       <p className="text-sm text-muted-foreground">
         {tx(
-          "Please read how Gideon cares for your data. You can change your sharing choices or delete your account anytime in Profile → Privacy.",
-          "Pakibasa kung paano iniingatan ng Gideon ang iyong data. Maaari mong baguhin ang pagbabahagi o burahin ang iyong account anumang oras sa Profile → Privacy."
+          "Please read how Anointed Academy cares for your data. You can change your sharing choices or delete your account anytime in Profile → Privacy.",
+          "Pakibasa kung paano iniingatan ng Anointed Academy ang iyong data. Maaari mong baguhin ang pagbabahagi o burahin ang iyong account anumang oras sa Profile → Privacy."
         )}
       </p>
       <div className="rounded-2xl border border-border/70 bg-card p-4">

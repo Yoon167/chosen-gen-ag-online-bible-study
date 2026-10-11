@@ -7,7 +7,7 @@
 
 type Text = { en: string; tl: string };
 
-/** The Gideon national admin (yoonhuaa@gmail.com). Must match isAdmin() in firestore.rules. */
+/** The Anointed Academy national admin (yoonhuaa@gmail.com). Must match isAdmin() in firestore.rules. */
 export const NATIONAL_ADMIN_UID = "KcHm9yKcLcNbkTh7qbqi5pI7AYH2";
 
 /** The first church, migrated from the single-church version of the app. */
@@ -22,7 +22,7 @@ export type ChurchRole =
   | "senior_pastor";
 
 /**
- * Gideon groups are Accountability Groups (AGs). The stored role ids keep
+ * Anointed Academy groups are Accountability Groups (AGs). The stored role ids keep
  * their original church names so existing memberships and security rules
  * stay valid; only the labels are AG terms. Ranks 3 and 4 are no longer
  * offered (`hidden`) but still display for anyone who already has them.
@@ -111,7 +111,7 @@ export interface Membership {
   phone?: string;
   /** Journey checkpoints confirmed by the member's mentor, keyed by level number. */
   confirmedLevels?: Record<string, { by: string; name: string; at: number }>;
-  /** Last day the member opened Gideon (written by their own device, at most daily). */
+  /** Last day the member opened Anointed Academy (written by their own device, at most daily). */
   lastActiveAt?: number;
   /** A leader reached out after the member went quiet. */
   caredAt?: number;

@@ -102,18 +102,18 @@ self.addEventListener("notificationclick", (event) => {
   );
 });
 
-// Push notifications from Gideon's Cloud Functions (FCM, data-only), shown the
+// Push notifications from Anointed Academy's Cloud Functions (FCM, data-only), shown the
 // same way on every browser. Tapping one opens the page in `url`.
 self.addEventListener("push", (event) => {
   let payload = {};
   try {
     payload = event.data ? event.data.json() : {};
   } catch {
-    payload = { data: { title: "Gideon", body: event.data ? event.data.text() : "" } };
+    payload = { data: { title: "Anointed Academy", body: event.data ? event.data.text() : "" } };
   }
   const d = payload.data || payload.notification || {};
   event.waitUntil(
-    self.registration.showNotification(d.title || "Gideon", {
+    self.registration.showNotification(d.title || "Anointed Academy", {
       body: d.body || "",
       icon: "/icons/icon-192.png",
       badge: "/icons/icon-192.png",

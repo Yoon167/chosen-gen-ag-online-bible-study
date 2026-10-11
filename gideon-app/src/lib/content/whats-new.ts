@@ -1,5 +1,5 @@
 /**
- * "What's new in Gideon": release notes, newest first. The newest release
+ * "What's new in Anointed Academy": release notes, newest first. The newest release
  * shows as a card on Home until the member opens it. When a new release is
  * added here, also update LATEST_RELEASE in functions/src/release.ts with the
  * same id so every device gets one push notification about it.
@@ -18,9 +18,32 @@ export interface Release {
 
 export const RELEASES: Release[] = [
   {
+    id: "2026-10-11-rebrand",
+    date: "2026-10-11",
+    title: t("Welcome to Anointed Academy", "Maligayang pagdating sa Anointed Academy"),
+    items: [
+      t(
+        "Gideon is now Anointed Academy: Learn. Grow. Disciple. Lead. Same app, same progress, a new name and a new gold and deep-blue look.",
+        "Ang Gideon ay Anointed Academy na: Matuto. Lumago. Mag-disciple. Manguna. Parehong app at progress, bagong pangalan at bagong gold at deep-blue na itsura."
+      ),
+      t(
+        "A new welcome film: from darkness to first light, over mountains and valleys, along the glowing path of growth, up to one connected kingdom.",
+        "Bagong welcome film: mula sa dilim tungo sa unang liwanag, sa mga bundok at lambak, sa nagliliwanag na landas ng paglago, hanggang sa iisang kaharian."
+      ),
+      t(
+        "Every course lesson now has a Go Deeper study and true stories from around the world, with pictures and sources.",
+        "Bawat lesson sa Courses ay may Go Deeper study na at mga totoong kuwento mula sa iba't ibang bansa, may larawan at source."
+      ),
+      t(
+        "New Spiritual Inventory checklist in Journey, private on your phone.",
+        "Bagong Spiritual Inventory checklist sa Journey, pribado sa phone mo."
+      ),
+    ],
+  },
+  {
     id: "2026-10-08-ui",
     date: "2026-10-08",
-    title: t("A simpler, friendlier Gideon", "Mas simple at mas magaan na Gideon"),
+    title: t("A simpler, friendlier Anointed Academy", "Mas simple at mas magaan na Anointed Academy"),
     items: [
       t(
         "New bottom tabs: Home, Bible, My AG, Grow and Profile. My AG shows a red dot when your AG is live, and Grow gathers every tool in color-coded groups.",
@@ -73,8 +96,8 @@ export const RELEASES: Release[] = [
         "Follow-up para sa bisita at bagong mananampalataya: idinadagdag sila ng leader at ina-assign sa isang sasama sa kanila sa loob ng isang buwan (batiin, ipanalangin, imbitahan, simulan ang Journey, i-connect), may paalala kapag oras na ng bawat hakbang. Makikita ito sa My AG."
       ),
       t(
-        "Leaders see who hasn't opened Gideon in two weeks under Manage Members, and get a gentle Monday reminder to check on them.",
-        "Makikita ng leader sa Manage Members kung sino ang dalawang linggo nang hindi nagbubukas ng Gideon, at may mahinahong paalala tuwing Lunes para kumustahin sila."
+        "Leaders see who hasn't opened Anointed Academy in two weeks under Manage Members, and get a gentle Monday reminder to check on them.",
+        "Makikita ng leader sa Manage Members kung sino ang dalawang linggo nang hindi nagbubukas ng Anointed Academy, at may mahinahong paalala tuwing Lunes para kumustahin sila."
       ),
       t(
         "Links shared in WhatsApp or Messenger now open in Chrome on Android, and iPhone shows how to open them in Safari.",
@@ -92,8 +115,8 @@ export const RELEASES: Release[] = [
         "Bawat aralin sa Courses at Journey (327 lahat) ay may mas malalim na Spirit-led na turo na: pahayag ngayong araw, pangunahing katotohanan, malalim na pananaw, ugnayan sa buhay, Kingdom twist, kumpirmasyon ng Bibliya, pagbabago ng puso, pagninilay, mga hakbang at panalangin. Makikita rin ito sa Present mode."
       ),
       t(
-        "Push notifications: the daily verse at your chosen time, live studies, prayer requests and prayer chains, meeting reminders, check-ins and AG news, even when Gideon is closed. Turn them on in Profile → Notifications.",
-        "Push notifications: ang daily verse sa oras na pinili mo, live study, prayer request at prayer chain, paalala sa meeting, check-in at balita ng AG, kahit sarado ang Gideon. I-on ito sa Profile → Notifications."
+        "Push notifications: the daily verse at your chosen time, live studies, prayer requests and prayer chains, meeting reminders, check-ins and AG news, even when Anointed Academy is closed. Turn them on in Profile → Notifications.",
+        "Push notifications: ang daily verse sa oras na pinili mo, live study, prayer request at prayer chain, paalala sa meeting, check-in at balita ng AG, kahit sarado ang Anointed Academy. I-on ito sa Profile → Notifications."
       ),
       t(
         "Live studies stay in sync: members now see the same Scripture and the same slide as the presenter, and the presenter is warned if a slide didn't reach them.",

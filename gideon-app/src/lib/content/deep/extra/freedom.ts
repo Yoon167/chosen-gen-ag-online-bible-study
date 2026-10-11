@@ -376,5 +376,127 @@ export const EXTRA: ExtraSet = {
       },
     ],
   },
-  // NEXT
+  "c-freedom-addiction": {
+    deeper: [
+      {
+        heading: t("Master or servant? The Bible's language of addiction", "Panginoon o alipin? Ang wika ng Biblia tungkol sa adiksyon"),
+        body: [
+          t("The Bible has no single word for addiction, but it describes the thing exactly. Paul writes, \"I will not be mastered by anything\" (1 Corinthians 6:12), using the Greek verb exousiazo, to be brought under someone's authority. Jesus said, \"everyone who sins is a slave to sin\" (John 8:34). Addiction is the experience of being ruled by something that promised pleasure or relief and then took the throne.", "Walang iisang salita ang Biblia para sa adiksyon, pero eksakto nitong inilalarawan ang bagay. Sumulat si Pablo, \"hindi ako magpapaalipin sa anuman\" (1 Corinto 6:12), gamit ang salitang Griyego na exousiazo, ang mapailalim sa kapangyarihan ng iba. Sinabi ni Jesus, \"ang bawat nagkakasala ay alipin ng kasalanan\" (Juan 8:34). Ang adiksyon ay ang karanasang pinamumunuan ka ng isang bagay na nangako ng saya o ginhawa, pagkatapos ay umupo sa trono."),
+          t("Romans 7:15-25 is the honest cry of anyone who has tried and failed: \"What I want to do I do not do.\" Paul does not stop there; he ends with \"Thanks be to God, through Jesus Christ our Lord!\" The Bible treats the struggle as real and the cure as a Person, not willpower alone.", "Ang Roma 7:15-25 ay tapat na hiyaw ng sinumang sumubok at nabigo: \"ang gusto kong gawin ay hindi ko ginagawa.\" Hindi tumigil si Pablo roon; nagtapos siya sa \"Salamat sa Diyos, sa pamamagitan ni Jesu-Cristo na ating Panginoon!\" Itinuturing ng Biblia na totoo ang laban at ang lunas ay isang Persona, hindi lang lakas ng loob."),
+        ],
+      },
+      {
+        heading: t("Not only substances: what else can rule us", "Hindi lang droga: ano pa ang maaaring mamuno sa atin"),
+        body: [
+          t("Drink, drugs, cigarettes, gambling, pornography, gaming, endless scrolling, even work and shopping can become masters. Proverbs 23:29-35 paints a drinker's misery with striking realism, and Ephesians 5:18 sets the alternative: do not be drunk with wine, but be filled with the Spirit. The deeper hunger is always for comfort, escape or belonging, and only God truly satisfies it.", "Alak, droga, sigarilyo, sugal, pornograpiya, games, walang katapusang scroll, pati trabaho at pamimili ay maaaring maging panginoon. Inilalarawan ng Kawikaan 23:29-35 nang makatotohanan ang paghihirap ng lasenggo, at ang Efeso 5:18 ang alternatibo: huwag malasing sa alak, kundi mapuspos ng Espiritu. Ang mas malalim na gutom ay laging para sa aliw, pagtakas o pagkakabilang, at ang Diyos lamang ang tunay na makapagbibigay nito."),
+          t("Many OFWs know the pressure: long hours, loneliness, a bottle or a screen after work. Be gentle but honest. Naming the real need under the habit is part of repentance, and the church is meant to be the place where that need is met with people, not only with rules.", "Alam ito ng maraming OFW: mahabang oras, pangungulila, bote o screen pagkatapos ng trabaho. Maging mahinahon pero tapat. Bahagi ng pagsisisi ang pagpangalan sa tunay na pangangailangan sa ilalim ng bisyo, at ang iglesia ay dapat lugar kung saan sinasagot ito ng mga tao, hindi lang ng mga patakaran."),
+        ],
+      },
+      {
+        heading: t("A way out: confess, replace, walk together", "Daan palabas: magtapat, magpalit, maglakad nang magkasama"),
+        body: [
+          t("1 Corinthians 10:13 promises that God provides a way out of every temptation, and James 5:16 tells us to confess to one another and pray so that we may be healed. Addiction thrives in secrecy. Practical steps: tell one trusted believer, remove access (apps, money, contacts, places), and seek medical or professional help where the body is dependent. Using a doctor or a rehabilitation programme is wisdom, not unbelief.", "Ipinangako ng 1 Corinto 10:13 na nagbibigay ang Diyos ng labasan sa bawat tukso, at sinasabi ng Santiago 5:16 na magtapat sa isa't isa at manalangin upang gumaling. Lumalago ang adiksyon sa lihim. Mga hakbang: sabihin sa isang mapagkakatiwalaang kapatid, alisin ang daan (apps, pera, kontak, lugar), at humingi ng tulong medikal o propesyonal kung ang katawan ay dependent na. Hindi kawalan ng pananampalataya ang pagpunta sa doktor o rehabilitation program; karunungan iyon."),
+          t("Titus 2:11-14 says grace itself teaches us to say no to ungodliness. Relapse is not the end; it is a reason to run back to Jesus quickly, not to hide. Fill the empty hours with prayer, the Word, work, exercise and friends, and keep walking with people who will ask the hard questions.", "Sinasabi ng Tito 2:11-14 na ang biyaya mismo ang nagtuturo sa atin na tumanggi sa kasamaan. Hindi katapusan ang pagbalik sa bisyo; dahilan ito para madaliang bumalik kay Jesus at hindi magtago. Punuin ang mga bakanteng oras ng panalangin, Salita, trabaho, ehersisyo at kaibigan, at patuloy na lumakad kasama ang mga taong magtatanong ng mahihirap na tanong."),
+        ],
+      },
+    ],
+    stories: [
+      {
+        title: t("A young music graduate among the addicts of the Walled City", "Isang batang nagtapos sa musika sa gitna ng mga adik sa Walled City"),
+        who: "Jackie Pullinger",
+        where: t("Kowloon Walled City, Hong Kong", "Kowloon Walled City, Hong Kong"),
+        when: "1966 onward",
+        story: [
+          t("Jackie Pullinger, born in England in 1944, trained at the Royal College of Music. At 22 she felt called to be a missionary, but no mission agency would send her. She took a boat to Hong Kong in 1966, knowing no one and with very little money, and began teaching and working among young people in the Kowloon Walled City, then a crowded enclave dominated by Triad gangs and the drug trade.", "Ipinanganak sa England noong 1944, nag-aral si Jackie Pullinger sa Royal College of Music. Sa edad na 22 naramdaman niyang tinawag siyang maging misyonera, pero walang mission agency na nagpadala sa kanya. Sumakay siya ng barko papuntang Hong Kong noong 1966, walang kilala at kakaunti ang pera, at nagsimulang magturo at maglingkod sa mga kabataan sa Kowloon Walled City, isang masikip na lugar noon na pinamumunuan ng mga Triad gang at kalakalan ng droga."),
+          t("She began to share Jesus with gang members and drug addicts, and later wrote that many were freed from addiction as they prayed and received the Holy Spirit. In 1981 she founded the St Stephen's Society, which runs homes for people recovering from addiction and for former gang members and others in need. Her account, Chasing the Dragon (1980), has been read worldwide, and the work in Hong Kong continues today.", "Nagsimula siyang magbahagi ni Jesus sa mga miyembro ng gang at mga adik, at isinulat niya kalaunan na marami ang napalaya sa adiksyon habang nananalangin at tumatanggap ng Banal na Espiritu. Noong 1981 itinatag niya ang St Stephen's Society na may mga tahanan para sa mga gumagaling mula sa adiksyon, sa dating miyembro ng gang at sa iba pang nangangailangan. Ang aklat niyang Chasing the Dragon (1980) ay nabasa sa buong mundo, at nagpapatuloy ang gawain sa Hong Kong hanggang ngayon."),
+        ],
+        lesson: t("Addiction is not beyond Christ's reach, and freedom is lived out in a loving community, not alone (1 Corinthians 10:13).", "Hindi lampas sa abot ni Kristo ang adiksyon, at ang kalayaan ay isinasabuhay sa mapagmahal na komunidad, hindi nag-iisa (1 Corinto 10:13)."),
+        sources: [
+          { label: "Jackie Pullinger (Wikipedia)", url: "https://en.wikipedia.org/wiki/Jackie_Pullinger" },
+        ],
+      },
+    ],
+  },
+  "c-freedom-occult": {
+    deeper: [
+      {
+        heading: t("What Deuteronomy 18 actually forbids", "Ano talaga ang ipinagbabawal ng Deuteronomio 18"),
+        body: [
+          t("Deuteronomy 18:9-14 lists practices Israel must not copy from the nations: divination, sorcery, interpreting omens, casting spells, consulting mediums and spiritists, and seeking the dead. The list is wide on purpose. Anything that seeks hidden knowledge or power from a source other than the LORD is in view, whether it is called fortune-telling, horoscopes, tarot, Ouija or channelling.", "Inililista ng Deuteronomio 18:9-14 ang mga gawaing hindi dapat tularan ng Israel sa mga bansa: panghuhula, pangkukulam, pagbasa ng mga tanda, pagbigkas ng mga sumpa, pagkonsulta sa mga medium at espiritista, at paghingi sa mga patay. Sadyang malawak ang listahan. Saklaw nito ang anumang naghahanap ng lihim na kaalaman o kapangyarihan mula sa ibang pinagmumulan maliban sa PANGINOON, tawagin man itong hula, horoscope, tarot, Ouija o channelling."),
+          t("The reason is given in the same passage: \"The LORD your God has not permitted you to do so\" (v. 14) and He promises a true prophet instead (v. 15). Isaiah 8:19-20 asks, \"Should not a people inquire of their God?\" and sends us back to God's word as the test. The issue is not curiosity but whom we trust with our future.", "Ibinibigay ang dahilan sa mismong talata: \"hindi pinahintulutan ng PANGINOON mong Diyos na gawin mo ang gayon\" (v. 14) at nangako Siya ng tunay na propeta (v. 15). Tinatanong ng Isaias 8:19-20, \"Hindi ba dapat sa kanilang Diyos humingi ng patnubay ang bayan?\" at ibinabalik tayo sa salita ng Diyos bilang panukat. Ang isyu ay hindi kuryosidad kundi kung kanino natin ipinagkakatiwala ang kinabukasan natin."),
+        ],
+      },
+      {
+        heading: t("Ephesus: a city that burned its books", "Efeso: lungsod na sumunog ng mga aklat"),
+        body: [
+          t("Acts 19:18-20 shows what repentance looks like. New believers in Ephesus, a city famous for magic, openly confessed their practices and burned their scrolls, worth fifty thousand drachmas, about fifty thousand days' wages for a labourer. Nothing was sold back or quietly stored away. The result: \"the word of the Lord spread widely and grew in power.\"", "Ipinapakita ng Gawa 19:18-20 kung ano ang itsura ng pagsisisi. Ang mga bagong mananampalataya sa Efeso, lungsod na bantog sa salamangka, ay hayagang nagtapat ng mga gawa nila at sinunog ang kanilang mga balumbon na nagkakahalaga ng limampung libong drakma, halos limampung libong araw na sahod ng manggagawa. Walang ibinenta o itinagong palihim. Ang resulta: \"lumaganap at lumakas ang salita ng Panginoon.\""),
+          t("In Acts 16:16-18 a slave girl's fortune-telling was real enough to earn money, yet Paul did not treat it as a gift to admire. He set her free in the name of Jesus. Not everything supernatural is from God, and a correct prediction is not proof of a good source.", "Sa Gawa 16:16-18, totoo ang panghuhula ng aliping babae kaya kumikita ito, pero hindi itinuring ni Pablo na kaloob na hahangaan. Pinalaya niya siya sa pangalan ni Jesus. Hindi lahat ng supernatural ay galing sa Diyos, at hindi patunay ng mabuting pinagmulan ang tamang hula."),
+        ],
+      },
+      {
+        heading: t("Everyday doors: horoscopes, charms and \"harmless\" games", "Mga pintuang karaniwan: horoscope, anting-anting at \"walang masamang\" laro"),
+        body: [
+          t("In many cultures the occult looks ordinary: a daily horoscope, a lucky charm, an anting-anting, feng shui, a fortune-teller before a big decision, a spirit board at a party, even occult themes in games and apps. Many people started out of curiosity, grief or fear. Repent without shame; God receives those who come.", "Sa maraming kultura, ordinaryo lang ang itsura ng okultismo: araw-araw na horoscope, swerteng alahas, anting-anting, feng shui, manghuhula bago ang malaking desisyon, spirit board sa party, at okultong tema pa sa mga laro at app. Maraming nagsimula dahil sa kuryosidad, pagluluksa o takot. Magsisi nang walang hiya; tinatanggap ng Diyos ang lumalapit."),
+          t("Practical steps: renounce it in prayer in Jesus' name, remove objects, books, apps and subscriptions connected to it, cut off contact with the practitioners that you used, and replace the habit with prayer and Scripture. Then lean on the church, because the cure for fear of the unseen is the nearness of Christ and His people.", "Mga praktikal na hakbang: talikuran ito sa panalangin sa pangalan ni Jesus, alisin ang mga bagay, aklat, app at subscription na may kaugnayan dito, putulin ang ugnayan sa mga pinuntahan mong manghuhula, at palitan ang gawi ng panalangin at Kasulatan. Pagkatapos, sumandal sa iglesia, dahil ang lunas sa takot sa di-nakikita ay ang lapit ni Kristo at ng Kanyang bayan."),
+        ],
+      },
+    ],
+    stories: [
+      {
+        title: t("The angel-card author who laid it all down", "Ang may-akda ng angel cards na iniwan ang lahat"),
+        who: "Doreen Virtue",
+        where: t("California and Hawaii, USA", "California at Hawaii, USA"),
+        when: "1995-2017",
+        story: [
+          t("Doreen Virtue, raised in Christian Science, became a psychotherapist and then a leading New Age figure, doing tarot readings and publishing more than 50 books and card decks on angels from 1995 to 2015. Millions knew her work.", "Si Doreen Virtue, lumaki sa Christian Science, ay naging psychotherapist at pagkatapos ay kilalang pangalan sa New Age, nagbabasa ng tarot at naglathala ng mahigit 50 aklat at card deck tungkol sa mga anghel mula 1995 hanggang 2015. Milyun-milyon ang nakakakilala sa gawa niya."),
+          t("In 2017 she was baptized and publicly renounced her New Age work, telling her followers she had come to believe in Jesus. She has said that reading Deuteronomy 18 about occult practices deeply convicted her. She later studied biblical and theological studies at seminary, published Christian books and warned others about the occult.", "Noong 2017 nabautismuhan siya at hayagang tinalikuran ang gawa niya sa New Age, at sinabi sa mga tagasunod na naniniwala na siya kay Jesus. Sinabi niyang ang pagbasa ng Deuteronomio 18 tungkol sa mga okultong gawain ay lubos na kumumbinsi sa kanya. Nag-aral siya kalaunan ng biblical at theological studies sa seminary, naglabas ng mga aklat Kristiyano at nagbabala sa iba tungkol sa okultismo."),
+        ],
+        lesson: t("Even a successful, admired occult career can be left behind when God's word is heard and obeyed (Acts 19:18-20).", "Kahit ang matagumpay at hinahangaang karera sa okultismo ay maiiwan kapag narinig at sinunod ang salita ng Diyos (Gawa 19:18-20)."),
+        sources: [
+          { label: "Doreen Virtue (Wikipedia)", url: "https://en.wikipedia.org/wiki/Doreen_Virtue" },
+        ],
+      },
+    ],
+  },
+  "c-freedom-witchcraft": {
+    deeper: [
+      {
+        heading: t("Witchcraft in the Bible: pharmakeia and control", "Pangkukulam sa Biblia: pharmakeia at pagkontrol"),
+        body: [
+          t("Galatians 5:20 lists \"witchcraft\" among the works of the flesh. The Greek word is pharmakeia, from which we get \"pharmacy\": it first meant drugs and potions, then sorcery that uses substances, spells and rituals to influence people or spirits. At its core, witchcraft is an attempt to get power or control apart from God, by manipulating unseen forces.", "Inilista ng Galacia 5:20 ang \"pangkukulam\" sa mga gawa ng laman. Ang salitang Griyego ay pharmakeia, na pinagmulan ng \"pharmacy\": noong una ay tumutukoy sa gamot at inumin, pagkatapos ay sa pangkukulam na gumagamit ng mga sangkap, orasyon at ritwal para impluwensyahan ang tao o espiritu. Sa ubod nito, ang pangkukulam ay pagtatangkang makakuha ng kapangyarihan o kontrol nang hiwalay sa Diyos, sa pamamagitan ng pagmamanipula ng mga di-nakikitang puwersa."),
+          t("Exodus 22:18 belongs to Israel's civil law in a specific covenant setting and must not be turned into a licence for hatred or violence against people today. In the New Testament our weapon is the gospel, not punishment: Jesus came to free those held by the enemy, not to destroy them (Luke 9:55-56).", "Ang Exodo 22:18 ay bahagi ng batas-sibil ng Israel sa partikular na tipang iyon at hindi dapat gawing lisensya ng galit o karahasan laban sa mga tao ngayon. Sa Bagong Tipan, ebanghelyo ang sandata natin, hindi parusa: dumating si Jesus para palayain ang hawak ng kaaway, hindi para wasakin sila (Lucas 9:55-56)."),
+        ],
+      },
+      {
+        heading: t("Simon and Elymas: two encounters with sorcery", "Simon at Elimas: dalawang pagtatagpo sa pangkukulam"),
+        body: [
+          t("In Acts 8:9-24 Simon the sorcerer amazed Samaria, then believed and was baptized, yet later tried to buy the Spirit's power with money. Peter warned him sharply and called him to repent. The lesson is that the hunger for power can follow us into church, and God's gift cannot be purchased or used for status.", "Sa Gawa 8:9-24, pinahanga ni Simon na mangkukulam ang Samaria, pagkatapos ay sumampalataya at nabautismuhan, pero kalaunan ay sinubukang bilhin ng pera ang kapangyarihan ng Espiritu. Mariin siyang binalaan ni Pedro at hinikayat na magsisi. Ang aral: ang uhaw sa kapangyarihan ay maaaring sumunod sa atin hanggang sa iglesia, at ang kaloob ng Diyos ay hindi mabibili o magagamit para sa katanyagan."),
+          t("In Acts 13:6-12 Elymas the sorcerer opposed Paul and tried to turn the governor away from the faith. Paul spoke in the Spirit's power, and the governor believed, amazed at the teaching about the Lord. In both stories, witchcraft is real enough to deceive people, but it never stands against the word of Christ.", "Sa Gawa 13:6-12, sinalungat ni Elimas na mangkukulam si Pablo at sinikap ilayo ang gobernador sa pananampalataya. Nagsalita si Pablo sa kapangyarihan ng Espiritu, at sumampalataya ang gobernador, namangha sa turo tungkol sa Panginoon. Sa dalawang kuwento, sapat ang lakas ng pangkukulam para manlinlang ng tao, pero hindi ito tatayo laban sa salita ni Kristo."),
+        ],
+      },
+      {
+        heading: t("No curse can stick: Numbers 23:23 and Galatians 3", "Walang sumpang tatalab: Bilang 23:23 at Galacia 3"),
+        body: [
+          t("When King Balak hired Balaam to curse Israel, God turned every curse into blessing. Numbers 23:23 says, \"There is no divination against Jacob, no evil omen against Israel.\" Galatians 3:13-14 shows why this is true for us: Christ became a curse for us on the cross so that the blessing of Abraham comes to us. A believer under the blood does not need to live in fear of curses, hexes or what a neighbour may have done.", "Nang upahan ni Haring Balak si Balaam para sumpain ang Israel, ginawang pagpapala ng Diyos ang bawat sumpa. Sabi ng Bilang 23:23, \"Walang panghuhula laban sa Jacob, walang masamang tanda laban sa Israel.\" Ipinapakita ng Galacia 3:13-14 kung bakit ito totoo para sa atin: naging sumpa si Kristo para sa atin sa krus upang dumating sa atin ang pagpapala ni Abraham. Ang mananampalatayang nasa ilalim ng dugo ay hindi kailangang mamuhay sa takot sa sumpa, kulam o sa ginawa ng kapitbahay."),
+          t("Practical response if you or your family have been involved or fear you are targeted: confess and renounce any involvement, destroy related objects, forgive those who harmed you, and pray with a mature pastor or friends. Stay near the Word and the church. Fear is the enemy's tool; the answer is the nearness of Jesus.", "Praktikal na tugon kung ikaw o ang pamilya mo ay nasangkot o natatakot na tinatarget: ipagtapat at talikuran ang anumang pagkakasangkot, sirain ang mga kaugnay na bagay, patawarin ang nanakit sa iyo, at manalangin kasama ang matatag na pastor o kaibigan. Manatiling malapit sa Salita at sa iglesia. Takot ang gamit ng kaaway; ang sagot ay ang lapit ni Jesus."),
+        ],
+      },
+    ],
+    stories: [
+      {
+        title: t("The fortune-teller who threw away her cards", "Ang manghuhula na itinapon ang kanyang mga baraha"),
+        who: "Zita Michielin",
+        where: t("Italy", "Italya"),
+        when: "Reported 2022",
+        story: [
+          t("Zita Michielin, an Italian woman with almost no religious upbringing, was working at a call centre when she was put through to a caller who wanted a tarot reading. She improvised, then bought a deck and explored tarot, crystals, chakras and other practices. She began offering paid readings from home, believing she was helping people.", "Si Zita Michielin, isang Italyana na halos walang relihiyosong pagpapalaki, ay nagtatrabaho sa call centre nang mapunta sa kanya ang isang tumawag na gustong magpa-tarot. Nag-improvise siya, pagkatapos ay bumili ng deck at sinubukan ang tarot, kristal, chakra at iba pa. Nagsimula siyang magbigay ng bayad na pagbasa mula sa bahay, na naniniwalang tumutulong siya sa tao."),
+          t("During one session a line from the Gospel, which she had not heard since childhood, came to her mind and shook her. She threw away her tarot cards, pendulum and crystals, and described relief from the heavy atmosphere and tiredness she had lived with. She later told her story on Italian television, warned viewers about the occult, and publicly apologized to the people she may have harmed spiritually.", "Sa isang session, may linya mula sa Ebanghelyo na hindi niya narinig mula pagkabata ang pumasok sa isip niya at yumanig sa kanya. Itinapon niya ang tarot, pendulum at kristal, at inilarawan ang ginhawa mula sa mabigat na pakiramdam sa bahay at pagod na dati niyang dala. Ikinuwento niya kalaunan ang karanasan sa telebisyon sa Italya, nagbabala sa mga manonood tungkol sa okultismo, at hayagang humingi ng tawad sa mga taong maaaring napinsala niya sa espirituwal."),
+        ],
+        lesson: t("The word of Christ can break into any practice; repentance means laying down the tools and trusting Him alone (Acts 19:19).", "Kayang pumasok ng salita ni Kristo sa anumang gawain; ang pagsisisi ay pag-iwan ng mga kasangkapan at pagtitiwala sa Kanya lamang (Gawa 19:19)."),
+        sources: [
+          { label: "Aleteia: Repentant ex-fortune teller (Dec 28, 2022)", url: "https://aleteia.org/2022/12/28/repentant-ex-fortune-teller-and-new-age-practitioner-asks-god-to-help-those-she-may-have-put-in-spiritual-danger/" },
+        ],
+      },
+    ],
+  },
 };

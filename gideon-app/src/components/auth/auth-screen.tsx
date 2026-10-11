@@ -26,7 +26,7 @@ function Shell({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center gap-5 px-6 py-10 text-center safe-top safe-bottom">
       <LanguageToggle className="absolute right-4 top-4" />
-      <Image src="/icon.png" alt="GIDEON" width={96} height={96} className="rounded-3xl" />
+      <Image src="/icon.png" alt="ANOINTED ACADEMY" width={96} height={96} className="rounded-3xl" />
       {children}
     </div>
   );
@@ -70,7 +70,7 @@ function DetailsFields({
       <label className="flex items-start gap-2.5 text-left text-xs">
         <input type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} className="mt-0.5 size-4 shrink-0 accent-[var(--primary)]" />
         <span>
-          {tx("I agree to how Gideon keeps my data.", "Sumasang-ayon ako sa paraan ng pag-iingat ng Gideon sa aking data.")}{" "}
+          {tx("I agree to how Anointed Academy keeps my data.", "Sumasang-ayon ako sa paraan ng pag-iingat ng Anointed Academy sa aking data.")}{" "}
           <button type="button" className="underline underline-offset-2" onClick={() => setShowNotice((v) => !v)}>
             {showNotice ? tx("Hide", "Itago") : tx("Read the Privacy Notice", "Basahin ang Privacy Notice")}
           </button>
@@ -119,7 +119,7 @@ export function AuthScreen() {
   return (
     <Shell>
       <div>
-        <h1 className="font-heading text-2xl font-semibold">{tx("Welcome to GIDEON", "Maligayang pagdating sa GIDEON")}</h1>
+        <h1 className="font-heading text-2xl font-semibold">{tx("Welcome to Anointed Academy", "Maligayang pagdating sa Anointed Academy")}</h1>
         <p className="mt-1 text-sm text-muted-foreground">Strengthening Faith. Growing Disciples.</p>
       </div>
 
@@ -141,8 +141,8 @@ export function AuthScreen() {
       {isAnonymous && mode === "signup" && (
         <p className="max-w-xs text-xs text-muted-foreground">
           {tx(
-            "Gideon now uses accounts. Sign up to keep everything you saved on this device.",
-            "Gumagamit na ng account ang Gideon. Mag-sign up para manatili ang lahat ng na-save mo sa device na ito."
+            "Anointed Academy now uses accounts. Sign up to keep everything you saved on this device.",
+            "Gumagamit na ng account ang Anointed Academy. Mag-sign up para manatili ang lahat ng na-save mo sa device na ito."
           )}
         </p>
       )}

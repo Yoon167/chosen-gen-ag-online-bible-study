@@ -52,75 +52,75 @@
 
 :root {
   --background: oklch(0.985 0.008 85);
-  --foreground: oklch(0.24 0.03 275);
+  --foreground: oklch(0.24 0.03 255);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.24 0.03 275);
+  --card-foreground: oklch(0.24 0.03 255);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.24 0.03 275);
-  --primary: oklch(0.4 0.15 278);
+  --popover-foreground: oklch(0.24 0.03 255);
+  --primary: oklch(0.36 0.08 252);
   --primary-foreground: oklch(0.98 0.01 85);
-  --secondary: oklch(0.94 0.025 280);
-  --secondary-foreground: oklch(0.32 0.08 278);
+  --secondary: oklch(0.94 0.025 254);
+  --secondary-foreground: oklch(0.32 0.08 252);
   --muted: oklch(0.96 0.012 85);
-  --muted-foreground: oklch(0.5 0.03 275);
-  --accent: oklch(0.94 0.03 280);
-  --accent-foreground: oklch(0.34 0.1 278);
+  --muted-foreground: oklch(0.5 0.03 255);
+  --accent: oklch(0.94 0.03 254);
+  --accent-foreground: oklch(0.34 0.1 252);
   --destructive: oklch(0.577 0.215 27.325);
-  --border: oklch(0.91 0.015 280);
-  --input: oklch(0.91 0.015 280);
-  --ring: oklch(0.6 0.1 278);
-  --gold: oklch(0.78 0.13 85);
+  --border: oklch(0.91 0.015 254);
+  --input: oklch(0.91 0.015 254);
+  --ring: oklch(0.6 0.1 252);
+  --gold: oklch(0.76 0.135 88);
   --gold-foreground: oklch(0.28 0.06 70);
-  --chart-1: oklch(0.4 0.15 278);
+  --chart-1: oklch(0.36 0.08 252);
   --chart-2: oklch(0.78 0.13 85);
   --chart-3: oklch(0.65 0.12 200);
   --chart-4: oklch(0.6 0.15 340);
   --chart-5: oklch(0.55 0.1 150);
   --radius: 1rem;
   --sidebar: oklch(0.985 0.008 85);
-  --sidebar-foreground: oklch(0.24 0.03 275);
-  --sidebar-primary: oklch(0.4 0.15 278);
+  --sidebar-foreground: oklch(0.24 0.03 255);
+  --sidebar-primary: oklch(0.36 0.08 252);
   --sidebar-primary-foreground: oklch(0.98 0.01 85);
-  --sidebar-accent: oklch(0.94 0.03 280);
-  --sidebar-accent-foreground: oklch(0.34 0.1 278);
-  --sidebar-border: oklch(0.91 0.015 280);
-  --sidebar-ring: oklch(0.6 0.1 278);
+  --sidebar-accent: oklch(0.94 0.03 254);
+  --sidebar-accent-foreground: oklch(0.34 0.1 252);
+  --sidebar-border: oklch(0.91 0.015 254);
+  --sidebar-ring: oklch(0.6 0.1 252);
 }
 
 .dark {
-  --background: oklch(0.16 0.025 272);
+  --background: oklch(0.16 0.025 256);
   --foreground: oklch(0.96 0.012 85);
-  --card: oklch(0.21 0.03 272);
+  --card: oklch(0.21 0.03 256);
   --card-foreground: oklch(0.96 0.012 85);
-  --popover: oklch(0.21 0.03 272);
+  --popover: oklch(0.21 0.03 256);
   --popover-foreground: oklch(0.96 0.012 85);
-  --primary: oklch(0.72 0.12 278);
-  --primary-foreground: oklch(0.16 0.03 272);
-  --secondary: oklch(0.27 0.035 272);
+  --primary: oklch(0.76 0.09 245);
+  --primary-foreground: oklch(0.16 0.03 256);
+  --secondary: oklch(0.27 0.035 256);
   --secondary-foreground: oklch(0.9 0.02 85);
-  --muted: oklch(0.25 0.03 272);
-  --muted-foreground: oklch(0.7 0.03 280);
-  --accent: oklch(0.29 0.045 275);
+  --muted: oklch(0.25 0.03 256);
+  --muted-foreground: oklch(0.7 0.03 254);
+  --accent: oklch(0.29 0.045 255);
   --accent-foreground: oklch(0.92 0.02 85);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.6 0.1 278);
-  --gold: oklch(0.8 0.13 85);
+  --ring: oklch(0.6 0.1 252);
+  --gold: oklch(0.79 0.135 88);
   --gold-foreground: oklch(0.2 0.05 70);
-  --chart-1: oklch(0.72 0.12 278);
+  --chart-1: oklch(0.76 0.09 245);
   --chart-2: oklch(0.8 0.13 85);
   --chart-3: oklch(0.7 0.11 200);
   --chart-4: oklch(0.68 0.13 340);
   --chart-5: oklch(0.65 0.1 150);
-  --sidebar: oklch(0.19 0.028 272);
+  --sidebar: oklch(0.19 0.028 256);
   --sidebar-foreground: oklch(0.96 0.012 85);
-  --sidebar-primary: oklch(0.72 0.12 278);
-  --sidebar-primary-foreground: oklch(0.16 0.03 272);
-  --sidebar-accent: oklch(0.29 0.045 275);
+  --sidebar-primary: oklch(0.76 0.09 245);
+  --sidebar-primary-foreground: oklch(0.16 0.03 256);
+  --sidebar-accent: oklch(0.29 0.045 255);
   --sidebar-accent-foreground: oklch(0.92 0.02 85);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.6 0.1 278);
+  --sidebar-ring: oklch(0.6 0.1 252);
 }
 
 @layer base {
@@ -139,9 +139,9 @@
   .gradient-hero {
     background: linear-gradient(
       160deg,
-      oklch(0.4 0.15 278) 0%,
-      oklch(0.33 0.14 285) 55%,
-      oklch(0.24 0.1 290) 100%
+      oklch(0.4 0.08 250) 0%,
+      oklch(0.33 0.075 252) 55%,
+      oklch(0.22 0.06 256) 100%
     );
   }
   .gradient-gold-text {
@@ -223,21 +223,27 @@ html:not([lang="tl"]) .t-tl {
    screen height: 0 keeps the middle of the stage centered, and it stays
    within ±34% so the stage edges never show. */
 /* One continuous camera move for the whole film (no cuts through black):
-   it drifts up with the sunrise, settles on the people on the path, rises to
-   Jesus in the light, sweeps back down and follows the path up toward Him,
-   opens onto the valley, and comes to rest for the reveal. Percentages match
-   SCENES in cinematic-intro.tsx (0, 4.5, 9.5, 14.5, 19.5, 24, 30 s). */
+   it rises with the first light, flies over the valley, comes down to the
+   people on the path, follows the glowing path up toward the light, ascends
+   to show the whole world, and settles for the reveal. */
 @keyframes film-cam {
-  0% { transform: translate(0, 12%) scale(1.7); }
-  15% { transform: translate(-1%, 0) scale(1.7); }
-  24% { transform: translate(1.5%, -29%) scale(1.7); }
-  31.6% { transform: translate(2.5%, -34%) scale(1.7); }
-  40% { transform: translate(0, -8%) scale(1.7); }
-  48.3% { transform: translate(-1.5%, -10%) scale(1.7); }
-  52% { transform: translate(-1%, -30%) scale(1.7); }
-  65% { transform: translate(1%, -6%) scale(1.7); }
-  80% { transform: translate(-2%, 4%) scale(1.7); }
-  100% { transform: translate(0, -2%) scale(1.7); }
+  /* Percentages match SCENES in cinematic-intro.tsx (0, 4, 8.5, 13.5, 18, 22.5, 26, 32 s). */
+  0% { transform: translate(0, 14%) scale(1.7); }
+  12.5% { transform: translate(-1%, 6%) scale(1.7); }
+  26.5% { transform: translate(2%, -18%) scale(1.7); }
+  42% { transform: translate(-1.5%, -30%) scale(1.7); }
+  56% { transform: translate(0, -34%) scale(1.7); }
+  70% { transform: translate(1%, -8%) scale(1.7); }
+  81% { transform: translate(-1%, 15%) scale(1.7); }
+  100% { transform: translate(0, 2%) scale(1.7); }
+}
+@keyframes film-path {
+  from { transform: scaleY(0); opacity: 0; }
+  to { transform: scaleY(1); opacity: 1; }
+}
+@keyframes film-horizon {
+  0% { opacity: 0; transform: scaleX(0.2); }
+  100% { opacity: 1; transform: scaleX(1); }
 }
 /* Grade: the film begins cool and blue and grows warm and golden. */
 @keyframes film-cool {

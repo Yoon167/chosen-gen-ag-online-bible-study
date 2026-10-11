@@ -7,7 +7,7 @@ import { daysQuiet, markCaredFor, quietMembers } from "@/lib/hooks/use-activity"
 import { useTx } from "@/lib/i18n";
 
 /**
- * For leaders: members who haven't opened Gideon in two weeks, so someone
+ * For leaders: members who haven't opened Anointed Academy in two weeks, so someone
  * reaches out before they drift. "I checked on them" hides a member for a week.
  */
 export function QuietMembers({
@@ -32,8 +32,8 @@ export function QuietMembers({
       </h2>
       <p className="text-xs text-muted-foreground">
         {tx(
-          "These members haven't opened Gideon for two weeks or more. A call or message can mean a lot.",
-          "Dalawang linggo o higit nang hindi nagbubukas ng Gideon ang mga member na ito. Malaking bagay ang isang tawag o mensahe."
+          "These members haven't opened Anointed Academy for two weeks or more. A call or message can mean a lot.",
+          "Dalawang linggo o higit nang hindi nagbubukas ng Anointed Academy ang mga member na ito. Malaking bagay ang isang tawag o mensahe."
         )}
       </p>
       {list.map((m) => {

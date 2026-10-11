@@ -82,7 +82,7 @@ export function NarratedPlayer({
     navigator.mediaSession.metadata = new MediaMetadata({
       title,
       artist: `${WEB_AUDIO.narrator} · World English Bible`,
-      album: "Gideon Audio Bible",
+      album: "Anointed Academy Audio Bible",
       artwork: [{ src: "/icon.png", sizes: "512x512", type: "image/png" }],
     });
     const el = audio.current;

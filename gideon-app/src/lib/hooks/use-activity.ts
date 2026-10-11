@@ -8,13 +8,13 @@ import { useMyChurch } from "@/lib/hooks/use-church";
 import type { Membership } from "@/lib/church";
 
 const DAY = 24 * 60 * 60 * 1000;
-/** A member is "quiet" after this long without opening Gideon. */
+/** A member is "quiet" after this long without opening Anointed Academy. */
 export const QUIET_AFTER = 14 * DAY;
 /** Activity tracking started here; older members count from this day, not from when they joined. */
 export const ACTIVITY_START = Date.UTC(2026, 9, 8);
 const PING_KEY = "gideon-active-ping";
 
-/** Records once a day that this member opened Gideon (members/{uid}.lastActiveAt). */
+/** Records once a day that this member opened Anointed Academy (members/{uid}.lastActiveAt). */
 export function useActivityPing() {
   const { uid } = useAuth();
   const my = useMyChurch();
