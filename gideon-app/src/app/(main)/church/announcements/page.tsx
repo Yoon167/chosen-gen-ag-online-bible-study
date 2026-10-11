@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Megaphone, Pencil, Pin, Plus, Trash2 } from "lucide-react";
+import { Megaphone, Plus } from "lucide-react";
+import { Newspaper } from "@/components/church/newspaper";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
@@ -20,11 +21,10 @@ import {
   useAnnouncements,
   type Announcement,
 } from "@/lib/hooks/use-announcements";
-import { useLanguage, useTx } from "@/lib/i18n";
+import { useTx } from "@/lib/i18n";
 
 export default function AnnouncementsPage() {
   const tx = useTx();
-  const { lang } = useLanguage();
   const { uid } = useAuth();
   const { profile } = useProfile();
   const my = useMyChurch();
@@ -75,48 +75,18 @@ export default function AnnouncementsPage() {
             }
           />
         )}
-        {sorted.map((a) => (
-          <article key={a.id} className="rounded-2xl border border-border/70 bg-card p-4">
-            <div className="flex items-start justify-between gap-2">
-              <h2 className="font-heading font-semibold">
-                {a.pinned && <Pin className="mr-1 inline size-3.5 -rotate-45 text-primary" aria-label={tx("Pinned", "Naka-pin")} />}
-                {a.title}
-              </h2>
-              {(canPost || a.authorUid === uid) && (
-                <div className="flex shrink-0">
-                  {canPost && (
-                    <button
-                      onClick={() => setEditing({ item: a })}
-                      className="flex size-8 items-center justify-center rounded-full text-muted-foreground"
-                      aria-label={tx("Edit", "I-edit")}
-                    >
-                      <Pencil className="size-3.5" />
-                    </button>
-                  )}
-                  <button
-                    onClick={() => {
-                      if (confirm(tx("Delete this announcement?", "Burahin ang anunsyong ito?"))) removeAnnouncement(churchId!, a.id);
-                    }}
-                    className="flex size-8 items-center justify-center rounded-full text-muted-foreground"
-                    aria-label={tx("Delete", "Burahin")}
-                  >
-                    <Trash2 className="size-3.5" />
-                  </button>
-                </div>
-              )}
-            </div>
-            <p className="mt-1.5 whitespace-pre-line text-sm text-foreground/85">{a.body}</p>
-            <p className="mt-2 text-xs text-muted-foreground">
-              {a.authorName} ·{" "}
-              {new Date(a.createdAt).toLocaleDateString(lang === "tl" ? "fil-PH" : undefined, {
-                month: "short",
-                day: "numeric",
-                hour: "numeric",
-                minute: "2-digit",
-              })}
-            </p>
-          </article>
-        ))}
+        {churchId && sorted.length > 0 && (
+          <Newspaper
+            churchName={my.church?.name}
+            items={sorted}
+            canEdit={canPost}
+            canDelete={(a) => canPost || a.authorUid === uid}
+            onEdit={(a) => setEditing({ item: a })}
+            onDelete={(a) => {
+              if (confirm(tx("Delete this announcement?", "Burahin ang anunsyong ito?"))) removeAnnouncement(churchId, a.id);
+            }}
+          />
+        )}
       </div>
 
       {editing && churchId && (

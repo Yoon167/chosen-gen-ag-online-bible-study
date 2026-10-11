@@ -73,35 +73,82 @@ export function CourseCards({ courses }: { courses: CourseCard[] }) {
   const progress = useAllCourseProgress();
   const access = useCourseAccess();
   return (
-    <div className="space-y-2.5">
+    <div className="book-shelf grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3">
       {courses.map((c, i) => {
         const Icon = COURSE_ICONS[c.icon];
         const done = c.lessonIds.filter((id) => progress[c.id]?.lessons?.[id]?.completedAt).length;
+        const locked = !access.loading && !access.canOpen(c.id);
+        const [from, to] = BOOK_COLORS[i % BOOK_COLORS.length];
         return (
-          <Link key={c.id} href={`/courses/${c.id}`} className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4">
-            <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-              {!access.loading && !access.canOpen(c.id) ? <Lock className="size-5 text-muted-foreground" /> : <Icon className="size-5" />}
-            </span>
-            <span className="min-w-0 flex-1">
-              <span className="block text-[0.6875rem] font-semibold uppercase tracking-wide text-muted-foreground">
-                {tx(`Course ${i + 1}`, `Kurso ${i + 1}`)} · {c.lessonIds.length} {tx("lessons", "aralin")}
-                {!access.loading &&
-                  access.churchId &&
-                  (access.isUnlocked(c.id) ? ` · ${tx("Unlocked", "Bukas")}` : ` · ${tx("Locked", "Naka-lock")}`)}
+          <Link key={c.id} href={`/courses/${c.id}`} className="book-link group flex flex-col outline-none">
+            {/* The book: pages behind, a cover that opens a little on hover */}
+            <span className="book mx-auto block aspect-[3/4] w-[86%]" style={{ animationDelay: `${Math.min(i, 8) * 0.07}s` }}>
+              <span className="book-pages" />
+              <span className="book-page" />
+              <span
+                className="book-cover flex flex-col items-center overflow-hidden px-3 py-3.5 text-center"
+                style={{ background: `linear-gradient(135deg, ${from}, ${to})` }}
+              >
+                {/* Spine and a gold foil frame */}
+                <span className="absolute inset-y-0 left-0 w-2.5 bg-black/25" />
+                <span className="absolute inset-y-0 left-2.5 w-px bg-white/20" />
+                <span className="absolute inset-[7px] left-[14px] rounded-[4px] border border-[#D4AF37]/70" />
+                <span className="absolute inset-[10px] left-[17px] rounded-[3px] border border-[#D4AF37]/30" />
+                <span className="book-shine" />
+                <span className="relative mt-1 pl-1.5 text-[0.5625rem] font-semibold uppercase tracking-[0.25em] text-[#F4DC8A]/90">
+                  {tx(`Course ${i + 1}`, `Kurso ${i + 1}`)}
+                </span>
+                <span className="relative my-auto flex size-12 items-center justify-center rounded-full border border-[#D4AF37]/80 pl-0.5 text-[#F4DC8A] shadow-[0_0_18px_rgba(212,175,55,0.45)]">
+                  {locked ? <Lock className="size-5" /> : <Icon className="size-6" />}
+                </span>
+                <span className="relative line-clamp-3 pl-1.5 font-heading text-[0.8125rem] font-semibold leading-tight text-[#FBEFC8]">
+                  {c.title[lang]}
+                </span>
+                <span className="relative mt-1.5 pl-1.5 text-[0.5rem] uppercase tracking-[0.3em] text-[#D4AF37]/80">Anointed Academy</span>
               </span>
-              <span className="block font-heading text-base font-semibold leading-tight">{c.title[lang]}</span>
-              <span className="mt-0.5 block line-clamp-2 text-xs text-muted-foreground">{c.summary[lang]}</span>
-              <span className="mt-2 block h-1.5 overflow-hidden rounded-full bg-muted">
-                <span className="block h-full rounded-full bg-primary" style={{ width: `${(done / c.lessonIds.length) * 100}%` }} />
+              {/* Ribbon bookmark once started */}
+              {done > 0 && (
+                <span
+                  className="absolute -bottom-2.5 right-5 h-6 w-3 bg-[#D4AF37]"
+                  style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%)", transform: "translateZ(2px)" }}
+                />
+              )}
+            </span>
+
+            {/* Title and description under the book */}
+            <span className="mt-4 block min-w-0">
+              <span className="block text-[0.625rem] font-semibold uppercase tracking-wide text-muted-foreground">
+                {c.lessonIds.length} {tx("lessons", "aralin")}
+                {!access.loading && access.churchId && (access.isUnlocked(c.id) ? ` · ${tx("Unlocked", "Bukas")}` : ` · ${tx("Locked", "Naka-lock")}`)}
+              </span>
+              <span className="mt-0.5 block font-heading text-sm font-semibold leading-snug group-hover:text-primary">{c.title[lang]}</span>
+              <span className="mt-1 block line-clamp-3 text-xs leading-relaxed text-muted-foreground">{c.summary[lang]}</span>
+              <span className="mt-2 flex items-center gap-2">
+                <span className="block h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
+                  <span className="block h-full rounded-full bg-[#D4AF37]" style={{ width: `${(done / c.lessonIds.length) * 100}%` }} />
+                </span>
+                <span className="text-[0.625rem] tabular-nums text-muted-foreground">
+                  {done}/{c.lessonIds.length}
+                </span>
               </span>
             </span>
-            <ChevronRight className="size-4 shrink-0 text-muted-foreground" />
           </Link>
         );
       })}
     </div>
   );
 }
+
+/** Leather cover colors, one per course in turn. */
+const BOOK_COLORS: [string, string][] = [
+  ["#1E3A5F", "#0f2140"],
+  ["#6b1f2a", "#3e0f17"],
+  ["#1f4d3a", "#0f2a1f"],
+  ["#4a2a5e", "#28163a"],
+  ["#5a3a1c", "#33200e"],
+  ["#173f4f", "#0b2430"],
+  ["#2b2f6b", "#161a42"],
+];
 
 /** A course's lessons, ticked when finished. */
 export function CourseLessonList({ courseId, lessons }: { courseId: string; lessons: { id: string; title: Text }[] }) {

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ChevronRight, Megaphone } from "lucide-react";
+import { ChevronRight, Newspaper } from "lucide-react";
 import { useMyChurch } from "@/lib/hooks/use-church";
 import { readAnnouncementsSeen, useAnnouncements } from "@/lib/hooks/use-announcements";
 import { useTx } from "@/lib/i18n";
@@ -29,20 +29,22 @@ export function AnnouncementCard() {
   const latest = unread[0];
 
   return (
-    <Link href="/church/announcements" className="flex items-center gap-3 rounded-2xl border border-primary/40 bg-primary/5 p-4">
-      <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
-        <Megaphone className="size-5" />
-      </span>
-      <span className="min-w-0 flex-1">
-        <span className="block text-xs font-semibold text-primary">
-          {unread.length > 1
-            ? tx(`${unread.length} new from ${my.church?.name ?? "your AG"}`, `${unread.length} bago mula sa ${my.church?.name ?? "iyong AG"}`)
-            : tx(`New from ${my.church?.name ?? "your AG"}`, `Bago mula sa ${my.church?.name ?? "iyong AG"}`)}
+    <Link href="/church/announcements" className="news-paper news-unfold relative block rounded-sm px-4 pb-3.5 pt-3">
+      <span className="news-rule flex items-center justify-between border-b-2 border-double pb-1.5">
+        <span className="flex items-center gap-1.5 font-heading text-sm font-black uppercase tracking-tight">
+          <Newspaper className="size-4 text-[#1E3A5F]" />
+          {my.church?.name ?? "AG"} {tx("Herald", "Balita")}
         </span>
-        <span className="block truncate text-sm font-medium">{latest.title}</span>
-        <span className="block truncate text-xs text-muted-foreground">{latest.body}</span>
+        <span className="rounded-sm bg-[#7a1f1f] px-1.5 py-0.5 text-[0.5625rem] font-bold uppercase tracking-widest text-[#fbefd8]">
+          {unread.length > 1 ? tx(`${unread.length} new`, `${unread.length} bago`) : tx("New", "Bago")}
+        </span>
       </span>
-      <ChevronRight className="size-4 text-muted-foreground" />
+      <span className="mt-2 block font-heading text-base font-bold leading-snug">{latest.title}</span>
+      <span className="mt-0.5 block line-clamp-2 font-heading text-[0.8125rem] leading-relaxed opacity-80">{latest.body}</span>
+      <span className="mt-1.5 flex items-center justify-end gap-0.5 text-[0.6875rem] font-semibold uppercase tracking-wider text-[#1E3A5F]">
+        {tx("Read the news", "Basahin ang balita")}
+        <ChevronRight className="size-3.5" />
+      </span>
     </Link>
   );
 }

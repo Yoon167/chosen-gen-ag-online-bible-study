@@ -437,3 +437,103 @@ html[data-text-size="lg"] {
 html[data-text-size="xl"] {
   font-size: 125%;
 }
+
+/* Announcements: a newspaper whose pages turn. */
+.news-paper {
+  background-color: #f7f0de;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(255, 255, 255, 0.55), transparent 60%),
+    radial-gradient(ellipse at 100% 100%, rgba(150, 110, 50, 0.16), transparent 55%),
+    repeating-linear-gradient(0deg, rgba(120, 90, 40, 0.035) 0 1px, transparent 1px 3px);
+  color: #2a2418;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 12px 30px -12px rgba(40, 28, 10, 0.45), 0 2px 6px rgba(40, 28, 10, 0.18);
+}
+.news-rule { border-color: #2a2418; }
+.news-dropcap::first-letter {
+  float: left;
+  font-family: var(--font-heading);
+  font-size: 3.1em;
+  line-height: 0.85;
+  font-weight: 700;
+  padding: 0.06em 0.12em 0 0;
+  color: #1E3A5F;
+}
+.news-stage { perspective: 1600px; }
+.news-turn-next { transform-origin: left center; animation: news-turn-next 0.75s cubic-bezier(.25,.8,.3,1) both; }
+.news-turn-prev { transform-origin: right center; animation: news-turn-prev 0.75s cubic-bezier(.25,.8,.3,1) both; }
+.news-unfold { transform-origin: top center; animation: news-unfold 0.9s cubic-bezier(.2,.8,.25,1) both; }
+@keyframes news-turn-next {
+  0% { transform: rotateY(-92deg); filter: brightness(0.7); }
+  100% { transform: rotateY(0); filter: brightness(1); }
+}
+@keyframes news-turn-prev {
+  0% { transform: rotateY(92deg); filter: brightness(0.7); }
+  100% { transform: rotateY(0); filter: brightness(1); }
+}
+@keyframes news-unfold {
+  0% { transform: rotateX(-75deg) scaleY(0.6); opacity: 0; }
+  60% { opacity: 1; }
+  100% { transform: rotateX(0) scaleY(1); opacity: 1; }
+}
+.news-sway { animation: news-sway 3.2s ease-in-out infinite; transform-origin: 50% 0; }
+@keyframes news-sway {
+  0%, 100% { transform: rotate(-1.2deg); }
+  50% { transform: rotate(0.8deg); }
+}
+
+/* Courses: each course is a book. */
+.book-shelf { perspective: 1200px; }
+.book {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(-14deg);
+  transition: transform 0.6s cubic-bezier(.2,.8,.25,1);
+  animation: book-in 0.8s cubic-bezier(.2,.8,.25,1) backwards;
+}
+.book-link:hover .book, .book-link:focus-visible .book { transform: rotateY(-28deg) translateY(-4px); }
+.book-link:active .book { transform: rotateY(-6deg) scale(0.97); }
+.book-cover {
+  position: absolute;
+  inset: 0;
+  border-radius: 3px 8px 8px 3px;
+  transform-origin: left center;
+  transition: transform 0.7s cubic-bezier(.2,.8,.25,1);
+  backface-visibility: hidden;
+  box-shadow: inset 4px 0 6px rgba(0, 0, 0, 0.35), inset -1px 0 0 rgba(255, 255, 255, 0.15), 6px 10px 18px -6px rgba(0, 0, 0, 0.55);
+}
+.book-link:hover .book-cover, .book-link:focus-visible .book-cover { transform: rotateY(-24deg); }
+.book-pages {
+  position: absolute;
+  inset: 3px 0 3px 6px;
+  border-radius: 2px 6px 6px 2px;
+  background: repeating-linear-gradient(90deg, #fffaf0 0 1px, #e9dfc8 1px 2px);
+  transform: translateZ(-8px) translateX(5px);
+  box-shadow: 4px 6px 14px rgba(0, 0, 0, 0.35);
+}
+.book-page {
+  position: absolute;
+  inset: 3px 4px 3px 6px;
+  border-radius: 2px 6px 6px 2px;
+  background: #fffaf0;
+  transform: translateZ(-1px);
+}
+.book-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.28) 45%, transparent 60%);
+  background-size: 250% 100%;
+  animation: book-shine 5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes book-in {
+  from { opacity: 0; transform: rotateY(-50deg) translateY(16px); }
+  to { opacity: 1; transform: rotateY(-14deg); }
+}
+@keyframes book-shine {
+  0%, 60% { background-position: 120% 0; }
+  100% { background-position: -120% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .news-turn-next, .news-turn-prev, .news-unfold, .news-sway, .book, .book-shine { animation: none; }
+}

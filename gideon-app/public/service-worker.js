@@ -1,4 +1,4 @@
-const CACHE_NAME = "gideon-cache-v4";
+const CACHE_NAME = "gideon-cache-v5";
 // Downloads the member chose on the Offline page (see lib/offline.ts). They
 // survive app updates; only the app's own cache is replaced.
 const OFFLINE_PREFIX = "gideon-offline-";
@@ -115,8 +115,8 @@ self.addEventListener("push", (event) => {
   event.waitUntil(
     self.registration.showNotification(d.title || "Anointed Academy", {
       body: d.body || "",
-      icon: "/icons/icon-192.png",
-      badge: "/icons/icon-192.png",
+      icon: "/icons/aa-192.png",
+      badge: "/icons/aa-192.png",
       tag: d.tag || undefined,
       renotify: !!d.tag,
       data: { url: d.url || "/" },

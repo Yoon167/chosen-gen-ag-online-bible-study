@@ -45,7 +45,7 @@ function useAlertsPermission() {
 /** A phone/desktop notification for when the app is open but in the background. */
 async function notifyLive(title: string, body: string) {
   if (!alertsSupported() || Notification.permission !== "granted") return;
-  const options = { body, tag: "gideon-live", icon: "/icons/icon-192.png", data: { url: "/live" } };
+  const options = { body, tag: "gideon-live", icon: "/icons/aa-192.png", data: { url: "/live" } };
   try {
     const reg = await navigator.serviceWorker?.getRegistration();
     if (reg) return void (await reg.showNotification(title, options));
