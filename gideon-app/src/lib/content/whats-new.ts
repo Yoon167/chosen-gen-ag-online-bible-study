@@ -18,6 +18,29 @@ export interface Release {
 
 export const RELEASES: Release[] = [
   {
+    id: "2026-10-11-design",
+    date: "2026-10-11",
+    title: t("Books, letters and a newspaper", "Mga libro, sulat at diyaryo"),
+    items: [
+      t(
+        "Courses and the 12 Journey levels are now books on a shelf: leather covers with gold frames that open a little when you tap, a ribbon bookmark once you start, and the title, description and progress under each book.",
+        "Mga libro na sa estante ang Courses at ang 12 level ng Journey: leather na cover na may gintong frame na bahagyang bumubukas kapag pinindot, ribbon bookmark kapag nasimulan mo na, at ang title, description at progress sa ilalim ng bawat libro."
+      ),
+      t(
+        "AG announcements are now your AG's own newspaper. Swipe to turn the pages, pinned news is on the front page, and every headline is listed under it.",
+        "Diyaryo na ng AG mo ang mga anunsyo. I-swipe para lumipat ng pahina, nasa front page ang naka-pin na balita, at nakalista sa ilalim ang lahat ng headline."
+      ),
+      t(
+        "On Home: the Daily Encouragement is a letter to you, new updates come as a news clipping, and the new Anointed News newsletter lets you flip through every update.",
+        "Sa Home: sulat para sa iyo ang Daily Encouragement, clipping ng diyaryo ang mga bagong update, at sa bagong Anointed Balita newsletter mabubuklat mo ang bawat update."
+      ),
+      t(
+        "The new Anointed Academy icon when you install the app, and in your browser tab.",
+        "Ang bagong Anointed Academy icon kapag in-install ang app, at sa tab ng browser."
+      ),
+    ],
+  },
+  {
     id: "2026-10-11-rebrand",
     date: "2026-10-11",
     title: t("Welcome to Anointed Academy", "Maligayang pagdating sa Anointed Academy"),

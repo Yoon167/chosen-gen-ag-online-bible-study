@@ -4,10 +4,10 @@
  * the first time it sees a new id.
  */
 export const LATEST_RELEASE = {
-  id: "2026-10-11-rebrand",
-  title: { en: "✨ Welcome to Anointed Academy", tl: "✨ Maligayang pagdating sa Anointed Academy" },
+  id: "2026-10-11-design",
+  title: { en: "📚 New in Anointed Academy", tl: "📚 Bago sa Anointed Academy" },
   body: {
-    en: "Gideon is now Anointed Academy: Learn. Grow. Disciple. Lead. New look, new welcome film, and deeper lessons with true stories. Tap to see what's new.",
-    tl: "Ang Gideon ay Anointed Academy na: Matuto. Lumago. Mag-disciple. Manguna. Bagong itsura, bagong welcome film, at mas malalim na lessons na may totoong kuwento. Pindutin para makita ang bago.",
+    en: "Courses and Journey levels are now books, announcements are your AG's newspaper, and Home has a daily letter and the Anointed News newsletter. Tap to see what's new.",
+    tl: "Mga libro na ang Courses at Journey levels, diyaryo na ng AG mo ang mga anunsyo, at may pang-araw-araw na sulat at Anointed Balita newsletter sa Home. Pindutin para makita ang bago.",
   },
 };
