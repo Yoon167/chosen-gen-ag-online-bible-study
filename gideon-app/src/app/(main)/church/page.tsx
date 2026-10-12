@@ -20,6 +20,8 @@ import {
   PlusCircle,
   Link2,
   ClipboardCheck,
+  CalendarDays,
+  Sprout,
 } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
@@ -148,11 +150,16 @@ export default function MyChurchPage() {
                 {c.id === invitedId && (
                   <p className="text-xs font-semibold text-primary">{tx("You're invited to join", "Inimbitahan kang sumali")}</p>
                 )}
-                <div>
-                  <p className="font-medium">{c.name}</p>
-                  <p className="text-xs text-muted-foreground">
-                    {[c.city, c.province, c.country].filter(Boolean).join(", ")} · {c.denomination}
-                  </p>
+                <div className="flex items-center gap-3">
+                  <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#1E3A5F] font-heading text-lg font-semibold text-[#F4DC8A] ring-2 ring-[#D4AF37]/60">
+                    {c.name.trim().charAt(0).toUpperCase()}
+                  </span>
+                  <div className="min-w-0">
+                    <p className="font-heading font-semibold">{c.name}</p>
+                    <p className="text-xs text-muted-foreground">
+                      {[c.city, c.province, c.country].filter(Boolean).join(", ")} · {c.denomination}
+                    </p>
+                  </div>
                 </div>
                 <Button
                   className="w-full"
@@ -230,207 +237,183 @@ export default function MyChurchPage() {
         {/* Active member */}
         {my.active && my.church && (
           <>
-            <div className="space-y-3 rounded-2xl border border-border/70 bg-card p-4">
-              <div className="flex items-center gap-3">
-                <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <ChurchIcon className="size-6" />
-                </span>
-                <div className="min-w-0">
-                  <p className="font-heading text-lg font-semibold">{my.church.name}</p>
-                  <p className="text-xs text-muted-foreground">{my.church.denomination}</p>
+            {/* The AG itself: deep blue, gold, and who you are in it */}
+            <section className="gradient-hero relative overflow-hidden rounded-3xl p-5 text-white shadow-lg shadow-black/10">
+              <div
+                className="pointer-events-none absolute -right-12 -top-12 size-48 rounded-full opacity-60"
+                style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.55), transparent)" }}
+              />
+              <ChurchIcon className="pointer-events-none absolute -bottom-5 -right-3 size-32 text-white/[0.07]" strokeWidth={1} />
+              <p className="relative text-[0.625rem] font-semibold uppercase tracking-[0.3em] text-[#F4DC8A]">{tx("Accountability Group", "Accountability Group")}</p>
+              <h2 className="relative mt-1 font-heading text-2xl font-semibold leading-tight">{my.church.name}</h2>
+              <p className="relative mt-0.5 text-xs text-white/70">{my.church.denomination}</p>
+              <div className="relative mt-3 space-y-1 text-xs text-white/85">
+                <p className="flex items-center gap-1.5">
+                  <MapPin className="size-3.5 text-[#F4DC8A]" />
+                  {[my.church.city, my.church.province, my.church.country].filter(Boolean).join(", ")}
+                </p>
+                {my.church.pastorName && (
+                  <p className="flex items-center gap-1.5">
+                    <UserRound className="size-3.5 text-[#F4DC8A]" />
+                    {tx("Leader: ", "Lider: ")}
+                    {my.church.pastorName}
+                  </p>
+                )}
+              </div>
+              <div className="relative mt-4 grid grid-cols-2 gap-2">
+                <div className="rounded-2xl border border-white/15 bg-white/10 p-3 backdrop-blur">
+                  <p className="text-[0.5625rem] uppercase tracking-wider text-white/60">{tx("Your role", "Iyong role")}</p>
+                  <p className="mt-0.5 text-sm font-semibold text-[#F4DC8A]">{roleInfo(my.membership!.role).label[lang]}</p>
+                </div>
+                <div className="rounded-2xl border border-white/15 bg-white/10 p-3 backdrop-blur">
+                  <p className="text-[0.5625rem] uppercase tracking-wider text-white/60">{tx("Your mentor", "Iyong mentor")}</p>
+                  <p className="mt-0.5 truncate text-sm font-semibold">{my.membership!.mentorName ?? tx("Not yet assigned", "Wala pa")}</p>
                 </div>
               </div>
-              <p className="flex items-center gap-2 text-sm text-muted-foreground">
-                <MapPin className="size-4" />
-                {[my.church.city, my.church.province, my.church.country].filter(Boolean).join(", ")}
-              </p>
-              {my.church.pastorName && (
-                <p className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <UserRound className="size-4" />
-                  {tx("Leader: ", "Lider: ")}
-                  {my.church.pastorName}
-                </p>
-              )}
-            </div>
+              <button
+                onClick={() => setInviteOpen(true)}
+                className="relative mt-3 flex w-full items-center justify-center gap-2 rounded-full bg-[#D4AF37] py-2.5 text-sm font-semibold text-[#13253d] shadow-[0_0_18px_rgba(212,175,55,0.45)] active:scale-[0.98]"
+              >
+                <UserPlus className="size-4" />
+                {tx("Invite someone", "Mag-imbita")}
+              </button>
+            </section>
 
-            <div className="grid grid-cols-2 gap-2">
-              <div className="rounded-2xl border border-border/70 bg-card p-3">
-                <p className="text-[0.6875rem] uppercase tracking-wide text-muted-foreground">{tx("Your role", "Iyong role")}</p>
-                <p className="mt-1 text-sm font-medium">{roleInfo(my.membership!.role).label[lang]}</p>
+            {/* AG life: one colored tile each */}
+            <section className="space-y-2" data-tour="ag-community">
+              <h3 className="px-1 text-[0.6875rem] font-semibold uppercase tracking-[0.15em] text-muted-foreground">{tx("Together", "Sama-sama")}</h3>
+              <div className="grid grid-cols-3 gap-2">
+                {[
+                  { href: "/church/announcements", icon: Megaphone, label: tx("News", "Balita"), tone: "from-sky-500/20 text-sky-700 dark:text-sky-300" },
+                  { href: "/church/prayer", icon: HandHeart, label: tx("Prayer Wall", "Prayer Wall"), tone: "from-rose-500/20 text-rose-700 dark:text-rose-300" },
+                  { href: "/church/prayer-chain", icon: Link2, label: tx("Prayer chain", "Prayer chain"), tone: "from-violet-500/20 text-violet-700 dark:text-violet-300" },
+                  { href: "/church/reading", icon: CalendarCheck2, label: tx("Reading plan", "Reading plan"), tone: "from-amber-500/20 text-amber-700 dark:text-amber-300" },
+                  { href: "/sermons", icon: NotebookPen, label: tx("Sermon notes", "Sermon notes"), tone: "from-emerald-500/20 text-emerald-700 dark:text-emerald-300" },
+                  { href: "/meetings", icon: CalendarDays, label: tx("Meetings", "Pulong"), tone: "from-orange-500/20 text-orange-700 dark:text-orange-300" },
+                ].map((l, i) => (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    className={`ui-rise flex flex-col items-center gap-2 rounded-2xl border border-border/60 bg-gradient-to-b to-card px-2 py-4 text-center active:scale-95 ${l.tone}`}
+                    style={{ animationDelay: `${i * 0.04}s` }}
+                  >
+                    <span className="flex size-10 items-center justify-center rounded-full bg-card/80 shadow-sm">
+                      <l.icon className="size-5" />
+                    </span>
+                    <span className="text-[0.6875rem] font-semibold leading-tight text-foreground">{l.label}</span>
+                  </Link>
+                ))}
               </div>
-              <div className="rounded-2xl border border-border/70 bg-card p-3">
-                <p className="text-[0.6875rem] uppercase tracking-wide text-muted-foreground">{tx("Your mentor", "Iyong mentor")}</p>
-                <p className="mt-1 truncate text-sm font-medium">
-                  {my.membership!.mentorName ?? tx("Not yet assigned", "Wala pa")}
-                </p>
-              </div>
-            </div>
+            </section>
 
-            <Button variant="outline" className="w-full" onClick={() => setInviteOpen(true)}>
-              <UserPlus className="size-4" />
-              {tx(`Invite someone to ${my.church.name}`, `Mag-imbita sa ${my.church.name}`)}
-            </Button>
+            {/* Accountability partner */}
+            <Link href="/church/checkin" className="flex items-center gap-3 rounded-2xl border border-emerald-500/30 bg-gradient-to-r from-emerald-500/15 to-card p-4">
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white">
+                <ShieldCheck className="size-5" />
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block font-heading text-sm font-semibold">{tx("Weekly Check-in", "Lingguhang Check-in")}</span>
+                <span className="block text-xs text-muted-foreground">
+                  {my.membership!.partnerName
+                    ? tx(`With ${my.membership!.partnerName}`, `Kasama si ${my.membership!.partnerName}`)
+                    : tx("Two minutes with your accountability partner", "Dalawang minuto kasama ang accountability partner mo")}
+                </span>
+              </span>
+              <ChevronRight className="size-4 text-muted-foreground" />
+            </Link>
+
+            {/* Leader tools */}
+            {(my.isChurchLeader || my.rank >= 2) && (
+              <section className="space-y-2">
+                <h3 className="px-1 text-[0.6875rem] font-semibold uppercase tracking-[0.15em] text-muted-foreground">{tx("Leader tools", "Para sa mga leader")}</h3>
+                <div className="divide-y divide-border/70 overflow-hidden rounded-2xl border border-border/70 bg-card">
+                  {[
+                    { show: true, href: "/church/followups", icon: HeartHandshake, label: tx("Follow-up: visitors and new believers", "Follow-up: bisita at bagong mananampalataya"), tone: "bg-rose-500/15 text-rose-600 dark:text-rose-400" },
+                    { show: my.rank >= 2, href: "/church/disciples", icon: Sprout, label: tx("My disciples", "Aking mga disipulo"), tone: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400" },
+                    { show: my.isChurchLeader, href: "/church/dashboard", icon: LayoutDashboard, label: tx("Leader Dashboard", "Leader Dashboard"), tone: "bg-primary/15 text-primary" },
+                    { show: my.isChurchLeader, href: "/members", icon: Users, label: tx("Manage members", "Pamahalaan ang mga miyembro"), tone: "bg-sky-500/15 text-sky-600 dark:text-sky-400" },
+                    { show: my.isChurchLeader, href: "/church/attendance", icon: ClipboardCheck, label: tx("Live study attendance", "Attendance sa live study"), tone: "bg-amber-500/15 text-amber-600 dark:text-amber-400" },
+                  ]
+                    .filter((x) => x.show)
+                    .map((x) => (
+                      <Link key={x.href} href={x.href} className="flex items-center gap-3 px-4 py-3">
+                        <span className={`flex size-9 shrink-0 items-center justify-center rounded-xl ${x.tone}`}>
+                          <x.icon className="size-4" />
+                        </span>
+                        <span className="flex-1 text-sm font-medium">{x.label}</span>
+                        <ChevronRight className="size-4 text-muted-foreground" />
+                      </Link>
+                    ))}
+                </div>
+              </section>
+            )}
+
             {canStartAg && (
               <Link
                 href="/church/new"
-                className="flex items-center justify-center gap-2 rounded-xl border border-dashed border-primary/40 px-3 py-2.5 text-sm font-medium text-primary"
+                className="flex items-center justify-center gap-2 rounded-2xl border border-dashed border-primary/40 px-3 py-3 text-sm font-medium text-primary"
               >
                 <PlusCircle className="size-4" />
                 {tx("Start a new AG", "Gumawa ng bagong AG")}
               </Link>
             )}
 
-            <div className="grid grid-cols-2 gap-2" data-tour="ag-community">
-              {[
-                { href: "/church/announcements", icon: Megaphone, label: tx("Announcements", "Anunsyo") },
-                { href: "/sermons", icon: NotebookPen, label: tx("Sermon notes", "Sermon notes") },
-                { href: "/church/reading", icon: CalendarCheck2, label: tx("Reading plan", "Reading plan") },
-                { href: "/church/prayer-chain", icon: Link2, label: tx("Prayer chain", "Prayer chain") },
-              ].map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  className="flex flex-col items-center gap-1.5 rounded-2xl border border-border/70 bg-card px-2 py-3 text-center"
-                >
-                  <l.icon className="size-5 text-primary" />
-                  <span className="text-[0.6875rem] font-medium leading-tight">{l.label}</span>
-                </Link>
-              ))}
-            </div>
-
-            <Link
-              href="/church/checkin"
-              className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4"
-            >
-              <ShieldCheck className="size-5 text-primary" />
-              <span className="flex-1 text-sm font-medium">
-                {tx("Weekly Check-in", "Lingguhang Check-in")}
-                {my.membership!.partnerName && (
-                  <span className="block text-xs font-normal text-muted-foreground">
-                    {tx("Partner: ", "Partner: ")}
-                    {my.membership!.partnerName}
-                  </span>
-                )}
-              </span>
-              <ChevronRight className="size-4 text-muted-foreground" />
-            </Link>
-
-            <Link
-              href="/church/prayer"
-              className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4"
-            >
-              <HandHeart className="size-5 text-primary" />
-              <span className="flex-1 text-sm font-medium">{tx("Prayer Wall", "Prayer Wall")}</span>
-              <ChevronRight className="size-4 text-muted-foreground" />
-            </Link>
-
             {/* The owner viewing an AG they're not in has nothing of theirs to share. */}
             {!my.ownerView && (
-            <>
-            <label className="flex items-start gap-3 rounded-2xl border border-border/70 bg-card p-4">
-              <span className="min-w-0 flex-1">
-                <span className="block text-sm font-medium">
-                  {tx("Share my journey progress", "Ibahagi ang aking journey progress")}
-                </span>
-                <span className="block text-xs text-muted-foreground">
-                  {tx(
-                    "Lets your mentor and AG leaders see how many lessons you've finished in each level, so they can walk with you. Never your answers, notes, prayers, or assessment.",
-                    "Makikita ng iyong mentor at mga AG leader kung ilang aralin na ang natapos mo sa bawat level, para masamahan ka nila. Hindi kasama ang iyong mga sagot, notes, panalangin, o assessment."
-                  )}
-                </span>
-              </span>
-              <Switch
-                checked={!!my.membership!.shareProgress}
-                disabled={busy}
-                onCheckedChange={(on) => run(() => setShareProgress(my.churchId!, uid!, on))}
-              />
-            </label>
-
-            <label className="flex items-start gap-3 rounded-2xl border border-border/70 bg-card p-4">
-              <span className="min-w-0 flex-1">
-                <span className="block text-sm font-medium">
-                  {tx("Share my mobile number with AG leaders", "Ibahagi ang mobile number ko sa mga AG leader")}
-                </span>
-                <span className="block text-xs text-muted-foreground">
-                  {profile?.mobile
-                    ? tx(`So your leaders can call or text you (${profile.mobile}). Only leaders see it.`, `Para matawagan o ma-text ka ng iyong mga leader (${profile.mobile}). Mga leader lang ang makakakita.`)
-                    : tx("Add your mobile number in Profile first.", "Ilagay muna ang mobile number mo sa Profile.")}
-                </span>
-                {my.membership!.phone && profile?.mobile && my.membership!.phone !== profile.mobile && (
-                  <button
-                    className="mt-1 text-xs font-medium text-primary underline underline-offset-2"
-                    disabled={busy}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      run(() => setSharePhone(my.churchId!, uid!, profile.mobile!));
-                    }}
-                  >
-                    {tx("Update to my new number", "I-update sa bago kong number")}
-                  </button>
-                )}
-              </span>
-              <Switch
-                checked={!!my.membership!.phone}
-                disabled={busy || (!profile?.mobile && !my.membership!.phone)}
-                onCheckedChange={(on) => run(() => setSharePhone(my.churchId!, uid!, on ? (profile?.mobile ?? null) : null))}
-              />
-            </label>
-            </>
-            )}
-
-            {(my.isChurchLeader || my.rank >= 2) && (
-              <Link href="/church/followups" className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4">
-                <HeartHandshake className="size-5 text-primary" />
-                <span className="flex-1 text-sm font-medium">{tx("Follow-up: visitors and new believers", "Follow-up: bisita at bagong mananampalataya")}</span>
-                <ChevronRight className="size-4 text-muted-foreground" />
-              </Link>
-            )}
-
-            {my.isChurchLeader && (
-              <Link href="/church/attendance" className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4">
-                <ClipboardCheck className="size-5 text-primary" />
-                <span className="flex-1 text-sm font-medium">{tx("Live study attendance", "Attendance sa live study")}</span>
-                <ChevronRight className="size-4 text-muted-foreground" />
-              </Link>
-            )}
-
-            {my.rank >= 2 && (
-              <Link
-                href="/church/disciples"
-                className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4"
-              >
-                <HeartHandshake className="size-5 text-primary" />
-                <span className="flex-1 text-sm font-medium">{tx("My disciples", "Aking mga disipulo")}</span>
-                <ChevronRight className="size-4 text-muted-foreground" />
-              </Link>
-            )}
-
-            {my.isChurchLeader && (
-              <Link
-                href="/church/dashboard"
-                className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4"
-              >
-                <LayoutDashboard className="size-5 text-primary" />
-                <span className="flex-1 text-sm font-medium">{tx("Leader Dashboard", "Leader Dashboard")}</span>
-                <ChevronRight className="size-4 text-muted-foreground" />
-              </Link>
-            )}
-
-            {my.isChurchLeader && (
-              <Link
-                href="/members"
-                className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4"
-              >
-                <Users className="size-5 text-primary" />
-                <span className="flex-1 text-sm font-medium">{tx("Manage members", "Pamahalaan ang mga miyembro")}</span>
-                <ChevronRight className="size-4 text-muted-foreground" />
-              </Link>
+              <section className="space-y-2">
+                <h3 className="px-1 text-[0.6875rem] font-semibold uppercase tracking-[0.15em] text-muted-foreground">{tx("What you share", "Ang ibinabahagi mo")}</h3>
+                <div className="divide-y divide-border/70 rounded-2xl border border-border/70 bg-card">
+                  <label className="flex items-start gap-3 p-4">
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-sm font-medium">{tx("Share my journey progress", "Ibahagi ang aking journey progress")}</span>
+                      <span className="block text-xs text-muted-foreground">
+                        {tx(
+                          "Lets your mentor and AG leaders see how many lessons you've finished in each level, so they can walk with you. Never your answers, notes, prayers, or assessment.",
+                          "Makikita ng iyong mentor at mga AG leader kung ilang aralin na ang natapos mo sa bawat level, para masamahan ka nila. Hindi kasama ang iyong mga sagot, notes, panalangin, o assessment."
+                        )}
+                      </span>
+                    </span>
+                    <Switch
+                      checked={!!my.membership!.shareProgress}
+                      disabled={busy}
+                      onCheckedChange={(on) => run(() => setShareProgress(my.churchId!, uid!, on))}
+                    />
+                  </label>
+                  <label className="flex items-start gap-3 p-4">
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-sm font-medium">{tx("Share my mobile number with AG leaders", "Ibahagi ang mobile number ko sa mga AG leader")}</span>
+                      <span className="block text-xs text-muted-foreground">
+                        {profile?.mobile
+                          ? tx(`So your leaders can call or text you (${profile.mobile}). Only leaders see it.`, `Para matawagan o ma-text ka ng iyong mga leader (${profile.mobile}). Mga leader lang ang makakakita.`)
+                          : tx("Add your mobile number in Profile first.", "Ilagay muna ang mobile number mo sa Profile.")}
+                      </span>
+                      {my.membership!.phone && profile?.mobile && my.membership!.phone !== profile.mobile && (
+                        <button
+                          className="mt-1 text-xs font-medium text-primary underline underline-offset-2"
+                          disabled={busy}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            run(() => setSharePhone(my.churchId!, uid!, profile.mobile!));
+                          }}
+                        >
+                          {tx("Update to my new number", "I-update sa bago kong number")}
+                        </button>
+                      )}
+                    </span>
+                    <Switch
+                      checked={!!my.membership!.phone}
+                      disabled={busy || (!profile?.mobile && !my.membership!.phone)}
+                      onCheckedChange={(on) => run(() => setSharePhone(my.churchId!, uid!, on ? (profile?.mobile ?? null) : null))}
+                    />
+                  </label>
+                </div>
+              </section>
             )}
 
             {my.membership!.role !== "senior_pastor" && !my.ownerView && (
               <button
                 type="button"
-                className="w-full text-center text-xs text-muted-foreground underline underline-offset-2"
+                className="w-full pt-2 text-center text-xs text-muted-foreground underline underline-offset-2"
                 disabled={busy}
                 onClick={() => {
                   if (!confirm(tx("Leave this AG?", "Umalis sa AG na ito?"))) return;

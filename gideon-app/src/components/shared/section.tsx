@@ -18,7 +18,8 @@ export function Section({
   return (
     <section className={cn("px-5", className)}>
       <div className="mb-3 flex items-center justify-between">
-        <h2 className="font-heading text-lg font-semibold tracking-tight">
+        <h2 className="flex items-center gap-2 font-heading text-lg font-semibold tracking-tight">
+          <span className="h-4 w-1 rounded-full bg-gradient-to-b from-[#F4DC8A] to-[#D4AF37]" />
           {title}
         </h2>
         {href && (

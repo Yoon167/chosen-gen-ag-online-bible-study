@@ -62,25 +62,35 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#13253d]/80 via-[#13253d]/70 to-background" />
         </div>
 
-        <header className="relative flex items-start justify-between px-5 pt-8">
-          <div>
-            <p className="text-xs text-white/70">{today}</p>
-            <h1 className="font-heading text-2xl font-semibold tracking-tight text-white">
-              {t(greetingKey())}, {profile?.displayName ?? "Beloved"}
-            </h1>
-            <p className="mt-1 text-[0.6875rem] text-white/60">
-              {t("home.tagline")}
-            </p>
-          </div>
-          <div className="flex flex-col items-end gap-2">
-            <Link href="/search" aria-label={tx("Search", "Maghanap")} className="flex size-9 items-center justify-center rounded-full bg-white/90 text-foreground shadow-sm">
+        {/* Brand and quick controls in one row */}
+        <div className="relative flex items-center justify-between gap-2 px-5 pt-5">
+          <span className="flex min-w-0 items-center gap-2">
+            <Image src="/brand/icon.png" alt="" width={34} height={34} className="rounded-full ring-2 ring-[#D4AF37]/70" />
+            <span className="truncate font-heading text-sm font-semibold tracking-wide text-white">Anointed Academy</span>
+          </span>
+          <div className="flex shrink-0 items-center gap-1.5">
+            <Link href="/search" aria-label={tx("Search", "Maghanap")} className="flex size-8 items-center justify-center rounded-full bg-white/90 text-foreground shadow-sm">
               <Search className="size-4" />
             </Link>
-            <div className="rounded-full bg-white/95 px-3 py-1.5 shadow-sm">
+            <div className="rounded-full bg-white/90 px-2 py-1 shadow-sm">
               <ThemeToggle />
             </div>
-            <LanguageToggle className="bg-white/90 text-foreground" />
             <MusicToggle className="bg-white/90" />
+          </div>
+        </div>
+
+        <header className="relative px-5 pt-6">
+          <p className="w-fit rounded-full border border-white/20 bg-white/10 px-2.5 py-0.5 text-[0.625rem] font-medium uppercase tracking-wider text-[#F4DC8A] backdrop-blur">
+            {today}
+          </p>
+          <h1 className="mt-2 font-heading text-[1.75rem] font-semibold leading-tight tracking-tight text-white">
+            {t(greetingKey())},
+            <br />
+            <span className="text-[#F4DC8A]">{profile?.displayName ?? "Beloved"}</span>
+          </h1>
+          <div className="mt-2 flex items-center justify-between gap-3">
+            <p className="text-xs text-white/70">{t("home.tagline")}</p>
+            <LanguageToggle className="shrink-0 bg-white/90 text-foreground" />
           </div>
         </header>
 

@@ -15,10 +15,10 @@ export function Shortcuts() {
     { href: "/grow", icon: LayoutGrid, label: tx("All tools", "Lahat"), tone: "bg-violet-500/15 text-violet-700 dark:text-violet-300" },
   ];
   return (
-    <div className="grid grid-cols-5 gap-2">
+    <div className="grid grid-cols-5 gap-2 rounded-3xl border border-border/60 bg-card px-2 py-4 shadow-lg shadow-black/5">
       {items.map((x) => (
         <Link key={x.href} href={x.href} className="flex flex-col items-center gap-1.5 text-center active:scale-95">
-          <span className={`flex size-12 items-center justify-center rounded-2xl ${x.tone}`}>
+          <span className={`flex size-12 items-center justify-center rounded-2xl shadow-sm ${x.tone}`}>
             <x.icon className="size-5" />
           </span>
           <span className="text-[0.6875rem] font-medium leading-tight">{x.label}</span>
