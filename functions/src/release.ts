@@ -4,10 +4,10 @@
  * the first time it sees a new id.
  */
 export const LATEST_RELEASE = {
-  id: "2026-10-11-design",
-  title: { en: "📚 New in Anointed Academy", tl: "📚 Bago sa Anointed Academy" },
+  id: "2026-10-12-profile",
+  title: { en: "✨ New in Anointed Academy", tl: "✨ Bago sa Anointed Academy" },
   body: {
-    en: "Courses and Journey levels are now books, announcements are your AG's newspaper, and Home has a daily letter and the Anointed News newsletter. Tap to see what's new.",
-    tl: "Mga libro na ang Courses at Journey levels, diyaryo na ng AG mo ang mga anunsyo, at may pang-araw-araw na sulat at Anointed Balita newsletter sa Home. Pindutin para makita ang bago.",
+    en: "A new Profile, cleaner verse images with 12 new photos, and pictures of life in Jesus' time. Tap to see what's new.",
+    tl: "Bagong Profile, mas malinis na verse image na may 12 bagong larawan, at mga larawan ng buhay noong panahon ni Hesus. Pindutin para makita ang bago.",
   },
 };

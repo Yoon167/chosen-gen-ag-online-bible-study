@@ -18,6 +18,33 @@ export interface Release {
 
 export const RELEASES: Release[] = [
   {
+    id: "2026-10-12-profile",
+    date: "2026-10-12",
+    title: t("A new Profile and beautiful verse images", "Bagong Profile at magagandang verse image"),
+    items: [
+      t(
+        "A new Profile: your photo in a gold ring on deep blue, your streaks and progress at a glance, a Badges bar, and settings grouped into Preferences, AG & Leadership, App and Account.",
+        "Bagong Profile: ang larawan mo sa gintong singsing sa deep blue, ang streak at progreso mo sa isang tingin, Badges bar, at mga setting na naka-grupo sa Kagustuhan, AG at Pamumuno, App at Account."
+      ),
+      t(
+        "Share a verse as a cleaner image: everything centered, brighter photos, a gold frame, and the Anointed Academy mark at the bottom (no more link).",
+        "Mas malinis na verse image na i-share: nakagitna lahat, mas maliwanag na larawan, may gintong frame, at Anointed Academy sa ibaba (wala nang link)."
+      ),
+      t(
+        "12 new Anointed Academy photos for verse images: the cross at sunrise, bread and baskets, evening in Jerusalem, living water and more.",
+        "12 bagong Anointed Academy na larawan para sa verse image: ang krus sa pagsikat ng araw, tinapay at basket, gabi sa Jerusalem, tubig na buhay at iba pa."
+      ),
+      t(
+        "New \"Life in Jesus' time\" photos: carpenters in Nazareth, baking bread, weaving baskets, fishers of Galilee, the threshing floor and more, from old Holy Land photographs.",
+        "Bagong \"Buhay noong panahon ni Hesus\" na mga larawan: karpintero sa Nazaret, pagluluto ng tinapay, paghahabi ng basket, mangingisda sa Galilea, giikan at iba pa, mula sa mga lumang litrato ng Holy Land."
+      ),
+      t(
+        "Notifications now show the Anointed Academy flame in your phone's status bar.",
+        "Lumalabas na ang apoy ng Anointed Academy sa status bar ng phone mo kapag may notification."
+      ),
+    ],
+  },
+  {
     id: "2026-10-11-design",
     date: "2026-10-11",
     title: t("Books, letters and a newspaper", "Mga libro, sulat at diyaryo"),
