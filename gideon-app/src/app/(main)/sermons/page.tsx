@@ -22,11 +22,17 @@ export default function SermonsPage() {
         title={tx("Sermon Notes", "Sermon Notes")}
         subtitle={my.church?.name}
         icon={NotebookPen}
+        hero={{
+          from: "#1f4d3a",
+          to: "#1E3A5F",
+          kicker: tx("Listen and fill in the blanks", "Makinig at punan ang patlang"),
+          verse: tx("“Faith comes from hearing.” Romans 10:17", "“Ang pananampalataya ay sa pakikinig.” Roma 10:17"),
+        }}
         action={
           my.isChurchLeader && (
             <Link
               href="/sermons/edit"
-              className="flex size-9 items-center justify-center rounded-full bg-primary text-primary-foreground"
+              className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#D4AF37] text-[#13253d] shadow-[0_0_16px_rgba(212,175,55,0.5)]"
               aria-label={tx("New outline", "Bagong outline")}
             >
               <Plus className="size-4.5" />
@@ -63,23 +69,26 @@ export default function SermonsPage() {
             <Link
               key={s.id}
               href={`/sermons/view?id=${s.id}`}
-              className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-4"
+              className="news-paper flex items-center gap-3 rounded-2xl p-4"
             >
+              {/* A calendar leaf with the day */}
+              <span className="flex w-12 shrink-0 flex-col overflow-hidden rounded-lg border border-[#2a2418]/15 bg-white text-center shadow-sm">
+                <span className="bg-[#1f4d3a] py-0.5 text-[0.5625rem] font-bold uppercase tracking-wider text-[#F4DC8A]">
+                  {new Date(y, m - 1, d).toLocaleDateString(lang === "tl" ? "fil-PH" : undefined, { month: "short" })}
+                </span>
+                <span className="py-0.5 font-heading text-xl font-bold leading-tight text-[#2a2418]">{d}</span>
+              </span>
               <span className="min-w-0 flex-1">
-                <span className="block text-xs text-muted-foreground">
-                  {new Date(y, m - 1, d).toLocaleDateString(lang === "tl" ? "fil-PH" : undefined, {
-                    weekday: "short",
-                    month: "short",
-                    day: "numeric",
-                  })}
+                <span className="block text-xs opacity-70">
+                  {new Date(y, m - 1, d).toLocaleDateString(lang === "tl" ? "fil-PH" : undefined, { weekday: "long" })}
                   {s.speaker && ` · ${s.speaker}`}
                 </span>
                 <span className="block truncate font-heading font-semibold">{s.title}</span>
-                <span className="block truncate text-xs text-muted-foreground">
+                <span className="block truncate text-xs text-[#7a5a12]">
                   {[s.scripture, tx(`${blanks} blanks`, `${blanks} patlang`)].filter(Boolean).join(" · ")}
                 </span>
               </span>
-              <ChevronRight className="size-4 text-muted-foreground" />
+              <ChevronRight className="size-4 opacity-50" />
             </Link>
           );
         })}

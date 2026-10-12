@@ -67,6 +67,7 @@ export default function NationalDashboardPage() {
         }
         icon={Globe2}
         back
+        hero={{ from: "#0f2140", to: "#1f4d3a", kicker: tx("Anointed Academy · Owner", "Anointed Academy · Owner") }}
         action={
           <div className="flex gap-1.5">
             <button
@@ -76,7 +77,7 @@ export default function NationalDashboardPage() {
                 setRefreshing(false);
               }}
               disabled={refreshing || items === null}
-              className="flex size-9 items-center justify-center rounded-full border border-border bg-card disabled:opacity-40"
+              className="flex size-9 items-center justify-center rounded-full border border-white/25 bg-white/10 disabled:opacity-40"
               aria-label={tx("Refresh", "I-refresh")}
             >
               <RefreshCw className={cn("size-4", refreshing && "animate-spin")} />
@@ -84,7 +85,7 @@ export default function NationalDashboardPage() {
             <button
               onClick={() => downloadNationalCsv(ags)}
               disabled={!ags.length}
-              className="flex size-9 items-center justify-center rounded-full border border-border bg-card disabled:opacity-40"
+              className="flex size-9 items-center justify-center rounded-full border border-white/25 bg-white/10 disabled:opacity-40"
               aria-label={tx("Download report (CSV)", "I-download ang report (CSV)")}
             >
               <Download className="size-4" />
@@ -108,14 +109,15 @@ export default function NationalDashboardPage() {
             )}
 
             <div className="grid grid-cols-2 gap-2.5">
-              <Tile label={tx("Active AGs", "Aktibong AG")} value={live.length} />
-              <Tile label={tx("Members", "Miyembro")} value={members} sub={`+${sum((a) => a.joined30d)} ${tx("in 30 days", "sa 30 araw")}`} />
+              <Tile tone={0} label={tx("Active AGs", "Aktibong AG")} value={live.length} />
+              <Tile tone={1} label={tx("Members", "Miyembro")} value={members} sub={`+${sum((a) => a.joined30d)} ${tx("in 30 days", "sa 30 araw")}`} />
               <Tile
+                tone={2}
                 label={tx("Checked in this week", "Nag-check in ngayong linggo")}
                 value={checkedIn}
                 sub={members ? `${Math.round((checkedIn / members) * 100)}% ${tx("of members", "ng miyembro")}` : undefined}
               />
-              <Tile label={tx("Share journey progress", "Nagbabahagi ng journey")} value={sum((a) => a.sharing)} />
+              <Tile tone={3} label={tx("Share journey progress", "Nagbabahagi ng journey")} value={sum((a) => a.sharing)} />
             </div>
 
             <section className="space-y-2">
@@ -233,12 +235,22 @@ export default function NationalDashboardPage() {
   );
 }
 
-function Tile({ label, value, sub }: { label: string; value: number; sub?: string }) {
+const TILE_TONES: [string, string][] = [
+  ["#1E3A5F", "#0f2140"],
+  ["#1f4d3a", "#0f2a1f"],
+  ["#854d0e", "#5a3a1c"],
+  ["#4a2a5e", "#28163a"],
+];
+
+/** One headline number, on its own color. */
+function Tile({ label, value, sub, tone = 0 }: { label: string; value: number; sub?: string; tone?: number }) {
+  const [from, to] = TILE_TONES[tone % TILE_TONES.length];
   return (
-    <div className="rounded-2xl border border-border/70 bg-card p-3.5">
-      <p className="text-2xl font-semibold tabular-nums">{value}</p>
-      <p className="text-xs text-muted-foreground">{label}</p>
-      {sub && <p className="mt-0.5 text-[0.6875rem] text-muted-foreground">{sub}</p>}
+    <div className="relative overflow-hidden rounded-2xl p-3.5 text-white shadow-md" style={{ background: `linear-gradient(140deg, ${from}, ${to})` }}>
+      <span className="pointer-events-none absolute -right-6 -top-6 size-20 rounded-full bg-[#D4AF37]/20 blur-xl" />
+      <p className="relative font-heading text-3xl font-semibold tabular-nums text-[#F4DC8A]">{value}</p>
+      <p className="relative text-xs text-white/85">{label}</p>
+      {sub && <p className="relative mt-0.5 text-[0.6875rem] text-white/60">{sub}</p>}
     </div>
   );
 }

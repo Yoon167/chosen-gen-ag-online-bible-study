@@ -35,7 +35,18 @@ export default function GroupReadingPage() {
 
   return (
     <div>
-      <PageHeader title={tx("AG Reading Plan", "AG Reading Plan")} subtitle={my.church?.name} back />
+      <PageHeader
+        title={tx("AG Reading Plan", "AG Reading Plan")}
+        subtitle={my.church?.name}
+        icon={CalendarCheck2}
+        back
+        hero={{
+          from: "#854d0e",
+          to: "#1E3A5F",
+          kicker: tx("Reading together", "Sama-samang pagbasa"),
+          verse: tx("“Blessed is the one who reads.” Revelation 1:3", "“Mapalad ang bumabasa.” Pahayag 1:3"),
+        }}
+      />
       <div className="space-y-4 px-5 pb-8">
         {!my.loading && !churchId && (
           <EmptyState

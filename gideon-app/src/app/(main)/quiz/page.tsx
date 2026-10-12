@@ -36,6 +36,24 @@ const RANKS = [
   { at: 1200, en: "Elder of the Word", tl: "Matanda sa Salita" },
 ];
 
+/** A bright color pair for each game card, in turn. */
+const GAME_TONES: [string, string][] = [
+  ["#7c3aed", "#4c1d95"],
+  ["#ea580c", "#9a3412"],
+  ["#0891b2", "#155e75"],
+  ["#db2777", "#9d174d"],
+  ["#059669", "#065f46"],
+  ["#2563eb", "#1e3a8a"],
+  ["#ca8a04", "#854d0e"],
+  ["#dc2626", "#7f1d1d"],
+];
+/** Easy, medium, hard. */
+const LEVEL_TONES = [
+  "bg-emerald-500 text-white shadow-md shadow-emerald-500/30",
+  "bg-amber-500 text-white shadow-md shadow-amber-500/30",
+  "bg-rose-600 text-white shadow-md shadow-rose-500/30",
+];
+
 const stars = (r: GameResult) => (r.correct / Math.max(1, r.total) >= 0.9 ? 3 : r.correct / Math.max(1, r.total) >= 0.7 ? 2 : r.correct / Math.max(1, r.total) >= 0.4 ? 1 : 0);
 
 /** Bible games: quiz, icons, scrambled letters, verse puzzle, who am I and true or false, in three levels. */
@@ -158,50 +176,68 @@ export default function GamesPage() {
 
   return (
     <div>
-      <PageHeader title={tx("Bible Games", "Bible Games")} subtitle={tx("Play, learn and grow in the Word", "Maglaro, matuto at lumago sa Salita")} icon={Gamepad2} back />
-      <div className="space-y-4 px-5 pb-8">
-        <div className="gradient-hero relative overflow-hidden rounded-3xl p-5 text-primary-foreground">
-          <p className="text-xs uppercase tracking-wider text-primary-foreground/70">{tx("Your rank", "Ang ranggo mo")}</p>
-          <p className="font-heading text-2xl font-semibold">{rank[lang]}</p>
-          <p className="text-sm text-primary-foreground/80">
-            {totalPoints} {tx("points", "puntos")}
-            {nextRank && ` · ${nextRank.at - totalPoints} ${tx("to", "pa bago maging")} ${nextRank[lang]}`}
-          </p>
-          {nextRank && (
-            <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/20">
-              <div className="h-full rounded-full bg-gold" style={{ width: `${Math.min(100, (totalPoints / nextRank.at) * 100)}%` }} />
-            </div>
-          )}
+      <PageHeader
+        title={tx("Bible Games", "Bible Games")}
+        icon={Gamepad2}
+        back
+        hero={{ from: "#4c1d95", to: "#1E3A5F", kicker: tx("Play, learn and grow", "Maglaro, matuto at lumago") }}
+      >
+        <div className="flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 p-3.5 backdrop-blur">
+          <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#F4DC8A] to-[#D4AF37] text-[#13253d] shadow-[0_0_18px_rgba(212,175,55,0.55)]">
+            <Trophy className="size-6" />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-[0.5625rem] uppercase tracking-wider text-white/60">{tx("Your rank", "Ang ranggo mo")}</span>
+            <span className="block font-heading text-xl font-semibold text-[#F4DC8A]">{rank[lang]}</span>
+            <span className="block text-[0.6875rem] text-white/75">
+              {totalPoints} {tx("points", "puntos")}
+              {nextRank && ` · ${nextRank.at - totalPoints} ${tx("to", "pa bago maging")} ${nextRank[lang]}`}
+            </span>
+            {nextRank && (
+              <span className="mt-1.5 block h-1.5 overflow-hidden rounded-full bg-white/20">
+                <span className="block h-full rounded-full bg-[#D4AF37]" style={{ width: `${Math.min(100, (totalPoints / nextRank.at) * 100)}%` }} />
+              </span>
+            )}
+          </span>
         </div>
-
-        <div className="grid grid-cols-3 gap-1 rounded-2xl bg-muted p-1" data-tour="games-hub">
-          {LEVELS.map((l) => (
+      </PageHeader>
+      <div className="space-y-4 px-5 pb-8">
+        <div className="grid grid-cols-3 gap-1.5 rounded-2xl bg-muted p-1.5" data-tour="games-hub">
+          {LEVELS.map((l, i) => (
             <button
               key={l.id}
               onClick={() => pickLevel(l.id)}
-              className={cn("rounded-xl py-2 text-sm font-semibold", level === l.id ? "bg-background shadow-sm" : "text-muted-foreground")}
+              className={cn("rounded-xl py-2.5 text-sm font-semibold transition", level === l.id ? LEVEL_TONES[i] ?? "bg-background" : "text-muted-foreground")}
             >
               {l.emoji} {l.label[lang]}
             </button>
           ))}
         </div>
 
-        <div className="grid grid-cols-2 gap-2.5">
-          {GAMES.map((g) => {
+        <div className="grid grid-cols-2 gap-3">
+          {GAMES.map((g, i) => {
             const count = poolSize(g.id, level);
             const b = best(g.id);
+            const tone = GAME_TONES[i % GAME_TONES.length];
             return (
               <button
                 key={g.id}
                 disabled={!count}
                 onClick={() => setPlaying({ game: g.id, key: Date.now() })}
-                className="flex flex-col items-start gap-1 rounded-2xl border border-border/70 bg-card p-4 text-left transition active:scale-[0.98] disabled:opacity-50"
+                className="ui-rise relative flex flex-col items-start gap-1 overflow-hidden rounded-2xl p-4 text-left text-white shadow-lg transition active:scale-[0.97] disabled:opacity-50"
+                style={{ background: `linear-gradient(140deg, ${tone[0]}, ${tone[1]})`, animationDelay: `${i * 0.04}s` }}
               >
-                <span className="text-3xl">{g.emoji}</span>
-                <span className="text-sm font-semibold leading-tight">{g.title[lang]}</span>
-                <span className="text-[0.6875rem] leading-snug text-muted-foreground">{g.blurb[lang]}</span>
-                <span className="mt-1 text-[0.6875rem] font-medium text-primary">
-                  {b ? tx(`Best: ${b} pts`, `Pinakamataas: ${b} puntos`) : count ? tx(`${count} to play`, `${count} na laro`) : tx("Coming soon", "Malapit na")}
+                <span className="pointer-events-none absolute -right-3 -top-3 text-6xl opacity-20">{g.emoji}</span>
+                <span className="flex size-12 items-center justify-center rounded-2xl bg-white/20 text-3xl backdrop-blur">{g.emoji}</span>
+                <span className="mt-1 font-heading text-base font-semibold leading-tight">{g.title[lang]}</span>
+                <span className="text-[0.6875rem] leading-snug text-white/80">{g.blurb[lang]}</span>
+                <span className="mt-2 flex w-full items-center justify-between gap-1">
+                  <span className="text-[0.625rem] font-semibold text-white/90">
+                    {b ? tx(`⭐ Best: ${b}`, `⭐ Pinakamataas: ${b}`) : count ? tx(`${count} to play`, `${count} na laro`) : tx("Coming soon", "Malapit na")}
+                  </span>
+                  <span className="shrink-0 rounded-full bg-white px-2.5 py-0.5 text-[0.625rem] font-bold" style={{ color: tone[1] }}>
+                    ▶ {tx("Play", "Laro")}
+                  </span>
                 </span>
               </button>
             );

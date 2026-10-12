@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useSyncExternalStore } from "react";
-import { CalendarPlus, Link2, Trash2, Users } from "lucide-react";
+import { CalendarPlus, Link2, Trash2 } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { EmptyAction, EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
@@ -66,7 +66,17 @@ export default function PrayerChainPage() {
 
   return (
     <div>
-      <PageHeader title={title} subtitle={tx("Pray around the clock together", "Sama-samang manalangin buong araw")} icon={Link2} back />
+      <PageHeader
+        title={title}
+        icon={Link2}
+        back
+        hero={{
+          from: "#4a2a5e",
+          to: "#1E3A5F",
+          kicker: tx("Pray around the clock together", "Sama-samang manalangin buong araw"),
+          verse: tx("“Pray without ceasing.” 1 Thessalonians 5:17", "“Manalangin kayong walang patid.” 1 Tesalonica 5:17"),
+        }}
+      />
       <div className="space-y-4 px-5 pb-8">
         {chains.items.length > 1 && (
           <div className="flex gap-1.5 overflow-x-auto pb-1">
@@ -76,7 +86,7 @@ export default function PrayerChainPage() {
                 onClick={() => setSelected(c.id)}
                 className={cn(
                   "shrink-0 rounded-full border px-3 py-1.5 text-xs font-medium",
-                  chain?.id === c.id ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card",
+                  chain?.id === c.id ? "border-violet-600 bg-violet-600 text-white shadow-sm shadow-violet-500/30" : "border-border bg-card",
                   !running.includes(c) && chain?.id !== c.id && "opacity-60"
                 )}
               >
@@ -138,20 +148,31 @@ function ChainView({ chain, churchId, isLeader, now }: { chain: PrayerChain; chu
 
   return (
     <div className="space-y-3">
-      <div className="rounded-2xl border border-primary/30 bg-primary/5 p-4">
-        <h2 className="font-heading text-lg font-semibold">{chain.title}</h2>
+      <div className="rounded-2xl border border-violet-500/30 bg-gradient-to-br from-violet-500/15 to-card p-4">
+        <h2 className="font-heading text-lg font-semibold">⛓️ {chain.title}</h2>
         <p className="text-xs text-muted-foreground">
           {fmt(chain.startsAt, true)} – {fmt(chainEnd(chain), true)} · {chain.hours} {tx("hours", "oras")}
         </p>
         {chain.note && <p className="mt-2 text-sm leading-relaxed">{chain.note}</p>}
-        <div className="mt-3 h-2 overflow-hidden rounded-full bg-muted">
-          <div className="h-full rounded-full bg-primary" style={{ width: `${(covered / chain.hours) * 100}%` }} />
+        {/* The chain itself: one link per hour, gold once someone prays it */}
+        <div className="mt-3 flex flex-wrap gap-1" aria-hidden>
+          {Array.from({ length: chain.hours }, (_, h) => (
+            <span
+              key={h}
+              className={cn(
+                "h-2.5 w-4 rounded-full border-2",
+                byHour.has(h) ? "border-[#D4AF37] bg-[#F4DC8A]/60" : "border-muted-foreground/30",
+                h === live && !ended && "animate-pulse border-rose-500"
+              )}
+            />
+          ))}
         </div>
         <p className="mt-1 text-xs text-muted-foreground">
           {tx(`${covered} of ${chain.hours} hours have someone praying`, `${covered} sa ${chain.hours} oras ang may nananalangin`)}
         </p>
         {live !== null && !ended && (
-          <p className="mt-2 text-sm font-medium text-primary">
+          <p className="mt-2 flex items-center gap-1.5 text-sm font-medium text-rose-600 dark:text-rose-400">
+            <span className="size-2 animate-pulse rounded-full bg-rose-500" />
             {byHour.get(live)?.length
               ? tx(`Praying now: ${byHour.get(live)!.map((s) => s.name).join(", ")}`, `Nananalangin ngayon: ${byHour.get(live)!.map((s) => s.name).join(", ")}`)
               : tx("No one has this hour yet. Will you pray now?", "Wala pang kumuha ng oras na ito. Mananalangin ka ba ngayon?")}
@@ -193,7 +214,11 @@ function ChainView({ chain, churchId, isLeader, now }: { chain: PrayerChain; chu
               key={hour}
               className={cn(
                 "flex items-center gap-3 rounded-xl border px-3 py-2",
-                hour === live && !ended ? "border-primary bg-primary/5" : "border-border/70 bg-card",
+                hour === live && !ended
+                  ? "border-rose-500/60 bg-rose-500/10 shadow-sm"
+                  : people.length
+                    ? "border-[#D4AF37]/40 bg-[#D4AF37]/10"
+                    : "border-border/70 bg-card",
                 isPast && "opacity-55"
               )}
             >
@@ -201,7 +226,7 @@ function ChainView({ chain, churchId, isLeader, now }: { chain: PrayerChain; chu
               <span className="min-w-0 flex-1 truncate text-xs text-muted-foreground">
                 {people.length ? (
                   <>
-                    <Users className="mr-1 inline size-3.5" />
+                    <span className="mr-1">🕯️</span>
                     {people.map((p) => p.name).join(", ")}
                   </>
                 ) : (

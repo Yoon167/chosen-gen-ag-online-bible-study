@@ -80,12 +80,17 @@ export default function MeetingsPage() {
     <div>
       <PageHeader
         title={t("page.meetings")}
-        subtitle="Zoom, Teams, and Google Meet links in one place"
         icon={Video}
+        hero={{
+          from: "#9a3412",
+          to: "#1E3A5F",
+          kicker: tx("Zoom, Teams and Google Meet in one place", "Zoom, Teams at Google Meet sa iisang lugar"),
+          verse: tx("“Where two or three gather in My name, there am I.” Matthew 18:20", "“Kung saan may dalawa o tatlong nagtitipon sa Aking pangalan, naroon Ako.” Mateo 18:20"),
+        }}
         action={
           <button
             onClick={() => setOpen(true)}
-            className="flex size-9 items-center justify-center rounded-full bg-primary text-primary-foreground"
+            className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#D4AF37] text-[#13253d] shadow-[0_0_16px_rgba(212,175,55,0.5)]"
             aria-label="Add meeting"
           >
             <Plus className="size-4.5" />
@@ -136,7 +141,7 @@ export default function MeetingsPage() {
       )}
 
       {live.length > 0 && (
-        <Section title="Live Now" className="mt-6">
+        <Section title={`🔴 ${tx("Live now", "Live ngayon")}`} className="mt-6">
           <div className="space-y-2.5">
             {live.map((m) => (
               <MeetingCard key={m.id} meeting={m} now={now} onDelete={() => remove(m.id)} />
@@ -146,7 +151,7 @@ export default function MeetingsPage() {
       )}
 
       {upcoming.length > 0 && (
-        <Section title="My Upcoming Meetings" className="mt-6">
+        <Section title={tx("My upcoming meetings", "Mga susunod kong meeting")} className="mt-6">
           <div className="space-y-2.5">
             {upcoming.map((m) => (
               <MeetingCard key={m.id} meeting={m} now={now} onDelete={() => remove(m.id)} />
@@ -156,7 +161,7 @@ export default function MeetingsPage() {
       )}
 
       {!loading && items.length === 0 && (
-        <Section title="My Meetings" className="mt-6">
+        <Section title={tx("My meetings", "Mga meeting ko")} className="mt-6">
           <EmptyState
             icon={Video}
             title="No personal meetings yet"
@@ -166,7 +171,7 @@ export default function MeetingsPage() {
       )}
 
       {ended.length > 0 && (
-        <Section title="Meeting History" className="mt-6 pb-8">
+        <Section title={tx("Meeting history", "Mga nakaraang meeting")} className="mt-6 pb-8">
           <div className="space-y-2.5">
             {ended.map((m) => (
               <MeetingCard key={m.id} meeting={m} now={now} onDelete={() => remove(m.id)} />

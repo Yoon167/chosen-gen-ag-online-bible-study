@@ -50,48 +50,55 @@ function PrayerPageInner() {
     <div>
       <PageHeader
         title={t("page.prayer")}
-        subtitle={`${items.length} total · ${totalAnswered} answered`}
         icon={HandHeart}
+        hero={{
+          from: "#5b1a2e",
+          to: "#1E3A5F",
+          kicker: tx("Prayer journal", "Prayer journal"),
+          verse: tx("“Call to me and I will answer you.” Jeremiah 33:3", "“Tumawag ka sa Akin at sasagutin kita.” Jeremias 33:3"),
+        }}
         action={
           <button
             onClick={() => setDialogOpen(true)}
-            className="flex size-9 items-center justify-center rounded-full bg-primary text-primary-foreground"
+            className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#D4AF37] text-[#13253d] shadow-[0_0_16px_rgba(212,175,55,0.5)]"
             aria-label="Add prayer"
           >
-            <Plus className="size-4.5" />
+            <Plus className="size-5" />
           </button>
         }
-      />
-
-      <div className="grid grid-cols-3 gap-2.5 px-5" data-tour="prayer-journal">
-        <StatBlock label="Total" value={items.length} />
-        <StatBlock label="Answered" value={totalAnswered} />
-        <StatBlock label="Active" value={items.length - totalAnswered} />
-      </div>
-
-      <button
-        onClick={markPrayerDone}
-        className="mx-5 mt-4 flex items-center justify-center gap-2 rounded-full border border-primary/30 bg-primary/5 py-2.5 text-xs font-medium text-primary"
       >
-        <HandHeart className="size-3.5" />
-        I prayed today
-      </button>
+        <div className="grid grid-cols-3 gap-2" data-tour="prayer-journal">
+          <StatBlock label={tx("Total", "Lahat")} value={items.length} />
+          <StatBlock label={tx("Answered", "Nasagot")} value={totalAnswered} />
+          <StatBlock label={tx("Praying", "Ipinapanalangin")} value={items.length - totalAnswered} />
+        </div>
+      </PageHeader>
 
-      <div className="mx-5 mt-2 grid grid-cols-2 gap-2">
-        <Link
-          href="/fasting"
-          className="flex items-center justify-center gap-1.5 rounded-full border border-border bg-card py-2.5 text-xs font-medium"
+      <div className="px-5">
+        <button
+          onClick={() => {
+            markPrayerDone();
+            celebrate("🙏");
+          }}
+          className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-rose-500 to-rose-600 py-3.5 text-sm font-semibold text-white shadow-lg shadow-rose-500/25 active:scale-[0.98]"
         >
-          <Flame className="size-3.5 text-primary" />
-          {tx("Prayer timer & fasting", "Prayer timer at ayuno")}
-        </Link>
-        <Link
-          href="/oikos"
-          className="flex items-center justify-center gap-1.5 rounded-full border border-border bg-card py-2.5 text-xs font-medium"
-        >
-          <HeartHandshake className="size-3.5 text-primary" />
-          {tx("My Oikos", "Aking Oikos")}
-        </Link>
+          <HandHeart className="size-4" />
+          {tx("I prayed today", "Nanalangin ako ngayon")}
+        </button>
+        <div className="mt-2 grid grid-cols-2 gap-2">
+          <Link href="/fasting" className="flex items-center gap-2.5 rounded-2xl border border-orange-500/25 bg-gradient-to-br from-orange-500/15 to-card p-3 text-xs font-semibold">
+            <span className="flex size-8 items-center justify-center rounded-full bg-orange-500 text-white">
+              <Flame className="size-4" />
+            </span>
+            {tx("Prayer timer & fasting", "Prayer timer at ayuno")}
+          </Link>
+          <Link href="/oikos" className="flex items-center gap-2.5 rounded-2xl border border-emerald-500/25 bg-gradient-to-br from-emerald-500/15 to-card p-3 text-xs font-semibold">
+            <span className="flex size-8 items-center justify-center rounded-full bg-emerald-600 text-white">
+              <HeartHandshake className="size-4" />
+            </span>
+            {tx("My Oikos", "Aking Oikos")}
+          </Link>
+        </div>
       </div>
 
       <div className="mt-5 flex gap-2 overflow-x-auto px-5 pb-1 no-scrollbar">
@@ -102,7 +109,7 @@ function PrayerPageInner() {
             className={cn(
               "shrink-0 rounded-full border px-3.5 py-1.5 text-xs font-medium",
               filter === c
-                ? "border-primary bg-primary text-primary-foreground"
+                ? "border-rose-600 bg-rose-600 text-white shadow-sm shadow-rose-500/30"
                 : "border-border bg-card text-muted-foreground"
             )}
           >
@@ -139,8 +146,10 @@ function PrayerPageInner() {
 
         {answered.length > 0 && (
           <>
-            <p className="pt-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              Answered
+            <p className="flex items-center gap-2 pt-3 text-xs font-semibold uppercase tracking-[0.15em] text-emerald-600 dark:text-emerald-400">
+              <span className="h-px flex-1 bg-emerald-500/30" />
+              {tx("Answered prayers", "Mga nasagot na panalangin")} ✨
+              <span className="h-px flex-1 bg-emerald-500/30" />
             </p>
             <AnimatePresence initial={false}>
               {answered.map((p) => (
@@ -169,9 +178,9 @@ function PrayerPageInner() {
 
 function StatBlock({ label, value }: { label: string; value: number }) {
   return (
-    <div className="rounded-xl border border-border/70 bg-card py-3 text-center">
-      <p className="font-heading text-xl font-semibold text-primary">{value}</p>
-      <p className="text-[0.625rem] text-muted-foreground">{label}</p>
+    <div className="rounded-2xl border border-white/15 bg-white/10 py-2.5 text-center backdrop-blur">
+      <p className="font-heading text-xl font-semibold text-[#F4DC8A]">{value}</p>
+      <p className="text-[0.625rem] text-white/70">{label}</p>
     </div>
   );
 }

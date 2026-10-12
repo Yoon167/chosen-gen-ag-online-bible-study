@@ -69,52 +69,43 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
     <div>
       <PageHeader
         title={t("devotion.title")}
-        subtitle={dateKey}
         icon={Sun}
-        action={<LanguageToggle />}
+        action={<LanguageToggle className="shrink-0 bg-white/90 text-foreground" />}
+        hero={{
+          from: "#b45309",
+          to: "#1E3A5F",
+          kicker: dateKey,
+          verse: tx("“His mercies are new every morning.” Lamentations 3:23", "“Ang Kanyang mga kahabagan ay bago tuwing umaga.” Panaghoy 3:23"),
+        }}
       />
 
       <div className="px-5">
-        <div className="gradient-card rounded-3xl border border-border/70 p-5">
-          <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+        <article className="news-paper news-unfold rounded-2xl p-5">
+          <p className="news-rule border-b-2 border-double pb-2 text-center text-[0.625rem] font-bold uppercase tracking-[0.3em] text-[#7a5a12]">
             {devotion.scriptureReference}
           </p>
-          <h2 className="mt-1 font-heading text-xl font-semibold">{devotion.title}</h2>
+          <h2 className="mt-3 text-center font-heading text-2xl font-bold leading-tight">{devotion.title}</h2>
 
-          <div className="mt-4 space-y-4 text-sm leading-relaxed">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                {t("devotion.mainLesson")}
-              </p>
-              <p className="mt-1 text-foreground/90">{devotion.mainLesson}</p>
-            </div>
-
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                {t("devotion.reflection")}
-              </p>
-              <ul className="mt-1.5 space-y-1.5">
+          <div className="mt-5 space-y-5 font-heading text-[0.9375rem] leading-relaxed">
+            <DevotionStep n={1} label={t("devotion.mainLesson")}>
+              <p className="news-dropcap">{devotion.mainLesson}</p>
+            </DevotionStep>
+            <DevotionStep n={2} label={t("devotion.reflection")}>
+              <ul className="space-y-1.5">
                 {devotion.reflectionQuestions.map((q) => (
-                  <li key={q} className="flex gap-2 text-foreground/90">
-                    <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-primary" />
+                  <li key={q} className="flex gap-2">
+                    <span className="mt-0.5 text-[#a8862a]">❖</span>
                     {q}
                   </li>
                 ))}
               </ul>
-            </div>
-
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                {t("devotion.application")}
-              </p>
-              <p className="mt-1 text-foreground/90">{devotion.application}</p>
-            </div>
-
-            <div className="rounded-xl bg-primary/5 p-3.5">
-              <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                {t("devotion.prayer")}
-              </p>
-              <p className="mt-1 italic text-foreground/90">{devotion.closingPrayer}</p>
+            </DevotionStep>
+            <DevotionStep n={3} label={t("devotion.application")}>
+              <p>{devotion.application}</p>
+            </DevotionStep>
+            <div className="rounded-xl border border-[#D4AF37]/50 bg-[#D4AF37]/10 p-4">
+              <p className="text-[0.625rem] font-bold uppercase tracking-[0.2em] text-[#7a5a12]">🙏 {t("devotion.prayer")}</p>
+              <p className="mt-1 italic">{devotion.closingPrayer}</p>
             </div>
           </div>
 
@@ -124,8 +115,8 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
               className={cn(
                 "flex flex-1 items-center justify-center gap-1.5 rounded-full py-2.5 text-xs font-medium",
                 entry?.completed
-                  ? "bg-primary text-primary-foreground"
-                  : "border border-border text-foreground/80"
+                  ? "bg-emerald-600 text-white"
+                  : "bg-[#1E3A5F] text-[#F4DC8A]"
               )}
             >
               {entry?.completed ? <Check className="size-3.5" /> : <RotateCcw className="size-3.5" />}
@@ -136,7 +127,7 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
               aria-label="Save devotion"
               className={cn(
                 "flex size-10 shrink-0 items-center justify-center rounded-full border",
-                entry?.favorited ? "border-gold bg-gold/20 text-gold-foreground" : "border-border text-muted-foreground"
+                entry?.favorited ? "border-[#D4AF37] bg-[#D4AF37]/25 text-[#7a5a12]" : "border-[#2a2418]/25 text-[#2a2418]/60"
               )}
             >
               <Heart className={cn("size-4", entry?.favorited && "fill-current")} />
@@ -144,12 +135,12 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
             <button
               onClick={share}
               aria-label="Share devotion"
-              className="flex size-10 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground"
+              className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[#2a2418]/25 text-[#2a2418]/60"
             >
               <Share2 className="size-4" />
             </button>
           </div>
-        </div>
+        </article>
       </div>
 
       <div className="mt-4 px-5">
@@ -223,5 +214,18 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
         </Section>
       )}
     </div>
+  );
+}
+
+/** One numbered part of the devotion. */
+function DevotionStep({ n, label, children }: { n: number; label: string; children: React.ReactNode }) {
+  return (
+    <section>
+      <p className="mb-1.5 flex items-center gap-2 font-sans text-[0.625rem] font-bold uppercase tracking-[0.2em] text-[#1E3A5F]">
+        <span className="flex size-5 items-center justify-center rounded-full bg-[#1E3A5F] text-[0.625rem] text-[#F4DC8A]">{n}</span>
+        {label}
+      </p>
+      {children}
+    </section>
   );
 }
