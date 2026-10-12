@@ -100,8 +100,24 @@ const LIFE: { id: string; name: { en: string; tl: string }; credit: string }[] =
   { id: "life-donkeys", name: { en: "Donkeys", tl: "Mga asno" }, credit: "James Emery \u00b7 CC BY 2.0 \u00b7 Wikimedia Commons" },
 ];
 
+/** Anointed Academy's own photos, first in the picker (no outside credit needed). */
+const FEATURED: { id: string; name: { en: string; tl: string } }[] = [
+  { id: "aa-cross", name: { en: "The cross at sunrise", tl: "Ang krus sa pagsikat ng araw" } },
+  { id: "aa-bread-basket", name: { en: "Bread and baskets", tl: "Tinapay at basket" } },
+  { id: "aa-arch", name: { en: "Evening in Jerusalem", tl: "Gabi sa Jerusalem" } },
+  { id: "aa-table", name: { en: "The table", tl: "Ang hapag" } },
+  { id: "aa-lake", name: { en: "Quiet by the lake", tl: "Tahimik sa lawa" } },
+  { id: "aa-rain", name: { en: "Light in the storm", tl: "Liwanag sa unos" } },
+  { id: "aa-road", name: { en: "The road home", tl: "Daan pauwi" } },
+  { id: "aa-water", name: { en: "Living water", tl: "Tubig na buhay" } },
+  { id: "aa-mountain", name: { en: "Majestic mountains", tl: "Maringal na kabundukan" } },
+  { id: "aa-meadow", name: { en: "Free in the meadow", tl: "Malaya sa parang" } },
+  { id: "aa-forest-river", name: { en: "Forest stream", tl: "Batis sa gubat" } },
+  { id: "aa-golden", name: { en: "Golden sunrise", tl: "Gintong pagsikat" } },
+];
+
 /** The photo themes, in order; the day picks one so the verse looks new each day. */
-export const PHOTO_THEME_IDS = [...PHOTOS.map((p) => `photo-${p.id}`), ...LIFE.map((p) => `photo-${p.id}`)];
+export const PHOTO_THEME_IDS = [...FEATURED.map((p) => `photo-${p.id}`), ...PHOTOS.map((p) => `photo-${p.id}`), ...LIFE.map((p) => `photo-${p.id}`)];
 
 /** Today's photo theme (local day of the year), and the ones after it for a slow slideshow. */
 export function photoOfTheDay(offset = 0, date = new Date()) {
@@ -116,6 +132,16 @@ export const VERSE_IMAGE_THEMES: VerseImageTheme[] = [
   { id: "sea", name: { en: "Sea", tl: "Dagat" }, colors: ["#0f4c75", "#3282b8"], text: "#ffffff", accent: "#ffe08a" },
   { id: "field", name: { en: "Field", tl: "Parang" }, colors: ["#134e5e", "#71b280"], text: "#ffffff", accent: "#fff3b0" },
   { id: "paper", name: { en: "Paper", tl: "Papel" }, colors: ["#fbfaf7", "#efe9dc"], text: "#24203f", accent: "#5b4bb7" },
+  ...FEATURED.map((p) => ({
+    id: `photo-${p.id}`,
+    name: p.name,
+    colors: ["#1E3A5F", "#13253d"] as [string, string],
+    text: "#ffffff",
+    accent: "#f4d58a",
+    photo: `/verse-bg/${p.id}.webp`,
+    thumb: `/verse-bg/thumb/${p.id}.webp`,
+    wash: 0.4,
+  })),
   ...PHOTOS.map((p) => ({
     id: `photo-${p.id}`,
     name: p.name,

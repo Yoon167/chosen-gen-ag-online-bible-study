@@ -26,7 +26,6 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Section } from "@/components/shared/section";
 import { EditProfileDialog } from "@/components/profile/edit-profile-dialog";
 import { AccountSheet } from "@/components/profile/account-sheet";
 import { NotificationSheet } from "@/components/profile/notification-sheet";
@@ -45,6 +44,7 @@ import { useAuth } from "@/lib/hooks/use-auth";
 import { findPlan } from "@/lib/bible/plans";
 import type { JourneyMilestone } from "@/types";
 import Link from "next/link";
+import Image from "next/image";
 import { LanguageToggle } from "@/components/language-toggle";
 import { TextSizeToggle } from "@/components/text-size-toggle";
 import { useEarnedBadges } from "@/lib/hooks/use-badges";
@@ -82,182 +82,191 @@ export default function ProfilePage() {
     .slice(0, 2)
     .toUpperCase();
 
+  const tl = lang === "tl";
+  const chevron = <ChevronRight className="size-4 text-muted-foreground" />;
+  const isAnyLeader = isLeader || myChurch.isChurchLeader || isNationalAdmin;
+
   return (
-    <div>
-      <header className="flex flex-col items-center gap-3 px-5 pb-6 pt-8 text-center">
-        <Avatar className="size-20 border-2 border-primary/20">
-          {profile?.photoUrl && <AvatarImage src={profile.photoUrl} alt="" />}
-          <AvatarFallback className="gradient-hero text-xl font-heading font-semibold text-primary-foreground">
-            {initials}
-          </AvatarFallback>
-        </Avatar>
-        <div>
-          <h1 className="font-heading text-xl font-semibold">
-            {profile?.displayName ?? "Beloved"}
-          </h1>
-          <p className="mt-0.5 text-[0.625rem] font-semibold uppercase tracking-wide text-primary">
-            {myChurch.active && myChurch.membership && myChurch.church
-              ? `${roleInfo(myChurch.membership.role).label[lang]} · ${myChurch.church.name}`
-              : `${isLeader ? t("profile.leader") : t("profile.member")} · AG`}
-          </p>
-          {profile?.ministry && (
-            <p className="text-xs text-muted-foreground">{profile.ministry}</p>
-          )}
-          {profile?.bio && (
-            <p className="mt-1 max-w-xs text-xs text-foreground/70">{profile.bio}</p>
-          )}
+    <div className="pb-10">
+      {/* Hero: deep blue with a soft gold glow, the member at the center */}
+      <header className="gradient-hero relative overflow-hidden px-5 pb-16 pt-9 text-center text-white">
+        <div
+          className="pointer-events-none absolute -top-24 left-1/2 size-72 -translate-x-1/2 rounded-full opacity-60"
+          style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.55), transparent)" }}
+        />
+        <div className="relative mx-auto w-fit rounded-full bg-gradient-to-br from-[#F4DC8A] via-[#D4AF37] to-[#9c7a1c] p-[3px] shadow-[0_0_30px_rgba(212,175,55,0.45)]">
+          <Avatar className="size-24 border-2 border-[#13253d]">
+            {profile?.photoUrl && <AvatarImage src={profile.photoUrl} alt="" />}
+            <AvatarFallback className="bg-[#1E3A5F] font-heading text-2xl font-semibold text-[#F4DC8A]">{initials}</AvatarFallback>
+          </Avatar>
+          <button
+            onClick={() => setEditOpen(true)}
+            aria-label={t("profile.edit")}
+            className="absolute -bottom-0.5 -right-0.5 flex size-8 items-center justify-center rounded-full border-2 border-[#13253d] bg-[#D4AF37] text-[#13253d]"
+          >
+            <Pencil className="size-3.5" />
+          </button>
         </div>
-        <button
-          onClick={() => setEditOpen(true)}
-          className="flex items-center gap-1.5 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium"
-        >
-          <Pencil className="size-3" />
-          {t("profile.edit")}
-        </button>
+        <h1 className="relative mt-3 font-heading text-2xl font-semibold">{profile?.displayName ?? "Beloved"}</h1>
+        <p className="relative mx-auto mt-1.5 w-fit rounded-full border border-[#D4AF37]/50 bg-white/10 px-3 py-1 text-[0.6875rem] font-semibold uppercase tracking-wider text-[#F4DC8A]">
+          {myChurch.active && myChurch.membership && myChurch.church
+            ? `${roleInfo(myChurch.membership.role).label[lang]} · ${myChurch.church.name}`
+            : `${isLeader ? t("profile.leader") : t("profile.member")} · AG`}
+        </p>
+        {profile?.ministry && <p className="relative mt-1.5 text-xs text-white/75">{profile.ministry}</p>}
+        {profile?.bio && <p className="relative mx-auto mt-1.5 max-w-xs text-xs italic leading-relaxed text-white/80">{profile.bio}</p>}
       </header>
 
-      <Section title={t("profile.progress")}>
-        <div className="grid grid-cols-2 gap-3">
-          <StatCard icon={BookOpenText} label="Reading Streak" value={profile?.readingStreak ?? 0} />
-          <StatCard icon={HandHeart} label="Prayer Streak" value={profile?.prayerStreak ?? 0} />
-          <StatCard icon={Compass} label="Journey Milestones" value={milestones.length} />
-          <StatCard icon={CalendarCheck2} label="Reading Plan" value={planPercent} suffix="%" />
+      {/* Stats overlap the hero */}
+      <div className="relative -mt-10 px-5">
+        <div className="grid grid-cols-4 divide-x divide-border/70 rounded-2xl border border-border/70 bg-card py-3.5 shadow-lg shadow-black/5">
+          <Stat icon={BookOpenText} color="text-sky-600 dark:text-sky-400" value={profile?.readingStreak ?? 0} label={tl ? "Pagbasa" : "Reading"} />
+          <Stat icon={HandHeart} color="text-rose-600 dark:text-rose-400" value={profile?.prayerStreak ?? 0} label={tl ? "Panalangin" : "Prayer"} />
+          <Stat icon={Compass} color="text-emerald-600 dark:text-emerald-400" value={milestones.length} label="Milestones" />
+          <Stat icon={CalendarCheck2} color="text-amber-600 dark:text-amber-400" value={`${planPercent}%`} label={tl ? "Plano" : "Plan"} />
         </div>
-        <Link
-          href="/badges"
-          className="mt-3 flex items-center gap-3 rounded-2xl border border-gold/50 bg-gold/10 p-4"
-        >
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-gold text-gold-foreground">
+        <p className="mt-1.5 text-center text-[0.625rem] text-muted-foreground">
+          {tl ? "Araw-araw na streak at progreso mo" : "Your daily streaks and progress"}
+        </p>
+      </div>
+
+      <div className="mt-5 space-y-3 px-5">
+        <Link href="/badges" className="flex items-center gap-3 rounded-2xl border border-gold/50 bg-gradient-to-r from-gold/20 to-gold/5 p-4">
+          <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-gold text-gold-foreground shadow-[0_0_16px_rgba(212,175,55,0.45)]">
             <Award className="size-5" />
           </span>
           <span className="min-w-0 flex-1">
-            <span className="block text-sm font-medium">{lang === "tl" ? "Mga Badge" : "Badges"}</span>
+            <span className="block font-heading text-sm font-semibold">{tl ? "Mga Badge" : "Badges"}</span>
             <span className="block text-xs text-muted-foreground">
-              {lang === "tl"
-                ? `${earnedBadges.items.length} sa ${BADGES.length} ang nakuha`
-                : `${earnedBadges.items.length} of ${BADGES.length} earned`}
+              {tl ? `${earnedBadges.items.length} sa ${BADGES.length} ang nakuha` : `${earnedBadges.items.length} of ${BADGES.length} earned`}
+            </span>
+            <span className="mt-1.5 block h-1.5 overflow-hidden rounded-full bg-gold/20">
+              <span className="block h-full rounded-full bg-gold" style={{ width: `${(earnedBadges.items.length / Math.max(BADGES.length, 1)) * 100}%` }} />
             </span>
           </span>
-          <ChevronRight className="size-4 text-muted-foreground" />
+          {chevron}
         </Link>
-      </Section>
-
-      <div className="mt-6 space-y-3 px-5">
         <WebAppCard />
         <InviteCard />
       </div>
 
-      <Section title={t("profile.settings")} className="mt-6 pb-10">
-        <div className="divide-y divide-border rounded-2xl border border-border/70 bg-card">
-          <SettingRow icon={Languages} label={t("profile.language")}>
-            <LanguageToggle />
+      <Group title={tl ? "Mga Kagustuhan" : "Preferences"}>
+        <SettingRow icon={Languages} tone="bg-sky-500/15 text-sky-600 dark:text-sky-400" label={t("profile.language")}>
+          <LanguageToggle />
+        </SettingRow>
+        <SettingRow icon={Type} tone="bg-violet-500/15 text-violet-600 dark:text-violet-400" label={tl ? "Laki ng Text" : "Text Size"}>
+          <TextSizeToggle />
+        </SettingRow>
+        <SettingRow icon={Palette} tone="bg-amber-500/15 text-amber-600 dark:text-amber-400" label={tl ? "Tema" : "Theme"}>
+          <ThemeSelect />
+        </SettingRow>
+        <button onClick={() => setNotificationsOpen(true)} className="block w-full text-left">
+          <SettingRow icon={Bell} tone="bg-rose-500/15 text-rose-600 dark:text-rose-400" label={tl ? "Notifications at Paalala" : "Notifications & Reminders"}>
+            {chevron}
           </SettingRow>
-          <SettingRow icon={Type} label={lang === "tl" ? "Laki ng Text" : "Text Size"}>
-            <TextSizeToggle />
+        </button>
+      </Group>
+
+      <Group title={tl ? "AG at Pamumuno" : "AG & Leadership"}>
+        <Link href="/church" className="block">
+          <SettingRow icon={Church} tone="bg-emerald-500/15 text-emerald-600 dark:text-emerald-400" label={tl ? "AG Ko" : "My AG"}>
+            <span className="flex items-center gap-1 text-xs text-muted-foreground">
+              <span className="max-w-28 truncate">{myChurch.active ? myChurch.church?.name : myChurch.membership ? "Pending" : ""}</span>
+              <ChevronRight className="size-4" />
+            </span>
           </SettingRow>
-          <SettingRow icon={Palette} label={lang === "tl" ? "Tema" : "Theme"}>
-            <ThemeSelect />
-          </SettingRow>
-          {installed ? (
-            <SettingRow icon={Download} label={lang === "tl" ? "Naka-install ang Anointed Academy" : "Anointed Academy Installed"}>
-              <span className="text-xs text-muted-foreground">✓</span>
+        </Link>
+        {isAnyLeader && (
+          <Link href="/members" className="block">
+            <SettingRow icon={Users} tone="bg-emerald-500/15 text-emerald-600 dark:text-emerald-400" label={tl ? "Mga Member" : "Manage Members"}>
+              {chevron}
             </SettingRow>
-          ) : (
-            <button
-              onClick={() => (canInstall ? promptInstall() : setInstallOpen(true))}
-              className="block w-full text-left"
-            >
-              <SettingRow icon={Download} label={lang === "tl" ? "I-install ang Anointed Academy" : "Install Anointed Academy"}>
-                <ChevronRight className="size-4 text-muted-foreground" />
-              </SettingRow>
-            </button>
-          )}
-          <button onClick={() => setNotificationsOpen(true)} className="block w-full text-left">
-            <SettingRow icon={Bell} label={lang === "tl" ? "Notifications at Paalala" : "Notifications & Reminders"}>
-              <ChevronRight className="size-4 text-muted-foreground" />
+          </Link>
+        )}
+        {isNationalAdmin && (
+          <Link href="/admin/overview" className="block">
+            <SettingRow icon={Globe2} tone="bg-primary/15 text-primary" label="National Dashboard">
+              {chevron}
             </SettingRow>
-          </button>
-          <button onClick={() => tour.start("app")} className="block w-full text-left">
-            <SettingRow icon={MapIcon} label={lang === "tl" ? "Ulitin ang App Tour" : "Restart App Tour"}>
-              <ChevronRight className="size-4 text-muted-foreground" />
+          </Link>
+        )}
+        {isNationalAdmin && (
+          <Link href="/admin/ags" className="block">
+            <SettingRow icon={Church} tone="bg-primary/15 text-primary" label={tl ? "Lahat ng AG (Owner)" : "All AGs (Owner)"}>
+              {chevron}
             </SettingRow>
-          </button>
-          <Link href="/church" className="block">
-            <SettingRow icon={Church} label="My AG">
+          </Link>
+        )}
+        {isNationalAdmin && (
+          <Link href="/admin/applications" className="block">
+            <SettingRow icon={ClipboardList} tone="bg-primary/15 text-primary" label="AG Applications">
               <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                <span className="max-w-28 truncate">
-                  {myChurch.active ? myChurch.church?.name : myChurch.membership ? "Pending" : ""}
-                </span>
+                {pendingApplications > 0 && (
+                  <span className="rounded-full bg-primary px-1.5 text-[0.6875rem] font-semibold text-primary-foreground">{pendingApplications}</span>
+                )}
                 <ChevronRight className="size-4" />
               </span>
             </SettingRow>
           </Link>
-          {isNationalAdmin && (
-            <Link href="/admin/overview" className="block">
-              <SettingRow icon={Globe2} label="National Dashboard">
-                <ChevronRight className="size-4 text-muted-foreground" />
-              </SettingRow>
-            </Link>
-          )}
-          {isNationalAdmin && (
-            <Link href="/admin/ags" className="block">
-              <SettingRow icon={Church} label={lang === "tl" ? "Lahat ng AG (Owner)" : "All AGs (Owner)"}>
-                <ChevronRight className="size-4 text-muted-foreground" />
-              </SettingRow>
-            </Link>
-          )}
-          {isNationalAdmin && (
-            <Link href="/admin/applications" className="block">
-              <SettingRow icon={ClipboardList} label="AG Applications">
-                <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                  {pendingApplications > 0 && (
-                    <span className="rounded-full bg-primary px-1.5 text-[0.6875rem] font-semibold text-primary-foreground">
-                      {pendingApplications}
-                    </span>
-                  )}
-                  <ChevronRight className="size-4" />
-                </span>
-              </SettingRow>
-            </Link>
-          )}
-          {(isLeader || myChurch.isChurchLeader || isNationalAdmin) && (
-            <Link href="/members" className="block">
-              <SettingRow icon={Users} label="Manage Members">
-                <ChevronRight className="size-4 text-muted-foreground" />
-              </SettingRow>
-            </Link>
-          )}
-          <Link href="/whats-new" className="block">
-            <SettingRow icon={Sparkles} label={lang === "tl" ? "Ano'ng bago sa Anointed Academy" : "What's new in Anointed Academy"}>
-              <ChevronRight className="size-4 text-muted-foreground" />
-            </SettingRow>
-          </Link>
-          <Link href="/offline" className="block">
-            <SettingRow icon={CloudDownload} label={lang === "tl" ? "Offline Download" : "Offline Download"}>
-              <ChevronRight className="size-4 text-muted-foreground" />
-            </SettingRow>
-          </Link>
-          <Link href="/bible/plans" className="block">
-            <SettingRow icon={CalendarCheck2} label="Reading Plans">
-              <ChevronRight className="size-4 text-muted-foreground" />
-            </SettingRow>
-          </Link>
-          <button onClick={() => setAccountOpen(true)} className="block w-full text-left">
-            <SettingRow icon={Cloud} label={linkedEmail ? "Account Backed Up" : "Back Up My Account"}>
-              {linkedEmail ? (
-                <span className="max-w-28 truncate text-xs text-muted-foreground">{linkedEmail}</span>
-              ) : (
-                <ChevronRight className="size-4 text-muted-foreground" />
-              )}
+        )}
+      </Group>
+
+      <Group title="App">
+        {installed ? (
+          <SettingRow icon={Download} tone="bg-primary/15 text-primary" label={tl ? "Naka-install ang Anointed Academy" : "Anointed Academy Installed"}>
+            <span className="text-xs text-emerald-600">✓</span>
+          </SettingRow>
+        ) : (
+          <button onClick={() => (canInstall ? promptInstall() : setInstallOpen(true))} className="block w-full text-left">
+            <SettingRow icon={Download} tone="bg-primary/15 text-primary" label={tl ? "I-install ang Anointed Academy" : "Install Anointed Academy"}>
+              {chevron}
             </SettingRow>
           </button>
-          <Link href="/privacy" className="block">
-            <SettingRow icon={ShieldCheck} label="Privacy & Delete Account">
-              <ChevronRight className="size-4 text-muted-foreground" />
-            </SettingRow>
-          </Link>
-        </div>
-      </Section>
+        )}
+        <Link href="/whats-new" className="block">
+          <SettingRow icon={Sparkles} tone="bg-gold/25 text-gold-foreground" label={tl ? "Ano'ng bago sa Anointed Academy" : "What's new in Anointed Academy"}>
+            {chevron}
+          </SettingRow>
+        </Link>
+        <button onClick={() => tour.start("app")} className="block w-full text-left">
+          <SettingRow icon={MapIcon} tone="bg-sky-500/15 text-sky-600 dark:text-sky-400" label={tl ? "Ulitin ang App Tour" : "Restart App Tour"}>
+            {chevron}
+          </SettingRow>
+        </button>
+        <Link href="/bible/plans" className="block">
+          <SettingRow icon={CalendarCheck2} tone="bg-amber-500/15 text-amber-600 dark:text-amber-400" label="Reading Plans">
+            {chevron}
+          </SettingRow>
+        </Link>
+        <Link href="/offline" className="block">
+          <SettingRow icon={CloudDownload} tone="bg-slate-500/15 text-slate-600 dark:text-slate-300" label="Offline Download">
+            {chevron}
+          </SettingRow>
+        </Link>
+      </Group>
+
+      <Group title={tl ? "Account" : "Account"}>
+        <button onClick={() => setAccountOpen(true)} className="block w-full text-left">
+          <SettingRow
+            icon={Cloud}
+            tone={linkedEmail ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400" : "bg-amber-500/15 text-amber-600 dark:text-amber-400"}
+            label={linkedEmail ? (tl ? "Naka-back up ang Account" : "Account Backed Up") : tl ? "I-back up ang Account Ko" : "Back Up My Account"}
+          >
+            {linkedEmail ? <span className="max-w-28 truncate text-xs text-muted-foreground">{linkedEmail}</span> : chevron}
+          </SettingRow>
+        </button>
+        <Link href="/privacy" className="block">
+          <SettingRow icon={ShieldCheck} tone="bg-slate-500/15 text-slate-600 dark:text-slate-300" label={tl ? "Privacy at Pagbura ng Account" : "Privacy & Delete Account"}>
+            {chevron}
+          </SettingRow>
+        </Link>
+      </Group>
+
+      <footer className="mt-8 flex flex-col items-center gap-1 px-5 text-center">
+        <Image src="/brand/icon.png" alt="" width={44} height={44} className="rounded-full" />
+        <p className="font-heading text-sm font-semibold">Anointed Academy</p>
+        <p className="text-[0.625rem] uppercase tracking-[0.25em] text-muted-foreground">Learn · Grow · Disciple · Lead</p>
+      </footer>
 
       <EditProfileDialog
         open={editOpen}
@@ -274,44 +283,40 @@ export default function ProfilePage() {
   );
 }
 
-function StatCard({
-  icon: Icon,
-  label,
-  value,
-  suffix = "",
-}: {
-  icon: typeof UserRound;
-  label: string;
-  value: number;
-  suffix?: string;
-}) {
+function Stat({ icon: Icon, color, value, label }: { icon: typeof UserRound; color: string; value: number | string; label: string }) {
   return (
-    <div className="rounded-2xl border border-border/70 bg-card p-4">
-      <span className="flex size-9 items-center justify-center rounded-full bg-primary/10 text-primary">
-        <Icon className="size-4.5" />
-      </span>
-      <p className="mt-2.5 font-heading text-xl font-semibold">
-        {value}
-        {suffix}
-      </p>
-      <p className="text-xs text-muted-foreground">{label}</p>
+    <div className="flex flex-col items-center gap-0.5 px-1">
+      <Icon className={`size-4.5 ${color}`} />
+      <p className="mt-1 font-heading text-lg font-semibold leading-none">{value}</p>
+      <p className="truncate text-[0.625rem] text-muted-foreground">{label}</p>
     </div>
+  );
+}
+
+function Group({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <section className="mt-6 px-5">
+      <h2 className="mb-2 px-1 text-[0.6875rem] font-semibold uppercase tracking-[0.15em] text-muted-foreground">{title}</h2>
+      <div className="divide-y divide-border/70 overflow-hidden rounded-2xl border border-border/70 bg-card">{children}</div>
+    </section>
   );
 }
 
 function SettingRow({
   icon: Icon,
+  tone,
   label,
   children,
 }: {
   icon: typeof UserRound;
+  tone: string;
   label: string;
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex items-center justify-between px-4 py-3.5">
-      <div className="flex items-center gap-3">
-        <span className="flex size-8 items-center justify-center rounded-full bg-muted text-foreground/70">
+    <div className="flex items-center justify-between gap-3 px-4 py-3">
+      <div className="flex min-w-0 items-center gap-3">
+        <span className={`flex size-9 shrink-0 items-center justify-center rounded-xl ${tone}`}>
           <Icon className="size-4" />
         </span>
         <span className="text-sm font-medium">{label}</span>
@@ -320,4 +325,3 @@ function SettingRow({
     </div>
   );
 }
-
