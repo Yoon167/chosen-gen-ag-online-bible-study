@@ -48,7 +48,8 @@ function Editor({ verse }: { verse: VerseForImage }) {
 
   const theme = VERSE_IMAGE_THEMES.find((t) => t.id === themeId)!;
   const colors = VERSE_IMAGE_THEMES.filter((t) => !t.thumb);
-  const photos = VERSE_IMAGE_THEMES.filter((t) => t.thumb);
+  const photos = VERSE_IMAGE_THEMES.filter((t) => t.thumb && !t.group);
+  const life = VERSE_IMAGE_THEMES.filter((t) => t.group === "life");
 
   // Draw off screen and copy over only if this design is still the chosen
   // one: photos take a moment to load, and a slower earlier pick must not
@@ -112,7 +113,7 @@ function Editor({ verse }: { verse: VerseForImage }) {
       />
       {theme.credit && (
         <p className="text-center text-[0.625rem] text-muted-foreground">
-          {tx("Photo", "Larawan")}: {theme.credit} / Unsplash
+          {tx("Photo", "Larawan")}: {theme.credit}
         </p>
       )}
       <div>
@@ -134,6 +135,25 @@ function Editor({ verse }: { verse: VerseForImage }) {
                   ? `center / cover url(${t.photo})`
                   : `linear-gradient(135deg, ${t.colors[0]}, ${t.colors[1]})`,
               }}
+            />
+          ))}
+        </div>
+      </div>
+      <div>
+        <p className="mb-1.5 text-xs font-medium text-muted-foreground">{tx("Life in Jesus' time", "Buhay noong panahon ni Hesus")}</p>
+        <div role="group" aria-label={tx("Life in Jesus' time", "Buhay noong panahon ni Hesus")} className="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
+          {life.map((t) => (
+            <button
+              key={t.id}
+              onClick={() => setThemeId(t.id)}
+              aria-pressed={themeId === t.id}
+              aria-label={t.name[lang]}
+              title={t.name[lang]}
+              className={cn(
+                "h-16 w-[3.2rem] shrink-0 overflow-hidden rounded-lg border-2 bg-muted bg-cover bg-center",
+                themeId === t.id ? "border-primary ring-2 ring-primary/30" : "border-transparent"
+              )}
+              style={{ backgroundImage: `url(${t.thumb})` }}
             />
           ))}
         </div>

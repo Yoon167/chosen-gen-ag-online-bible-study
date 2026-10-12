@@ -16,8 +16,10 @@ export interface VerseImageTheme {
   thumb?: string;
   /** How dark the wash over the photo is (0–1). */
   wash?: number;
-  /** Photographer, for the credit line. */
+  /** Photographer and source, for the credit line. */
   credit?: string;
+  /** "life": a photo of everyday life in the land of the Bible. */
+  group?: "life";
 }
 
 /**
@@ -70,8 +72,36 @@ const PHOTOS: { id: number; name: { en: string; tl: string }; credit: string; wa
   { id: 251, name: { en: "Wide valley", tl: "Malawak na lambak" }, credit: "Tiago Gerken", wash: 0.5 },
 ];
 
+/**
+ * Everyday life in the land of Jesus: carpenters, bread, baskets, fishing,
+ * threshing. Old Holy Land photos (most from the Matson Collection, public
+ * domain, ca. 1900–1940, warmed to sepia) and free-license photos from
+ * Wikimedia Commons, saved in public/verse-bg at 1080×1350.
+ */
+const LIFE: { id: string; name: { en: string; tl: string }; credit: string }[] = [
+  { id: "life-carpenter", name: { en: "Carpenter in Nazareth", tl: "Karpintero sa Nazaret" }, credit: "Matson Collection, Library of Congress \u00b7 Public domain \u00b7 Wikimedia Commons" },
+  { id: "life-carpenter-3", name: { en: "The carpenter's bench", tl: "Mesa ng karpintero" }, credit: "Matson Collection, Library of Congress \u00b7 Public domain \u00b7 Wikimedia Commons" },
+  { id: "life-carpenter-2", name: { en: "Village carpenter", tl: "Karpintero sa nayon" }, credit: "Matson Collection, Library of Congress \u00b7 Public domain \u00b7 Wikimedia Commons" },
+  { id: "life-bread", name: { en: "Baking bread", tl: "Pagluluto ng tinapay" }, credit: "Matson Collection, Library of Congress \u00b7 Public domain \u00b7 Wikimedia Commons" },
+  { id: "life-bread-2", name: { en: "Making bread", tl: "Paggawa ng tinapay" }, credit: "Matson Collection, Library of Congress \u00b7 Public domain \u00b7 Wikimedia Commons" },
+  { id: "life-bread-seller", name: { en: "Bread seller", tl: "Tindero ng tinapay" }, credit: "Matson Collection, Library of Congress \u00b7 Public domain \u00b7 Wikimedia Commons" },
+  { id: "life-unleavened", name: { en: "Unleavened bread", tl: "Tinapay na walang lebadura" }, credit: "Matson Collection, Library of Congress \u00b7 Public domain \u00b7 Wikimedia Commons" },
+  { id: "life-oven", name: { en: "Village oven", tl: "Pugon sa nayon" }, credit: "American Colony Photo Dept. \u00b7 Public domain \u00b7 Wikimedia Commons" },
+  { id: "life-loaves", name: { en: "Loaves and fishes", tl: "Tinapay at isda" }, credit: "Carole Raddato \u00b7 CC BY-SA 2.0 \u00b7 Wikimedia Commons" },
+  { id: "life-baskets-2", name: { en: "Straw baskets", tl: "Mga basket na dayami" }, credit: "Matson Collection, Library of Congress \u00b7 Public domain \u00b7 Wikimedia Commons" },
+  { id: "life-straw", name: { en: "Straw for baskets", tl: "Dayami para sa basket" }, credit: "Matson Collection, Library of Congress \u00b7 Public domain \u00b7 Wikimedia Commons" },
+  { id: "life-market", name: { en: "To the market", tl: "Papunta sa palengke" }, credit: "Matson Collection, Library of Congress \u00b7 Public domain \u00b7 Wikimedia Commons" },
+  { id: "life-threshing", name: { en: "Threshing floor", tl: "Giikan" }, credit: "Matson Collection, Library of Congress \u00b7 Public domain \u00b7 Wikimedia Commons" },
+  { id: "life-dragnet", name: { en: "Fishers of Galilee", tl: "Mangingisda sa Galilea" }, credit: "Matson Collection, Library of Congress \u00b7 Public domain \u00b7 Wikimedia Commons" },
+  { id: "life-galilee", name: { en: "Sea of Galilee", tl: "Dagat ng Galilea" }, credit: "Obendorf \u00b7 CC0 \u00b7 Wikimedia Commons" },
+  { id: "life-spinning", name: { en: "Spinning wool", tl: "Pag-iikid ng lana" }, credit: "Ian Scott \u00b7 CC BY-SA 2.0 \u00b7 Wikimedia Commons" },
+  { id: "life-gethsemane", name: { en: "Gethsemane", tl: "Getsemani" }, credit: "Beko \u00b7 CC BY-SA 4.0 \u00b7 Wikimedia Commons" },
+  { id: "life-capernaum", name: { en: "Capernaum", tl: "Capernaum" }, credit: "Berthold Werner \u00b7 Public domain \u00b7 Wikimedia Commons" },
+  { id: "life-donkeys", name: { en: "Donkeys", tl: "Mga asno" }, credit: "James Emery \u00b7 CC BY 2.0 \u00b7 Wikimedia Commons" },
+];
+
 /** The photo themes, in order; the day picks one so the verse looks new each day. */
-export const PHOTO_THEME_IDS = PHOTOS.map((p) => `photo-${p.id}`);
+export const PHOTO_THEME_IDS = [...PHOTOS.map((p) => `photo-${p.id}`), ...LIFE.map((p) => `photo-${p.id}`)];
 
 /** Today's photo theme (local day of the year), and the ones after it for a slow slideshow. */
 export function photoOfTheDay(offset = 0, date = new Date()) {
@@ -95,7 +125,19 @@ export const VERSE_IMAGE_THEMES: VerseImageTheme[] = [
     photo: `/verse-bg/${p.id}.webp`,
     thumb: `/verse-bg/thumb/${p.id}.webp`,
     wash: p.wash,
+    credit: `${p.credit} / Unsplash`,
+  })),
+  ...LIFE.map((p) => ({
+    id: `photo-${p.id}`,
+    name: p.name,
+    colors: ["#2a1f12", "#2a1f12"] as [string, string],
+    text: "#ffffff",
+    accent: "#f4d58a",
+    photo: `/verse-bg/${p.id}.webp`,
+    thumb: `/verse-bg/thumb/${p.id}.webp`,
+    wash: 0.4,
     credit: p.credit,
+    group: "life" as const,
   })),
 ];
 
@@ -165,27 +207,49 @@ export async function drawVerseImage(
   if (theme.photo) {
     try {
       drawCover(ctx, await loadImage(theme.photo), W, H);
-      ctx.fillStyle = `rgba(14, 11, 30, ${theme.wash ?? 0.72})`;
+      // A light wash, deepest behind the words in the middle and at the
+      // edges, so the photo stays bright and the verse still reads.
+      const wash = Math.min(theme.wash ?? 0.5, 0.6) * 0.7;
+      ctx.fillStyle = `rgba(10, 14, 24, ${wash})`;
+      ctx.fillRect(0, 0, W, H);
+      const center = ctx.createRadialGradient(W / 2, H / 2, 80, W / 2, H / 2, W * 0.75);
+      center.addColorStop(0, "rgba(10, 14, 24, 0.32)");
+      center.addColorStop(1, "rgba(10, 14, 24, 0)");
+      ctx.fillStyle = center;
+      ctx.fillRect(0, 0, W, H);
+      const edge = ctx.createRadialGradient(W / 2, H / 2, W * 0.45, W / 2, H / 2, W * 0.95);
+      edge.addColorStop(0, "rgba(0, 0, 0, 0)");
+      edge.addColorStop(1, "rgba(0, 0, 0, 0.35)");
+      ctx.fillStyle = edge;
       ctx.fillRect(0, 0, W, H);
     } catch {
       // Keep the gradient if the photo can't load (e.g. offline).
     }
   }
 
-  // Large quote mark.
-  ctx.fillStyle = theme.accent;
-  ctx.globalAlpha = 0.35;
-  ctx.font = `700 260px ${serif}`;
-  ctx.textBaseline = "alphabetic";
-  ctx.textAlign = "left";
-  ctx.fillText("“", PADDING - 20, 330);
+  // A thin gold frame.
+  ctx.strokeStyle = theme.accent;
+  ctx.globalAlpha = 0.55;
+  ctx.lineWidth = 3;
+  ctx.strokeRect(44, 44, W - 88, H - 88);
+  ctx.globalAlpha = 0.25;
+  ctx.lineWidth = 1.5;
+  ctx.strokeRect(58, 58, W - 116, H - 116);
   ctx.globalAlpha = 1;
 
-  // Verse: the largest size that fits the box.
-  const boxWidth = W - PADDING * 2;
-  const boxHeight = 760;
+  ctx.textAlign = "center";
+  ctx.textBaseline = "alphabetic";
+  const shadow = (on: boolean) => {
+    ctx.shadowColor = on && theme.photo ? "rgba(0, 0, 0, 0.7)" : "transparent";
+    ctx.shadowBlur = on && theme.photo ? 22 : 0;
+    ctx.shadowOffsetY = on && theme.photo ? 2 : 0;
+  };
+
+  // Verse: the largest size that fits the box, centered.
+  const boxWidth = W - PADDING * 2 - 20;
+  const boxHeight = 720;
   const verse = `“${text.trim()}”`;
-  let size = 76;
+  let size = 74;
   let lines: string[] = [];
   let lineHeight = 0;
   for (; size >= 30; size -= 2) {
@@ -195,38 +259,67 @@ export async function drawVerseImage(
     if (lines.length * lineHeight <= boxHeight) break;
   }
   const blockHeight = lines.length * lineHeight;
-  const top = 330 + (boxHeight - blockHeight) / 2;
+  const refGap = 120;
+  const top = (H - (blockHeight + refGap)) / 2 - 30;
+
+  // Ornament above the verse.
+  const ornament = (y: number) => {
+    ctx.fillStyle = theme.accent;
+    ctx.fillRect(W / 2 - 150, y, 110, 3);
+    ctx.fillRect(W / 2 + 40, y, 110, 3);
+    ctx.save();
+    ctx.translate(W / 2, y + 1.5);
+    ctx.rotate(Math.PI / 4);
+    ctx.fillRect(-9, -9, 18, 18);
+    ctx.restore();
+  };
+  shadow(true);
+  ornament(top - 70);
+
   ctx.fillStyle = theme.text;
   ctx.textBaseline = "top";
-  // On photos a soft shadow keeps the words readable over bright spots.
-  if (theme.photo) {
-    ctx.shadowColor = "rgba(0, 0, 0, 0.55)";
-    ctx.shadowBlur = 18;
-    ctx.shadowOffsetY = 2;
-  }
-  lines.forEach((l, i) => ctx.fillText(l, PADDING, top + i * lineHeight));
+  ctx.font = `500 ${size}px ${serif}`;
+  lines.forEach((l, i) => ctx.fillText(l, W / 2, top + i * lineHeight));
 
-  // Reference.
-  const refY = Math.max(top + blockHeight + 50, 0);
+  // Reference, centered under the verse.
+  const refY = top + blockHeight + 44;
   ctx.fillStyle = theme.accent;
-  ctx.fillRect(PADDING, refY + 18, 60, 5);
-  ctx.font = `600 44px ${sans}`;
-  ctx.fillText(reference, PADDING + 84, refY);
+  ctx.font = `600 40px ${sans}`;
+  ctx.fillText(`— ${reference.toUpperCase()} —`, W / 2, refY);
+  shadow(false);
 
-  ctx.shadowColor = "transparent";
-  ctx.shadowBlur = 0;
-  ctx.shadowOffsetY = 0;
-
-  // Footer mark.
-  ctx.globalAlpha = 0.8;
+  // Foot: the emblem and the name, centered. No link.
+  ctx.textBaseline = "alphabetic";
+  let nameY = H - 112;
+  try {
+    const emblem = await loadImage("/brand/icon.png");
+    const s = 92;
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(W / 2, H - 230, s / 2, 0, Math.PI * 2);
+    ctx.clip();
+    ctx.drawImage(emblem, W / 2 - s / 2, H - 230 - s / 2, s, s);
+    ctx.restore();
+    ctx.strokeStyle = theme.accent;
+    ctx.globalAlpha = 0.8;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(W / 2, H - 230, s / 2 + 3, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+  } catch {
+    nameY = H - 130;
+  }
+  shadow(true);
   ctx.fillStyle = theme.text;
-  ctx.font = `700 30px ${sans}`;
-  ctx.textAlign = "left";
-  ctx.fillText("ANOINTED ACADEMY", PADDING, H - 120);
-  ctx.globalAlpha = 0.6;
-  ctx.font = `400 26px ${sans}`;
-  ctx.fillText("gideon-app.web.app", PADDING, H - 80);
+  ctx.font = `600 38px ${serif}`;
+  ctx.fillText("Anointed Academy", W / 2, nameY);
+  ctx.globalAlpha = 0.85;
+  ctx.fillStyle = theme.accent;
+  ctx.font = `600 20px ${sans}`;
+  ctx.fillText("LEARN · GROW · DISCIPLE · LEAD", W / 2, nameY + 38);
   ctx.globalAlpha = 1;
+  shadow(false);
 }
 
 export function canvasToBlob(canvas: HTMLCanvasElement) {
