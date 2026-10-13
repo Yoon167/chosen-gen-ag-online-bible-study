@@ -537,3 +537,53 @@ html[data-text-size="xl"] {
 @media (prefers-reduced-motion: reduce) {
   .news-turn-next, .news-turn-prev, .news-unfold, .news-sway, .book, .book-shine { animation: none; }
 }
+
+/* Spiritual Inventory: the surrender ceremony (the list is burned in a bowl). */
+.rite-fade { animation: rite-fade 1s ease-out both; }
+.rite-line { animation: rite-line 0.5s ease-out both; }
+.rite-drop { transform-origin: 50% 100%; animation: rite-drop 1.3s cubic-bezier(.5,0,.3,1) 3s both; }
+.rite-burn { animation: rite-burn 3.4s ease-in 4.4s both; }
+.rite-edge { animation: rite-edge 3.4s ease-in 4.4s both; }
+.rite-flame { transform-origin: 50% 100%; animation: rite-ignite 0.8s ease-out both, rite-flicker 0.35s ease-in-out infinite alternate; }
+.rite-flames-out { animation: rite-out 1.6s ease-in 8.2s forwards; }
+.rite-ember { animation: rite-ember 2.6s ease-out infinite; }
+.rite-smoke { animation: rite-smoke 3.2s ease-out infinite; }
+.rite-glory { animation: rite-fade 1.6s ease-out both; }
+.rite-rays { animation: film-rays 30s linear infinite; }
+.rite-rise { animation: landing-rise 1.2s ease-out both; }
+@keyframes rite-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes rite-line { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: none; } }
+@keyframes rite-drop {
+  0% { transform: none; }
+  35% { transform: translateY(-2vh) rotateX(20deg) scale(0.9); }
+  100% { transform: translateY(var(--rite-drop, 36vh)) rotateX(60deg) scale(0.34); }
+}
+@keyframes rite-burn {
+  0% { clip-path: inset(0 0 0 0); filter: none; }
+  20% { filter: sepia(0.8) brightness(0.9); }
+  100% { clip-path: inset(0 0 100% 0); filter: sepia(1) brightness(0.3); }
+}
+@keyframes rite-edge {
+  0% { bottom: 0%; opacity: 1; }
+  95% { opacity: 1; }
+  100% { bottom: 100%; opacity: 0; }
+}
+@keyframes rite-ignite { from { opacity: 0; transform: scaleY(0.1); } to { opacity: 1; transform: scaleY(1); } }
+@keyframes rite-flicker {
+  from { transform: scaleY(1) scaleX(1) skewX(-2deg); }
+  to { transform: scaleY(1.12) scaleX(0.92) skewX(3deg); }
+}
+@keyframes rite-out { to { opacity: 0; transform: scaleY(0.2); } }
+@keyframes rite-ember {
+  0% { opacity: 0; transform: translate(0, 0) scale(1); }
+  15% { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--dx, 10px), -34vh) scale(0.3); }
+}
+@keyframes rite-smoke {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.6); }
+  25% { opacity: 0.35; }
+  100% { opacity: 0; transform: translate(var(--dx, 0px), -40vh) scale(2.4); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rite-flame, .rite-ember, .rite-smoke, .rite-rays { animation: none; }
+}
