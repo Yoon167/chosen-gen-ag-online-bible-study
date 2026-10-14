@@ -77,10 +77,16 @@ function getAudio() {
 // Browsers block sound until the user interacts with the page, so when
 // autoplay is refused we try again on the first tap or key press.
 let waitingForGesture = false;
+// The opening film has its own soundtrack; the music waits until it ends.
+let held = false;
 function playWhenAllowed() {
+  if (held) return;
   const el = getAudio();
   el.play()
-    .then(() => fadeTo(VOLUME, 2))
+    .then(() => {
+      if (held) el.pause();
+      else fadeTo(VOLUME, 2);
+    })
     .catch(() => {
       if (waitingForGesture) return;
       waitingForGesture = true;
@@ -111,6 +117,17 @@ export function startBackgroundMusic() {
     if (document.hidden) audio.pause();
     else playWhenAllowed();
   });
+}
+
+/** Holds the music back while the opening film plays, then lets it start. */
+export function holdBackgroundMusic(hold: boolean) {
+  if (held === hold) return;
+  held = hold;
+  if (hold) {
+    if (audio && !audio.paused) fadeTo(0, 0.4, () => audio?.pause());
+  } else if (started && !state.muted) {
+    playWhenAllowed();
+  }
 }
 
 export function toggleBackgroundMusic() {

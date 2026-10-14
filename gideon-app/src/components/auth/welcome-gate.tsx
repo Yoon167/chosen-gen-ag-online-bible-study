@@ -9,6 +9,7 @@ import { AuthScreen, JoinAgStep, SetupScreen } from "@/components/auth/auth-scre
 import { LanguageToggle } from "@/components/language-toggle";
 import { CinematicIntro } from "@/components/intro/cinematic-intro";
 import { Landing } from "@/components/intro/landing";
+import { IntroVideo } from "@/components/intro/intro-video";
 import { useTour } from "@/components/tour/tour-provider";
 import type { UserProfile } from "@/types";
 import { PRIVACY_VERSION, PrivacyNotice } from "@/components/privacy/privacy-notice";
@@ -31,12 +32,13 @@ export function WelcomeGate({ children }: { children: React.ReactNode }) {
   // null on the server / first paint, so neither the landing nor the app
   // flashes before we know whether this session already went past it.
   const enteredThisSession = useSyncExternalStore(noopSubscribe, readIntroPlayed, () => null);
-  const [stage, setStage] = useState<"landing" | "film" | "app" | null>(null);
-  // Back from the film: show the landing already settled, not its opening again.
+  const [stage, setStage] = useState<"opening" | "landing" | "film" | "app" | null>(null);
+  // After the opening film (or back from the introduction film): show the
+  // landing already settled, not its opening again.
   const [returned, setReturned] = useState(false);
   const { profile, loading, hasAccount } = useProfile();
   const tour = useTour();
-  const current = stage ?? (enteredThisSession === null ? "pending" : enteredThisSession ? "app" : "landing");
+  const current = stage ?? (enteredThisSession === null ? "pending" : enteredThisSession ? "app" : "opening");
   const onboarded = loading ? null : hasAccount && isOnboardedProfile(profile);
 
   const enterApp = () => {
@@ -51,6 +53,17 @@ export function WelcomeGate({ children }: { children: React.ReactNode }) {
       {/* "wait": the landing finishes fading before the film starts, so the
           phone never draws two animated valleys at once. */}
       <AnimatePresence mode="wait">
+        {current === "opening" && (
+          <motion.div key="opening" exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
+            <IntroVideo
+              onDone={() => {
+                setReturned(true);
+                setStage("landing");
+              }}
+              onStart={enterApp}
+            />
+          </motion.div>
+        )}
         {current === "landing" && (
           <motion.div key="landing" exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
             <Landing
