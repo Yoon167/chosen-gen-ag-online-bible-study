@@ -5,16 +5,16 @@ import { ChevronsRight, Volume2, VolumeX } from "lucide-react";
 import { holdBackgroundMusic, useBackgroundMusic } from "@/lib/background-music";
 import { useTx } from "@/lib/i18n";
 
-// A 34-second film (720x1280): sunrise over the valley, the golden path, the
+// A 34-second film (1080x1920): sunrise over the valley, the golden path, the
 // Bible, courses, prayer and community, then the logo. English voiceover by
 // ElevenLabs over the app's soaking-worship track. Files in /video are cached
 // for a year, so give a changed film a new name.
-const SRC = "/video/intro-v1.mp4";
+const SRC = "/video/intro-v2.mp4";
 // A slow connection should not hold the app back: if the film has not
 // started by then, go straight on.
 const START_TIMEOUT_MS = 3500;
 // The film's own "Begin your journey" button: when it appears (seconds) and
-// where it sits in the 720x1280 frame, as percentages.
+// where it sits in the frame, as percentages.
 const CTA_AT = 31;
 const CTA_BOX = { left: "22.2%", top: "69.5%", width: "55.6%", height: "6.6%" };
 
