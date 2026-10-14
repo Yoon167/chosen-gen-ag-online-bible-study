@@ -15,7 +15,17 @@ export interface CourseLessonProgress {
 
 /** users/{uid}/courseProgress/{courseId} */
 export interface CourseProgressDoc {
+  /** When the member enrolled; lessons open only after enrolling. */
+  enrolledAt?: number;
   lessons?: Record<string, CourseLessonProgress>;
+}
+
+/**
+ * Enrolled in a course. Members who started a course before enrolling
+ * existed (they already have progress) count as enrolled.
+ */
+export function isEnrolled(doc: CourseProgressDoc | null | undefined) {
+  return !!doc?.enrolledAt || Object.keys(doc?.lessons ?? {}).length > 0;
 }
 
 /** Progress in every course (one small doc per course). */
@@ -51,5 +61,17 @@ export function useCourseProgress(courseId: string) {
     await setDoc(doc(db, "users", uid, "courseProgress", courseId), { lessons: { [lessonId]: fields } }, { merge: true });
   }
 
-  return { lessons: data?.lessons ?? {}, loaded: data !== null, saveLesson };
+  async function enroll() {
+    if (!uid) return;
+    await setDoc(doc(db, "users", uid, "courseProgress", courseId), { enrolledAt: Date.now() }, { merge: true });
+  }
+
+  return {
+    lessons: data?.lessons ?? {},
+    loaded: data !== null,
+    enrolled: isEnrolled(data),
+    enrolledAt: data?.enrolledAt ?? null,
+    saveLesson,
+    enroll,
+  };
 }

@@ -1,5 +1,6 @@
 import type { DeepLesson, DeepSet } from "./types";
 import type { ExtraSet, LessonExtra } from "./extra-types";
+import type { BookChapter, BookSet } from "./book-types";
 
 /**
  * Each course and Journey level is its own chunk, fetched only when one of its
@@ -55,6 +56,30 @@ const EXTRA_LOADERS: Record<string, () => Promise<{ EXTRA: ExtraSet }>> = {
   "course:disciple": () => import("./extra/disciple"),
   "course:advanced": () => import("./extra/advanced"),
 };
+
+/** The book chapter for each Course lesson; a course may span several files. */
+const BOOK_LOADERS: Record<string, (() => Promise<{ BOOK: BookSet }>)[]> = {
+  "course:foundation": [() => import("./book/foundation")],
+  "course:growth": [() => import("./book/growth")],
+  "course:theology": [() => import("./book/theology")],
+  "course:freedom": [() => import("./book/freedom"), () => import("./book/freedom-2")],
+  "course:healing": [() => import("./book/healing")],
+  "course:holiness": [() => import("./book/holiness")],
+  "course:chains": [() => import("./book/chains")],
+  "course:stewardship": [() => import("./book/stewardship")],
+  "course:truth": [() => import("./book/truth")],
+  "course:disciple": [() => import("./book/disciple")],
+  "course:advanced": [() => import("./book/advanced")],
+};
+
+export async function loadBook(group: string, lessonId: string): Promise<BookChapter | null> {
+  for (const load of BOOK_LOADERS[group] ?? []) {
+    const mod = await load().catch(() => null);
+    const chapter = mod?.BOOK[lessonId];
+    if (chapter) return chapter;
+  }
+  return null;
+}
 
 export async function loadExtra(group: string, lessonId: string): Promise<LessonExtra | null> {
   const load = EXTRA_LOADERS[group];

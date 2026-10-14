@@ -29,7 +29,7 @@ import { PassageSheet } from "@/components/bible/passage-sheet";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { assignmentId, useCourseAccess } from "@/lib/hooks/use-lesson-assignments";
-import { useAllCourseProgress, useCourseProgress } from "@/lib/hooks/use-course-progress";
+import { isEnrolled, useAllCourseProgress, useCourseProgress } from "@/lib/hooks/use-course-progress";
 import { useMemoryVerses } from "@/lib/hooks/use-memory-verses";
 import { useBibleTranslation } from "@/lib/hooks/use-bible-translation";
 import { cleanVerseText, fetchPassage } from "@/lib/bible/api";
@@ -83,7 +83,7 @@ export function CourseCards({ courses }: { courses: CourseCard[] }) {
           <Link key={c.id} href={`/courses/${c.id}`} className="book-link group flex flex-col outline-none">
             <BookCover
               index={i}
-              kicker={tx(`Course ${i + 1}`, `Kurso ${i + 1}`)}
+              kicker={tx(`Book ${i + 1}`, `Aklat ${i + 1}`)}
               emblem={locked ? <Lock className="size-5" /> : <Icon className="size-6" />}
               title={c.title[lang]}
               ribbon={done > 0}
@@ -92,8 +92,10 @@ export function CourseCards({ courses }: { courses: CourseCard[] }) {
             {/* Title and description under the book */}
             <span className="mt-4 block min-w-0">
               <span className="block text-[0.625rem] font-semibold uppercase tracking-wide text-muted-foreground">
-                {c.lessonIds.length} {tx("lessons", "aralin")}
-                {!access.loading && access.churchId && (access.isUnlocked(c.id) ? ` · ${tx("Unlocked", "Bukas")}` : ` · ${tx("Locked", "Naka-lock")}`)}
+                {c.lessonIds.length} {tx("chapters", "kabanata")}
+                {isEnrolled(progress[c.id])
+                  ? ` · ${tx("Enrolled", "Naka-enroll")}`
+                  : !access.loading && access.churchId && (access.isUnlocked(c.id) ? ` · ${tx("Open", "Bukas")}` : ` · ${tx("Locked", "Naka-lock")}`)}
               </span>
               <span className="mt-0.5 block font-heading text-sm font-semibold leading-snug group-hover:text-primary">{c.title[lang]}</span>
               <span className="mt-1 block line-clamp-3 text-xs leading-relaxed text-muted-foreground">{c.summary[lang]}</span>
@@ -248,8 +250,8 @@ export function LessonWorkbook({
 
   return (
     <div className="space-y-4">
-      <section className="rounded-2xl border border-border/70 bg-card p-4">
-        <h2 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{tx("Self-check", "Pagsusuri sa sarili")}</h2>
+      <section className="book-paper rounded-2xl border border-[#D4AF37]/25 p-4 shadow-sm">
+        <h2 className="font-heading text-[0.6875rem] font-semibold uppercase tracking-[0.25em] text-[#a87810] dark:text-[#e3bf5c]">{tx("Self-check", "Pagsusuri sa sarili")}</h2>
         <p className="mt-1 text-xs text-muted-foreground">{tx("1 = not yet, 5 = very true of me. Only you see this.", "1 = hindi pa, 5 = totoong-totoo sa akin. Ikaw lang ang nakakakita nito.")}</p>
         <ul className="mt-3 space-y-3">
           {selfCheck.map((s, i) => (
@@ -271,7 +273,7 @@ export function LessonWorkbook({
                       }}
                       className={cn(
                         "size-9 rounded-full border text-sm font-medium",
-                        picked ? "border-primary bg-primary text-primary-foreground" : "border-border bg-background"
+                        picked ? "border-[#a87810] bg-[#a87810] text-white" : "border-[#D4AF37]/40 bg-background/60"
                       )}
                     >
                       {n}
@@ -284,8 +286,8 @@ export function LessonWorkbook({
         </ul>
       </section>
 
-      <section className="rounded-2xl border border-border/70 bg-card p-4">
-        <h2 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{tx("Reflection journal", "Journal ng pagninilay")}</h2>
+      <section className="book-paper rounded-2xl border border-[#D4AF37]/25 p-4 shadow-sm">
+        <h2 className="font-heading text-[0.6875rem] font-semibold uppercase tracking-[0.25em] text-[#a87810] dark:text-[#e3bf5c]">{tx("Reflection journal", "Journal ng pagninilay")}</h2>
         <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm">
           {reflection.map((q) => (
             <li key={q.en}>{q[lang]}</li>
@@ -318,7 +320,7 @@ export function LessonWorkbook({
       </section>
 
       <Button
-        className="h-12 w-full"
+        className={cn("h-12 w-full", !finished && "bg-gradient-to-r from-[#1E3A5F] to-[#2b4f7e] text-white hover:opacity-95")}
         variant={finished ? "secondary" : "default"}
         disabled={!loaded}
         onClick={() => {
@@ -327,15 +329,26 @@ export function LessonWorkbook({
         }}
       >
         <Check className="size-4" />
-        {finished ? tx("Finished. Tap to undo", "Tapos na. Pindutin para ibalik") : tx("Mark this lesson finished", "Markahang tapos ang araling ito")}
+        {finished ? tx("Chapter finished. Tap to undo", "Tapos na ang kabanata. Pindutin para ibalik") : tx("I finished this chapter", "Natapos ko ang kabanatang ito")}
       </Button>
       {next && (
-        <Link href={next.href} className="flex items-center justify-between rounded-2xl border border-primary/30 bg-primary/5 px-4 py-3">
+        <Link
+          href={next.href}
+          className="book-paper group relative flex items-center justify-between overflow-hidden rounded-2xl border border-[#D4AF37]/40 px-5 py-4 shadow-sm"
+        >
+          {/* A folded page corner */}
+          <span
+            aria-hidden
+            className="absolute right-0 top-0 size-7 bg-gradient-to-bl from-[#D4AF37]/50 to-transparent transition-all group-hover:size-10"
+            style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%)" }}
+          />
           <span>
-            <span className="block text-[0.6875rem] font-semibold uppercase tracking-wide text-primary">{tx("Next lesson", "Susunod na aralin")}</span>
-            <span className="block text-sm font-medium">{next.title[lang]}</span>
+            <span className="block font-heading text-[0.6875rem] font-semibold uppercase tracking-[0.25em] text-[#a87810] dark:text-[#e3bf5c]">
+              {tx("Turn the page", "Ilipat ang pahina")}
+            </span>
+            <span className="mt-0.5 block font-heading text-base font-semibold">{next.title[lang]}</span>
           </span>
-          <ChevronRight className="size-4 text-primary" />
+          <ChevronRight className="size-5 text-[#a87810] transition-transform group-hover:translate-x-1" />
         </Link>
       )}
     </div>

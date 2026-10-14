@@ -639,3 +639,66 @@ html[data-text-size="xl"] {
   .tour-float, .tour-pulse, .tour-spin, .tour-nudge, .tour-nudge-down { animation: none; }
   .tour-glide { transition-property: opacity; }
 }
+
+/* Course books (components/courses/book-*.tsx): cream paper, a drop cap,
+   gold ornaments and dotted contents, so every lesson reads like a book. */
+.book-paper {
+  background-color: #fbf6ea;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(212, 175, 55, 0.08), transparent 55%),
+    radial-gradient(ellipse at 100% 100%, rgba(120, 80, 30, 0.07), transparent 50%),
+    repeating-linear-gradient(0deg, rgba(120, 90, 40, 0.025) 0 1px, transparent 1px 4px);
+  color: #2b2418;
+}
+.dark .book-paper {
+  background-color: #1d1913;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(212, 175, 55, 0.1), transparent 55%),
+    repeating-linear-gradient(0deg, rgba(255, 240, 200, 0.02) 0 1px, transparent 1px 4px);
+  color: #efe6d2;
+}
+.book-text {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  hyphens: auto;
+}
+.book-text p + p { text-indent: 1.4em; }
+.drop-cap::first-letter {
+  float: left;
+  font-family: var(--font-heading);
+  font-size: 3.6em;
+  line-height: 0.85;
+  font-weight: 700;
+  padding: 0.08em 0.1em 0 0;
+  color: #a87810;
+}
+.dark .drop-cap::first-letter { color: #e3bf5c; }
+.book-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #b8902f;
+}
+.book-rule::before,
+.book-rule::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+}
+.toc-leader {
+  flex: 1;
+  min-width: 1rem;
+  align-self: flex-end;
+  margin-bottom: 0.35em;
+  border-bottom: 2px dotted rgba(168, 120, 16, 0.35);
+}
+@keyframes page-in {
+  from { opacity: 0; transform: perspective(900px) rotateY(-8deg) translateX(14px); transform-origin: left center; }
+  to { opacity: 1; transform: none; }
+}
+.page-in { animation: page-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+@media (prefers-reduced-motion: reduce) {
+  .page-in { animation: none; }
+}
