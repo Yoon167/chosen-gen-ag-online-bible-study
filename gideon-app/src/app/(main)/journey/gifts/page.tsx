@@ -1,10 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChevronLeft, Gift, RotateCcw, Share2, Sparkles } from "lucide-react";
-import { PageHeader } from "@/components/shared/page-header";
+import { ChevronLeft, ChevronRight, Gift, RotateCcw, Share2, Sparkles } from "lucide-react";
+import { HeroStat, PageHeader } from "@/components/shared/page-header";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
 import { useUserCollection } from "@/lib/hooks/use-collection";
 import {
   GIFT_SCALE,
@@ -27,6 +26,9 @@ interface GiftResult {
 }
 
 const PROGRESS_KEY = "gideon-gifts-progress";
+
+const HERO = { from: "#5b3a91", to: "#1E3A5F" };
+const START = "h-12 bg-gradient-to-r from-violet-600 to-[#1E3A5F] text-white shadow-lg shadow-violet-600/25 hover:opacity-95";
 
 function readProgress(): number[] {
   try {
@@ -101,26 +103,41 @@ export default function GiftsPage() {
     const s = GIFT_STATEMENTS[index];
     return (
       <div>
-        <PageHeader title={tx("Spiritual Gifts Test", "Spiritual Gifts Test")} back />
-        <div className="space-y-6 px-5 pb-8">
+        <PageHeader
+          title={tx("Spiritual Gifts Test", "Spiritual Gifts Test")}
+          icon={Gift}
+          back
+          hero={{ ...HERO, kicker: tx("Answer by what you actually do", "Sumagot ayon sa talagang ginagawa mo") }}
+        >
           <div className="space-y-1.5">
-            <div className="flex justify-between text-xs text-muted-foreground">
-              <span>{tx("Answer by what you actually do", "Sumagot ayon sa talagang ginagawa mo")}</span>
-              <span className="tabular-nums">
+            <div className="flex justify-between text-xs text-white/75">
+              <span>{tx("Statement", "Pahayag")}</span>
+              <span className="tabular-nums font-semibold text-[#F4DC8A]">
                 {index + 1} / {GIFT_STATEMENTS.length}
               </span>
             </div>
-            <Progress value={(index / GIFT_STATEMENTS.length) * 100} />
+            <div className="h-2 overflow-hidden rounded-full bg-white/15">
+              <div
+                className="h-2 rounded-full bg-gradient-to-r from-[#F4DC8A] to-[#D4AF37] transition-all"
+                style={{ width: `${(index / GIFT_STATEMENTS.length) * 100}%` }}
+              />
+            </div>
           </div>
-          <p className="min-h-28 font-heading text-xl leading-relaxed">{s.text[lang]}</p>
+        </PageHeader>
+        <div className="space-y-6 px-5 pb-8">
+          <div className="rounded-2xl border border-violet-500/25 bg-gradient-to-br from-violet-500/10 to-card p-5 shadow-sm">
+            <p className="min-h-24 font-heading text-xl leading-relaxed">{s.text[lang]}</p>
+          </div>
           <div className="space-y-2">
             {GIFT_SCALE.map((label, value) => (
               <button
                 key={value}
                 onClick={() => answer(value)}
                 className={cn(
-                  "flex h-12 w-full items-center justify-between rounded-xl border px-4 text-sm font-medium transition-colors",
-                  answers[index] === value ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card"
+                  "flex h-12 w-full items-center justify-between rounded-xl border px-4 text-sm font-medium transition-colors active:scale-[0.99]",
+                  answers[index] === value
+                    ? "border-violet-600 bg-gradient-to-r from-violet-600 to-violet-700 text-white shadow-sm shadow-violet-600/30"
+                    : "border-border bg-card"
                 )}
               >
                 {label[lang]}
@@ -153,19 +170,28 @@ export default function GiftsPage() {
 
   return (
     <div>
-      <PageHeader title={tx("Spiritual Gifts Test", "Spiritual Gifts Test")} back />
+      <PageHeader
+        title={tx("Spiritual Gifts Test", "Spiritual Gifts Test")}
+        icon={Gift}
+        back
+        hero={{
+          ...HERO,
+          kicker: tx(`${SPIRITUAL_GIFTS.length} gifts to serve with`, `${SPIRITUAL_GIFTS.length} na kaloob para maglingkod`),
+          verse: tx(
+            "“Each of you should use whatever gift you have received to serve others.” 1 Peter 4:10",
+            "“Gamitin ng bawat isa ang kaloob na tinanggap niya sa paglilingkod sa iba.” 1 Pedro 4:10"
+          ),
+        }}
+      >
+        <div className="grid grid-cols-3 gap-2">
+          <HeroStat label={tx("Statements", "Pahayag")} value={GIFT_STATEMENTS.length} />
+          <HeroStat label={tx("Minutes", "Minuto")} value={`~${Math.round(GIFT_STATEMENTS.length / 6)}`} />
+          <HeroStat label={tx("Results", "Resulta")} value={results.items.length} />
+        </div>
+      </PageHeader>
       <div className="space-y-4 px-5 pb-8">
-        <div className="rounded-2xl border border-border/70 bg-secondary/40 p-4 text-sm leading-relaxed">
-          <p className="font-heading font-semibold">
-            &ldquo;
-            {tx(
-              "Each of you should use whatever gift you have received to serve others.",
-              "Gamitin ng bawat isa ang kaloob na tinanggap niya sa paglilingkod sa iba."
-            )}
-            &rdquo;
-          </p>
-          <p className="mt-0.5 text-xs text-muted-foreground">{tx("1 Peter 4:10", "1 Pedro 4:10")}</p>
-          <p className="mt-2 text-foreground/80">
+        <div className="rounded-2xl border border-violet-500/25 bg-gradient-to-br from-violet-500/10 to-card p-4 text-sm leading-relaxed">
+          <p className="text-foreground/80">
             {tx(
               `${GIFT_STATEMENTS.length} short statements, about ${Math.round(GIFT_STATEMENTS.length / 6)} minutes. Answer by what you actually do, not what you wish you did. Your results show where God may be using you, and are best talked through with your AG leader.`,
               `${GIFT_STATEMENTS.length} maikling pahayag, mga ${Math.round(GIFT_STATEMENTS.length / 6)} minuto. Sumagot ayon sa talagang ginagawa mo, hindi sa gusto mong gawin. Ipapakita ng resulta kung saan ka maaaring ginagamit ng Diyos, at mainam itong pag-usapan kasama ang iyong AG leader.`
@@ -175,7 +201,7 @@ export default function GiftsPage() {
 
         {resumable ? (
           <div className="grid grid-cols-2 gap-2">
-            <Button className="h-12" onClick={() => start(false)}>
+            <Button className={START} onClick={() => start(false)}>
               {tx(`Continue (${answers.length}/${GIFT_STATEMENTS.length})`, `Ituloy (${answers.length}/${GIFT_STATEMENTS.length})`)}
             </Button>
             <Button className="h-12" variant="outline" onClick={() => start(true)}>
@@ -184,7 +210,7 @@ export default function GiftsPage() {
             </Button>
           </div>
         ) : (
-          <Button className="h-12 w-full" onClick={() => start(true)}>
+          <Button className={cn(START, "w-full")} onClick={() => start(true)}>
             <Gift />
             {latest ? tx("Take the test again", "Kunin ulit ang test") : tx("Start the test", "Simulan ang test")}
           </Button>
@@ -200,18 +226,24 @@ export default function GiftsPage() {
                   setShown(r);
                   setMode("result");
                 }}
-                className="block w-full rounded-2xl border border-border/70 bg-card p-3.5 text-left"
+                className="flex w-full items-center gap-3 rounded-2xl border border-border/70 bg-card p-3.5 text-left shadow-sm active:scale-[0.99]"
               >
-                <p className="text-xs text-muted-foreground">
-                  {new Date(r.createdAt).toLocaleDateString(lang === "tl" ? "fil-PH" : undefined, {
-                    month: "long",
-                    day: "numeric",
-                    year: "numeric",
-                  })}
-                </p>
-                <p className="mt-0.5 text-sm font-medium">
-                  {r.top.map((id) => findGift(id)?.name[lang]).filter(Boolean).join(" · ")}
-                </p>
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-[#1E3A5F] text-white">
+                  <Gift className="size-4.5" />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-xs text-muted-foreground">
+                    {new Date(r.createdAt).toLocaleDateString(lang === "tl" ? "fil-PH" : undefined, {
+                      month: "long",
+                      day: "numeric",
+                      year: "numeric",
+                    })}
+                  </span>
+                  <span className="mt-0.5 block text-sm font-medium">
+                    {r.top.map((id) => findGift(id)?.name[lang]).filter(Boolean).join(" · ")}
+                  </span>
+                </span>
+                <ChevronRight className="size-4 text-muted-foreground" />
               </button>
             ))}
           </section>
@@ -248,27 +280,50 @@ function ResultView({
 
   return (
     <div>
-      <header className="flex items-center gap-3 px-5 pb-5 pt-6">
-        <button
-          onClick={onBack}
-          aria-label={tx("Back", "Bumalik")}
-          className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border bg-card"
-        >
-          <ChevronLeft className="size-4.5" />
-        </button>
-        <h1 className="font-heading text-xl font-semibold">{tx("Your spiritual gifts", "Ang iyong mga kaloob")}</h1>
-      </header>
+      <PageHeader
+        title={tx("Your spiritual gifts", "Ang iyong mga kaloob")}
+        icon={Gift}
+        back
+        onBack={onBack}
+        hero={{
+          ...HERO,
+          kicker: new Date(result.createdAt).toLocaleDateString(lang === "tl" ? "fil-PH" : undefined, {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          }),
+          verse: top.map((g) => g.name[lang]).join(" · "),
+        }}
+      />
 
       <div className="space-y-4 px-5 pb-8">
         {top.map((g, i) => (
           <div
             key={g.id}
-            className={cn("rounded-2xl border bg-card p-4", i === 0 ? "border-gold/60 bg-gold/10" : "border-border/70")}
+            className={cn(
+              "rounded-2xl border p-4 shadow-sm",
+              i === 0
+                ? "border-[#D4AF37]/60 bg-gradient-to-br from-[#D4AF37]/20 via-amber-500/5 to-card"
+                : "border-violet-500/25 bg-gradient-to-br from-violet-500/10 to-card"
+            )}
           >
             <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              {i === 0 && <Sparkles className="size-3.5 text-gold" />}#{i + 1}
+              <span
+                className={cn(
+                  "flex size-7 items-center justify-center rounded-full text-[0.75rem] font-bold text-white",
+                  i === 0 ? "bg-gradient-to-br from-[#F4DC8A] to-[#c99a2e] text-[#13253d]" : "bg-violet-600"
+                )}
+              >
+                {i + 1}
+              </span>
+              {i === 0 && (
+                <>
+                  <Sparkles className="size-3.5 text-[#c99a2e]" />
+                  {tx("Strongest gift", "Pinakamalakas na kaloob")}
+                </>
+              )}
             </p>
-            <p className="mt-0.5 font-heading text-lg font-semibold">{g.name[lang]}</p>
+            <p className="mt-1.5 font-heading text-lg font-semibold">{g.name[lang]}</p>
             <p className="mt-1 text-sm text-foreground/80">{g.description[lang]}</p>
             <p className="mt-1 text-xs text-muted-foreground">{g.verse[lang]}</p>
             <p className="mt-3 text-xs font-semibold text-muted-foreground">
@@ -297,7 +352,10 @@ function ResultView({
                 </div>
                 <div className="mt-1 h-1.5 rounded-full bg-muted">
                   <div
-                    className="h-1.5 rounded-full bg-primary"
+                    className={cn(
+                      "h-1.5 rounded-full",
+                      result.top.includes(gift.id) ? "bg-gradient-to-r from-[#D4AF37] to-amber-500" : "bg-gradient-to-r from-violet-400 to-violet-600"
+                    )}
                     style={{ width: `${(score / MAX_GIFT_SCORE) * 100}%` }}
                   />
                 </div>
@@ -314,11 +372,11 @@ function ResultView({
         </p>
 
         <div className="grid grid-cols-2 gap-2">
-          <Button className="h-11" onClick={share}>
+          <Button className={START} onClick={share}>
             <Share2 />
             {tx("Share", "I-share")}
           </Button>
-          <Button className="h-11" variant="outline" onClick={onRetake}>
+          <Button className="h-12" variant="outline" onClick={onRetake}>
             <RotateCcw />
             {tx("Retake", "Ulitin")}
           </Button>

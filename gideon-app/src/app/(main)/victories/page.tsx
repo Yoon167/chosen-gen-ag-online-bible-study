@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { CheckCircle2, Flag, Plus, Share2, Sparkles, Trophy } from "lucide-react";
-import { PageHeader } from "@/components/shared/page-header";
+import { HeroStat, PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useUserCollection } from "@/lib/hooks/use-collection";
@@ -24,6 +24,25 @@ interface Victory {
 }
 
 const KIND_ICON = { prayer: CheckCircle2, testimony: Sparkles, milestone: Flag } satisfies Record<Kind, unknown>;
+
+/** Each kind of victory keeps its own color on the timeline. */
+const KIND_TONE: Record<Kind, { dot: string; card: string; label: string }> = {
+  prayer: {
+    dot: "bg-gradient-to-br from-emerald-400 to-emerald-600",
+    card: "border-emerald-500/25 from-emerald-500/10",
+    label: "text-emerald-700 dark:text-emerald-300",
+  },
+  testimony: {
+    dot: "bg-gradient-to-br from-purple-400 to-purple-600",
+    card: "border-purple-500/25 from-purple-500/10",
+    label: "text-purple-700 dark:text-purple-300",
+  },
+  milestone: {
+    dot: "bg-gradient-to-br from-sky-400 to-sky-600",
+    card: "border-sky-500/25 from-sky-500/10",
+    label: "text-sky-700 dark:text-sky-300",
+  },
+};
 
 /**
  * "What God has done": answered prayers, testimonies and journey milestones
@@ -119,10 +138,26 @@ export default function VictoriesPage() {
     <div>
       <PageHeader
         title={tx("What God Has Done", "Ginawa ng Diyos")}
-        subtitle={tx("Look back and give thanks", "Lumingon at magpasalamat")}
         icon={Trophy}
         back
-      />
+        hero={{
+          from: "#a8740f",
+          to: "#1E3A5F",
+          kicker: tx("Look back and give thanks", "Lumingon at magpasalamat"),
+          verse: tx(
+            "“Thanks be to God! He gives us the victory through our Lord Jesus Christ.” 1 Corinthians 15:57",
+            "“Salamat sa Diyos na nagbibigay sa atin ng tagumpay sa pamamagitan ng ating Panginoong Jesu-Cristo.” 1 Corinto 15:57"
+          ),
+        }}
+      >
+        {!loading && all.length > 0 && (
+          <div className="grid grid-cols-3 gap-2">
+            <HeroStat label={tx("Answered prayers", "Sinagot na panalangin")} value={count("prayer")} />
+            <HeroStat label={tx("Testimonies", "Patotoo")} value={count("testimony")} />
+            <HeroStat label={tx("Milestones", "Milestone")} value={count("milestone")} />
+          </div>
+        )}
+      </PageHeader>
 
       <div className="space-y-4 px-5 pb-8">
         {loading ? (
@@ -141,31 +176,19 @@ export default function VictoriesPage() {
           />
         ) : (
           <>
-            <div className="grid grid-cols-3 gap-2 text-center">
-              {(["prayer", "testimony", "milestone"] as const).map((k) => (
-                <div key={k} className="rounded-2xl border border-border/70 bg-card p-3">
-                  <p className="text-xl font-semibold tabular-nums">{count(k)}</p>
-                  <p className="text-[0.6875rem] leading-tight text-muted-foreground">
-                    {k === "prayer"
-                      ? tx("answered prayers", "sinagot na panalangin")
-                      : k === "testimony"
-                        ? tx("testimonies", "patotoo")
-                        : tx("milestones", "milestone")}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex gap-1.5 overflow-x-auto">
+            <div className="flex gap-1.5 overflow-x-auto no-scrollbar">
               {(["all", "prayer", "testimony", "milestone"] as const).map((k) => (
                 <button
                   key={k}
                   onClick={() => setFilter(k)}
                   className={cn(
-                    "shrink-0 rounded-full border px-3 py-1.5 text-xs font-medium",
-                    filter === k ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card"
+                    "flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium",
+                    filter === k
+                      ? "border-amber-600 bg-amber-600 text-white shadow-sm shadow-amber-500/30"
+                      : "border-border bg-card text-muted-foreground"
                   )}
                 >
+                  {k !== "all" && <span className={cn("size-2 rounded-full", KIND_TONE[k].dot)} />}
                   {k === "all" ? tx("All", "Lahat") : kindLabel(k)}
                 </button>
               ))}
@@ -173,21 +196,27 @@ export default function VictoriesPage() {
 
             {message && <p className="text-xs text-muted-foreground">{message}</p>}
 
-            <ol className="relative space-y-3 border-l-2 border-primary/20 pl-4">
+            <ol className="relative space-y-3 border-l-2 border-amber-500/25 pl-5">
               {shown.map((v) => {
                 const Icon = KIND_ICON[v.kind];
+                const tone = KIND_TONE[v.kind];
                 return (
                   <li key={v.key} className="relative">
-                    <span className="absolute -left-[1.6rem] top-3 flex size-5 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                      <Icon className="size-3" />
+                    <span
+                      className={cn(
+                        "absolute -left-[2.15rem] top-3 flex size-7 items-center justify-center rounded-full text-white shadow-sm ring-4 ring-background",
+                        tone.dot
+                      )}
+                    >
+                      <Icon className="size-3.5" />
                     </span>
-                    <div className="rounded-2xl border border-border/70 bg-card p-3.5">
+                    <div className={cn("rounded-2xl border bg-gradient-to-br to-card p-3.5 shadow-sm", tone.card)}>
                       <div className="flex items-start gap-2">
                         <Link href={v.href} className="min-w-0 flex-1">
-                          <p className="text-[0.6875rem] font-semibold uppercase tracking-wide text-primary">
+                          <p className={cn("text-[0.6875rem] font-semibold uppercase tracking-wide", tone.label)}>
                             {kindLabel(v.kind)} · {new Date(v.at).toLocaleDateString(locale, { month: "short", day: "numeric", year: "numeric" })}
                           </p>
-                          <p className="mt-0.5 text-sm font-medium">{v.title}</p>
+                          <p className="mt-0.5 font-heading text-[0.9375rem] font-semibold">{v.title}</p>
                           {v.detail && <p className="mt-1 line-clamp-3 text-xs leading-relaxed text-muted-foreground">{v.detail}</p>}
                         </Link>
                         <button
@@ -208,12 +237,16 @@ export default function VictoriesPage() {
         )}
 
         <div className="grid grid-cols-2 gap-2">
-          <Link href="/prayer" className="flex items-center gap-2 rounded-2xl border border-border/70 bg-card p-3 text-xs font-medium">
-            <Plus className="size-4 shrink-0 text-primary" />
+          <Link href="/prayer" className="flex items-center gap-2.5 rounded-2xl border border-emerald-500/25 bg-gradient-to-br from-emerald-500/15 to-card p-3 text-xs font-semibold">
+            <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white">
+              <Plus className="size-4" />
+            </span>
             {tx("Prayer journal", "Prayer journal")}
           </Link>
-          <Link href="/testimony/new" className="flex items-center gap-2 rounded-2xl border border-border/70 bg-card p-3 text-xs font-medium">
-            <Plus className="size-4 shrink-0 text-primary" />
+          <Link href="/testimony/new" className="flex items-center gap-2.5 rounded-2xl border border-purple-500/25 bg-gradient-to-br from-purple-500/15 to-card p-3 text-xs font-semibold">
+            <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-purple-600 text-white">
+              <Plus className="size-4" />
+            </span>
             {tx("Write a testimony", "Sumulat ng patotoo")}
           </Link>
         </div>

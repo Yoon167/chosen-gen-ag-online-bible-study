@@ -12,8 +12,16 @@ export default function PrayerAndFastingPage() {
     <div>
       <PageHeader
         title={tx("Prayer & Fasting", "Panalangin at Ayuno")}
-        subtitle={tx("Set time apart to seek God", "Maglaan ng oras para hanapin ang Diyos")}
         icon={Flame}
+        hero={{
+          from: "#b4471a",
+          to: "#1E3A5F",
+          kicker: tx("Set time apart to seek God", "Maglaan ng oras para hanapin ang Diyos"),
+          verse: tx(
+            "“Return to Me with all your heart, with fasting.” Joel 2:12",
+            "“Manumbalik kayo sa Akin nang buong puso, na may pag-aayuno.” Joel 2:12"
+          ),
+        }}
       />
       <div className="space-y-6 px-5 pb-8">
         <PrayerTimer />

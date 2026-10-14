@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { HandHeart, MessageCircle, Pencil, Plus, Trash2, Users } from "lucide-react";
-import { PageHeader } from "@/components/shared/page-header";
+import { HeroStat, PageHeader } from "@/components/shared/page-header";
 import { EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
@@ -70,50 +70,56 @@ export default function OikosPage() {
     <div>
       <PageHeader
         title={tx("My Oikos", "Aking Oikos")}
-        subtitle={tx("People I'm praying for to know Jesus", "Mga ipinapanalangin kong makakilala kay Hesus")}
         icon={HandHeart}
+        hero={{
+          from: "#0f6b5a",
+          to: "#1E3A5F",
+          kicker: tx("People I'm praying for to know Jesus", "Mga ipinapanalangin kong makakilala kay Hesus"),
+          verse: tx(
+            "“Believe in the Lord Jesus, and you will be saved, you and your household.” Acts 16:31",
+            "“Sumampalataya ka sa Panginoong Hesus, at maliligtas ka, ikaw at ang iyong sambahayan.” Gawa 16:31"
+          ),
+        }}
         action={
           oikos.items.length < OIKOS_LIMIT && (
             <button
               onClick={() => setEditing({ person: null })}
-              className="flex size-9 items-center justify-center rounded-full bg-primary text-primary-foreground"
+              className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#D4AF37] text-[#13253d] shadow-[0_0_16px_rgba(212,175,55,0.5)]"
               aria-label={tx("Add someone", "Magdagdag")}
             >
-              <Plus className="size-4.5" />
+              <Plus className="size-5" />
             </button>
           )
         }
-      />
+      >
+        <div className="grid grid-cols-3 gap-2">
+          <HeroStat label={tx("Names", "Pangalan")} value={`${oikos.items.length}/${OIKOS_LIMIT}`} />
+          <HeroStat label={tx("Prayed today", "Naipanalangin")} value={oikos.items.filter(prayedToday).length} />
+          <HeroStat label={tx("Prayers", "Panalangin")} value={oikos.items.reduce((sum, p) => sum + (p.prayedCount ?? 0), 0)} />
+        </div>
+      </PageHeader>
 
       <div className="space-y-4 px-5 pb-8">
-        <div className="rounded-2xl border border-border/70 bg-secondary/40 p-4 text-sm leading-relaxed">
-          <p className="font-heading font-semibold">
-            &ldquo;
-            {tx(
-              "Believe in the Lord Jesus, and you will be saved, you and your household.",
-              "Sumampalataya ka sa Panginoong Hesus, at maliligtas ka, ikaw at ang iyong sambahayan."
-            )}
-            &rdquo;
-          </p>
-          <p className="mt-0.5 text-xs text-muted-foreground">{tx("Acts 16:31", "Gawa 16:31")}</p>
-          <p className="mt-2 text-foreground/80">
-            {tx(
-              `"Oikos" means household: the family, friends, classmates and co-workers God already placed around you. List up to ${OIKOS_LIMIT}, pray for them by name every day, and watch for open doors.`,
-              `Ang "oikos" ay sambahayan: pamilya, kaibigan, kaklase at katrabahong inilagay na ng Diyos sa paligid mo. Maglista ng hanggang ${OIKOS_LIMIT}, ipanalangin sila araw-araw sa pangalan, at abangan ang pagkakataon.`
-            )}
-          </p>
-        </div>
+        <p className="rounded-2xl border border-emerald-500/25 bg-gradient-to-br from-emerald-500/10 to-card p-4 text-sm leading-relaxed text-foreground/80">
+          {tx(
+            `"Oikos" means household: the family, friends, classmates and co-workers God already placed around you. List up to ${OIKOS_LIMIT}, pray for them by name every day, and watch for open doors.`,
+            `Ang "oikos" ay sambahayan: pamilya, kaibigan, kaklase at katrabahong inilagay na ng Diyos sa paligid mo. Maglista ng hanggang ${OIKOS_LIMIT}, ipanalangin sila araw-araw sa pangalan, at abangan ang pagkakataon.`
+          )}
+        </p>
 
         {oikos.items.length > 0 &&
           (allPrayed ? (
-            <p className="rounded-2xl bg-primary/10 px-4 py-3 text-center text-sm text-primary">
-              {tx("You prayed for all of them today ✓", "Naipanalangin mo na silang lahat ngayon ✓")}
+            <p className="rounded-2xl border border-emerald-500/25 bg-gradient-to-br from-emerald-500/15 to-card px-4 py-3 text-center text-sm font-medium text-emerald-700 dark:text-emerald-300">
+              ✨ {tx("You prayed for all of them today ✓", "Naipanalangin mo na silang lahat ngayon ✓")}
             </p>
           ) : (
-            <Button className="h-12 w-full text-sm" onClick={() => prayFor(oikos.items.map((p) => p.id))}>
-              <HandHeart />
+            <button
+              onClick={() => prayFor(oikos.items.map((p) => p.id))}
+              className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-500 to-emerald-700 py-3.5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/25 active:scale-[0.98]"
+            >
+              <HandHeart className="size-4" />
               {tx("I prayed for all of them today", "Naipanalangin ko silang lahat ngayon")}
-            </Button>
+            </button>
           ))}
 
         {!oikos.loading && oikos.items.length === 0 && (
@@ -138,13 +144,22 @@ export default function OikosPage() {
             const step = statusIndex(p.status);
             const last = p.conversations?.[p.conversations.length - 1];
             return (
-              <div key={p.id} className="rounded-2xl border border-border/70 bg-card p-4">
+              <div
+                key={p.id}
+                className={cn(
+                  "rounded-2xl border bg-card p-4 shadow-sm",
+                  prayedToday(p) ? "border-emerald-500/35" : "border-border/70"
+                )}
+              >
                 <div className="flex items-start justify-between gap-2">
-                  <div className="min-w-0">
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500 to-[#1E3A5F] font-heading text-base font-semibold text-white">
+                    {p.name.trim().charAt(0).toUpperCase()}
+                  </span>
+                  <div className="min-w-0 flex-1">
                     <p className="truncate font-heading font-semibold">{p.name}</p>
                     <p className="text-xs text-muted-foreground">
                       {OIKOS_RELATIONSHIPS.find((r) => r.value === p.relationship)?.label[lang]} ·{" "}
-                      {statusLabel(p.status)[lang]}
+                      <span className="font-medium text-emerald-700 dark:text-emerald-300">{statusLabel(p.status)[lang]}</span>
                     </p>
                   </div>
                   <div className="flex shrink-0">
@@ -168,11 +183,16 @@ export default function OikosPage() {
                 </div>
                 <div className="mt-2.5 flex gap-1" aria-hidden>
                   {OIKOS_STATUSES.map((s, i) => (
-                    <span key={s.value} className={cn("h-1.5 flex-1 rounded-full", i <= step ? "bg-primary" : "bg-muted")} />
+                    <span
+                      key={s.value}
+                      className={cn("h-1.5 flex-1 rounded-full", i <= step ? "bg-gradient-to-r from-emerald-400 to-emerald-600" : "bg-muted")}
+                    />
                   ))}
                 </div>
                 {p.note && <p className="mt-2.5 text-sm text-foreground/80">{p.note}</p>}
-                <p className="mt-2.5 text-xs italic text-muted-foreground">{OIKOS_PRAYERS[p.status][lang]}</p>
+                <p className="mt-2.5 rounded-xl bg-emerald-500/10 px-3 py-2 font-heading text-xs italic text-foreground/75">
+                  🙏 {OIKOS_PRAYERS[p.status][lang]}
+                </p>
                 {last && (
                   <p className="mt-2 text-xs text-muted-foreground">
                     <MessageCircle className="mr-1 inline size-3" />
@@ -185,8 +205,8 @@ export default function OikosPage() {
                 )}
                 <div className="mt-3 grid grid-cols-2 gap-2">
                   <Button
-                    variant={prayedToday(p) ? "secondary" : "outline"}
-                    className="h-9"
+                    variant={prayedToday(p) ? "secondary" : "default"}
+                    className={cn("h-9", !prayedToday(p) && "bg-emerald-600 text-white hover:bg-emerald-700")}
                     disabled={prayedToday(p)}
                     onClick={() => prayFor([p.id])}
                   >
@@ -219,7 +239,7 @@ export default function OikosPage() {
         </div>
 
         {churchId && (
-          <div className="rounded-2xl border border-border/70 bg-card p-4">
+          <div className="rounded-2xl border border-emerald-500/25 bg-gradient-to-br from-emerald-500/10 to-card p-4">
             <div className="flex items-center justify-between gap-3">
               <div>
                 <p className="text-sm font-medium">{tx("Ask my AG to pray too", "Ipapanalangin din sa aking AG")}</p>
@@ -241,17 +261,19 @@ export default function OikosPage() {
 
         {agLists.length > 0 && (
           <section>
-            <h2 className="mb-2 flex items-center gap-2 font-heading text-lg font-semibold">
-              <Users className="size-4.5" />
+            <h2 className="mb-2 flex items-center gap-2.5 font-heading text-lg font-semibold">
+              <span className="flex size-8 items-center justify-center rounded-full bg-emerald-600 text-white">
+                <Users className="size-4" />
+              </span>
               {tx("My AG is praying for", "Ipinapanalangin ng aking AG")}
             </h2>
             <div className="space-y-2">
               {agLists.map((l) => (
-                <div key={l.uid} className="rounded-2xl border border-border/70 bg-card p-3.5">
-                  <p className="text-xs font-semibold text-muted-foreground">{l.memberName}</p>
+                <div key={l.uid} className="rounded-2xl border border-border/70 bg-card p-3.5 shadow-sm">
+                  <p className="text-xs font-semibold text-emerald-700 dark:text-emerald-300">{l.memberName}</p>
                   <div className="mt-1.5 flex flex-wrap gap-1.5">
                     {l.people.map((p, i) => (
-                      <span key={i} className="rounded-full bg-muted px-2.5 py-1 text-xs">
+                      <span key={i} className="rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs">
                         {p.name} · <span className="text-muted-foreground">{statusLabel(p.status)[lang]}</span>
                       </span>
                     ))}

@@ -122,8 +122,8 @@ function PrayerPageInner() {
         {!loading && filtered.length === 0 && (
           <EmptyState
             icon={HandHeart}
-            title="No prayer requests yet"
-            description="Tap the + button to add your first prayer."
+            title={tx("No prayer requests yet", "Wala pang prayer request")}
+            description={tx("Tap the + button to add your first prayer.", "Pindutin ang + para idagdag ang una mong panalangin.")}
           />
         )}
 

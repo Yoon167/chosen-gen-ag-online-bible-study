@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AlertTriangle, CheckCircle2, HandHeart, Plus, Trash2 } from "lucide-react";
-import { PageHeader } from "@/components/shared/page-header";
+import { HeroStat, PageHeader } from "@/components/shared/page-header";
 import { EmptyAction, EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -23,6 +23,8 @@ import { LEADER_RANK } from "@/lib/church";
 import { useLanguage, useTx } from "@/lib/i18n";
 
 type Filter = "all" | "urgent" | "answered";
+
+const HERO = { from: "#7a2240", to: "#1E3A5F" };
 
 export default function ChurchPrayerWallPage() {
   const { lang } = useLanguage();
@@ -46,16 +48,23 @@ export default function ChurchPrayerWallPage() {
   if (!my.loading && !my.active) {
     return (
       <div>
-        <PageHeader title={tx("Prayer Wall", "Prayer Wall")} icon={HandHeart} back />
-        <EmptyState
+        <PageHeader
+          title={tx("Prayer Wall", "Prayer Wall")}
           icon={HandHeart}
-          title={tx("For AG members", "Para sa mga miyembro ng AG")}
-          description={tx(
-            "Join your AG in My AG to pray together.",
-            "Sumali sa iyong AG sa My AG para makapanalangin nang sama-sama."
-          )}
-          action={<EmptyAction href="/church" label={tx("Find your AG", "Hanapin ang AG mo")} />}
+          back
+          hero={{ ...HERO, verse: tx("“Pray for one another.” James 5:16", "“Ipanalangin ninyo ang isa't isa.” Santiago 5:16") }}
         />
+        <div className="px-5">
+          <EmptyState
+            icon={HandHeart}
+            title={tx("For AG members", "Para sa mga miyembro ng AG")}
+            description={tx(
+              "Join your AG in My AG to pray together.",
+              "Sumali sa iyong AG sa My AG para makapanalangin nang sama-sama."
+            )}
+            action={<EmptyAction href="/church" label={tx("Find your AG", "Hanapin ang AG mo")} />}
+          />
+        </div>
       </div>
     );
   }
@@ -67,24 +76,36 @@ export default function ChurchPrayerWallPage() {
   const shown = sorted.filter((p) =>
     filter === "urgent" ? p.urgent && !p.answered : filter === "answered" ? p.answered : true
   );
+  const urgentCount = wall.items.filter((p) => p.urgent && !p.answered).length;
+  const answeredCount = wall.items.filter((p) => p.answered).length;
 
   return (
     <div>
       <PageHeader
         title={tx("Prayer Wall", "Prayer Wall")}
-        subtitle={my.church?.name}
         icon={HandHeart}
         back
+        hero={{
+          ...HERO,
+          kicker: my.church?.name,
+          verse: tx("“Pray for one another.” James 5:16", "“Ipanalangin ninyo ang isa't isa.” Santiago 5:16"),
+        }}
         action={
           <button
             onClick={() => setComposing((v) => !v)}
-            className="flex size-9 items-center justify-center rounded-full bg-primary text-primary-foreground"
+            className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#D4AF37] text-[#13253d] shadow-[0_0_16px_rgba(212,175,55,0.5)]"
             aria-label={tx("Share a prayer request", "Magbahagi ng prayer request")}
           >
-            <Plus className="size-4.5" />
+            <Plus className="size-5" />
           </button>
         }
-      />
+      >
+        <div className="grid grid-cols-3 gap-2">
+          <HeroStat label={tx("Requests", "Request")} value={wall.items.length} />
+          <HeroStat label={tx("Urgent", "Urgent")} value={urgentCount} />
+          <HeroStat label={tx("Answered", "Sinagot")} value={answeredCount} />
+        </div>
+      </PageHeader>
 
       <div className="space-y-4 px-5 pb-8">
         {composing && (
@@ -99,7 +120,17 @@ export default function ChurchPrayerWallPage() {
           />
         )}
 
-        <div className="flex rounded-full border border-border p-0.5 text-xs">
+        {!composing && (
+          <button
+            onClick={() => setComposing(true)}
+            className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-rose-500 to-rose-600 py-3.5 text-sm font-semibold text-white shadow-lg shadow-rose-500/25 active:scale-[0.98]"
+          >
+            <HandHeart className="size-4" />
+            {tx("Share a prayer request", "Magbahagi ng prayer request")}
+          </button>
+        )}
+
+        <div className="flex gap-2">
           {(
             [
               ["all", tx("All", "Lahat")],
@@ -111,8 +142,10 @@ export default function ChurchPrayerWallPage() {
               key={f}
               onClick={() => setFilter(f)}
               className={cn(
-                "flex-1 rounded-full px-3 py-1.5",
-                filter === f ? "bg-primary text-primary-foreground" : "text-muted-foreground"
+                "flex-1 rounded-full border px-3 py-1.5 text-xs font-medium",
+                filter === f
+                  ? "border-rose-600 bg-rose-600 text-white shadow-sm shadow-rose-500/30"
+                  : "border-border bg-card text-muted-foreground"
               )}
             >
               {label}
@@ -168,7 +201,7 @@ function Composer({
 
   return (
     <form
-      className="space-y-3 rounded-2xl border border-border/70 bg-card p-4"
+      className="space-y-3 rounded-2xl border border-rose-500/25 bg-gradient-to-br from-rose-500/10 to-card p-4 shadow-sm"
       onSubmit={(e) => {
         e.preventDefault();
         if (!text.trim()) return;
@@ -183,18 +216,23 @@ function Composer({
         placeholder={tx("What can your AG pray for?", "Ano ang maipapanalangin ng iyong AG?")}
         autoFocus
       />
-      <select
-        value={category}
-        onChange={(e) => setCategory(e.target.value as ChurchPrayerCategory)}
-        className="h-10 w-full rounded-lg border border-border bg-background px-2 text-sm"
-        aria-label={tx("Category", "Kategorya")}
-      >
+      <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label={tx("Category", "Kategorya")}>
         {CHURCH_PRAYER_CATEGORIES.map((c) => (
-          <option key={c.id} value={c.id}>
+          <button
+            key={c.id}
+            type="button"
+            role="radio"
+            aria-checked={category === c.id}
+            onClick={() => setCategory(c.id)}
+            className={cn(
+              "rounded-full border px-3 py-1.5 text-xs font-medium",
+              category === c.id ? "border-rose-600 bg-rose-600 text-white" : "border-border bg-background text-muted-foreground"
+            )}
+          >
             {c[lang]}
-          </option>
+          </button>
         ))}
-      </select>
+      </div>
       <label className="flex items-start gap-2.5 text-sm">
         <input
           type="checkbox"
@@ -233,7 +271,8 @@ function Composer({
         <Button type="button" variant="outline" className="flex-1" onClick={onCancel}>
           {tx("Cancel", "Kanselahin")}
         </Button>
-        <Button type="submit" className="flex-1" disabled={!text.trim()}>
+        <Button type="submit" className="flex-1 bg-rose-600 text-white hover:bg-rose-700" disabled={!text.trim()}>
+          <HandHeart />
           {tx("Share", "Ibahagi")}
         </Button>
       </div>
@@ -264,38 +303,62 @@ function PrayerCard({
 }) {
   const category = CHURCH_PRAYER_CATEGORIES.find((c) => c.id === p.category);
   const urgent = p.urgent && !p.answered;
+  const name = p.anonymous ? tx("Anonymous", "Anonymous") : (p.authorName ?? tx("Member", "Miyembro"));
   return (
     <div
       className={cn(
-        "space-y-3 rounded-2xl border bg-card p-4",
-        urgent ? "border-destructive/50 bg-destructive/5" : "border-border/70"
+        "relative space-y-3 overflow-hidden rounded-2xl border bg-card p-4 pl-5 shadow-sm",
+        urgent ? "border-destructive/50 bg-destructive/5" : p.answered ? "border-emerald-500/30" : "border-border/70"
       )}
     >
-      <div className="flex flex-wrap items-center gap-1.5 text-[0.6875rem]">
-        {urgent && (
-          <span className="inline-flex items-center gap-1 rounded-full bg-destructive px-2 py-0.5 font-semibold text-white">
-            <AlertTriangle className="size-3" /> {tx("Urgent", "Urgent")}
-          </span>
+      <span
+        aria-hidden
+        className={cn(
+          "absolute inset-y-0 left-0 w-1",
+          urgent ? "bg-destructive" : p.answered ? "bg-emerald-500" : "bg-gradient-to-b from-rose-400 to-rose-600"
         )}
-        {p.answered && (
-          <span className="inline-flex items-center gap-1 rounded-full bg-primary/15 px-2 py-0.5 font-semibold text-primary">
-            <CheckCircle2 className="size-3" /> {tx("Answered", "Sinagot")}
-          </span>
-        )}
-        <span className="rounded-full bg-muted px-2 py-0.5 text-muted-foreground">{category?.[lang]}</span>
+      />
+      <div className="flex items-center gap-2.5">
+        <span
+          aria-hidden
+          className="flex size-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-rose-500 to-[#1E3A5F] text-sm font-semibold text-white"
+        >
+          {p.anonymous ? "🙏" : name.trim().charAt(0).toUpperCase()}
+        </span>
+        <div className="min-w-0 flex-1">
+          <p className="truncate text-sm font-semibold">{name}</p>
+          <p className="text-[0.6875rem] text-muted-foreground">
+            {new Date(p.createdAt).toLocaleDateString(lang === "tl" ? "fil-PH" : "en-PH", { month: "short", day: "numeric" })}
+          </p>
+        </div>
+        <span className="rounded-full bg-rose-500/10 px-2 py-0.5 text-[0.6875rem] font-medium text-rose-700 dark:text-rose-300">
+          {category?.[lang]}
+        </span>
       </div>
-      <p className="whitespace-pre-wrap text-sm">{p.text}</p>
-      <p className="text-xs text-muted-foreground">
-        {p.anonymous ? tx("Anonymous", "Anonymous") : p.authorName} ·{" "}
-        {new Date(p.createdAt).toLocaleDateString(lang === "tl" ? "fil-PH" : "en-PH", { month: "short", day: "numeric" })}
-      </p>
+      {(urgent || p.answered) && (
+        <div className="flex flex-wrap items-center gap-1.5 text-[0.6875rem]">
+          {urgent && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-destructive px-2 py-0.5 font-semibold text-white">
+              <AlertTriangle className="size-3" /> {tx("Urgent", "Urgent")}
+            </span>
+          )}
+          {p.answered && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/15 px-2 py-0.5 font-semibold text-emerald-700 dark:text-emerald-300">
+              <CheckCircle2 className="size-3" /> {tx("Answered", "Sinagot")} ✨
+            </span>
+          )}
+        </div>
+      )}
+      <p className="whitespace-pre-wrap text-sm leading-relaxed">{p.text}</p>
       <div className="flex items-center gap-2">
         <button
           onClick={onPray}
           aria-pressed={prayed}
           className={cn(
-            "inline-flex min-h-9 items-center gap-1.5 rounded-full border px-3 text-xs font-medium",
-            prayed ? "border-primary bg-primary text-primary-foreground" : "border-border"
+            "inline-flex min-h-9 items-center gap-1.5 rounded-full border px-3.5 text-xs font-semibold transition-colors",
+            prayed
+              ? "border-rose-600 bg-gradient-to-r from-rose-500 to-rose-600 text-white shadow-sm shadow-rose-500/30"
+              : "border-rose-500/40 text-rose-700 dark:text-rose-300"
           )}
         >
           <HandHeart className="size-4" />

@@ -31,13 +31,18 @@ export default function DevotionGuidePage() {
     <div>
       <PageHeader
         title={tx("How to have a devotion", "Paano mag-devotion")}
-        subtitle={tx("Steps, SOAP and other tools", "Mga hakbang, SOAP, at iba pang paraan")}
         icon={BookOpenCheck}
         back
+        hero={{
+          from: "#b4651e",
+          to: "#1E3A5F",
+          kicker: tx("Steps, SOAP and other tools", "Mga hakbang, SOAP, at iba pang paraan"),
+          verse: tx("“In the morning, LORD, You hear my voice.” Psalm 5:3", "“Sa umaga, PANGINOON, naririnig Mo ang aking tinig.” Awit 5:3"),
+        }}
       />
 
       <div className="px-5">
-        <p className="text-sm leading-relaxed text-foreground/85">
+        <p className="rounded-2xl border border-amber-500/25 bg-gradient-to-br from-amber-500/15 to-card p-4 text-sm leading-relaxed text-foreground/85">
           {tx(
             "A devotion is daily time with God in His Word and in prayer. It isn't a duty to earn His love; it's meeting the One who already loves you, so you can know Him and become more like Jesus.",
             "Ang debosyon ay araw-araw na oras kasama ang Diyos sa Kanyang Salita at sa panalangin. Hindi ito tungkulin para makamit ang Kanyang pag-ibig; ito ay pakikipagtagpo sa Kanya na mahal ka na, upang makilala mo Siya at maging higit na katulad ni Hesus."
@@ -46,14 +51,17 @@ export default function DevotionGuidePage() {
       </div>
 
       <Section title={tx("Step by step", "Hakbang-hakbang")} className="mt-5">
-        <ol className="space-y-2.5">
+        <ol className="relative space-y-2.5">
+          <span aria-hidden className="absolute bottom-6 left-[1.85rem] top-6 w-px bg-gradient-to-b from-amber-400 to-[#1E3A5F]/40" />
           {DEVOTION_STEPS.map((s, i) => (
-            <li key={s.title.en} className="flex gap-3 rounded-2xl border border-border/70 bg-card p-4">
-              <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground">{i + 1}</span>
+            <li key={s.title.en} className="relative flex gap-3 rounded-2xl border border-border/70 bg-card p-4 shadow-sm">
+              <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-amber-600 text-xs font-bold text-white shadow-sm shadow-amber-500/40">
+                {i + 1}
+              </span>
               <div className="min-w-0">
                 <p className="text-sm font-semibold">{s.title[lang]}</p>
                 <p className="mt-1 text-sm leading-relaxed text-foreground/85">{s.body[lang]}</p>
-                <p className="mt-1.5 text-xs font-medium text-primary">{s.verse}</p>
+                <p className="mt-1.5 text-xs font-medium italic text-amber-700 dark:text-amber-300">{s.verse}</p>
               </div>
             </li>
           ))}
@@ -82,9 +90,11 @@ export default function DevotionGuidePage() {
       <Section title={tx("When it's hard", "Kapag mahirap")} className="mt-6 pb-8">
         <div className="space-y-2.5">
           {DEVOTION_TIPS.map((tip) => (
-            <div key={tip.q.en} className="rounded-2xl border border-border/70 bg-card p-4">
-              <p className="flex items-center gap-2 text-sm font-semibold">
-                <Lightbulb className="size-4 shrink-0 text-gold-foreground" />
+            <div key={tip.q.en} className="rounded-2xl border border-sky-500/25 bg-gradient-to-br from-sky-500/10 to-card p-4">
+              <p className="flex items-center gap-2.5 text-sm font-semibold">
+                <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-sky-600 text-white">
+                  <Lightbulb className="size-3.5" />
+                </span>
                 {tip.q[lang]}
               </p>
               <p className="mt-1 text-sm leading-relaxed text-foreground/85">{tip.a[lang]}</p>
@@ -115,9 +125,14 @@ function MethodCard({
   const { lang } = useLanguage();
   const [practice, setPractice] = useState(false);
   return (
-    <div className="rounded-2xl border border-border/70 bg-card">
+    <div
+      className={cn(
+        "rounded-2xl border shadow-sm transition-colors",
+        expanded ? "border-amber-500/40 bg-gradient-to-br from-amber-500/10 to-card" : "border-border/70 bg-card"
+      )}
+    >
       <button onClick={onToggle} className="flex w-full items-center gap-3 p-4 text-left" aria-expanded={expanded}>
-        <span className="flex h-9 min-w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 px-2 text-xs font-bold text-primary">
+        <span className="flex h-9 min-w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 px-2 text-xs font-bold tracking-wide text-white shadow-sm shadow-amber-500/30">
           {method.steps.map((s) => s.mark).join("")}
         </span>
         <span className="min-w-0 flex-1">
@@ -133,7 +148,7 @@ function MethodCard({
           <ul className="space-y-2">
             {method.steps.map((s) => (
               <li key={s.key} className="flex gap-2.5 text-sm">
-                <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">{s.mark}</span>
+                <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700 dark:text-amber-300">{s.mark}</span>
                 <span>
                   <span className="font-medium">{s.title[lang]}</span>
                   <span className="text-foreground/75"> — {s.prompt[lang]}</span>
@@ -142,8 +157,8 @@ function MethodCard({
             ))}
           </ul>
           {method.example && (
-            <div className="rounded-xl bg-primary/5 p-3">
-              <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+            <div className="rounded-xl border border-amber-500/20 bg-background/70 p-3">
+              <p className="text-xs font-semibold uppercase tracking-wide text-amber-700 dark:text-amber-300">
                 {tx("Example", "Halimbawa")} · {method.example.ref}
               </p>
               <div className="mt-1.5 space-y-1.5 text-sm leading-relaxed text-foreground/85">
@@ -156,7 +171,11 @@ function MethodCard({
           {practice && todayKey ? (
             <MethodJournal method={method} todayKey={todayKey} todayTitle={todayTitle} todayRef={todayRef} />
           ) : (
-            <Button className="w-full" onClick={() => setPractice(true)} disabled={!todayKey}>
+            <Button
+              className="h-11 w-full bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-md shadow-amber-500/25 hover:opacity-95"
+              onClick={() => setPractice(true)}
+              disabled={!todayKey}
+            >
               {tx("Try it today", "Subukan ngayon")}
             </Button>
           )}
@@ -180,7 +199,7 @@ function MethodJournal({ method, todayKey, todayTitle, todayRef }: { method: Dev
   const hasText = Object.values(shownSteps).some((v) => v.trim());
 
   return (
-    <div className="space-y-2.5 rounded-xl border border-primary/30 p-3">
+    <div className="space-y-2.5 rounded-xl border border-amber-500/30 bg-background/70 p-3">
       {entry?.method && !sameMethod && (
         <p className="text-xs text-muted-foreground">
           {tx("Saving replaces today's journal from another method.", "Papalitan ng pag-save ang journal ngayon mula sa ibang paraan.")}
@@ -213,7 +232,7 @@ function MethodJournal({ method, todayKey, todayTitle, todayRef }: { method: Dev
         </div>
       ))}
       <Button
-        className="w-full"
+        className={cn("w-full", saved ? "bg-emerald-600 text-white hover:bg-emerald-600" : "bg-gradient-to-r from-amber-500 to-amber-600 text-white hover:opacity-95")}
         disabled={!hasText}
         onClick={async () => {
           await update({ method: method.id, passage: method.usesPassage ? shownPassage.trim() : "", steps: shownSteps });

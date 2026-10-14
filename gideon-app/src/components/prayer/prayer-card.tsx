@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Check, RotateCcw, Trash2 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { useTx } from "@/lib/i18n";
 import type { PrayerRequest } from "@/types";
 
 export function PrayerCard({
@@ -15,6 +15,7 @@ export function PrayerCard({
   onToggleAnswered: () => void;
   onDelete: () => void;
 }) {
+  const tx = useTx();
   return (
     // Opacity only (no layout animation): measuring every card on each
     // update made long prayer lists stutter on phones.
@@ -24,54 +25,52 @@ export function PrayerCard({
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
       className={cn(
-        "rounded-2xl border border-border/70 bg-card p-4",
-        prayer.answered && "bg-secondary/40"
+        "relative overflow-hidden rounded-2xl border p-4 pl-5 shadow-sm",
+        prayer.answered
+          ? "border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 to-card"
+          : "border-border/70 bg-card"
       )}
     >
+      <span
+        aria-hidden
+        className={cn(
+          "absolute inset-y-0 left-0 w-1",
+          prayer.answered ? "bg-emerald-500" : "bg-gradient-to-b from-rose-400 to-rose-600"
+        )}
+      />
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           <div className="mb-1.5 flex items-center gap-2">
-            <Badge variant="secondary" className="text-[0.625rem]">
+            <span className="rounded-full bg-rose-500/10 px-2 py-0.5 text-[0.625rem] font-medium text-rose-700 dark:text-rose-300">
               {prayer.category}
-            </Badge>
+            </span>
             {prayer.answered && (
-              <Badge className="bg-gold/25 text-[0.625rem] text-gold-foreground">
-                Answered
-              </Badge>
+              <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[0.625rem] font-semibold text-emerald-700 dark:text-emerald-300">
+                {tx("Answered", "Nasagot")} ✨
+              </span>
             )}
           </div>
-          <p
-            className={cn(
-              "text-sm font-medium",
-              prayer.answered && "text-muted-foreground line-through"
-            )}
-          >
+          <p className={cn("text-sm font-medium", prayer.answered && "text-muted-foreground line-through")}>
             {prayer.title}
           </p>
-          {prayer.detail && (
-            <p className="mt-1 text-xs text-muted-foreground">{prayer.detail}</p>
-          )}
+          {prayer.detail && <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{prayer.detail}</p>}
         </div>
         <div className="flex shrink-0 flex-col gap-2">
           <button
             onClick={onToggleAnswered}
-            aria-label={prayer.answered ? "Mark unanswered" : "Mark answered"}
+            aria-label={prayer.answered ? tx("Mark unanswered", "Hindi pa nasasagot") : tx("Mark answered", "Markahang nasagot")}
             className={cn(
               "flex size-8 items-center justify-center rounded-full border",
               prayer.answered
                 ? "border-border text-muted-foreground"
-                : "border-primary/40 bg-primary/10 text-primary"
+                : "border-emerald-600 bg-gradient-to-br from-emerald-500 to-emerald-600 text-white shadow-sm shadow-emerald-500/30"
             )}
           >
-            {prayer.answered ? (
-              <RotateCcw className="size-3.5" />
-            ) : (
-              <Check className="size-3.5" />
-            )}
+            {prayer.answered ? <RotateCcw className="size-3.5" /> : <Check className="size-3.5" />}
           </button>
           <button
             onClick={onDelete}
-            aria-label="Delete prayer"
+            aria-label={tx("Delete prayer", "Burahin ang panalangin")}
             className="flex size-8 items-center justify-center rounded-full border border-border text-muted-foreground"
           >
             <Trash2 className="size-3.5" />

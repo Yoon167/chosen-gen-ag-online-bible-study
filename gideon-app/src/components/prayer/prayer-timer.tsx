@@ -149,18 +149,30 @@ export function PrayerTimer() {
     const circumference = 2 * Math.PI * r;
 
     return (
-      <section className="rounded-2xl border border-border/70 bg-card p-5">
+      <section className="rounded-2xl border border-orange-500/25 bg-gradient-to-br from-orange-500/10 via-rose-500/5 to-card p-5 shadow-sm">
         <div className="relative mx-auto size-52">
-          <svg viewBox="0 0 200 200" className="size-full -rotate-90" aria-hidden>
-            <circle cx="100" cy="100" r={r} fill="none" strokeWidth="6" className="stroke-muted" />
+          <div
+            aria-hidden
+            className="absolute inset-6 rounded-full"
+            style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.25), transparent)" }}
+          />
+          <svg viewBox="0 0 200 200" className="relative size-full -rotate-90" aria-hidden>
+            <defs>
+              <linearGradient id="prayer-ring" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stopColor="#f59e0b" />
+                <stop offset="1" stopColor="#e11d48" />
+              </linearGradient>
+            </defs>
+            <circle cx="100" cy="100" r={r} fill="none" strokeWidth="8" className="stroke-muted" />
             <circle
               cx="100"
               cy="100"
               r={r}
               fill="none"
-              strokeWidth="6"
+              strokeWidth="8"
               strokeLinecap="round"
-              className="stroke-primary transition-[stroke-dashoffset] duration-500"
+              stroke="url(#prayer-ring)"
+              className="transition-[stroke-dashoffset] duration-500"
               strokeDasharray={circumference}
               strokeDashoffset={circumference * (1 - elapsed / total)}
             />
@@ -176,8 +188,8 @@ export function PrayerTimer() {
         </div>
 
         {timer.guided && (
-          <div className="mt-4 rounded-xl bg-secondary/50 p-3.5 text-center">
-            <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+          <div className="mt-4 rounded-xl border border-orange-500/20 bg-background/70 p-3.5 text-center">
+            <p className="text-xs font-semibold uppercase tracking-wide text-orange-700 dark:text-orange-300">
               {step + 1}/4 · {ACTS_STEPS[step].title[lang]}
             </p>
             <p className="mt-1 text-sm">{ACTS_STEPS[step].prompt[lang]}</p>
@@ -243,13 +255,15 @@ export function PrayerTimer() {
   }
 
   return (
-    <section className="rounded-2xl border border-border/70 bg-card p-4">
-      <h2 className="flex items-center gap-2 font-heading text-lg font-semibold">
-        <Timer className="size-5 text-primary" />
+    <section className="rounded-2xl border border-orange-500/25 bg-gradient-to-br from-orange-500/10 via-rose-500/5 to-card p-4 shadow-sm">
+      <h2 className="flex items-center gap-2.5 font-heading text-lg font-semibold">
+        <span className="flex size-9 items-center justify-center rounded-full bg-gradient-to-br from-amber-500 to-rose-600 text-white shadow-sm shadow-rose-500/30">
+          <Timer className="size-4.5" />
+        </span>
         {tx("Prayer timer", "Prayer timer")}
       </h2>
       {finished !== null && (
-        <p className="mt-2 rounded-xl bg-primary/10 px-3 py-2 text-sm text-primary">
+        <p className="mt-2 rounded-xl bg-emerald-500/15 px-3 py-2 text-sm font-medium text-emerald-700 dark:text-emerald-300">
           {tx(`Amen! You prayed ${finished} minute${finished === 1 ? "" : "s"}.`, `Amen! Nanalangin ka nang ${finished} minuto.`)}
         </p>
       )}
@@ -261,7 +275,9 @@ export function PrayerTimer() {
             onClick={() => setMinutes(m)}
             className={cn(
               "rounded-xl border py-2.5 text-sm font-semibold",
-              minutes === m ? "border-primary bg-primary text-primary-foreground" : "border-border bg-background"
+              minutes === m
+                ? "border-orange-600 bg-gradient-to-br from-amber-500 to-orange-600 text-white shadow-sm shadow-orange-500/30"
+                : "border-border bg-background"
             )}
           >
             {m}
@@ -278,7 +294,10 @@ export function PrayerTimer() {
         </span>
         <Switch checked={guided} onCheckedChange={setGuided} />
       </label>
-      <Button className="mt-4 h-12 w-full" onClick={start}>
+      <Button
+        className="mt-4 h-12 w-full bg-gradient-to-r from-amber-500 via-orange-600 to-rose-600 text-white shadow-lg shadow-orange-500/25 hover:opacity-95"
+        onClick={start}
+      >
         <Play />
         {tx(`Start ${minutes} minutes`, `Simulan ang ${minutes} minuto`)}
       </Button>

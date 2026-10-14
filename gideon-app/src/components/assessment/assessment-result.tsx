@@ -35,7 +35,7 @@ function ScoreRing({ score }: { score: number }) {
         strokeLinecap="round"
         strokeDasharray={circumference}
         strokeDashoffset={circumference * (1 - score / 100)}
-        className="stroke-primary"
+        className="stroke-teal-600"
       />
     </svg>
   );
@@ -48,7 +48,7 @@ export function AssessmentResult({ result }: { result: Result }) {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center gap-4 rounded-2xl border border-border/70 bg-card p-4">
+      <div className="flex items-center gap-4 rounded-2xl border border-teal-500/30 bg-gradient-to-br from-teal-500/15 to-card p-4 shadow-sm">
         <div className="relative shrink-0">
           <ScoreRing score={result.score} />
           <span className="absolute inset-0 flex items-center justify-center font-heading text-2xl font-semibold">
@@ -62,7 +62,7 @@ export function AssessmentResult({ result }: { result: Result }) {
           <p className="font-heading text-lg font-semibold">{scoreLabel(result.score, tx)}</p>
           {result.strengths.length > 0 && (
             <p className="mt-1 text-xs text-muted-foreground">
-              <Sparkles className="mr-1 inline size-3.5 text-primary" />
+              <Sparkles className="mr-1 inline size-3.5 text-teal-600 dark:text-teal-400" />
               {tx("Strong in: ", "Malakas sa: ")}
               {result.strengths.map((id) => findArea(id).title[lang]).join(", ")}
             </p>
@@ -71,8 +71,8 @@ export function AssessmentResult({ result }: { result: Result }) {
       </div>
 
       {result.needsCare && (
-        <div className="flex gap-3 rounded-2xl border border-primary/30 bg-primary/5 p-4 text-sm">
-          <HeartHandshake className="mt-0.5 size-5 shrink-0 text-primary" />
+        <div className="flex gap-3 rounded-2xl border border-teal-500/30 bg-gradient-to-br from-teal-500/10 to-card p-4 text-sm">
+          <HeartHandshake className="mt-0.5 size-5 shrink-0 text-teal-600 dark:text-teal-400" />
           <p>
             {tx(
               "Some of what you're carrying is heavy, and you don't have to carry it alone. Consider talking with your pastor or a mature believer this week. Prayer for freedom is best done together with your pastor, not alone. If you ever feel unsafe or think about harming yourself, call the NCMH Crisis Hotline at 1553 right away.",
@@ -85,13 +85,13 @@ export function AssessmentResult({ result }: { result: Result }) {
       {result.prayerAreas.length > 0 && (
         <section className="space-y-3">
           <h3 className="flex items-center gap-2 text-sm font-semibold">
-            <HandHeart className="size-4 text-primary" />
+            <HandHeart className="size-4 text-teal-600 dark:text-teal-400" />
             {tx("Areas needing prayer", "Mga bahaging kailangang ipanalangin")}
           </h3>
           {result.prayerAreas.map((id) => {
             const area = findArea(id);
             return (
-              <div key={id} className="space-y-3 rounded-2xl border border-border/70 bg-card p-4">
+              <div key={id} className="space-y-3 rounded-2xl border border-border/70 bg-card p-4 shadow-sm">
                 <p className="font-medium">{area.title[lang]}</p>
                 <p className="text-sm italic text-muted-foreground">&ldquo;{area.prayer[lang]}&rdquo;</p>
                 <div className="flex flex-wrap gap-2">
@@ -100,7 +100,7 @@ export function AssessmentResult({ result }: { result: Result }) {
                       key={verseLabel(v)}
                       type="button"
                       onClick={() => setPassage(v)}
-                      className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary"
+                      className="inline-flex items-center gap-1 rounded-full border border-teal-500/30 bg-teal-500/10 px-3 py-1.5 text-xs font-semibold text-teal-800 dark:text-teal-200"
                     >
                       <BookOpen className="size-3.5" />
                       {verseLabel(v)}
@@ -113,7 +113,7 @@ export function AssessmentResult({ result }: { result: Result }) {
                 >
                   <GraduationCap className="size-3.5" />
                   {tx("Suggested lesson: ", "Iminumungkahing aralin: ")}
-                  <span className="font-medium text-primary underline underline-offset-2">
+                  <span className="font-medium text-teal-600 dark:text-teal-400 underline underline-offset-2">
                     {findLesson(area.lessonId)?.title[lang]}
                   </span>
                 </Link>
@@ -124,7 +124,7 @@ export function AssessmentResult({ result }: { result: Result }) {
       )}
 
       {result.areas.length > 0 && (
-        <section className="rounded-2xl border border-border/70 bg-card p-4">
+        <section className="rounded-2xl border border-border/70 bg-card p-4 shadow-sm">
           <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
             {tx("All areas", "Lahat ng bahagi")}
           </p>
@@ -135,9 +135,9 @@ export function AssessmentResult({ result }: { result: Result }) {
                   {findArea(a.id).title[lang]}
                 </span>
                 <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
-                  <div className="h-full rounded-full bg-primary" style={{ width: `${a.health}%` }} />
+                  <div className="h-full rounded-full bg-gradient-to-r from-teal-400 to-teal-600" style={{ width: `${a.health}%` }} />
                 </div>
-                <span className="w-7 shrink-0 text-right text-xs font-semibold text-primary">
+                <span className="w-7 shrink-0 text-right text-xs font-semibold text-teal-600 dark:text-teal-400">
                   {a.health}
                 </span>
               </div>

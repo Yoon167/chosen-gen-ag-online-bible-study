@@ -15,11 +15,22 @@ export interface HeroLook {
   verse?: string;
 }
 
+/** A number in a hero header's stat row. */
+export function HeroStat({ label, value }: { label: string; value: number | string }) {
+  return (
+    <div className="rounded-2xl border border-white/15 bg-white/10 py-2.5 text-center backdrop-blur">
+      <p className="font-heading text-xl font-semibold text-[#F4DC8A]">{value}</p>
+      <p className="truncate px-1 text-[0.625rem] text-white/70">{label}</p>
+    </div>
+  );
+}
+
 export function PageHeader({
   title,
   subtitle,
   icon: Icon,
   back = false,
+  onBack,
   action,
   hero,
   children,
@@ -28,6 +39,8 @@ export function PageHeader({
   subtitle?: string;
   icon?: LucideIcon;
   back?: boolean;
+  /** What the back button does, instead of going back in history. */
+  onBack?: () => void;
   action?: React.ReactNode;
   /** Draws the header as a colored hero with a gold glow and a verse. */
   hero?: HeroLook;
@@ -50,7 +63,7 @@ export function PageHeader({
         <div className="relative flex items-center gap-3">
           {back && (
             <button
-              onClick={() => router.back()}
+              onClick={onBack ?? (() => router.back())}
               aria-label="Go back"
               className="flex size-9 shrink-0 items-center justify-center rounded-full border border-white/25 bg-white/10 backdrop-blur"
             >
@@ -79,7 +92,7 @@ export function PageHeader({
     <header className="flex items-center gap-3 px-5 pb-5 pt-6">
       {back && (
         <button
-          onClick={() => router.back()}
+          onClick={onBack ?? (() => router.back())}
           aria-label="Go back"
           className="flex size-9 shrink-0 items-center justify-center rounded-full border border-border bg-card"
         >

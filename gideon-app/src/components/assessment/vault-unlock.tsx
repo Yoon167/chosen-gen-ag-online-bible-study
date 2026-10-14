@@ -76,7 +76,7 @@ export function VaultUnlock({
           autoComplete="new-password"
         />
         {error && <p className="text-xs text-destructive">{error}</p>}
-        <Button type="submit" className="w-full" disabled={!code.trim() || newPin.length < MIN_PIN_LENGTH || busy}>
+        <Button type="submit" className="h-11 w-full bg-gradient-to-r from-teal-600 to-[#1E3A5F] text-white hover:opacity-95" disabled={!code.trim() || newPin.length < MIN_PIN_LENGTH || busy}>
           {busy ? tx("Opening…", "Binubuksan…") : tx("Reset PIN and open", "I-reset ang PIN at buksan")}
         </Button>
         <button
@@ -103,7 +103,7 @@ export function VaultUnlock({
       }}
     >
       <div className="flex flex-col items-center gap-2 py-4 text-center">
-        <span className="flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+        <span className="flex size-12 items-center justify-center rounded-full bg-gradient-to-br from-teal-500 to-[#1E3A5F] text-white shadow-md shadow-teal-600/30">
           <Lock className="size-5" />
         </span>
         <p className="text-sm text-muted-foreground">
@@ -119,7 +119,7 @@ export function VaultUnlock({
         autoFocus
       />
       {error && <p className="text-xs text-destructive">{error}</p>}
-      <Button type="submit" className="w-full" disabled={!pin || busy}>
+      <Button type="submit" className="h-11 w-full bg-gradient-to-r from-teal-600 to-[#1E3A5F] text-white hover:opacity-95" disabled={!pin || busy}>
         {busy ? tx("Opening…", "Binubuksan…") : tx("Unlock", "Buksan")}
       </Button>
       <button

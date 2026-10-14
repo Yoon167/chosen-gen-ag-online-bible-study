@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Flame, HeartPulse, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Progress } from "@/components/ui/progress";
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useUserCollection } from "@/lib/hooks/use-collection";
 import {
@@ -50,30 +49,35 @@ export function FastingTracker() {
 
   return (
     <section className="space-y-3">
-      <h2 className="flex items-center gap-2 font-heading text-lg font-semibold">
-        <Flame className="size-5 text-primary" />
+      <h2 className="flex items-center gap-2.5 font-heading text-lg font-semibold">
+        <span className="flex size-9 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-red-600 text-white shadow-sm shadow-orange-500/30">
+          <Flame className="size-4.5" />
+        </span>
         {tx("Fasting", "Pag-aayuno")}
       </h2>
 
       {active ? (
         <ActiveFast fast={active} now={now} onEnd={(completed) => fasts.update(active.id, { endedAt: Date.now(), completed })} />
       ) : (
-        <div className="rounded-2xl border border-border/70 bg-card p-4">
-          <p className="text-sm text-foreground/80">
+        <div className="rounded-2xl border border-orange-500/25 bg-gradient-to-br from-orange-500/10 to-card p-4 shadow-sm">
+          <p className="font-heading text-sm italic leading-relaxed text-foreground/85">
             {tx(
               "“When you fast… your Father, who sees what is done in secret, will reward you.” (Matthew 6:17-18)",
               "“Kapag nag-aayuno ka… ang iyong Ama na nakakakita sa lihim ang gagantimpala sa iyo.” (Mateo 6:17-18)"
             )}
           </p>
-          <Button className="mt-3 h-11 w-full" onClick={() => setStarting(true)}>
+          <Button
+            className="mt-3 h-11 w-full bg-gradient-to-r from-orange-500 to-red-600 text-white shadow-md shadow-orange-500/25 hover:opacity-95"
+            onClick={() => setStarting(true)}
+          >
             <Flame />
             {tx("Start a fast", "Magsimula ng ayuno")}
           </Button>
         </div>
       )}
 
-      <p className="flex gap-2 rounded-xl bg-muted/60 p-3 text-xs text-muted-foreground">
-        <HeartPulse className="size-4 shrink-0" />
+      <p className="flex gap-2 rounded-xl border border-sky-500/20 bg-sky-500/10 p-3 text-xs text-foreground/75">
+        <HeartPulse className="size-4 shrink-0 text-sky-600" />
         {tx(
           "If you are pregnant, diabetic, take medicine, or have a health condition, talk to a doctor first and choose a partial or media fast. Drink plenty of water.",
           "Kung buntis ka, may diabetes, umiinom ng gamot, o may kondisyon sa kalusugan, kumonsulta muna sa doktor at pumili ng partial o media fast. Uminom ng maraming tubig."
@@ -82,15 +86,30 @@ export function FastingTracker() {
 
       {past.length > 0 && (
         <div className="space-y-2">
-          <p className="text-xs text-muted-foreground">
-            {tx(`${past.length} fasts · about ${totalHours} hours seeking God`, `${past.length} na ayuno · mga ${totalHours} oras sa paghahanap sa Diyos`)}
-          </p>
+          <div className="grid grid-cols-2 gap-2">
+            <div className="rounded-2xl border border-orange-500/25 bg-gradient-to-br from-orange-500/10 to-card p-3 text-center">
+              <p className="font-heading text-xl font-semibold text-orange-700 dark:text-orange-300">{past.length}</p>
+              <p className="text-[0.6875rem] text-muted-foreground">{tx("Fasts", "Ayuno")}</p>
+            </div>
+            <div className="rounded-2xl border border-orange-500/25 bg-gradient-to-br from-orange-500/10 to-card p-3 text-center">
+              <p className="font-heading text-xl font-semibold text-orange-700 dark:text-orange-300">{totalHours}</p>
+              <p className="text-[0.6875rem] text-muted-foreground">{tx("Hours seeking God", "Oras sa paghahanap sa Diyos")}</p>
+            </div>
+          </div>
           {past.map((f) => (
-            <div key={f.id} className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-3.5">
+            <div key={f.id} className="flex items-center gap-3 rounded-2xl border border-border/70 bg-card p-3.5 shadow-sm">
+              <span
+                className={cn(
+                  "flex size-9 shrink-0 items-center justify-center rounded-full text-white",
+                  f.completed ? "bg-gradient-to-br from-orange-500 to-red-600" : "bg-muted-foreground/40"
+                )}
+              >
+                <Flame className="size-4" />
+              </span>
               <div className="min-w-0 flex-1">
                 <p className="text-sm font-medium">
                   {fastTypeLabel(f.type)[lang]} · {durationLabel(f.endedAt! - f.startedAt)}
-                  {f.completed && <span className="text-primary"> ✓</span>}
+                  {f.completed && <span className="text-emerald-600"> ✓</span>}
                 </p>
                 <p className="truncate text-xs text-muted-foreground">
                   {date(f.startedAt)}
@@ -136,24 +155,37 @@ function ActiveFast({ fast, now, onEnd }: { fast: Fast; now: number; onEnd: (com
   });
 
   return (
-    <div className="rounded-2xl border border-primary/40 bg-card p-4">
-      <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+    <div className="relative overflow-hidden rounded-2xl p-4 text-white shadow-lg shadow-orange-500/20" style={{ background: "linear-gradient(150deg, #b4471a, #1E3A5F)" }}>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-10 -top-12 size-48 rounded-full"
+        style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.5), transparent)" }}
+      />
+      <Flame aria-hidden className="pointer-events-none absolute -bottom-4 -right-2 size-28 text-white/[0.08]" strokeWidth={1} />
+      <p className="relative text-xs font-semibold uppercase tracking-[0.2em] text-[#F4DC8A]">
         {fastTypeLabel(fast.type)[lang]} · {hoursLabel(fast.plannedHours, lang)}
       </p>
-      <p className="mt-1 font-heading text-3xl font-semibold tabular-nums">{durationLabel(elapsed)}</p>
-      <Progress className="mt-2" value={Math.min(100, (elapsed / planned) * 100)} />
-      <p className="mt-1.5 text-xs text-muted-foreground">
+      <p className="relative mt-1 font-heading text-4xl font-semibold tabular-nums">{durationLabel(elapsed)}</p>
+      <div className="relative mt-2 h-2 overflow-hidden rounded-full bg-white/15">
+        <div
+          className="h-2 rounded-full bg-gradient-to-r from-[#F4DC8A] to-[#D4AF37]"
+          style={{ width: `${Math.min(100, (elapsed / planned) * 100)}%` }}
+        />
+      </div>
+      <p className="relative mt-1.5 text-xs text-white/75">
         {done ? tx("You reached your goal. Well done!", "Naabot mo ang layunin. Magaling!") : tx(`Until ${endsAt}`, `Hanggang ${endsAt}`)}
       </p>
       {fast.purpose && (
-        <p className="mt-3 rounded-xl bg-secondary/50 p-3 text-sm">
-          <span className="block text-xs text-muted-foreground">{tx("Praying for", "Ipinapanalangin")}</span>
+        <p className="relative mt-3 rounded-xl border border-white/15 bg-white/10 p-3 text-sm backdrop-blur">
+          <span className="block text-xs text-white/70">{tx("Praying for", "Ipinapanalangin")}</span>
           {fast.purpose}
         </p>
       )}
       <Button
-        className="mt-3 h-11 w-full"
-        variant={done ? "default" : "outline"}
+        className={cn(
+          "relative mt-3 h-11 w-full",
+          done ? "bg-[#D4AF37] text-[#13253d] hover:bg-[#D4AF37]/90" : "border border-white/30 bg-white/10 text-white hover:bg-white/15"
+        )}
         onClick={() => {
           if (done || confirm(tx("End this fast early? That's okay; God sees your heart.", "Tapusin na ang ayuno nang maaga? Ayos lang iyan; nakikita ng Diyos ang iyong puso."))) onEnd(done);
         }}
@@ -192,7 +224,7 @@ function StartFastDialog({
                 onClick={() => setType(f.value)}
                 className={cn(
                   "block w-full rounded-xl border px-3 py-2 text-left",
-                  type === f.value ? "border-primary bg-primary/10" : "border-border"
+                  type === f.value ? "border-orange-500 bg-orange-500/10 ring-1 ring-orange-500/40" : "border-border"
                 )}
               >
                 <span className="block text-sm font-medium">{f.label[lang]}</span>
@@ -210,7 +242,7 @@ function StartFastDialog({
                   onClick={() => setHours(h)}
                   className={cn(
                     "rounded-full border px-3 py-1 text-xs",
-                    hours === h ? "border-primary bg-primary text-primary-foreground" : "border-border"
+                    hours === h ? "border-orange-600 bg-orange-600 text-white" : "border-border"
                   )}
                 >
                   {hoursLabel(h, lang)}

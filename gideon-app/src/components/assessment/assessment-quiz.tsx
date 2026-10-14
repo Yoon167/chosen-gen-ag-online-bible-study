@@ -79,7 +79,7 @@ export function AssessmentQuiz({
                   className={cn(
                     "min-h-11 rounded-full border px-3.5 text-xs transition-colors",
                     selected
-                      ? "border-primary bg-primary text-primary-foreground"
+                      ? "border-teal-600 bg-gradient-to-r from-teal-600 to-[#1E3A5F] text-white shadow-sm shadow-teal-600/30"
                       : "border-border bg-card hover:bg-muted"
                   )}
                 >
@@ -110,7 +110,7 @@ export function AssessmentQuiz({
           {step === 0 ? tx("Cancel", "Kanselahin") : tx("Back", "Bumalik")}
         </Button>
         <Button
-          className="flex-1"
+          className="flex-1 bg-gradient-to-r from-teal-600 to-[#1E3A5F] text-white hover:opacity-95"
           disabled={busy}
           onClick={() => (isLast ? finish() : setStep(step + 1))}
         >

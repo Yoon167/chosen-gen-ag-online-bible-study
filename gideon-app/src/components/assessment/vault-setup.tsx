@@ -66,10 +66,10 @@ export function VaultSetup({
             "Isang pribado at tapat na pagsusuri sa paglakad mo kasama ang Diyos. Makikita mo ang iyong growth score, mga bahaging ipapanalangin, mga talata sa Bibliya, at mga aralin para sa susunod mong hakbang."
           )}
         </p>
-        <ul className="space-y-3 rounded-2xl border border-border/70 bg-card p-4">
+        <ul className="space-y-3 rounded-2xl border border-teal-500/25 bg-gradient-to-br from-teal-500/10 to-card p-4">
           {promises.map(({ icon: Icon, text }) => (
             <li key={text} className="flex gap-3 text-sm">
-              <Icon className="mt-0.5 size-4.5 shrink-0 text-primary" />
+              <Icon className="mt-0.5 size-4.5 shrink-0 text-teal-600 dark:text-teal-400" />
               <span>{text}</span>
             </li>
           ))}
@@ -79,14 +79,14 @@ export function VaultSetup({
             type="checkbox"
             checked={understood}
             onChange={(e) => setUnderstood(e.target.checked)}
-            className="mt-0.5 size-4 shrink-0 accent-[var(--primary)]"
+            className="mt-0.5 size-4 shrink-0 accent-teal-600"
           />
           {tx(
             "I understand and agree to keep my answers in this private, encrypted vault.",
             "Naiintindihan ko at pumapayag akong itago ang aking mga sagot sa pribado at naka-encrypt na vault na ito."
           )}
         </label>
-        <Button className="w-full" disabled={!understood} onClick={() => setStep("pin")}>
+        <Button className="h-11 w-full bg-gradient-to-r from-teal-600 to-[#1E3A5F] text-white hover:opacity-95" disabled={!understood} onClick={() => setStep("pin")}>
           {tx("Set up my private vault", "I-set up ang aking pribadong vault")}
         </Button>
       </div>
@@ -144,7 +144,7 @@ export function VaultSetup({
           <p className="text-xs text-destructive">{tx("PINs don't match.", "Hindi magkapareho ang PIN.")}</p>
         )}
         {error && <p className="text-xs text-destructive">{error}</p>}
-        <Button type="submit" className="w-full" disabled={tooShort || pin !== confirmPin || busy}>
+        <Button type="submit" className="h-11 w-full bg-gradient-to-r from-teal-600 to-[#1E3A5F] text-white hover:opacity-95" disabled={tooShort || pin !== confirmPin || busy}>
           {busy ? tx("Creating vault…", "Ginagawa ang vault…") : tx("Continue", "Magpatuloy")}
         </Button>
       </form>
@@ -159,7 +159,7 @@ export function VaultSetup({
           "Ito ang iyong recovery code. Kapag nakalimutan mo ang PIN mo, ito lang ang paraan para mabuksan ulit ang vault mo. Isulat ito at itago sa ligtas na lugar. Hindi na ito ipapakita ulit."
         )}
       </p>
-      <div className="rounded-2xl border-2 border-dashed border-primary/40 bg-card p-4 text-center">
+      <div className="rounded-2xl border-2 border-dashed border-teal-500/50 bg-gradient-to-br from-teal-500/10 to-card p-4 text-center">
         <p className="select-all break-all font-mono text-lg font-semibold tracking-wider">
           {recoveryCode}
         </p>
@@ -182,11 +182,11 @@ export function VaultSetup({
           type="checkbox"
           checked={saved}
           onChange={(e) => setSaved(e.target.checked)}
-          className="mt-0.5 size-4 accent-[var(--primary)]"
+          className="mt-0.5 size-4 accent-teal-600"
         />
         {tx("I wrote down my recovery code.", "Naisulat ko na ang aking recovery code.")}
       </label>
-      <Button className="w-full" disabled={!saved} onClick={onDone}>
+      <Button className="h-11 w-full bg-gradient-to-r from-teal-600 to-[#1E3A5F] text-white hover:opacity-95" disabled={!saved} onClick={onDone}>
         {tx("Open my vault", "Buksan ang aking vault")}
       </Button>
     </div>
