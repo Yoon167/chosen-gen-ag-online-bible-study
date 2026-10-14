@@ -48,7 +48,7 @@ export default function GrowPage() {
 
       <div className="space-y-6 px-5 pt-5">
         {/* The two main paths */}
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-3" data-tour="grow-paths">
           <Feature
             href="/journey"
             icon={Compass}

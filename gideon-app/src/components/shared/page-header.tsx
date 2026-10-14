@@ -33,6 +33,7 @@ export function PageHeader({
   onBack,
   action,
   hero,
+  tour,
   children,
 }: {
   title: string;
@@ -46,12 +47,15 @@ export function PageHeader({
   hero?: HeroLook;
   /** Extra content inside the hero (e.g. a stat row). */
   children?: React.ReactNode;
+  /** Lets the App Tour spotlight this header (data-tour). */
+  tour?: string;
 }) {
   const router = useRouter();
 
   if (hero) {
     return (
       <header
+        data-tour={tour}
         className="relative mb-5 overflow-hidden px-5 pb-6 pt-6 text-white"
         style={{ background: `linear-gradient(150deg, ${hero.from}, ${hero.to})` }}
       >
@@ -89,7 +93,7 @@ export function PageHeader({
   }
 
   return (
-    <header className="flex items-center gap-3 px-5 pb-5 pt-6">
+    <header data-tour={tour} className="flex items-center gap-3 px-5 pb-5 pt-6">
       {back && (
         <button
           onClick={onBack ?? (() => router.back())}

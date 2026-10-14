@@ -587,3 +587,55 @@ html[data-text-size="xl"] {
 @media (prefers-reduced-motion: reduce) {
   .rite-flame, .rite-ember, .rite-smoke, .rite-rays { animation: none; }
 }
+
+/* App tour (components/tour/tour-provider.tsx): cards slide in the way you
+   move, the spotlight glides between stops and pulses on its target. */
+@keyframes tour-in-next {
+  from { opacity: 0; transform: translateX(40px) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes tour-in-prev {
+  from { opacity: 0; transform: translateX(-40px) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes tour-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes tour-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(-5deg); }
+}
+@keyframes tour-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(252, 211, 77, 0.6); }
+  70% { box-shadow: 0 0 0 16px rgba(252, 211, 77, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(252, 211, 77, 0); }
+}
+@keyframes tour-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes tour-nudge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes tour-nudge-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+.tour-in-next { animation: tour-in-next 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.tour-in-prev { animation: tour-in-prev 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.tour-float { animation: tour-float 2.8s ease-in-out infinite; }
+.tour-pulse { animation: tour-pulse 1.8s ease-out infinite; }
+.tour-spin { animation: tour-spin 24s linear infinite; }
+.tour-nudge { animation: tour-nudge 1.4s ease-in-out infinite; }
+.tour-nudge-down { animation: tour-nudge-down 1.4s ease-in-out infinite; }
+.tour-glide {
+  transition-property: top, left, width, height, opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .tour-in-next, .tour-in-prev { animation: tour-fade 0.25s ease-out both; }
+  .tour-float, .tour-pulse, .tour-spin, .tour-nudge, .tour-nudge-down { animation: none; }
+  .tour-glide { transition-property: opacity; }
+}

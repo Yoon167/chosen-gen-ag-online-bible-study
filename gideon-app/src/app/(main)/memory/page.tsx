@@ -37,6 +37,7 @@ export default function MemoryPage() {
       <PageHeader
         title={tx("Memory Verses", "Pagsasaulo ng Talata")}
         icon={Brain}
+        tour="memory-hero"
         hero={{
           from: "#3b3a9e",
           to: "#1E3A5F",

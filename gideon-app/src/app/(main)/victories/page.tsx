@@ -140,6 +140,7 @@ export default function VictoriesPage() {
         title={tx("What God Has Done", "Ginawa ng Diyos")}
         icon={Trophy}
         back
+        tour="victories-hero"
         hero={{
           from: "#a8740f",
           to: "#1E3A5F",

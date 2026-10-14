@@ -68,6 +68,7 @@ export default function TeachingPage() {
       <PageHeader
         title={t("page.teaching")}
         icon={GraduationCap}
+        tour="teaching-hero"
         hero={{
           from: "#16614a",
           to: "#1E3A5F",

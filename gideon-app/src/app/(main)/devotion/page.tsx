@@ -70,6 +70,7 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
       <PageHeader
         title={t("devotion.title")}
         icon={Sun}
+        tour="devotion-hero"
         action={<LanguageToggle className="shrink-0 bg-white/90 text-foreground" />}
         hero={{
           from: "#b45309",

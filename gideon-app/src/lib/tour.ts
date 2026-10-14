@@ -1,32 +1,53 @@
 /**
- * The App Tour: stops across the real screens. Each stop opens its page
- * and spotlights the element marked with data-tour="<target>"; when that
- * element isn't on screen (e.g. not in an AG yet) the card simply shows in
- * the middle.
+ * The App Tour: stops across the real screens, in five chapters. Each stop
+ * opens its page and spotlights the element marked with data-tour="<target>";
+ * when that element isn't on screen (e.g. not in an AG yet) the card simply
+ * shows in the middle.
  */
 
 import {
   BellRing,
   BookOpenText,
+  Brain,
+  CalendarCheck2,
+  Church,
+  Compass,
+  Flame,
   Gamepad2,
   GraduationCap,
-  Radio,
-  Church,
   HandHeart,
+  Home,
   LayoutDashboard,
   LifeBuoy,
   PartyPopper,
+  Plus,
+  Radio,
   ShieldCheck,
-  ShieldHalf,
   Sparkles,
+  Sprout,
+  Sun,
+  Trophy,
   UserRound,
   type LucideIcon,
 } from "lucide-react";
 
 type Text = { en: string; tl: string };
 
+export type TourChapterId = "start" | "home" | "bible" | "grow" | "ag" | "profile";
+
+/** Each chapter has the color of its tab in the bottom bar. */
+export const TOUR_CHAPTERS: { id: TourChapterId; icon: LucideIcon; title: Text; from: string; to: string }[] = [
+  { id: "start", icon: Sparkles, title: { en: "Welcome", tl: "Simula" }, from: "#b8860b", to: "#1E3A5F" },
+  { id: "home", icon: Home, title: { en: "Home", tl: "Home" }, from: "#2b4f7e", to: "#0f2140" },
+  { id: "bible", icon: BookOpenText, title: { en: "Bible", tl: "Bibliya" }, from: "#0369a1", to: "#1E3A5F" },
+  { id: "grow", icon: Sprout, title: { en: "Grow", tl: "Lumago" }, from: "#6d28d9", to: "#1E3A5F" },
+  { id: "ag", icon: Church, title: { en: "My AG", tl: "Aking AG" }, from: "#047857", to: "#1E3A5F" },
+  { id: "profile", icon: UserRound, title: { en: "Profile", tl: "Profile" }, from: "#a16207", to: "#1E3A5F" },
+];
+
 export interface TourStep {
   id: string;
+  chapter: TourChapterId;
   /** Page to open (may include a query string). */
   href: string;
   /** data-tour value to spotlight, or null for a centered card. */
@@ -36,35 +57,54 @@ export interface TourStep {
   emoji: string;
   title: Text;
   body: Text;
+  /** A larger picture for the first and last stops. */
+  visual?: "logo" | "celebrate";
 }
 
 export const TOUR_STEPS: TourStep[] = [
   {
     id: "welcome",
+    chapter: "start",
     href: "/",
     target: null,
     icon: Sparkles,
     emoji: "👋",
+    visual: "logo",
     title: { en: "Welcome to Anointed Academy", tl: "Maligayang pagdating sa Anointed Academy" },
     body: {
-      en: "Your companion in your walk with Christ. Let's take a quick look around.",
-      tl: "Ang iyong kasama sa paglakad kasama si Cristo. Silipin natin sandali ang app.",
+      en: "Your companion in your walk with Christ. Let's take a quick look around: swipe or tap Next.",
+      tl: "Ang iyong kasama sa paglakad kasama si Cristo. Silipin natin sandali ang app: mag-swipe o pindutin ang Susunod.",
     },
   },
   {
     id: "dashboard",
+    chapter: "home",
     href: "/",
     target: "home-progress",
     icon: LayoutDashboard,
     emoji: "🏠",
-    title: { en: "Dashboard", tl: "Dashboard" },
+    title: { en: "Your dashboard", tl: "Ang iyong dashboard" },
     body: {
       en: "Track your spiritual growth: your next Journey lesson, reading and prayer streaks, memory verses and AG news, all on Home.",
       tl: "Subaybayan ang iyong espirituwal na paglago: ang susunod na aralin sa Journey, reading at prayer streak, mga isinasaulong talata at balita ng AG, lahat sa Home.",
     },
   },
   {
+    id: "quick-add",
+    chapter: "home",
+    href: "/",
+    target: "quick-add",
+    icon: Plus,
+    emoji: "➕",
+    title: { en: "Quick add", tl: "Mabilisang dagdag" },
+    body: {
+      en: "From any page, tap + to write down a prayer, a note or a testimony the moment it comes.",
+      tl: "Mula sa kahit anong pahina, pindutin ang + para isulat agad ang panalangin, tala o patotoo.",
+    },
+  },
+  {
     id: "bible",
+    chapter: "bible",
     href: "/bible",
     target: "bible-search",
     icon: BookOpenText,
@@ -76,19 +116,86 @@ export const TOUR_STEPS: TourStep[] = [
     },
   },
   {
-    id: "courses",
-    href: "/courses",
-    target: null,
-    icon: GraduationCap,
-    emoji: "🎓",
-    title: { en: "Spirit-led Courses", tl: "Spirit-led na Courses" },
+    id: "plans",
+    chapter: "bible",
+    href: "/bible/plans",
+    target: "plans-hero",
+    icon: CalendarCheck2,
+    emoji: "🗓️",
+    title: { en: "Reading plans", tl: "Reading plans" },
     body: {
-      en: "11 courses and a 12-level Journey. Every lesson opens with today's revelation, then the main truth, a Kingdom twist, life connection, heart change, action steps and prayer. Your AG leader unlocks each course.",
-      tl: "11 na course at 12-level na Journey. Bawat aralin ay nagsisimula sa pahayag ngayong araw, saka ang pangunahing katotohanan, Kingdom twist, ugnayan sa buhay, pagbabago ng puso, mga hakbang at panalangin. Ina-unlock ng AG leader ang bawat course.",
+      en: "Read the whole Bible step by step: pick a plan, set it as active, and check off each day.",
+      tl: "Basahin ang buong Bibliya nang paunti-unti: pumili ng plan, gawin itong aktibo, at markahan ang bawat araw.",
+    },
+  },
+  {
+    id: "grow",
+    chapter: "grow",
+    href: "/grow",
+    target: "grow-paths",
+    icon: Compass,
+    emoji: "🌱",
+    title: { en: "Journey and Courses", tl: "Journey at Courses" },
+    body: {
+      en: "A 12-level Discipleship Journey and 11 Spirit-led courses. Every lesson opens with today's revelation, then the main truth, life connection, action steps and prayer. Your AG leader unlocks each course.",
+      tl: "12-level na Discipleship Journey at 11 Spirit-led na course. Bawat aralin ay nagsisimula sa pahayag ngayong araw, saka ang pangunahing katotohanan, ugnayan sa buhay, mga hakbang at panalangin. Ina-unlock ng AG leader ang bawat course.",
+    },
+  },
+  {
+    id: "devotion",
+    chapter: "grow",
+    href: "/devotion",
+    target: "devotion-hero",
+    icon: Sun,
+    emoji: "☀️",
+    title: { en: "Daily devotion", tl: "Araw-araw na debosyon" },
+    body: {
+      en: "Your quiet time with God each morning: today's passage, a reflection and a prayer. New to devotions? “How to have a devotion” teaches SOAP, HEAR and ACTS.",
+      tl: "Ang quiet time mo kasama ang Diyos tuwing umaga: talata ngayong araw, pagninilay at panalangin. Bago sa debosyon? Itinuturo ng “Paano mag-devotion” ang SOAP, HEAR at ACTS.",
+    },
+  },
+  {
+    id: "prayer",
+    chapter: "grow",
+    href: "/prayer",
+    target: "prayer-journal",
+    icon: HandHeart,
+    emoji: "🙏",
+    title: { en: "Prayer Journal", tl: "Prayer Journal" },
+    body: {
+      en: "Record prayers, victories and testimonies. Mark prayers answered and watch your list of God's faithfulness grow.",
+      tl: "Itala ang mga panalangin, tagumpay at patotoo. Markahan ang mga sinagot na panalangin at panoorin ang paglago ng listahan ng katapatan ng Diyos.",
+    },
+  },
+  {
+    id: "fasting",
+    chapter: "grow",
+    href: "/fasting",
+    target: "fasting-hero",
+    icon: Flame,
+    emoji: "🔥",
+    title: { en: "Prayer, fasting and Oikos", tl: "Panalangin, ayuno at Oikos" },
+    body: {
+      en: "Pray with a timer guided by ACTS, keep a fast with purpose, and lift up the people in your Oikos by name every day.",
+      tl: "Manalangin gamit ang timer na may gabay ng ACTS, mag-ayuno nang may layunin, at ipanalangin araw-araw sa pangalan ang mga tao sa iyong Oikos.",
+    },
+  },
+  {
+    id: "memory",
+    chapter: "grow",
+    href: "/memory",
+    target: "memory-hero",
+    icon: Brain,
+    emoji: "🧠",
+    title: { en: "Memory verses", tl: "Pagsasaulo ng talata" },
+    body: {
+      en: "Hide God's Word in your heart. Practice a verse for a few minutes, and the app reminds you when to review it until it's memorized.",
+      tl: "Itago ang Salita ng Diyos sa puso. Sanayin ang isang talata nang ilang minuto, at ipapaalala ng app kung kailan ito ire-review hanggang makabisado mo.",
     },
   },
   {
     id: "games",
+    chapter: "grow",
     href: "/quiz",
     target: "games-hub",
     icon: Gamepad2,
@@ -100,67 +207,60 @@ export const TOUR_STEPS: TourStep[] = [
     },
   },
   {
-    id: "prayer",
-    href: "/prayer",
-    target: "prayer-journal",
-    icon: HandHeart,
-    emoji: "🙏",
-    title: { en: "Prayer Journal", tl: "Prayer Journal" },
-    body: {
-      en: "Record prayers, victories and testimonies. Mark prayers answered, pray with the prayer timer, and lift up the people in your Oikos.",
-      tl: "Itala ang mga panalangin, tagumpay at patotoo. Markahan ang mga sinagot na panalangin, manalangin gamit ang prayer timer, at ipanalangin ang mga tao sa iyong Oikos.",
-    },
-  },
-  {
     id: "assessment",
+    chapter: "grow",
     href: "/journey",
     target: "journey-assessment",
     icon: ShieldCheck,
     emoji: "🛡️",
     title: { en: "Spiritual Assessment and Gifts", tl: "Spiritual Assessment at Gifts" },
     body: {
-      en: "24 areas of your walk with God (prayer, the Word, peace, purity, money, witness and more), each with Scripture, a lesson and a prayer. Private and encrypted. Then discover your spiritual gifts: 24 gifts to serve with.",
-      tl: "24 na bahagi ng paglakad mo kasama ang Diyos (panalangin, Salita, kapayapaan, kalinisan, pera, pagpapatotoo at iba pa), bawat isa may talata, aralin at panalangin. Pribado at naka-encrypt. Saka tuklasin ang iyong spiritual gifts: 24 na kaloob para maglingkod.",
+      en: "24 areas of your walk with God, each with Scripture, a lesson and a prayer. Private and encrypted. Then discover your spiritual gifts: 24 gifts to serve with.",
+      tl: "24 na bahagi ng paglakad mo kasama ang Diyos, bawat isa may talata, aralin at panalangin. Pribado at naka-encrypt. Saka tuklasin ang iyong spiritual gifts: 24 na kaloob para maglingkod.",
     },
   },
   {
-    id: "temptation",
+    id: "help",
+    chapter: "grow",
     href: "/help?topic=temptation",
     target: "help-temptation",
-    icon: ShieldHalf,
+    icon: LifeBuoy,
     emoji: "⚔️",
-    title: { en: "Temptation Support", tl: "Tulong sa Tukso" },
+    title: { en: "Help in the struggle", tl: "Tulong sa laban" },
     body: {
-      en: "Receive Biblical guidance during struggles: what to do right now, verses to stand on, a prayer, and a quick way to reach your accountability partner.",
-      tl: "Tumanggap ng gabay mula sa Bibliya sa oras ng laban: ang gagawin ngayon mismo, mga talatang panghahawakan, panalangin, at mabilis na paraan para maabot ang iyong accountability partner.",
+      en: "For temptation, fear or doubt: what to do right now, verses to stand on and a prayer. “How are you feeling?” gives God's Word for whatever you feel today.",
+      tl: "Para sa tukso, takot o pag-aalinlangan: ang gagawin ngayon mismo, mga talatang panghahawakan at panalangin. Ang “Kumusta ang pakiramdam mo?” ay nagbibigay ng Salita ng Diyos para sa nararamdaman mo ngayon.",
     },
   },
   {
-    id: "fear",
-    href: "/help?topic=fear",
-    target: "help-fear",
-    icon: LifeBuoy,
-    emoji: "🕊️",
-    title: { en: "Fear & Doubt", tl: "Takot at Pag-aalinlangan" },
+    id: "victories",
+    chapter: "grow",
+    href: "/victories",
+    target: "victories-hero",
+    icon: Trophy,
+    emoji: "🏆",
+    title: { en: "What God has done", tl: "Ginawa ng Diyos" },
     body: {
-      en: "Strengthen your faith through Scripture when fear, anxiety or doubt comes.",
-      tl: "Palakasin ang pananampalataya sa pamamagitan ng Kasulatan kapag dumating ang takot, pagkabalisa o pag-aalinlangan.",
+      en: "Answered prayers, testimonies and Journey milestones on one timeline. Look back, give thanks, and share them as beautiful images.",
+      tl: "Mga sinagot na panalangin, patotoo at milestone sa Journey sa iisang timeline. Lumingon, magpasalamat, at i-share bilang magagandang larawan.",
     },
   },
   {
     id: "community",
+    chapter: "ag",
     href: "/church",
     target: "ag-community",
     icon: Church,
     emoji: "🤝",
-    title: { en: "Community", tl: "Komunidad" },
+    title: { en: "Your Accountability Group", tl: "Ang iyong Accountability Group" },
     body: {
-      en: "Connect with fellow believers in your Accountability Group: announcements, weekly check-ins, the prayer wall and prayer chains, meetings, and follow-up for visitors and new believers.",
-      tl: "Makiisa sa kapwa mananampalataya sa iyong Accountability Group: mga anunsyo, lingguhang check-in, prayer wall at prayer chain, mga meeting, at follow-up para sa bisita at bagong mananampalataya.",
+      en: "Connect with fellow believers: announcements, weekly check-ins, the prayer wall and prayer chains, meetings, and follow-up for visitors and new believers.",
+      tl: "Makiisa sa kapwa mananampalataya: mga anunsyo, lingguhang check-in, prayer wall at prayer chain, mga meeting, at follow-up para sa bisita at bagong mananampalataya.",
     },
   },
   {
     id: "live",
+    chapter: "ag",
     href: "/church",
     target: null,
     icon: Radio,
@@ -172,7 +272,21 @@ export const TOUR_STEPS: TourStep[] = [
     },
   },
   {
+    id: "teaching",
+    chapter: "ag",
+    href: "/teaching",
+    target: "teaching-hero",
+    icon: GraduationCap,
+    emoji: "🎓",
+    title: { en: "Teaching and leading", tl: "Pagtuturo at pamumuno" },
+    body: {
+      en: "Keep recaps of what you learn and open church teachings with their slides. For leaders: sermons, presentations and meetings, all in one place.",
+      tl: "Magtago ng recap ng mga natutunan mo at buksan ang mga turo ng church kasama ang slides. Para sa mga leader: sermon, presentasyon at meeting sa iisang lugar.",
+    },
+  },
+  {
     id: "notifications",
+    chapter: "profile",
     href: "/profile",
     target: null,
     icon: BellRing,
@@ -185,6 +299,7 @@ export const TOUR_STEPS: TourStep[] = [
   },
   {
     id: "profile",
+    chapter: "profile",
     href: "/profile",
     target: "profile-webapp",
     icon: UserRound,
@@ -197,14 +312,16 @@ export const TOUR_STEPS: TourStep[] = [
   },
   {
     id: "done",
+    chapter: "profile",
     href: "/",
     target: null,
     icon: PartyPopper,
     emoji: "🎉",
-    title: { en: "Congratulations!", tl: "Binabati kita!" },
+    visual: "celebrate",
+    title: { en: "You're ready!", tl: "Handa ka na!" },
     body: {
-      en: "You are ready to continue your journey with Christ.",
-      tl: "Handa ka nang ituloy ang iyong paglalakbay kasama si Cristo.",
+      en: "You are ready to continue your journey with Christ. Learn. Grow. Disciple. Lead.",
+      tl: "Handa ka nang ituloy ang iyong paglalakbay kasama si Cristo. Matuto. Lumago. Mag-disciple. Manguna.",
     },
   },
 ];

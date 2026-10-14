@@ -1,10 +1,20 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, RotateCcw, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { TOUR_STEPS, hasTourAutostart, isTourDone, markTourDone, takeTourAutostart } from "@/lib/tour";
+import {
+  TOUR_CHAPTERS,
+  TOUR_STEPS,
+  hasTourAutostart,
+  isTourDone,
+  markTourDone,
+  takeTourAutostart,
+  type TourStep,
+} from "@/lib/tour";
+import { celebrate } from "@/lib/celebrate";
 import { cn } from "@/lib/utils";
 import { useLanguage, useTx } from "@/lib/i18n";
 
@@ -52,7 +62,6 @@ export function TourProvider({ children }: { children: React.ReactNode }) {
           mode={state.mode}
           index={state.index}
           setIndex={(index) => setState((s) => (s ? { ...s, index } : s))}
-          onRestart={() => setState((s) => (s ? { ...s, index: 0 } : s))}
           onClose={stop}
           onStartJourney={() => {
             setState(null);
@@ -81,18 +90,23 @@ export function TourAutostart() {
 
 type Box = { top: number; left: number; width: number; height: number };
 
+/** How long after a stop's first measurement the spotlight keeps gliding (ms). */
+const GLIDE_MS = 650;
+const PAD = 8;
+const CARD_MAX = 384;
+/** About how tall a card is, to choose above or below the spotlight. */
+const CARD_HEIGHT = 390;
+
 function TourOverlay({
   mode,
   index,
   setIndex,
-  onRestart,
   onClose,
   onStartJourney,
 }: {
   mode: Mode;
   index: number;
   setIndex: (index: number) => void;
-  onRestart: () => void;
   onClose: () => void;
   onStartJourney: () => void;
 }) {
@@ -101,9 +115,13 @@ function TourOverlay({
   const router = useRouter();
   const step = TOUR_STEPS[index];
   const last = index === TOUR_STEPS.length - 1;
+  const chapter = TOUR_CHAPTERS.find((c) => c.id === step.chapter) ?? TOUR_CHAPTERS[0];
   // The spotlight belongs to one step; a stale box from the previous step is ignored.
-  const [spot, setSpot] = useState<{ id: string; box: Box } | null>(null);
+  const [spot, setSpot] = useState<{ id: string; box: Box; glide: boolean } | null>(null);
   const box = mode === "app" && spot?.id === step.id ? spot.box : null;
+  // Which way the member is moving, so the card slides in from that side.
+  const [dir, setDir] = useState<"next" | "prev">("next");
+  const swipe = useRef<{ x: number; y: number } | null>(null);
 
   // Open the step's page, then find its target and keep the spotlight on it.
   useEffect(() => {
@@ -117,11 +135,15 @@ function TourOverlay({
     let cancelled = false;
     let tries = 0;
     let frame = 0;
+    let measuredAt = 0;
     const measure = () => {
       const el = document.querySelector(selector);
       if (!el || cancelled) return;
       const r = el.getBoundingClientRect();
-      setSpot({ id: step.id, box: { top: r.top, left: r.left, width: r.width, height: r.height } });
+      if (!measuredAt) measuredAt = performance.now();
+      // Glide into a new stop; follow scrolling and resizing at once.
+      const glide = performance.now() - measuredAt < GLIDE_MS;
+      setSpot({ id: step.id, glide, box: { top: r.top, left: r.left, width: r.width, height: r.height } });
     };
     const follow = () => {
       cancelAnimationFrame(frame);
@@ -135,7 +157,8 @@ function TourOverlay({
       if (el) {
         el.scrollIntoView({ block: "center", behavior: "instant" });
         frame = requestAnimationFrame(measure);
-      } else if (tries++ < 40) {
+      } else if (tries++ < 120) {
+        // A page that is still loading (slow phone or connection) gets up to 12 s.
         setTimeout(find, 100);
       }
     };
@@ -151,8 +174,23 @@ function TourOverlay({
     };
   }, [mode, step, router]);
 
-  const next = useCallback(() => (last ? onClose() : setIndex(index + 1)), [last, onClose, setIndex, index]);
-  const prev = useCallback(() => index > 0 && setIndex(index - 1), [index, setIndex]);
+  // Confetti for the last stop.
+  useEffect(() => {
+    if (step.visual !== "celebrate") return;
+    const id = setTimeout(() => celebrate("🎉"), 350);
+    return () => clearTimeout(id);
+  }, [step]);
+
+  const go = useCallback(
+    (to: number) => {
+      if (to < 0 || to >= TOUR_STEPS.length || to === index) return;
+      setDir(to > index ? "next" : "prev");
+      setIndex(to);
+    },
+    [index, setIndex]
+  );
+  const next = useCallback(() => (last ? onClose() : go(index + 1)), [last, onClose, go, index]);
+  const prev = useCallback(() => go(index - 1), [go, index]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -164,20 +202,44 @@ function TourOverlay({
     return () => window.removeEventListener("keydown", onKey);
   }, [next, prev, onClose]);
 
-  const Icon = step.icon;
-  const pad = 8;
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  // The hole in the shade: the target, or shrunk to the middle between stops.
+  const hole = box
+    ? { top: Math.max(0, box.top - PAD), left: Math.max(0, box.left - PAD), bottom: box.top + box.height + PAD, right: box.left + box.width + PAD }
+    : { top: vh / 2, left: vw / 2, bottom: vh / 2, right: vw / 2 };
+  const glide = !box || spot?.glide !== false;
+
   // The card goes below the spotlight when it fits, above when that fits,
   // and otherwise sits at the bottom of the screen.
-  const CARD = 340;
-  const spaceBelow = box ? window.innerHeight - (box.top + box.height + pad) : 0;
-  const spaceAbove = box ? box.top - pad : 0;
-  const cardStyle: React.CSSProperties = !box
-    ? { top: "50%", transform: "translateY(-50%)" }
-    : spaceBelow >= CARD
-      ? { top: box.top + box.height + pad + 12 }
-      : spaceAbove >= CARD
-        ? { bottom: window.innerHeight - box.top + pad + 12 }
-        : { bottom: 16 };
+  const spaceBelow = box ? vh - hole.bottom : 0;
+  const spaceAbove = box ? hole.top : 0;
+  const place: "center" | "below" | "above" | "bottom" = !box
+    ? "center"
+    : spaceBelow >= CARD_HEIGHT
+      ? "below"
+      : spaceAbove >= CARD_HEIGHT
+        ? "above"
+        : "bottom";
+  const cardStyle: React.CSSProperties =
+    place === "center"
+      ? { top: "50%", transform: "translateY(-50%)" }
+      : place === "below"
+        ? { top: hole.bottom + 14 }
+        : place === "above"
+          ? { bottom: vh - hole.top + 14 }
+          : { bottom: 16 };
+  // A small pointer from the card to the spotlight.
+  const cardWidth = Math.min(vw - 32, CARD_MAX);
+  const caretX = box
+    ? Math.min(cardWidth - 34, Math.max(18, box.left + box.width / 2 - (vw - cardWidth) / 2 - 8))
+    : 0;
+
+  const shade = cn("pointer-events-none absolute bg-[#0a0818]/72", glide && "tour-glide");
+  const gradient = `linear-gradient(135deg, ${chapter.from}, ${chapter.to})`;
+  const chapterSteps = TOUR_STEPS.filter((s) => s.chapter === step.chapter);
+  const inChapter = chapterSteps.indexOf(step);
+  const Icon = step.icon;
 
   return (
     <div
@@ -186,101 +248,142 @@ function TourOverlay({
       aria-modal="true"
       aria-label={tx("App tour", "App tour")}
     >
-      {box ? (
+      {mode === "app" ? (
         // Four plain dark panels around the target plus a ring: cheap for a
-        // phone to draw, unlike a giant box-shadow repainted as it moves.
-        (() => {
-          const top = Math.max(0, box.top - pad);
-          const left = Math.max(0, box.left - pad);
-          const bottom = box.top + box.height + pad;
-          const right = box.left + box.width + pad;
-          const shade = "pointer-events-none absolute bg-[#0a0818]/70";
-          return (
-            <>
-              <div className={shade} style={{ top: 0, left: 0, right: 0, height: top }} />
-              <div className={shade} style={{ top: bottom, left: 0, right: 0, bottom: 0 }} />
-              <div className={shade} style={{ top, left: 0, width: left, height: bottom - top }} />
-              <div className={shade} style={{ top, left: right, right: 0, height: bottom - top }} />
-              <div
-                className="pointer-events-none absolute rounded-2xl ring-2 ring-amber-300/90"
-                style={{ top, left, width: right - left, height: bottom - top }}
-              />
-            </>
-          );
-        })()
+        // phone to draw, and they glide from one stop to the next.
+        <>
+          <div className={shade} style={{ top: 0, left: 0, width: "100%", height: hole.top }} />
+          <div className={shade} style={{ top: hole.bottom, left: 0, width: "100%", height: Math.max(0, vh - hole.bottom) }} />
+          <div className={shade} style={{ top: hole.top, left: 0, width: hole.left, height: hole.bottom - hole.top }} />
+          <div
+            className={shade}
+            style={{ top: hole.top, left: hole.right, width: Math.max(0, vw - hole.right), height: hole.bottom - hole.top }}
+          />
+          <div
+            className={cn("pointer-events-none absolute rounded-2xl ring-2 ring-amber-300", glide && "tour-glide", box && "tour-pulse")}
+            style={{ top: hole.top, left: hole.left, width: hole.right - hole.left, height: hole.bottom - hole.top, opacity: box ? 1 : 0 }}
+          />
+        </>
       ) : (
-        <div className="absolute inset-0 bg-[#0a0818]/75" />
+        <div className="absolute inset-0 bg-[#0a0818]/80 backdrop-blur-[2px]" />
       )}
 
       <div className="absolute inset-x-4" style={cardStyle}>
-        {/* Keyed by step so each card rises in (CSS, on the GPU) */}
         <div
           key={step.id}
-          className="ui-rise mx-auto max-w-sm overflow-hidden rounded-3xl border border-border/70 bg-card text-card-foreground shadow-2xl"
+          className={cn(
+            "relative mx-auto max-w-sm rounded-3xl border border-white/10 bg-card text-card-foreground shadow-2xl shadow-black/40",
+            dir === "next" ? "tour-in-next" : "tour-in-prev"
+          )}
+          style={{ touchAction: "pan-y" }}
+          onPointerDown={(e) => (swipe.current = { x: e.clientX, y: e.clientY })}
+          onPointerUp={(e) => {
+            const s = swipe.current;
+            swipe.current = null;
+            if (!s) return;
+            const dx = e.clientX - s.x;
+            if (Math.abs(dx) > 60 && Math.abs(e.clientY - s.y) < 60) {
+              if (dx < 0) next();
+              else prev();
+            }
+          }}
         >
-          {/* A colorful header with the stop's emoji and icon. */}
-          <div className={cn("gradient-hero relative flex items-center gap-3 px-5 text-primary-foreground", box ? "py-3" : "py-5")}>
-            <div className="pointer-events-none absolute -right-6 -top-8 size-28 rounded-full bg-white/10 blur-2xl" />
+          {place === "below" && (
             <span
-              className={cn(
-                "ui-pop relative flex shrink-0 items-center justify-center rounded-2xl bg-white/15 shadow-inner backdrop-blur",
-                box ? "size-11 text-2xl" : "size-16 text-4xl"
-              )}
               aria-hidden
-            >
-              {step.emoji}
-            </span>
-            <div className="relative min-w-0 flex-1">
-              <p className="flex items-center gap-1 text-[0.6875rem] font-semibold uppercase tracking-wide text-primary-foreground/75">
-                <Icon className="size-3.5" />
-                {tx(`Step ${index + 1} of ${TOUR_STEPS.length}`, `Hakbang ${index + 1} sa ${TOUR_STEPS.length}`)}
-              </p>
-              <h2 className="font-heading text-xl font-semibold leading-tight">{step.title[lang]}</h2>
+              className="tour-nudge absolute -top-1.5 size-4 rotate-45 rounded-[3px]"
+              style={{ left: caretX, background: chapter.from }}
+            />
+          )}
+          {place === "above" && (
+            <span aria-hidden className="tour-nudge-down absolute -bottom-1.5 size-4 rotate-45 rounded-[3px] bg-card" style={{ left: caretX }} />
+          )}
+
+          <div className="relative overflow-hidden rounded-t-3xl px-5 pb-4 pt-3 text-white" style={{ background: gradient }}>
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -right-10 -top-14 size-44 rounded-full"
+              style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.55), transparent)" }}
+            />
+            <Icon aria-hidden className="pointer-events-none absolute -bottom-5 -right-3 size-28 text-white/[0.08]" strokeWidth={1} />
+
+            <ChapterBar step={step} onJump={go} onClose={last ? undefined : onClose} />
+
+            {step.visual === "logo" ? (
+              <LogoBurst />
+            ) : step.visual === "celebrate" ? (
+              <div className="relative mx-auto mt-3 flex size-24 items-center justify-center">
+                <div aria-hidden className="tour-spin absolute inset-0 rounded-full opacity-60" style={{ background: RAYS }} />
+                <span className="ui-pop relative text-6xl" aria-hidden>
+                  {step.emoji}
+                </span>
+              </div>
+            ) : null}
+
+            <div className={cn("relative flex items-center gap-3", step.visual ? "mt-2 justify-center text-center" : "mt-3")}>
+              {!step.visual && (
+                <span
+                  className="tour-float flex size-12 shrink-0 items-center justify-center rounded-2xl bg-white/15 text-2xl shadow-inner backdrop-blur"
+                  aria-hidden
+                >
+                  {step.emoji}
+                </span>
+              )}
+              <div className="min-w-0">
+                <p className="flex items-center gap-1 text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-[#F4DC8A]">
+                  <Icon className="size-3.5" />
+                  {tx(`Step ${index + 1} of ${TOUR_STEPS.length}`, `Hakbang ${index + 1} sa ${TOUR_STEPS.length}`)}
+                </p>
+                <h2 className="font-heading text-xl font-semibold leading-tight">{step.title[lang]}</h2>
+              </div>
             </div>
-            {!last && (
-              <button
-                onClick={onClose}
-                aria-label={tx("Skip", "Laktawan")}
-                className="relative self-start rounded-full bg-white/15 p-1.5 text-primary-foreground/90"
-              >
-                <X className="size-4" />
-              </button>
-            )}
           </div>
+
           <div className="p-5 pt-4">
             <p className="text-sm leading-relaxed text-foreground/85">{step.body[lang]}</p>
 
-            <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-muted" aria-hidden>
-              <div
-                className="h-full rounded-full bg-gradient-to-r from-primary to-amber-400 transition-[width] duration-500"
-                style={{ width: `${((index + 1) / TOUR_STEPS.length) * 100}%` }}
-              />
+            <div className="mt-4 flex items-center gap-2" aria-hidden>
+              <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
+                <div
+                  className="h-full rounded-full transition-[width] duration-500"
+                  style={{ width: `${((index + 1) / TOUR_STEPS.length) * 100}%`, background: `linear-gradient(90deg, ${chapter.from}, #D4AF37)` }}
+                />
+              </div>
+              {chapterSteps.length > 1 && (
+                <span className="flex gap-1">
+                  {chapterSteps.map((s, i) => (
+                    <span
+                      key={s.id}
+                      className={cn("h-1.5 rounded-full transition-all duration-300", i === inChapter ? "w-4" : "w-1.5 opacity-40")}
+                      style={{ background: chapter.from }}
+                    />
+                  ))}
+                </span>
+              )}
             </div>
 
             {last ? (
               <div className="mt-4 grid grid-cols-2 gap-2">
-                <Button variant="outline" className="h-10" onClick={onRestart}>
+                <Button variant="outline" className="h-11" onClick={() => go(0)}>
                   <RotateCcw />
                   {tx("Restart Tour", "Ulitin ang Tour")}
                 </Button>
-                {mode === "preview" ? (
-                  <Button className="h-10" onClick={onStartJourney}>
-                    <Sparkles />
-                    {tx("Start Journey", "Simulan")}
-                  </Button>
-                ) : (
-                  <Button className="h-10" onClick={onClose}>
-                    {tx("Finish", "Tapusin")}
-                  </Button>
-                )}
+                <Button
+                  className="h-11 text-white shadow-md hover:opacity-95"
+                  style={{ background: gradient }}
+                  onClick={mode === "preview" ? onStartJourney : onClose}
+                >
+                  <Sparkles />
+                  {mode === "preview" ? tx("Start Journey", "Simulan") : tx("Finish", "Tapusin")}
+                </Button>
               </div>
             ) : (
               <div className="mt-4 grid grid-cols-2 gap-2">
-                <Button variant="outline" className="h-10" disabled={index === 0} onClick={prev}>
+                <Button variant="outline" className="h-11" disabled={index === 0} onClick={prev}>
                   <ChevronLeft />
                   {tx("Previous", "Bumalik")}
                 </Button>
-                <Button className="h-10" onClick={next}>
+                <Button className="h-11 text-white shadow-md hover:opacity-95" style={{ background: gradient }} onClick={next}>
                   {tx("Next", "Susunod")}
                   <ChevronRight />
                 </Button>
@@ -289,6 +392,63 @@ function TourOverlay({
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+const RAYS = "repeating-conic-gradient(from 0deg, rgba(244,220,138,0.55) 0deg 6deg, transparent 6deg 20deg)";
+
+/** The five chapters as pills; tap one to jump to it. */
+function ChapterBar({ step, onJump, onClose }: { step: TourStep; onJump: (index: number) => void; onClose?: () => void }) {
+  const tx = useTx();
+  const { lang } = useLanguage();
+  const order = TOUR_CHAPTERS.map((c) => c.id);
+  const current = order.indexOf(step.chapter);
+  return (
+    <div className="relative flex items-center gap-1.5">
+      <div className="flex flex-1 items-center gap-1" role="tablist" aria-label={tx("Tour chapters", "Mga bahagi ng tour")}>
+        {TOUR_CHAPTERS.filter((c) => c.id !== "start").map((c) => {
+          const i = order.indexOf(c.id);
+          const active = i === current;
+          const ChapterIcon = c.icon;
+          return (
+            <button
+              key={c.id}
+              role="tab"
+              aria-selected={active}
+              aria-label={c.title[lang]}
+              onClick={() => onJump(TOUR_STEPS.findIndex((s) => s.chapter === c.id))}
+              className={cn(
+                "flex h-7 items-center gap-1 rounded-full px-2 text-[0.6875rem] font-semibold transition-all duration-300",
+                active ? "bg-white text-[#13253d] shadow-sm" : i < current ? "bg-white/30 text-white" : "bg-white/10 text-white/60"
+              )}
+            >
+              <ChapterIcon className="size-3.5" />
+              {active && <span className="whitespace-nowrap">{c.title[lang]}</span>}
+            </button>
+          );
+        })}
+      </div>
+      {onClose && (
+        <button onClick={onClose} aria-label={tx("Skip tour", "Laktawan ang tour")} className="rounded-full bg-white/15 p-1.5 text-white/90">
+          <X className="size-4" />
+        </button>
+      )}
+    </div>
+  );
+}
+
+/** The logo floating in turning rays of light, for the first stop. */
+function LogoBurst() {
+  return (
+    <div className="relative mx-auto mt-3 flex size-28 items-center justify-center">
+      <div aria-hidden className="tour-spin absolute -inset-4 rounded-full opacity-70" style={{ background: RAYS }} />
+      <div
+        aria-hidden
+        className="absolute inset-0 rounded-full"
+        style={{ background: "radial-gradient(closest-side, rgba(255,248,230,0.95), rgba(255,232,176,0.5) 60%, transparent)" }}
+      />
+      <Image src="/brand/logo.png" alt="" width={720} height={720} className="tour-float relative h-auto w-24" priority />
     </div>
   );
 }

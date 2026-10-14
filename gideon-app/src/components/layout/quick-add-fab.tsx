@@ -65,6 +65,7 @@ export function QuickAddFab() {
 
       <motion.button
         aria-label="Quick add"
+        data-tour="quick-add"
         onClick={() => setOpen((v) => !v)}
         whileTap={{ scale: 0.92 }}
         className={cn(

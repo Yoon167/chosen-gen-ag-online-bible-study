@@ -68,6 +68,7 @@ export default function PlansPage() {
         title={t("page.plans")}
         icon={CalendarCheck2}
         back
+        tour="plans-hero"
         hero={{
           from: "#2f6b3a",
           to: "#1E3A5F",

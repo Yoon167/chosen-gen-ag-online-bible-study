@@ -13,6 +13,7 @@ export default function PrayerAndFastingPage() {
       <PageHeader
         title={tx("Prayer & Fasting", "Panalangin at Ayuno")}
         icon={Flame}
+        tour="fasting-hero"
         hero={{
           from: "#b4471a",
           to: "#1E3A5F",
