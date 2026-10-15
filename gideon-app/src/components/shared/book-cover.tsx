@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 
 /** Leather cover colors, one per book in turn. */
@@ -46,7 +47,11 @@ export function BookCover({
           {emblem}
         </span>
         <span className="relative line-clamp-3 pl-1.5 font-heading text-[0.8125rem] font-semibold leading-tight text-[#FBEFC8]">{title}</span>
-        <span className="relative mt-1.5 pl-1.5 text-[0.5rem] uppercase tracking-[0.3em] text-[#D4AF37]/80">Anointed Academy</span>
+        {/* The Anointed Academy mark, stamped in gold at the foot of the cover */}
+        <span className="relative mt-1 flex flex-col items-center gap-0.5 pl-1.5">
+          <Image src="/brand/mark-160.webp" alt="" width={24} height={24} className="size-6 object-contain drop-shadow-[0_0_5px_rgba(212,175,55,0.6)]" />
+          <span className="whitespace-nowrap text-[0.4375rem] font-semibold uppercase tracking-[0.22em] text-[#D4AF37]/90">Anointed Academy</span>
+        </span>
       </span>
       {/* Ribbon bookmark once started */}
       {ribbon && (

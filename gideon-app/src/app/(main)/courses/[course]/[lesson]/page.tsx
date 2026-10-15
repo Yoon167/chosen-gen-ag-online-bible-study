@@ -67,7 +67,7 @@ export default async function CourseLessonPage({ params }: { params: Promise<{ c
     <div>
       <ReadingProgress />
       <BookTopBar book={course.title} chapter={index + 1} total={course.lessons.length} courseId={course.id} />
-      <LessonGate courseId={course.id} lessonId={lesson.id}>
+      <LessonGate courseId={course.id} lessonId={lesson.id} title={course.title}>
       <ReadingPosition courseId={course.id} lessonId={lesson.id} />
       <CourseReaderSync courseId={course.id} lessonIds={course.lessons.map((l) => l.id)} />
       {book && <ChapterAnnotator courseId={course.id} lessonId={lesson.id} />}

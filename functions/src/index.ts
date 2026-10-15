@@ -3,7 +3,7 @@ import { getFirestore } from "firebase-admin/firestore";
 import { setGlobalOptions, logger } from "firebase-functions";
 import { onDocumentCreated, onDocumentWritten } from "firebase-functions/v2/firestore";
 import { onSchedule } from "firebase-functions/v2/scheduler";
-import { activeMembers, clip, devicesOf, sendTo, wants, type Device, type PushToken } from "./push";
+import { activeMembers, clip, devicesOf, notify, sendTo, wants, type Device, type PushToken } from "./push";
 import { HOUR, QUARTER, dayOfYear, daySlot, localParts, nextStart, runStart, weekKeyIn, weekSlot } from "./time";
 import { VERSE_POOL, verseText } from "./verses";
 import { LATEST_RELEASE } from "./release";
@@ -41,9 +41,8 @@ export const onLiveStarted = onDocumentWritten("churches/{churchId}/live/current
   const after = event.data?.after.data();
   if (!after || before?.startedAt === after.startedAt) return;
   const members = await activeMembers(event.params.churchId);
-  const devices = await devicesOf([...members.map((m) => m.uid), after.leaderUid], "live");
   const heading = after.heading ?? { en: "Bible study", tl: "Bible study" };
-  await sendTo(devices, {
+  await notify([...members.map((m) => m.uid), after.leaderUid], "live", {
     title: { en: `🔴 Live now: ${clip(heading.en, 60)}`, tl: `🔴 Live na: ${clip(heading.tl, 60)}` },
     body: {
       en: `${after.leaderName ?? "Your leader"} is presenting${after.callUrl ? " (with a call)" : ""}. Tap to follow along.`,
@@ -60,9 +59,8 @@ export const onPrayerPosted = onDocumentCreated("churches/{churchId}/prayers/{pr
   const p = event.data?.data();
   if (!p) return;
   const members = await activeMembers(event.params.churchId);
-  const devices = await devicesOf([...members.map((m) => m.uid), p.authorUid], "prayer");
   const who = p.anonymous || !p.authorName ? { en: "Someone", tl: "May isang" } : { en: p.authorName, tl: p.authorName };
-  await sendTo(devices, {
+  await notify([...members.map((m) => m.uid), p.authorUid], "prayer", {
     title: p.urgent
       ? { en: "🙏 Urgent prayer request", tl: "🙏 Urgent na prayer request" }
       : { en: "🙏 New prayer request", tl: "🙏 Bagong prayer request" },
@@ -83,8 +81,7 @@ export const onPrayedFor = onDocumentCreated("churches/{churchId}/prayers/{praye
   const member = (await db().doc(`churches/${churchId}/members/${uid}`).get()).data();
   const name = member?.displayName ?? "";
   const count = Number(prayer.prayedCount ?? 1);
-  const devices = await devicesOf([prayer.authorUid], "prayer");
-  await sendTo(devices, {
+  await notify([prayer.authorUid], "prayer", {
     title: { en: "🙏 Someone prayed for you", tl: "🙏 May nanalangin para sa iyo" },
     body: {
       en: `${name || "A member"} prayed for your request${count > 1 ? ` · ${count} praying` : ""}.`,
@@ -99,8 +96,7 @@ export const onPrayerChainCreated = onDocumentCreated("churches/{churchId}/praye
   const c = event.data?.data();
   if (!c) return;
   const members = await activeMembers(event.params.churchId);
-  const devices = await devicesOf([...members.map((m) => m.uid), c.createdBy], "prayer");
-  await sendTo(devices, {
+  await notify([...members.map((m) => m.uid), c.createdBy], "prayer", {
     title: { en: `⛓️ Prayer chain: ${clip(c.title, 60)}`, tl: `⛓️ Prayer chain: ${clip(c.title, 60)}` },
     body: {
       en: `${c.hours} hours of prayer. Pick an hour to pray.`,
@@ -117,8 +113,7 @@ export const onAnnouncement = onDocumentCreated("churches/{churchId}/announcemen
   const a = event.data?.data();
   if (!a) return;
   const members = await activeMembers(event.params.churchId);
-  const devices = await devicesOf([...members.map((m) => m.uid), a.authorUid], "ag");
-  await sendTo(devices, {
+  await notify([...members.map((m) => m.uid), a.authorUid], "ag", {
     title: { en: `📢 ${clip(a.title, 70)}`, tl: `📢 ${clip(a.title, 70)}` },
     body: { en: clip(a.body, 140), tl: clip(a.body, 140) },
     url: "/church/announcements",
@@ -134,8 +129,7 @@ export const onMembership = onDocumentWritten("churches/{churchId}/members/{uid}
   const { churchId, uid } = event.params;
   if (!before && after.status === "pending") {
     const leaders = (await activeMembers(churchId)).filter((m) => m.rank >= 3);
-    const devices = await devicesOf(leaders.map((m) => m.uid), "ag");
-    await sendTo(devices, {
+    await notify(leaders.map((m) => m.uid), "ag", {
       title: { en: "👋 New join request", tl: "👋 Bagong gustong sumali" },
       body: {
         en: `${after.displayName ?? "Someone"} asked to join your AG. Tap to approve.`,
@@ -146,8 +140,7 @@ export const onMembership = onDocumentWritten("churches/{churchId}/members/{uid}
     });
   } else if (before?.status === "pending" && after.status === "active") {
     const church = (await db().doc(`churches/${churchId}`).get()).data();
-    const devices = await devicesOf([uid], "ag");
-    await sendTo(devices, {
+    await notify([uid], "ag", {
       title: { en: "🎉 You're in!", tl: "🎉 Tanggap ka na!" },
       body: {
         en: `Welcome to ${church?.name ?? "your AG"}. Say hi and join the next meeting.`,
@@ -165,8 +158,7 @@ export const onCheckin = onDocumentWritten("churches/{churchId}/checkins/{id}", 
   const after = event.data?.after.data();
   if (!after) return;
   if (!before && after.partnerUid) {
-    const devices = await devicesOf([after.partnerUid], "checkin");
-    await sendTo(devices, {
+    await notify([after.partnerUid], "checkin", {
       title: { en: "🤝 Your partner checked in", tl: "🤝 Nag-check-in ang partner mo" },
       body: {
         en: `${after.name ?? "Your partner"} shared their week. Read it and pray for them.`,
@@ -176,8 +168,7 @@ export const onCheckin = onDocumentWritten("churches/{churchId}/checkins/{id}", 
       tag: `checkin-${event.params.id}`,
     });
   } else if (before && !before.partnerPrayedAt && after.partnerPrayedAt) {
-    const devices = await devicesOf([after.uid], "checkin");
-    await sendTo(devices, {
+    await notify([after.uid], "checkin", {
       title: { en: "🙏 Your partner prayed for you", tl: "🙏 Ipinanalangin ka ng partner mo" },
       body: {
         en: after.partnerReply ? clip(after.partnerReply, 140) : "Tap to see their reply.",
@@ -189,6 +180,56 @@ export const onCheckin = onDocumentWritten("churches/{churchId}/checkins/{id}", 
   }
 });
 
+// ---------- Course enrollment ----------
+
+/**
+ * A member sends (or sends again) an enrollment form: that AG's leaders hear
+ * about it. A leader approves or declines it: the member hears about it.
+ */
+export const onCourseEnrollment = onDocumentWritten("churches/{churchId}/courseEnrollments/{id}", async (event) => {
+  const before = event.data?.before.data();
+  const after = event.data?.after.data();
+  if (!after) return;
+  const { churchId, id } = event.params;
+  const course = typeof after.courseTitle === "string" && after.courseTitle ? clip(after.courseTitle, 60) : "";
+  const courseUrl = `/courses/${after.courseId}`;
+  if (after.status === "pending" && before?.status !== "pending") {
+    const leaders = (await activeMembers(churchId, [after.uid])).filter((m) => m.rank >= 3);
+    await notify(
+      leaders.map((m) => m.uid),
+      "ag",
+      {
+        title: { en: "📖 New course enrollment", tl: "📖 Bagong course enrollment" },
+        body: {
+          en: `${after.name ?? "A member"} wants to enroll${course ? ` in ${course}` : ""}. Tap to review the form.`,
+          tl: `Gustong mag-enroll ni ${after.name ?? "isang member"}${course ? ` sa ${course}` : ""}. Pindutin para tingnan ang form.`,
+        },
+        url: courseUrl,
+        tag: `enroll-req-${churchId}-${id}`,
+      }
+    );
+  } else if (before?.status !== after.status && (after.status === "approved" || after.status === "declined")) {
+    const approved = after.status === "approved";
+    const note = typeof after.leaderNote === "string" && after.leaderNote ? ` “${clip(after.leaderNote, 90)}”` : "";
+    await notify([after.uid], "ag", {
+      title: approved
+        ? { en: "🎉 Enrollment approved", tl: "🎉 Aprubado ang enrollment mo" }
+        : { en: "Enrollment not approved", tl: "Hindi naaprubahan ang enrollment" },
+      body: approved
+        ? {
+            en: `${after.decidedByName ?? "Your leader"} approved you${course ? ` for ${course}` : ""}. Start reading Chapter I.${note}`,
+            tl: `Inaprubahan ka ni ${after.decidedByName ?? "ng leader mo"}${course ? ` sa ${course}` : ""}. Simulan na ang Kabanata I.${note}`,
+          }
+        : {
+            en: `${after.decidedByName ?? "Your leader"} left you a word${course ? ` about ${course}` : ""}. Tap to see it and apply again.${note}`,
+            tl: `May mensahe si ${after.decidedByName ?? "ang leader mo"}${course ? ` tungkol sa ${course}` : ""}. Pindutin para makita at mag-apply ulit.${note}`,
+          },
+      url: courseUrl,
+      tag: `enroll-${churchId}-${id}`,
+    });
+  }
+});
+
 // ---------- Follow-up of visitors and new believers ----------
 
 /** A follow-up was added or handed to someone new: they hear about it right away. */
@@ -196,9 +237,8 @@ export const onFollowUp = onDocumentWritten("churches/{churchId}/followups/{id}"
   const before = event.data?.before.data();
   const after = event.data?.after.data();
   if (!after || after.status !== "active" || before?.assignedUid === after.assignedUid) return;
-  const devices = await devicesOf([after.assignedUid], "checkin");
   const visitor = after.kind === "visitor";
-  await sendTo(devices, {
+  await notify([after.assignedUid], "checkin", {
     title: { en: "🤝 Someone to follow up", tl: "🤝 May bago kang sasamahan" },
     body: {
       en: `${after.name} (${visitor ? "visitor" : "new believer"}) is yours to walk with this month. Start today: welcome them with a call or text.`,
@@ -263,9 +303,8 @@ async function meetingReminders(at: number) {
     const start = nextStart(m.startsAt, !!m.weekly, from);
     if (start < from || start >= to) continue;
     const members = await activeMembers(churchId);
-    const devices = await devicesOf(members.map((x) => x.uid), "meetings");
     const online = m.link && m.platform !== "In person";
-    await sendTo(devices, {
+    await notify(members.map((x) => x.uid), "meetings", {
       title: { en: `⏰ In 30 min: ${clip(m.title, 60)}`, tl: `⏰ 30 minuto na lang: ${clip(m.title, 60)}` },
       body: {
         en: online ? `On ${m.platform}. Tap to get ready and join.` : `${m.location ? `At ${clip(m.location, 60)}. ` : ""}See you there!`,
@@ -286,8 +325,7 @@ async function chainHours(at: number) {
     // Only on the hour itself, for an hour inside the chain.
     if (hour < 0 || hour >= c.hours || Math.abs(c.startsAt + hour * HOUR - at) >= QUARTER / 2) continue;
     const slots = await doc.ref.collection("slots").where("hour", "==", hour).get();
-    const devices = await devicesOf(slots.docs.map((s) => s.data().uid as string), "prayer");
-    await sendTo(devices, {
+    await notify(slots.docs.map((s) => s.data().uid as string), "prayer", {
       title: { en: "⛓️ Your prayer hour starts now", tl: "⛓️ Oras mo na para manalangin" },
       body: {
         en: `${clip(c.title, 70)}. The chain is counting on you.`,

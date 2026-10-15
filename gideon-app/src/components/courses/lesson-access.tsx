@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { useRoster } from "@/lib/hooks/use-church";
 import { assignPresenter, assignmentId, lockCourse, removePresenter, unlockCourse, useCourseAccess } from "@/lib/hooks/use-lesson-assignments";
 import { useTx } from "@/lib/i18n";
+import type { Text } from "@/lib/content/courses/types";
 import { useCourseGate } from "@/lib/hooks/use-course-enrollment";
 import { EnrollButton, EnrollPanel } from "@/components/courses/course-enroll";
 
@@ -29,7 +30,7 @@ function useRun() {
 }
 
 /** What a member sees in a course their leader hasn't unlocked yet. */
-function LockedNotice({ enrollFor }: { enrollFor?: string }) {
+function LockedNotice({ enrollFor, title }: { enrollFor?: string; title?: Text }) {
   const tx = useTx();
   const access = useCourseAccess();
   return (
@@ -46,7 +47,7 @@ function LockedNotice({ enrollFor }: { enrollFor?: string }) {
       </p>
       {access.churchId && enrollFor && (
         <div className="mx-auto max-w-xs rounded-full bg-[#1E3A5F] p-0.5">
-          <EnrollButton courseId={enrollFor} />
+          <EnrollButton courseId={enrollFor} title={title} />
         </div>
       )}
       {!access.churchId && (
@@ -102,7 +103,17 @@ export function CourseUnlockCard({ courseId }: { courseId: string }) {
  * course and they have enrolled; leaders see it always, with a way to pick
  * who presents it.
  */
-export function LessonGate({ courseId, lessonId, children }: { courseId: string; lessonId: string; children: React.ReactNode }) {
+export function LessonGate({
+  courseId,
+  lessonId,
+  title,
+  children,
+}: {
+  courseId: string;
+  lessonId: string;
+  title?: Text;
+  children: React.ReactNode;
+}) {
   const tx = useTx();
   const gate = useCourseGate(courseId);
   const access = gate.access;
@@ -111,14 +122,14 @@ export function LessonGate({ courseId, lessonId, children }: { courseId: string;
   if (!access.canOpen(courseId)) {
     return (
       <div className="px-5">
-        <LockedNotice enrollFor={courseId} />
+        <LockedNotice enrollFor={courseId} title={title} />
       </div>
     );
   }
   if (!gate.enrolled) {
     return (
       <div className="px-5">
-        <EnrollPanel courseId={courseId} />
+        <EnrollPanel courseId={courseId} title={title} />
       </div>
     );
   }

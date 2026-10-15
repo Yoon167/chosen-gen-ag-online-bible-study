@@ -117,7 +117,7 @@ function EnrollSheet({
             <EnrollFormView
               initial={e.enrollment}
               onDone={async (form) => {
-                await e.submit(form);
+                await e.submit(form, title?.[lang] ?? "");
                 setEditing(false);
                 celebrate("📖");
               }}
@@ -336,7 +336,7 @@ function EnrollDetails({
 }
 
 /** Inside a chapter, for a member who isn't enrolled yet (or is waiting). */
-export function EnrollPanel({ courseId }: { courseId: string }) {
+export function EnrollPanel({ courseId, title }: { courseId: string; title?: Text }) {
   const tx = useTx();
   const e = useCourseEnrollment(courseId);
   return (
@@ -363,7 +363,7 @@ export function EnrollPanel({ courseId }: { courseId: string }) {
             )}
       </p>
       <div className="mx-auto max-w-xs rounded-full bg-[#1E3A5F] p-0.5">
-        <EnrollButton courseId={courseId} />
+        <EnrollButton courseId={courseId} title={title} />
       </div>
     </div>
   );

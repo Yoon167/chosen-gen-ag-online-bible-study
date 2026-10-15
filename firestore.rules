@@ -587,7 +587,8 @@ service cloud.firestore {
           && isActiveMember(churchId, request.auth.uid)
           && (resource == null || (resource.data.uid == request.auth.uid && resource.data.status in ['pending', 'declined']))
           && eid == request.resource.data.courseId + '__' + request.auth.uid
-          && request.resource.data.keys().hasOnly(['courseId', 'uid', 'name', 'phone', 'reason', 'schedule', 'agree', 'status', 'createdAt', 'updatedAt'])
+          && request.resource.data.keys().hasOnly(['courseId', 'courseTitle', 'uid', 'name', 'phone', 'reason', 'schedule', 'agree', 'status', 'createdAt', 'updatedAt'])
+          && validText(request.resource.data.get('courseTitle', ''), 0, 120)
           && request.resource.data.status == 'pending'
           && request.resource.data.agree == true
           && validText(request.resource.data.courseId, 1, 80)

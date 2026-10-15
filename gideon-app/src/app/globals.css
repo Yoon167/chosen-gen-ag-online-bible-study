@@ -203,216 +203,6 @@ html:not([lang="tl"]) .t-tl {
 @media (prefers-reduced-motion: reduce) {
   .page-enter, .ui-rise, .ui-pop, .ui-grow-x { animation: none; }
 }
-/* Cinematic intro */
-@keyframes intro-progress {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
-}
-@keyframes intro-float {
-  0% { transform: translateY(0); opacity: 0; }
-  20%, 80% { opacity: 1; }
-  100% { transform: translateY(-60px); opacity: 0; }
-}
-@keyframes intro-spin {
-  to { transform: rotate(360deg); }
-}
-/* "Watch Introduction": the camera pans over the landing valley, always at
-   the same 1.7x zoom. A zoom that changes between
-   scenes makes phones redraw the whole scene sharper at every cut (a visible
-   blur-then-sharpen "pop"); a pan never does. translateY is a share of the
-   screen height: 0 keeps the middle of the stage centered, and it stays
-   within ±34% so the stage edges never show. */
-/* One continuous camera move for the whole film (no cuts through black):
-   it rises with the first light, flies over the valley, comes down to the
-   people on the path, follows the glowing path up toward the light, ascends
-   to show the whole world, and settles for the reveal. */
-@keyframes film-cam {
-  /* Percentages match SCENES in cinematic-intro.tsx (0, 4, 8.5, 13.5, 18, 22.5, 26, 32 s). */
-  0% { transform: translate(0, 14%) scale(1.7); }
-  12.5% { transform: translate(-1%, 6%) scale(1.7); }
-  26.5% { transform: translate(2%, -18%) scale(1.7); }
-  42% { transform: translate(-1.5%, -30%) scale(1.7); }
-  56% { transform: translate(0, -34%) scale(1.7); }
-  70% { transform: translate(1%, -8%) scale(1.7); }
-  81% { transform: translate(-1%, 15%) scale(1.7); }
-  100% { transform: translate(0, 2%) scale(1.7); }
-}
-@keyframes film-path {
-  from { transform: scaleY(0); opacity: 0; }
-  to { transform: scaleY(1); opacity: 1; }
-}
-@keyframes film-horizon {
-  0% { opacity: 0; transform: scaleX(0.2); }
-  100% { opacity: 1; transform: scaleX(1); }
-}
-/* Grade: the film begins cool and blue and grows warm and golden. */
-@keyframes film-cool {
-  0% { opacity: 0.45; }
-  50%, 100% { opacity: 0; }
-}
-@keyframes film-warm {
-  0%, 35% { opacity: 0; }
-  100% { opacity: 1; }
-}
-@keyframes film-open {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-@keyframes film-rays {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(30deg); }
-}
-@keyframes film-glow-in {
-  0% { opacity: 0; transform: scale(0.2); }
-  60% { opacity: 1; transform: scale(1.15); }
-  100% { opacity: 1; transform: scale(1); }
-}
-@keyframes film-bloom {
-  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.15); }
-  55% { opacity: 1; }
-  100% { opacity: 1; transform: translate(-50%, -50%) scale(4); }
-}
-@keyframes film-shine {
-  from { background-position: 150% 0; }
-  to { background-position: -50% 0; }
-}
-@keyframes film-light {
-  from { opacity: 0; }
-  to { opacity: 0.88; }
-}
-@keyframes film-grow {
-  from { opacity: 0; transform: scale(0.85); }
-  to { opacity: 1; transform: scale(1); }
-}
-@keyframes film-settle {
-  from { opacity: 0; transform: scale(1.2); }
-  to { opacity: 1; transform: scale(1); }
-}
-@keyframes film-bar {
-  from { transform: scaleY(0); }
-  to { transform: scaleY(1); }
-}
-/* Landing scene (components/intro/landing-scene.tsx). Only transform and
-   opacity animate, so phones run it all on the GPU. */
-/* A 16:10 stage that covers the screen from the bottom center */
-.landing-stage {
-  width: max(100vw, 160vh);
-  height: max(62.5vw, 100vh);
-}
-@supports (height: 100dvh) {
-  .landing-stage {
-    width: max(100vw, 160dvh);
-    height: max(62.5vw, 100dvh);
-  }
-}
-/* Layers that follow the mouse for depth (moved from JS) */
-@media (hover: hover) and (pointer: fine) {
-  .landing-depth {
-    will-change: transform;
-  }
-}
-@keyframes landing-appear {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes landing-vanish {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-@keyframes landing-sunrise {
-  from { transform: translateY(45%); opacity: 0.6; }
-  to { transform: translateY(0); opacity: 1; }
-}
-@keyframes landing-cloud {
-  from { transform: translateX(-40%); }
-  to { transform: translateX(110%); }
-}
-@keyframes landing-birds {
-  0% { transform: translate(0, 0); opacity: 1; }
-  35% { transform: translate(38%, -2%); }
-  70% { transform: translate(110%, 1%); opacity: 1; }
-  70.1%, 100% { transform: translate(110%, 1%); opacity: 0; }
-}
-@keyframes landing-wind {
-  0%, 100% { transform: skewX(-3deg); }
-  50% { transform: skewX(3deg); }
-}
-/* People walk up the path, slowing and shrinking with distance, and fade
-   into the light near Jesus. Translate % is of the full-stage wrapper. */
-@keyframes landing-walk-a {
-  0% { transform: translate(0, 0); opacity: 0; }
-  6% { opacity: 1; }
-  50% { transform: translate(3.4%, -24%); }
-  80% { opacity: 1; }
-  92%, 100% { transform: translate(5.4%, -34.5%); opacity: 0; }
-}
-@keyframes landing-walk-b {
-  0% { transform: translate(0, 0); opacity: 0; }
-  6% { opacity: 1; }
-  50% { transform: translate(-3.4%, -24%); }
-  80% { opacity: 1; }
-  92%, 100% { transform: translate(-5.4%, -34.5%); opacity: 0; }
-}
-@keyframes landing-walk-c {
-  0% { transform: translate(0, 0); opacity: 0; }
-  6% { opacity: 1; }
-  50% { transform: translate(0.3%, -24%); }
-  80% { opacity: 1; }
-  92%, 100% { transform: translate(0.4%, -34.5%); opacity: 0; }
-}
-@keyframes landing-recede {
-  0% { transform: scale(1); }
-  50% { transform: scale(0.6); }
-  100% { transform: scale(0.28); }
-}
-/* Walking: four poses side by side on a strip that slides one pose every
-   0.225s (step-end), eight strides per 7.2s loop. One animation per group
-   so poses never blink, and long loops keep the main thread asleep. */
-@keyframes landing-stride {
-  0% { transform: translateX(0%); }
-  3.125% { transform: translateX(-25%); }
-  6.25% { transform: translateX(-50%); }
-  9.375% { transform: translateX(-75%); }
-  12.5% { transform: translateX(0%); }
-  15.625% { transform: translateX(-25%); }
-  18.75% { transform: translateX(-50%); }
-  21.875% { transform: translateX(-75%); }
-  25% { transform: translateX(0%); }
-  28.125% { transform: translateX(-25%); }
-  31.25% { transform: translateX(-50%); }
-  34.375% { transform: translateX(-75%); }
-  37.5% { transform: translateX(0%); }
-  40.625% { transform: translateX(-25%); }
-  43.75% { transform: translateX(-50%); }
-  46.875% { transform: translateX(-75%); }
-  50% { transform: translateX(0%); }
-  53.125% { transform: translateX(-25%); }
-  56.25% { transform: translateX(-50%); }
-  59.375% { transform: translateX(-75%); }
-  62.5% { transform: translateX(0%); }
-  65.625% { transform: translateX(-25%); }
-  68.75% { transform: translateX(-50%); }
-  71.875% { transform: translateX(-75%); }
-  75% { transform: translateX(0%); }
-  78.125% { transform: translateX(-25%); }
-  81.25% { transform: translateX(-50%); }
-  84.375% { transform: translateX(-75%); }
-  87.5% { transform: translateX(0%); }
-  90.625% { transform: translateX(-25%); }
-  93.75% { transform: translateX(-50%); }
-  96.875% { transform: translateX(-75%); }
-  100% { transform: translateX(-75%); }
-}
-@keyframes landing-rise {
-  from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .intro-anim {
-    animation: none !important;
-  }
-}
-
 /* Journey certificate: when printing (or saving as PDF), show only the certificate. */
 @media print {
   body:has(.gideon-certificate) * {
@@ -425,7 +215,14 @@ html:not([lang="tl"]) .t-tl {
   .gideon-certificate {
     position: absolute;
     inset: 0 0 auto 0;
-    margin: 1.5cm;
+    margin: 1cm;
+    box-shadow: none !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .gideon-certificate * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
 
@@ -735,3 +532,12 @@ html[data-text-size="xl"] {
 :target { scroll-margin-top: 5rem; }
 #book-chapter [data-pk]:target { animation: mark-flash 2s ease-out; }
 @keyframes mark-flash { from { box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.7); } to { box-shadow: 0 0 0 3px transparent; } }
+
+/* The bell when there are new notifications. */
+@keyframes bell-ring {
+  0%, 70%, 100% { transform: rotate(0); }
+  74% { transform: rotate(14deg); }
+  80% { transform: rotate(-12deg); }
+  86% { transform: rotate(8deg); }
+  92% { transform: rotate(-4deg); }
+}

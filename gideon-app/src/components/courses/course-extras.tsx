@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Award, Bookmark, CheckCircle2, NotebookPen, Printer, Users } from "lucide-react";
+import { Bookmark, CheckCircle2, NotebookPen, Printer, Users } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { PageHeader } from "@/components/shared/page-header";
 import { useLanguage, useTx } from "@/lib/i18n";
@@ -9,7 +9,9 @@ import type { Text } from "@/lib/content/courses/types";
 import { useCourseAccess } from "@/lib/hooks/use-lesson-assignments";
 import { useCourseProgress } from "@/lib/hooks/use-course-progress";
 import { useCourseReaders } from "@/lib/hooks/use-course-readers";
-import { useCourseGate } from "@/lib/hooks/use-course-enrollment";
+import { useCourseEnrollment, useCourseGate } from "@/lib/hooks/use-course-enrollment";
+import { useAuth } from "@/lib/hooks/use-auth";
+import { Certificate } from "@/components/shared/certificate";
 import { useProfile } from "@/lib/hooks/use-profile";
 import { roman } from "@/components/courses/book-chapter";
 
@@ -172,6 +174,9 @@ export function CourseCertificate({ courseId, title, lessonIds }: { courseId: st
   const done = lessonIds.filter((id) => progress.lessons[id]?.completedAt);
   const complete = lessonIds.length > 0 && done.length === lessonIds.length;
   const completedAt = complete ? Math.max(...lessonIds.map((id) => progress.lessons[id]?.completedAt ?? 0)) : 0;
+  const enrollment = useCourseEnrollment(courseId);
+  const { uid } = useAuth();
+  const dateText = new Date(completedAt).toLocaleDateString(lang === "tl" ? "fil-PH" : "en-PH", { year: "numeric", month: "long", day: "numeric" });
 
   return (
     <div>
@@ -190,32 +195,31 @@ export function CourseCertificate({ courseId, title, lessonIds }: { courseId: st
         </div>
       ) : (
         <div className="space-y-4 px-5 pb-8">
-          <div className="gideon-certificate book-paper ui-pop rounded-2xl border-4 border-double border-[#D4AF37] px-6 py-10 text-center">
-            <Award className="mx-auto size-12 text-[#a87810]" />
-            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] opacity-70">
-              {tx("Certificate of Completion", "Sertipiko ng Pagtatapos")}
-            </p>
-            <p className="mt-6 text-sm opacity-70">{tx("This certifies that", "Pinatutunayan nito na si")}</p>
-            <p className="mt-2 font-heading text-2xl font-semibold">{profile?.displayName ?? ""}</p>
-            <p className="mt-4 text-sm opacity-70">{tx("has read and completed the book", "ay nakabasa at nakatapos ng aklat")}</p>
-            <p className="mt-2 font-heading text-xl font-semibold text-[#1E3A5F] dark:text-[#e3bf5c]">{title[lang]}</p>
-            <p className="mt-1 text-sm opacity-70">
-              {tx(`${lessonIds.length} chapters · Anointed Academy Discipleship Courses`, `${lessonIds.length} kabanata · Anointed Academy Discipleship Courses`)}
-            </p>
-            <p className="mt-4 text-xs opacity-70">
-              {new Date(completedAt).toLocaleDateString(lang === "tl" ? "fil-PH" : "en-PH", { year: "numeric", month: "long", day: "numeric" })}
-            </p>
-            <div className="book-rule my-5 text-xs" aria-hidden>
-              <span>❦</span>
-            </div>
-            <p className="font-heading text-sm italic">
-              &ldquo;{tx(
+          <Certificate
+            heading={tx("Certificate of Completion", "Sertipiko ng Pagtatapos")}
+            subheading={tx("Sertipiko ng Pagtatapos", "Certificate of Completion")}
+            certifies={tx("This certifies that", "Pinatutunayan nito na si")}
+            recipient={profile?.displayName ?? enrollment.enrollment?.name ?? ""}
+            achievement={tx("has faithfully read and completed the book", "ay tapat na nakabasa at nakatapos ng aklat")}
+            title={title[lang]}
+            detail={tx(
+              `${lessonIds.length} chapters · Anointed Academy Discipleship Courses${enrollment.agName ? ` · ${enrollment.agName}` : ""}`,
+              `${lessonIds.length} kabanata · Anointed Academy Discipleship Courses${enrollment.agName ? ` · ${enrollment.agName}` : ""}`
+            )}
+            date={dateText}
+            signatures={[
+              { name: enrollment.enrollment?.decidedByName ?? enrollment.agName ?? "", role: tx("AG Leader", "AG Leader") },
+              { name: dateText, role: tx("Date completed", "Petsa ng pagtatapos") },
+            ]}
+            verse={{
+              text: tx(
                 "Well done, good and faithful servant! You have been faithful with a few things.",
                 "Magaling, mabuti at tapat na lingkod! Naging tapat ka sa kaunting bagay."
-              )}&rdquo;
-              <span className="mt-1 block text-xs not-italic opacity-70">{tx("Matthew 25:21", "Mateo 25:21")}</span>
-            </p>
-          </div>
+              ),
+              ref: tx("Matthew 25:21", "Mateo 25:21"),
+            }}
+            certId={`AA-${courseId.toUpperCase()}-${(uid ?? "").slice(0, 6).toUpperCase()}-${new Date(completedAt).getFullYear()}`}
+          />
           <Button variant="outline" className="w-full" onClick={() => window.print()}>
             <Printer className="size-4" />
             {tx("Print or save as PDF", "I-print o i-save bilang PDF")}

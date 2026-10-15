@@ -25,6 +25,7 @@ import { useProfile } from "@/lib/hooks/use-profile";
 import { encouragementOfTheDay } from "@/lib/content/encouragements";
 import { LanguageToggle } from "@/components/language-toggle";
 import { MusicToggle } from "@/components/music-toggle";
+import { InboxBell } from "@/components/inbox-bell";
 import { InviteCard } from "@/components/invite-card";
 import { WhatsNewCard } from "@/components/home/whats-new-card";
 import { DailyLetter, HomeNewsletter } from "@/components/home/newsletter";
@@ -69,6 +70,7 @@ export default function HomePage() {
             <span className="truncate font-heading text-sm font-semibold tracking-wide text-white">Anointed Academy</span>
           </span>
           <div className="flex shrink-0 items-center gap-1.5">
+            <InboxBell />
             <Link href="/search" aria-label={tx("Search", "Maghanap")} className="flex size-8 items-center justify-center rounded-full bg-white/90 text-foreground shadow-sm">
               <Search className="size-4" />
             </Link>

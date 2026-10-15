@@ -7,10 +7,7 @@ import { useProfile } from "@/lib/hooks/use-profile";
 import { useAuth } from "@/lib/hooks/use-auth";
 import { AuthScreen, JoinAgStep, SetupScreen } from "@/components/auth/auth-screen";
 import { LanguageToggle } from "@/components/language-toggle";
-import { CinematicIntro } from "@/components/intro/cinematic-intro";
-import { Landing } from "@/components/intro/landing";
 import { IntroVideo } from "@/components/intro/intro-video";
-import { useTour } from "@/components/tour/tour-provider";
 import type { UserProfile } from "@/types";
 import { PRIVACY_VERSION, PrivacyNotice } from "@/components/privacy/privacy-notice";
 import { DeleteAccount } from "@/components/privacy/delete-account";
@@ -29,17 +26,11 @@ function readIntroPlayed() {
 const noopSubscribe = () => () => {};
 
 export function WelcomeGate({ children }: { children: React.ReactNode }) {
-  // null on the server / first paint, so neither the landing nor the app
-  // flashes before we know whether this session already went past it.
+  // null on the server / first paint, so the app never flashes before we know
+  // whether this session already watched the opening film.
   const enteredThisSession = useSyncExternalStore(noopSubscribe, readIntroPlayed, () => null);
-  const [stage, setStage] = useState<"opening" | "landing" | "film" | "app" | null>(null);
-  // After the opening film (or back from the introduction film): show the
-  // landing already settled, not its opening again.
-  const [returned, setReturned] = useState(false);
-  const { profile, loading, hasAccount } = useProfile();
-  const tour = useTour();
+  const [stage, setStage] = useState<"opening" | "app" | null>(null);
   const current = stage ?? (enteredThisSession === null ? "pending" : enteredThisSession ? "app" : "opening");
-  const onboarded = loading ? null : hasAccount && isOnboardedProfile(profile);
 
   const enterApp = () => {
     try {
@@ -50,46 +41,12 @@ export function WelcomeGate({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      {/* "wait": the landing finishes fading before the film starts, so the
-          phone never draws two animated valleys at once. */}
-      <AnimatePresence mode="wait">
+      {/* The opening film, then straight into the app (its "Begin your journey" button, Skip, or the end). */}
+      <AnimatePresence>
         {current === "opening" && (
           <motion.div key="opening" exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
-            <IntroVideo
-              onDone={() => {
-                setReturned(true);
-                setStage("landing");
-              }}
-              onStart={enterApp}
-            />
+            <IntroVideo onDone={enterApp} onStart={enterApp} />
           </motion.div>
-        )}
-        {current === "landing" && (
-          <motion.div key="landing" exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
-            <Landing
-              onboarded={onboarded}
-              settled={returned}
-              onStart={enterApp}
-              onWatch={() => setStage("film")}
-              onExplore={() => {
-                if (onboarded) {
-                  enterApp();
-                  tour.start("app");
-                } else {
-                  tour.start("preview", { onStartJourney: enterApp });
-                }
-              }}
-            />
-          </motion.div>
-        )}
-        {current === "film" && (
-          <CinematicIntro
-            key="film"
-            onDone={() => {
-              setReturned(true);
-              setStage("landing");
-            }}
-          />
         )}
       </AnimatePresence>
       {current === "pending" && <div className="fixed inset-0 z-[100] bg-black" />}

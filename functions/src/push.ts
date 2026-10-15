@@ -1,4 +1,4 @@
-import { getFirestore } from "firebase-admin/firestore";
+import { getFirestore, Timestamp } from "firebase-admin/firestore";
 import { getMessaging } from "firebase-admin/messaging";
 import { logger } from "firebase-functions";
 
@@ -35,6 +35,7 @@ export interface Note {
 }
 
 const db = () => getFirestore();
+const HOUR_MS = 60 * 60 * 1000;
 
 /** A switch counts as on unless the member turned it off. */
 export const wants = (t: PushToken, pref: Pref) => t.prefs?.[pref] !== false;
@@ -104,4 +105,35 @@ export async function sendTo(devices: Device[], note: Note | ((d: Device) => Not
     await Promise.all(stale.map((p) => db().doc(p).delete().catch(() => {})));
   }
   return sent;
+}
+
+/**
+ * users/{uid}/inbox/{tag}: the in-app list of notifications (the bell). One
+ * per tag, so a newer one with the same tag replaces the older. Kept for 60
+ * days (expireAt, for a Firestore TTL policy).
+ */
+export async function toInbox(uids: Iterable<string>, note: Note) {
+  const unique = [...new Set(uids)].filter(Boolean);
+  const id = note.tag.replace(/[^A-Za-z0-9_-]/g, "_").slice(0, 140) || "note";
+  const now = Date.now();
+  const entry = {
+    title: note.title,
+    body: note.body,
+    url: note.url,
+    tag: note.tag,
+    createdAt: now,
+    read: false,
+    expireAt: Timestamp.fromMillis(now + 60 * 24 * HOUR_MS),
+  };
+  for (let i = 0; i < unique.length; i += 400) {
+    const batch = db().batch();
+    unique.slice(i, i + 400).forEach((uid) => batch.set(db().doc(`users/${uid}/inbox/${id}`), entry));
+    await batch.commit().catch((e) => logger.warn("inbox write failed", e));
+  }
+}
+
+/** Into the inbox of these members, and a push to their devices that want `pref`. */
+export async function notify(uids: Iterable<string>, pref: Pref, note: Note) {
+  const list = [...new Set(uids)].filter(Boolean);
+  await Promise.all([toInbox(list, note), devicesOf(list, pref).then((d) => sendTo(d, note))]);
 }

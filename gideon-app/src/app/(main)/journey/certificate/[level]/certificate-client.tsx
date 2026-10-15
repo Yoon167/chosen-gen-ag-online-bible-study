@@ -1,7 +1,9 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { Award, Printer } from "lucide-react";
+import { Printer } from "lucide-react";
+import { Certificate } from "@/components/shared/certificate";
+import { useAuth } from "@/lib/hooks/use-auth";
 import { PageHeader } from "@/components/shared/page-header";
 import { Button } from "@/components/ui/button";
 import { useLanguage, useTx } from "@/lib/i18n";
@@ -15,12 +17,16 @@ export function CertificateClient() {
   const tx = useTx();
   const { profile } = useProfile();
   const journey = useJourneyProgress();
+  const { uid } = useAuth();
 
   const level = findLevel(Number(params.level));
   if (!level) return <PageHeader title={tx("Certificate not found", "Walang ganitong sertipiko")} back />;
 
   const s = journey.stats(level.level);
   const completedAt = s.progress.completedAt;
+  const dateText = completedAt
+    ? new Date(completedAt).toLocaleDateString(lang === "tl" ? "fil-PH" : "en-PH", { year: "numeric", month: "long", day: "numeric" })
+    : "";
 
   return (
     <div>
@@ -35,48 +41,28 @@ export function CertificateClient() {
         </p>
       ) : (
         <div className="space-y-4 px-5 pb-8">
-          <div className="gideon-certificate rounded-2xl border-4 border-double border-gold bg-card px-6 py-10 text-center">
-            <Award className="mx-auto size-12 text-gold" />
-            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-              {tx("Certificate of Completion", "Sertipiko ng Pagtatapos")}
-            </p>
-            <p className="mt-6 text-sm text-muted-foreground">{tx("This certifies that", "Pinatutunayan nito na si")}</p>
-            <p className="mt-2 font-heading text-2xl font-semibold">{profile?.displayName ?? ""}</p>
-            <p className="mt-4 text-sm text-muted-foreground">
-              {tx("has completed", "ay nakatapos ng")}
-            </p>
-            <p className="mt-2 font-heading text-lg font-semibold text-primary">
-              Level {level.level} · {level.title[lang]}
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              {tx("of the Anointed Academy Discipleship Journey", "ng Anointed Academy Discipleship Journey")}
-            </p>
-            {s.progress.checkpoint && (
-              <p className="mt-6 text-xs text-muted-foreground">
-                {tx("Mentor: ", "Mentor: ")}
-                {s.progress.checkpoint.mentorName}
-              </p>
-            )}
-            {completedAt && (
-              <p className="mt-1 text-xs text-muted-foreground">
-                {new Date(completedAt).toLocaleDateString(lang === "tl" ? "fil-PH" : "en-PH", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </p>
-            )}
-            <p className="mt-6 font-heading text-sm italic">
-              &ldquo;{tx(
+          <Certificate
+            heading={tx("Certificate of Completion", "Sertipiko ng Pagtatapos")}
+            subheading={tx("Sertipiko ng Pagtatapos", "Certificate of Completion")}
+            certifies={tx("This certifies that", "Pinatutunayan nito na si")}
+            recipient={profile?.displayName ?? ""}
+            achievement={tx("has completed", "ay nakatapos ng")}
+            title={`Level ${level.level} · ${level.title[lang]}`}
+            detail={tx("of the Anointed Academy Discipleship Journey", "ng Anointed Academy Discipleship Journey")}
+            date={dateText}
+            signatures={[
+              { name: s.progress.checkpoint?.mentorName ?? "", role: tx("Mentor", "Mentor") },
+              { name: dateText, role: tx("Date completed", "Petsa ng pagtatapos") },
+            ]}
+            verse={{
+              text: tx(
                 "Being confident of this, that he who began a good work in you will carry it on to completion.",
                 "Ako'y lubos na nagtitiwala na ang nagpasimula ng mabuting gawa sa inyo ay siya ring tatapos nito."
-              )}&rdquo;
-              <span className="mt-1 block not-italic text-xs text-muted-foreground">
-                {tx("Philippians 1:6", "Filipos 1:6")}
-              </span>
-            </p>
-          </div>
-
+              ),
+              ref: tx("Philippians 1:6", "Filipos 1:6"),
+            }}
+            certId={`AA-L${level.level}-${(uid ?? "").slice(0, 6).toUpperCase()}`}
+          />
           <Button variant="outline" className="w-full" onClick={() => window.print()}>
             <Printer className="size-4" />
             {tx("Print or save as PDF", "I-print o i-save bilang PDF")}

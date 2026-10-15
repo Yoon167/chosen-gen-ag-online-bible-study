@@ -27,6 +27,8 @@ export interface EnrollmentForm {
 export interface CourseEnrollment extends EnrollmentForm {
   id: string;
   courseId: string;
+  /** The course title in the member's language, for notifications. */
+  courseTitle?: string;
   uid: string;
   status: EnrollmentStatus;
   createdAt: number;
@@ -67,11 +69,12 @@ export function useCourseEnrollment(courseId: string) {
     status: item?.status ?? null,
     approved: item?.status === "approved",
     /** Send (or send again) the enroll form; it waits for a leader's approval. */
-    async submit(form: EnrollmentForm) {
+    async submit(form: EnrollmentForm, courseTitle = "") {
       if (!churchId || !uid) throw new Error("Join an AG first.");
       const now = Date.now();
       const data: Omit<CourseEnrollment, "id"> = {
         courseId,
+        courseTitle: courseTitle.slice(0, 120),
         uid,
         name: form.name.trim().slice(0, 100),
         phone: form.phone.trim().slice(0, 40),
