@@ -5,6 +5,7 @@ import { CourseUnlockCard } from "@/components/courses/lesson-access";
 import { CourseBookHero, CourseContents } from "@/components/courses/book-ui";
 import { BookSample, CourseReadersCard, MyBookMarks } from "@/components/courses/course-extras";
 import { CourseReaderSync } from "@/components/courses/book-reader";
+import { AgSwitcher, EnrollmentRequestsCard } from "@/components/courses/course-admin";
 import { Bi } from "@/components/courses/bi";
 import { deepKey, loadBook } from "@/lib/content/deep/load";
 
@@ -31,9 +32,11 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
         lessonIds={lessonIds}
       />
       <div className="space-y-4 pt-5">
+        <AgSwitcher courseId={course.id} />
         <div className="px-5 empty:hidden">
           <CourseUnlockCard courseId={course.id} />
         </div>
+        <EnrollmentRequestsCard courseId={course.id} />
         <CourseReadersCard courseId={course.id} />
 
         {/* Foreword */}

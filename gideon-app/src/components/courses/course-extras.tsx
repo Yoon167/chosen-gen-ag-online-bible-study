@@ -9,6 +9,7 @@ import type { Text } from "@/lib/content/courses/types";
 import { useCourseAccess } from "@/lib/hooks/use-lesson-assignments";
 import { useCourseProgress } from "@/lib/hooks/use-course-progress";
 import { useCourseReaders } from "@/lib/hooks/use-course-readers";
+import { useCourseGate } from "@/lib/hooks/use-course-enrollment";
 import { useProfile } from "@/lib/hooks/use-profile";
 import { roman } from "@/components/courses/book-chapter";
 
@@ -31,9 +32,8 @@ export function BookSample({
 }) {
   const { lang } = useLanguage();
   const tx = useTx();
-  const access = useCourseAccess();
-  const progress = useCourseProgress(courseId);
-  if (access.loading || !progress.loaded || access.isLeader || progress.enrolled) return null;
+  const gate = useCourseGate(courseId);
+  if (gate.loading || gate.enrolled) return null;
   return (
     <section className="book-paper relative mx-5 overflow-hidden rounded-2xl border border-[#D4AF37]/30 px-5 pb-6 pt-6 shadow-sm">
       <p className="text-center font-heading text-xs uppercase tracking-[0.35em] text-[#a87810] dark:text-[#e3bf5c]">

@@ -573,6 +573,43 @@ service cloud.firestore {
         allow delete: if isAdmin() || (request.auth != null && request.auth.uid == uid) || rankAtLeast(churchId, 3);
       }
 
+      // A member's enrollment form for a course book in this AG
+      // ("{courseId}__{uid}"). The member sends it (pending); this AG's
+      // leaders approve or decline it. Each AG keeps its own.
+      match /courseEnrollments/{eid} {
+        allow get: if isAdmin() || rankAtLeast(churchId, 3)
+          || (request.auth != null && (resource == null || resource.data.uid == request.auth.uid));
+        allow list: if isAdmin() || rankAtLeast(churchId, 3)
+          || (request.auth != null && resource.data.uid == request.auth.uid);
+        // The member sends (or, while waiting or after a decline, sends again) their form.
+        allow create, update: if request.auth != null
+          && request.resource.data.uid == request.auth.uid
+          && isActiveMember(churchId, request.auth.uid)
+          && (resource == null || (resource.data.uid == request.auth.uid && resource.data.status in ['pending', 'declined']))
+          && eid == request.resource.data.courseId + '__' + request.auth.uid
+          && request.resource.data.keys().hasOnly(['courseId', 'uid', 'name', 'phone', 'reason', 'schedule', 'agree', 'status', 'createdAt', 'updatedAt'])
+          && request.resource.data.status == 'pending'
+          && request.resource.data.agree == true
+          && validText(request.resource.data.courseId, 1, 80)
+          && validText(request.resource.data.name, 1, 100)
+          && validText(request.resource.data.phone, 0, 40)
+          && validText(request.resource.data.reason, 1, 1000)
+          && validText(request.resource.data.schedule, 0, 100)
+          && request.resource.data.createdAt is int
+          && request.resource.data.updatedAt is int;
+        // This AG's leaders decide; they change only the decision.
+        allow update: if (isAdmin() || rankAtLeast(churchId, 3))
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'decidedBy', 'decidedByName', 'decidedAt', 'leaderNote', 'updatedAt'])
+          && request.resource.data.status in ['pending', 'approved', 'declined']
+          && request.resource.data.decidedBy == request.auth.uid
+          && validText(request.resource.data.decidedByName, 0, 100)
+          && validText(request.resource.data.leaderNote, 0, 500)
+          && request.resource.data.decidedAt is int
+          && request.resource.data.updatedAt is int;
+        allow delete: if isAdmin() || rankAtLeast(churchId, 3)
+          || (request.auth != null && resource.data.uid == request.auth.uid);
+      }
+
       // The member a leader asked to present (and exhort) a lesson ("{courseId}__{lessonId}").
       match /lessonAssignments/{aid} {
         allow read: if isAdmin() || (request.auth != null && isActiveMember(churchId, request.auth.uid));

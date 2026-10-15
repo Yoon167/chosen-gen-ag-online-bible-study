@@ -29,7 +29,7 @@ export interface CourseLessonProgress {
 
 /** users/{uid}/courseProgress/{courseId} */
 export interface CourseProgressDoc {
-  /** When the member enrolled; lessons open only after enrolling. */
+  /** When the member self-enrolled (before leader approvals; no longer written). */
   enrolledAt?: number;
   /** The chapter the reader opened last, for "Continue reading". */
   lastRead?: { lessonId: string; at: number };
@@ -37,11 +37,11 @@ export interface CourseProgressDoc {
 }
 
 /**
- * Enrolled in a course. Members who started a course before enrolling
- * existed (they already have progress) count as enrolled.
+ * Started a course before enrollment approvals existed (already has progress):
+ * counts as enrolled so nobody loses a book they were reading.
  */
-export function isEnrolled(doc: CourseProgressDoc | null | undefined) {
-  return !!doc?.enrolledAt || Object.values(doc?.lessons ?? {}).some((l) => !!l.completedAt || !!l.journal || !!l.selfCheck);
+export function hasStarted(lessons: Record<string, CourseLessonProgress> | undefined) {
+  return Object.values(lessons ?? {}).some((l) => !!l.completedAt || !!l.journal || !!l.selfCheck);
 }
 
 /** Progress in every course (one small doc per course). */
@@ -79,11 +79,6 @@ export function useCourseProgress(courseId: string) {
     await setDoc(ref(), { lessons: { [lessonId]: fields } }, { merge: true });
   }
 
-  async function enroll() {
-    if (!uid) return;
-    await setDoc(ref(), { enrolledAt: Date.now() }, { merge: true });
-  }
-
   /** Remember where the reader is, for "Continue reading". */
   async function saveReading(lessonId: string, pos: number) {
     if (!uid) return;
@@ -112,11 +107,9 @@ export function useCourseProgress(courseId: string) {
   return {
     lessons: data?.lessons ?? {},
     loaded: data !== null,
-    enrolled: isEnrolled(data),
     enrolledAt: data?.enrolledAt ?? null,
     lastRead: data?.lastRead ?? null,
     saveLesson,
-    enroll,
     saveReading,
     saveMark,
   };

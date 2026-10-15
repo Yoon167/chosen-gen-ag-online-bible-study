@@ -62,6 +62,7 @@ export function useCourseAccess() {
   return {
     uid,
     churchId,
+    agName: my.church?.name ?? "",
     isLeader,
     unlocked: unlocks.items,
     assignments: assignments.items,

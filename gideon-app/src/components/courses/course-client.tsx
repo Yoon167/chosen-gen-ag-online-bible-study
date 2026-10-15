@@ -30,7 +30,8 @@ import { PassageSheet } from "@/components/bible/passage-sheet";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { assignmentId, useCourseAccess } from "@/lib/hooks/use-lesson-assignments";
-import { isEnrolled, useAllCourseProgress, useCourseProgress } from "@/lib/hooks/use-course-progress";
+import { hasStarted, useAllCourseProgress, useCourseProgress } from "@/lib/hooks/use-course-progress";
+import { useMyEnrollments } from "@/lib/hooks/use-course-enrollment";
 import { useMemoryVerses } from "@/lib/hooks/use-memory-verses";
 import { useBibleTranslation } from "@/lib/hooks/use-bible-translation";
 import { cleanVerseText, fetchPassage } from "@/lib/bible/api";
@@ -74,6 +75,13 @@ export function CourseCards({ courses }: { courses: CourseCard[] }) {
   const tx = useTx();
   const progress = useAllCourseProgress();
   const access = useCourseAccess();
+  const mine = useMyEnrollments();
+  const status = (id: string) => {
+    if (mine[id]?.status === "approved" || hasStarted(progress[id]?.lessons)) return tx("Enrolled", "Naka-enroll");
+    if (mine[id]?.status === "pending") return tx("Waiting for approval", "Naghihintay ng approval");
+    if (access.loading || !access.churchId) return null;
+    return access.isUnlocked(id) ? tx("Open", "Bukas") : tx("Locked", "Naka-lock");
+  };
   return (
     <div className="book-shelf grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3">
       {courses.map((c, i) => {
@@ -94,9 +102,7 @@ export function CourseCards({ courses }: { courses: CourseCard[] }) {
             <span className="mt-4 block min-w-0">
               <span className="block text-[0.625rem] font-semibold uppercase tracking-wide text-muted-foreground">
                 {c.lessonIds.length} {tx("chapters", "kabanata")}
-                {isEnrolled(progress[c.id])
-                  ? ` · ${tx("Enrolled", "Naka-enroll")}`
-                  : !access.loading && access.churchId && (access.isUnlocked(c.id) ? ` · ${tx("Open", "Bukas")}` : ` · ${tx("Locked", "Naka-lock")}`)}
+                {status(c.id) && ` · ${status(c.id)}`}
               </span>
               <span className="mt-0.5 block font-heading text-sm font-semibold leading-snug group-hover:text-primary">{c.title[lang]}</span>
               <span className="mt-1 block line-clamp-3 text-xs leading-relaxed text-muted-foreground">{c.summary[lang]}</span>

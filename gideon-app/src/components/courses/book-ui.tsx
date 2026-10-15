@@ -3,16 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Award, BookOpen, BookOpenCheck, CheckCircle2, ChevronLeft, ChevronRight, Library, Lock, Mic } from "lucide-react";
+import { Award, BookOpen, CheckCircle2, ChevronLeft, ChevronRight, Library, Lock, Mic } from "lucide-react";
 import { HeroStat, PageHeader } from "@/components/shared/page-header";
-import { Button } from "@/components/ui/button";
 import { BookCover, BOOK_COLORS } from "@/components/shared/book-cover";
 import { COURSE_ICONS } from "@/components/courses/course-client";
 import { assignmentId, useCourseAccess } from "@/lib/hooks/use-lesson-assignments";
-import { useCourseProgress } from "@/lib/hooks/use-course-progress";
+import { useCourseGate } from "@/lib/hooks/use-course-enrollment";
+import { EnrollButton } from "@/components/courses/course-enroll";
 import type { Course, Text } from "@/lib/content/courses/types";
 import { useLanguage, useTx } from "@/lib/i18n";
-import { celebrate } from "@/lib/celebrate";
 import { cn } from "@/lib/utils";
 import { roman } from "@/components/courses/book-chapter";
 import { ReadingControls } from "@/components/courses/book-reader";
@@ -81,13 +80,12 @@ export function CourseBookHero({
   const { lang } = useLanguage();
   const tx = useTx();
   const router = useRouter();
-  const access = useCourseAccess();
-  const progress = useCourseProgress(course.id);
+  const gate = useCourseGate(course.id);
+  const { access, progress } = gate;
   const Icon = COURSE_ICONS[course.icon];
   const [from, to] = BOOK_COLORS[index % BOOK_COLORS.length];
   const done = lessonIds.filter((id) => progress.lessons[id]?.completedAt).length;
-  const canOpen = !access.loading && access.canOpen(course.id);
-  const enrolled = progress.enrolled;
+  const enrolled = gate.enrolled;
   const hours = Math.round((lessonIds.length * MINUTES_PER_CHAPTER) / 60);
   const actionRef = useRef<HTMLDivElement>(null);
   const [showSticky, setShowSticky] = useState(false);
@@ -142,22 +140,22 @@ export function CourseBookHero({
       <p className="relative mt-4 font-heading text-sm italic leading-relaxed text-white/85">{course.summary[lang]}</p>
 
       <div ref={actionRef} className="relative mt-4">
-        <BookAction courseId={course.id} lessonIds={lessonIds} />
-        {canOpen && !enrolled && !access.isLeader && progress.loaded && (
+        <BookAction courseId={course.id} lessonIds={lessonIds} title={course.title} />
+        {!gate.loading && !enrolled && access.churchId && (
           <p className="mt-2 text-center text-[0.6875rem] leading-relaxed text-white/70">
             {tx(
-              "Enroll first to open the chapters. Your AG leaders will see that you enrolled and how many chapters you finished, never your notes or journal.",
-              "Mag-enroll muna para mabuksan ang mga kabanata. Makikita ng mga AG leader mo na naka-enroll ka at ilang kabanata na ang natapos mo, pero hindi ang iyong mga tala o journal."
+              "Fill in the enrollment form; your AG leader approves it. Leaders will see your progress in chapters, never your notes or journal.",
+              "Sagutan ang enrollment form; ia-approve ito ng iyong AG leader. Makikita ng mga leader ang bilang ng natapos mong kabanata, hindi kailanman ang iyong mga tala o journal."
             )}
           </p>
         )}
       </div>
 
       {/* The same button, pinned above the tab bar once the cover scrolls away */}
-      {canOpen && progress.loaded && showSticky && (
+      {!gate.loading && access.churchId && showSticky && (
         <div className="ui-rise fixed inset-x-0 bottom-[4.75rem] z-30 mx-auto max-w-xl px-5 safe-bottom">
           <div className="rounded-full shadow-2xl shadow-black/30">
-            <BookAction courseId={course.id} lessonIds={lessonIds} compact />
+            <BookAction courseId={course.id} lessonIds={lessonIds} title={course.title} compact />
           </div>
         </div>
       )}
@@ -170,8 +168,9 @@ export function CourseContents({ courseId, lessons }: { courseId: string; lesson
   const { lang } = useLanguage();
   const tx = useTx();
   const access = useCourseAccess();
-  const progress = useCourseProgress(courseId);
-  const open = !access.loading && access.canOpen(courseId) && (access.isLeader || progress.enrolled);
+  const gate = useCourseGate(courseId);
+  const progress = gate.progress;
+  const open = gate.open;
 
   return (
     <section className="book-paper mx-5 rounded-2xl border border-[#D4AF37]/30 px-5 py-6 shadow-sm">
@@ -258,37 +257,35 @@ export function LibraryHeader({ books, chapters }: { books: number; chapters: nu
  * The book's main button: enroll, start, continue where you left off, or the
  * certificate once every chapter is finished.
  */
-export function BookAction({ courseId, lessonIds, compact = false }: { courseId: string; lessonIds: string[]; compact?: boolean }) {
+export function BookAction({
+  courseId,
+  lessonIds,
+  title,
+  compact = false,
+}: {
+  courseId: string;
+  lessonIds: string[];
+  title?: Text;
+  compact?: boolean;
+}) {
   const tx = useTx();
-  const access = useCourseAccess();
-  const progress = useCourseProgress(courseId);
-  const [busy, setBusy] = useState(false);
+  const gate = useCourseGate(courseId);
+  const { access, progress } = gate;
   const done = lessonIds.filter((id) => progress.lessons[id]?.completedAt).length;
   const finished = done === lessonIds.length && lessonIds.length > 0;
   const last = progress.lastRead && lessonIds.includes(progress.lastRead.lessonId) ? progress.lastRead.lessonId : null;
   const nextId = (last && !progress.lessons[last]?.completedAt ? last : null) ?? lessonIds.find((id) => !progress.lessons[id]?.completedAt) ?? lessonIds[0];
   const gold = "flex h-11 w-full items-center justify-center gap-2 rounded-full bg-[#D4AF37] text-sm font-semibold text-[#13253d] shadow-[0_0_20px_rgba(212,175,55,0.45)]";
 
-  if (!progress.loaded || access.loading) return compact ? null : <div className="h-11 animate-pulse rounded-full bg-white/15" />;
-  if (!access.canOpen(courseId)) return null;
-  if (!progress.enrolled && !access.isLeader) {
+  if (gate.loading) return compact ? null : <div className="h-11 animate-pulse rounded-full bg-white/15" />;
+  // Members enroll in their AG (even before it's unlocked); a leader approves.
+  if (!gate.enrolled) return access.churchId ? <EnrollButton courseId={courseId} title={title} compact={compact} /> : null;
+  if (!gate.canOpen) {
     return (
-      <Button
-        className={cn(gold, "hover:bg-[#D4AF37]/90")}
-        disabled={busy}
-        onClick={async () => {
-          setBusy(true);
-          try {
-            await progress.enroll();
-            celebrate("📖");
-          } finally {
-            setBusy(false);
-          }
-        }}
-      >
-        <BookOpenCheck />
-        {tx("Enroll in this course", "Mag-enroll sa course na ito")}
-      </Button>
+      <div className="flex h-11 w-full items-center justify-center gap-2 rounded-full border border-white/30 bg-[#13253d]/70 text-sm font-medium text-white/85 backdrop-blur">
+        <Lock className="size-4" />
+        {tx("Enrolled · opens when your AG leader unlocks it", "Naka-enroll · magbubukas pag na-unlock ng AG leader")}
+      </div>
     );
   }
   if (finished) {

@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { BookOpenCheck, Lock, LockOpen, Mic, UserCheck } from "lucide-react";
+import { Lock, LockOpen, Mic, UserCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRoster } from "@/lib/hooks/use-church";
 import { assignPresenter, assignmentId, lockCourse, removePresenter, unlockCourse, useCourseAccess } from "@/lib/hooks/use-lesson-assignments";
 import { useTx } from "@/lib/i18n";
-import { useCourseProgress } from "@/lib/hooks/use-course-progress";
-import { celebrate } from "@/lib/celebrate";
+import { useCourseGate } from "@/lib/hooks/use-course-enrollment";
+import { EnrollButton, EnrollPanel } from "@/components/courses/course-enroll";
 
 function useRun() {
   const tx = useTx();
@@ -29,7 +29,7 @@ function useRun() {
 }
 
 /** What a member sees in a course their leader hasn't unlocked yet. */
-function LockedNotice() {
+function LockedNotice({ enrollFor }: { enrollFor?: string }) {
   const tx = useTx();
   const access = useCourseAccess();
   return (
@@ -39,11 +39,16 @@ function LockedNotice() {
       <p className="text-sm text-muted-foreground">
         {access.churchId
           ? tx(
-              "Your AG goes through the courses together, one course at a time. Your AG leader will unlock it when it's time.",
-              "Sabay-sabay na pinag-aaralan ng inyong AG ang mga course, isa-isa. Ia-unlock ito ng iyong AG leader kapag oras na."
+              "Your AG goes through the courses together, one course at a time. You can already send the enrollment form; the chapters open once your AG leader approves it and unlocks the course.",
+              "Sabay-sabay na pinag-aaralan ng inyong AG ang mga course, isa-isa. Puwede ka nang magpadala ng enrollment form; magbubukas ang mga kabanata kapag inaprubahan ito ng iyong AG leader at na-unlock ang course."
             )
           : tx("Join an AG to take the courses with your group.", "Sumali sa isang AG para pag-aralan ang mga course kasama ang iyong grupo.")}
       </p>
+      {access.churchId && enrollFor && (
+        <div className="mx-auto max-w-xs rounded-full bg-[#1E3A5F] p-0.5">
+          <EnrollButton courseId={enrollFor} />
+        </div>
+      )}
       {!access.churchId && (
         <Link href="/church" className="inline-block text-sm font-medium text-primary underline underline-offset-2">
           {tx("Find my AG", "Hanapin ang aking AG")}
@@ -68,12 +73,14 @@ export function CourseUnlockCard({ courseId }: { courseId: string }) {
         {open ? <LockOpen className="size-5 shrink-0 text-primary" /> : <Lock className="size-5 shrink-0 text-muted-foreground" />}
         <p className="min-w-0 flex-1 text-sm">
           <span className="block font-medium">
-            {open ? tx("Unlocked for your AG", "Naka-unlock para sa iyong AG") : tx("Locked for your AG", "Naka-lock para sa iyong AG")}
+            {open
+              ? tx(`Unlocked for ${access.agName || "your AG"}`, `Naka-unlock para sa ${access.agName || "iyong AG"}`)
+              : tx(`Locked for ${access.agName || "your AG"}`, `Naka-lock para sa ${access.agName || "iyong AG"}`)}
           </span>
           <span className="block text-xs text-muted-foreground">
             {open
-              ? tx("Members can open every lesson in this course.", "Mabubuksan ng mga member ang lahat ng aralin sa course na ito.")
-              : tx("Only leaders see this card.", "Mga leader lang ang nakakakita nito.")}
+              ? tx("Approved members of this AG can open every chapter. Other AGs are not affected.", "Mabubuksan ng mga aprubadong member ng AG na ito ang bawat kabanata. Hindi apektado ang ibang AG.")
+              : tx("Only this AG. Only leaders see this card.", "Para lang sa AG na ito. Mga leader lang ang nakakakita nito.")}
           </span>
         </p>
         <Button
@@ -90,39 +97,6 @@ export function CourseUnlockCard({ courseId }: { courseId: string }) {
   );
 }
 
-/** A member who hasn't enrolled yet: enroll here to open the lessons. */
-export function EnrollNotice({ courseId }: { courseId: string }) {
-  const tx = useTx();
-  const progress = useCourseProgress(courseId);
-  const { busy, error, run } = useRun();
-  return (
-    <div className="book-paper space-y-3 rounded-2xl border border-[#D4AF37]/40 p-6 text-center shadow-sm">
-      <BookOpenCheck className="mx-auto size-9 text-[#a87810]" />
-      <p className="font-heading text-lg font-semibold">{tx("Enroll to open this book", "Mag-enroll para mabuksan ang aklat na ito")}</p>
-      <p className="text-sm text-muted-foreground">
-        {tx(
-          "Enrolling is your yes to go through this course chapter by chapter. Your progress and journal are saved for you.",
-          "Ang pag-enroll ay ang iyong \"oo\" na pagdaanan ang course na ito, kabanata por kabanata. Mase-save ang iyong progreso at journal."
-        )}
-      </p>
-      <Button
-        className="h-11 bg-gradient-to-r from-[#c99a2e] to-[#a87810] px-6 text-white shadow-md shadow-amber-600/25 hover:opacity-95"
-        disabled={busy || !progress.loaded}
-        onClick={() =>
-          run(async () => {
-            await progress.enroll();
-            celebrate("📖");
-          })
-        }
-      >
-        <BookOpenCheck />
-        {tx("Enroll in this course", "Mag-enroll sa course na ito")}
-      </Button>
-      {error && <p className="text-xs text-destructive">{error}</p>}
-    </div>
-  );
-}
-
 /**
  * Wraps a Course lesson. Members see it once their AG leader unlocks the
  * course and they have enrolled; leaders see it always, with a way to pick
@@ -130,21 +104,21 @@ export function EnrollNotice({ courseId }: { courseId: string }) {
  */
 export function LessonGate({ courseId, lessonId, children }: { courseId: string; lessonId: string; children: React.ReactNode }) {
   const tx = useTx();
-  const access = useCourseAccess();
-  const progress = useCourseProgress(courseId);
+  const gate = useCourseGate(courseId);
+  const access = gate.access;
 
-  if (access.loading || (!access.isLeader && !progress.loaded)) return <div className="mx-5 h-40 animate-pulse rounded-2xl bg-muted" />;
+  if (gate.loading) return <div className="mx-5 h-40 animate-pulse rounded-2xl bg-muted" />;
   if (!access.canOpen(courseId)) {
     return (
       <div className="px-5">
-        <LockedNotice />
+        <LockedNotice enrollFor={courseId} />
       </div>
     );
   }
-  if (!access.isLeader && !progress.enrolled) {
+  if (!gate.enrolled) {
     return (
       <div className="px-5">
-        <EnrollNotice courseId={courseId} />
+        <EnrollPanel courseId={courseId} />
       </div>
     );
   }
