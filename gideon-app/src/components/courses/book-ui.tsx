@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { BookOpen, BookOpenCheck, CheckCircle2, ChevronLeft, ChevronRight, Library, Lock, Mic } from "lucide-react";
+import { Award, BookOpen, BookOpenCheck, CheckCircle2, ChevronLeft, ChevronRight, Library, Lock, Mic } from "lucide-react";
 import { HeroStat, PageHeader } from "@/components/shared/page-header";
 import { Button } from "@/components/ui/button";
 import { BookCover, BOOK_COLORS } from "@/components/shared/book-cover";
@@ -15,6 +15,7 @@ import { useLanguage, useTx } from "@/lib/i18n";
 import { celebrate } from "@/lib/celebrate";
 import { cn } from "@/lib/utils";
 import { roman } from "@/components/courses/book-chapter";
+import { ReadingControls } from "@/components/courses/book-reader";
 
 /** About how long a lesson takes to read and study. */
 export const MINUTES_PER_CHAPTER = 25;
@@ -43,7 +44,7 @@ export function ReadingProgress() {
 }
 
 /** The running head of a book page: back, the book's title and the chapter. */
-export function BookTopBar({ book, chapter, courseId }: { book: Text; chapter: number; courseId: string }) {
+export function BookTopBar({ book, chapter, total, courseId }: { book: Text; chapter: number; total: number; courseId: string }) {
   const { lang } = useLanguage();
   const tx = useTx();
   const router = useRouter();
@@ -56,10 +57,13 @@ export function BookTopBar({ book, chapter, courseId }: { book: Text; chapter: n
       >
         <ChevronLeft className="size-4.5" />
       </button>
-      <p className="min-w-0 flex-1 truncate text-center font-heading text-xs uppercase tracking-[0.2em] text-muted-foreground">
-        {book[lang]} · {tx("Ch.", "Kab.")} {roman(chapter)}
+      <p className="min-w-0 flex-1 text-center leading-tight">
+        <span className="block truncate font-heading text-[0.6875rem] uppercase tracking-[0.18em] text-muted-foreground">{book[lang]}</span>
+        <span className="block text-[0.6875rem] font-semibold text-[#a87810] dark:text-[#e3bf5c]">
+          {tx(`Chapter ${chapter} of ${total}`, `Kabanata ${chapter} ng ${total}`)}
+        </span>
       </p>
-      <span className="size-9 shrink-0" />
+      <ReadingControls />
     </div>
   );
 }
@@ -79,14 +83,21 @@ export function CourseBookHero({
   const router = useRouter();
   const access = useCourseAccess();
   const progress = useCourseProgress(course.id);
-  const [busy, setBusy] = useState(false);
   const Icon = COURSE_ICONS[course.icon];
   const [from, to] = BOOK_COLORS[index % BOOK_COLORS.length];
   const done = lessonIds.filter((id) => progress.lessons[id]?.completedAt).length;
-  const nextId = lessonIds.find((id) => !progress.lessons[id]?.completedAt) ?? lessonIds[0];
   const canOpen = !access.loading && access.canOpen(course.id);
   const enrolled = progress.enrolled;
   const hours = Math.round((lessonIds.length * MINUTES_PER_CHAPTER) / 60);
+  const actionRef = useRef<HTMLDivElement>(null);
+  const [showSticky, setShowSticky] = useState(false);
+  useEffect(() => {
+    const el = actionRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([e]) => setShowSticky(!e.isIntersecting && e.boundingClientRect.top < 0));
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   return (
     <header className="relative overflow-hidden px-5 pb-6 pt-4 text-white safe-top" style={{ background: `linear-gradient(160deg, ${from}, ${to})` }}>
@@ -130,45 +141,26 @@ export function CourseBookHero({
 
       <p className="relative mt-4 font-heading text-sm italic leading-relaxed text-white/85">{course.summary[lang]}</p>
 
-      <div className="relative mt-4">
-        {!progress.loaded || access.loading ? (
-          <div className="h-11 animate-pulse rounded-full bg-white/15" />
-        ) : !canOpen ? null : enrolled || access.isLeader ? (
-          <Link
-            href={`/courses/${course.id}/${nextId}`}
-            className="flex h-11 items-center justify-center gap-2 rounded-full bg-[#D4AF37] text-sm font-semibold text-[#13253d] shadow-[0_0_20px_rgba(212,175,55,0.45)]"
-          >
-            <BookOpen className="size-4" />
-            {done === 0
-              ? tx("Start reading", "Simulan ang pagbasa")
-              : done === lessonIds.length
-                ? tx("Read again from the start", "Basahin ulit mula sa simula")
-                : tx(`Continue: Chapter ${roman(lessonIds.indexOf(nextId) + 1)}`, `Ituloy: Kabanata ${roman(lessonIds.indexOf(nextId) + 1)}`)}
-          </Link>
-        ) : (
-          <Button
-            className="h-11 w-full rounded-full bg-[#D4AF37] text-sm font-semibold text-[#13253d] shadow-[0_0_20px_rgba(212,175,55,0.45)] hover:bg-[#D4AF37]/90"
-            disabled={busy}
-            onClick={async () => {
-              setBusy(true);
-              try {
-                await progress.enroll();
-                celebrate("📖");
-              } finally {
-                setBusy(false);
-              }
-            }}
-          >
-            <BookOpenCheck />
-            {tx("Enroll in this course", "Mag-enroll sa course na ito")}
-          </Button>
-        )}
+      <div ref={actionRef} className="relative mt-4">
+        <BookAction courseId={course.id} lessonIds={lessonIds} />
         {canOpen && !enrolled && !access.isLeader && progress.loaded && (
-          <p className="mt-2 text-center text-[0.6875rem] text-white/70">
-            {tx("Enroll first to open the chapters.", "Mag-enroll muna para mabuksan ang mga kabanata.")}
+          <p className="mt-2 text-center text-[0.6875rem] leading-relaxed text-white/70">
+            {tx(
+              "Enroll first to open the chapters. Your AG leaders will see that you enrolled and how many chapters you finished, never your notes or journal.",
+              "Mag-enroll muna para mabuksan ang mga kabanata. Makikita ng mga AG leader mo na naka-enroll ka at ilang kabanata na ang natapos mo, pero hindi ang iyong mga tala o journal."
+            )}
           </p>
         )}
       </div>
+
+      {/* The same button, pinned above the tab bar once the cover scrolls away */}
+      {canOpen && progress.loaded && showSticky && (
+        <div className="ui-rise fixed inset-x-0 bottom-[4.75rem] z-30 mx-auto max-w-xl px-5 safe-bottom">
+          <div className="rounded-full shadow-2xl shadow-black/30">
+            <BookAction courseId={course.id} lessonIds={lessonIds} compact />
+          </div>
+        </div>
+      )}
     </header>
   );
 }
@@ -194,8 +186,8 @@ export function CourseContents({ courseId, lessons }: { courseId: string; lesson
           const row = (
             <>
               <span className="w-9 shrink-0 font-heading text-sm font-semibold text-[#a87810] dark:text-[#e3bf5c]">{roman(i + 1)}</span>
-              <span className="min-w-0">
-                <span className={cn("block font-heading text-[0.9375rem] leading-snug", !open && "opacity-60")}>{l.title[lang]}</span>
+              <span className="min-w-0 max-w-[78%]">
+                <span className={cn("block text-balance font-heading text-[0.9375rem] leading-snug", !open && "opacity-60")}>{l.title[lang]}</span>
                 {presenter && (
                   <span className="mt-0.5 flex items-center gap-1 text-[0.6875rem] opacity-70">
                     <Mic className="size-3" />
@@ -259,5 +251,68 @@ export function LibraryHeader({ books, chapters }: { books: number; chapters: nu
         )}
       </p>
     </PageHeader>
+  );
+}
+
+/**
+ * The book's main button: enroll, start, continue where you left off, or the
+ * certificate once every chapter is finished.
+ */
+export function BookAction({ courseId, lessonIds, compact = false }: { courseId: string; lessonIds: string[]; compact?: boolean }) {
+  const tx = useTx();
+  const access = useCourseAccess();
+  const progress = useCourseProgress(courseId);
+  const [busy, setBusy] = useState(false);
+  const done = lessonIds.filter((id) => progress.lessons[id]?.completedAt).length;
+  const finished = done === lessonIds.length && lessonIds.length > 0;
+  const last = progress.lastRead && lessonIds.includes(progress.lastRead.lessonId) ? progress.lastRead.lessonId : null;
+  const nextId = (last && !progress.lessons[last]?.completedAt ? last : null) ?? lessonIds.find((id) => !progress.lessons[id]?.completedAt) ?? lessonIds[0];
+  const gold = "flex h-11 w-full items-center justify-center gap-2 rounded-full bg-[#D4AF37] text-sm font-semibold text-[#13253d] shadow-[0_0_20px_rgba(212,175,55,0.45)]";
+
+  if (!progress.loaded || access.loading) return compact ? null : <div className="h-11 animate-pulse rounded-full bg-white/15" />;
+  if (!access.canOpen(courseId)) return null;
+  if (!progress.enrolled && !access.isLeader) {
+    return (
+      <Button
+        className={cn(gold, "hover:bg-[#D4AF37]/90")}
+        disabled={busy}
+        onClick={async () => {
+          setBusy(true);
+          try {
+            await progress.enroll();
+            celebrate("📖");
+          } finally {
+            setBusy(false);
+          }
+        }}
+      >
+        <BookOpenCheck />
+        {tx("Enroll in this course", "Mag-enroll sa course na ito")}
+      </Button>
+    );
+  }
+  if (finished) {
+    return (
+      <div className="grid grid-cols-2 gap-2">
+        <Link href={`/courses/${courseId}/certificate`} className={gold}>
+          <Award className="size-4" />
+          {tx("Certificate", "Sertipiko")}
+        </Link>
+        <Link href={`/courses/${courseId}/${lessonIds[0]}`} className="flex h-11 items-center justify-center gap-2 rounded-full border border-white/40 bg-[#13253d]/60 text-sm font-semibold text-white backdrop-blur">
+          <BookOpen className="size-4" />
+          {tx("Read again", "Basahin ulit")}
+        </Link>
+      </div>
+    );
+  }
+  const pos = progress.lessons[nextId]?.pos;
+  return (
+    <Link href={`/courses/${courseId}/${nextId}`} className={gold}>
+      <BookOpen className="size-4" />
+      {done === 0 && !last
+        ? tx("Start reading", "Simulan ang pagbasa")
+        : tx(`Continue: Chapter ${roman(lessonIds.indexOf(nextId) + 1)}`, `Ituloy: Kabanata ${roman(lessonIds.indexOf(nextId) + 1)}`)}
+      {pos && pos > 0.05 && pos < 0.97 ? <span className="text-xs font-normal opacity-75">· {Math.round(pos * 100)}%</span> : null}
+    </Link>
   );
 }

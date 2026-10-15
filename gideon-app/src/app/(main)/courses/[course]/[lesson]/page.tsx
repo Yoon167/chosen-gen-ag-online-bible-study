@@ -3,6 +3,8 @@ import { COURSES, findCourseLesson } from "@/lib/content/courses";
 import type { Text } from "@/lib/content/courses/types";
 import { LessonWorkbook, MemoryVerseButton, ScriptureChips } from "@/components/courses/course-client";
 import { BookTopBar, ReadingProgress } from "@/components/courses/book-ui";
+import { ChapterAnnotator, CourseReaderSync, ReadingPosition } from "@/components/courses/book-reader";
+import Link from "next/link";
 import { BookChapterBody, ChapterTitlePage, Ornament } from "@/components/courses/book-chapter";
 import { Bi } from "@/components/courses/bi";
 import { TeachLink } from "@/components/courses/teach-client";
@@ -56,6 +58,7 @@ export default async function CourseLessonPage({ params }: { params: Promise<{ c
   if (!found) notFound();
   const { course, lesson, index } = found;
   const next = course.lessons[index + 1];
+  const prev = course.lessons[index - 1];
   const deep = await loadDeep(deepKey("course", course.id), lesson.id);
   const extra = await loadExtra(deepKey("course", course.id), lesson.id);
   const book = await loadBook(deepKey("course", course.id), lesson.id);
@@ -63,13 +66,21 @@ export default async function CourseLessonPage({ params }: { params: Promise<{ c
   return (
     <div>
       <ReadingProgress />
-      <BookTopBar book={course.title} chapter={index + 1} courseId={course.id} />
+      <BookTopBar book={course.title} chapter={index + 1} total={course.lessons.length} courseId={course.id} />
       <LessonGate courseId={course.id} lessonId={lesson.id}>
+      <ReadingPosition courseId={course.id} lessonId={lesson.id} />
+      <CourseReaderSync courseId={course.id} lessonIds={course.lessons.map((l) => l.id)} />
+      {book && <ChapterAnnotator courseId={course.id} lessonId={lesson.id} />}
       {/* The chapter, set like a page of a book */}
       <article className="book-paper page-in mx-3 mt-3 overflow-hidden rounded-3xl border border-[#D4AF37]/30 shadow-lg shadow-black/5">
         <ChapterTitlePage book={course.title} number={index + 1} title={lesson.title} epigraph={book?.epigraph} />
         {book ? (
-          <BookChapterBody chapter={book} />
+          <>
+            <p className="-mt-1 mb-2 text-center text-[0.6875rem] italic opacity-60">
+              <Bi t={L("Tap a paragraph to highlight, bookmark or write a note", "Pindutin ang isang talata para i-highlight, i-bookmark o sulatan ng tala")} />
+            </p>
+            <BookChapterBody chapter={book} />
+          </>
         ) : (
           <div className="book-text px-6 pb-8">
             <p className="drop-cap">
@@ -184,7 +195,13 @@ export default async function CourseLessonPage({ params }: { params: Promise<{ c
           selfCheck={lesson.selfCheck}
           reflection={lesson.reflection}
           next={next ? { href: `/courses/${course.id}/${next.id}`, title: next.title } : null}
+          lessonIds={course.lessons.map((l) => l.id)}
         />
+        {prev && (
+          <Link href={`/courses/${course.id}/${prev.id}`} className="block text-center text-xs text-muted-foreground underline underline-offset-2">
+            <Bi t={L(`← Previous chapter: ${prev.title.en}`, `← Nakaraang kabanata: ${prev.title.tl}`)} />
+          </Link>
+        )}
       </div>
       </LessonGate>
     </div>

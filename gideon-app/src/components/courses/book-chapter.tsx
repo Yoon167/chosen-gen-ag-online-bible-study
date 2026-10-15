@@ -56,11 +56,15 @@ export function ChapterTitlePage({
   );
 }
 
-function Paragraphs({ items, first = false }: { items: Text[]; first?: boolean }) {
+/**
+ * Paragraphs with a stable key each ("o0", "s2p3", "w1"), so the reader can
+ * highlight, bookmark or note them and link straight to one (#p-s2p3).
+ */
+function Paragraphs({ items, prefix, first = false }: { items: Text[]; prefix: string; first?: boolean }) {
   return (
     <>
       {items.map((p, i) => (
-        <p key={p.en} className={first && i === 0 ? "drop-cap" : undefined}>
+        <p key={p.en} id={`p-${prefix}${i}`} data-pk={`${prefix}${i}`} className={first && i === 0 ? "drop-cap" : undefined}>
           <Bi t={p} />
         </p>
       ))}
@@ -72,8 +76,8 @@ function Paragraphs({ items, first = false }: { items: Text[]; first?: boolean }
 export function BookChapterBody({ chapter }: { chapter: BookChapter }) {
   const middle = Math.ceil(chapter.sections.length / 2);
   return (
-    <div className="book-text px-6 pb-4">
-      <Paragraphs items={chapter.opening} first />
+    <div id="book-chapter" className="book-text px-6 pb-4">
+      <Paragraphs items={chapter.opening} prefix="o" first />
 
       {chapter.sections.map((s, i) => (
         <section key={s.heading.en}>
@@ -94,7 +98,7 @@ export function BookChapterBody({ chapter }: { chapter: BookChapter }) {
           <h2 className="mb-3 text-center font-heading text-xl font-semibold leading-snug">
             <Bi t={s.heading} />
           </h2>
-          <Paragraphs items={s.body} first />
+          <Paragraphs items={s.body} prefix={`s${i}p`} first />
         </section>
       ))}
 
@@ -103,7 +107,7 @@ export function BookChapterBody({ chapter }: { chapter: BookChapter }) {
           <Bi t={{ en: "A word from your pastor", tl: "Isang salita mula sa iyong pastor" }} />
         </p>
         <div className="mt-3">
-          <Paragraphs items={chapter.pastoralWord} />
+          <Paragraphs items={chapter.pastoralWord} prefix="w" />
         </div>
       </aside>
 

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import {
   Anchor,
+  Award,
   BookOpen,
   Brain,
   Check,
@@ -232,12 +233,15 @@ export function LessonWorkbook({
   selfCheck,
   reflection,
   next,
+  lessonIds,
 }: {
   courseId: string;
   lessonId: string;
   selfCheck: Text[];
   reflection: Text[];
   next: { href: string; title: Text } | null;
+  /** Every lesson in the course, to know when the whole book is finished. */
+  lessonIds: string[];
 }) {
   const { lang } = useLanguage();
   const tx = useTx();
@@ -247,6 +251,7 @@ export function LessonWorkbook({
   const [saving, setSaving] = useState(false);
   const journal = draft ?? mine.journal ?? "";
   const finished = !!mine.completedAt;
+  const bookDone = loaded && lessonIds.every((id) => (id === lessonId ? finished : !!lessons[id]?.completedAt));
 
   return (
     <div className="space-y-4">
@@ -324,13 +329,35 @@ export function LessonWorkbook({
         variant={finished ? "secondary" : "default"}
         disabled={!loaded}
         onClick={() => {
-          if (!finished) celebrate();
+          if (!finished) {
+            const last = lessonIds.every((id) => id === lessonId || !!lessons[id]?.completedAt);
+            celebrate(last ? "🎓" : undefined);
+            if (last) setTimeout(() => celebrate("📖"), 900);
+          }
           saveLesson(lessonId, finished ? { completedAt: null } : { completedAt: Date.now() });
         }}
       >
         <Check className="size-4" />
         {finished ? tx("Chapter finished. Tap to undo", "Tapos na ang kabanata. Pindutin para ibalik") : tx("I finished this chapter", "Natapos ko ang kabanatang ito")}
       </Button>
+      {bookDone && (
+        <Link
+          href={`/courses/${courseId}/certificate`}
+          className="ui-pop relative block overflow-hidden rounded-2xl p-5 text-center text-white shadow-xl"
+          style={{ background: "linear-gradient(150deg, #a8740f, #1E3A5F)" }}
+        >
+          <span aria-hidden className="pointer-events-none absolute -right-10 -top-12 size-44 rounded-full" style={{ background: "radial-gradient(closest-side, rgba(244,220,138,0.6), transparent)" }} />
+          <Award className="relative mx-auto size-10 text-[#F4DC8A]" />
+          <span className="relative mt-2 block font-heading text-xl font-semibold">{tx("You finished the whole book!", "Natapos mo ang buong aklat!")}</span>
+          <span className="relative mt-1 block text-sm text-white/80">
+            {tx("Well done, good and faithful servant. Your certificate is ready.", "Magaling, mabuti at tapat na lingkod. Handa na ang iyong sertipiko.")}
+          </span>
+          <span className="relative mt-3 inline-flex items-center gap-1.5 rounded-full bg-[#D4AF37] px-4 py-2 text-sm font-semibold text-[#13253d]">
+            {tx("View my certificate", "Tingnan ang aking sertipiko")}
+            <ChevronRight className="size-4" />
+          </span>
+        </Link>
+      )}
       {next && (
         <Link
           href={next.href}

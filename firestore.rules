@@ -557,6 +557,22 @@ service cloud.firestore {
         allow delete: if isAdmin() || rankAtLeast(churchId, 3);
       }
 
+      // A member's place in the Courses, for their AG leaders: enrolled, and
+      // chapters finished per course. Never the journal or notes. Doc id is
+      // the member's uid; only they write it, leaders (cell leader+) read it.
+      match /courseReaders/{uid} {
+        allow read: if isAdmin() || (request.auth != null && request.auth.uid == uid) || rankAtLeast(churchId, 3);
+        allow create, update: if request.auth != null && request.auth.uid == uid
+          && isActiveMember(churchId, uid)
+          && request.resource.data.keys().hasOnly(['uid', 'name', 'courses', 'updatedAt'])
+          && request.resource.data.uid == uid
+          && validText(request.resource.data.name, 1, 100)
+          && request.resource.data.courses is map
+          && request.resource.data.courses.size() <= 40
+          && request.resource.data.updatedAt is int;
+        allow delete: if isAdmin() || (request.auth != null && request.auth.uid == uid) || rankAtLeast(churchId, 3);
+      }
+
       // The member a leader asked to present (and exhort) a lesson ("{courseId}__{lessonId}").
       match /lessonAssignments/{aid} {
         allow read: if isAdmin() || (request.auth != null && isActiveMember(churchId, request.auth.uid));

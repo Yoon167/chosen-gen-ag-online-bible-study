@@ -689,7 +689,7 @@ html[data-text-size="xl"] {
 }
 .toc-leader {
   flex: 1;
-  min-width: 1rem;
+  min-width: 1.5rem;
   align-self: flex-end;
   margin-bottom: 0.35em;
   border-bottom: 2px dotted rgba(168, 120, 16, 0.35);
@@ -702,3 +702,36 @@ html[data-text-size="xl"] {
 @media (prefers-reduced-motion: reduce) {
   .page-in { animation: none; }
 }
+
+/* Reader's marks on a book chapter (components/courses/book-reader.tsx). */
+.book-text { font-size: calc(1.0625rem * var(--book-scale, 1)); }
+#book-chapter [data-pk] { cursor: pointer; position: relative; border-radius: 6px; transition: background-color 0.2s; }
+#book-chapter [data-hl] { padding: 0.15em 0.35em; margin-inline: -0.35em; }
+#book-chapter [data-hl="gold"] { background: rgba(232, 197, 90, 0.38); }
+#book-chapter [data-hl="rose"] { background: rgba(242, 167, 184, 0.4); }
+#book-chapter [data-hl="sky"] { background: rgba(156, 205, 240, 0.42); }
+#book-chapter [data-hl="green"] { background: rgba(168, 220, 174, 0.45); }
+.dark #book-chapter [data-hl] { background-blend-mode: normal; color: #fff8e6; }
+.dark #book-chapter [data-hl="gold"] { background: rgba(200, 160, 50, 0.32); }
+.dark #book-chapter [data-hl="rose"] { background: rgba(220, 110, 140, 0.3); }
+.dark #book-chapter [data-hl="sky"] { background: rgba(90, 160, 220, 0.3); }
+.dark #book-chapter [data-hl="green"] { background: rgba(90, 180, 110, 0.3); }
+#book-chapter [data-bm]::before {
+  content: "";
+  position: absolute;
+  left: -1.15rem;
+  top: 0.2em;
+  width: 0.55rem;
+  height: 1.1rem;
+  background: #c99a2e;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%);
+}
+#book-chapter [data-note]::after {
+  content: "✎";
+  margin-left: 0.3em;
+  font-size: 0.8em;
+  color: #a87810;
+}
+:target { scroll-margin-top: 5rem; }
+#book-chapter [data-pk]:target { animation: mark-flash 2s ease-out; }
+@keyframes mark-flash { from { box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.7); } to { box-shadow: 0 0 0 3px transparent; } }
