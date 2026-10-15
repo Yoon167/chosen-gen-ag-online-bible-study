@@ -1,5 +1,6 @@
 import { t, v, type Course, type CourseLesson } from "./types";
 import { DISCIPLE_LESSONS_2 } from "./disciple-2";
+import { DISCIPLE_LESSONS_3 } from "./disciple-3";
 
 /**
  * Discipleship and spiritual maturity: following Jesus at any cost, serving,
@@ -410,6 +411,8 @@ export const DISCIPLE: Course = {
     t("Who is a leader you would gladly follow, and why?", "Sino ang isang lider na masaya mong susundin, at bakit?"),
     t("What is your favorite family tradition?", "Ano ang paborito mong tradisyon ng pamilya?"),
     t("If you could make a difference anywhere, where would it be?", "Kung makagagawa ka ng pagkakaiba saanman, saan ito?"),
+    t("What is a sign that someone has really grown up, beyond age?", "Ano ang palatandaan na talagang lumaki na ang isang tao, higit pa sa edad?"),
+    t("Who in your life showed you love when you least expected it?", "Sino sa buhay mo ang nagpakita ng pag-ibig sa iyo noong hindi mo inaasahan?"),
   ],
-  lessons: [...DISCIPLE_LESSONS_1, ...DISCIPLE_LESSONS_2],
+  lessons: [...DISCIPLE_LESSONS_1, ...DISCIPLE_LESSONS_2, ...DISCIPLE_LESSONS_3],
 };

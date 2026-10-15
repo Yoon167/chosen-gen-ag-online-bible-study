@@ -1,5 +1,6 @@
 import { t, v, type Course, type CourseLesson } from "./types";
 import { TRUTH_LESSONS_2 } from "./truth-2";
+import { TRUTH_LESSONS_3 } from "./truth-3";
 
 /**
  * Sabi Nila vs Sabi ni Lord: common sayings of the world and culture weighed
@@ -409,6 +410,8 @@ export const TRUTH: Course = {
     t("When do you hear people say “bahala na”?", "Kailan mo naririnig ang mga taong nagsasabi ng “bahala na”?"),
     t("What would you do if you knew you had one year left?", "Ano ang gagawin mo kung alam mong may isang taon ka na lang?"),
     t("What questions do your friends ask about different religions?", "Anong mga tanong ang itinatanong ng iyong mga kaibigan tungkol sa iba't ibang relihiyon?"),
+    t("Have you ever heard someone say “Karma lang 'yan”? What did they mean?", "Narinig mo na ba ang “Karma lang 'yan”? Ano ang ibig sabihin ng nagsabi?"),
+    t("What is a love story, from real life or a film, that you think is beautiful? Why?", "Ano ang isang love story, totoo man o sa pelikula, na sa tingin mo ay maganda? Bakit?"),
   ],
-  lessons: [...TRUTH_LESSONS_1, ...TRUTH_LESSONS_2],
+  lessons: [...TRUTH_LESSONS_1, ...TRUTH_LESSONS_2, ...TRUTH_LESSONS_3],
 };

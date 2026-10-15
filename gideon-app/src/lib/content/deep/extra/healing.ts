@@ -592,4 +592,93 @@ export const EXTRA: ExtraSet = {
       },
     ],
   },
+
+  "c-grief-and-loss": {
+    deeper: [
+      {
+        heading: t("Why did Jesus weep?", "Bakit umiyak si Hesus?"),
+        body: [
+          t(
+            "John 11 uses strong words for what Jesus felt at Bethany. He was \"deeply moved in His spirit\" (the Greek word can carry the sense of indignation, even a snort of anger) and \"greatly troubled\" (v. 33, 38). Jesus was not only sad for His friends; He was angry at death itself, the enemy that tears families apart. Then \"Jesus wept\" (v. 35), the shortest verse in most English Bibles. The Lord who would conquer death still felt its sting with those He loved. Our grief stands on the same ground: sorrow at real loss, and a holy protest that this is not how God made the world to be.",
+            "Matitinding salita ang ginamit sa Juan 11 para sa naramdaman ni Hesus sa Betania. Siya ay \"nabagabag nang labis sa Kanyang espiritu\" (ang salitang Griyego ay maaaring may kahulugan ng pagkagalit, halos parang singhal ng galit) at \"lubhang naligalig\" (t. 33, 38). Hindi lang nalungkot si Hesus para sa Kanyang mga kaibigan; nagalit Siya sa kamatayan mismo, ang kaaway na naghihiwalay sa mga pamilya. Pagkatapos, \"Umiyak si Hesus\" (t. 35), ang pinakamaikling talata sa karamihan ng Biblia sa Ingles. Ang Panginoong lulupig sa kamatayan ay nakaramdam pa rin ng tusok nito kasama ng mga mahal Niya. Sa parehong lupa nakatayo ang ating pagdadalamhati: lungkot sa totoong pagkawala, at banal na pagtutol na hindi ganito ginawa ng Diyos ang mundo."
+          ),
+          t(
+            "Notice too that Martha and Mary said the same sentence to Jesus: \"Lord, if You had been here, my brother would not have died\" (v. 21, 32). It is a sentence of faith and disappointment mixed together, and many grieving believers have said it in their own way. Jesus did not rebuke either sister. To Martha He gave a conversation about the resurrection; to Mary He gave His tears. He meets each mourner in the way that mourner needs.",
+            "Pansinin din na iisang pangungusap ang sinabi nina Marta at Maria kay Hesus: \"Panginoon, kung naririto Ka lamang, hindi sana namatay ang aking kapatid\" (t. 21, 32). Pangungusap ito ng pananampalataya at pagkabigo na magkahalo, at maraming nagdadalamhating mananampalataya ang nakapagsabi na nito sa sarili nilang paraan. Hindi sinaway ni Hesus ang alinman sa magkapatid. Kay Marta, nagbigay Siya ng pag-uusap tungkol sa muling pagkabuhay; kay Maria, ibinigay Niya ang Kanyang luha. Sinasalubong Niya ang bawat nagdadalamhati sa paraang kailangan nito."
+          ),
+        ],
+      },
+      {
+        heading: t("\"Asleep\": Paul's word for believers who have died", "\"Natutulog\": ang salita ni Pablo para sa mga mananampalatayang namatay"),
+        body: [
+          t(
+            "The believers in Thessalonica were young in the faith, and some of them had died. Their friends worried: would those who died miss the Lord's return? Paul answered by calling them \"those who are asleep\" (1 Thessalonians 4:13-15). Jesus used the same picture for Jairus' daughter and for Lazarus (Mark 5:39; John 11:11). Sleep is real, but it is not the end; sleep expects a morning. The word does not mean the dead are unconscious or forgotten; Paul elsewhere says to be away from the body is to be \"at home with the Lord\" (2 Corinthians 5:8). It means death has been changed by Christ from a wall into a door.",
+            "Bata pa sa pananampalataya ang mga mananampalataya sa Tesalonica, at may ilan sa kanila na namatay. Nag-alala ang mga kaibigan nila: hindi na ba makakasama sa pagbabalik ng Panginoon ang mga namatay? Sumagot si Pablo sa pagtawag sa kanila na \"mga natutulog\" (1 Tesalonica 4:13-15). Ganito rin ang larawang ginamit ni Hesus para sa anak ni Jairo at kay Lazaro (Marcos 5:39; Juan 11:11). Totoo ang tulog, pero hindi ito ang wakas; may inaasahang umaga ang natutulog. Hindi ibig sabihin ng salitang ito na walang malay o nakalimutan ang mga patay; sinasabi ni Pablo sa ibang bahagi na ang mawalay sa katawan ay \"makapiling ang Panginoon\" (2 Corinto 5:8). Ang ibig sabihin, binago ni Cristo ang kamatayan mula sa pader tungo sa pintuan."
+          ),
+          t(
+            "That is why Paul ends the passage, \"Therefore encourage one another with these words\" (v. 18). Christian hope is meant to be spoken aloud at funerals, in hospitals, and at the lamay. It does not shame tears; it holds them. Christians may differ on some details of the Lord's return, but all agree on this: Jesus died and rose again, and those who belong to Him will rise and be with Him forever.",
+            "Kaya tinapos ni Pablo ang talata ng, \"Kaya palakasin ninyo ang loob ng isa't isa sa pamamagitan ng mga salitang ito\" (t. 18). Ang pag-asang Kristiyano ay dapat binibigkas nang malakas sa burol, sa ospital at sa lamay. Hindi nito ikinahihiya ang luha; hinahawakan nito ang luha. Maaaring magkaiba ang pananaw ng mga Kristiyano sa ilang detalye ng pagbabalik ng Panginoon, pero iisa ang paniniwala ng lahat: namatay at muling nabuhay si Hesus, at ang mga sa Kanya ay muling mabubuhay at makakasama Niya magpakailanman."
+          ),
+        ],
+      },
+      {
+        heading: t("Walking with the grieving", "Paglakad kasama ng nagdadalamhati"),
+        body: [
+          t(
+            "Grief rarely moves in a straight line. Many people find it comes in waves: numbness, then tears, then anger, then a good day, then a song on the radio that undoes them. Anniversaries, birthdays and holidays are often harder than the funeral itself. This is normal. But when grief stays so heavy for a long time that a person cannot function, stops eating or sleeping, or speaks of not wanting to live, it is wise to bring in a pastor and a counselor or doctor. Getting help is not a betrayal of the one who died.",
+            "Bihirang tuwid ang daan ng pagdadalamhati. Maraming nakararanas na dumarating ito nang paalon-alon: pamamanhid, pagkatapos ay luha, pagkatapos ay galit, pagkatapos ay isang magandang araw, pagkatapos ay isang kanta sa radyo na bigla kang guguhuin. Kadalasang mas mabigat pa ang mga anibersaryo, kaarawan at pista opisyal kaysa sa mismong libing. Normal ito. Pero kapag nananatiling napakabigat ng dalamhati nang matagal na anupat hindi na makakilos ang tao, hindi na kumakain o natutulog, o nagsasalita na ayaw na niyang mabuhay, matalinong humingi ng tulong sa pastor at sa counselor o doktor. Ang paghingi ng tulong ay hindi pagtataksil sa taong namatay."
+          ),
+          t(
+            "For those who comfort: Job's friends were at their best when they sat with him seven days and said nothing (Job 2:13), and at their worst when they started explaining his suffering. Say less and stay longer. Avoid \"Everything happens for a reason\" or \"At least...\" sentences. Instead say, \"I am so sorry. I am here. Tell me about her.\" Write down the date of the death and reach out on it next year. Grieving people often say the greatest gift was not the right words but the friend who kept showing up.",
+            "Para sa mga umaaliw: pinakamabuti ang ginawa ng mga kaibigan ni Job nang samahan nila siya nang pitong araw nang walang imik (Job 2:13), at pinakamasama nang magsimula silang magpaliwanag ng kanyang pagdurusa. Magsalita nang kaunti at manatili nang matagal. Iwasan ang mga pangungusap na \"May dahilan ang lahat\" o \"Buti na lang...\" Sa halip, sabihin, \"Nakikiramay ako. Narito ako. Ikuwento mo naman siya sa akin.\" Isulat ang petsa ng pagkamatay at kumustahin sila sa araw na iyon sa susunod na taon. Madalas sabihin ng mga nagdadalamhati na ang pinakamalaking regalo ay hindi ang tamang salita kundi ang kaibigang paulit-ulit na dumarating."
+          ),
+        ],
+      },
+    ],
+    stories: [],
+  },
+  "c-downcast-soul": {
+    deeper: [
+      {
+        heading: t("The lament psalms: God's permission to be honest", "Ang mga awit ng panaghoy: pahintulot ng Diyos na maging tapat"),
+        body: [
+          t(
+            "Psalms 42 and 43 were probably once a single song; they share the same refrain three times: \"Why are you cast down, O my soul?\" (42:5, 11; 43:5). The writer is far from the temple, likely in the north near the Jordan and Mount Hermon (42:6), mocked by people who ask, \"Where is your God?\" He remembers leading the festival crowds and now cannot join them. The refrain does not fix his mood in one verse. It returns, again and again, because hope is often a fight that has to be repeated.",
+            "Malamang na iisang awit noon ang Awit 42 at 43; tatlong beses nilang inuulit ang parehong koro: \"Bakit ka nanlulumo, O kaluluwa ko?\" (42:5, 11; 43:5). Malayo sa templo ang sumulat, malamang ay nasa hilaga malapit sa Jordan at sa Bundok Hermon (42:6), at kinukutya ng mga taong nagtatanong, \"Nasaan ang Diyos mo?\" Naaalala niyang dati ay pinangungunahan niya ang mga tao sa pista at ngayon ay hindi na siya makasama. Hindi naaayos ng koro ang kanyang damdamin sa isang talata. Paulit-ulit itong bumabalik, dahil ang pag-asa ay madalas na labang kailangang ulit-ulitin."
+          ),
+          t(
+            "Psalm 88 is even darker. It is the only psalm that ends without any turn toward praise: \"You have caused my beloved and my friend to shun me; my companions have become darkness\" (88:18). Yet it is titled as a song for the choir, and the Holy Spirit kept it in Scripture. Its presence says that faithful believers sometimes pray for a long time without feeling relief, and that God receives those prayers. The psalm's first line, \"O Lord, God of my salvation,\" is the thread of faith that runs through all the dark.",
+            "Mas madilim pa ang Awit 88. Ito lang ang awit na nagtatapos nang walang anumang pagbaling sa papuri: \"Inilayo Mo sa akin ang aking minamahal at kaibigan; ang mga kasama ko'y naging dilim\" (88:18). Pero may pamagat itong awit para sa koro, at iningatan ito ng Banal na Espiritu sa Kasulatan. Sinasabi ng pagkakaroon nito na may mga tapat na mananampalatayang matagal na nananalangin nang hindi nakararamdam ng ginhawa, at tinatanggap ng Diyos ang mga panalanging iyon. Ang unang linya ng awit, \"O Panginoon, Diyos ng aking kaligtasan,\" ang hibla ng pananampalatayang dumadaan sa buong dilim."
+          ),
+        ],
+      },
+      {
+        heading: t("Faithful people who knew the dark", "Mga tapat na taong nakakilala sa dilim"),
+        body: [
+          t(
+            "Church history is full of believers who struggled with what we would now call depression. The English poet William Cowper (1731-1800) suffered severe bouts of despair all his life and more than once tried to end his life. His friend John Newton, the former slave trader who wrote \"Amazing Grace,\" walked with him for years in the village of Olney, and together they published the Olney Hymns in 1779. Cowper wrote \"God moves in a mysterious way, His wonders to perform,\" including the lines, \"Ye fearful saints, fresh courage take; the clouds ye so much dread are big with mercy.\" He did not find a quick cure, but he left the church songs that have strengthened believers in their own dark nights.",
+            "Puno ang kasaysayan ng iglesia ng mga mananampalatayang nakipagbuno sa tinatawag natin ngayong depresyon. Ang Ingles na makatang si William Cowper (1731-1800) ay dumanas ng matitinding panahon ng kawalan ng pag-asa sa buong buhay niya at higit sa isang beses na nagtangkang wakasan ang kanyang buhay. Ang kaibigan niyang si John Newton, ang dating mangangalakal ng alipin na sumulat ng \"Amazing Grace,\" ay sumama sa kanya nang maraming taon sa nayon ng Olney, at magkasama nilang inilathala ang Olney Hymns noong 1779. Isinulat ni Cowper ang \"God moves in a mysterious way, His wonders to perform,\" kasama ang mga linyang nagsasabing ang mga ulap na kinatatakutan ng mga banal ay puno ng habag. Hindi siya nakatagpo ng mabilisang lunas, pero nag-iwan siya sa iglesia ng mga awit na nagpalakas sa mga mananampalataya sa kanilang sariling madidilim na gabi."
+          ),
+          t(
+            "Newton's faithfulness to Cowper is a model for the church. He did not abandon his friend when the darkness returned, did not tell him he simply lacked faith, and kept bringing him into prayer, work and friendship. Elijah needed Elisha; Paul was comforted \"by the coming of Titus\" (2 Corinthians 7:6). God often sends His comfort with a human face.",
+            "Huwaran para sa iglesia ang katapatan ni Newton kay Cowper. Hindi niya iniwan ang kaibigan niya nang bumalik ang dilim, hindi niya sinabing kulang lang ito sa pananampalataya, at patuloy niya itong isinasama sa panalangin, gawain at pagkakaibigan. Kinailangan ni Elias si Eliseo; inaliw si Pablo \"sa pagdating ni Tito\" (2 Corinto 7:6). Madalas ipadala ng Diyos ang Kanyang aliw na may mukha ng tao."
+          ),
+        ],
+      },
+      {
+        heading: t("Signs to watch for, and when to get help", "Mga palatandaang dapat bantayan, at kailan hihingi ng tulong"),
+        body: [
+          t(
+            "Everyone has low days. Doctors usually look for a pattern that lasts two weeks or more: a heavy or empty mood most of the day, losing interest in things once enjoyed, big changes in sleep or appetite, constant tiredness, trouble concentrating, feeling worthless or guilty, and thoughts of death. If several of these describe you, please see a doctor or counselor. Depression is a health condition that can be treated, and treatment often includes counseling and sometimes medicine. Prayer and medical care are not rivals; Luke was a physician, and Paul told Timothy to take a little wine for his stomach (1 Timothy 5:23).",
+            "Lahat tayo ay may malulungkot na araw. Karaniwang hinahanap ng mga doktor ang isang padron na tumatagal nang dalawang linggo o higit pa: mabigat o hungkag na pakiramdam halos buong araw, pagkawala ng gana sa mga bagay na dati mong kinagigiliwan, malaking pagbabago sa tulog o pagkain, palaging pagod, hirap mag-concentrate, pakiramdam na walang halaga o laging may kasalanan, at mga isip tungkol sa kamatayan. Kung ilan dito ang naglalarawan sa iyo, pakiusap, magpatingin sa doktor o counselor. Kondisyong pangkalusugan ang depresyon na nagagamot, at kadalasang kasama sa gamutan ang counseling at kung minsan ay gamot. Hindi magkalaban ang panalangin at ang medikal na pangangalaga; manggagamot si Lucas, at sinabihan ni Pablo si Timoteo na uminom ng kaunting alak para sa kanyang sikmura (1 Timoteo 5:23)."
+          ),
+          t(
+            "If you are thinking about ending your life, please do not carry that alone for even one more night. Tell someone today: a family member, a pastor, a friend, your employer if you must. In the Philippines, the National Center for Mental Health crisis line is 1553. If you are abroad, go to the nearest hospital or call local emergency services, and let your church or your country's labor office know. You are not a burden. Your life is precious to God, and the darkness is lying to you when it says otherwise.",
+            "Kung iniisip mong wakasan ang buhay mo, pakiusap, huwag mo itong pasanin nang mag-isa kahit isang gabi pa. Magsabi sa isang tao ngayong araw: kapamilya, pastor, kaibigan, o maging sa amo mo kung kailangan. Sa Pilipinas, ang crisis line ng National Center for Mental Health ay 1553. Kung nasa abroad ka, pumunta sa pinakamalapit na ospital o tumawag sa lokal na emergency services, at ipaalam sa iyong iglesia o sa labor office ng ating bansa. Hindi ka pabigat. Mahalaga sa Diyos ang buhay mo, at nagsisinungaling ang dilim kapag iba ang sinasabi nito."
+          ),
+        ],
+      },
+    ],
+    stories: [],
+  },
 };

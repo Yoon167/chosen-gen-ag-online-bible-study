@@ -1,5 +1,6 @@
 import { t, v, type Course, type CourseLesson } from "./types";
 import { HOLINESS_LESSONS_2 } from "./holiness-2";
+import { HOLINESS_LESSONS_3 } from "./holiness-3";
 
 /**
  * Temptation and holiness: grace-driven holiness, never legalism. Victory comes
@@ -404,6 +405,8 @@ export const HOLINESS: Course = {
     t("What does the word “pure” make you think of?", "Ano ang naiisip mo sa salitang “dalisay”?"),
     t("Who is someone who helps you stay on track in life?", "Sino ang isang taong tumutulong sa iyong manatili sa tamang landas sa buhay?"),
     t("What is one small victory you had recently?", "Ano ang isang maliit na tagumpay na naranasan mo kamakailan?"),
+    t("What is the most beautiful or awe-inspiring place you have ever seen?", "Ano ang pinakamaganda o pinakakahanga-hangang lugar na nakita mo?"),
+    t("What is one lesson a parent or teacher taught you through correction?", "Ano ang isang aral na itinuro sa iyo ng magulang o guro sa pamamagitan ng pagtutuwid?"),
   ],
-  lessons: [...HOLINESS_LESSONS_1, ...HOLINESS_LESSONS_2],
+  lessons: [...HOLINESS_LESSONS_1, ...HOLINESS_LESSONS_2, ...HOLINESS_LESSONS_3],
 };

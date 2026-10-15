@@ -529,4 +529,136 @@ export const DEEP: DeepSet = {
       "Panginoong Hesus, Ikaw ang Daan, ang Katotohanan at ang Buhay. Salamat sa pagbaba Mo para hanapin ako noong hindi ko kailanman kayang umakyat patungo sa Iyo. Ipinapahayag ko na Ikaw lang ang aking Tagapagligtas, at naligtas ako sa biyaya, hindi sa aking mga gawa. Bigyan Mo ako ng pusong puno ng pag-ibig sa mga hindi pa nakakikilala sa Iyo. Gawin Mo akong matapang at mahinahon, marunong at mapagpakumbaba, handang magbigay ng dahilan ng aking pag-asa. Ilapit Mo ang marami sa Iyo. Amen."
     ),
   },
+
+  "c-karma-vs-grace": {
+    revelation: t(
+      "Karma keeps score, but the God of the cross cancelled the score; you are not living under a law of payback but under a Judge who is also your Savior.",
+      "Nagbibilang ng puntos ang karma, pero binura ng Diyos ng krus ang talaan; hindi ka namumuhay sa ilalim ng batas ng ganti kundi sa ilalim ng Hukom na Siya ring Tagapagligtas mo."
+    ),
+    mainTruth: t(
+      "The world says, “Karma lang 'yan; may balik 'yan.” God says something far more searching and far more hopeful. Yes, “whatever one sows, that will he also reap” (Galatians 6:7), and no one mocks God. But the One who governs the harvest is a Person, “merciful and gracious, slow to anger and abounding in steadfast love,” who “does not deal with us according to our sins, nor repay us according to our iniquities” (Psalm 103:8, 10). Jesus refused to read every suffering as punishment (John 9:1-3; Luke 13:1-5), and Paul forbids us to wish payback on anyone: “Never avenge yourselves, but leave it to the wrath of God... overcome evil with good” (Romans 12:19, 21). We can live this way because “while we were still sinners, Christ died for us” (Romans 5:8). At the cross, payback fell on Him, and grace came to us.",
+      "Sabi ng mundo, “Karma lang 'yan; may balik 'yan.” Mas tumatagos at mas puno ng pag-asa ang sinasabi ng Diyos. Oo, “anuman ang ihasik ng tao, iyon din ang kanyang aanihin” (Galacia 6:7), at walang nakapaglalaro sa Diyos. Pero isang Persona ang namamahala sa ani, “mahabagin at mapagbiyaya, banayad sa pagkagalit at sagana sa tapat na pag-ibig,” na “hindi tayo pinakitunguhan ayon sa ating mga kasalanan, ni ginantihan ayon sa ating mga kasamaan” (Awit 103:8, 10). Tumanggi si Hesus na basahin ang bawat paghihirap bilang parusa (Juan 9:1-3; Lucas 13:1-5), at ipinagbabawal ni Pablo na hilingin natin ang ganti sa kahit sino: “Huwag kayong maghiganti, kundi ipaubaya ninyo ito sa poot ng Diyos... daigin ninyo ng mabuti ang masama” (Roma 12:19, 21). Kaya nating mamuhay nang ganito dahil “noong tayo'y makasalanan pa, namatay si Cristo para sa atin” (Roma 5:8). Sa krus, sa Kanya bumagsak ang ganti, at sa atin dumating ang biyaya."
+    ),
+    insight: [
+      t(
+        "Notice how selective our karma talk is. We love karma for other people: the ex who cheated, the boss who cheated us of overtime, the neighbor who gossiped. We almost never want karma for ourselves. When it is our turn to stand before God, we suddenly want grace. That double standard reveals the truth: deep down we know that if we got exactly what we deserved, we would be lost. The person who truly understands grace loses the appetite to see others “get theirs.”",
+        "Pansinin mo kung gaano tayo kapili sa usapang karma. Gustong-gusto natin ang karma para sa ibang tao: ang ex na nagtaksil, ang amo na dumaya sa overtime natin, ang kapitbahay na nanirang-puri. Halos hindi natin gusto ang karma para sa sarili natin. Kapag tayo na ang haharap sa Diyos, biglang biyaya na ang gusto natin. Inilalantad ng dobleng pamantayang iyan ang totoo: sa kaibuturan, alam nating kung makukuha natin ang eksaktong nararapat sa atin, wala tayong pag-asa. Ang taong tunay na nakauunawa ng biyaya ay nawawalan ng ganang makitang “makarma” ang iba."
+      ),
+      t(
+        "Karma thinking also wounds the suffering. When a child is born with a disability, when a family loses everything in a flood, when a faithful OFW gets sick abroad, someone always whispers, “Baka may ginawa sila.” Job's friends did exactly this, and God rebuked them for not speaking rightly about Him (Job 42:7). Some suffering is the fruit of sin, but much of it is simply the brokenness of a fallen world, and some of it is the stage where “the works of God” will be displayed (John 9:3). Our job is not to explain someone's pain but to carry it with them.",
+        "Sinusugatan din ng pag-iisip na karma ang mga naghihirap. Kapag may batang ipinanganak na may kapansanan, kapag nawalan ng lahat ang isang pamilya sa baha, kapag nagkasakit sa abroad ang isang tapat na OFW, laging may bumubulong, “Baka may ginawa sila.” Ganito mismo ang ginawa ng mga kaibigan ni Job, at sinaway sila ng Diyos dahil hindi sila nagsalita nang tama tungkol sa Kanya (Job 42:7). May paghihirap na bunga ng kasalanan, pero marami rito ay bunga lang ng pagkasira ng mundong nagkasala, at may ilan pang entablado kung saan mahahayag “ang mga gawa ng Diyos” (Juan 9:3). Hindi natin trabahong ipaliwanag ang sakit ng iba kundi pasanin ito kasama nila."
+      ),
+    ],
+    life: [
+      t(
+        "Picture two OFWs in Riyadh whose roommate stole from them and ran away. One posts online, “Bahala na ang karma sa 'yo. Babalikan ka rin.” For months she checks the thief's profile, waiting for something bad to happen. Her heart grows bitter and her prayers grow cold. The other one reports the theft properly, grieves the loss honestly before God, and then prays, “Lord, You are the Judge. I hand this to You. Save her, and provide for me.” Both lost the same money. Only one lost her peace. The first is still chained to the thief. The second is free.",
+        "Isipin mo ang dalawang OFW sa Riyadh na ninakawan ng kasama nila sa kuwarto na saka tumakas. Nag-post ang isa, “Bahala na ang karma sa 'yo. Babalikan ka rin.” Ilang buwan niyang sinisilip ang profile ng magnanakaw, naghihintay na may masamang mangyari. Pumapait ang puso niya at lumalamig ang mga panalangin niya. Ang isa naman ay nag-report nang maayos, tapat na nagdalamhati sa harap ng Diyos, saka nanalangin, “Panginoon, Ikaw ang Hukom. Ibinibigay ko ito sa Iyo. Iligtas Mo siya, at ilaan Mo ang pangangailangan ko.” Parehong halaga ang nawala sa kanila. Isa lang ang nawalan ng kapayapaan. Nakakadena pa rin ang una sa magnanakaw. Malaya na ang ikalawa."
+      ),
+      t(
+        "Leaving vengeance to God is not the same as pretending nothing happened. Report the crime. Seek justice through proper channels. Protect yourself and others. God established authorities for that purpose (Romans 13:4). What you refuse is the private grudge, the wish for disaster, the secret pleasure when your enemy falls (Proverbs 24:17). You let God be God, and you go back to doing good.",
+        "Ang pagpapaubaya sa Diyos ng paghihiganti ay hindi pagkukunwaring walang nangyari. I-report ang krimen. Humanap ng katarungan sa tamang paraan. Protektahan ang sarili at ang iba. Itinatag ng Diyos ang mga awtoridad para diyan (Roma 13:4). Ang tinatanggihan mo ay ang pribadong sama ng loob, ang paghiling ng sakuna, ang lihim na tuwa kapag bumagsak ang kaaway mo (Kawikaan 24:17). Hayaan mong ang Diyos ang maging Diyos, at bumalik ka sa paggawa ng mabuti."
+      ),
+    ],
+    twist: t(
+      "Here is the Kingdom twist: the cross is the place where karma was both fulfilled and defeated. Every sin really was paid for; God did not simply shrug at evil. “He was pierced for our transgressions... upon Him was the chastisement that brought us peace” (Isaiah 53:5). The payback was real, but it fell on the only One who did not deserve it, so that those who deserve it could go free. That is why a Christian can be both serious about justice and overflowing with mercy. Justice was satisfied at Calvary, and mercy now flows from it.",
+      "Ito ang Kingdom twist: ang krus ang lugar kung saan natupad at natalo ang karma. Talagang nabayaran ang bawat kasalanan; hindi basta nagkibit-balikat ang Diyos sa kasamaan. “Siya'y sinugatan dahil sa ating mga pagsalangsang... nasa Kanya ang parusang nagdulot sa atin ng kapayapaan” (Isaias 53:5). Totoo ang ganti, pero bumagsak ito sa nag-iisang hindi karapat-dapat dito, para makalaya ang mga karapat-dapat. Kaya kayang maging seryoso sa katarungan at umaapaw sa awa ang isang Kristiyano nang sabay. Nasapatan ang katarungan sa Kalbaryo, at ngayon ay dumadaloy mula roon ang awa."
+    ),
+    confirm: [
+      t("Genesis 50:19-20: Joseph refused revenge and said, “You meant evil against me, but God meant it for good.”", "Genesis 50:19-20: tumanggi si Jose na maghiganti at nagsabing, “Masama ang balak ninyo laban sa akin, ngunit mabuti ang balak ng Diyos.”"),
+      t("1 Samuel 24:1-12: David spared Saul in the cave and said, “May the Lord judge between me and you.”", "1 Samuel 24:1-12: pinatawad ni David si Saul sa kuweba at nagsabing, “Ang Panginoon nawa ang humatol sa pagitan ko at mo.”"),
+      t("Luke 23:39-43: a criminal who deserved death heard grace: “Today you will be with Me in paradise.”", "Lucas 23:39-43: narinig ng isang kriminal na karapat-dapat mamatay ang biyaya: “Ngayon din ay makakasama kita sa paraiso.”"),
+      t("1 Peter 2:23: when reviled, Jesus did not revile in return, but kept entrusting Himself to Him who judges justly.", "1 Pedro 2:23: nang laitin si Hesus, hindi Siya gumanti ng panlalait, kundi ipinagkatiwala ang sarili sa Kanyang humahatol nang matuwid."),
+    ],
+    heart: [
+      t(
+        "Move from keeping score to giving grace. Every time you remember how much you have been forgiven, the list of what others owe you grows shorter.",
+        "Lumipat mula sa pagbibilang ng puntos tungo sa pagbibigay ng biyaya. Tuwing naaalala mo kung gaano kalaki ang ipinatawad sa iyo, umiikli ang listahan ng utang ng iba sa iyo."
+      ),
+      t(
+        "Move from judging the suffering to sitting with them. Trade the question “What did they do to deserve this?” for “What can I do to help them carry this?”",
+        "Lumipat mula sa paghatol sa mga naghihirap tungo sa pagsama sa kanila. Ipagpalit ang tanong na “Ano ang ginawa nila para mangyari ito?” sa “Ano ang magagawa ko para tulungan silang pasanin ito?”"
+      ),
+    ],
+    questions: [
+      t("Is there someone you are secretly waiting to see “get what they deserve”? What would it mean to hand them to God?", "May tao bang lihim mong hinihintay na “makuha ang nararapat sa kanya”? Ano ang ibig sabihin ng pagbibigay sa kanya sa Diyos?"),
+      t("Have you ever believed your own suffering was God paying you back? How does the cross answer that fear?", "Naniwala ka na bang ginagantihan ka ng Diyos sa pamamagitan ng paghihirap mo? Paano sinasagot ng krus ang takot na iyan?"),
+      t("When you hear of someone's misfortune, is your first reaction compassion or judgment?", "Kapag nabalitaan mo ang kamalasan ng iba, habag ba o paghatol ang una mong reaksyon?"),
+      t("What “good” could you use to overcome a specific evil done to you?", "Anong “mabuti” ang magagamit mo para daigin ang isang tiyak na masamang ginawa sa iyo?"),
+    ],
+    actions: [
+      t("Read Psalm 103 slowly and list every way God has not dealt with you according to your sins.", "Basahin nang dahan-dahan ang Awit 103 at ilista ang bawat paraan na hindi ka pinakitunguhan ng Diyos ayon sa iyong mga kasalanan."),
+      t("Delete or stop one post, message or habit that keeps your grudge alive, and pray a blessing over the person instead.", "Burahin o itigil ang isang post, mensahe o gawi na bumubuhay sa sama ng loob mo, at ipanalangin na lang ang pagpapala sa taong iyon."),
+      t("Reach out this week to someone who is suffering, and simply listen and help without explaining why it happened.", "Kumustahin ngayong linggo ang isang taong naghihirap, at makinig at tumulong lang nang hindi ipinapaliwanag kung bakit ito nangyari."),
+    ],
+    prayer: t(
+      "Father, if You kept a record of my sins, I could not stand. Thank You that You did not repay me as I deserved, but laid my punishment on Jesus. Forgive me for loving karma for others and wanting grace for myself. I hand You every person who has wronged me, because You judge justly. Heal my bitterness, soften my heart toward those who suffer, and teach me to overcome evil with good. In Jesus' name, Amen.",
+      "Ama, kung itinatala Mo ang aking mga kasalanan, hindi ako makatatayo. Salamat dahil hindi Mo ako ginantihan ayon sa nararapat sa akin, kundi ipinataw Mo kay Hesus ang parusa ko. Patawarin Mo ako sa pagnanais ng karma para sa iba at biyaya para sa sarili ko. Ibinibigay ko sa Iyo ang bawat taong nagkasala sa akin, dahil Ikaw ang humahatol nang matuwid. Pagalingin Mo ang kapaitan ko, palambutin Mo ang puso ko sa mga naghihirap, at turuan Mo akong daigin ng mabuti ang masama. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+
+  "c-walang-forever-vs-steadfast-love": {
+    revelation: t(
+      "There is a forever, and it is not found in a person who might leave you; it is found in a God whose steadfast love has never once let go.",
+      "May forever, at hindi ito matatagpuan sa taong maaaring umalis sa iyo; matatagpuan ito sa Diyos na ang tapat na pag-ibig ay ni minsan ay hindi bumitaw."
+    ),
+    mainTruth: t(
+      "“Walang forever” is the hugot of a generation hurt by broken promises. Scripture does not mock that pain, and it agrees that this world and its desires are passing away (1 John 2:17). But it answers with a refrain sung twenty-six times in one psalm: “His steadfast love endures forever” (Psalm 136). The word is hesed, God's loyal covenant love. Jeremiah wrote among the ashes of Jerusalem, “The steadfast love of the Lord never ceases; His mercies never come to an end; they are new every morning” (Lamentations 3:22-23). God showed that love by sending Hosea to buy back his unfaithful wife (Hosea 3:1-2), and supremely by sending His Son. And He calls His people to reflect it in covenant faithfulness, especially in marriage: “What God has joined together, let not man separate” (Matthew 19:6), for “love never ends” (1 Corinthians 13:8).",
+      "Ang “walang forever” ay hugot ng isang henerasyong nasaktan ng mga napakong pangako. Hindi kinukutya ng Kasulatan ang sakit na iyan, at sang-ayon ito na lumilipas ang mundong ito at ang mga pagnanasa nito (1 Juan 2:17). Pero sumasagot ito ng isang korong inaawit nang dalawampu't anim na beses sa iisang awit: “Ang Kanyang tapat na pag-ibig ay magpakailanman” (Awit 136). Ang salita ay hesed, ang tapat at tipang pag-ibig ng Diyos. Isinulat ni Jeremias sa gitna ng abo ng Jerusalem, “Ang tapat na pag-ibig ng Panginoon ay hindi tumitigil; ang Kanyang mga habag ay hindi natatapos; bago ang mga ito tuwing umaga” (Panaghoy 3:22-23). Ipinakita ng Diyos ang pag-ibig na iyon nang isugo Niya si Oseas para tubusin ang asawa niyang hindi tapat (Oseas 3:1-2), at higit sa lahat nang isugo Niya ang Kanyang Anak. At tinatawag Niya ang Kanyang bayan na ipakita ito sa tapat na pagtupad sa tipan, lalo na sa pag-aasawa: “Ang pinagsama ng Diyos ay huwag paghiwalayin ng tao” (Mateo 19:6), sapagkat “ang pag-ibig ay hindi nagwawakas” (1 Corinto 13:8)."
+    ),
+    insight: [
+      t(
+        "Many believers sing “His love endures forever” on Sunday and live “walang forever” on Monday. We guard our hearts so tightly that we never fully trust God's love, because people taught us that every love has an expiry date. We serve Him like employees afraid of termination instead of children who are secure. But hesed is not a mood. It is a promise God bound Himself to. His love for you does not rest on your performance, which changes, but on His character, which never does.",
+        "Maraming mananampalataya ang umaawit ng “ang Kanyang pag-ibig ay magpakailanman” tuwing Linggo pero namumuhay sa “walang forever” tuwing Lunes. Sobrang higpit ng bantay natin sa puso kaya hindi tayo lubos na nagtitiwala sa pag-ibig ng Diyos, dahil itinuro sa atin ng mga tao na may expiry date ang bawat pag-ibig. Naglilingkod tayo sa Kanya na parang empleyadong takot matanggal sa halip na anak na panatag. Pero hindi mood ang hesed. Pangako ito na itinali ng Diyos ang sarili Niya. Ang pag-ibig Niya sa iyo ay hindi nakasalalay sa performance mo, na nagbabago, kundi sa pagkatao Niya, na hindi kailanman nagbabago."
+      ),
+      t(
+        "We also overlook that “forever love” in Scripture is mostly about faithfulness, not feelings. Malachi calls the wife “your companion and your wife by covenant” and warns, “Guard yourselves in your spirit” (Malachi 2:14-15). Marriages rarely die in one dramatic night. They die from many small neglects: unanswered messages, secret friendships, money hidden from each other, prayers no longer prayed together. Covenant love is guarded in small daily faithfulness long before it is tested in a crisis.",
+        "Nakaliligtaan din natin na ang “forever na pag-ibig” sa Kasulatan ay higit na tungkol sa katapatan, hindi sa damdamin. Tinatawag ni Malakias ang asawa na “iyong kasama at asawa mo sa tipan” at nagbababala, “Ingatan ninyo ang inyong sarili sa inyong espiritu” (Malakias 2:14-15). Bihirang mamatay ang pagsasama sa isang madramang gabi. Namamatay ito sa maraming maliliit na pagpapabaya: mga mensaheng hindi sinasagot, lihim na pakikipagkaibigan, perang itinatago sa isa't isa, mga panalanging hindi na sabay ipinapanalangin. Iniingatan ang tipang pag-ibig sa maliliit na araw-araw na katapatan matagal bago pa ito subukin ng krisis."
+      ),
+    ],
+    life: [
+      t(
+        "Think of a couple married at a small chapel in Batangas. Two years later he signs a contract in Jeddah. At first they video call every night. Then every other night. Then only when there is a problem with the padala. A co-worker becomes a listening ear for him; an old classmate starts messaging her. Neither planned to drift. But one day they realize they are strangers. Now imagine the same couple choosing covenant: a fixed time each day to pray together on the phone, honest talk about loneliness, a shared budget, friends in their churches who ask hard questions. Distance tested them. Covenant held them.",
+        "Isipin mo ang mag-asawang ikinasal sa isang maliit na kapilya sa Batangas. Makalipas ang dalawang taon, pumirma ang lalaki ng kontrata sa Jeddah. Sa simula, gabi-gabi silang nagvi-video call. Tapos tuwing ikalawang gabi. Tapos kapag may problema lang sa padala. Naging tagapakinig niya ang isang katrabaho; nagsimulang mag-message sa babae ang isang dating kaklase. Walang nagplanong lumayo. Pero isang araw, napagtanto nilang estranghero na sila sa isa't isa. Ngayon, isipin mo ang parehong mag-asawa na pumili ng tipan: may takdang oras araw-araw para manalangin nang magkasama sa telepono, tapat na usapan tungkol sa kalungkutan, iisang budget, mga kaibigan sa simbahan na nagtatanong ng mahihirap na tanong. Sinubok sila ng distansya. Hinawakan sila ng tipan."
+      ),
+      t(
+        "For those whose “forever” already broke, the word of God is not a lecture but a healing. The child of separated parents, the wife who was abandoned, the man whose fiancée left: God's hesed reaches you first. He does not love you less because someone else stopped loving you. Bring Him the hurt, let His people care for you, and let His faithful love teach you that love is still real, because it is still holding you.",
+        "Para sa mga nasira na ang “forever,” hindi lektyur ang salita ng Diyos kundi pagpapagaling. Ang anak ng mga magulang na naghiwalay, ang asawang iniwan, ang lalaking iniwan ng fiancée niya: unang umaabot sa iyo ang hesed ng Diyos. Hindi ka Niya mas kaunting minamahal dahil may taong tumigil magmahal sa iyo. Dalhin mo sa Kanya ang sakit, hayaan mong alagaan ka ng Kanyang bayan, at hayaan mong ituro sa iyo ng tapat Niyang pag-ibig na totoo pa rin ang pag-ibig, dahil hawak ka pa rin nito."
+      ),
+    ],
+    twist: t(
+      "The world's hugot says, “Walang forever.” The Kingdom twist is that the world is right about itself and wrong about God. Even good marriages end at death; Jesus said there is no marrying in the resurrection (Matthew 22:30). Human love, at its best, is “till death do us part.” But that is exactly why marriage points beyond itself. It is a living parable of a greater covenant, Christ and His church (Ephesians 5:31-32), a love that death could not end because He went through death and came out the other side. Your marriage is not the forever. It is a signpost to the Forever.",
+      "Sabi ng hugot ng mundo, “Walang forever.” Ang Kingdom twist: tama ang mundo tungkol sa sarili nito at mali tungkol sa Diyos. Kahit ang mabubuting pagsasama ay natatapos sa kamatayan; sinabi ni Hesus na walang pag-aasawa sa muling pagkabuhay (Mateo 22:30). Ang pag-ibig ng tao, sa pinakamaganda nito, ay “hanggang kamatayan ang maghiwalay sa atin.” Pero iyan mismo ang dahilan kung bakit itinuturo ng pag-aasawa ang lampas sa sarili nito. Buhay itong talinghaga ng mas dakilang tipan, si Cristo at ang Kanyang iglesya (Efeso 5:31-32), isang pag-ibig na hindi natapos ng kamatayan dahil dinaanan Niya ang kamatayan at lumabas sa kabila. Hindi ang pag-aasawa mo ang forever. Karatula ito na nagtuturo sa Forever."
+    ),
+    confirm: [
+      t("Exodus 34:6-7: after the golden calf, God proclaimed Himself “abounding in steadfast love and faithfulness.”", "Exodo 34:6-7: pagkatapos ng gintong guya, ipinahayag ng Diyos ang sarili Niyang “sagana sa tapat na pag-ibig at katapatan.”"),
+      t("Ruth 1:16-17: Ruth bound herself to Naomi, “Where you go I will go,” a picture of covenant loyalty.", "Ruth 1:16-17: itinali ni Ruth ang sarili kay Naomi, “Kung saan ka pupunta ay pupunta ako,” larawan ng tapat na pagtupad sa tipan."),
+      t("John 13:1: having loved His own, Jesus “loved them to the end.”", "Juan 13:1: dahil inibig Niya ang sariling Kanya, “inibig Niya sila hanggang sa wakas.”"),
+      t("Romans 8:38-39: nothing in all creation can separate us from the love of God in Christ Jesus.", "Roma 8:38-39: walang anuman sa buong nilikha ang makapaghihiwalay sa atin sa pag-ibig ng Diyos kay Cristo Hesus."),
+    ],
+    heart: [
+      t(
+        "Move from cynicism to gratitude. Instead of rehearsing every love that failed you, start counting the mercies that are new every morning.",
+        "Lumipat mula sa pagkamapang-uyam tungo sa pasasalamat. Sa halip na ulit-ulitin ang bawat pag-ibig na bumigo sa iyo, simulan mong bilangin ang mga habag na bago tuwing umaga."
+      ),
+      t(
+        "Move from contract to covenant. Love not only while it feels good or while the other keeps their side, but because you made a promise before God and He gives you grace to keep it.",
+        "Lumipat mula sa kontrata tungo sa tipan. Magmahal hindi lang habang masarap sa pakiramdam o habang ginagawa ng iba ang bahagi nila, kundi dahil nangako ka sa harap ng Diyos at binibigyan ka Niya ng biyayang tuparin ito."
+      ),
+    ],
+    questions: [
+      t("What broken promise first taught you to believe “walang forever”?", "Anong napakong pangako ang unang nagturo sa iyo na maniwalang “walang forever”?"),
+      t("Do you relate to God as one who might stop loving you? Where did that fear come from?", "Itinuturing mo bang ang Diyos ay maaaring tumigil sa pagmamahal sa iyo? Saan nanggaling ang takot na iyan?"),
+      t("What small neglect could be quietly weakening your marriage, family or closest friendship?", "Anong maliit na pagpapabaya ang maaaring tahimik na nagpapahina sa pag-aasawa mo, pamilya mo o pinakamalapit mong pagkakaibigan?"),
+      t("Who in your life needs to experience faithful, covenant love from you this week?", "Sino sa buhay mo ang kailangang makaranas ng tapat at tipang pag-ibig mula sa iyo ngayong linggo?"),
+    ],
+    actions: [
+      t("Write your own Psalm 136: list ten moments of God's faithfulness in your life, each followed by “for His steadfast love endures forever.”", "Isulat ang sarili mong Awit 136: ilista ang sampung sandali ng katapatan ng Diyos sa buhay mo, na bawat isa ay sinusundan ng “sapagkat ang Kanyang tapat na pag-ibig ay magpakailanman.”"),
+      t("If married, set a daily time this week to pray together, even for five minutes by phone or video.", "Kung may asawa, magtakda ng araw-araw na oras ngayong linggo para manalangin nang magkasama, kahit limang minuto sa telepono o video."),
+      t("Close one door that threatens covenant: a secret chat, a hidden expense, an unhealthy friendship.", "Isara ang isang pintong nagbabanta sa tipan: isang lihim na chat, isang nakatagong gastos, isang hindi malusog na pakikipagkaibigan."),
+    ],
+    prayer: t(
+      "Faithful God, Your steadfast love endures forever. When people left and promises broke, You were still there, and Your mercies met me every morning. Heal the wounds that taught me to say “walang forever.” Thank You for pursuing me like Hosea pursued Gomer and for loving me to the end on the cross. Teach me to love with covenant faithfulness, to guard my marriage and my family in my spirit, and to show others a love that does not quit. In Jesus' name, Amen.",
+      "Tapat na Diyos, ang Iyong tapat na pag-ibig ay magpakailanman. Nang umalis ang mga tao at mapako ang mga pangako, nandiyan Ka pa rin, at sinalubong ako ng Iyong mga habag tuwing umaga. Pagalingin Mo ang mga sugat na nagturo sa akin na magsabing “walang forever.” Salamat sa paghabol Mo sa akin gaya ng paghabol ni Oseas kay Gomer at sa pag-ibig Mo sa akin hanggang sa wakas sa krus. Turuan Mo akong magmahal nang may tapat na pagtupad sa tipan, ingatan ang aking pag-aasawa at pamilya sa aking espiritu, at ipakita sa iba ang pag-ibig na hindi sumusuko. Sa pangalan ni Hesus, Amen."
+    ),
+  },
 };

@@ -1,5 +1,6 @@
 import { t, v, type Course, type CourseLesson } from "./types";
 import { HEALING_LESSONS_2 } from "./healing-2";
+import { HEALING_LESSONS_3 } from "./healing-3";
 
 /**
  * Fear and inner healing: the Father's love, truth for specific fears, and
@@ -405,6 +406,8 @@ export const HEALING: Course = {
     t("What is a place where you feel safe and at peace?", "Ano ang isang lugar kung saan nararamdaman mong ligtas at payapa ka?"),
     t("What is a promise someone kept to you that meant a lot?", "Ano ang isang pangakong tinupad sa iyo ng isang tao na napakahalaga sa iyo?"),
     t("What is the bravest thing you have ever done?", "Ano ang pinakamatapang na bagay na nagawa mo?"),
+    t("Who is someone you miss, and what do you remember most about them?", "Sino ang isang taong nami-miss mo, at ano ang pinakanaaalala mo sa kanya?"),
+    t("What helps you most when you feel low or tired inside?", "Ano ang pinakanakatutulong sa iyo kapag malungkot o pagod ang kalooban mo?"),
   ],
-  lessons: [...HEALING_LESSONS_1, ...HEALING_LESSONS_2],
+  lessons: [...HEALING_LESSONS_1, ...HEALING_LESSONS_2, ...HEALING_LESSONS_3],
 };

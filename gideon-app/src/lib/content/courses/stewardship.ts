@@ -1,5 +1,6 @@
 import { t, v, type Course, type CourseLesson } from "./types";
 import { STEWARDSHIP_LESSONS_2 } from "./stewardship-2";
+import { STEWARDSHIP_LESSONS_3 } from "./stewardship-3";
 
 /**
  * Prosperity and biblical stewardship: God's provision and generosity,
@@ -414,6 +415,8 @@ export const STEWARDSHIP: Course = {
     t("If you received ₱10,000 today, what would you do with it?", "Kung makatanggap ka ng ₱10,000 ngayon, ano ang gagawin mo rito?"),
     t("What is something people buy that they don't really need?", "Ano ang isang bagay na binibili ng mga tao na hindi naman talaga nila kailangan?"),
     t("What would you do if money were no issue at all?", "Ano ang gagawin mo kung hindi isyu ang pera?"),
+    t("What is one way your family got through a hard month financially?", "Ano ang isang paraan na nalampasan ng pamilya mo ang isang mahirap na buwan sa pera?"),
+    t("What did your parents teach you about money, by words or by example?", "Ano ang itinuro sa iyo ng mga magulang mo tungkol sa pera, sa salita man o sa halimbawa?"),
   ],
-  lessons: [...STEWARDSHIP_LESSONS_1, ...STEWARDSHIP_LESSONS_2],
+  lessons: [...STEWARDSHIP_LESSONS_1, ...STEWARDSHIP_LESSONS_2, ...STEWARDSHIP_LESSONS_3],
 };

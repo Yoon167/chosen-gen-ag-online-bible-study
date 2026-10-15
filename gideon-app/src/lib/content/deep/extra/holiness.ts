@@ -484,4 +484,92 @@ export const EXTRA: ExtraSet = {
       },
     ],
   },
+  "c-called-to-be-holy": {
+    deeper: [
+      {
+        heading: t("Holy ones who are still becoming holy", "Mga banal na patuloy pang pinababanal"),
+        body: [
+          t(
+            "The New Testament speaks of holiness in two ways at once. Paul calls the believers in Corinth \"those sanctified in Christ Jesus, called to be saints\" (1 Corinthians 1:2), and then spends the rest of the letter correcting their divisions, lawsuits and immorality. They were already holy by belonging to God, and they still needed to become holy in how they lived. Hebrews 10:14 holds both together: by a single offering Christ \"has perfected for all time those who are being sanctified.\"",
+            "Nagsasalita ang Bagong Tipan tungkol sa kabanalan sa dalawang paraan nang sabay. Tinawag ni Pablo ang mga mananampalataya sa Corinto na \"mga pinabanal kay Cristo Hesus, tinawag upang maging mga banal\" (1 Corinto 1:2), at saka ginugol ang natitirang bahagi ng sulat sa pagtutuwid sa kanilang pagkakabaha-bahagi, pagdedemanda at kahalayan. Banal na sila dahil pag-aari sila ng Diyos, pero kailangan pa rin nilang maging banal sa paraan ng kanilang pamumuhay. Pinagsasama ng Hebreo 10:14 ang dalawa: sa iisang handog, \"ginawang ganap magpakailanman\" ni Cristo \"ang mga pinababanal.\""
+          ),
+          t(
+            "This protects us from two errors. If we forget that we are already holy in Christ, we will try to earn God's acceptance and live in fear. If we forget that we are still being made holy, we will excuse sin and stop growing. The gospel says: you are His; now become in practice what you already are by grace.",
+            "Iniingatan tayo nito mula sa dalawang pagkakamali. Kapag nakalimutan nating banal na tayo kay Cristo, susubukan nating kitain ang pagtanggap ng Diyos at mamumuhay tayo sa takot. Kapag nakalimutan nating patuloy pa tayong pinababanal, magdadahilan tayo sa kasalanan at titigil sa paglago. Ito ang sinasabi ng ebanghelyo: ikaw ay Kanya; ngayon, maging sa pamumuhay ang kung ano ka na sa biyaya."
+          ),
+        ],
+      },
+      {
+        heading: t("Leviticus 19: holiness toward the neighbor and the stranger", "Levitico 19: kabanalan sa kapwa at sa dayuhan"),
+        body: [
+          t(
+            "Leviticus 19 is sometimes called the \"holiness code,\" and it is remarkably practical. Alongside worship and the Sabbath, it commands care for the poor at harvest (19:9-10), prompt wages (19:13), protection of the disabled (19:14), fair courts (19:15) and honest measures (19:35-36). Jesus quoted 19:18, \"love your neighbor as yourself,\" as the second great commandment (Matthew 22:39), and James calls it \"the royal law\" (James 2:8).",
+            "Minsang tinatawag ang Levitico 19 na \"kodigo ng kabanalan,\" at kahanga-hanga kung gaano ito kapraktikal. Kasama ng pagsamba at ng Sabbath, iniuutos nito ang pagmamalasakit sa mahirap sa panahon ng ani (19:9-10), agarang pagbabayad ng sahod (19:13), pag-iingat sa may kapansanan (19:14), patas na hukuman (19:15) at tapat na sukatan (19:35-36). Sinipi ni Hesus ang 19:18, \"ibigin mo ang iyong kapwa gaya ng iyong sarili,\" bilang ikalawang dakilang utos (Mateo 22:39), at tinawag ito ni Santiago na \"maharlikang kautusan\" (Santiago 2:8)."
+          ),
+          t(
+            "The chapter also says, \"When a stranger sojourns with you in your land, you shall not do him wrong... You shall love him as yourself, for you were strangers in the land of Egypt\" (19:33-34). Many Filipinos know what it is to be the stranger in another land. Holiness asks us to remember that, both in how we live abroad and in how we treat the foreign worker, the probinsyano new to the city, or anyone far from home among us.",
+            "Sinasabi rin ng kabanata, \"Kapag may dayuhang nakikipamayan sa inyo sa inyong lupain, huwag ninyo siyang aapihin... Ibigin ninyo siya gaya ng inyong sarili, sapagkat kayo'y naging mga dayuhan sa lupain ng Ehipto\" (19:33-34). Maraming Pilipino ang nakaaalam kung ano ang maging dayuhan sa ibang lupain. Hinihiling ng kabanalan na alalahanin natin iyon, kapwa sa kung paano tayo namumuhay sa abroad at sa kung paano natin tinatrato ang dayuhang manggagawa, ang probinsyanong bago sa lungsod, o sinumang malayo sa tahanan na kasama natin."
+          ),
+        ],
+      },
+      {
+        heading: t("From \"Woe is me\" to \"Send me\"", "Mula \"Kahabag-habag ako\" hanggang \"Isugo Mo ako\""),
+        body: [
+          t(
+            "Isaiah's vision happened \"in the year that King Uzziah died\" (Isaiah 6:1). Uzziah had reigned for about fifty years and brought Judah strength and prosperity, but he grew proud and entered the temple to burn incense, which only the priests could do, and he was struck with leprosy until his death (2 Chronicles 26). Against that background, Isaiah sees the true King on the throne, the One whose reign never ends.",
+            "Nangyari ang pangitain ni Isaias \"sa taon ng pagkamatay ni Haring Uzias\" (Isaias 6:1). Halos limampung taong naghari si Uzias at nagdala ng lakas at kasaganaan sa Juda, pero nagmataas siya at pumasok sa templo para magsunog ng insenso, na tanging mga pari lamang ang maaaring gumawa, at tinamaan siya ng ketong hanggang sa kanyang kamatayan (2 Cronica 26). Sa likod ng pangyayaring iyon, nakita ni Isaias ang tunay na Hari sa trono, ang Siyang ang paghahari ay hindi magwawakas."
+          ),
+          t(
+            "Notice the movement of the chapter: vision (6:1-4), confession (6:5), cleansing (6:6-7), and commission (6:8). Holiness does not end in private feelings. The one who has been cleansed is sent. Peter makes the same link: we are \"a holy nation... that you may proclaim the excellencies of Him who called you out of darkness into His marvelous light\" (1 Peter 2:9). Holiness and mission belong together.",
+            "Pansinin ang galaw ng kabanata: pangitain (6:1-4), pagtatapat (6:5), paglilinis (6:6-7), at pagsusugo (6:8). Hindi nagtatapos sa pribadong damdamin ang kabanalan. Isinusugo ang nilinis. Ganito rin ang pag-uugnay ni Pedro: tayo ay \"isang bansang banal... upang ipahayag ninyo ang mga kadakilaan ng tumawag sa inyo mula sa kadiliman tungo sa Kanyang kahanga-hangang liwanag\" (1 Pedro 2:9). Magkasama ang kabanalan at ang misyon."
+          ),
+        ],
+      },
+    ],
+    stories: [],
+  },
+  "c-fathers-discipline": {
+    deeper: [
+      {
+        heading: t("Paideia: discipline as child-training", "Paideia: ang disiplina bilang pagsasanay sa anak"),
+        body: [
+          t(
+            "The Greek word translated \"discipline\" in Hebrews 12, paideia, comes from the word for a child. It covers the whole work of raising a child: teaching, guiding, correcting and training. Paul uses it in Ephesians 6:4, \"bring them up in the discipline and instruction of the Lord,\" and in 2 Timothy 3:16, where Scripture is profitable for \"training in righteousness.\" Discipline in the Bible is much bigger than punishment; it is formation.",
+            "Ang salitang Griyego na isinaling \"disiplina\" sa Hebreo 12, paideia, ay nagmula sa salita para sa bata. Saklaw nito ang buong gawain ng pagpapalaki ng anak: pagtuturo, paggabay, pagtutuwid at pagsasanay. Ginamit ito ni Pablo sa Efeso 6:4, \"palakihin ninyo sila sa disiplina at turo ng Panginoon,\" at sa 2 Timoteo 3:16, kung saan kapaki-pakinabang ang Kasulatan para sa \"pagsasanay sa katuwiran.\" Mas malawak kaysa parusa ang disiplina sa Bibliya; ito ay paghubog."
+          ),
+          t(
+            "Hebrews 12:11 adds that the peaceful fruit comes \"to those who have been trained by it.\" The word trained is gymnazo, from which we get gymnasium. Training is repeated, uncomfortable and purposeful. God's discipline often comes through ordinary means: His Word convicting us, the counsel of other believers, closed doors, delays and the consequences of our choices.",
+            "Idinagdag ng Hebreo 12:11 na dumarating ang mapayapang bunga \"sa mga sinanay nito.\" Ang salitang sinanay ay gymnazo, na pinagmulan ng salitang gymnasium. Ang pagsasanay ay paulit-ulit, hindi komportable at may layunin. Madalas dumarating ang disiplina ng Diyos sa mga ordinaryong paraan: ang Kanyang Salitang kumukumbinsi sa atin, ang payo ng ibang mananampalataya, mga saradong pinto, mga pagkaantala at ang mga bunga ng ating mga pasya."
+          ),
+        ],
+      },
+      {
+        heading: t("Discipline, consequences and condemnation", "Disiplina, mga bunga at hatol"),
+        body: [
+          t(
+            "For those in Christ, God's discipline is never condemnation. The penalty for sin fell on Jesus (Isaiah 53:5), and \"there is therefore now no condemnation\" (Romans 8:1). Paul even says, \"When we are judged by the Lord, we are disciplined so that we may not be condemned along with the world\" (1 Corinthians 11:32). Discipline is God's way of keeping His children from the path that ends in ruin.",
+            "Para sa mga nasa kay Cristo, ang disiplina ng Diyos ay hindi kailanman hatol. Kay Hesus bumagsak ang parusa sa kasalanan (Isaias 53:5), at \"kaya ngayon ay wala nang hatol\" (Roma 8:1). Sinabi pa ni Pablo, \"Kapag hinahatulan tayo ng Panginoon, dinidisiplina tayo upang hindi tayo mahatulang kasama ng sanlibutan\" (1 Corinto 11:32). Ang disiplina ay paraan ng Diyos para ilayo ang Kanyang mga anak sa landas na nauuwi sa kapahamakan."
+          ),
+          t(
+            "At the same time, not every hardship is discipline for a specific sin. Job suffered though he was blameless, and Jesus said of the man born blind, \"It was not that this man sinned, or his parents\" (John 9:3). So we should not rush to conclude that every trial is God's correction, nor judge others by their troubles. The wise response is to ask the Lord humbly, confess any sin He shows us, and trust Him to use every season for our holiness (Romans 8:28-29).",
+            "Kasabay nito, hindi lahat ng paghihirap ay disiplina para sa isang tiyak na kasalanan. Nagdusa si Job kahit wala siyang kapintasan, at sinabi ni Hesus tungkol sa lalaking ipinanganak na bulag, \"Hindi dahil nagkasala ang taong ito o ang kanyang mga magulang\" (Juan 9:3). Kaya hindi tayo dapat magmadaling magpasya na bawat pagsubok ay pagtutuwid ng Diyos, at hindi rin natin dapat hatulan ang iba dahil sa kanilang mga problema. Ang matalinong tugon ay ang mapagpakumbabang pagtatanong sa Panginoon, pagtatapat ng anumang kasalanang ipakita Niya, at pagtitiwala na gagamitin Niya ang bawat panahon para sa ating kabanalan (Roma 8:28-29)."
+          ),
+        ],
+      },
+      {
+        heading: t("Esau and the root of bitterness", "Si Esau at ang ugat ng kapaitan"),
+        body: [
+          t(
+            "Hebrews 12:15 warns against a \"root of bitterness\" that springs up and defiles many, an echo of Deuteronomy 29:18, where Moses warned against a root bearing poisonous fruit among God's people. Bitterness often grows in the soil of hardship that was never brought to God. One person's resentment spreads through a family, a small group or a church.",
+            "Nagbababala ang Hebreo 12:15 laban sa \"ugat ng kapaitan\" na sumisibol at nagpaparumi sa marami, isang alingawngaw ng Deuteronomio 29:18, kung saan nagbabala si Moises laban sa ugat na nagbubunga ng lason sa gitna ng bayan ng Diyos. Madalas tumutubo ang kapaitan sa lupa ng paghihirap na hindi kailanman dinala sa Diyos. Kumakalat ang hinanakit ng isang tao sa isang pamilya, small group o iglesia."
+          ),
+          t(
+            "Then comes Esau, who \"sold his birthright for a single meal\" (Hebrews 12:16; Genesis 25:29-34). Hebrews adds that afterward he could not get the blessing back, \"though he sought it with tears\" (12:17). In Genesis 27:34-38 Esau wept for his father's blessing, but Isaac could not reverse it. The point is not that God refuses a truly repentant heart, but that some choices carry losses we cannot undo. Holiness means valuing what God values before the moment of hunger arrives.",
+            "Saka dumating si Esau, na \"ipinagbili ang kanyang pagkapanganay sa isang kainan\" (Hebreo 12:16; Genesis 25:29-34). Idinagdag ng Hebreo na pagkatapos ay hindi na niya nabawi ang pagpapala, \"kahit hinanap niya ito nang may luha\" (12:17). Sa Genesis 27:34-38, umiyak si Esau para sa pagpapala ng kanyang ama, pero hindi na ito mababawi ni Isaac. Ang punto ay hindi na tinatanggihan ng Diyos ang pusong tunay na nagsisisi, kundi na may mga pasyang may dalang pagkawala na hindi na natin maibabalik. Ang kabanalan ay pagpapahalaga sa pinahahalagahan ng Diyos bago pa dumating ang sandali ng gutom."
+          ),
+        ],
+      },
+    ],
+    stories: [],
+  },
 };

@@ -554,4 +554,92 @@ export const EXTRA: ExtraSet = {
       },
     ],
   },
+  "c-sabbath-rest": {
+    deeper: [
+      {
+        heading: t("Two reasons for one commandment", "Dalawang dahilan para sa iisang utos"),
+        body: [
+          t(
+            "The Ten Commandments appear twice, and the Sabbath command is given a different reason each time. Exodus 20:11 points back to creation: God worked six days and rested on the seventh, so His people rest too. Deuteronomy 5:15 points back to the exodus: \"You shall remember that you were a slave in the land of Egypt.\" Together they teach that rest is woven into how God made us and into how God saved us.",
+            "Dalawang beses lumitaw ang Sampung Utos, at magkaibang dahilan ang ibinigay sa utos ng Sabbath sa bawat pagkakataon. Itinuturo ng Exodo 20:11 pabalik sa paglikha: anim na araw na gumawa ang Diyos at nagpahinga sa ikapito, kaya nagpapahinga rin ang Kanyang bayan. Itinuturo naman ng Deuteronomio 5:15 pabalik sa paglabas sa Egipto: \"Alalahanin mong naging alipin ka sa lupain ng Egipto.\" Magkasama, itinuturo nila na nakahabi ang pahinga sa paraan ng paglikha sa atin ng Diyos at sa paraan ng pagliligtas Niya sa atin."
+          ),
+          t(
+            "The Hebrew word shabbat means to stop or cease. The Sabbath was not first a day of doing religious things but a day of stopping. Even the manna in the wilderness taught this: on the sixth day God gave a double portion so no one had to gather on the seventh (Exodus 16:22-30). Rest was an exercise in trusting God's provision.",
+            "Ang salitang Hebreo na shabbat ay nangangahulugang huminto o tumigil. Ang Sabbath ay hindi muna araw ng paggawa ng mga gawaing panrelihiyon kundi araw ng paghinto. Itinuro rin ito ng mana sa ilang: sa ikaanim na araw, nagbigay ang Diyos ng dobleng bahagi upang walang mangailangang mamulot sa ikapito (Exodo 16:22-30). Ang pahinga ay pagsasanay sa pagtitiwala sa pagkakaloob ng Diyos."
+          ),
+        ],
+      },
+      {
+        heading: t("Jesus, the Lord of the Sabbath", "Si Hesus, ang Panginoon ng Sabbath"),
+        body: [
+          t(
+            "By the first century, teachers had developed many detailed rules about what counted as work on the Sabbath. Jesus never broke God's law, but He refused these human additions when they crushed people. He healed a man with a withered hand on the Sabbath and asked, \"Is it lawful on the Sabbath to do good or to do harm?\" (Mark 3:4). He said, \"The Sabbath was made for man, not man for the Sabbath\" and called Himself \"lord even of the Sabbath\" (Mark 2:27-28).",
+            "Pagdating ng unang siglo, maraming detalyadong patakaran na ang binuo ng mga guro tungkol sa kung ano ang maituturing na trabaho sa Sabbath. Hindi kailanman nilabag ni Hesus ang kautusan ng Diyos, pero tinanggihan Niya ang mga dagdag na gawa ng tao kapag dinudurog ng mga ito ang mga tao. Nagpagaling Siya ng lalaking tuyo ang kamay sa araw ng Sabbath at nagtanong, \"Ayon ba sa kautusan sa araw ng Sabbath ang gumawa ng mabuti o ang gumawa ng masama?\" (Marcos 3:4). Sinabi Niya, \"Ang Sabbath ay ginawa para sa tao, at hindi ang tao para sa Sabbath\" at tinawag ang sarili na \"Panginoon maging ng Sabbath\" (Marcos 2:27-28)."
+          ),
+          t(
+            "After the resurrection the early Christians gathered on \"the first day of the week\" (Acts 20:7; 1 Corinthians 16:2), later called the Lord's Day (Revelation 1:10). Paul told believers not to judge one another over special days (Romans 14:5-6; Colossians 2:16-17). Christians still differ on how to keep a Sabbath, but they agree that Jesus is the true rest the Sabbath pointed to (Hebrews 4:9-10).",
+            "Pagkatapos ng muling pagkabuhay, nagtitipon ang mga unang Kristiyano sa \"unang araw ng linggo\" (Gawa 20:7; 1 Corinto 16:2), na tinawag kalaunan na Araw ng Panginoon (Pahayag 1:10). Sinabihan ni Pablo ang mga mananampalataya na huwag hatulan ang isa't isa dahil sa mga espesyal na araw (Roma 14:5-6; Colosas 2:16-17). Magkakaiba pa rin ang mga Kristiyano kung paano mangilin ng Sabbath, pero sang-ayon sila na si Hesus ang tunay na pahingang itinuturo ng Sabbath (Hebreo 4:9-10)."
+          ),
+        ],
+      },
+      {
+        heading: t("Building a rhythm of rest and solitude", "Pagbuo ng ritmo ng pahinga at pag-iisa"),
+        body: [
+          t(
+            "Jesus often withdrew to lonely places to pray (Luke 5:16), rising early before the crowds found Him (Mark 1:35). A simple rhythm helps: a daily pause, even ten minutes of quiet with God; a weekly Sabbath, a day or half-day for worship, rest and relationships; and from time to time a longer retreat of prayer. For workers with shifting schedules, the day can move, but the rhythm should stay.",
+            "Madalas lumayo si Hesus sa mga tahimik na lugar para manalangin (Lucas 5:16), maagang bumabangon bago Siya matagpuan ng maraming tao (Marcos 1:35). Nakatutulong ang isang simpleng ritmo: araw-araw na paghinto, kahit sampung minutong katahimikan kasama ang Diyos; lingguhang Sabbath, isang araw o kalahating araw para sa pagsamba, pahinga, at mga relasyon; at paminsan-minsan, mas mahabang retreat ng panalangin. Para sa mga manggagawang pabago-bago ang iskedyul, maaaring lumipat ang araw, pero dapat manatili ang ritmo."
+          ),
+          t(
+            "A Sabbath is less about strict rules and more about what you set down and what you take up. Set down work, buying and selling, worry and screens where you can. Take up worship, sleep, a meal with others, a walk, Scripture and prayer. Ask of each activity, \"Does this restore my soul and turn my heart to God?\"",
+            "Ang Sabbath ay hindi gaanong tungkol sa mahigpit na patakaran kundi tungkol sa kung ano ang ibinababa mo at kung ano ang dinadampot mo. Ibaba ang trabaho, pagbili at pagbenta, pag-aalala, at mga screen hangga't kaya. Damputin ang pagsamba, tulog, pagkain kasama ang iba, paglalakad, Kasulatan, at panalangin. Itanong sa bawat gawain, \"Pinanunumbalik ba nito ang aking kaluluwa at ibinabaling ang aking puso sa Diyos?\""
+          ),
+        ],
+      },
+    ],
+    stories: [],
+  },
+  "c-dry-seasons": {
+    deeper: [
+      {
+        heading: t("Lament: the Bible's language for dry seasons", "Panaghoy: ang wika ng Bibliya para sa panahon ng tagtuyot"),
+        body: [
+          t(
+            "About a third of the Psalms are laments, prayers that bring complaint, confusion and grief honestly to God. A lament usually moves through four steps: turning to God (\"O Lord\"), complaining honestly (\"How long?\"), asking boldly (\"Answer me\"), and choosing to trust (\"But I have trusted in Your steadfast love\"), as in Psalm 13. Psalms 42 and 43 are one song with a refrain repeated three times: \"Why are you cast down, O my soul? Hope in God.\"",
+            "Mga isang katlo ng Mga Awit ay mga panaghoy, mga panalanging nagdadala nang tapat sa Diyos ng reklamo, kalituhan, at dalamhati. Kadalasang dumaraan ang panaghoy sa apat na hakbang: pagbaling sa Diyos (\"O Panginoon\"), tapat na pagdaing (\"Hanggang kailan?\"), matapang na paghiling (\"Sagutin Mo ako\"), at pagpiling magtiwala (\"Ngunit nagtiwala ako sa Iyong tapat na pag-ibig\"), gaya ng sa Awit 13. Ang Awit 42 at 43 ay iisang awit na may koro na inuulit nang tatlong beses: \"Bakit ka nanlulumo, O aking kaluluwa? Umasa ka sa Diyos.\""
+          ),
+          t(
+            "Lament is not unbelief. It is faith that refuses to stop talking to God even when it does not understand Him. Jesus Himself prayed the opening line of Psalm 22 on the cross. Psalm 88 even ends in darkness, which tells us God allows His people to bring Him prayers that have not yet found resolution.",
+            "Ang panaghoy ay hindi kawalan ng pananampalataya. Ito ay pananampalatayang ayaw tumigil sa pakikipag-usap sa Diyos kahit hindi Siya nauunawaan. Si Hesus mismo ay nanalangin ng unang linya ng Awit 22 sa krus. Ang Awit 88 ay nagtatapos pa nga sa dilim, na nagsasabi sa ating pinahihintulutan ng Diyos ang Kanyang bayan na dalhin sa Kanya ang mga panalanging wala pang kasagutan."
+          ),
+        ],
+      },
+      {
+        heading: t("Common causes of spiritual dryness", "Karaniwang sanhi ng espirituwal na pagkatuyo"),
+        body: [
+          t(
+            "Scripture shows several roots of dryness. Unconfessed sin: \"When I kept silent, my bones wasted away... my strength was dried up\" (Psalm 32:3-4). Exhaustion and fear: Elijah under the broom tree needed sleep and food before he could hear God (1 Kings 19:4-8). Isolation: the psalmist missed going to God's house with the crowd (Psalm 42:4). Suffering and waiting: Habakkuk and the exiles. And sometimes no clear cause at all, as with the faithful one in Isaiah 50:10.",
+            "Ipinapakita ng Kasulatan ang ilang ugat ng pagkatuyo. Kasalanang hindi ipinagtapat: \"Nang manahimik ako, nanghina ang aking mga buto... natuyo ang aking lakas\" (Awit 32:3-4). Pagod at takot: kinailangan ni Elias sa ilalim ng punong retama ang tulog at pagkain bago niya marinig ang Diyos (1 Hari 19:4-8). Pag-iisa: hinanap-hanap ng mang-aawit ang pagpunta sa bahay ng Diyos kasama ng karamihan (Awit 42:4). Pagdurusa at paghihintay: si Habakuk at ang mga bihag. At minsan, walang malinaw na sanhi, gaya ng tapat na tao sa Isaias 50:10."
+          ),
+          t(
+            "So respond wisely: confess what needs confessing, rest your body, return to fellowship, and keep seeking God through the ordinary means of grace. Spiritual dryness is not the same as clinical depression, though they can overlap. If sadness is deep and lasting, or if there are thoughts of self-harm, seek help from a doctor or counselor as well as from your church. God works through both.",
+            "Kaya tumugon nang may karunungan: ipagtapat ang dapat ipagtapat, ipahinga ang katawan, bumalik sa pakikisama sa mga kapatid, at patuloy na hanapin ang Diyos sa karaniwang mga daluyan ng biyaya. Hindi pareho ang espirituwal na pagkatuyo at ang clinical depression, kahit maaaring magkasabay ang dalawa. Kung malalim at matagal ang lungkot, o may naiisip na saktan ang sarili, humingi ng tulong sa doktor o counselor gayundin sa iyong iglesia. Gumagawa ang Diyos sa pamamagitan ng dalawa."
+          ),
+        ],
+      },
+      {
+        heading: t("The wilderness in God's story", "Ang ilang sa kuwento ng Diyos"),
+        body: [
+          t(
+            "In the Bible the wilderness is a place of testing and also of meeting God. Israel received the law and the manna in the wilderness. Moses met God at the burning bush in the wilderness. Elijah heard the low whisper at Horeb. John the Baptist prepared the way of the Lord in the wilderness, and Jesus was led there by the Spirit after His baptism (Matthew 4:1). Hosea 2:14-15 pictures God bringing His people into the wilderness to speak tenderly and to turn the Valley of Achor, \"trouble,\" into a door of hope.",
+            "Sa Bibliya, ang ilang ay lugar ng pagsubok at lugar din ng pakikipagtagpo sa Diyos. Tinanggap ng Israel ang kautusan at ang mana sa ilang. Nakatagpo ni Moises ang Diyos sa nagliliyab na mababang punongkahoy sa ilang. Narinig ni Elias ang mahinang bulong sa Horeb. Inihanda ni Juan Bautista ang daan ng Panginoon sa ilang, at inakay roon ng Espiritu si Hesus pagkatapos ng Kanyang bautismo (Mateo 4:1). Inilalarawan ng Oseas 2:14-15 ang Diyos na nagdadala sa Kanyang bayan sa ilang upang magsalita nang malambing at gawin ang Lambak ng Acor, \"kaguluhan,\" na pintuan ng pag-asa."
+          ),
+          t(
+            "Isaiah 40:31 promises that those who wait for the Lord will renew their strength. The Hebrew word for wait carries the sense of hoping and looking expectantly, like a watchman waiting for morning (Psalm 130:6). Waiting is not doing nothing. It is holding on to God's character until His time comes.",
+            "Ipinangangako ng Isaias 40:31 na ang mga naghihintay sa Panginoon ay magpapanibago ng kanilang lakas. Ang salitang Hebreo para sa paghihintay ay may diwa ng pag-asa at umaasang pagtanaw, gaya ng bantay na naghihintay sa umaga (Awit 130:6). Ang paghihintay ay hindi walang ginagawa. Ito ay pagkapit sa katangian ng Diyos hanggang dumating ang Kanyang panahon."
+          ),
+        ],
+      },
+    ],
+    stories: [],
+  },
 };

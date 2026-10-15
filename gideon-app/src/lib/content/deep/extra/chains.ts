@@ -251,4 +251,56 @@ export const EXTRA: ExtraSet = {
       },
     ],
   },
+  "c-shame-to-honor": {
+    deeper: [
+      {
+        heading: t("Guilt and shame are not the same", "Hindi magkapareho ang pagkakasala at hiya"),
+        body: [
+          t("Guilt is the true verdict that I have done wrong; it points to an act and can be answered by confession and forgiveness (1 John 1:9). Shame goes deeper and says I am wrong, unworthy, disqualified. It is why Adam and Eve hid even before God spoke a word of judgment (Genesis 3:7-10). Godly sorrow leads to repentance and leaves no regret (2 Corinthians 7:10), but shame keeps a person hiding long after the sin is forgiven.", "Ang pagkakasala ay ang totoong hatol na may nagawa akong mali; tumuturo ito sa isang gawa at nasasagot ng pagtatapat at kapatawaran (1 Juan 1:9). Mas malalim ang hiya at sinasabi nitong ako ay mali, hindi karapat-dapat, diskuwalipikado. Kaya nagtago sina Adan at Eva bago pa man nagsalita ang Diyos ng anumang hatol (Genesis 3:7-10). Ang maka-Diyos na kalungkutan ay humahantong sa pagsisisi at hindi nag-iiwan ng panghihinayang (2 Corinto 7:10), pero ang hiya ay nagpapatago sa tao kahit matagal nang napatawad ang kasalanan."),
+          t("Shame also comes from what others did to us. Tamar, after she was violated by her half-brother, “lived, a desolate woman, in her brother Absalom's house” (2 Samuel 13:20). Scripture does not blame her. It records her desolation honestly, and the rest of the Bible reveals a God who lifts up the humiliated and binds up the brokenhearted (Isaiah 61:1).", "Nagmumula rin ang hiya sa ginawa sa atin ng iba. Si Tamar, matapos siyang gahasain ng kapatid niya sa ama, ay “namuhay nang malungkot sa bahay ng kapatid niyang si Absalom” (2 Samuel 13:20). Hindi siya sinisisi ng Kasulatan. Tapat nitong itinatala ang kanyang pagkadurog, at inilalantad ng natitirang bahagi ng Biblia ang Diyos na nagtataas sa mga hinamak at nagbebenda sa mga wasak ang puso (Isaias 61:1)."),
+        ],
+      },
+      {
+        heading: t("Honor and shame in the world of the Bible", "Karangalan at kahihiyan sa mundo ng Biblia"),
+        body: [
+          t("In the ancient Mediterranean world, as in many Filipino communities, a person's standing before family and village mattered enormously. Crucifixion was designed not only to kill but to humiliate: victims were usually stripped and displayed in public. That is why Hebrews says Jesus “endured the cross, despising the shame” (Hebrews 12:2), and why Paul calls the message of the cross “folly” to the world (1 Corinthians 1:18).", "Sa sinaunang mundo ng Mediteraneo, gaya ng sa maraming komunidad na Pilipino, napakahalaga ng katayuan ng tao sa harap ng pamilya at ng nayon. Dinisenyo ang pagpapako sa krus hindi lang para pumatay kundi para manghamak: karaniwang hinuhubaran ang mga biktima at ipinaparada sa publiko. Kaya sinasabi ng Hebreo na si Hesus ay “nagtiis ng krus, hinamak ang kahihiyan” (Hebreo 12:2), at kaya tinawag ni Pablo na “kahangalan” sa mundo ang mensahe ng krus (1 Corinto 1:18)."),
+          t("Jesus reversed the honor code again and again. He touched lepers, ate with tax collectors, let a sinful woman wash His feet in a Pharisee's house (Luke 7:36-50), and told of a father who ran, which an elder of the village would not normally do, to embrace a disgraced son (Luke 15:20). In His Kingdom, honor is not earned by reputation; it is given by grace.", "Paulit-ulit na binaligtad ni Hesus ang kodigo ng karangalan. Hinipo Niya ang mga ketongin, kumain kasama ang mga maniningil ng buwis, hinayaan ang isang makasalanang babae na hugasan ang Kanyang mga paa sa bahay ng isang Pariseo (Lucas 7:36-50), at nagkuwento ng isang amang tumakbo, na karaniwang hindi ginagawa ng isang matanda sa nayon, para yakapin ang anak na nagdala ng kahihiyan (Lucas 15:20). Sa Kanyang Kaharian, ang karangalan ay hindi nakukuha sa reputasyon; ibinibigay ito ng biyaya."),
+        ],
+      },
+      {
+        heading: t("Walking out of shame", "Paglabas mula sa hiya"),
+        body: [
+          t("Shame heals in the light. Name it before God, then share it with one safe believer (James 5:16). Replace the old label with what God says: forgiven (Colossians 1:13-14), clean (1 John 1:7), a child (John 1:12), chosen and honored (1 Peter 2:9). Keep looking to Him: “Those who look to him are radiant” (Psalm 34:5).", "Gumagaling ang hiya sa liwanag. Pangalanan ito sa harap ng Diyos, saka ibahagi sa isang ligtas na mananampalataya (Santiago 5:16). Palitan ang lumang tatak ng sinasabi ng Diyos: pinatawad (Colosas 1:13-14), malinis (1 Juan 1:7), anak (Juan 1:12), pinili at pinararangalan (1 Pedro 2:9). Patuloy na tumingin sa Kanya: “Ang mga tumitingin sa Kanya ay nagliliwanag” (Awit 34:5)."),
+          t("Churches can either deepen shame or heal it. A healing church listens before it judges, guards confidences, restores fallen members gently (Galatians 6:1), and gives people back a place to serve, as Jesus gave Peter back his calling on the shore (John 21:15-17).", "Maaaring palalimin o pagalingin ng iglesia ang hiya. Ang nagpapagaling na iglesia ay nakikinig bago humatol, nag-iingat ng mga lihim, mahinahong ibinabalik ang mga nadapang miyembro (Galacia 6:1), at ibinabalik sa mga tao ang lugar ng paglilingkod, gaya ng pagbabalik ni Hesus kay Pedro sa kanyang tungkulin sa dalampasigan (Juan 21:15-17)."),
+        ],
+      },
+    ],
+    stories: [],
+  },
+  "c-unbind-them": {
+    deeper: [
+      {
+        heading: t("Lazarus and the work of the community", "Si Lazaro at ang gawain ng komunidad"),
+        body: [
+          t("Jewish burial in Jesus' time wrapped the body in linen strips with spices, and a separate cloth covered the face (John 11:44; compare John 19:40 and 20:7). A man bound that way could barely walk and could not free himself. Jesus, who had just commanded a dead man to live, could easily have loosened the cloths with a word. Instead He told the bystanders, “Unbind him, and let him go.”", "Sa paglilibing ng mga Judio noong panahon ni Hesus, binabalot ang katawan ng mga piraso ng lino na may pabango, at may hiwalay na telang tumatakip sa mukha (Juan 11:44; ihambing sa Juan 19:40 at 20:7). Halos hindi makalakad ang taong ganoon ang pagkakabalot at hindi niya kayang kalagan ang sarili. Si Hesus, na kauutos lang sa isang patay na mabuhay, ay madaling makakakalag sana sa mga tela sa isang salita. Sa halip, sinabi Niya sa mga nakatayo roon, “Kalagan ninyo siya, at hayaan siyang makalakad.”"),
+          t("The same pattern runs through the New Testament. God saves; the church nurtures, restores and helps believers grow up into Christ (Ephesians 4:11-16). New life comes from Him alone, but He has chosen to work out freedom through a family.", "Ganito rin ang huwaran sa buong Bagong Tipan. Ang Diyos ang nagliligtas; ang iglesia ang nag-aaruga, nagbabalik, at tumutulong sa mga mananampalataya na lumago kay Cristo (Efeso 4:11-16). Sa Kanya lamang nagmumula ang bagong buhay, pero pinili Niyang isakatuparan ang kalayaan sa pamamagitan ng isang pamilya."),
+        ],
+      },
+      {
+        heading: t("How to restore gently", "Paano magbalik nang mahinahon"),
+        body: [
+          t("The Greek word katartizo in Galatians 6:1 was used for mending nets (Mark 1:19) and setting bones. Restoring is careful, patient work. It begins with prayer and listening, speaks the truth in love (Ephesians 4:15), and aims at the person's return to Christ, not at winning an argument. Jesus gave a pattern for addressing sin privately first (Matthew 18:15), which protects dignity and avoids gossip.", "Ginagamit ang salitang Griyego na katartizo sa Galacia 6:1 para sa pagtatagpi ng lambat (Marcos 1:19) at pag-aayos ng baling buto. Maingat at matiyagang gawain ang pagbabalik. Nagsisimula ito sa panalangin at pakikinig, nagsasalita ng katotohanan sa pag-ibig (Efeso 4:15), at ang layunin ay ang pagbabalik ng tao kay Cristo, hindi ang manalo sa pagtatalo. Nagbigay si Hesus ng huwaran na unang harapin nang pribado ang kasalanan (Mateo 18:15), na nag-iingat sa dangal at umiiwas sa tsismis."),
+          t("Wise helpers know their limits. Situations involving abuse, threats of self-harm, crime or heavy occult involvement call for pastors, trained counselors and sometimes the authorities. Never minister alone in such cases, and never promise to keep a secret that leaves someone in danger.", "Alam ng marunong na katuwang ang kanyang hangganan. Ang mga sitwasyong may pang-aabuso, banta ng pananakit sa sarili, krimen, o malalim na pagkakasangkot sa okulto ay nangangailangan ng mga pastor, sinanay na tagapayo, at kung minsan ay ng mga awtoridad. Huwag kailanman maglingkod nang mag-isa sa ganitong mga kaso, at huwag mangakong itatago ang lihim na mag-iiwan sa sinuman sa panganib."),
+        ],
+      },
+      {
+        heading: t("The power of a testimony", "Ang kapangyarihan ng patotoo"),
+        body: [
+          t("Jesus sent the freed man of the Gerasenes home to tell his story, and later the people of the Decapolis came out in crowds to Jesus (Mark 5:20; 7:31-37). Revelation 12:11 says believers overcome “by the blood of the Lamb and by the word of their testimony.” A simple account of what Christ has done, told humbly, opens doors that arguments cannot.", "Pinauwi ni Hesus ang pinalayang lalaki sa Geraseno para ikuwento ang nangyari, at kalaunan ay dumagsa ang mga tao ng Decapolis kay Hesus (Marcos 5:20; 7:31-37). Sinasabi ng Pahayag 12:11 na nagtatagumpay ang mga mananampalataya “sa pamamagitan ng dugo ng Kordero at ng salita ng kanilang patotoo.” Ang simpleng salaysay ng ginawa ni Cristo, na ikinuwento nang may kababaang-loob, ay nagbubukas ng mga pintong hindi kayang buksan ng pangangatwiran."),
+          t("A good testimony is short and honest: what my life was like, how I met Jesus or how He freed me, and what my life is like now. It does not glamorize the past or pretend the struggle is over. It points to Him.", "Maikli at tapat ang mabuting patotoo: kung ano ang buhay ko noon, paano ko nakilala si Hesus o paano Niya ako pinalaya, at kung ano ang buhay ko ngayon. Hindi nito pinagaganda ang nakaraan o nagkukunwaring tapos na ang pakikibaka. Itinuturo nito si Hesus."),
+        ],
+      },
+    ],
+    stories: [],
+  },
 };

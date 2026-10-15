@@ -529,4 +529,136 @@ export const DEEP: DeepSet = {
       "Panginoong Hesus, naniniwala ako; tulungan Mo ang aking kawalan ng pananampalataya. Alam Mo kung gaano kadalas kong gustong makita muna bago magtiwala. Salamat dahil nasa bangka Kita, kahit malalaki ang alon. Palaguin Mo ang pananampalataya ko sa pamamagitan ng salita Mo. Bigyan Mo ako ng tapang na gawin ang susunod na hakbang na ipinapakita Mo, kahit hindi ko pa nakikita ang dulo. Mapalugdan Ka nawa ng buhay ko, hindi sa pagiging perpekto, kundi sa lubos na pagtitiwala sa Iyo. Sa Iyong pangalan, Amen."
     ),
   },
+
+  "c-grief-and-loss": {
+    revelation: t(
+      "Your tears are not a sign that your faith has failed; the Son of God wept at a grave, and He weeps with you while He holds the keys of death.",
+      "Ang luha mo ay hindi tanda na bumagsak ang pananampalataya mo; umiyak ang Anak ng Diyos sa harap ng libingan, at umiiyak Siya kasama mo habang hawak Niya ang susi ng kamatayan."
+    ),
+    mainTruth: t(
+      "At the tomb of Lazarus, Jesus \"was deeply moved in His spirit and greatly troubled... Jesus wept\" (John 11:33-35), though He was minutes away from calling His friend out of the grave. Paul tells believers not to \"grieve as others do who have no hope,\" because Jesus died and rose again (1 Thessalonians 4:13-14). He does not forbid grief; he gives it a direction. Naomi called herself Mara, \"bitter,\" and God answered her not with a rebuke but with Ruth's faithfulness and a grandson in her arms (Ruth 1:20-21; 4:13-17). Jesus promises, \"Blessed are those who mourn, for they shall be comforted\" (Matthew 5:4), and the Bible ends with God wiping away every tear (Revelation 21:4). Grief is the price of love, and in Christ it is paid in the presence of hope.",
+      "Sa libingan ni Lazaro, si Hesus ay \"nabagabag nang labis sa Kanyang espiritu at lubhang naligalig... Umiyak si Hesus\" (Juan 11:33-35), kahit ilang minuto na lang at tatawagin na Niya palabas ng libingan ang Kanyang kaibigan. Sinasabi ni Pablo sa mga mananampalataya na huwag \"magdalamhati gaya ng iba na walang pag-asa,\" dahil si Hesus ay namatay at muling nabuhay (1 Tesalonica 4:13-14). Hindi niya ipinagbabawal ang pagdadalamhati; binibigyan niya ito ng direksyon. Tinawag ni Noemi ang sarili na Mara, \"mapait,\" at sinagot siya ng Diyos hindi ng pagsaway kundi ng katapatan ni Ruth at ng apong kinalong niya (Ruth 1:20-21; 4:13-17). Nangako si Hesus, \"Mapapalad ang mga nagdadalamhati, sapagkat sila'y aaliwin\" (Mateo 5:4), at nagtatapos ang Biblia sa Diyos na nagpapahid ng bawat luha (Pahayag 21:4). Ang pagdadalamhati ay kabayaran ng pag-ibig, at kay Cristo, binabayaran ito sa harap ng pag-asa."
+    ),
+    insight: [
+      t(
+        "Many believers think a strong Christian should be calm at a funeral, quick to say \"He is in a better place,\" and back to normal in a week. But look at Jesus. He did not give Mary a lecture on the resurrection when she fell at His feet; He wept. He had already given Martha the truth (\"I am the resurrection and the life\"), and then He gave Mary His tears. Some people need the truth first, and some need tears first. Both came from the same Lord. When we rush the grieving with verses, we may be comforting ourselves more than them.",
+        "Akala ng maraming mananampalataya, ang matatag na Kristiyano ay dapat kalmado sa burol, mabilis magsabing \"Nasa mas mabuting lugar na siya,\" at balik na sa dati pagkalipas ng isang linggo. Pero tingnan si Hesus. Hindi Niya binigyan ng leksyon tungkol sa muling pagkabuhay si Maria nang lumuhod ito sa Kanyang paanan; umiyak Siya. Naibigay na Niya kay Marta ang katotohanan (\"Ako ang muling pagkabuhay at ang buhay\"), at kay Maria naman, ibinigay Niya ang Kanyang luha. May mga taong katotohanan muna ang kailangan, at may mga taong luha muna. Parehong galing sa iisang Panginoon. Kapag minamadali natin ang nagdadalamhati gamit ang mga talata, baka mas inaaliw natin ang sarili natin kaysa sa kanila."
+      ),
+      t(
+        "We also overlook the losses that have no funeral. A miscarriage no one talks about. A marriage that ended. A parent who is alive but no longer knows your name. Years of a child's growing up that an OFW missed. A house taken by the flood. These are real losses, and they need real grief. Unnamed grief does not disappear; it goes underground and comes out as anger, numbness or exhaustion. God invites us to name every loss before Him, because He cannot comfort what we refuse to admit hurts.",
+        "Nakakaligtaan din natin ang mga pagkawalang walang burol. Ang pagkalaglag ng sanggol na hindi pinag-uusapan. Ang pag-aasawang natapos. Ang magulang na buhay pa pero hindi ka na kilala. Ang mga taon ng paglaki ng anak na hindi nasaksihan ng isang OFW. Ang bahay na tinangay ng baha. Totoong pagkawala ang mga ito, at kailangan ng totoong pagdadalamhati. Ang pagdadalamhating hindi pinangalanan ay hindi nawawala; bumabaon ito sa ilalim at lumalabas bilang galit, pamamanhid o matinding pagod. Inaanyayahan tayo ng Diyos na pangalanan ang bawat pagkawala sa harap Niya, dahil hindi Niya maaaliw ang ayaw nating aminin na masakit."
+      ),
+    ],
+    life: [
+      t(
+        "Picture a seaman on a cargo ship in the middle of the ocean when the message comes: his mother has died. The ship will not reach port for weeks. He cannot attend the lamay, cannot carry the coffin, cannot hold his father. He watches a shaky video of the burial on a weak signal, alone in his cabin. Many OFWs know this exact pain. Grief from far away can feel unfinished, as if the goodbye never happened. But Jesus came to Bethany \"late\" too, four days after the burial, and He still met Martha and Mary in their grief. God is not limited by distance. A seaman can still pray at the hour of the burial, ask a crewmate to pray with him, write a letter to his mother and read it aloud to the Lord, and later, when he comes home, visit the grave with his family and grieve again. Grief that was delayed is still grief that God will meet.",
+        "Isipin ang isang seaman sa barkong pangkargamento sa gitna ng karagatan nang dumating ang mensahe: patay na ang nanay niya. Ilang linggo pa bago dumaong ang barko. Hindi siya makakadalo sa lamay, hindi makakapagbuhat ng kabaong, hindi mayayakap ang tatay niya. Pinanood niya ang nanginginig na video ng libing sa mahinang signal, mag-isa sa kanyang cabin. Kilalang-kilala ng maraming OFW ang ganitong sakit. Ang pagdadalamhati mula sa malayo ay parang hindi natatapos, na parang hindi nangyari ang paalam. Pero dumating din si Hesus sa Betania nang \"huli na,\" apat na araw matapos ang libing, at sinalubong pa rin Niya sina Marta at Maria sa kanilang dalamhati. Hindi hadlang sa Diyos ang layo. Maaari pa ring manalangin ang seaman sa oras ng libing, magpasama sa isang kasamahan sa barko, sumulat ng liham sa kanyang ina at basahin ito nang malakas sa Panginoon, at pag-uwi niya, dalawin ang puntod kasama ng pamilya at magdalamhati muli. Ang naantalang pagdadalamhati ay pagdadalamhati pa ring sasalubungin ng Diyos."
+      ),
+      t(
+        "Our lamay culture has a beautiful truth in it: nobody should grieve alone. Neighbors come, bring food, sit through the night, sing, pray. The problem is that after the pasiyam, everyone goes home, and the widow faces the empty chair alone. The church can do better. The second month, the first birthday without him, the first Christmas: these are the days a grieving person most needs a knock on the door.",
+        "May magandang katotohanan sa kultura natin ng lamay: walang dapat magdalamhati nang mag-isa. Dumarating ang mga kapitbahay, nagdadala ng pagkain, nagpupuyat, umaawit, nananalangin. Ang problema, pagkatapos ng pasiyam, uuwi na ang lahat, at haharapin ng biyuda ang bakanteng upuan nang mag-isa. Mas kaya itong gawin ng iglesia. Ang ikalawang buwan, ang unang kaarawang wala na siya, ang unang Pasko: ito ang mga araw na pinakakailangan ng nagdadalamhati ang isang katok sa pinto."
+      ),
+    ],
+    twist: t(
+      "We think the opposite of grief is happiness. In Scripture, the opposite of hopeless grief is not the absence of tears but the presence of a risen Lord. Jesus wept, and then He shouted, \"Lazarus, come out!\" Both were true in the same hour. And notice: Jesus did not weep because He lacked faith in the resurrection; He was the Resurrection, and He still wept. That means your tears and your hope can live in the same heart at the same time. You do not have to stop crying in order to believe. Sometimes the most faith-filled thing a Christian can say at a grave is, \"This hurts terribly, and I will see you again.\"",
+      "Akala natin, ang kabaligtaran ng pagdadalamhati ay kasiyahan. Sa Kasulatan, ang kabaligtaran ng pagdadalamhating walang pag-asa ay hindi ang kawalan ng luha kundi ang presensya ng muling nabuhay na Panginoon. Umiyak si Hesus, at pagkatapos ay sumigaw Siya, \"Lazaro, lumabas ka!\" Parehong totoo sa iisang oras. At pansinin: hindi umiyak si Hesus dahil kulang ang pananampalataya Niya sa muling pagkabuhay; Siya mismo ang Muling Pagkabuhay, at umiyak pa rin Siya. Ibig sabihin, ang luha mo at ang pag-asa mo ay maaaring manirahan sa iisang puso nang sabay. Hindi mo kailangang tumigil sa pag-iyak para makapaniwala. Minsan, ang pinakapuno ng pananampalatayang masasabi ng isang Kristiyano sa harap ng libingan ay, \"Napakasakit nito, at magkikita tayong muli.\""
+    ),
+    confirm: [
+      t("Genesis 50:1-3: Joseph wept over his father Jacob, and Egypt mourned seventy days.", "Genesis 50:1-3: umiyak si Jose sa ibabaw ng kanyang amang si Jacob, at nagluksa ang Ehipto nang pitumpung araw."),
+      t("Acts 8:2: devout men buried Stephen and \"made great lamentation over him.\"", "Gawa 8:2: inilibing ng mga taong maka-Diyos si Esteban at \"labis nilang tinangisan siya.\""),
+      t("Job 2:11-13: Job's friends did best when they sat with him seven days in silence.", "Job 2:11-13: pinakamabuti ang ginawa ng mga kaibigan ni Job nang samahan nila siya nang pitong araw nang tahimik."),
+      t("1 Corinthians 15:54-57: death is swallowed up in victory through our Lord Jesus Christ.", "1 Corinto 15:54-57: nilamon ang kamatayan ng tagumpay sa pamamagitan ng ating Panginoong Hesu-Cristo."),
+    ],
+    heart: [
+      t(
+        "Stop apologizing for your tears. Let grief be honest, and let it be addressed to God. Bitterness grows when grief is hidden; healing grows when grief is prayed.",
+        "Tumigil ka nang humingi ng paumanhin dahil sa luha mo. Hayaang maging tapat ang pagdadalamhati, at hayaang nakatuon ito sa Diyos. Lumalago ang kapaitan kapag itinatago ang dalamhati; lumalago ang paggaling kapag ipinapanalangin ito."
+      ),
+      t(
+        "Become a person who stays after the funeral. Learn the ministry of presence: fewer explanations, more visits, more meals, more remembering.",
+        "Maging taong nananatili kahit tapos na ang libing. Pag-aralan ang ministeryo ng presensya: mas kaunting paliwanag, mas maraming pagdalaw, mas maraming pagkain na dinadala, mas maraming pag-alala."
+      ),
+    ],
+    questions: [
+      t("What loss in your life have you never fully grieved?", "Anong pagkawala sa buhay mo ang hindi mo pa lubos na naidadalamhati?"),
+      t("Do you find it easier to weep or to hope? Which one is Jesus inviting you to do today?", "Alin ang mas madali sa iyo, ang umiyak o ang umasa? Alin ang inaanyayahan ni Hesus na gawin mo ngayon?"),
+      t("Like Naomi, have you told God honestly how bitter you feel? What stops you?", "Gaya ni Noemi, nasabi mo na ba nang tapat sa Diyos kung gaano kapait ang nararamdaman mo? Ano ang pumipigil sa iyo?"),
+      t("Who is grieving near you whom everyone else has stopped visiting?", "Sino ang nagdadalamhati malapit sa iyo na hindi na dinadalaw ng iba?"),
+    ],
+    actions: [
+      t("Write the name of each loss you carry and pray over them one by one, telling God what you miss.", "Isulat ang pangalan ng bawat pagkawalang pasan mo at ipanalangin isa-isa, sinasabi sa Diyos kung ano ang hinahanap-hanap mo."),
+      t("Read John 11:17-44 and 1 Thessalonians 4:13-18 aloud, and underline every word of hope.", "Basahin nang malakas ang Juan 11:17-44 at 1 Tesalonica 4:13-18, at salungguhitan ang bawat salita ng pag-asa."),
+      t("Put in your calendar a hard date for someone who is grieving, and visit or message them on that day.", "Ilagay sa kalendaryo mo ang isang mabigat na petsa para sa isang nagdadalamhati, at dalawin o i-message siya sa araw na iyon."),
+    ],
+    prayer: t(
+      "Lord Jesus, You wept at the grave of Your friend, and You see my tears today. I miss the ones I have lost, and some days the emptiness is louder than my faith. Thank You that I do not have to pretend before You. Hold me in my sorrow, and hold my hope when I cannot. Remind me that You are the resurrection and the life, and that death will not have the last word. Comfort me now, and use me to comfort others. In Your name, Amen.",
+      "Panginoong Hesus, umiyak Ka sa libingan ng Iyong kaibigan, at nakikita Mo ang aking luha ngayon. Hinahanap-hanap ko ang mga nawala sa akin, at may mga araw na mas malakas ang kawalan kaysa sa pananampalataya ko. Salamat at hindi ko kailangang magkunwari sa harap Mo. Yakapin Mo ako sa aking lungkot, at hawakan Mo ang aking pag-asa kapag hindi ko ito kayang hawakan. Ipaalala Mo sa akin na Ikaw ang muling pagkabuhay at ang buhay, at hindi kamatayan ang may huling salita. Aliwin Mo ako ngayon, at gamitin Mo ako upang umaliw sa iba. Sa Iyong pangalan, Amen."
+    ),
+  },
+
+  "c-downcast-soul": {
+    revelation: t(
+      "God does not wait for you to climb out of the dark before He comes to you; He meets the downcast under the broom tree with bread, rest and a gentle voice.",
+      "Hindi hinihintay ng Diyos na makaahon ka muna sa dilim bago ka Niya lapitan; sinasalubong Niya ang nanlulumo sa ilalim ng puno ng enebro na may tinapay, pahinga at mahinahong tinig."
+    ),
+    mainTruth: t(
+      "The Bible does not hide the downcast. \"Why are you cast down, O my soul... Hope in God; for I shall again praise Him\" (Psalm 42:11). Psalm 88 ends with \"darkness is my closest friend,\" yet it begins, \"O Lord, God of my salvation\" (Psalm 88:1, 18). Elijah prayed, \"It is enough; now, O Lord, take away my life,\" and God answered with an angel's touch, bread, water, sleep, and the words, \"the journey is too great for you\" (1 Kings 19:4-7). Paul admitted he \"despaired of life itself\" so that he would rely \"not on ourselves but on God who raises the dead\" (2 Corinthians 1:8-9). In the ruins of Jerusalem, hope returned with a memory: \"His mercies never come to an end; they are new every morning\" (Lamentations 3:22-23). And Jesus, \"gentle and lowly in heart,\" still calls the heavy laden to come to Him for rest (Matthew 11:28-30).",
+      "Hindi itinatago ng Biblia ang mga nanlulumo. \"Bakit ka nanlulumo, O kaluluwa ko... Umasa ka sa Diyos; sapagkat muli ko Siyang pupurihin\" (Awit 42:11). Nagtatapos ang Awit 88 sa \"ang dilim ang pinakamalapit kong kaibigan,\" pero nagsisimula ito sa \"O Panginoon, Diyos ng aking kaligtasan\" (Awit 88:1, 18). Nanalangin si Elias, \"Tama na; ngayon, O Panginoon, kunin Mo na ang aking buhay,\" at sinagot siya ng Diyos ng haplos ng anghel, tinapay, tubig, tulog, at ng mga salitang \"napakalayo pa ng lalakbayin mo\" (1 Hari 19:4-7). Inamin ni Pablo na \"nawalan na kami ng pag-asang mabuhay pa\" upang umasa sila \"hindi sa aming sarili kundi sa Diyos na bumubuhay sa mga patay\" (2 Corinto 1:8-9). Sa gitna ng guho ng Jerusalem, bumalik ang pag-asa sa isang alaala: \"Ang Kanyang habag ay walang katapusan; bago ang mga ito tuwing umaga\" (Panaghoy 3:22-23). At si Hesus, na \"maamo at mababang-loob,\" ay patuloy na tumatawag sa mga nabibigatan na lumapit sa Kanya para magpahinga (Mateo 11:28-30)."
+    ),
+    insight: [
+      t(
+        "Look closely at the order of God's care for Elijah. First the body: food and sleep, twice. Then presence: God asks, \"What are you doing here, Elijah?\" and lets him pour out his complaint, twice. Then the gentle whisper, not the wind, earthquake or fire. Then truth that corrects a lie: \"I am the only one left\" was not true; there were seven thousand. Then a friend, Elisha. Then a purpose. Many of us try to fix a depressed person by starting at the end, giving them a task or a rebuke. God started with bread.",
+        "Tingnang mabuti ang pagkakasunod-sunod ng pag-aalaga ng Diyos kay Elias. Una, ang katawan: pagkain at tulog, dalawang beses. Pagkatapos, presensya: nagtanong ang Diyos, \"Ano ang ginagawa mo rito, Elias?\" at hinayaan Niyang ibuhos ni Elias ang kanyang hinaing, dalawang beses. Pagkatapos, ang mahinang bulong, hindi ang hangin, lindol o apoy. Pagkatapos, katotohanang nagtutuwid ng kasinungalingan: hindi totoo na \"ako na lang ang natitira\"; may pitong libo pa. Pagkatapos, isang kaibigan, si Eliseo. Pagkatapos, isang layunin. Marami sa atin ang sumusubok ayusin ang taong may depresyon sa pagsisimula sa dulo, binibigyan siya ng gawain o sermon. Nagsimula ang Diyos sa tinapay."
+      ),
+      t(
+        "We also overlook that depression often follows victory. Elijah fell apart right after fire fell on Mount Carmel. Exhaustion, threat and loneliness came together. Depression is not always a sign that you are far from God; sometimes it comes after you have poured yourself out for Him. It is also not always \"spiritual.\" The body, the brain, grief, trauma, hormones, long contracts, debts and isolation can all press on the soul at once. That is why wise care includes prayer and the Word, and also a doctor, a counselor and a community who will not give up on you.",
+        "Nakakaligtaan din natin na madalas sumunod ang depresyon sa tagumpay. Bumagsak si Elias pagkatapos mismong bumaba ang apoy sa Bundok ng Carmelo. Sabay-sabay na dumating ang pagod, banta at pag-iisa. Hindi laging tanda ang depresyon na malayo ka sa Diyos; kung minsan, dumarating ito matapos mong ibuhos ang sarili mo para sa Kanya. Hindi rin ito laging \"espirituwal\" lang. Ang katawan, ang utak, pagdadalamhati, trauma, hormones, mahahabang kontrata, utang at pag-iisa ay sabay-sabay na maaaring dumagan sa kaluluwa. Kaya ang matalinong pangangalaga ay may panalangin at Salita, at may doktor din, counselor, at samahang hindi susuko sa iyo."
+      ),
+    ],
+    life: [
+      t(
+        "Picture a domestic helper in Kuwait in her third year abroad. She sends money home faithfully. On video calls she smiles for her children. But she has stopped enjoying anything. She sleeps badly, eats little, and in the bathroom she cries without knowing why. When she finally tells a church friend, the friend does not say, \"Just pray more.\" She says, \"Thank you for telling me. You are not weak. Let's pray, and let's find someone who can help you.\" Together they find a Christian counselor who does online sessions, and she starts seeing a doctor on her day off. Her friend messages her every night with one verse and one question: \"Kumain ka na?\" Healing comes slowly, like dawn, but it comes.",
+        "Isipin ang isang kasambahay sa Kuwait sa ikatlong taon niya sa abroad. Tapat siyang nagpapadala sa pamilya. Sa video call, nakangiti siya para sa mga anak niya. Pero wala na siyang kinagigiliwan. Hirap siyang matulog, kaunti ang kinakain, at sa banyo ay umiiyak siya nang hindi alam kung bakit. Nang sa wakas ay sinabi niya ito sa isang kapatid sa iglesia, hindi sinabi ng kaibigan, \"Magdasal ka lang nang mas marami.\" Ang sabi niya, \"Salamat at sinabi mo sa akin. Hindi ka mahina. Manalangin tayo, at maghanap tayo ng makatutulong sa iyo.\" Magkasama silang nakahanap ng Kristiyanong counselor na may online sessions, at nagsimula siyang magpatingin sa doktor sa araw ng pahinga niya. Gabi-gabi siyang mine-message ng kaibigan niya ng isang talata at isang tanong: \"Kumain ka na?\" Dahan-dahan ang paggaling, gaya ng bukang-liwayway, pero dumarating."
+      ),
+      t(
+        "In many Filipino homes, mental struggles are a family secret. \"Baka sabihin ng tao, baliw.\" So people suffer in silence, or are told they are just maarte. But Scripture placed the cries of the downcast in our hymnbook, the Psalms, to be sung out loud by the whole congregation. God made depression a thing the church talks about. When we bring it into the light, we make room for healing.",
+        "Sa maraming tahanang Pilipino, lihim ng pamilya ang mga pakikibaka sa isip at damdamin. \"Baka sabihin ng tao, baliw.\" Kaya tahimik na nagdurusa ang mga tao, o sinasabihang maarte lang sila. Pero inilagay ng Kasulatan ang mga daing ng mga nanlulumo sa ating aklat ng awit, ang Mga Awit, upang awitin nang malakas ng buong kongregasyon. Ginawa ng Diyos na usapin ng iglesia ang depresyon. Kapag dinala natin ito sa liwanag, nagbubukas tayo ng puwang para sa paggaling."
+      ),
+    ],
+    twist: t(
+      "We think hope is a feeling that comes first and then makes us pray. In Psalm 42, hope is a command the psalmist gives to his own soul while he still feels terrible: \"Hope in God.\" And in Psalm 88, the faith is in the address, not the feelings: he still says, \"O Lord, God of my salvation.\" So on your darkest day, you may not feel faith at all, and yet the fact that you are still talking to God is faith. Jesus Himself said in Gethsemane, \"My soul is very sorrowful, even to death\" (Matthew 26:38). The sinless Son of God knew the crushing weight of sorrow. You are not less of a Christian because you are downcast. You are in the company of the psalmists, the prophets, and the Lord Himself.",
+      "Akala natin, ang pag-asa ay damdaming nauuna at saka tayo napapanalangin. Sa Awit 42, ang pag-asa ay utos na ibinibigay ng mang-aawit sa sarili niyang kaluluwa habang masama pa rin ang pakiramdam niya: \"Umasa ka sa Diyos.\" At sa Awit 88, ang pananampalataya ay nasa pagtawag, hindi sa damdamin: sinasabi pa rin niya, \"O Panginoon, Diyos ng aking kaligtasan.\" Kaya sa pinakamadilim mong araw, maaaring wala kang maramdamang pananampalataya, pero ang katotohanang kinakausap mo pa rin ang Diyos ay pananampalataya na. Si Hesus mismo ay nagsabi sa Getsemani, \"Lubhang nalulungkot ang Aking kaluluwa, hanggang sa kamatayan\" (Mateo 26:38). Alam ng walang-kasalanang Anak ng Diyos ang dumudurog na bigat ng lungkot. Hindi ka mas mababang Kristiyano dahil nanlulumo ka. Kasama mo ang mga mang-aawit, ang mga propeta, at ang Panginoon mismo."
+    ),
+    confirm: [
+      t("Jeremiah 20:14-18: the faithful prophet cursed the day he was born, and God kept using him.", "Jeremias 20:14-18: isinumpa ng tapat na propeta ang araw ng kanyang pagsilang, at patuloy siyang ginamit ng Diyos."),
+      t("Job 3:1-26: Job poured out his despair, and God later said Job had spoken rightly of Him (Job 42:7).", "Job 3:1-26: ibinuhos ni Job ang kanyang kawalan ng pag-asa, at kalaunan ay sinabi ng Diyos na tama ang sinabi ni Job tungkol sa Kanya (Job 42:7)."),
+      t("2 Corinthians 7:6: \"God, who comforts the downcast, comforted us by the coming of Titus.\"", "2 Corinto 7:6: \"Ang Diyos, na umaaliw sa mga nanlulumo, ay umaliw sa amin sa pagdating ni Tito.\""),
+      t("Psalm 40:1-3: God drew David up from the pit and put a new song in his mouth.", "Awit 40:1-3: iniahon ng Diyos si David mula sa hukay at nilagyan ng bagong awit ang kanyang bibig."),
+    ],
+    heart: [
+      t(
+        "Let go of the shame that says a real Christian never feels this way. Bring your heaviness to God in honest words, and let Him care for your body as well as your soul.",
+        "Bitawan ang hiya na nagsasabing ang tunay na Kristiyano ay hindi kailanman nakararamdam ng ganito. Dalhin sa Diyos ang bigat ng loob mo sa tapat na mga salita, at hayaan Siyang alagaan ang katawan mo gayundin ang kaluluwa mo."
+      ),
+      t(
+        "Become a safe friend to the downcast: slow to advise, quick to sit with them, faithful to check in, and brave enough to get help when their life is in danger.",
+        "Maging ligtas na kaibigan sa mga nanlulumo: mabagal magpayo, mabilis sumama, tapat sa pangungumusta, at matapang na humingi ng tulong kapag nasa panganib ang buhay nila."
+      ),
+    ],
+    questions: [
+      t("If your soul could answer Psalm 42's question, \"Why are you cast down?\", what would it say?", "Kung masasagot ng kaluluwa mo ang tanong ng Awit 42, \"Bakit ka nanlulumo?\", ano ang isasagot nito?"),
+      t("Which part of God's care for Elijah (rest, food, presence, truth, a friend, a purpose) do you most need right now?", "Aling bahagi ng pag-aalaga ng Diyos kay Elias (pahinga, pagkain, presensya, katotohanan, kaibigan, layunin) ang pinakakailangan mo ngayon?"),
+      t("What lie has your darkness told you, like Elijah's \"I alone am left\"? What is the truth?", "Anong kasinungalingan ang sinabi sa iyo ng iyong dilim, gaya ng \"ako na lang ang natitira\" ni Elias? Ano ang katotohanan?"),
+      t("Who is one person you could be honest with this week about how you are really doing?", "Sino ang isang taong mapagtatapatan mo ngayong linggo kung ano talaga ang kalagayan mo?"),
+    ],
+    actions: [
+      t("Pray Psalm 42 aloud and add your own \"Why are you cast down?\" in your own words.", "Ipanalangin nang malakas ang Awit 42 at idagdag ang sarili mong \"Bakit ka nanlulumo?\" sa sarili mong mga salita."),
+      t("Choose one act of \"Elijah care\" today: a real meal, an early night, or a walk in the sunlight.", "Pumili ng isang gawa ng \"pag-aalagang gaya kay Elias\" ngayong araw: tamang pagkain, maagang pagtulog, o paglalakad sa sikat ng araw."),
+      t("If the heaviness has lasted two weeks or more, book a visit with a doctor or counselor and tell one believer you trust.", "Kung dalawang linggo o higit na ang bigat ng loob, magpa-schedule sa doktor o counselor at sabihin ito sa isang mananampalatayang pinagkakatiwalaan mo."),
+    ],
+    prayer: t(
+      "Lord, my soul is cast down, and some days I do not have the words to pray. You met Elijah under the broom tree with bread and gentleness, so meet me where I am. Feed me, give me rest, and speak to me in the quiet. Break the lies the darkness tells me. Send me people who will not give up on me, and give me humility to receive their help and the help of doctors. I choose to hope in You, for I shall again praise You, my Savior and my God. In Jesus' name, Amen.",
+      "Panginoon, nanlulumo ang aking kaluluwa, at may mga araw na wala akong mahanap na salita para manalangin. Sinalubong Mo si Elias sa ilalim ng puno ng enebro na may tinapay at kahinahunan, kaya salubungin Mo rin ako kung nasaan ako. Pakainin Mo ako, bigyan ng pahinga, at kausapin sa katahimikan. Durugin Mo ang mga kasinungalingang sinasabi sa akin ng dilim. Padalhan Mo ako ng mga taong hindi susuko sa akin, at bigyan Mo ako ng kababaang-loob na tanggapin ang tulong nila at ang tulong ng mga doktor. Pinipili kong umasa sa Iyo, sapagkat muli Kitang pupurihin, aking Tagapagligtas at aking Diyos. Sa pangalan ni Hesus, Amen."
+    ),
+  },
 };

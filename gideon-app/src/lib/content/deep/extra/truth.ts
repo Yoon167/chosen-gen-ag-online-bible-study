@@ -548,4 +548,94 @@ export const EXTRA: ExtraSet = {
       },
     ],
   },
+
+  "c-karma-vs-grace": {
+    deeper: [
+      {
+        heading: t("What karma means, and how the Bible differs", "Ano ang ibig sabihin ng karma, at paano naiiba ang Bibliya"),
+        body: [
+          t(
+            "Karma is a Sanskrit word meaning “action” or “deed.” In Hinduism, Buddhism and related traditions it describes a moral law of cause and effect: deeds produce results that return to the doer, in this life or in future rebirths, until one is released from the cycle. It is impersonal; no one forgives and no one interrupts it. In Filipino everyday speech the word has become looser, usually meaning “payback” or “what goes around comes around,” but the core idea remains that the universe automatically settles accounts.",
+            "Ang karma ay salitang Sanskrit na nangangahulugang “gawa.” Sa Hinduismo, Budismo at kaugnay na mga tradisyon, inilalarawan nito ang isang moral na batas ng sanhi at bunga: ang mga gawa ay nagbubunga ng resultang bumabalik sa gumawa, sa buhay na ito o sa mga susunod na pagsilang, hanggang makalaya siya sa siklo. Wala itong pagkatao; walang nagpapatawad at walang humahadlang dito. Sa araw-araw na pananalita ng Pilipino, mas maluwag na ang kahulugan ng salita, kadalasang “ganti” o “may balik 'yan,” pero nananatili ang pangunahing ideya na kusang inaayos ng sansinukob ang mga talaan."
+          ),
+          t(
+            "The Bible agrees that actions have consequences (Galatians 6:7; Proverbs 22:8), but it differs at the root. Behind the moral order stands a personal God who sees, judges, forgives and redeems. Scripture teaches one life followed by judgment (Hebrews 9:27), not repeated rebirths. And it proclaims something karma cannot contain: a righteous God who justifies the ungodly through faith in Christ (Romans 4:5), so that sinners are treated not as their deeds deserve but as Christ's obedience deserves.",
+            "Sang-ayon ang Bibliya na may bunga ang mga gawa (Galacia 6:7; Kawikaan 22:8), pero naiiba ito sa ugat. Sa likod ng moral na kaayusan ay may personal na Diyos na nakakikita, humahatol, nagpapatawad at tumutubos. Itinuturo ng Kasulatan ang iisang buhay na sinusundan ng paghuhukom (Hebreo 9:27), hindi paulit-ulit na pagsilang. At ipinahahayag nito ang hindi kayang hawakan ng karma: isang matuwid na Diyos na nag-aaring-ganap sa masama sa pamamagitan ng pananampalataya kay Cristo (Roma 4:5), kaya hindi pinakikitunguhan ang makasalanan ayon sa nararapat sa kanyang mga gawa kundi ayon sa nararapat sa pagsunod ni Cristo."
+          ),
+        ],
+      },
+      {
+        heading: t("Suffering and sin: Job, John 9 and Luke 13", "Paghihirap at kasalanan: Job, Juan 9 at Lucas 13"),
+        body: [
+          t(
+            "The book of Job is a long answer to karma thinking. Job's three friends insisted his suffering must be punishment for hidden sin: “Who that was innocent ever perished?” (Job 4:7). The opening chapters show the reader that Job was blameless and that his trial had another purpose, and at the end God says the friends “have not spoken of Me what is right” (42:7). Scripture does show that some suffering comes from sin (for example, David's household after his adultery in 2 Samuel 12), but it never allows us to read every trouble that way.",
+            "Mahabang sagot sa pag-iisip na karma ang aklat ng Job. Ipinilit ng tatlo niyang kaibigan na parusa sa nakatagong kasalanan ang paghihirap niya: “Sinong walang sala ang namatay kailanman?” (Job 4:7). Ipinakikita sa mambabasa ng mga unang kabanata na walang kapintasan si Job at may ibang layunin ang pagsubok niya, at sa dulo ay sinabi ng Diyos na ang mga kaibigan ay “hindi nagsalita nang tama tungkol sa Akin” (42:7). Ipinakikita nga ng Kasulatan na may paghihirap na galing sa kasalanan (halimbawa, ang sambahayan ni David pagkatapos ng kanyang pangangalunya sa 2 Samuel 12), pero hindi nito kailanman pinahihintulutang basahin natin ang bawat problema nang ganoon."
+          ),
+          t(
+            "Jesus confirmed this twice. Of the man born blind He said neither he nor his parents had sinned to cause it (John 9:3). Of the Galileans killed by Pilate and the eighteen killed when the tower in Siloam fell, He denied that they were worse sinners than others, and then called His listeners to repent (Luke 13:1-5). The pattern is important: Jesus refused to explain other people's tragedies as payback, and instead used them to awaken each person to his own need of God.",
+            "Dalawang beses itong pinagtibay ni Hesus. Tungkol sa lalaking ipinanganak na bulag, sinabi Niyang hindi siya o ang mga magulang niya ang nagkasala kaya ito nangyari (Juan 9:3). Tungkol sa mga taga-Galileang pinatay ni Pilato at sa labing-walong namatay nang bumagsak ang tore sa Siloe, itinanggi Niyang mas makasalanan sila kaysa sa iba, saka Niya tinawag ang mga nakikinig na magsisi (Lucas 13:1-5). Mahalaga ang huwarang ito: tumanggi si Hesus na ipaliwanag ang trahedya ng iba bilang ganti, at sa halip ay ginamit ito para gisingin ang bawat isa sa sarili niyang pangangailangan sa Diyos."
+          ),
+        ],
+      },
+      {
+        heading: t("Vengeance belongs to God: Romans 12:17-21", "Sa Diyos ang paghihiganti: Roma 12:17-21"),
+        body: [
+          t(
+            "Paul quotes Deuteronomy 32:35, “Vengeance is Mine, I will repay,” and Proverbs 25:21-22, “If your enemy is hungry, feed him... for by so doing you will heap burning coals on his head.” The burning coals are best understood not as a clever way to hurt the enemy but as the painful shame and conviction that unearned kindness can bring, which may lead to repentance. The point of the passage is that believers are released from the role of avenger, because God is a just Judge who will settle every account.",
+            "Sinipi ni Pablo ang Deuteronomio 32:35, “Akin ang paghihiganti, Ako ang gaganti,” at ang Kawikaan 25:21-22, “Kung nagugutom ang iyong kaaway, pakainin mo siya... sapagkat sa paggawa nito ay magbubunton ka ng nagbabagang uling sa kanyang ulo.” Mas mainam na unawain ang nagbabagang uling hindi bilang tusong paraan para saktan ang kaaway kundi bilang masakit na hiya at pagkakumbinsing maaaring idulot ng kabaitang hindi niya karapat-dapat tanggapin, na maaaring humantong sa pagsisisi. Ang punto ng bahaging ito ay pinalalaya ang mananampalataya sa papel ng tagapaghiganti, dahil ang Diyos ay makatarungang Hukom na mag-aayos ng bawat talaan."
+          ),
+          t(
+            "This does not cancel justice on earth. In the very next chapter Paul says that governing authorities are “God's servant for your good... an avenger who carries out God's wrath on the wrongdoer” (Romans 13:4). So a Christian may report a crime, file a case, or seek protection. What Romans 12 forbids is personal retaliation and the inner wish for someone's ruin. The model is Christ, who “when He was reviled, did not revile in return... but continued entrusting Himself to Him who judges justly” (1 Peter 2:23).",
+            "Hindi nito binubura ang katarungan sa lupa. Sa mismong kasunod na kabanata, sinabi ni Pablo na ang mga namamahalang awtoridad ay “lingkod ng Diyos para sa iyong ikabubuti... tagapaghiganting nagsasagawa ng poot ng Diyos sa gumagawa ng masama” (Roma 13:4). Kaya maaaring mag-report ng krimen, magsampa ng kaso, o humingi ng proteksyon ang isang Kristiyano. Ang ipinagbabawal ng Roma 12 ay ang personal na pagganti at ang panloob na pagnanais na mapahamak ang isang tao. Si Cristo ang huwaran, na “nang Siya'y laitin, hindi Siya gumanti ng panlalait... kundi patuloy na ipinagkatiwala ang sarili sa Kanyang humahatol nang matuwid” (1 Pedro 2:23)."
+          ),
+        ],
+      },
+    ],
+    stories: [],
+  },
+
+  "c-walang-forever-vs-steadfast-love": {
+    deeper: [
+      {
+        heading: t("Hesed: the love that keeps covenant", "Hesed: ang pag-ibig na tumutupad sa tipan"),
+        body: [
+          t(
+            "The Hebrew word hesed appears around 250 times in the Old Testament and is hard to translate with one English word. Versions render it as “steadfast love,” “lovingkindness,” “mercy,” “loyal love” or “unfailing love.” It describes love expressed in faithfulness to a relationship, especially a covenant: love that keeps its promise and goes beyond what is strictly required. When God revealed His name to Moses after Israel worshiped the golden calf, He proclaimed Himself “abounding in steadfast love (hesed) and faithfulness” (Exodus 34:6).",
+            "Lumilitaw ang salitang Hebreo na hesed nang humigit-kumulang 250 beses sa Lumang Tipan at mahirap isalin sa iisang salita. Isinasalin ito ng iba't ibang bersyon bilang “tapat na pag-ibig,” “kagandahang-loob,” “awa,” o “pag-ibig na hindi nagkukulang.” Inilalarawan nito ang pag-ibig na ipinakikita sa katapatan sa isang relasyon, lalo na sa isang tipan: pag-ibig na tumutupad sa pangako at lumalampas pa sa mahigpit na hinihingi. Nang ihayag ng Diyos ang Kanyang pangalan kay Moises pagkatapos sambahin ng Israel ang gintong guya, ipinahayag Niya ang sarili na “sagana sa tapat na pag-ibig (hesed) at katapatan” (Exodo 34:6)."
+          ),
+          t(
+            "Psalm 136 repeats “for His steadfast love endures forever” in all twenty-six verses, likely as a call-and-response in worship. The same refrain was sung when the ark was brought into Solomon's temple (2 Chronicles 5:13) and by the singers who marched ahead of Jehoshaphat's army (2 Chronicles 20:21). Israel sang it in celebration and in danger alike, because hesed does not depend on circumstances. Lamentations 3:22-23 shows the same faith from inside disaster, written in grief over Jerusalem's fall.",
+            "Inuulit ng Awit 136 ang “sapagkat ang Kanyang tapat na pag-ibig ay magpakailanman” sa lahat ng dalawampu't anim na talata, malamang bilang tawag-at-tugon sa pagsamba. Ang korong iyon din ang inawit nang ipasok ang kaban sa templo ni Solomon (2 Cronica 5:13) at ng mga mang-aawit na nagmartsa sa unahan ng hukbo ni Jehoshafat (2 Cronica 20:21). Inawit ito ng Israel sa pagdiriwang at sa panganib, dahil hindi nakasalalay sa kalagayan ang hesed. Ipinakikita ng Panaghoy 3:22-23 ang parehong pananampalataya mula sa loob ng sakuna, isinulat sa pagdadalamhati sa pagbagsak ng Jerusalem."
+          ),
+        ],
+      },
+      {
+        heading: t("Hosea and Gomer: a marriage as a sermon", "Si Oseas at si Gomer: pag-aasawang naging sermon"),
+        body: [
+          t(
+            "Hosea prophesied in the northern kingdom of Israel in the eighth century BC, a time of prosperity, idolatry and political instability before the fall of Samaria in 722 BC. God told him to marry Gomer, who would be unfaithful, so that his marriage would picture Israel's unfaithfulness to the Lord (Hosea 1:2). In chapter 3 he is told to love her again and buys her back for fifteen shekels of silver and a quantity of barley, a price that suggests she had fallen into servitude.",
+            "Nagpropesiya si Oseas sa hilagang kaharian ng Israel noong ikawalong siglo bago si Cristo, panahon ng kasaganaan, pagsamba sa diyus-diyosan at kaguluhang pampulitika bago bumagsak ang Samaria noong 722 BC. Inutusan siya ng Diyos na pakasalan si Gomer, na magiging hindi tapat, para ang pag-aasawa niya ay maging larawan ng pagtataksil ng Israel sa Panginoon (Oseas 1:2). Sa kabanata 3, inutusan siyang ibigin itong muli at tinubos niya ito sa labinlimang siklong pilak at ilang takal ng sebada, halagang nagpapahiwatig na nahulog na ito sa pagkaalipin."
+          ),
+          t(
+            "The book holds together God's grief and God's pursuit: “How can I give you up, O Ephraim?... My heart recoils within Me; My compassion grows warm and tender” (11:8). And it looks ahead to restoration: “I will betroth you to Me forever... in steadfast love and in mercy” (2:19). The New Testament quotes Hosea to describe God calling a people who were “not My people” to be His (Romans 9:25-26; 1 Peter 2:10). The story teaches that God's covenant love is not naïve about sin, but it is stronger than sin.",
+            "Pinagsasama ng aklat ang pighati ng Diyos at ang paghabol ng Diyos: “Paano kita isusuko, O Efraim?... Nababagabag ang Aking puso; nag-aalab ang Aking habag” (11:8). At tumatanaw ito sa pagpapanumbalik: “Ipakakasal kita sa Akin magpakailanman... sa tapat na pag-ibig at sa habag” (2:19). Sinisipi ng Bagong Tipan si Oseas para ilarawan ang pagtawag ng Diyos sa isang bayang “hindi Ko bayan” upang maging Kanya (Roma 9:25-26; 1 Pedro 2:10). Itinuturo ng kuwento na hindi bulag sa kasalanan ang tipang pag-ibig ng Diyos, pero mas malakas ito kaysa sa kasalanan."
+          ),
+        ],
+      },
+      {
+        heading: t("Marriage as covenant: Malachi 2 and Matthew 19", "Pag-aasawa bilang tipan: Malakias 2 at Mateo 19"),
+        body: [
+          t(
+            "Malachi addressed returned exiles in the fifth century BC whose worship had grown careless. Some men were divorcing the wives of their youth, possibly to marry foreign women who worshiped other gods (Malachi 2:11-14). God refused their offerings and called the wife “your companion and your wife by covenant,” reminding them that He had been witness at the marriage. Malachi 2:16 is translated in different ways, but its message is clear: covenant-breaking is a kind of violence that God hates, and the remedy is to “guard yourselves in your spirit.”",
+            "Nagsalita si Malakias sa mga bumalik mula sa pagkabihag noong ikalimang siglo bago si Cristo na naging pabaya na sa pagsamba. May mga lalaking hinihiwalayan ang asawa ng kanilang kabataan, maaaring para pakasalan ang mga dayuhang babaeng sumasamba sa ibang diyos (Malakias 2:11-14). Tinanggihan ng Diyos ang kanilang mga handog at tinawag ang asawa na “iyong kasama at asawa mo sa tipan,” ipinaaalala na Siya ang naging saksi sa kasal. Iba-iba ang pagsasalin ng Malakias 2:16, pero malinaw ang mensahe nito: ang pagsira sa tipan ay isang uri ng karahasang kinasusuklaman ng Diyos, at ang lunas ay “ingatan ninyo ang inyong sarili sa inyong espiritu.”"
+          ),
+          t(
+            "When the Pharisees asked Jesus whether divorce was lawful “for any cause” (Matthew 19:3), they were drawing Him into a debate between rabbinic schools about Deuteronomy 24:1. Jesus went back behind Moses to creation: God made them male and female, and “the two shall become one flesh... What therefore God has joined together, let not man separate” (19:4-6). He explained that Moses permitted divorce “because of your hardness of heart.” Paul later describes marriage as a picture of Christ and the church (Ephesians 5:31-32). Christians differ on some applications, but they agree that marriage is meant to be a lifelong covenant that mirrors God's faithful love.",
+            "Nang tanungin ng mga Pariseo si Hesus kung naaayon sa batas ang paghihiwalay “sa anumang dahilan” (Mateo 19:3), hinihila nila Siya sa isang debate ng mga paaralan ng mga rabi tungkol sa Deuteronomio 24:1. Bumalik si Hesus sa likod ni Moises, sa paglikha: nilikha sila ng Diyos na lalaki at babae, at “ang dalawa ay magiging isang laman... Kaya ang pinagsama ng Diyos ay huwag paghiwalayin ng tao” (19:4-6). Ipinaliwanag Niya na pinahintulutan ni Moises ang paghihiwalay “dahil sa katigasan ng inyong puso.” Inilarawan ni Pablo kalaunan ang pag-aasawa bilang larawan ni Cristo at ng iglesya (Efeso 5:31-32). Nagkakaiba ang mga Kristiyano sa ilang aplikasyon, pero sang-ayon silang ang pag-aasawa ay nilalayong maging panghabambuhay na tipan na sumasalamin sa tapat na pag-ibig ng Diyos."
+          ),
+        ],
+      },
+    ],
+    stories: [],
+  },
 };

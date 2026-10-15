@@ -1,5 +1,6 @@
 import { t, v, type Course, type CourseLesson } from "./types";
 import { CHAINS_LESSONS_2 } from "./chains-2";
+import { CHAINS_LESSONS_3 } from "./chains-3";
 
 /**
  * Break Every Chain: a practical walk through identifying bondage, replacing
@@ -309,6 +310,8 @@ export const CHAINS: Course = {
     t("Have you ever made a promise you later regretted?", "Nakagawa ka na ba ng pangakong pinagsisihan mo kalaunan?"),
     t("What is a habit or mindset you have outgrown?", "Ano ang isang ugali o pag-iisip na nalampasan mo na?"),
     t("What daily routine keeps you healthy?", "Anong araw-araw na gawain ang nagpapanatili sa iyong malusog?"),
+    t("What makes people want to hide instead of being honest?", "Ano ang nagtutulak sa mga tao na magtago sa halip na maging tapat?"),
+    t("Have you ever helped untangle something knotted, like a fishing line or cables? How did you do it?", "Nakapagkalag ka na ba ng buhol-buhol, gaya ng pising pangisda o mga kable? Paano mo ito ginawa?"),
   ],
-  lessons: [...CHAINS_LESSONS_1, ...CHAINS_LESSONS_2],
+  lessons: [...CHAINS_LESSONS_1, ...CHAINS_LESSONS_2, ...CHAINS_LESSONS_3],
 };

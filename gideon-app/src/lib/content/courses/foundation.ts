@@ -1,4 +1,5 @@
 import { t, v, type Course } from "./types";
+import { FOUNDATION_LESSONS_3 } from "./foundation-3";
 
 export const FOUNDATION: Course = {
   id: "foundation",
@@ -17,6 +18,8 @@ export const FOUNDATION: Course = {
     t("Who has been a real helper in your life, and how?", "Sino ang naging tunay na katulong sa buhay mo, at paano?"),
     t("What public step or ceremony marked a big change in your life?", "Anong pampublikong hakbang o seremonya ang tanda ng malaking pagbabago sa buhay mo?"),
     t("Who has the final say in your home or workplace, and how do you feel about it?", "Sino ang may huling salita sa inyong tahanan o trabaho, at ano ang pakiramdam mo rito?"),
+    t("What is the best news you have ever received? How did you react?", "Ano ang pinakamagandang balitang natanggap mo? Ano ang naging reaksyon mo?"),
+    t("What family meal or gathering means the most to you, and why?", "Anong salu-salo o pagtitipon ng pamilya ang pinakamahalaga sa iyo, at bakit?"),
   ],
   lessons: [
     {
@@ -795,5 +798,6 @@ export const FOUNDATION: Course = {
         t("No area of life is outside His lordship, and His rule is good.", "Walang bahagi ng buhay na labas sa Kanyang pagkapanginoon, at mabuti ang Kanyang paghahari."),
       ],
     },
+    ...FOUNDATION_LESSONS_3,
   ],
 };

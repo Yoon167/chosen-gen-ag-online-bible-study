@@ -525,4 +525,134 @@ export const DEEP: DeepSet = {
       "Panginoong Hesus, isinugo Mo ako sa mundong ito gaya ng pagkakasugo sa Iyo. Patawarin Mo ako sa pagtatago ng ilaw ko at pag-iingat ng Iyong mabuting balita sa sarili. Gawin Mo akong asin at ilaw sa trabaho, tahanan at kapitbahayan ko. Bigyan Mo ako ng mata para sa tao at tapang magsalita. Gamitin Mo ang ordinaryo kong buhay para sa Iyong pambihirang layunin, at hayaang luwalhatiin ng mga tao ang Ama dahil sa paraan ng aking pamumuhay. Narito ako, Panginoon. Suguin Mo ako. Amen."
     ),
   },
+  "c-growing-into-maturity": {
+    revelation: t(
+      "God does not measure you by how long you have been saved but by how much you have grown, and He has given you everything you need to grow up into Christ.",
+      "Hindi ka sinusukat ng Diyos sa tagal mo nang ligtas kundi sa laki ng iyong paglago, at ibinigay na Niya sa iyo ang lahat ng kailangan mo para lumaki kay Cristo."
+    ),
+    mainTruth: t(
+      "The writer of Hebrews rebuked believers who had been in the faith for years: “By this time you ought to be teachers, [but] you need milk, not solid food… solid food is for the mature, for those who have their powers of discernment trained by constant practice to distinguish good from evil” (Hebrews 5:12-14). Paul told the gifted Corinthians, “I could not address you as spiritual people, but… as infants in Christ… while there is jealousy and strife among you” (1 Corinthians 3:1-3). God's goal for every believer is maturity, “to the measure of the stature of the fullness of Christ… speaking the truth in love, we are to grow up in every way into Him who is the head” (Ephesians 4:13-15). And the mature never stop growing: “Not that I have already obtained this… but I press on” (Philippians 3:12).",
+      "Sinaway ng sumulat ng Hebreo ang mga mananampalatayang ilang taon nang nasa pananampalataya: “Sa panahong ito ay dapat mga guro na kayo, [pero] gatas ang kailangan ninyo, hindi matigas na pagkain… ang matigas na pagkain ay para sa mga ganap na, sa mga sinanay ang kakayahang kumilala sa palagiang pagsasagawa upang makilala ang mabuti at masama” (Hebreo 5:12-14). Sinabi ni Pablo sa mga taga-Corinto na mayaman sa kaloob, “Hindi ko kayo makausap bilang mga taong espirituwal, kundi… bilang mga sanggol kay Cristo… habang may inggitan at alitan sa inyo” (1 Corinto 3:1-3). Ang layunin ng Diyos para sa bawat mananampalataya ay kahinugan, “hanggang sa sukat ng kataasan ng kapuspusan ni Cristo… sa pagsasalita ng katotohanan nang may pag-ibig, lumaki tayo sa lahat ng bagay tungo sa Kanya na siyang ulo” (Efeso 4:13-15). At hindi tumitigil sa paglago ang mga hinog: “Hindi sa nakamit ko na ito… kundi nagpapatuloy ako” (Filipos 3:12)."
+    ),
+    insight: [
+      t(
+        "Many believers confuse maturity with knowledge, gifts or position. The Corinthians spoke in tongues, prophesied and knew a lot, yet Paul called them babies. Why? Because maturity shows in relationships: they were jealous, quarrelsome and divided into fan clubs of their favorite preachers. You can quote many verses and still throw tantrums when you are not chosen to lead worship. The real test of growth is not what you know but how you treat people when you are hurt, overlooked or contradicted.",
+        "Maraming mananampalataya ang napagkakamalang kahinugan ang kaalaman, kaloob o posisyon. Nagsasalita ng iba't ibang wika, nanghuhula at maraming alam ang mga taga-Corinto, pero tinawag sila ni Pablo na mga sanggol. Bakit? Dahil nakikita ang kahinugan sa mga relasyon: mainggitin sila, palaaway at nahahati sa mga fan club ng paborito nilang mangangaral. Puwede kang makapag-quote ng maraming talata pero nagtatampo pa rin kapag hindi ka napiling mag-lead ng worship. Ang tunay na pagsubok ng paglago ay hindi kung ano ang alam mo kundi kung paano mo tinatrato ang mga tao kapag nasaktan ka, nakaligtaan o kinontra."
+      ),
+      t(
+        "Notice too how Hebrews says maturity grows: “by constant practice.” Like a muscle, discernment grows by use. A believer who only listens, to sermons, to podcasts, to devotionals, but never practices, stays on milk. And Ephesians 4 shows that we do not grow up alone. Christ gives leaders to equip the saints, and the body grows “when each part is working properly” (4:16). Maturity happens in community, through serving, being corrected and bearing with one another, not in isolation.",
+        "Pansinin din kung paano lumalago ang kahinugan ayon sa Hebreo: “sa palagiang pagsasagawa.” Gaya ng kalamnan, lumalakas ang pagkilala sa tama sa paggamit nito. Ang mananampalatayang nakikinig lang, sa sermon, podcast o debosyonal, pero hindi nagsasagawa, ay nananatili sa gatas. At ipinakikita ng Efeso 4 na hindi tayo lumalaki nang mag-isa. Nagbibigay si Cristo ng mga lider para ihanda ang mga banal, at lumalago ang katawan “kapag maayos na gumagana ang bawat bahagi” (4:16). Nangyayari ang kahinugan sa komunidad, sa paglilingkod, sa pagtutuwid at sa pagtitiis sa isa't isa, hindi sa pag-iisa."
+      ),
+    ],
+    life: [
+      t(
+        "Every Filipino knows the trick some sellers use with mangoes: kalburo. A little calcium carbide in the sack, and in a day or two green mangoes turn a beautiful yellow. But slice one open and it is hard and sour inside, because it was forced to look ripe without really ripening. Many churches are full of kalburo Christians: they know the right words, wear the right clothes, raise their hands at the right time, but inside there is little patience, little humility, little love. Real ripening takes time on the tree. Jesus said, “Abide in Me… and you will bear much fruit” (John 15:5, 8).",
+        "Alam ng bawat Pilipino ang diskarte ng ilang tindero sa mangga: kalburo. Kaunting kalburo sa sako, at sa loob ng isa o dalawang araw ay nagiging magandang dilaw ang hilaw na mangga. Pero hiwain mo at matigas at maasim sa loob, dahil pinilit itong magmukhang hinog nang hindi talaga nahinog. Maraming iglesia ang puno ng mga Kristiyanong kinalburo: alam nila ang tamang salita, suot ang tamang damit, nagtataas ng kamay sa tamang oras, pero sa loob ay kaunti ang pasensya, kaunti ang kababaang-loob, kaunti ang pag-ibig. Ang tunay na pagkahinog ay nangangailangan ng panahon sa puno. Sinabi ni Hesus, “Manatili kayo sa Akin… at mamumunga kayo nang sagana” (Juan 15:5, 8)."
+      ),
+      t(
+        "Picture a brother who has attended church for fifteen years. He has heard hundreds of sermons. But when his AG leader suggests he start reading the Bible with a newer believer in his dormitory, he says, “Hindi pa ako handa.” He still waits to be fed every Sunday and complains when the preaching is not to his taste. Now picture him six months later, after he finally said yes: he is reading Scripture daily because he has to prepare, praying for someone other than himself, learning to be patient with questions. Nothing pushed him toward maturity like being given someone to feed.",
+        "Isipin mo ang isang kapatid na labinlimang taon nang dumadalo sa simbahan. Daan-daang sermon na ang narinig niya. Pero nang imungkahi ng AG leader niya na magsimula siyang magbasa ng Bibliya kasama ang isang bagong mananampalataya sa dormitoryo nila, sabi niya, “Hindi pa ako handa.” Naghihintay pa rin siyang pakainin tuwing Linggo at nagrereklamo kapag hindi niya gusto ang pangangaral. Ngayon, isipin mo siya makalipas ang anim na buwan, matapos siyang pumayag: nagbabasa na siya ng Kasulatan araw-araw dahil kailangan niyang maghanda, nananalangin para sa iba bukod sa sarili, natututong maging matiyaga sa mga tanong. Walang nagtulak sa kanya sa kahinugan gaya ng pagbibigay sa kanya ng isang taong papakainin."
+      ),
+    ],
+    twist: t(
+      "Here is the Kingdom twist: the mature are the ones who know they are not yet mature. Paul, near the end of his life, wrote, “Not that I… am already perfect,” and then, “Let those of us who are mature think this way” (Philippians 3:12, 15). Spiritual maturity grows less childish but more childlike. Jesus said we must become like little children to enter the kingdom (Matthew 18:3), and David described his grown-up faith as a weaned child resting quietly with its mother (Psalm 131:2). Immaturity demands, complains and needs attention. Maturity trusts, rests and keeps reaching for more of Christ.",
+      "Ito ang Kingdom twist: ang mga hinog ay ang mga nakaaalam na hindi pa sila hinog. Si Pablo, malapit sa katapusan ng buhay niya, ay sumulat, “Hindi sa… ganap na ako,” at pagkatapos, “Kaya tayong mga ganap ay mag-isip nang ganito” (Filipos 3:12, 15). Habang humihinog sa espiritu, nababawasan ang pagiging isip-bata pero lumalalim ang pusong tulad ng bata. Sinabi ni Hesus na kailangan nating maging gaya ng maliliit na bata upang makapasok sa kaharian (Mateo 18:3), at inilarawan ni David ang hinog niyang pananampalataya bilang batang naawat na na tahimik na nagpapahinga sa piling ng ina (Awit 131:2). Ang hindi pa hinog ay nag-uutos, nagrereklamo at naghahanap ng pansin. Ang hinog ay nagtitiwala, nagpapahinga at patuloy na umaabot para sa higit pa kay Cristo."
+    ),
+    confirm: [
+      t("Luke 2:52: Jesus Himself grew in wisdom and stature and in favor with God and man.", "Lucas 2:52: si Hesus Mismo ay lumago sa karunungan at pangangatawan at sa pagkalugod ng Diyos at ng tao."),
+      t("2 Peter 3:18: grow in the grace and knowledge of our Lord and Savior Jesus Christ.", "2 Pedro 3:18: lumago kayo sa biyaya at pagkakilala sa ating Panginoon at Tagapagligtas na si Hesu-Cristo."),
+      t("1 Corinthians 13:11: when I became a man, I gave up childish ways.", "1 Corinto 13:11: nang ako'y maging lalaki, iniwan ko na ang mga gawi ng bata."),
+      t("Colossians 1:28: Paul labored to present everyone mature in Christ.", "Colosas 1:28: nagpagal si Pablo upang maiharap ang bawat isa na ganap kay Cristo."),
+    ],
+    heart: [
+      t(
+        "Move from waiting to be fed to learning to feed yourself and others. Stop measuring your faith by years and start measuring it by fruit: more love, more patience, more self-control than last year.",
+        "Lumipat mula sa paghihintay na pakainin tungo sa pagkatutong pakainin ang sarili at ang iba. Itigil ang pagsukat sa pananampalataya mo ayon sa taon at simulan itong sukatin ayon sa bunga: mas maraming pag-ibig, pasensya at pagpipigil sa sarili kaysa noong nakaraang taon."
+      ),
+      t(
+        "Let God ripen you slowly on the tree instead of forcing a show of spirituality. Welcome correction, stay planted in a community, and keep pressing on with a quiet, trusting heart.",
+        "Hayaang dahan-dahan kang hinugin ng Diyos sa puno sa halip na pilitin ang isang palabas ng pagiging espirituwal. Tanggapin ang pagtutuwid, manatiling nakatanim sa isang komunidad, at patuloy na magpunyagi nang may tahimik at nagtitiwalang puso."
+      ),
+    ],
+    questions: [
+      t("If my maturity were measured by my reactions this past month, how grown-up am I?", "Kung susukatin ang kahinugan ko ayon sa mga reaksyon ko nitong nakaraang buwan, gaano na ako kalaki?"),
+      t("Am I still waiting to be fed, or have I started feeding someone else?", "Naghihintay pa rin ba akong pakainin, o nagsimula na akong magpakain sa iba?"),
+      t("Where am I a “kalburo” Christian, looking ripe outside but sour inside?", "Saan ako isang Kristiyanong “kinalburo,” mukhang hinog sa labas pero maasim sa loob?"),
+      t("Who in my life has permission to correct me, and when did I last listen?", "Sino sa buhay ko ang may pahintulot na itama ako, at kailan ako huling nakinig?"),
+    ],
+    actions: [
+      t("Choose one fruit of the Spirit you lack most and ask God to grow it in you this week; notice each time you are tested in it.", "Pumili ng isang bunga ng Espiritu na pinakakulang sa iyo at hilingin sa Diyos na palaguin ito sa iyo ngayong linggo; pansinin ang bawat pagkakataong masubok ka rito."),
+      t("Begin a simple daily Bible reading on your own and write one line of obedience after each reading.", "Magsimula ng simpleng araw-araw na pagbasa ng Bibliya nang sarili mo at magsulat ng isang linya ng pagsunod pagkatapos ng bawat pagbasa."),
+      t("Ask a mature believer, “Where do you see me still acting like a child?” and receive the answer without defending yourself.", "Tanungin ang isang hinog na mananampalataya, “Saan mo ako nakikitang kumikilos pa na parang bata?” at tanggapin ang sagot nang hindi ipinagtatanggol ang sarili."),
+    ],
+    prayer: t(
+      "Father, thank You for saving me, but I do not want to stay a baby. Forgive me for living on milk and for the jealousy, quarrels and complaints that show I have not grown. Ripen me slowly and truly, like fruit on the tree. Train my heart by practice to know good from evil. Plant me among Your people, where I can be corrected and can serve. Make me less childish and more childlike, resting in You and pressing on toward Christ. In Jesus' name, Amen.",
+      "Ama, salamat sa pagliligtas Mo sa akin, pero ayokong manatiling sanggol. Patawarin Mo ako sa pamumuhay sa gatas at sa inggit, away at reklamong nagpapakitang hindi pa ako lumalaki. Hinugin Mo ako nang dahan-dahan at totoo, gaya ng prutas sa puno. Sanayin Mo ang puso ko sa pagsasagawa upang makilala ang mabuti at masama. Itanim Mo ako sa gitna ng Iyong bayan, kung saan ako maitutuwid at makapaglilingkod. Gawin Mo akong hindi na isip-bata kundi may pusong tulad ng bata, nagpapahinga sa Iyo at nagpupunyagi patungo kay Cristo. Sa pangalan ni Hesus, Amen."
+    ),
+  },
+  "c-loving-one-another": {
+    revelation: t(
+      "The world will not recognize us as Jesus' disciples by what we know or how loudly we worship, but by how we love one another.",
+      "Hindi tayo makikilala ng mundo bilang mga alagad ni Hesus dahil sa ating alam o sa lakas ng ating pagsamba, kundi dahil sa paraan ng ating pag-ibig sa isa't isa."
+    ),
+    mainTruth: t(
+      "On the night before the cross Jesus said, “A new commandment I give to you, that you love one another: just as I have loved you, you also are to love one another. By this all people will know that you are My disciples, if you have love for one another” (John 13:34-35). John, who heard it, later explained what that love looks like: “He laid down His life for us, and we ought to lay down our lives for the brothers… let us not love in word or talk but in deed and in truth” (1 John 3:16-18). Paul adds, “Let love be genuine… outdo one another in showing honor” (Romans 12:9-10), and Jesus stretches it even to enemies: “Love your enemies… Be merciful, even as your Father is merciful” (Luke 6:35-36).",
+      "Noong gabi bago ang krus, sinabi ni Hesus, “Isang bagong utos ang ibinibigay Ko sa inyo, na mag-ibigan kayo sa isa't isa: kung paanong inibig Ko kayo, gayundin naman kayo ay mag-ibigan sa isa't isa. Sa ganito makikilala ng lahat na kayo'y Aking mga alagad, kung kayo'y may pag-ibig sa isa't isa” (Juan 13:34-35). Si Juan, na nakarinig nito, ay nagpaliwanag kalaunan kung ano ang hitsura ng pag-ibig na iyon: “Inialay Niya ang Kanyang buhay para sa atin, at dapat din nating ialay ang ating buhay para sa mga kapatid… huwag tayong umibig sa salita o sa dila lamang kundi sa gawa at sa katotohanan” (1 Juan 3:16-18). Dagdag ni Pablo, “Maging tapat ang pag-ibig… mag-unahan kayo sa pagpaparangal sa isa't isa” (Roma 12:9-10), at pinalawak pa ito ni Hesus hanggang sa mga kaaway: “Ibigin ninyo ang inyong mga kaaway… Maging mahabagin kayo, gaya ng inyong Ama na mahabagin” (Lucas 6:35-36)."
+    ),
+    insight: [
+      t(
+        "Notice when Jesus gave this command: right after Judas walked out to betray Him (John 13:30-31). Only hours before, Jesus had washed Judas' feet too. “As I have loved you” is not love for easy people. It is love for slow learners like Peter, ambitious men like James and John, and even a betrayer. Many of us find it easy to love “humanity” in general but hard to love the particular sister in our AG who always talks too long, or the brother who borrowed money and never paid. Jesus' command is not to love people in general; it is to love one another, the real ones in front of us.",
+        "Pansinin kung kailan ibinigay ni Hesus ang utos na ito: matapos lumabas si Judas para ipagkanulo Siya (Juan 13:30-31). Ilang oras lang bago nito, hinugasan din ni Hesus ang paa ni Judas. Ang “kung paanong inibig Ko kayo” ay hindi pag-ibig para sa madaling mahalin. Ito ay pag-ibig para sa mabagal matutong gaya ni Pedro, mga ambisyosong gaya nina Santiago at Juan, at maging sa isang taksil. Marami sa atin ang madaling magmahal sa “sangkatauhan” sa pangkalahatan pero nahihirapang mahalin ang mismong sister sa AG na laging mahaba magsalita, o ang brother na nangutang at hindi na nagbayad. Ang utos ni Hesus ay hindi ibigin ang mga tao sa pangkalahatan; ito ay ibigin ang isa't isa, ang mga totoong tao sa harap natin."
+      ),
+      t(
+        "Romans 12:9 says, “Let love be genuine.” The Greek word means “without hypocrisy,” literally without play-acting, like an actor wearing a mask. Filipinos have a word for the opposite: plastik. Smiling at someone after service and then criticizing them in the parking lot or the group chat. John is blunt: if we see a brother in need and close our heart, “how does God's love abide in him?” (1 John 3:17). Love that never costs us time, money or pride is not yet the love Jesus meant.",
+        "Sinasabi ng Roma 12:9, “Maging tapat ang pag-ibig.” Ang salitang Griyego ay nangangahulugang “walang pagkukunwari,” literal na walang pag-arte, gaya ng aktor na nakasuot ng maskara. May salita ang mga Pilipino para sa kabaligtaran: plastik. Nakangiti sa isang tao pagkatapos ng service at pagkatapos ay pinupuna siya sa parking o sa group chat. Prangka si Juan: kung nakikita natin ang kapatid na nangangailangan at isinasara natin ang ating puso, “paano mananatili sa kanya ang pag-ibig ng Diyos?” (1 Juan 3:17). Ang pag-ibig na hindi kailanman nagkakahalaga sa atin ng oras, pera o pride ay hindi pa ang pag-ibig na ibig sabihin ni Hesus."
+      ),
+    ],
+    life: [
+      t(
+        "Picture a small fellowship of Filipino workers in a Gulf city. One of the brothers loses his job when his company closes, and his visa is about to expire. Nobody posts about it. But that Friday, the group quietly collects money for his rent and food, a sister cooks extra adobo every day so he will not go hungry, and two brothers spend their day off helping him write applications. His Muslim roommate watches all of this for weeks and finally asks, “Why do these people take care of you like family?” That question is John 13:35 coming true.",
+        "Isipin mo ang isang maliit na fellowship ng mga manggagawang Pilipino sa isang lungsod sa Gulf. Nawalan ng trabaho ang isang brother nang magsara ang kumpanya niya, at malapit nang mag-expire ang visa niya. Walang nag-post tungkol dito. Pero nang Biyernes na iyon, tahimik na nag-ambagan ang grupo para sa upa at pagkain niya, nagluluto ang isang sister ng sobrang adobo araw-araw para hindi siya magutom, at dalawang brother ang gumugol ng day-off nila para tulungan siyang gumawa ng mga application. Pinanood ito ng Muslim niyang kasama sa kuwarto sa loob ng ilang linggo at sa wakas ay nagtanong, “Bakit ka inaalagaan ng mga taong ito na parang pamilya?” Ang tanong na iyon ay ang Juan 13:35 na nagkakatotoo."
+      ),
+      t(
+        "Now picture the opposite. A church where the worship is excellent and the sermons are strong, but the members do not speak to each other because of an old quarrel over the choir, and the latest tsismis travels faster than the prayer requests. Visitors feel the coldness within a month and stop coming. Peter says, “Above all, keep loving one another earnestly, since love covers a multitude of sins” (1 Peter 4:8). Love covers; gossip uncovers. The choice to stay silent about a brother's failure and pray for him instead can protect a whole church.",
+        "Ngayon, isipin mo ang kabaligtaran. Isang iglesiang mahusay ang pagsamba at malakas ang mga sermon, pero hindi nag-uusap ang mga miyembro dahil sa isang lumang away tungkol sa choir, at mas mabilis kumalat ang pinakabagong tsismis kaysa sa mga prayer request. Nararamdaman ng mga bisita ang lamig sa loob ng isang buwan at tumitigil na sila sa pagdalo. Sabi ni Pedro, “Higit sa lahat, patuloy kayong mag-ibigan nang taimtim, sapagkat tinatakpan ng pag-ibig ang napakaraming kasalanan” (1 Pedro 4:8). Nagtatakip ang pag-ibig; naglalantad ang tsismis. Ang pagpiling manahimik tungkol sa pagkukulang ng isang kapatid at ipanalangin na lang siya ay makapag-iingat sa isang buong iglesia."
+      ),
+    ],
+    twist: t(
+      "We often treat love inside the church as a private family matter and evangelism as the church's public work. Jesus joined them. He made our love for one another His evidence to the world: “By this all people will know” (John 13:35), and He prayed that His people would be one “so that the world may believe that You have sent Me” (John 17:21). The Kingdom twist: the most persuasive argument for Jesus is not a debate won but a church that truly loves. When believers from different provinces, classes and backgrounds forgive, share and serve one another, the world sees something it cannot explain without Him.",
+      "Madalas nating ituring na pribadong usapin ng pamilya ang pag-ibig sa loob ng iglesia at pampublikong gawain naman ng iglesia ang ebanghelismo. Pinagsama ito ni Hesus. Ginawa Niyang ebidensya sa mundo ang ating pag-ibig sa isa't isa: “Sa ganito makikilala ng lahat” (Juan 13:35), at ipinanalangin Niyang maging isa ang Kanyang bayan “upang sumampalataya ang mundo na Ikaw ang nagsugo sa Akin” (Juan 17:21). Ang Kingdom twist: ang pinakamapanghikayat na argumento para kay Hesus ay hindi debateng napanalunan kundi isang iglesiang tunay na nagmamahalan. Kapag ang mga mananampalatayang galing sa iba't ibang probinsya, antas sa buhay at pinagmulan ay nagpapatawaran, nagbabahaginan at naglilingkuran sa isa't isa, may nakikita ang mundo na hindi nito maipaliwanag kung wala Siya."
+    ),
+    confirm: [
+      t("Acts 4:32-35: the first believers shared so that there was not a needy person among them.", "Gawa 4:32-35: nagbahaginan ang mga unang mananampalataya kaya walang nangangailangan sa kanila."),
+      t("Galatians 6:2: bear one another's burdens, and so fulfill the law of Christ.", "Galacia 6:2: pasanin ninyo ang pasanin ng isa't isa, at sa gayon ay tutuparin ninyo ang kautusan ni Cristo."),
+      t("Romans 5:8: God showed His love in that while we were still sinners, Christ died for us.", "Roma 5:8: ipinakita ng Diyos ang Kanyang pag-ibig nang mamatay si Cristo para sa atin habang tayo'y makasalanan pa."),
+      t("1 Samuel 18:1-4: Jonathan loved David as his own soul and gave him his robe and sword.", "1 Samuel 18:1-4: inibig ni Jonatan si David gaya ng sarili niyang kaluluwa at ibinigay sa kanya ang balabal at tabak niya."),
+    ],
+    heart: [
+      t(
+        "Take off the mask. Ask God to make your love sincere, the same in the group chat as it is face to face, the same toward the difficult brother as toward your favorite friend.",
+        "Hubarin ang maskara. Hilingin sa Diyos na gawing tapat ang pag-ibig mo, pareho sa group chat at sa harapan, pareho sa mahirap pakisamahang kapatid at sa paborito mong kaibigan."
+      ),
+      t(
+        "Let love move from your feelings into your hands and schedule. Choose to cover offenses, open your home and your wallet, and bless even those who have wronged you, remembering how Christ loved you while you were His enemy.",
+        "Hayaang lumipat ang pag-ibig mula sa damdamin mo patungo sa iyong mga kamay at oras. Piliing takpan ang mga pagkakasala, buksan ang iyong tahanan at pitaka, at pagpalain maging ang mga nagkasala sa iyo, inaalala kung paano ka inibig ni Cristo noong kaaway ka pa Niya."
+      ),
+    ],
+    questions: [
+      t("Who in my church or AG is hardest for me to love, and why?", "Sino sa iglesia o AG ko ang pinakamahirap kong mahalin, at bakit?"),
+      t("Is my love sincere, or do I say kind things to people's faces and different things behind their backs?", "Tapat ba ang pag-ibig ko, o mabait ako sa harapan at iba ang sinasabi ko sa likuran?"),
+      t("When did my love for a brother or sister last cost me time, money or comfort?", "Kailan huling nagkahalaga sa akin ng oras, pera o ginhawa ang pag-ibig ko sa isang kapatid?"),
+      t("If outsiders watched how my church treats one another, would they see Jesus?", "Kung panonoorin ng mga taga-labas kung paano nagtuturingan ang iglesia ko, makikita ba nila si Hesus?"),
+    ],
+    actions: [
+      t("Reach out this week to someone in your fellowship you have avoided or have had a misunderstanding with; take the first step toward peace.", "Kumustahin ngayong linggo ang isang tao sa fellowship mo na iniiwasan mo o nagkaroon kayo ng hindi pagkakaunawaan; gawin ang unang hakbang tungo sa kapayapaan."),
+      t("Meet one practical need of a believer quietly: a meal, a load of groceries, a ride, help with a bill.", "Tugunan nang tahimik ang isang praktikal na pangangailangan ng isang mananampalataya: isang kainan, isang supot ng grocery, isang sakay, tulong sa isang bayarin."),
+      t("Before you share any news about another person this week, ask: “Will this cover or uncover?” and stay silent if it uncovers.", "Bago ka magbahagi ng anumang balita tungkol sa ibang tao ngayong linggo, itanong: “Magtatakip ba ito o maglalantad?” at manahimik kung maglalantad ito."),
+    ],
+    prayer: t(
+      "Lord Jesus, You loved Your disciples to the end, even washing the feet of the one who would betray You. I confess that my love is often selective, shallow and masked. Pour Your love into my heart by the Holy Spirit. Make my love sincere, practical and generous. Help me cover offenses instead of spreading them, open my home and my hands to those in need, and bless even those who hurt me. Let people see that I am Your disciple by the way I love. Amen.",
+      "Panginoong Hesus, inibig Mo ang Iyong mga alagad hanggang sa wakas, hinugasan pa ang paa ng magkakanulo sa Iyo. Inaamin ko na madalas ay namimili, mababaw at nakamaskara ang pag-ibig ko. Ibuhos Mo ang Iyong pag-ibig sa aking puso sa pamamagitan ng Banal na Espiritu. Gawin Mong tapat, praktikal at bukas-palad ang aking pag-ibig. Tulungan Mo akong takpan ang mga pagkakasala sa halip na ikalat ang mga ito, buksan ang aking tahanan at mga kamay sa mga nangangailangan, at pagpalain maging ang mga nanakit sa akin. Hayaang makita ng mga tao na alagad Mo ako sa paraan ng aking pag-ibig. Amen."
+    ),
+  },
 };

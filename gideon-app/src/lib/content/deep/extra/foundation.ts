@@ -556,4 +556,92 @@ export const EXTRA: ExtraSet = {
       },
     ],
   },
+  "c-risen-lord": {
+    deeper: [
+      {
+        heading: t("Why the empty tomb is hard to explain away", "Bakit mahirap ipaliwanag nang iba ang libingang walang laman"),
+        body: [
+          t(
+            "People have offered other explanations for Easter morning. Some say the disciples stole the body, but that is the very story the guards were paid to spread (Matthew 28:11-15), and it does not explain why those same disciples would later suffer and, according to early church tradition, die for what they knew was a lie. Others say the women went to the wrong tomb, but then the authorities only had to walk to the right one and produce the body. Others say the disciples saw visions, but visions do not eat broiled fish (Luke 24:42-43) or invite a doubter to touch their wounds.",
+            "May mga nag-alok ng ibang paliwanag sa nangyari noong umaga ng Pagkabuhay. May nagsasabing ninakaw ng mga alagad ang bangkay, pero iyon mismo ang kuwentong binayaran ang mga bantay para ikalat (Mateo 28:11-15), at hindi nito naipapaliwanag kung bakit ang mga alagad ding iyon ay magdurusa at, ayon sa tradisyon ng unang iglesia, mamamatay para sa isang bagay na alam nilang kasinungalingan. May nagsasabing sa maling libingan pumunta ang mga babae, pero kung ganoon, kailangan lang ng mga pinuno na pumunta sa tamang libingan at ilabas ang bangkay. May nagsasabi namang pangitain lang ang nakita ng mga alagad, pero ang pangitain ay hindi kumakain ng inihaw na isda (Lucas 24:42-43) o nag-aanyaya sa nagdududa na hawakan ang mga sugat."
+          ),
+          t(
+            "Notice too how the story is told. The first witnesses were women, whose testimony was not accepted in many courts of that time. The disciples are shown as frightened and slow to believe. James, the brother of Jesus, did not believe in Him during His ministry (John 7:5), yet after the risen Jesus appeared to him (1 Corinthians 15:7) he became a leader of the church in Jerusalem. Something happened that turned skeptics and cowards into witnesses who would not be silenced.",
+            "Pansinin din kung paano isinalaysay ang kuwento. Mga babae ang unang saksi, na ang patotoo ay hindi tinatanggap sa maraming hukuman noong panahong iyon. Ipinakikita ang mga alagad na takot at mabagal maniwala. Si Santiago, na kapatid ni Hesus, ay hindi naniwala sa Kanya noong panahon ng Kanyang ministeryo (Juan 7:5), pero matapos magpakita sa kanya ang muling nabuhay na si Hesus (1 Corinto 15:7), naging lider siya ng iglesia sa Jerusalem. May nangyaring nagpabago sa mga duda at duwag tungo sa mga saksing hindi mapatahimik."
+          ),
+        ],
+      },
+      {
+        heading: t("A body, not a ghost: what resurrection means", "Katawan, hindi multo: ang ibig sabihin ng muling pagkabuhay"),
+        body: [
+          t(
+            "The resurrection is not the same as a soul surviving death, and it is not the same as Lazarus being brought back to die again later. Jesus rose in a real body, the same body that was crucified, now glorified and never to die again (Romans 6:9). He could be touched and could eat, yet He was no longer bound in the old ways. Paul calls this a \"spiritual body\" (1 Corinthians 15:44), meaning a body fully alive by the Spirit, not a body made of air.",
+            "Ang muling pagkabuhay ay hindi lang pananatili ng kaluluwa matapos mamatay, at hindi rin ito katulad ni Lazaro na binuhay para mamatay muli pagkalipas ng panahon. Bumangon si Hesus sa tunay na katawan, ang mismong katawang ipinako sa krus, ngayon ay niluwalhati at hindi na mamamatay kailanman (Roma 6:9). Nahahawakan Siya at nakakakain, pero hindi na Siya nakatali sa dating mga hangganan. Tinawag ito ni Pablo na \"espirituwal na katawan\" (1 Corinto 15:44), ibig sabihin ay katawang lubos na buháy sa Espiritu, hindi katawang gawa sa hangin."
+          ),
+          t(
+            "This matters for your hope. God does not plan to throw away His creation, including your body; He plans to raise and renew it. Paul says Jesus \"will transform our lowly body to be like His glorious body\" (Philippians 3:21). The aching back of the construction worker, the tired feet of the nurse, the body weakened by sickness: none of these is the final version. The Christian hope is not floating on clouds but standing in a new creation with a body that will never break down again.",
+            "Mahalaga ito sa iyong pag-asa. Hindi balak ng Diyos na itapon ang Kanyang nilikha, kasama ang iyong katawan; balak Niya itong buhayin at panibaguhin. Sabi ni Pablo, \"babaguhin [ni Hesus] ang ating abang katawan upang maging katulad ng Kanyang maluwalhating katawan\" (Filipos 3:21). Ang masakit na likod ng construction worker, ang pagod na paa ng nurse, ang katawang pinahina ng sakit: wala sa mga ito ang huling bersyon. Ang pag-asang Kristiyano ay hindi paglutang sa mga ulap kundi pagtayo sa bagong nilikha na may katawang hindi na kailanman masisira."
+          ),
+        ],
+      },
+      {
+        heading: t("Living today in the power of the resurrection", "Pamumuhay ngayon sa kapangyarihan ng muling pagkabuhay"),
+        body: [
+          t(
+            "The resurrection is not only about the future. Paul prays that believers would know \"the immeasurable greatness of His power toward us who believe,\" the same power God \"worked in Christ when He raised Him from the dead\" (Ephesians 1:19-20). The power that rolled away the stone is at work in you to break habits, heal bitterness, and give courage to speak of Jesus. Romans 6:4 says we were raised with Christ \"so that we too might walk in newness of life.\"",
+            "Ang muling pagkabuhay ay hindi lang tungkol sa hinaharap. Ipinanalangin ni Pablo na malaman ng mga mananampalataya \"ang di-masukat na kadakilaan ng Kanyang kapangyarihan para sa ating mga sumasampalataya,\" ang parehong kapangyarihang ginamit ng Diyos \"kay Cristo nang buhayin Niya Siya mula sa mga patay\" (Efeso 1:19-20). Ang kapangyarihang nagpagulong sa bato ay kumikilos sa iyo upang sirain ang mga bisyo, pagalingin ang pait ng loob, at bigyan ka ng tapang na magsalita tungkol kay Hesus. Sabi ng Roma 6:4, binuhay tayong kasama ni Cristo \"upang tayo rin ay makalakad sa panibagong buhay.\""
+          ),
+          t(
+            "That is why the early Christians moved their main day of worship to Sunday, the first day of the week, the day Jesus rose (Acts 20:7, 1 Corinthians 16:2). Every Lord's Day is a small Easter. When you gather with your church, even in a rented room abroad or by video call after a long shift, you are declaring together that the tomb is empty and the King is alive.",
+            "Iyan ang dahilan kung bakit inilipat ng mga unang Kristiyano ang pangunahing araw ng kanilang pagsamba sa Linggo, ang unang araw ng sanlinggo, ang araw na bumangon si Hesus (Gawa 20:7, 1 Corinto 16:2). Bawat Araw ng Panginoon ay isang maliit na Pasko ng Pagkabuhay. Kapag nagtitipon ka kasama ng iyong iglesia, kahit sa inuupahang kuwarto sa ibang bansa o sa video call matapos ang mahabang shift, sama-sama ninyong ipinahahayag na walang laman ang libingan at buháy ang Hari."
+          ),
+        ],
+      },
+    ],
+    stories: [],
+  },
+  "c-lords-table": {
+    deeper: [
+      {
+        heading: t("From the Passover to the Upper Room", "Mula sa Paskuwa hanggang sa Silid sa Itaas"),
+        body: [
+          t(
+            "By Jesus' day the Passover meal followed a careful order: the story of the Exodus was told, bitter herbs were eaten to remember slavery, unleavened bread recalled the haste of leaving Egypt, and several cups of wine were shared with blessings. Jesus took two of these familiar elements, the bread and a cup, and said something no host had ever said: \"This is My body... this is My blood of the covenant.\" He was telling His disciples that a greater rescue than the Exodus was about to happen, and He Himself was the Lamb.",
+            "Noong panahon ni Hesus, may maingat na pagkakasunod-sunod ang hapunan ng Paskuwa: ikinukuwento ang paglabas sa Egipto, kinakain ang mapapait na gulay bilang alaala ng pagkaalipin, ipinaaalala ng tinapay na walang lebadura ang pagmamadaling umalis sa Egipto, at pinagsasaluhan ang ilang saro ng alak na may pagpapala. Kinuha ni Hesus ang dalawa sa mga kilalang bahaging ito, ang tinapay at ang isang saro, at sinabi ang hindi pa kailanman sinabi ng sinumang punong-abala: \"Ito ang Aking katawan... ito ang Aking dugo ng tipan.\" Sinasabi Niya sa Kanyang mga alagad na may darating na pagliligtas na mas dakila pa sa paglabas sa Egipto, at Siya mismo ang Kordero."
+          ),
+          t(
+            "\"New covenant\" points back to Jeremiah 31:31-34, where God promised a day when He would write His law on people's hearts and \"remember their sin no more.\" The old covenant at Sinai was sealed with the blood of animals sprinkled on the people (Exodus 24:8). The new covenant is sealed with the blood of the Son of God, offered once for all (Hebrews 9:12). Every time you hold the cup, you are holding the sign of a promise God will never break.",
+            "Ang \"bagong tipan\" ay tumutukoy pabalik sa Jeremias 31:31-34, kung saan ipinangako ng Diyos ang araw na isusulat Niya ang Kanyang kautusan sa puso ng mga tao at \"hindi na aalalahanin ang kanilang kasalanan.\" Ang lumang tipan sa Sinai ay tinatakan ng dugo ng mga hayop na iwinisik sa bayan (Exodo 24:8). Ang bagong tipan ay tinatakan ng dugo ng Anak ng Diyos, inihandog nang minsanan para sa lahat (Hebreo 9:12). Tuwing hawak mo ang saro, hawak mo ang tanda ng isang pangakong hindi kailanman sisirain ng Diyos."
+          ),
+        ],
+      },
+      {
+        heading: t("What \"unworthy manner\" means, and what it does not", "Ano ang ibig sabihin ng \"hindi karapat-dapat na paraan,\" at ano ang hindi"),
+        body: [
+          t(
+            "Many sincere believers stay away from Communion because they feel unworthy. But read 1 Corinthians 11 in context. The \"unworthy manner\" was the way the Corinthians were eating: getting drunk, shaming the poor, and treating the meal like a private party. Paul's warning is about how we come, not about being good enough to come. No one is worthy in himself; that is why Christ died.",
+            "Maraming tapat na mananampalataya ang umiiwas sa Komunyon dahil pakiramdam nila hindi sila karapat-dapat. Pero basahin ang 1 Corinto 11 ayon sa konteksto nito. Ang \"hindi karapat-dapat na paraan\" ay ang paraan ng pagkain ng mga taga-Corinto: naglalasing, ipinapahiya ang mahihirap, at tinatrato ang hapunan na parang pribadong salu-salo. Ang babala ni Pablo ay tungkol sa kung paano tayo lumalapit, hindi tungkol sa pagiging sapat na mabuti para lumapit. Walang sinumang karapat-dapat sa sarili niya; iyan nga ang dahilan kung bakit namatay si Cristo."
+          ),
+          t(
+            "So how do you examine yourself? Ask the Spirit to search you (Psalm 139:23-24). Confess specific sins and receive forgiveness (1 John 1:9). If you are holding a grudge, decide to forgive, and if possible go and make peace (Matthew 5:23-24). If you are living in a sin you refuse to leave, it is better to wait and talk with your pastor than to eat carelessly. Then come with faith and thanksgiving. The goal of examination is a clean heart at the Table, not an empty seat.",
+            "Kaya paano mo susuriin ang sarili? Hilingin sa Espiritu na siyasatin ka (Awit 139:23-24). Ipagtapat ang mga tiyak na kasalanan at tanggapin ang kapatawaran (1 Juan 1:9). Kung may kinikimkim kang sama ng loob, magpasyang magpatawad, at kung maaari, puntahan at makipagkasundo (Mateo 5:23-24). Kung namumuhay ka sa kasalanang ayaw mong iwan, mas mabuting maghintay at kausapin ang iyong pastor kaysa kumain nang pabaya. Saka lumapit nang may pananampalataya at pasasalamat. Ang layunin ng pagsusuri ay malinis na puso sa Hapag, hindi bakanteng upuan."
+          ),
+        ],
+      },
+      {
+        heading: t("The Table between two meals", "Ang Hapag sa pagitan ng dalawang hapunan"),
+        body: [
+          t(
+            "The Lord's Supper stands between two meals. Behind it is the Passover in Egypt and the Last Supper in Jerusalem. Ahead of it is the marriage supper of the Lamb (Revelation 19:9) and the feast Isaiah saw, when the Lord will \"swallow up death forever\" and \"wipe away tears from all faces\" (Isaiah 25:6-8). Jesus said He would not drink the fruit of the vine again until He drinks it new with us in His Father's kingdom (Matthew 26:29).",
+            "Nakatayo ang Banal na Hapunan sa pagitan ng dalawang hapunan. Sa likod nito ay ang Paskuwa sa Egipto at ang Huling Hapunan sa Jerusalem. Sa unahan nito ay ang hapunan ng kasal ng Kordero (Pahayag 19:9) at ang handaang nakita ni Isaias, kung kailan \"lalamunin [ng Panginoon] ang kamatayan magpakailanman\" at \"papahirin ang mga luha sa lahat ng mukha\" (Isaias 25:6-8). Sinabi ni Hesus na hindi na Siya iinom ng bunga ng ubas hanggang sa inumin Niya itong bago kasama natin sa kaharian ng Kanyang Ama (Mateo 26:29)."
+          ),
+          t(
+            "So every Communion is both a memorial and a rehearsal. We remember the cross, and we practice for the feast. For believers scattered across the world, separated from family for years at a time, this is deep comfort. The small cup in a fellowship in Dubai or Hong Kong is a promise that the family of God will one day sit at one table, with no departures, no contracts and no goodbyes.",
+            "Kaya bawat Komunyon ay pag-alaala at pag-eensayo. Inaalala natin ang krus, at nag-eensayo tayo para sa handaan. Para sa mga mananampalatayang nakakalat sa buong mundo, ilang taong hiwalay sa pamilya, malalim na aliw ito. Ang maliit na saro sa isang fellowship sa Dubai o Hong Kong ay pangako na balang araw ay uupo ang pamilya ng Diyos sa iisang hapag, na wala nang alisan, wala nang kontrata at wala nang paalaman."
+          ),
+        ],
+      },
+    ],
+    stories: [],
+  },
 };

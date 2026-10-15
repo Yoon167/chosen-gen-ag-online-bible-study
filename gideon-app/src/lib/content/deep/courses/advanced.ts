@@ -392,4 +392,134 @@ export const DEEP: DeepSet = {
       "Panginoon, gusto kong magtapos nang maayos. Ingatan Mo ang aking puso mula sa maliliit na kompromiso at sa pag-ibig sa mundo. Gawin Mo akong buong-puso gaya ni Caleb, disiplinado gaya ni Pablo, at tapat hanggang wakas. Ipakita Mo kung sino ang dapat kong pamuhunan, at tulungan Mo akong ipasa ang pananampalataya sa susunod na salinlahi. Kapag pagod ako, ipaalala Mo ang koronang nakalaan sa mga umiibig sa Iyong pagpapakita. Hawakan Mo ako hanggang sa araw na makita ko ang Iyong mukha at marinig Kang magsabing, \"Magaling.\" Sa pangalan ni Hesus, Amen."
     ),
   },
+  "c-abiding-secret-place": {
+    revelation: t(
+      "God is not first looking for more workers but for friends who will stay; the fruit you long for grows by itself when you remain close to the Vine.",
+      "Hindi muna naghahanap ang Diyos ng mas maraming manggagawa kundi ng mga kaibigang mananatili; kusang lumalago ang bungang hinahangad mo kapag nananatili kang malapit sa Puno ng Ubas."
+    ),
+    mainTruth: t(
+      "Jesus did not say, \"Work hard for Me,\" but \"Abide in Me, and I in you... for apart from Me you can do nothing\" (John 15:4-5). The branch does not strain; it stays, and the life of the vine produces fruit through it. In Bethany, Martha served with great effort while Mary sat at Jesus' feet, and Jesus said, \"One thing is necessary. Mary has chosen the good portion, which will not be taken away from her\" (Luke 10:42). David, with a kingdom on his shoulders, sought \"one thing\": to dwell in the Lord's house and gaze on His beauty (Psalm 27:4). Moses spoke with God \"face to face, as a man speaks to his friend,\" and young Joshua would not leave the tent (Exodus 33:11). Paul, after years of fruitful ministry, still cried, \"that I may know Him\" (Philippians 3:10). Abiding is not an extra for the very spiritual; it is the root of the whole Christian life, and Jesus promised it would lead to answered prayer, much fruit and full joy (John 15:7-11).",
+      "Hindi sinabi ni Hesus, \"Magpakapagod kayo para sa Akin,\" kundi \"Manatili kayo sa Akin, at Ako sa inyo... sapagkat kung hiwalay sa Akin ay wala kayong magagawa\" (Juan 15:4-5). Hindi nagpupumilit ang sanga; nananatili lang ito, at ang buhay ng puno ang nagbubunga sa pamamagitan nito. Sa Betania, buong pagod na naglingkod si Marta habang nakaupo si Maria sa paanan ni Hesus, at sinabi ni Hesus, \"Iisa lamang ang kailangan. Pinili ni Maria ang mabuting bahagi, na hindi aalisin sa kanya\" (Lucas 10:42). Si David, na pasan ang isang kaharian, ay naghanap ng \"iisang bagay\": ang manirahan sa bahay ng Panginoon at masdan ang Kanyang kagandahan (Awit 27:4). Nakipag-usap si Moises sa Diyos \"nang mukhaan, gaya ng taong nakikipag-usap sa kanyang kaibigan,\" at ayaw umalis ng batang si Josue sa tolda (Exodo 33:11). Si Pablo, pagkatapos ng maraming taon ng mabungang ministeryo, ay sumisigaw pa rin, \"upang makilala ko Siya\" (Filipos 3:10). Ang pananatili ay hindi dagdag lang para sa mga sobrang espirituwal; ito ang ugat ng buong buhay Kristiyano, at ipinangako ni Hesus na hahantong ito sa sinasagot na panalangin, maraming bunga, at lubos na kagalakan (Juan 15:7-11)."
+    ),
+    insight: [
+      t(
+        "Many mature believers quietly turn fruit into a project. We plan, organize, push and measure, and then wonder why we are dry. Jesus speaks of fruit as a result, not a target. Look also at John 15:2: the branch that already bears fruit is pruned so that it bears more. God's way of increasing your fruit is often to cut away good things, even ministry activities, that are draining the life meant for what matters most. If your Father is trimming your schedule, your platform or your busyness, do not fight it. He is making room for fruit.",
+        "Maraming mature na mananampalataya ang tahimik na ginagawang proyekto ang bunga. Nagpaplano tayo, nag-oorganisa, nagtutulak, sumusukat, tapos nagtataka kung bakit tuyo tayo. Binabanggit ni Hesus ang bunga bilang resulta, hindi target. Tingnan mo rin ang Juan 15:2: ang sangang namumunga na ay pinuputulan pa upang lalo pang mamunga. Kadalasan, ang paraan ng Diyos para paramihin ang bunga mo ay putulin ang mabubuting bagay, pati mga gawain sa ministeryo, na umuubos sa buhay na para sana sa pinakamahalaga. Kung pinuputulan ng Ama mo ang iskedyul mo, ang plataporma mo, o ang pagkaabala mo, huwag kang lumaban. Gumagawa Siya ng puwang para sa bunga."
+      ),
+      t(
+        "We also overlook what Martha's busyness did to her heart. It did not just tire her; it made her resentful and even made her doubt Jesus: \"Lord, do You not care?\" (Luke 10:40). Service cut off from intimacy slowly turns into complaint, comparison and self-pity. That is why some of the most active people in church are also the most irritated. The cure is not to stop serving but to sit first. Mary's place at His feet was not laziness; it was the only place from which Martha's kind of service could ever become joyful.",
+        "Hindi rin natin napapansin kung ano ang ginawa ng pagkaabala ni Marta sa kanyang puso. Hindi lang siya napagod; naging mapagtampo siya at pinagdudahan pa si Hesus: \"Panginoon, wala ba Kayong pakialam?\" (Lucas 10:40). Ang paglilingkod na hiwalay sa malapit na pakikipag-ugnayan ay unti-unting nagiging reklamo, paghahambing, at pagkaawa sa sarili. Kaya ang ilan sa pinakaaktibong tao sa iglesia ay siya ring pinakamainitin ang ulo. Ang lunas ay hindi ang tumigil sa paglilingkod kundi ang umupo muna. Hindi katamaran ang puwesto ni Maria sa Kanyang paanan; iyon lang ang lugar kung saan magiging masaya ang klase ng paglilingkod ni Marta."
+      ),
+    ],
+    life: [
+      t(
+        "Picture a domestic helper in Hong Kong whose only day off is Sunday. She rushes from her employer's flat to the morning service, then to choir practice, then ushering, then cell group in the park, then the remittance center, then back before curfew. She loves God and she loves her church, but by Sunday night she feels empty, and on Monday she has nothing left for her own prayer. Then she makes one small change: she arrives at church twenty minutes early, sits in a corner with a psalm, and simply stays with the Lord before she serves anyone. The schedule is almost the same. Her heart is not.",
+        "Isipin mo ang isang domestic helper sa Hong Kong na Linggo lang ang day off. Nagmamadali siya mula sa flat ng amo papunta sa pagsamba sa umaga, tapos sa choir practice, tapos pag-usher, tapos cell group sa parke, tapos sa remittance center, tapos uwi bago mag-curfew. Mahal niya ang Diyos at mahal niya ang iglesia niya, pero pagsapit ng Linggo ng gabi ay ubos na siya, at pagdating ng Lunes ay wala nang natitira para sa sarili niyang panalangin. Tapos may isa siyang maliit na binago: dumarating siya sa simbahan nang dalawampung minutong maaga, umuupo sa isang sulok na may isang awit, at nananatili lang kasama ng Panginoon bago siya maglingkod kaninuman. Halos pareho pa rin ang iskedyul. Hindi na pareho ang puso niya."
+      ),
+      t(
+        "Think of an electric fan. When you pull the plug, it does not stop at once. The blades keep turning for a while on momentum, and for a few seconds it looks like nothing has changed. Many believers and leaders are running on the momentum of a prayer life they had years ago. The blades are still moving: they still preach, lead, sing and serve. But the cord is on the floor. Abiding means plugging back in, every day, before the blades slow down and everyone else notices what you already feel.",
+        "Isipin mo ang isang electric fan. Kapag hinugot mo ang saksakan, hindi ito agad tumitigil. Patuloy na umiikot ang elisi nang ilang sandali dahil sa momentum, at sa loob ng ilang segundo ay parang walang nagbago. Maraming mananampalataya at lider ang tumatakbo sa momentum ng buhay-panalanging mayroon sila ilang taon na ang nakaraan. Umiikot pa ang elisi: nangangaral pa, nangunguna pa, kumakanta pa, naglilingkod pa. Pero nasa sahig na ang kurdon. Ang pananatili ay ang muling pagsaksak, araw-araw, bago bumagal ang elisi at mapansin ng iba ang nararamdaman mo na."
+      ),
+    ],
+    twist: t(
+      "In that house in Bethany, the person who looked like she was doing nothing was the one doing the most important thing, and the person doing everything was the one Jesus gently corrected. Heaven measures differently. Jesus appointed the Twelve first \"so that they might be with Him,\" and only then \"to send them out to preach\" (Mark 3:14). Being with Him is not the reward after the work; it is the first work, the one that makes every other work fruitful.",
+      "Sa bahay na iyon sa Betania, ang mukhang walang ginagawa ang siya palang gumagawa ng pinakamahalagang bagay, at ang gumagawa ng lahat ang siyang marahang itinuwid ni Hesus. Iba ang sukatan ng langit. Hinirang muna ni Hesus ang Labindalawa \"upang sila'y makasama Niya,\" at saka lamang \"upang isugo sila na mangaral\" (Marcos 3:14). Ang pagiging kasama Niya ay hindi gantimpala pagkatapos ng gawain; ito ang unang gawain, ang nagpapabunga sa bawat iba pang gawain."
+    ),
+    confirm: [
+      t("Psalm 1:2-3: the one who delights in God's law is like a tree planted by streams of water.", "Awit 1:2-3: ang nagagalak sa kautusan ng Diyos ay tulad ng punong itinanim sa tabi ng mga batis."),
+      t("Mark 3:14: Jesus called the Twelve to be with Him before He sent them out.", "Marcos 3:14: tinawag ni Hesus ang Labindalawa upang makasama Niya bago sila isugo."),
+      t("Acts 4:13: the council saw the apostles' boldness and recognized that they had been with Jesus.", "Gawa 4:13: nakita ng konseho ang katapangan ng mga apostol at nakilalang nakasama nila si Hesus."),
+      t("Isaiah 40:31: those who wait for the Lord shall renew their strength.", "Isaias 40:31: ang mga naghihintay sa Panginoon ay magkakaroon ng panibagong lakas."),
+    ],
+    heart: [
+      t(
+        "Let your heart move from performance to presence. Stop measuring your walk with God only by how much you do for Him, and start asking how much time you actually spend with Him. Repent of treating Jesus like a boss to impress instead of a Friend to know.",
+        "Hayaang lumipat ang puso mo mula sa pagpapakitang-gilas tungo sa presensya. Tigilan mo nang sukatin ang lakad mo sa Diyos ayon lang sa dami ng ginagawa mo para sa Kanya, at simulan mong itanong kung gaano karaming oras ang talagang ginugugol mo kasama Niya. Pagsisihan mo ang pagturing kay Hesus na parang amo na kailangang pahangain sa halip na Kaibigang dapat makilala."
+      ),
+      t(
+        "Let your service become an overflow. When you sit first, you will still serve, but with less anxiety and more joy. You will notice that people are drawn not only to what you do but to the peace of the One you have been with.",
+        "Hayaang maging pag-apaw ang paglilingkod mo. Kapag umupo ka muna, maglilingkod ka pa rin, pero mas kaunti ang pag-aalala at mas marami ang kagalakan. Mapapansin mong naaakit ang mga tao hindi lang sa ginagawa mo kundi sa kapayapaan ng Kanyang nakasama mo."
+      ),
+    ],
+    questions: [
+      t("If someone measured your relationship with God only by your time alone with Him this past week, what would they conclude?", "Kung susukatin ng isang tao ang relasyon mo sa Diyos batay lang sa oras mong mag-isa kasama Niya nitong nakaraang linggo, ano ang magiging konklusyon niya?"),
+      t("Where are you running on the momentum of a past devotional life?", "Saan ka tumatakbo sa momentum ng dating buhay-debosyon?"),
+      t("What good things might the Father be pruning from your life to make room for more fruit?", "Anong mabubuting bagay ang maaaring pinuputol ng Ama sa buhay mo upang magkaroon ng puwang para sa mas maraming bunga?"),
+      t("When did your service last turn into resentment like Martha's? What was missing?", "Kailan huling naging pagtatampo ang paglilingkod mo gaya ng kay Marta? Ano ang nawala?"),
+    ],
+    actions: [
+      t("Set a daily appointment with God in your phone calendar, with a place, and keep it this week as you would keep a meeting with your employer.", "Maglagay ng araw-araw na appointment sa Diyos sa calendar ng cellphone mo, kasama ang lugar, at tuparin ito ngayong linggo gaya ng pagtupad mo sa meeting sa iyong amo."),
+      t("Before each time of serving this week, spend five quiet minutes at Jesus' feet first.", "Bago ang bawat paglilingkod ngayong linggo, gumugol muna ng limang tahimik na minuto sa paanan ni Hesus."),
+      t("Read John 15:1-11 slowly and underline every time you see the word \"abide\" or \"remain.\"", "Basahin nang dahan-dahan ang Juan 15:1-11 at salungguhitan ang bawat salitang \"manatili.\""),
+    ],
+    prayer: t(
+      "Lord Jesus, You are the true Vine, and I want to stay close to You. Forgive me for the days I served You and forgot You, for running on old fire and calling it faith. Prune whatever You must, even good things, so that I bear more fruit. Bring me back to Your feet like Mary, and make knowing You the one thing I seek. Let Your words remain in me, and let Your joy be full in me. In Your name, Amen.",
+      "Panginoong Hesus, Ikaw ang tunay na Puno ng Ubas, at gusto kong manatiling malapit sa Iyo. Patawarin Mo ako sa mga araw na naglingkod ako sa Iyo pero nakalimutan Kita, sa pagtakbo sa lumang apoy at pagtawag dito na pananampalataya. Putulin Mo ang anumang dapat Mong putulin, kahit mabubuting bagay, upang lalo akong mamunga. Ibalik Mo ako sa Iyong paanan gaya ni Maria, at gawin Mong ang pagkakilala sa Iyo ang iisang bagay na hinahanap ko. Hayaang manatili sa akin ang Iyong mga salita, at malubos sa akin ang Iyong kagalakan. Sa Iyong pangalan, Amen."
+    ),
+  },
+  "c-brokenness-humility": {
+    revelation: t(
+      "God does not break you to destroy you but to free you from yourself; the limp He leaves is the proof that you finally held on to Him.",
+      "Hindi ka binabasag ng Diyos para wasakin ka kundi para palayain ka sa iyong sarili; ang pagkapilay na iniiwan Niya ay patunay na sa wakas ay kumapit ka sa Kanya."
+    ),
+    mainTruth: t(
+      "King Uzziah prospered \"as long as he sought the Lord,\" but \"when he was strong, he grew proud, to his destruction\" (2 Chronicles 26:5, 16). Pride did not find him in failure; it found him in success. Jacob, the lifelong schemer, wrestled through the night at the Jabbok until God touched his hip, and only then, unable to fight, did he cling and say, \"I will not let you go unless you bless me\" (Genesis 32:26). Paul received a thorn \"to keep me from becoming conceited\" and heard the Lord say, \"My grace is sufficient for you, for My power is made perfect in weakness\" (2 Corinthians 12:7-9). And Jesus, though He was in the form of God, \"humbled Himself by becoming obedient to the point of death, even death on a cross\" (Philippians 2:8). The whole of Scripture agrees: \"God opposes the proud but gives grace to the humble\" (1 Peter 5:5). The way down is the way up, because it is the way Jesus went.",
+      "Umunlad si Haring Uzias \"habang hinahanap niya ang Panginoon,\" pero \"nang siya'y lumakas, nagmataas ang kanyang puso, sa kanyang ikapapahamak\" (2 Cronica 26:5, 16). Hindi siya natagpuan ng kapalaluan sa kabiguan; natagpuan siya nito sa tagumpay. Si Jacob, ang habambuhay na mapanlinlang, ay nakipagbuno magdamag sa Jaboc hanggang hipuin ng Diyos ang kanyang balakang, at saka lamang, nang hindi na makalaban, siya kumapit at nagsabing, \"Hindi Kita bibitawan hangga't hindi Mo ako pinagpapala\" (Genesis 32:26). Tumanggap si Pablo ng tinik \"upang hindi ako magmataas\" at narinig ang Panginoon na nagsabing, \"Sapat na sa iyo ang Aking biyaya, sapagkat ang Aking kapangyarihan ay nagiging ganap sa kahinaan\" (2 Corinto 12:7-9). At si Hesus, bagaman nasa anyo ng Diyos, ay \"nagpakababa ng Kanyang sarili at naging masunurin hanggang kamatayan, maging kamatayan sa krus\" (Filipos 2:8). Iisa ang sinasabi ng buong Kasulatan: \"Sinasalungat ng Diyos ang palalo ngunit nagbibigay ng biyaya sa mapagpakumbaba\" (1 Pedro 5:5). Pababa ang daan paakyat, sapagkat iyon ang daang tinahak ni Hesus."
+    ),
+    insight: [
+      t(
+        "The pride of new believers is usually loud. The pride of mature believers is usually quiet, and far more dangerous. It sounds like this: \"I have been serving for twenty years.\" \"I know this passage already.\" \"Who is he to correct me?\" It is the Pharisee in the temple who thanked God that he was not like the tax collector (Luke 18:11). He was disciplined, generous and religious, and he went home unjustified. Spiritual pride feeds on spiritual things: our prayer life, our knowledge, our years, our gifts. That is why it so easily hides among the faithful.",
+        "Kadalasan ay maingay ang kapalaluan ng mga bagong mananampalataya. Kadalasan ay tahimik ang kapalaluan ng mga mature na mananampalataya, at mas mapanganib. Ganito ang tunog nito: \"Dalawampung taon na akong naglilingkod.\" \"Alam ko na ang talatang iyan.\" \"Sino ba siya para itama ako?\" Ito ang Pariseo sa templo na nagpasalamat sa Diyos na hindi siya katulad ng maniningil ng buwis (Lucas 18:11). Disiplinado siya, mapagbigay, at relihiyoso, at umuwi siyang hindi inaring-ganap. Ang espirituwal na kapalaluan ay kumakain ng mga espirituwal na bagay: ang buhay-panalangin natin, ang kaalaman natin, ang mga taon natin, ang mga kaloob natin. Kaya madali itong makapagtago sa gitna ng mga tapat."
+      ),
+      t(
+        "We also confuse humility with low self-esteem. Humility is not saying, \"I am nothing, I am useless,\" while secretly hoping someone will disagree. Paul says to think of ourselves \"with sober judgment\" (Romans 12:3), seeing ourselves truly, and asks, \"What do you have that you did not receive?\" (1 Corinthians 4:7). Humility is honest: it knows its gifts are gifts. And it is free: it no longer needs to win, to be noticed, or to be right. A humble person thinks of himself less often, not necessarily less highly, because his eyes are on Christ and on others.",
+        "Napagkakamalan din natin ang kababaang-loob bilang mababang pagtingin sa sarili. Ang kababaang-loob ay hindi pagsasabing, \"Wala akong kwenta, wala akong silbi,\" habang lihim na umaasang may kokontra. Sinabi ni Pablo na tingnan natin ang ating sarili \"nang may matinong paghatol\" (Roma 12:3), nakikita ang sarili nang totoo, at nagtanong siya, \"Ano ang mayroon ka na hindi mo tinanggap?\" (1 Corinto 4:7). Tapat ang kababaang-loob: alam nitong regalo ang mga kaloob nito. At malaya ito: hindi na nito kailangang manalo, mapansin, o laging tama. Mas madalang isipin ng taong mapagpakumbaba ang kanyang sarili, hindi dahil minamaliit niya ito, kundi dahil nakatuon ang kanyang mga mata kay Cristo at sa kapwa."
+      ),
+    ],
+    life: [
+      t(
+        "Our grandparents in the province had a saying: \"Ang palay, habang nagkakalaman ay lalong yumuyuko.\" The rice stalk bows lower the fuller its grain becomes. An empty stalk stands straight and proud in the field; a heavy, ready one bends toward the earth. That is a picture of a mature believer. The more God fills us with knowledge, experience and fruit, the lower our heads should bow. If you find yourself standing taller and taller in your own eyes as the years go by, check the grain. It may be emptier than you think.",
+        "May kasabihan ang ating mga lolo't lola sa probinsya: \"Ang palay, habang nagkakalaman ay lalong yumuyuko.\" Habang bumibigat ang butil ng palay, lalo itong yumuyuko. Tuwid at mayabang na nakatayo sa bukid ang tangkay na walang laman; nakayuko sa lupa ang mabigat at hinog na. Larawan iyan ng isang mature na mananampalataya. Habang lalo tayong pinupuno ng Diyos ng kaalaman, karanasan, at bunga, lalo dapat yumuyuko ang ating ulo. Kung napapansin mong lalo kang tumataas sa sarili mong paningin habang lumilipas ang mga taon, tingnan mo ang butil. Baka mas walang laman ito kaysa sa akala mo."
+      ),
+      t(
+        "Picture a worker at a construction site in Qatar who is promoted to foreman. Within months he stops eating with the men he used to share a table with, and he speaks to them sharply. At church he has become a worship leader, and he is hurt and quietly angry when someone else is asked to lead on a Sunday. Nothing about him looks wicked. But Uzziah's story is being written again: strength turning into pride. The turning point comes when he lets an older brother in his AG tell him the truth, and he chooses to listen instead of defending himself. Later he goes back to the men at the site and apologizes. That is what a limp looks like in real life.",
+        "Isipin mo ang isang manggagawa sa isang construction site sa Qatar na na-promote bilang foreman. Sa loob ng ilang buwan, hindi na siya sumasabay kumain sa mga lalaking dati niyang kasalo sa mesa, at matalas na ang pananalita niya sa kanila. Sa iglesia, worship leader na siya, at nasasaktan at tahimik na nagagalit kapag iba ang pinapangunang mag-lead sa Linggo. Walang mukhang masama sa kanya. Pero muling isinusulat ang kuwento ni Uzias: kalakasang nagiging kapalaluan. Dumating ang pagbabago nang hayaan niyang sabihan siya ng totoo ng isang nakatatandang kapatid sa AG niya, at pinili niyang makinig sa halip na ipagtanggol ang sarili. Pagkatapos ay bumalik siya sa mga lalaki sa site at humingi ng tawad. Ganyan ang hitsura ng pagkapilay sa totoong buhay."
+      ),
+    ],
+    twist: t(
+      "Jacob won by losing. God told him, \"You have striven with God and with men, and have prevailed\" (Genesis 32:28), yet he prevailed at the exact moment he could no longer fight, when all he could do was hold on. In God's Kingdom, the breaking of your strength is not your defeat; it is where your real victory begins. The proud fight God and lose. The broken cling to God and are blessed.",
+      "Nanalo si Jacob sa pamamagitan ng pagkatalo. Sinabi ng Diyos sa kanya, \"Nakipagbuno ka sa Diyos at sa mga tao, at nagtagumpay ka\" (Genesis 32:28), pero nagtagumpay siya sa mismong sandaling hindi na siya makalaban, nang ang tanging magagawa niya ay kumapit. Sa Kaharian ng Diyos, ang pagkabasag ng iyong lakas ay hindi ang iyong pagkatalo; doon nagsisimula ang tunay mong tagumpay. Lumalaban sa Diyos ang palalo at natatalo. Kumakapit sa Diyos ang nabasag at pinagpapala."
+    ),
+    confirm: [
+      t("Isaiah 57:15: the High and Lofty One dwells with the contrite and lowly in spirit.", "Isaias 57:15: ang Kataas-taasan ay nananahan sa may nagsisising puso at mapagpakumbabang espiritu."),
+      t("Luke 18:14: everyone who exalts himself will be humbled, and the one who humbles himself will be exalted.", "Lucas 18:14: ang nagmamataas ay ibababa, at ang nagpapakumbaba ay itataas."),
+      t("John 13:4-5: Jesus, knowing all authority was His, took a towel and washed His disciples' feet.", "Juan 13:4-5: si Hesus, alam na nasa Kanya ang lahat ng kapangyarihan, ay kumuha ng tuwalya at hinugasan ang paa ng mga alagad."),
+      t("Daniel 4:37: humbled Nebuchadnezzar confessed that God is able to humble those who walk in pride.", "Daniel 4:37: inamin ng napakumbabang si Nabucodonosor na kaya ng Diyos na ibaba ang lumalakad sa kapalaluan."),
+    ],
+    heart: [
+      t(
+        "Ask God to show you your pride, and expect Him to answer, sometimes through people you would rather not hear from. Instead of defending yourself, say \"You may be right; let me pray about that.\" Those few words can save years of damage.",
+        "Hilingin mo sa Diyos na ipakita sa iyo ang iyong kapalaluan, at asahan mong sasagot Siya, kung minsan sa pamamagitan ng mga taong ayaw mong pakinggan. Sa halip na ipagtanggol ang sarili, sabihin mo, \"Baka tama ka; ipapanalangin ko iyan.\" Ang ilang salitang iyan ay maaaring makapagligtas ng maraming taon ng pinsala."
+      ),
+      t(
+        "Stop hiding your weaknesses as if they disqualify you. Bring them to Christ and let them become the places where His grace rests on you. Thank Him for the limp. It keeps you leaning on Him.",
+        "Tigilan mo na ang pagtatago ng iyong mga kahinaan na para bang tinatanggal ka nito sa pagiging karapat-dapat. Dalhin mo ang mga ito kay Cristo at hayaang maging lugar ang mga ito kung saan nananahan sa iyo ang Kanyang biyaya. Pasalamatan mo Siya sa pagkapilay. Iyon ang nagpapanatili sa iyong nakasandal sa Kanya."
+      ),
+    ],
+    questions: [
+      t("In what area of your life are you strongest right now, and how could that strength become a doorway for pride?", "Sa anong bahagi ng buhay mo ka pinakamalakas ngayon, at paano maaaring maging pintuan ng kapalaluan ang lakas na iyon?"),
+      t("When were you last corrected, and how did you respond, outwardly and inwardly?", "Kailan ka huling itinuwid, at paano ka tumugon, sa labas at sa loob?"),
+      t("What weakness have you been asking God to remove that He may be using to keep you close?", "Anong kahinaan ang hinihiling mong alisin ng Diyos na maaaring ginagamit Niya para panatilihin kang malapit?"),
+      t("Whose success is hard for you to celebrate? What does that reveal?", "Kaninong tagumpay ang mahirap para sa iyong ipagdiwang? Ano ang ibinubunyag niyon?"),
+    ],
+    actions: [
+      t("Ask one trusted believer, \"Where do you see pride in me?\" and receive the answer without explaining yourself.", "Tanungin ang isang mapagkakatiwalaang mananampalataya, \"Saan mo nakikita ang kapalaluan sa akin?\" at tanggapin ang sagot nang hindi nagpapaliwanag."),
+      t("Do one humble, hidden act of service this week that no one will see or thank you for.", "Gumawa ng isang mapagpakumbaba at lihim na paglilingkod ngayong linggo na walang makakakita o magpapasalamat sa iyo."),
+      t("Apologize to someone you have treated as beneath you.", "Humingi ng tawad sa isang taong itinuring mong mas mababa sa iyo."),
+    ],
+    prayer: t(
+      "Lord Jesus, You knelt with a towel and You went down all the way to the cross. I confess my pride: my need to be noticed, my quickness to defend myself, my trust in my own strength and years. Touch whatever You must touch, and let me walk with a limp if it means I will cling to You. Make Your grace enough for me and let Your power rest on my weakness. Clothe me with humility, and lift me up only in Your time. In Your name, Amen.",
+      "Panginoong Hesus, lumuhod Ka na may tuwalya at bumaba Ka hanggang sa krus. Ipinagtatapat ko ang aking kapalaluan: ang pangangailangan kong mapansin, ang bilis kong ipagtanggol ang sarili, ang pagtitiwala ko sa sarili kong lakas at mga taon. Hipuin Mo ang anumang dapat Mong hipuin, at hayaan Mo akong lumakad nang paika-ika kung iyon ang magpapakapit sa akin sa Iyo. Gawin Mong sapat sa akin ang Iyong biyaya at hayaang manahan ang Iyong kapangyarihan sa aking kahinaan. Bihisan Mo ako ng kababaang-loob, at itaas Mo lamang ako sa Iyong takdang panahon. Sa Iyong pangalan, Amen."
+    ),
+  },
 };

@@ -793,4 +793,136 @@ export const DEEP: DeepSet = {
       "Tapat na Diyos, salamat sa bawat tanikalang pinutol Mo. Ayaw ko ng bakanteng bahay; gusto ko ng pusong puno ng Iyo. Punuin Mo ako ng Iyong Espiritu, ng Iyong salita at ng papuri sa Iyo. Tulungan Mo akong ingatan ang aking puso, kilalanin ang mga mahihinang sandali ko at manatiling malapit sa Iyong bayan. Kapag gumagala ang kaaway, panatilihin Mo akong mahinahon, mapagbantay at matatag sa pananampalataya. Salamat at Ikaw ang magpapanumbalik, magpapalakas at magtatatag sa akin. Panatilihin Mo akong malaya kay Cristo. Amen."
     ),
   },
+
+  "c-freedom-from-condemnation": {
+    revelation: t(
+      "The accuser may tell the truth about your sin, but God has the last word about your standing, and in Christ that word is “no condemnation.”",
+      "Maaaring magsabi ng totoo ang tagapagparatang tungkol sa kasalanan mo, pero ang Diyos ang may huling salita tungkol sa katayuan mo, at kay Cristo ang salitang iyon ay “walang hatol.”"
+    ),
+    mainTruth: t(
+      "From the garden onward, shame has made people hide: Adam and Eve covered themselves with fig leaves and hid among the trees, yet God came asking, \"Where are you?\" and clothed them Himself (Genesis 3:7-10, 21). In Zechariah's vision Satan stands to accuse Joshua the high priest, but the Lord rebukes him, calls Joshua \"a brand plucked from the fire,\" and replaces his filthy garments with clean ones (Zechariah 3:1-5). Paul declares, \"There is therefore now no condemnation for those who are in Christ Jesus\" (Romans 8:1), and Revelation shows the accuser thrown down, defeated \"by the blood of the Lamb and by the word of their testimony\" (Revelation 12:10-11). The Spirit's conviction produces \"godly grief\" that leads to repentance without regret, while worldly grief leads to death (2 Corinthians 7:9-11). \"Those who look to Him are radiant, and their faces shall never be ashamed\" (Psalm 34:5).",
+      "Mula pa sa halamanan, pinagtatago na ng hiya ang tao: tinakpan nina Adan at Eba ang sarili ng dahon ng igos at nagtago sa gitna ng mga punongkahoy, pero dumating ang Diyos na nagtatanong, \"Nasaan ka?\" at Siya mismo ang nagdamit sa kanila (Genesis 3:7-10, 21). Sa pangitain ni Zacarias, nakatayo si Satanas upang paratangan si Josue na punong pari, pero sinaway siya ng Panginoon, tinawag si Josue na \"gatong na hinablot mula sa apoy,\" at pinalitan ng malinis ang maruming kasuotan niya (Zacarias 3:1-5). Ipinahayag ni Pablo, \"Kaya ngayon ay wala nang hatol ng kaparusahan sa mga na kay Cristo Hesus\" (Roma 8:1), at ipinapakita ng Pahayag na itinapon ang tagapagparatang, tinalo \"sa pamamagitan ng dugo ng Kordero at ng salita ng kanilang patotoo\" (Pahayag 12:10-11). Ang pagsumbat ng Espiritu ay nagbubunga ng \"kalungkutang ayon sa Diyos\" na humahantong sa pagsisising walang pagsisisihan, samantalang ang makamundong kalungkutan ay humahantong sa kamatayan (2 Corinto 7:9-11). \"Ang mga tumitingin sa Kanya ay nagliliwanag, at ang kanilang mukha ay hindi kailanman mapapahiya\" (Awit 34:5)."
+    ),
+    insight: [
+      t(
+        "Many believers have received forgiveness but never stopped living as defendants. They confessed years ago, yet every worship song reminds them of what they did, every promotion feels undeserved, every prayer begins with apology. Notice what happens in Zechariah 3: Joshua never argues. The accusation is true; his clothes really are filthy. But the case is not decided by the accuser's evidence. It is decided by the Judge's grace. Freedom from condemnation does not come from proving you are better than the accuser says. It comes from agreeing with God about what Christ has done.",
+        "Maraming mananampalataya ang nakatanggap na ng kapatawaran pero hindi pa rin tumitigil sa pamumuhay na parang akusado. Ipinagtapat na nila maraming taon na ang nakalipas, pero bawat awit ng pagsamba ay nagpapaalala ng ginawa nila, bawat promosyon ay parang hindi nila karapat-dapat, bawat panalangin ay nagsisimula sa paghingi ng tawad. Pansinin ang nangyari sa Zacarias 3: hindi nakipagtalo si Josue. Totoo ang paratang; marumi talaga ang kasuotan niya. Pero hindi ebidensya ng tagapagparatang ang nagpasya sa kaso. Ang biyaya ng Hukom ang nagpasya. Ang kalayaan mula sa paghatol ay hindi dumarating sa pagpapatunay na mas mabuti ka kaysa sinasabi ng tagapagparatang. Dumarating ito sa pagsang-ayon sa Diyos tungkol sa ginawa ni Cristo."
+      ),
+      t(
+        "It also helps to learn the difference between two voices. The Holy Spirit convicts specifically, about something real, and always points to Jesus and to a next step: confess, make it right, receive grace. The accuser condemns in general terms (\"you are a failure, you will never change, God is tired of you\") and points you inward and away from God and people. Peter and Judas both failed on the same night. Both felt terrible. One sorrow brought Peter back to the shore; the other drove Judas away to die. The question is not how bad you feel, but where the feeling is taking you.",
+        "Nakatutulong din na matutunan ang pagkakaiba ng dalawang tinig. Tiyak kung sumumbat ang Banal na Espiritu, tungkol sa isang totoong bagay, at laging itinuturo si Hesus at ang susunod na hakbang: magtapat, ituwid, tanggapin ang biyaya. Pangkalahatan kung humatol ang tagapagparatang (\"bigo ka, hindi ka na magbabago, sawa na sa iyo ang Diyos\") at itinuturo ka sa sarili mo at palayo sa Diyos at sa kapwa. Kapwa nabigo sina Pedro at Judas sa iisang gabi. Kapwa sila nakaramdam ng matinding sama ng loob. Ibinalik ng isang kalungkutan si Pedro sa dalampasigan; itinaboy ng isa si Judas papunta sa kamatayan. Ang tanong ay hindi kung gaano kasama ang pakiramdam mo, kundi kung saan ka dinadala ng pakiramdam na iyon."
+      ),
+    ],
+    life: [
+      t(
+        "Picture an OFW who comes home after six years with no savings. The money went to a failed business, a relative's hospital bills and, honestly, some bad decisions. At the airport everyone expects pasalubong and a success story. For months he avoids family gatherings and stops going to church because he cannot bear the questions. The shame is louder than any accusation anyone actually speaks. What would freedom look like for him? Telling the truth to one brother in his AG, confessing the bad decisions to God and receiving forgiveness, refusing the voice that says \"you are a disgrace,\" and walking back into church with his head up, not because he succeeded but because he is clothed in Christ.",
+        "Isipin mo ang isang OFW na umuwi matapos ang anim na taon nang walang ipon. Napunta ang pera sa naluging negosyo, sa bayarin sa ospital ng kamag-anak, at, sa totoo lang, sa ilang maling desisyon. Sa airport, umaasa ang lahat ng pasalubong at kuwento ng tagumpay. Ilang buwan niyang iniiwasan ang mga pagtitipon ng pamilya at tumigil siya sa pagsimba dahil hindi niya kayang harapin ang mga tanong. Mas malakas ang hiya kaysa sa anumang paratang na talagang binibigkas ng iba. Ano ang itsura ng kalayaan para sa kanya? Ang pagsasabi ng totoo sa isang kapatid sa AG niya, ang pagtatapat sa Diyos ng mga maling desisyon at pagtanggap ng kapatawaran, ang pagtanggi sa tinig na nagsasabing \"kahihiyan ka,\" at ang pagbabalik sa simbahan nang nakataas ang ulo, hindi dahil nagtagumpay siya kundi dahil nadamitan siya kay Cristo."
+      ),
+      t(
+        "Some shame was never yours to carry. A woman abused as a child may feel dirty for decades because of what someone else did. Hiya keeps the secret, and the secret keeps the shame alive. For her, the gospel says, \"That shame belongs to the one who sinned against you, and Christ bore the shame of the cross for you\" (Hebrews 12:2). Freedom may come slowly, through prayer, a safe pastor or leader, and a trained counselor who can help her heal. The church's part is to be a place where such stories can finally be told without being judged.",
+        "May mga hiyang hindi kailanman dapat pasanin mo. Ang isang babaeng inabuso noong bata ay maaaring makaramdam ng karumihan sa loob ng maraming dekada dahil sa ginawa ng iba. Iniingatan ng hiya ang lihim, at pinananatiling buhay ng lihim ang hiya. Para sa kanya, sinasabi ng ebanghelyo, \"Ang hiyang iyan ay pag-aari ng nagkasala laban sa iyo, at pinasan ni Cristo ang hiya ng krus para sa iyo\" (Hebreo 12:2). Maaaring dahan-dahan ang pagdating ng kalayaan, sa pamamagitan ng panalangin, isang ligtas na pastor o lider, at isang sanay na counselor na tutulong sa kanyang gumaling. Ang bahagi ng iglesia ay maging lugar kung saan sa wakas ay maikukuwento ang ganitong mga karanasan nang walang panghuhusga."
+      ),
+    ],
+    twist: t(
+      "We think the opposite of shame is pride or self-esteem. Scripture says the opposite of shame is being covered. Adam's fig leaves were his own attempt; God replaced them with garments He made. Joshua did not clean his own robes; the Lord ordered them changed. Even on the cross, Jesus \"endured the cross, despising the shame\" (Hebrews 12:2), taking our nakedness so we could be clothed. You do not overcome shame by thinking better of yourself. You overcome it by letting God dress you, and then wearing what He gave.",
+      "Akala natin ang kabaligtaran ng hiya ay kayabangan o mataas na pagtingin sa sarili. Sinasabi ng Kasulatan na ang kabaligtaran ng hiya ay ang matakpan. Sariling pagtatangka ni Adan ang mga dahon ng igos; pinalitan ito ng Diyos ng kasuotang Siya mismo ang gumawa. Hindi nilinis ni Josue ang sarili niyang kasuotan; ang Panginoon ang nag-utos na palitan ito. Kahit sa krus, \"tiniis ni Hesus ang krus, hindi pinansin ang kahihiyan\" (Hebreo 12:2), at kinuha ang ating kahubaran upang tayo'y madamitan. Hindi mo madadaig ang hiya sa pag-iisip nang mas mataas tungkol sa sarili mo. Madadaig mo ito sa pagpapahintulot sa Diyos na bihisan ka, at pagsusuot ng ibinigay Niya."
+    ),
+    confirm: [
+      t("Isaiah 61:10: He has clothed me with the garments of salvation.", "Isaias 61:10: dinamitan Niya ako ng kasuotan ng kaligtasan."),
+      t("Luke 15:22: the father calls for the best robe for the returning son.", "Lucas 15:22: ipinakuha ng ama ang pinakamagandang balabal para sa anak na umuwi."),
+      t("John 21:15-17: Jesus restores Peter by the fire instead of shaming him.", "Juan 21:15-17: ibinalik ni Hesus si Pedro sa tabi ng apoy sa halip na ipahiya siya."),
+      t("1 John 3:20: whenever our heart condemns us, God is greater than our heart.", "1 Juan 3:20: tuwing hinahatulan tayo ng ating puso, mas dakila ang Diyos kaysa sa ating puso."),
+    ],
+    heart: [
+      t(
+        "Stop hiding. Bring what you are ashamed of into the light with God and one trusted believer. Shame shrinks when it is spoken in a safe place.",
+        "Tumigil ka sa pagtatago. Dalhin mo sa liwanag ang ikinahihiya mo, sa harap ng Diyos at ng isang pinagkakatiwalaang mananampalataya. Lumiliit ang hiya kapag binigkas sa isang ligtas na lugar."
+      ),
+      t(
+        "Stop agreeing with the accuser. When he speaks, answer him with what God says, and then lift your face to Jesus.",
+        "Tumigil ka sa pagsang-ayon sa tagapagparatang. Kapag nagsalita siya, sagutin mo siya ng sinasabi ng Diyos, at pagkatapos ay itaas mo ang iyong mukha kay Hesus."
+      ),
+    ],
+    questions: [
+      t("What do you still feel ashamed of, even though you have confessed it to God?", "Ano pa ang ikinahihiya mo kahit naipagtapat mo na ito sa Diyos?"),
+      t("Does the heavy voice in your mind lead you toward Jesus or away from Him?", "Inaakay ka ba ng mabigat na tinig sa isip mo papunta kay Hesus o palayo sa Kanya?"),
+      t("Have you hidden from church or people because of hiya?", "Nagtago ka na ba sa iglesia o sa mga tao dahil sa hiya?"),
+      t("Is there shame you carry for something that was done to you?", "May hiya ka bang pinapasan dahil sa bagay na ginawa sa iyo?"),
+    ],
+    actions: [
+      t("Read Zechariah 3:1-5 aloud and put your own name in place of Joshua's.", "Basahin nang malakas ang Zacarias 3:1-5 at ilagay ang sarili mong pangalan sa halip na kay Josue."),
+      t("Tell one trusted believer about a shame you have been hiding, and pray together.", "Ikuwento sa isang pinagkakatiwalaang mananampalataya ang isang hiyang itinatago mo, at manalangin kayo nang magkasama."),
+      t("Write Romans 8:1 on a card and speak it every time an old accusation rises this week.", "Isulat ang Roma 8:1 sa isang card at bigkasin ito tuwing aakyat ang isang lumang paratang ngayong linggo."),
+    ],
+    prayer: t(
+      "Father, I have been hiding, sewing fig leaves and listening to the accuser. Thank You that You came looking for me. I confess my sin, and I receive Your forgiveness through the blood of Jesus. The Lord rebuke you, accuser; I am a brand plucked from the fire. Take off my filthy garments and clothe me in Christ. Lift my face, Lord. Let me stop living as a defendant and start living as Your child. Amen.",
+      "Ama, nagtatago ako, nanahi ng mga dahon ng igos at nakikinig sa tagapagparatang. Salamat at hinanap Mo ako. Ipinagtatapat ko ang aking kasalanan, at tinatanggap ko ang Iyong kapatawaran sa pamamagitan ng dugo ni Hesus. Sawayin ka ng Panginoon, tagapagparatang; ako'y gatong na hinablot mula sa apoy. Hubarin Mo ang aking maruming kasuotan at damitan Mo ako kay Cristo. Itaas Mo ang aking mukha, Panginoon. Tulungan Mo akong tumigil sa pamumuhay na parang akusado at magsimulang mamuhay bilang Iyong anak. Amen."
+    ),
+  },
+
+  "c-helping-others-free": {
+    revelation: t(
+      "God does not only set you free so you can stay free; He sets you free so you can kneel beside someone else, take their hand and help them up in the gentleness of Christ.",
+      "Hindi ka lang pinalaya ng Diyos para manatili kang malaya; pinalaya ka Niya para makaluhod ka sa tabi ng iba, hawakan ang kamay nila, at tulungan silang bumangon sa kahinahunan ni Cristo."
+    ),
+    mainTruth: t(
+      "Paul writes, \"If anyone is caught in any transgression, you who are spiritual should restore him in a spirit of gentleness. Keep watch on yourself... Bear one another's burdens, and so fulfill the law of Christ\" (Galatians 6:1-2). When the disciples failed to help a tormented boy, Jesus listened to the father, asked how long it had been happening, called him to faith, set the boy free, \"took him by the hand and lifted him up,\" and taught that \"this kind cannot be driven out by anything but prayer\" (Mark 9:14-29). The church cares for different needs in different ways: \"admonish the idle, encourage the fainthearted, help the weak, be patient with them all\" (1 Thessalonians 5:14), and the sick call for the elders to pray, with confession and prayer for one another (James 5:13-16). All of it is given freely, \"You received without paying; give without paying\" (Matthew 10:8), and never as a formula, as the sons of Sceva learned (Acts 19:13-16).",
+      "Isinulat ni Pablo, \"Kung ang sinuman ay mahuli sa anumang pagsalangsang, kayong mga espirituwal ay dapat magpanumbalik sa kanya sa espiritu ng kahinahunan. Bantayan mo ang iyong sarili... Pasanin ninyo ang pasanin ng isa't isa, at sa gayon ay matutupad ninyo ang kautusan ni Cristo\" (Galacia 6:1-2). Nang mabigo ang mga alagad na tulungan ang isang pinahihirapang bata, pinakinggan ni Hesus ang ama, itinanong kung gaano na ito katagal, tinawag siya sa pananampalataya, pinalaya ang bata, \"hinawakan ito sa kamay at ibinangon,\" at itinuro na \"ang ganitong uri ay hindi mapalalayas ng anuman maliban sa panalangin\" (Marcos 9:14-29). Iba-iba ang paraan ng pag-aalaga ng iglesia sa iba't ibang pangangailangan: \"paalalahanan ang mga tamad, palakasin ang loob ng mahihina ang loob, tulungan ang mahihina, maging mapagpasensya sa lahat\" (1 Tesalonica 5:14), at tinatawag ng maysakit ang matatanda upang manalangin, kasama ang pagtatapat at pananalangin para sa isa't isa (Santiago 5:13-16). Ibinibigay ang lahat ng ito nang libre, \"Tinanggap ninyo nang walang bayad; ibigay ninyo nang walang bayad\" (Mateo 10:8), at hindi kailanman bilang pormula, gaya ng natutunan ng mga anak ni Esceva (Gawa 19:13-16)."
+    ),
+    insight: [
+      t(
+        "Look at where the disciples were when Jesus came down the mountain: arguing with the scribes while a boy suffered in front of them (Mark 9:14). It is possible to be busy with spiritual debate and miss the person. Jesus' first move was not a loud command but a question: \"How long has this been happening to him?\" The best helpers in the church are not the most dramatic; they are the ones who listen long enough to understand. Many people are not helped because no one ever asked them their story.",
+        "Tingnan mo kung nasaan ang mga alagad nang bumaba si Hesus mula sa bundok: nakikipagtalo sa mga eskriba habang naghihirap ang isang bata sa harap nila (Marcos 9:14). Posibleng maging abala sa espirituwal na debate at makaligtaan ang tao. Ang unang ginawa ni Hesus ay hindi malakas na utos kundi isang tanong: \"Gaano na katagal itong nangyayari sa kanya?\" Ang pinakamahuhusay na tumutulong sa iglesia ay hindi ang pinakamadrama; sila ang mga nakikinig nang sapat na katagal para umunawa. Maraming tao ang hindi natutulungan dahil wala kailanmang nagtanong sa kanila ng kanilang kuwento."
+      ),
+      t(
+        "Paul's warning, \"Keep watch on yourself,\" is not a footnote. People who help others in this area face real dangers: pride when prayers are answered, curiosity that becomes fascination with darkness, emotional dependence, and moral temptation when ministering alone with someone vulnerable. Scripture also distinguishes demon-oppression from sickness, including seizures (Matthew 4:24), so a wise helper does not label every struggle as demonic. Humility, accountability to leaders and openness to doctors and counselors are not signs of weak faith. They are the guardrails that keep both the helper and the person safe.",
+        "Hindi talababa lang ang babala ni Pablo na \"Bantayan mo ang iyong sarili.\" May totoong panganib na hinaharap ang mga tumutulong sa iba sa bahaging ito: kayabangan kapag nasasagot ang mga panalangin, pagkamausisa na nauuwi sa pagkahumaling sa kadiliman, emosyonal na pagkadepende, at tuksong moral kapag naglilingkod nang mag-isa kasama ang isang taong mahina. Pinag-iiba rin ng Kasulatan ang pang-aapi ng demonyo at ang sakit, kasama ang seizure (Mateo 4:24), kaya hindi tinatatakang demonyo ng marunong na tumutulong ang bawat pakikibaka. Ang kababaang-loob, pananagutan sa mga lider, at pagiging bukas sa mga doktor at counselor ay hindi tanda ng mahinang pananampalataya. Sila ang mga harang na nag-iingat sa tumutulong at sa tinutulungan."
+      ),
+    ],
+    life: [
+      t(
+        "Picture an AG leader in Dubai whose member, a young domestic worker, messages her late at night: she cannot sleep, hears frightening things, and is sure she has been cursed. The leader does not rush over alone, shout at spirits or post about it in the group chat. She calls her, listens, asks how long it has been happening, whether she is eating and sleeping, what is going on at work and back home. They pray together on the phone. The next day the leader brings another sister from the fellowship, informs her pastor, and helps the worker see a doctor through the clinic her employer uses. Over the following weeks there is prayer, confession of old occult involvement, Scripture, rest, medical care and a friend who checks in every night. That is what freedom ministry often looks like: patient, ordinary, Christ-centered love.",
+        "Isipin mo ang isang AG leader sa Dubai na nakatanggap ng mensahe nang hatinggabi mula sa kanyang miyembro, isang batang kasambahay: hindi siya makatulog, may naririnig siyang nakakatakot, at sigurado siyang may kulam siya. Hindi nagmadaling pumunta nang mag-isa ang lider, hindi sumigaw sa mga espiritu, at hindi nag-post tungkol dito sa group chat. Tinawagan niya ito, nakinig, nagtanong kung gaano na katagal, kung nakakakain at nakakatulog ba ito, at kung ano ang nangyayari sa trabaho at sa pamilya sa Pilipinas. Nanalangin sila nang magkasama sa telepono. Kinabukasan, nagsama ang lider ng isa pang sister mula sa fellowship, ipinaalam sa pastor niya, at tinulungan ang kasambahay na makapagpatingin sa doktor sa clinic na ginagamit ng amo nito. Sa mga sumunod na linggo, nagkaroon ng panalangin, pagtatapat ng dating pagkakasangkot sa okulto, Kasulatan, pahinga, pangangalagang medikal, at isang kaibigang nangungumusta gabi-gabi. Ganyan kadalasan ang itsura ng ministeryo ng paglaya: matiyaga, ordinaryo, at nakasentro kay Cristo na pag-ibig."
+      ),
+      t(
+        "Contrast that with what sometimes happens: a \"deliverance\" event where a person is pushed to the floor, shouted at for hours in front of a crowd, told their sickness is a demon, and asked for a large offering. They go home exhausted, ashamed and no freer. Jesus never charged, never humiliated anyone, and never treated a suffering person as a stage. If you have been hurt that way, know that it was not the way of Christ, and the Lord can heal that wound too.",
+        "Ihambing mo iyan sa minsang nangyayari: isang \"deliverance\" event kung saan itinutulak ang tao sa sahig, sinisigawan nang ilang oras sa harap ng maraming tao, sinasabihang demonyo ang sakit niya, at hinihingan ng malaking handog. Umuuwi siyang pagod, nahihiya, at hindi naman mas malaya. Hindi kailanman naningil si Hesus, hindi kailanman nagpahiya ng tao, at hindi kailanman ginawang entablado ang taong nagdurusa. Kung nasaktan ka sa ganoong paraan, alamin mong hindi iyon ang paraan ni Cristo, at kaya ring pagalingin ng Panginoon ang sugat na iyon."
+      ),
+    ],
+    twist: t(
+      "We imagine that the person with the most power is the one who should help. But in Galatians 6:1 the qualification is not power; it is gentleness, and the helper is described as someone who knows he could fall too. The best person to help a brother out of a pit is often someone who remembers being in one. Your past bondage, now redeemed, is not a disqualification. In God's hands it becomes compassion, the very thing that makes you safe to come to.",
+      "Akala natin ang taong may pinakamalaking kapangyarihan ang dapat tumulong. Pero sa Galacia 6:1, hindi kapangyarihan ang kwalipikasyon; kahinahunan ito, at inilalarawan ang tumutulong bilang taong alam na maaari rin siyang madapa. Ang pinakamahusay na tumulong sa isang kapatid na nasa hukay ay kadalasang ang taong naaalala pa ang pagiging nasa hukay. Ang dati mong pagkaalipin, na tinubos na ngayon, ay hindi diskwalipikasyon. Sa kamay ng Diyos, nagiging habag ito, ang mismong dahilan kung bakit ligtas kang lapitan."
+    ),
+    confirm: [
+      t("2 Corinthians 1:3-4: God comforts us so we can comfort others.", "2 Corinto 1:3-4: inaaliw tayo ng Diyos upang maaliw natin ang iba."),
+      t("Luke 22:32: \"When you have turned again, strengthen your brothers.\"", "Lucas 22:32: \"Kapag nagbalik-loob ka na, palakasin mo ang iyong mga kapatid.\""),
+      t("2 Timothy 2:24-26: the Lord's servant corrects with gentleness so people may escape the devil's snare.", "2 Timoteo 2:24-26: itinutuwid ng lingkod ng Panginoon ang iba nang mahinahon upang makatakas sila sa bitag ng diyablo."),
+      t("Luke 10:17-20: rejoice not that spirits submit, but that your names are written in heaven.", "Lucas 10:17-20: huwag magalak na nagpapasakop ang mga espiritu, kundi na nakasulat ang inyong pangalan sa langit."),
+    ],
+    heart: [
+      t(
+        "Trade the desire to look powerful for the desire to be useful. Listen first, pray much, and point people to Jesus, not to yourself.",
+        "Palitan ang pagnanais na magmukhang makapangyarihan ng pagnanais na maging kapaki-pakinabang. Makinig muna, manalangin nang marami, at ituro ang tao kay Hesus, hindi sa sarili mo."
+      ),
+      t(
+        "Stay humble and accountable. Work under your leaders, welcome doctors and counselors, and never minister alone where you or others could be harmed.",
+        "Manatiling mapagpakumbaba at may pananagutan. Gumawa sa ilalim ng iyong mga lider, tanggapin ang mga doktor at counselor, at huwag kailanman maglingkod nang mag-isa kung saan maaaring mapahamak ka o ang iba."
+      ),
+    ],
+    questions: [
+      t("Who helped you most when you were bound, and how did they do it?", "Sino ang pinakanakatulong sa iyo noong nakagapos ka, at paano nila ito ginawa?"),
+      t("Do you tend to rush to fix people, or do you take time to listen?", "Madalas ka bang nagmamadaling ayusin ang tao, o naglalaan ka ng oras para makinig?"),
+      t("Where might pride or curiosity creep in if you help others in this area?", "Saan maaaring pumasok ang kayabangan o pagkamausisa kapag tumulong ka sa iba sa bahaging ito?"),
+      t("Is there someone near you right now who needs a gentle friend to walk with them?", "May tao bang malapit sa iyo ngayon na nangangailangan ng mahinahong kaibigang sasama sa kanya?"),
+    ],
+    actions: [
+      t("Talk with your AG leader or pastor about how your church cares for people who need prayer for freedom.", "Kausapin ang iyong AG leader o pastor kung paano inaalagaan ng inyong iglesia ang mga nangangailangan ng panalangin para sa paglaya."),
+      t("Choose one struggling person to pray for daily, and this week ask them gently how they are really doing.", "Pumili ng isang taong nakikibaka na ipapanalangin mo araw-araw, at ngayong linggo ay tanungin siya nang mahinahon kung kumusta talaga siya."),
+      t("Write the safeguards from this lesson on a card and keep them in your Bible.", "Isulat sa isang card ang mga pag-iingat mula sa araling ito at itago sa iyong Bibliya."),
+    ],
+    prayer: t(
+      "Lord Jesus, You came down the mountain and saw a desperate father and a suffering child. Give me Your eyes for the people around me. Make me gentle, patient and humble. Keep me watchful over my own heart. Teach me to listen, to ask, to pray and to work with my leaders and with those You have gifted to heal. What I have freely received from You, let me freely give, and let every person I help see You, not me. Amen.",
+      "Panginoong Hesus, bumaba Ka mula sa bundok at nakita Mo ang isang desperadong ama at isang batang naghihirap. Ibigay Mo sa akin ang Iyong mga mata para sa mga tao sa paligid ko. Gawin Mo akong mahinahon, mapagpasensya at mapagpakumbaba. Panatilihin Mo akong mapagbantay sa sarili kong puso. Turuan Mo akong makinig, magtanong, manalangin, at makipagtulungan sa aking mga lider at sa mga binigyan Mo ng kaloob na magpagaling. Ang tinanggap ko nang walang bayad mula sa Iyo, hayaan Mong ibigay ko nang walang bayad, at hayaang Ikaw ang makita ng bawat taong tinutulungan ko, hindi ako. Amen."
+    ),
+  },
 };

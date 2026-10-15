@@ -481,4 +481,124 @@ export const DEEP: DeepSet = {
       "Panginoon, ang lahat ng mayroon ako ay Iyo: ang aking oras, pera, kakayahan, pamilya at kinabukasan. Patawarin Mo ako sa pamumuhay na parang may-ari. Gawin Mo akong tapat na katiwalang mahusay mamahala, mapagbigay, at nagpaparami sa ipinagkatiwala Mo. Palayain Mo ako sa takot na nagbabaon ng talento. Nananabik akong marinig Kang magsabi, \"Mahusay, mabuti at tapat na lingkod.\" Amen."
     ),
   },
+
+  "c-sabbath-rest": {
+    revelation: t(
+      "Rest is not a reward you earn after the work is done; it is a gift you receive because the work that saves you is already finished.",
+      "Ang pahinga ay hindi gantimpalang kinikita mo pagkatapos ng trabaho; ito ay regalong tinatanggap mo dahil tapos na ang gawang nagliligtas sa iyo."
+    ),
+    mainTruth: t(
+      "God rested on the seventh day and blessed it (Genesis 2:2-3), and He gave the Sabbath to a nation of former slaves as a weekly reminder that they were free (Deuteronomy 5:15). Jesus declared that \"the Sabbath was made for man\" (Mark 2:27), called His tired disciples to \"come away... and rest a while\" (Mark 6:31), and invited all who are heavy laden to find rest for their souls in Him (Matthew 11:28-29). A Sabbath rest remains for God's people, entered by faith in Christ (Hebrews 4:9-10).",
+      "Nagpahinga ang Diyos sa ikapitong araw at pinagpala ito (Genesis 2:2-3), at ibinigay Niya ang Sabbath sa isang bansang dating alipin bilang lingguhang paalala na malaya na sila (Deuteronomio 5:15). Ipinahayag ni Hesus na \"ang Sabbath ay ginawa para sa tao\" (Marcos 2:27), tinawag ang Kanyang pagod na mga alagad na \"sumama... at magpahinga sandali\" (Marcos 6:31), at inanyayahan ang lahat ng nabibigatan na makasumpong ng kapahingahan para sa kanilang kaluluwa sa Kanya (Mateo 11:28-29). May nakalaan pang pahinga ng Sabbath para sa bayan ng Diyos, na pinapasok sa pamamagitan ng pananampalataya kay Cristo (Hebreo 4:9-10)."
+    ),
+    insight: [
+      t(
+        "Many believers treat rest as optional and exhaustion as proof of faithfulness. But Pharaoh was the one who never let his workers stop. When we cannot rest, we may still be living like slaves in a land God has already brought us out of. Constant work can be a quiet form of unbelief: the fear that if I stop, everything will fall apart.",
+        "Itinuturing ng maraming mananampalataya na opsyonal ang pahinga at patunay ng katapatan ang pagkahapo. Pero si Faraon ang hindi kailanman nagpahinto sa kanyang mga manggagawa. Kapag hindi tayo makapagpahinga, baka namumuhay pa rin tayo na parang alipin sa lupaing inilabas na tayo ng Diyos. Ang walang tigil na pagtatrabaho ay maaaring tahimik na anyo ng kawalan ng pananampalataya: ang takot na kapag huminto ako, guguho ang lahat."
+      ),
+      t(
+        "Notice that God's first full day with Adam and Eve was a day of rest. They were created on the sixth day, so their first experience of life with God was not work but delight. Rest is not what we do after we have proven ourselves. It is where our relationship with God begins.",
+        "Pansinin na ang unang buong araw ng Diyos kasama sina Adan at Eba ay araw ng pahinga. Nilikha sila sa ikaanim na araw, kaya ang una nilang karanasan sa buhay kasama ang Diyos ay hindi trabaho kundi kaluguran. Ang pahinga ay hindi ang ginagawa natin pagkatapos nating patunayan ang sarili. Ito ang simula ng ating relasyon sa Diyos."
+      ),
+    ],
+    life: [
+      t(
+        "Picture a caregiver in Taipei who works six days a week and spends her one day off doing laundry, sending padala and answering family messages until midnight. By the next morning she is more tired than before. One Sunday she decides to try something different: worship in the morning, a slow lunch with friends, an hour alone with her Bible in the park, and her phone on silent. She does not get more done that day. But for the first time in months, she feels like a daughter of God and not only a worker.",
+        "Isipin mo ang isang caregiver sa Taipei na anim na araw nagtatrabaho bawat linggo at ginugugol ang nag-iisa niyang day off sa paglalaba, pagpapadala, at pagsagot sa mga mensahe ng pamilya hanggang hatinggabi. Kinabukasan, mas pagod pa siya kaysa dati. Isang Linggo, nagpasya siyang sumubok ng iba: pagsamba sa umaga, mabagal na tanghalian kasama ang mga kaibigan, isang oras na mag-isa kasama ang kanyang Bibliya sa parke, at naka-silent ang phone. Hindi siya nakagawa ng mas marami sa araw na iyon. Pero sa unang pagkakataon makalipas ang ilang buwan, naramdaman niyang anak siya ng Diyos at hindi lang manggagawa."
+      ),
+      t(
+        "Jesus Himself withdrew to lonely places to pray, even when crowds were looking for Him (Mark 1:35-37; Luke 5:16). If the Son of God needed quiet time with the Father, so do we. A short daily pause and a longer weekly rest are not luxuries; they are how servants stay alive.",
+        "Si Hesus mismo ay lumalayo sa mga tahimik na lugar para manalangin, kahit hinahanap Siya ng maraming tao (Marcos 1:35-37; Lucas 5:16). Kung kinailangan ng Anak ng Diyos ang tahimik na oras kasama ang Ama, lalo na tayo. Ang maikling paghinto araw-araw at ang mas mahabang pahinga bawat linggo ay hindi luho; ito ang paraan para manatiling buhay ang mga lingkod."
+      ),
+    ],
+    twist: t(
+      "We think rest is what we earn at the end of a hard week. Israel's week did end with the Sabbath, but the church gathers on the first day, the day of resurrection, because Jesus had already said \"It is finished\" (John 19:30). In Christ, rest comes first. We do not work toward God's acceptance and then rest; we rest in His acceptance and then work from it.",
+      "Akala natin ang pahinga ay kinikita sa dulo ng mabigat na linggo. Totoong nagtatapos sa Sabbath ang linggo ng Israel, pero nagtitipon ang iglesia sa unang araw, ang araw ng muling pagkabuhay, dahil nasabi na ni Hesus, \"Naganap na\" (Juan 19:30). Kay Cristo, nauuna ang pahinga. Hindi tayo nagtatrabaho para matanggap ng Diyos at saka magpapahinga; nagpapahinga tayo sa Kanyang pagtanggap at saka nagtatrabaho mula roon."
+    ),
+    confirm: [
+      t("Exodus 16:22-30: God gave a double portion of manna so His people could rest.", "Exodo 16:22-30: nagbigay ang Diyos ng dobleng mana upang makapagpahinga ang Kanyang bayan."),
+      t("Psalm 23:2-3: He makes me lie down in green pastures; He restores my soul.", "Awit 23:2-3: pinahihiga Niya ako sa luntiang pastulan; pinanunumbalik Niya ang aking kaluluwa."),
+      t("1 Kings 19:5-8: God gave weary Elijah sleep and food before giving him a new task.", "1 Hari 19:5-8: binigyan ng Diyos ang pagod na si Elias ng tulog at pagkain bago siya bigyan ng bagong gawain."),
+      t("Psalm 127:2: He gives to His beloved sleep.", "Awit 127:2: binibigyan Niya ng tulog ang Kanyang minamahal."),
+    ],
+    heart: [
+      t("Move from proving yourself through work to resting in God's love and provision.", "Lumipat mula sa pagpapatunay ng sarili sa trabaho tungo sa pagpapahinga sa pag-ibig at pagkakaloob ng Diyos."),
+      t("Treat your rest day as holy time with God and people, not just a day to catch up on chores.", "Ituring ang araw ng iyong pahinga bilang banal na oras kasama ang Diyos at ang mga tao, hindi lang araw para habulin ang mga gawain."),
+    ],
+    questions: [
+      t("Do you rest like a child of God or collapse like a worn-out slave?", "Nagpapahinga ka ba gaya ng anak ng Diyos o bumabagsak gaya ng pagod na alipin?"),
+      t("What fear keeps you from stopping?", "Anong takot ang pumipigil sa iyong huminto?"),
+      t("When did you last spend unhurried time alone with Jesus?", "Kailan ka huling gumugol ng hindi minamadaling oras na mag-isa kasama si Hesus?"),
+      t("Do the people who work for you or with you get real rest?", "Nakapagpapahinga ba nang totoo ang mga taong nagtatrabaho para sa iyo o kasama mo?"),
+    ],
+    actions: [
+      t("Decide on your weekly rest time and guard it like an appointment you cannot miss.", "Magpasya ng iyong lingguhang oras ng pahinga at bantayan ito na parang tipanang hindi puwedeng palampasin."),
+      t("Take a ten-minute pause each day with your phone away, and pray Matthew 11:28.", "Kumuha ng sampung minutong paghinto araw-araw na nakatabi ang phone, at ipanalangin ang Mateo 11:28."),
+      t("On your rest day, worship with believers and do one thing that delights your soul.", "Sa araw ng iyong pahinga, sumamba kasama ng mga mananampalataya at gumawa ng isang bagay na nagpapaligaya sa iyong kaluluwa."),
+    ],
+    prayer: t(
+      "Lord Jesus, I am tired, and I come to You. Forgive me for living like a slave when You have set me free. Teach me to stop and trust that You will provide. Lead me beside still waters and restore my soul. Help me rest in Your finished work, and let my rest become worship. Amen.",
+      "Panginoong Hesus, pagod ako, at lumalapit ako sa Iyo. Patawarin Mo ako sa pamumuhay na parang alipin gayong pinalaya Mo na ako. Turuan Mo akong huminto at magtiwalang Ikaw ang magbibigay. Akayin Mo ako sa tabi ng tahimik na tubig at panumbalikin ang aking kaluluwa. Tulungan Mo akong magpahinga sa Iyong natapos na gawa, at gawin Mong pagsamba ang aking pahinga. Amen."
+    ),
+  },
+
+  "c-dry-seasons": {
+    revelation: t(
+      "When you cannot feel God, He has not left you; the dry season is often where He teaches you to love Him for who He is and not for how He makes you feel.",
+      "Kapag hindi mo maramdaman ang Diyos, hindi ka Niya iniwan; ang panahon ng tagtuyot ay madalas na lugar kung saan itinuturo Niyang mahalin mo Siya dahil sa kung sino Siya at hindi dahil sa ipinararamdam Niya sa iyo."
+    ),
+    mainTruth: t(
+      "The psalmist thirsted for God like a deer for water and preached hope to his own downcast soul (Psalm 42:1-5). David sought God earnestly in a dry and weary land and confessed that His steadfast love is better than life (Psalm 63:1-3). Isaiah told those who walk in darkness to trust in the name of the Lord (Isaiah 50:10), and promised that those who wait for the Lord will renew their strength (Isaiah 40:31). God can turn the valley of trouble into a door of hope (Hosea 2:15).",
+      "Nauhaw ang mang-aawit sa Diyos gaya ng usa sa tubig at nangaral ng pag-asa sa sarili niyang nanlulumong kaluluwa (Awit 42:1-5). Masigasig na hinanap ni David ang Diyos sa tuyo at pagod na lupain at ipinahayag na ang Kanyang tapat na pag-ibig ay higit pa sa buhay (Awit 63:1-3). Sinabi ni Isaias sa mga lumalakad sa dilim na magtiwala sa pangalan ng Panginoon (Isaias 50:10), at ipinangakong ang mga naghihintay sa Panginoon ay magpapanibago ng lakas (Isaias 40:31). Kayang gawin ng Diyos ang lambak ng kaguluhan na pintuan ng pag-asa (Oseas 2:15)."
+    ),
+    insight: [
+      t(
+        "Many believers assume that if they do not feel God, they must have done something wrong. Sometimes that is true, and David admits that unconfessed sin dried up his strength \"as by the heat of summer\" (Psalm 32:4). But Isaiah 50:10 describes someone who fears God and obeys Him and still walks in darkness. Dryness is not always a sign of failure. Sometimes it is the soil where deeper roots grow.",
+        "Akala ng maraming mananampalataya na kapag hindi nila maramdaman ang Diyos, siguradong may mali silang nagawa. Minsan totoo iyon, at inamin ni David na pinatuyo ng kasalanang hindi ipinagtapat ang kanyang lakas \"gaya ng init ng tag-araw\" (Awit 32:4). Pero inilalarawan ng Isaias 50:10 ang isang taong may takot sa Diyos at sumusunod sa Kanya pero lumalakad pa rin sa dilim. Hindi laging tanda ng kabiguan ang pagkatuyo. Minsan, ito ang lupang pinagtutubuan ng mas malalalim na ugat."
+      ),
+      t(
+        "If we only seek God for the feeling, we are seeking a gift and not the Giver. In the dry season, God gently separates the two. When worship feels flat and prayer feels like talking to the ceiling, and you keep coming anyway, your faith is becoming less about what you receive and more about who He is.",
+        "Kung hinahanap lang natin ang Diyos dahil sa pakiramdam, regalo ang hinahanap natin at hindi ang Nagbibigay. Sa panahon ng tagtuyot, malumanay na pinaghihiwalay ng Diyos ang dalawa. Kapag matamlay ang pagsamba at parang kinakausap mo lang ang kisame sa panalangin, pero patuloy ka pa ring lumalapit, nagiging mas kaunti tungkol sa natatanggap mo at mas marami tungkol sa kung sino Siya ang iyong pananampalataya."
+      ),
+    ],
+    life: [
+      t(
+        "Think of a seafarer nine months into a contract. The ship's internet is slow, there is no church on board, and the long nights at sea feel empty. He opens his Bible and the words seem dry as paper. He prays and hears nothing. But he keeps reading one psalm a night, and he writes one line each evening: \"Today God kept me.\" Months later, reading back through the notebook, he realizes that God was carrying him the whole time, even when he could not feel it.",
+        "Isipin mo ang isang seaman na siyam na buwan na sa kanyang kontrata. Mabagal ang internet sa barko, walang simbahan, at parang walang laman ang mahahabang gabi sa dagat. Binubuksan niya ang kanyang Bibliya at parang tuyong papel ang mga salita. Nananalangin siya at wala siyang naririnig. Pero patuloy siyang nagbabasa ng isang awit gabi-gabi, at sumusulat siya ng isang linya tuwing gabi: \"Iningatan ako ng Diyos ngayon.\" Pagkalipas ng ilang buwan, habang binabasa niya ulit ang kuwaderno, napagtanto niyang buhat-buhat siya ng Diyos sa buong panahong iyon, kahit hindi niya ito maramdaman."
+      ),
+      t(
+        "Farmers know that in a drought, the roots of a tree go deeper in search of water. A tree that only ever had rain at the surface stays shallow and falls in the first typhoon. Dry seasons, met with faith, can give you roots that will hold when the storms come.",
+        "Alam ng mga magsasaka na sa tagtuyot, lumalalim ang mga ugat ng puno sa paghahanap ng tubig. Ang punong laging may ulan sa ibabaw lang ay nananatiling mababaw at natutumba sa unang bagyo. Ang mga panahon ng tagtuyot, kapag hinarap nang may pananampalataya, ay makapagbibigay sa iyo ng mga ugat na hahawak kapag dumating ang mga unos."
+      ),
+    ],
+    twist: t(
+      "We think the wilderness is where God punishes us and the promised land is where He loves us. But Hosea shows God leading His people into the wilderness on purpose, \"to speak tenderly\" to them (Hosea 2:14). Jesus was led by the Spirit into the wilderness right after the Father called Him \"My beloved Son.\" The wilderness is not proof that you are unloved. It may be the very place God has chosen to whisper His love where no other voice can compete.",
+      "Akala natin ang ilang ay lugar ng parusa ng Diyos at ang lupang pangako ay lugar ng Kanyang pag-ibig. Pero ipinakita ni Oseas ang Diyos na sadyang umaakay sa Kanyang bayan sa ilang \"upang magsalita nang malambing\" sa kanila (Oseas 2:14). Inakay ng Espiritu si Hesus sa ilang kaagad pagkatapos Siyang tawagin ng Ama na \"Aking minamahal na Anak.\" Ang ilang ay hindi patunay na hindi ka minamahal. Maaaring ito mismo ang lugar na pinili ng Diyos para ibulong ang Kanyang pag-ibig kung saan walang ibang tinig na makakasabay."
+    ),
+    confirm: [
+      t("Psalm 13:1-6: David asked \"How long, O Lord?\" and ended by trusting in His steadfast love.", "Awit 13:1-6: nagtanong si David ng \"Hanggang kailan, O Panginoon?\" at nagtapos sa pagtitiwala sa Kanyang tapat na pag-ibig."),
+      t("Lamentations 3:19-26: in the ruins, Jeremiah remembered that God's mercies are new every morning.", "Panaghoy 3:19-26: sa gitna ng guho, naalala ni Jeremias na bago tuwing umaga ang mga kahabagan ng Diyos."),
+      t("Matthew 27:46: Jesus cried \"My God, why have You forsaken Me?\" and still entrusted His spirit to the Father.", "Mateo 27:46: sumigaw si Hesus ng \"Diyos Ko, bakit Mo Ako pinabayaan?\" at ipinagkatiwala pa rin ang Kanyang espiritu sa Ama."),
+      t("Psalm 126:5-6: those who sow in tears shall reap with shouts of joy.", "Awit 126:5-6: ang mga naghahasik nang may luha ay mag-aani nang may sigaw ng kagalakan."),
+    ],
+    heart: [
+      t("Move from measuring God's presence by your feelings to trusting His promises.", "Lumipat mula sa pagsukat sa presensya ng Diyos batay sa damdamin tungo sa pagtitiwala sa Kanyang mga pangako."),
+      t("Choose to keep seeking Him in the dry place instead of drifting away.", "Piliing patuloy Siyang hanapin sa tuyong lugar sa halip na unti-unting lumayo."),
+    ],
+    questions: [
+      t("Are you measuring God's nearness by how you feel?", "Sinusukat mo ba ang pagiging malapit ng Diyos batay sa iyong nararamdaman?"),
+      t("Is there anything you need to confess, or any rest you need to take?", "May kailangan ka bang ipagtapat, o pahingang kailangan mong kunin?"),
+      t("What would it look like to preach hope to your own soul today?", "Ano ang hitsura ng pangangaral ng pag-asa sa sarili mong kaluluwa ngayon?"),
+      t("How might God be deepening your roots in this season?", "Paano maaaring pinalalalim ng Diyos ang iyong mga ugat sa panahong ito?"),
+    ],
+    actions: [
+      t("Read Psalm 42 aloud and answer your soul with verse 5 whenever discouragement comes this week.", "Basahin nang malakas ang Awit 42 at sagutin ang iyong kaluluwa ng talata 5 tuwing darating ang panghihina ng loob ngayong linggo."),
+      t("Each night, write one line about how God kept you that day.", "Tuwing gabi, sumulat ng isang linya tungkol sa kung paano ka iningatan ng Diyos sa araw na iyon."),
+      t("Share honestly with one believer and ask them to pray for you.", "Magbahagi nang tapat sa isang mananampalataya at hilinging ipanalangin ka niya."),
+    ],
+    prayer: t(
+      "Lord, my soul is thirsty and I cannot feel You near. Yet You are my God, and I will seek You. Search my heart and show me anything that stands between us. Give me rest where I am weary and hope where I am cast down. Speak tenderly to me in this wilderness, and make this valley a door of hope. I will wait for You. Amen.",
+      "Panginoon, nauuhaw ang aking kaluluwa at hindi ko maramdamang malapit Ka. Gayunman, Ikaw ang aking Diyos, at hahanapin Kita. Siyasatin Mo ang aking puso at ipakita ang anumang humahadlang sa pagitan natin. Bigyan Mo ako ng pahinga kung saan ako pagod at pag-asa kung saan ako nanlulumo. Magsalita Ka nang malambing sa akin sa ilang na ito, at gawin Mong pintuan ng pag-asa ang lambak na ito. Maghihintay ako sa Iyo. Amen."
+    ),
+  },
 };

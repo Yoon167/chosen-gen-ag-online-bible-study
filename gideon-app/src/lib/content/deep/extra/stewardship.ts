@@ -550,4 +550,92 @@ export const EXTRA: ExtraSet = {
       },
     ],
   },
+  "c-lean-seasons": {
+    deeper: [
+      {
+        heading: t("Debt and mercy in the Law of Moses", "Utang at awa sa Kautusan ni Moises"),
+        body: [
+          t(
+            "The creditor in 2 Kings 4 was coming to take the widow's sons as slaves to work off the debt. Debt-servitude was common in the ancient world, but God's Law put limits on it. Israelites were not to charge interest to a poor brother (Exodus 22:25; Leviticus 25:35-37). A cloak taken as a pledge had to be returned before sunset, because it might be the poor man's only blanket (Exodus 22:26-27). Every seventh year debts between Israelites were to be released (Deuteronomy 15:1-2), and a Hebrew servant was to go free in the seventh year with generous provisions (Deuteronomy 15:12-14).",
+            "Darating ang pinagkakautangan sa 2 Hari 4 para kunin ang mga anak ng balo bilang alipin na magtatrabaho kapalit ng utang. Karaniwan sa sinaunang mundo ang pagkaalipin dahil sa utang, pero nilagyan ito ng hangganan ng Kautusan ng Diyos. Hindi dapat magpatong ng interes ang mga Israelita sa dukhang kapatid (Exodo 22:25; Levitico 25:35-37). Ang balabal na kinuha bilang sangla ay kailangang ibalik bago lumubog ang araw, dahil baka iyon lang ang kumot ng dukha (Exodo 22:26-27). Tuwing ikapitong taon, dapat palayain ang mga utang sa pagitan ng mga Israelita (Deuteronomio 15:1-2), at dapat palayain ang aliping Hebreo sa ikapitong taon nang may masaganang baon (Deuteronomio 15:12-14)."
+          ),
+          t(
+            "So the widow's crisis was a failure of mercy in Israel, during a time when many had turned from God's ways. God's answer came through Elisha, but it also honored what was right: the debt was real, and it was paid. For believers today, that means two things. If you owe, pay what you owe as you are able, honestly and steadily (Psalm 37:21; Romans 13:8). And if you lend, lend with mercy, never exploiting another person's desperation, which is exactly what high-interest lending to the poor does.",
+            "Kaya ang krisis ng balo ay kabiguan ng awa sa Israel, sa panahong marami ang tumalikod sa mga daan ng Diyos. Dumating ang sagot ng Diyos sa pamamagitan ni Eliseo, pero iginalang din nito ang tama: totoo ang utang, at binayaran ito. Para sa mga mananampalataya ngayon, dalawa ang ibig sabihin nito. Kung may utang ka, bayaran mo ito ayon sa iyong kakayahan, nang tapat at tuloy-tuloy (Awit 37:21; Roma 13:8). At kung nagpapautang ka, magpautang nang may awa, at huwag kailanman samantalahin ang desperasyon ng iba, na siyang ginagawa ng pautang na mataas ang interes sa mahihirap."
+          ),
+        ],
+      },
+      {
+        heading: t("Habakkuk's song: from complaint to worship", "Ang awit ni Habakuk: mula sa reklamo tungo sa pagsamba"),
+        body: [
+          t(
+            "The book of Habakkuk begins with complaint: “O Lord, how long shall I cry for help, and You will not hear?” (1:2). The prophet sees violence and injustice in Judah and then learns that God will send the Babylonians as judgment. He does not hide his confusion; he argues honestly with God and then waits on the watchtower for an answer (2:1). Chapter 3 is a prayer set to music, with notes for the choirmaster at the end.",
+            "Nagsisimula ang aklat ng Habakuk sa reklamo: “O Panginoon, hanggang kailan ako dadaing para humingi ng tulong, at hindi Mo ako pakikinggan?” (1:2). Nakikita ng propeta ang karahasan at kawalang-katarungan sa Juda at saka niya nalaman na ipadadala ng Diyos ang mga taga-Babilonia bilang hatol. Hindi niya itinatago ang kanyang pagkalito; tapat siyang nakikipagtalo sa Diyos at pagkatapos ay naghihintay sa bantayan para sa sagot (2:1). Ang kabanata 3 ay panalanging nilapatan ng musika, na may tala para sa punong mang-aawit sa dulo."
+          ),
+          t(
+            "Verse 17 lists the whole farm economy of the time: figs, grapes, olives, grain fields, sheep and cattle. To lose all of them was to lose everything. Yet verse 18 begins with “yet,” and verse 19 borrows from Psalm 18:33: God makes his feet like a deer's on the heights. Faith here is not pretending; it moves through honest lament to trust. The lean season may not end tomorrow, but the believer can stand on God while it lasts.",
+            "Inililista ng talata 17 ang buong kabuhayan ng pagsasaka noong panahong iyon: igos, ubas, olibo, bukirin ng butil, tupa at baka. Ang mawala ang lahat ng iyon ay ang mawalan ng lahat. Pero nagsisimula ang talata 18 sa “gayunman,” at hinihiram ng talata 19 ang Awit 18:33: ginagawa ng Diyos na tulad ng sa usa ang mga paa niya sa matataas na lugar. Ang pananampalataya rito ay hindi pagkukunwari; dumaraan ito sa tapat na panaghoy patungo sa pagtitiwala. Maaaring hindi matapos bukas ang panahon ng kakapusan, pero makatatayo ang mananampalataya sa Diyos habang ito ay nagtatagal."
+          ),
+        ],
+      },
+      {
+        heading: t("Gleaning, Boaz and the church's care for the poor", "Pamumulot, si Boaz, at ang malasakit ng iglesia sa mahihirap"),
+        body: [
+          t(
+            "Leviticus 19:9-10 and Deuteronomy 24:19-22 told farmers not to reap to the very edges of their fields or go back for forgotten sheaves, but to leave them for the poor, the foreigner, the fatherless and the widow. This was not a handout; the poor still worked to gather it. It gave dignity and protected the vulnerable. Ruth used this right, and Boaz went further, inviting her to eat with his workers and telling them to pull out extra stalks for her (Ruth 2:14-16).",
+            "Sinabi ng Levitico 19:9-10 at Deuteronomio 24:19-22 sa mga magsasaka na huwag anihin hanggang sa pinakagilid ng kanilang bukid o balikan ang mga nakalimutang bigkis, kundi iwanan ang mga ito para sa mahihirap, sa dayuhan, sa ulila at sa balo. Hindi ito limos; nagtatrabaho pa rin ang mahihirap para tipunin ito. Nagbibigay ito ng dignidad at nagpoprotekta sa mga mahina. Ginamit ni Ruth ang karapatang ito, at lumampas pa si Boaz, inanyayahan siyang kumain kasama ng kanyang mga manggagawa at sinabihan ang mga ito na magsadyang bumunot ng dagdag na uhay para sa kanya (Ruth 2:14-16)."
+          ),
+          t(
+            "The early church carried this spirit forward. Believers shared so that “there was not a needy person among them” (Acts 4:34), the church organized daily help for widows (Acts 6:1-6), and Paul gathered relief from Gentile churches for the poor in Jerusalem (2 Corinthians 8-9). Today a church can do the same through a benevolence fund, help finding work, practical relief after typhoons and floods, and simply treating the poor with honor. Lean seasons are meant to be carried together.",
+            "Dinala ng unang iglesia ang diwang ito. Nagbahaginan ang mga mananampalataya kaya “walang sinumang nangangailangan sa kanila” (Gawa 4:34), nag-organisa ang iglesia ng araw-araw na tulong para sa mga balo (Gawa 6:1-6), at nangalap si Pablo ng tulong mula sa mga iglesia ng mga Hentil para sa mahihirap sa Jerusalem (2 Corinto 8-9). Ngayon, magagawa rin ito ng iglesia sa pamamagitan ng benevolence fund, tulong sa paghahanap ng trabaho, praktikal na tulong pagkatapos ng bagyo at baha, at simpleng pagtrato sa mahihirap nang may paggalang. Ang mga panahon ng kakapusan ay dapat sama-samang pasanin."
+          ),
+        ],
+      },
+    ],
+    stories: [],
+  },
+  "c-money-and-family": {
+    deeper: [
+      {
+        heading: t("The woman of strength in Proverbs 31", "Ang babaeng may lakas sa Kawikaan 31"),
+        body: [
+          t(
+            "Proverbs 31:10-31 is an acrostic poem: each verse begins with the next letter of the Hebrew alphabet, an A-to-Z of wisdom in daily life. The phrase often translated “excellent wife” is literally “a woman of strength” or “of valor,” the same kind of phrase used for mighty warriors. Much of the poem is about economic life: she brings food from afar, considers a field and buys it, plants a vineyard with her earnings, makes and sells garments, and plans ahead so her household is not afraid of the snow.",
+            "Ang Kawikaan 31:10-31 ay tulang akrostiko: nagsisimula ang bawat talata sa kasunod na titik ng alpabetong Hebreo, isang A hanggang Z ng karunungan sa araw-araw na buhay. Ang pariralang madalas isalin na “mahusay na asawa” ay literal na “babaeng may lakas” o “may katapangan,” ang parehong uri ng pariralang ginagamit para sa magigiting na mandirigma. Malaking bahagi ng tula ay tungkol sa kabuhayan: nagdadala siya ng pagkain mula sa malayo, pinag-iisipan ang isang bukid at binibili ito, nagtatanim ng ubasan mula sa kanyang kinita, gumagawa at nagbebenta ng kasuotan, at nagpaplano nang maaga upang hindi matakot ang kanyang sambahayan sa niyebe."
+          ),
+          t(
+            "Notice the heart behind it. “The heart of her husband trusts in her, and he will have no lack of gain” (31:11). “She opens her hand to the poor” (31:20). “Strength and dignity are her clothing” (31:25). And the poem ends not with her wealth but with her worship: “a woman who fears the Lord is to be praised” (31:30). Diligence, enterprise, generosity and trust in marriage all grow from the fear of the Lord.",
+            "Pansinin ang puso sa likod nito. “Nagtitiwala sa kanya ang puso ng kanyang asawa, at hindi ito magkukulang ng pakinabang” (31:11). “Ibinubukas niya ang kanyang kamay sa dukha” (31:20). “Lakas at dangal ang kanyang kasuotan” (31:25). At nagtatapos ang tula hindi sa kanyang yaman kundi sa kanyang pagsamba: “ang babaeng may takot sa Panginoon ay dapat purihin” (31:30). Ang sipag, pagnenegosyo, pagkabukas-palad at tiwala sa pagsasama ay pawang tumutubo mula sa takot sa Panginoon."
+          ),
+        ],
+      },
+      {
+        heading: t("Corban: when religion became an excuse", "Corban: nang gawing dahilan ang relihiyon"),
+        body: [
+          t(
+            "In Mark 7:9-13 Jesus confronts a practice of His day. A person could declare money or property “Corban,” meaning an offering dedicated to God, and then refuse to use it to help his parents, while possibly still enjoying it himself. Jesus calls this “making void the word of God by your tradition,” because the commandment to honor father and mother included caring for them in old age. Honoring parents is not only respect in words; it is practical support when they are in need (see 1 Timothy 5:4, 8).",
+            "Sa Marcos 7:9-13, hinarap ni Hesus ang isang gawi noong Kanyang panahon. Maaaring ideklara ng isang tao ang kanyang pera o ari-arian na “Corban,” ibig sabihin ay handog na nakatalaga sa Diyos, at pagkatapos ay tumangging gamitin ito para tulungan ang kanyang mga magulang, habang maaaring siya pa rin ang nakikinabang dito. Tinawag ito ni Hesus na “pagpapawalang-bisa sa salita ng Diyos dahil sa inyong tradisyon,” dahil kasama sa utos na igalang ang ama at ina ang pag-aalaga sa kanila sa katandaan. Ang paggalang sa magulang ay hindi lang paggalang sa salita; ito ay praktikal na suporta kapag sila ay nangangailangan (tingnan ang 1 Timoteo 5:4, 8)."
+          ),
+          t(
+            "At the same time, Paul writes in 2 Corinthians 12:14, “children are not obligated to save up for their parents, but parents for their children.” He is explaining why he will not burden the Corinthians, and he takes it as a normal principle that parents plan ahead for the next generation. Put the two passages together and you have a balanced pattern for Filipino families: parents prepare for their own old age as far as they can and invest in their children; grown children gratefully help their parents; and couples make these decisions together, so that love for the extended family does not destroy the new household God has formed (Genesis 2:24).",
+            "Kasabay nito, isinulat ni Pablo sa 2 Corinto 12:14, “hindi obligado ang mga anak na mag-ipon para sa mga magulang, kundi ang mga magulang para sa mga anak.” Ipinapaliwanag niya kung bakit hindi niya pabibigatan ang mga taga-Corinto, at itinuturing niyang karaniwang prinsipyo na nagpaplano nang maaga ang mga magulang para sa susunod na salinlahi. Pagsamahin ang dalawang talata at may balanseng pattern ka para sa mga pamilyang Pilipino: naghahanda ang mga magulang para sa sarili nilang katandaan hangga't kaya nila at namumuhunan sa kanilang mga anak; may pasasalamat na tumutulong ang mga anak na nasa hustong gulang sa kanilang mga magulang; at magkasamang nagpapasya ang mag-asawa sa mga bagay na ito, upang hindi masira ng pag-ibig sa malawak na pamilya ang bagong sambahayang binuo ng Diyos (Genesis 2:24)."
+          ),
+        ],
+      },
+      {
+        heading: t("Passing faith and wisdom to the next generation", "Pagpasa ng pananampalataya at karunungan sa susunod na salinlahi"),
+        body: [
+          t(
+            "Deuteronomy 6:4-9 follows the great confession, “Hear, O Israel: The Lord our God, the Lord is one,” with a command to teach these words diligently to children in the ordinary rhythms of life: sitting at home, walking on the road, lying down and rising up. Psalm 78:4-7 adds the goal: to tell the next generation the works of the Lord “so that they should set their hope in God.” Money habits are part of that teaching, because children learn whom to trust by watching how their parents handle provision and lack.",
+            "Sinusundan ng Deuteronomio 6:4-9 ang dakilang pahayag, “Dinggin mo, O Israel: Ang Panginoon nating Diyos, ang Panginoon ay iisa,” ng utos na masigasig na ituro ang mga salitang ito sa mga anak sa ordinaryong takbo ng buhay: nakaupo sa bahay, naglalakad sa daan, nahihiga at bumabangon. Idinadagdag ng Awit 78:4-7 ang layunin: ikuwento sa susunod na salinlahi ang mga gawa ng Panginoon “upang sa Diyos nila ilagak ang kanilang pag-asa.” Bahagi ng pagtuturong iyon ang mga gawi sa pera, dahil natututunan ng mga anak kung kanino magtitiwala sa panonood kung paano hinaharap ng kanilang mga magulang ang paglalaan at kakulangan."
+          ),
+          t(
+            "Proverbs 13:22 commends leaving an inheritance to grandchildren, and wise planning such as savings, insurance and clear, fair arrangements for property can spare a family bitter disputes like the one brought to Jesus in Luke 12:13. Yet 2 Timothy 1:5 and 3:14-15 show the inheritance that matters most: Timothy's sincere faith, first alive in his grandmother Lois and mother Eunice, and the Scriptures he had known from childhood. Practical steps: tell your children how God has provided, pray with them about family needs, give them a part in giving and saving, and keep your promises about money.",
+            "Pinupuri ng Kawikaan 13:22 ang pag-iiwan ng mana sa mga apo, at ang matalinong pagpaplano tulad ng ipon, insurance, at malinaw at patas na kaayusan sa ari-arian ay makapag-iiwas sa pamilya sa mapapait na alitan tulad ng idinulog kay Hesus sa Lucas 12:13. Pero ipinakikita ng 2 Timoteo 1:5 at 3:14-15 ang manang pinakamahalaga: ang tapat na pananampalataya ni Timoteo, na unang buhay sa kanyang lolang si Loida at inang si Eunice, at ang mga Kasulatang kilala na niya mula pagkabata. Mga praktikal na hakbang: ikuwento sa mga anak mo kung paano naglaan ang Diyos, manalangin kasama nila tungkol sa mga pangangailangan ng pamilya, bigyan sila ng bahagi sa pagbibigay at pag-iipon, at tuparin mo ang mga pangako mo tungkol sa pera."
+          ),
+        ],
+      },
+    ],
+    stories: [],
+  },
 };

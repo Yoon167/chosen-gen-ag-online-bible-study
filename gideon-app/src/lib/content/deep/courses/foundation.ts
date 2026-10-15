@@ -493,4 +493,124 @@ export const DEEP: DeepSet = {
       "Panginoong Hesus, ayokong tawagin Kang Panginoon sa labi at sarilinin ang trono. Narito ang buhay ko: ang aking oras, pera, katawan, relasyon, trabaho at kinabukasan. Kunin Mo ang bawat kuwarto, kahit ang mga nakakandado. Tulungan Mo akong magtayo sa bato ng pagsunod, upang pagdating ng bagyo, tatayo ang aking bahay. Ikaw ang aking Hari, at sa Iyo ako ay malaya. Amen."
     ),
   },
+
+  "c-risen-lord": {
+    revelation: t(
+      "Because the tomb is empty, no grave in your life, no failure, no loss, no dead hope, has the final word; the living Jesus does.",
+      "Dahil walang laman ang libingan, walang anumang libingan sa buhay mo, walang kabiguan, walang pagkawala, walang patay na pag-asa, ang may huling salita; ang buháy na si Hesus ang may huling salita."
+    ),
+    mainTruth: t(
+      "\"If Christ has not been raised, your faith is futile and you are still in your sins... But in fact Christ has been raised from the dead\" (1 Corinthians 15:17, 20). The resurrection is not a symbol of new beginnings; it is a real event witnessed by real people (15:5-8). It proves that the cross paid for sin, that Jesus is Lord (Romans 1:4), and that all who belong to Him will be raised too (1 Thessalonians 4:14). The One who called Mary by name and showed Thomas His wounds is alive today and near to you.",
+      "\"Kung hindi muling binuhay si Cristo, walang saysay ang inyong pananampalataya at nasa inyong mga kasalanan pa kayo... Ngunit ang totoo, si Cristo ay muling binuhay mula sa mga patay\" (1 Corinto 15:17, 20). Ang muling pagkabuhay ay hindi lang simbolo ng bagong simula; ito ay tunay na pangyayaring sinaksihan ng mga tunay na tao (15:5-8). Pinatutunayan nito na binayaran ng krus ang kasalanan, na si Hesus ay Panginoon (Roma 1:4), at na lahat ng sa Kanya ay bubuhayin din (1 Tesalonica 4:14). Ang tumawag kay Maria sa pangalan niya at nagpakita kay Tomas ng Kanyang mga sugat ay buháy ngayon at malapit sa iyo."
+    ),
+    insight: [
+      t(
+        "Many believers celebrate the resurrection once a year and live the rest of the year as if Jesus were still in the tomb. They believe He rose, but they pray as if to a memory, worry as if no one is in control, and grieve as if death wins. Paul did not want only to believe in the resurrection; he wanted \"to know Him and the power of His resurrection\" (Philippians 3:10). Easter is not only a doctrine to defend; it is a power to live by.",
+        "Maraming mananampalataya ang nagdiriwang ng muling pagkabuhay minsan isang taon at namumuhay sa natitirang bahagi ng taon na para bang nasa libingan pa si Hesus. Naniniwala silang bumangon Siya, pero nananalangin sila na parang kausap ay isang alaala, nag-aalala na parang walang may hawak ng lahat, at nagdadalamhati na parang kamatayan ang nanalo. Hindi lang gustong maniwala ni Pablo sa muling pagkabuhay; gusto niyang \"makilala Siya at ang kapangyarihan ng Kanyang muling pagkabuhay\" (Filipos 3:10). Ang Pasko ng Pagkabuhay ay hindi lang doktrinang ipagtatanggol; ito ay kapangyarihang ipamumuhay."
+      ),
+      t(
+        "Notice the first people the risen Jesus looked for: a weeping woman, two discouraged travelers, a doubter, and a disciple who had denied Him three times. He did not first appear in Pilate's palace to prove a point. He went to the broken. The resurrection is not only proof that Jesus is powerful; it is proof that His power is pointed toward people who have failed and lost hope.",
+        "Pansinin ang mga unang hinanap ng muling nabuhay na si Hesus: isang umiiyak na babae, dalawang manlalakbay na pinanghinaan ng loob, isang nagdududa, at isang alagad na tatlong beses Siyang ikinaila. Hindi Siya unang nagpakita sa palasyo ni Pilato para patunayan ang isang punto. Pinuntahan Niya ang mga wasak. Ang muling pagkabuhay ay hindi lang patunay na makapangyarihan si Hesus; patunay ito na ang Kanyang kapangyarihan ay nakatutok sa mga taong nabigo at nawalan ng pag-asa."
+      ),
+    ],
+    life: [
+      t(
+        "Picture an OFW in Kuwait who receives the news at two in the morning that her father has died in Iloilo. She cannot go home; the contract, the cost, the employer all say no. She watches the burial on a cracked phone screen in the corner of a kitchen. The resurrection does not make that night less painful. But it means the last picture she has of her father is not the final one. There is a morning coming when the graves of Iloilo and the tears of Kuwait will both give way to a face-to-face reunion.",
+        "Isipin ang isang OFW sa Kuwait na nakatanggap ng balita nang alas-dos ng madaling-araw na pumanaw ang tatay niya sa Iloilo. Hindi siya makauwi; ang kontrata, ang gastos, ang amo, lahat ay nagsasabing hindi puwede. Pinanood niya ang libing sa basag na screen ng phone sa isang sulok ng kusina. Hindi binabawasan ng muling pagkabuhay ang sakit ng gabing iyon. Pero ibig sabihin nito, ang huling larawan niya ng kanyang ama ay hindi ang huli magpakailanman. May umagang darating kung kailan ang mga libingan sa Iloilo at ang mga luha sa Kuwait ay papalitan ng muling pagkikitang harapan."
+      ),
+      t(
+        "The resurrection also speaks to the smaller deaths: a business that failed, a marriage that grew cold, a dream that was buried when you had to work abroad. You may be walking your own road to Emmaus, saying, \"We had hoped...\" The risen Jesus specializes in walking beside people on that road. He may not bring back everything the way it was, but He brings life where you thought there was only an ending.",
+        "Nagsasalita rin ang muling pagkabuhay sa maliliit na kamatayan: isang negosyong bumagsak, isang pagsasamang lumamig, isang pangarap na inilibing nang kailangan mong mangibang-bansa. Baka naglalakad ka sa sarili mong daan papuntang Emaus, at sinasabing, \"Umasa pa naman ako...\" Espesyalidad ng muling nabuhay na si Hesus ang lumakad sa tabi ng mga tao sa daang iyon. Baka hindi Niya ibalik ang lahat sa dati, pero nagdadala Siya ng buhay kung saan akala mo ay katapusan na lang."
+      ),
+    ],
+    twist: t(
+      "We think the proof of resurrection power would be a Jesus with no scars. But the risen Christ kept His wounds. He showed them to Thomas and invited him to touch them (John 20:27), and John sees Him in heaven as \"a Lamb standing, as though it had been slain\" (Revelation 5:6). In God's Kingdom, resurrection does not erase your scars; it transforms them into testimony. The wounds that once announced defeat now announce victory. Your healed scars may become the very place where others meet the living Christ.",
+      "Akala natin ang patunay ng kapangyarihan ng muling pagkabuhay ay isang Hesus na walang peklat. Pero iningatan ng muling nabuhay na Cristo ang Kanyang mga sugat. Ipinakita Niya ang mga ito kay Tomas at inanyayahan siyang hawakan (Juan 20:27), at nakita Siya ni Juan sa langit bilang \"isang Korderong nakatayo, na waring pinatay\" (Pahayag 5:6). Sa Kaharian ng Diyos, hindi binubura ng muling pagkabuhay ang iyong mga peklat; ginagawa itong patotoo. Ang mga sugat na dating nagpapahayag ng pagkatalo ay nagpapahayag na ngayon ng tagumpay. Ang mga gumaling mong peklat ay maaaring maging mismong lugar kung saan makakatagpo ng iba ang buháy na Cristo."
+    ),
+    confirm: [
+      t("Psalm 16:10: \"You will not abandon my soul to the grave, or let Your Holy One see corruption.\"", "Awit 16:10: \"Hindi Mo iiwan ang aking kaluluwa sa libingan, ni hahayaang mabulok ang Iyong Banal.\""),
+      t("Acts 4:33: with great power the apostles gave testimony to the resurrection of the Lord Jesus.", "Gawa 4:33: sa dakilang kapangyarihan ay nagpatotoo ang mga apostol sa muling pagkabuhay ng Panginoong Hesus."),
+      t("John 21:15-17: by a charcoal fire, the risen Jesus restores Peter three times.", "Juan 21:15-17: sa tabi ng baga, tatlong ulit na ibinalik ng muling nabuhay na si Hesus si Pedro."),
+      t("Romans 8:11: the Spirit who raised Jesus from the dead lives in you and gives life to your mortal body.", "Roma 8:11: ang Espiritung bumuhay kay Hesus mula sa mga patay ay nananahan sa iyo at nagbibigay-buhay sa iyong katawang may kamatayan."),
+    ],
+    heart: [
+      t("Move from a once-a-year Easter faith to an every-morning resurrection faith: wake up expecting the living Jesus to meet you.", "Lumipat mula sa pananampalatayang pang-Pasko ng Pagkabuhay lang tungo sa pananampalatayang pangmuling-pagkabuhay tuwing umaga: gumising nang umaasang sasalubungin ka ng buháy na si Hesus."),
+      t("Let hope change how you grieve, how you take risks for God, and how you speak to people who feel their life is over.", "Hayaang baguhin ng pag-asa kung paano ka nagdadalamhati, kung paano ka nangangahas para sa Diyos, at kung paano ka nakikipag-usap sa mga taong pakiramdam nila ay tapos na ang buhay nila."),
+    ],
+    questions: [
+      t("Do you live more like Jesus is alive, or like He is a beloved memory? What shows it?", "Namumuhay ka ba na parang buháy si Hesus, o parang isa lang Siyang mahal na alaala? Ano ang nagpapakita nito?"),
+      t("What \"we had hoped\" are you carrying right now?", "Anong \"umasa pa naman ako\" ang pasan mo ngayon?"),
+      t("Which of your scars could God use as a testimony for someone else?", "Alin sa iyong mga peklat ang maaaring gamitin ng Diyos bilang patotoo para sa iba?"),
+      t("How would your fear of death or loss change if you truly believed 1 Thessalonians 4:14?", "Paano magbabago ang takot mo sa kamatayan o pagkawala kung tunay kang naniniwala sa 1 Tesalonica 4:14?"),
+    ],
+    actions: [
+      t("Write \"He is risen\" on a card and put it where you face your hardest moment of the day: your bunk, your desk, your kitchen.", "Isulat ang \"Muli Siyang nabuhay\" sa isang card at ilagay kung saan mo hinaharap ang pinakamahirap na sandali ng araw mo: sa kama, sa mesa, sa kusina."),
+      t("Tell one person this week the story of a time God brought life out of something you thought was dead.", "Ikuwento sa isang tao ngayong linggo ang panahong nagdala ang Diyos ng buhay mula sa isang bagay na akala mo ay patay na."),
+      t("Pray for one grieving person by name and send them a short message of hope.", "Ipanalangin ang isang nagdadalamhati sa kanyang pangalan at padalhan siya ng maikling mensahe ng pag-asa."),
+    ],
+    prayer: t(
+      "Lord Jesus, You are not in the tomb; You are risen and alive. Forgive me for living as if You were only a memory. Walk beside me on my road of disappointment and open my eyes to see You. Touch the dead places in my life with Your resurrection power. Turn my scars into testimony, and fill me with living hope until the morning I see You face to face. Amen.",
+      "Panginoong Hesus, wala Ka sa libingan; muli Kang nabuhay at buháy Ka. Patawarin Mo ako sa pamumuhay na parang alaala Ka lang. Lumakad Ka sa tabi ko sa aking daan ng pagkabigo at buksan Mo ang aking mga mata upang makita Ka. Hipuin Mo ng kapangyarihan ng Iyong muling pagkabuhay ang mga patay na bahagi ng aking buhay. Gawin Mong patotoo ang aking mga peklat, at punuin Mo ako ng buháy na pag-asa hanggang sa umagang makita Kita nang harapan. Amen."
+    ),
+  },
+
+  "c-lords-table": {
+    revelation: t(
+      "At the Lord's Table you do not come to prove you are worthy; you come to remember that the Worthy One gave Himself for you, and to find yourself seated with His family.",
+      "Sa Hapag ng Panginoon, hindi ka lumalapit para patunayang karapat-dapat ka; lumalapit ka para alalahaning ibinigay ng Karapat-dapat ang Kanyang sarili para sa iyo, at para matagpuan mong nakaupo ka kasama ng Kanyang pamilya."
+    ),
+    mainTruth: t(
+      "On the night He was betrayed, Jesus took the bread and the cup of the Passover and said, \"This is My body, given for you... This cup is the new covenant in My blood\" (Luke 22:19-20). As the blood of the lamb protected Israel in Egypt (Exodus 12:13), the blood of Christ, our Passover Lamb, covers us (1 Corinthians 5:7). Each time we eat, we remember Him, proclaim His death until He comes (1 Corinthians 11:26), and confess that we who are many are one body (10:17).",
+      "Sa gabing Siya ay ipinagkanulo, kinuha ni Hesus ang tinapay at ang saro ng Paskuwa at sinabi, \"Ito ang Aking katawan, na ibinibigay para sa inyo... Ang sarong ito ay ang bagong tipan sa Aking dugo\" (Lucas 22:19-20). Kung paanong iningatan ng dugo ng kordero ang Israel sa Egipto (Exodo 12:13), tinatakpan tayo ng dugo ni Cristo, ang ating Korderong pampaskuwa (1 Corinto 5:7). Tuwing tayo ay kumakain, inaalala natin Siya, ipinahahayag ang Kanyang kamatayan hanggang sa Siya'y dumating (1 Corinto 11:26), at ipinahahayag na tayong marami ay iisang katawan (10:17)."
+    ),
+    insight: [
+      t(
+        "Look at who was at the first Lord's Supper: Peter, who would deny Him before morning; Judas, who had already taken the silver; and ten others who would run away that night. Jesus knew all of it, and still He said, \"I have earnestly desired to eat this Passover with you\" (Luke 22:15). The Table was never a reward for the strong. It was a gift to weak people from a Savior who knew exactly how weak they were.",
+        "Tingnan kung sino ang nasa unang Hapunan ng Panginoon: si Pedro, na magkakaila sa Kanya bago mag-umaga; si Hudas, na nakatanggap na ng pilak; at ang sampung iba pa na tatakas nang gabing iyon. Alam lahat iyon ni Hesus, pero sinabi pa rin Niya, \"Nanabik akong kainin ang Paskuwang ito kasama ninyo\" (Lucas 22:15). Hindi kailanman naging gantimpala para sa malalakas ang Hapag. Regalo ito sa mahihina mula sa Tagapagligtas na alam na alam kung gaano sila kahina."
+      ),
+      t(
+        "Many believers take Communion only vertically: me and God, eyes closed, alone in the crowd. But Paul's sharpest rebuke to the Corinthians was horizontal: they ate while their poorer brothers went hungry (1 Corinthians 11:21-22). \"Discerning the body\" (11:29) includes seeing the church, the body of Christ, around you. You cannot hold the bread of unity in one hand and a grudge against your brother in the other.",
+        "Maraming mananampalataya ang tumatanggap ng Komunyon nang patayo lang: ako at ang Diyos, nakapikit, mag-isa sa gitna ng maraming tao. Pero ang pinakamatalim na saway ni Pablo sa mga taga-Corinto ay pahalang: kumakain sila habang nagugutom ang mas mahihirap nilang kapatid (1 Corinto 11:21-22). Ang \"pagkilala sa katawan\" (11:29) ay kasama ang pagtingin sa iglesia, ang katawan ni Cristo, sa paligid mo. Hindi mo mahahawakan ang tinapay ng pagkakaisa sa isang kamay at ang sama ng loob sa kapatid mo sa kabila."
+      ),
+    ],
+    life: [
+      t(
+        "Think of Noche Buena in a Filipino home where the father works in Saudi. The family sets his plate anyway, and someone props up a phone so he can see the table. Everyone feels the empty chair. The Lord's Supper is a little like that: we eat now while our Lord is physically absent, and every time we eat we feel both His nearness and our longing. But Jesus promised He will drink the cup new with us in His Father's kingdom (Matthew 26:29). One day the chair will not be empty.",
+        "Isipin ang Noche Buena sa isang tahanang Pilipino kung saan nagtatrabaho sa Saudi ang tatay. Naghahain pa rin ang pamilya ng plato para sa kanya, at may nagtatayo ng phone para makita niya ang mesa. Ramdam ng lahat ang bakanteng upuan. Ganyan ang Banal na Hapunan: kumakain tayo ngayon habang wala pa sa laman ang ating Panginoon, at tuwing kumakain tayo, nararamdaman natin ang Kanyang pagiging malapit at ang ating pananabik. Pero ipinangako ni Hesus na iinumin Niyang muli ang saro kasama natin sa kaharian ng Kanyang Ama (Mateo 26:29). Darating ang araw na hindi na bakante ang upuan."
+      ),
+      t(
+        "In some fellowships abroad, believers from different agencies, provinces and even nations share one loaf: the nurse and the driver, the engineer and the household worker. For one moment, rank and salary disappear. Everyone holds the same small piece of bread, and everyone needs the same grace. That is the gospel made visible.",
+        "Sa ilang fellowship sa ibang bansa, iisang tinapay ang pinagsasaluhan ng mga mananampalatayang galing sa iba't ibang agency, probinsya at maging bansa: ang nurse at ang driver, ang engineer at ang kasambahay. Sa isang sandali, nawawala ang ranggo at sahod. Iisang maliit na piraso ng tinapay ang hawak ng lahat, at iisang biyaya ang kailangan ng lahat. Iyan ang ebanghelyong nakikita ng mata."
+      ),
+    ],
+    twist: t(
+      "We often think self-examination before Communion is meant to keep sinners away from the Table. But Jesus served the first Supper to sinners, and Paul's goal in 1 Corinthians 11:28 was \"examine yourself, AND SO EAT,\" not \"examine yourself and stay away.\" The examination is the door, not the wall. The Spirit searches you so that you can come clean and come close. The only person truly unfit for the Table is the one who thinks he does not need it.",
+      "Madalas akala natin ang pagsusuri sa sarili bago ang Komunyon ay para ilayo ang mga makasalanan sa Hapag. Pero mga makasalanan ang pinagsilbihan ni Hesus sa unang Hapunan, at ang layunin ni Pablo sa 1 Corinto 11:28 ay \"suriin ang sarili, AT SAKA KUMAIN,\" hindi \"suriin ang sarili at lumayo.\" Ang pagsusuri ay pinto, hindi pader. Sinisiyasat ka ng Espiritu para makalapit kang malinis at makalapit nang malapit. Ang tanging tunay na hindi angkop sa Hapag ay ang taong nag-aakalang hindi niya ito kailangan."
+    ),
+    confirm: [
+      t("Exodus 12:13: \"When I see the blood, I will pass over you.\"", "Exodo 12:13: \"Kapag nakita Ko ang dugo, lalampasan Ko kayo.\""),
+      t("John 6:35: Jesus says, \"I am the bread of life; whoever comes to Me shall not hunger.\"", "Juan 6:35: sabi ni Hesus, \"Ako ang tinapay ng buhay; ang lumalapit sa Akin ay hindi magugutom.\""),
+      t("Acts 2:42, 46: the first church devoted itself to the breaking of bread with glad and generous hearts.", "Gawa 2:42, 46: nagpatuloy ang unang iglesia sa paghahati-hati ng tinapay nang may galak at bukas na puso."),
+      t("Revelation 19:9: \"Blessed are those who are invited to the marriage supper of the Lamb.\"", "Pahayag 19:9: \"Mapapalad ang mga inanyayahan sa hapunan ng kasal ng Kordero.\""),
+    ],
+    heart: [
+      t("Trade routine for remembrance. Let the bread and cup slow you down until you are grateful again.", "Palitan ang nakasanayan ng tunay na pag-alala. Hayaang pabagalin ka ng tinapay at saro hanggang ikaw ay muling magpasalamat."),
+      t("Let the one loaf soften you toward the people beside you: forgive, reconcile and make room at the table.", "Hayaang palambutin ka ng iisang tinapay sa mga taong katabi mo: magpatawad, makipagkasundo at magbigay ng puwang sa hapag."),
+    ],
+    questions: [
+      t("When you take Communion, what usually goes through your mind?", "Kapag nakikibahagi ka sa Komunyon, ano ang karaniwang pumapasok sa isip mo?"),
+      t("Do you stay away from the Table out of shame? What does Jesus' welcome of Peter and the others say to you?", "Lumalayo ka ba sa Hapag dahil sa hiya? Ano ang sinasabi sa iyo ng pagtanggap ni Hesus kay Pedro at sa iba?"),
+      t("Is there someone you need to make peace with before you next eat the bread?", "May tao bang kailangan mong makipagkasundo bago ka muling kumain ng tinapay?"),
+      t("How does the promise of the marriage supper of the Lamb shape the way you live this week?", "Paano hinuhubog ng pangako ng hapunan ng kasal ng Kordero ang pamumuhay mo ngayong linggo?"),
+    ],
+    actions: [
+      t("Before your next Communion, pray Psalm 139:23-24 and write down anything the Spirit brings to mind.", "Bago ang susunod mong Komunyon, ipanalangin ang Awit 139:23-24 at isulat ang anumang ipaaalala ng Espiritu."),
+      t("Take one step this week to reconcile with someone in your church or family.", "Gumawa ng isang hakbang ngayong linggo upang makipagkasundo sa isang tao sa iglesia o pamilya mo."),
+      t("Invite someone who eats alone, at work or in your fellowship, to share a meal with you.", "Anyayahan ang isang taong laging mag-isang kumakain, sa trabaho man o sa fellowship, na makisalo sa iyo."),
+    ],
+    prayer: t(
+      "Lord Jesus, Lamb of God, You set a table for sinners and invited me to sit down. Thank You for Your body broken and Your blood poured out. Search my heart, show me what I must confess and make right, and then let me come close without fear. Bind me in love to Your people around the one loaf, and keep me longing for the day I will eat with You in Your kingdom. Amen.",
+      "Panginoong Hesus, Kordero ng Diyos, naghanda Ka ng hapag para sa mga makasalanan at inanyayahan Mo akong umupo. Salamat sa Iyong katawang pinagputul-putol at sa Iyong dugong ibinuhos. Siyasatin Mo ang aking puso, ipakita Mo ang dapat kong ipagtapat at ayusin, at saka Mo ako hayaang lumapit nang walang takot. Ibigkis Mo ako sa pag-ibig sa Iyong bayan sa palibot ng iisang tinapay, at panatilihin Mo akong nananabik sa araw na kakain ako kasama Mo sa Iyong kaharian. Amen."
+    ),
+  },
 };

@@ -529,4 +529,136 @@ export const DEEP: DeepSet = {
       "Panginoong Hesus, naniniwala akong babalik Kayo, gaya ng ipinangako Ninyo. Panatilihin Ninyo akong gising at handa, hindi balisa, hindi pabaya. Salamat sa Inyong pagtitiyaga na nagliligtas pa sa mga taong mahal ko. Turuan Ninyo ako ng Inyong biyaya na mamuhay nang banal, matuwid at tapat habang naghihintay. Aliwin Ninyo ang mga nagdadalamhati sa pag-asa ng muling pagkabuhay. Sa Inyong pagdating, nawa'y matagpuan Ninyo akong tapat sa ipinagawa Ninyo sa akin. Dumating Ka, Panginoong Hesus. Amen."
     ),
   },
+
+  "c-image-of-god": {
+    revelation: t(
+      "Before you were anyone's worker, helper, boss or debtor, you were God's image-bearer; your worth was stamped on you by your Maker, and no employer, failure or insult can take it away.",
+      "Bago ka naging manggagawa, kasambahay, boss o may-utang ninuman, larawan ka na ng Diyos; itinatak ng Lumikha mo ang halaga mo, at walang amo, kabiguan o insulto ang makakaagaw nito."
+    ),
+    mainTruth: t(
+      "God said, “Let Us make man in Our image,” and He created them male and female, blessed them and gave them the care of His world (Genesis 1:26-28). He formed man from dust and breathed His own breath into him (Genesis 2:7), so we are humble creatures and crowned with glory at the same time (Psalm 8:5). Sin cracked the image but did not erase it; that is why James says we must not curse people who are made in God's likeness (James 3:9-10). And in Christ, the perfect image of God, we are being renewed day by day into His likeness (Colossians 3:10; 2 Corinthians 3:18).",
+      "Sinabi ng Diyos, “Likhain natin ang tao ayon sa Ating larawan,” at nilikha Niya silang lalaki at babae, pinagpala sila at ipinagkatiwala sa kanila ang pag-aalaga ng Kanyang mundo (Genesis 1:26-28). Hinubog Niya ang tao mula sa alabok at hiningahan ng sarili Niyang hininga (Genesis 2:7), kaya sabay tayong mapagpakumbabang nilalang at pinutungan ng kaluwalhatian (Awit 8:5). Binasag ng kasalanan ang larawan pero hindi ito binura; kaya sinabi ni Santiago na huwag nating isumpa ang mga taong nilikha sa wangis ng Diyos (Santiago 3:9-10). At kay Cristo, ang ganap na larawan ng Diyos, binabago tayo araw-araw upang maging kawangis Niya (Colosas 3:10; 2 Corinto 3:18)."
+    ),
+    insight: [
+      t(
+        "Many believers know they are sinners but have never really believed they are image-bearers. So they swing between pride when things go well and self-hatred when they fail. Genesis gives us solid ground: your value did not come from your performance, so your failures cannot cancel it. And your achievements did not create it, so they give you no right to look down on anyone.",
+        "Alam ng maraming mananampalataya na makasalanan sila, pero hindi talaga nila pinaniwalaang larawan sila ng Diyos. Kaya pabago-bago sila: mayabang kapag maayos ang lahat, galit sa sarili kapag nabigo. Binibigyan tayo ng Genesis ng matibay na tuntungan: hindi galing sa performance mo ang halaga mo, kaya hindi ito mabubura ng mga kabiguan mo. At hindi ito nilikha ng mga tagumpay mo, kaya wala kang karapatang maliitin ang sinuman."
+      ),
+      t(
+        "We also overlook how this truth judges our everyday words. We would never spit on a photo of our mother, yet we curse the driver who cut us off, mock the co-worker from another country, call the helper “tanga,” and post cruel comments about strangers. Every one of those people carries the portrait of God. How we treat them is how we treat His image.",
+        "Hindi rin natin napapansin kung paano hinuhusgahan ng katotohanang ito ang araw-araw nating pananalita. Hindi natin kailanman duduraan ang litrato ng nanay natin, pero minumura natin ang drayber na sumingit, pinagtatawanan ang katrabahong taga-ibang bansa, tinatawag na “tanga” ang kasambahay, at nagpo-post ng malulupit na komento tungkol sa mga estranghero. Bawat isa sa kanila ay may dalang larawan ng Diyos. Ang pagtrato natin sa kanila ay pagtrato natin sa Kanyang larawan."
+      ),
+    ],
+    life: [
+      t(
+        "Picture a domestic worker in a big house in the Gulf. For months she is called only “the girl.” She eats after everyone, sleeps in the laundry room, and slowly begins to believe she is worth only what she can clean. Then one Friday, in a small fellowship, she hears Genesis 1:27 read aloud and the leader says, “This is about you.” She goes back to the same house and the same work, but she carries herself differently. She serves with excellence, but she no longer serves as a nobody. She knows whose image she bears.",
+        "Isipin mo ang isang kasambahay sa malaking bahay sa Gulf. Ilang buwan na siyang tinatawag lang na “the girl.” Kumakain siya pagkatapos ng lahat, natutulog sa laundry room, at dahan-dahang naniniwalang ang halaga niya ay kung ano lang ang kaya niyang linisin. Tapos isang Biyernes, sa isang maliit na fellowship, narinig niyang binasa nang malakas ang Genesis 1:27 at sinabi ng leader, “Tungkol ito sa iyo.” Bumalik siya sa parehong bahay at parehong trabaho, pero iba na ang tindig niya. Naglilingkod pa rin siya nang mahusay, pero hindi na bilang isang walang halaga. Alam na niya kung kaninong larawan ang dala niya."
+      ),
+      t(
+        "Now picture the other side: a Filipino supervisor in a hotel who was once treated badly and now treats the new staff the same way, shouting, shaming, holding back their days off. The image of God speaks to him too. Every worker under him is God's portrait. Authority is not a license to crush people; it is a stewardship over people God values. When he begins to learn their names and protect their dignity, his department changes, and so does he.",
+        "Isipin mo naman ang kabilang panig: isang Pilipinong supervisor sa hotel na minsang tinrato nang masama at ngayon ay ganoon din ang trato sa mga bagong staff, sumisigaw, namamahiya, ipinagkakait ang kanilang day off. Nagsasalita rin sa kanya ang larawan ng Diyos. Ang bawat manggagawang hawak niya ay larawan ng Diyos. Ang awtoridad ay hindi lisensya para durugin ang tao; ito ay pagkakatiwala sa mga taong pinahahalagahan ng Diyos. Kapag sinimulan niyang alamin ang kanilang mga pangalan at ingatan ang kanilang dangal, nagbabago ang departamento niya, at nagbabago rin siya."
+      ),
+    ],
+    twist: t(
+      "When the Pharisees showed Jesus a coin and asked about taxes, He asked, “Whose likeness and inscription is this?” They said, “Caesar's.” He answered, “Then render to Caesar the things that are Caesar's, and to God the things that are God's” (Matthew 22:20-21). Give the coin to the one whose image is on it. So what belongs to God? Whatever bears His image. That means you. Caesar can have your taxes, and your employer can have your hours, but your whole self belongs to God, because His face is stamped on you.",
+      "Nang ipakita ng mga Pariseo kay Hesus ang isang barya at magtanong tungkol sa buwis, nagtanong Siya, “Kaninong larawan at pangalan ito?” Sumagot sila, “Kay Cesar.” Sabi Niya, “Kung gayon, ibigay ninyo kay Cesar ang kay Cesar, at sa Diyos ang sa Diyos” (Mateo 22:20-21). Ibigay ang barya sa may larawan nito. Kung gayon, ano ang sa Diyos? Ang anumang may dalang larawan Niya. Ibig sabihin, ikaw. Kay Cesar ang buwis mo, at sa employer mo ang oras mo, pero ang buo mong sarili ay sa Diyos, dahil nakatatak sa iyo ang Kanyang mukha."
+    ),
+    confirm: [
+      t("Psalm 139:13-14: you are fearfully and wonderfully made, knitted together in your mother's womb.", "Awit 139:13-14: kamangha-mangha at kahanga-hanga ang pagkakalikha sa iyo, hinabi sa sinapupunan ng iyong ina."),
+      t("Genesis 9:6: human life is protected because God made man in His own image.", "Genesis 9:6: iniingatan ang buhay ng tao dahil nilikha ng Diyos ang tao ayon sa Kanyang larawan."),
+      t("Proverbs 14:31: whoever oppresses a poor man insults his Maker.", "Kawikaan 14:31: ang umaapi sa dukha ay humahamak sa lumikha sa kanya."),
+      t("Colossians 1:15: Christ is the image of the invisible God, the model we are being renewed into.", "Colosas 1:15: si Cristo ang larawan ng di-nakikitang Diyos, ang huwarang pinagbabaguhan sa atin."),
+    ],
+    heart: [
+      t(
+        "Let God's verdict about you be louder than the voices of employers, relatives and your own failures. Receive your worth as a gift, not as a wage.",
+        "Hayaang mas malakas ang hatol ng Diyos tungkol sa iyo kaysa sa boses ng mga amo, kamag-anak at sarili mong mga kabiguan. Tanggapin ang iyong halaga bilang regalo, hindi bilang sahod."
+      ),
+      t(
+        "Repent of looking down on anyone. Train your eyes to see God's portrait in every face, and let your words, your posts and your treatment of workers show it.",
+        "Pagsisihan ang pagmamaliit sa kaninuman. Sanayin ang iyong mga mata na makita ang larawan ng Diyos sa bawat mukha, at hayaang ipakita ito ng iyong mga salita, mga post at pagtrato sa mga manggagawa."
+      ),
+    ],
+    questions: [
+      t("When do you feel most worthless, and what lie are you believing in that moment?", "Kailan ka pinakanakadarama na wala kang halaga, at anong kasinungalingan ang pinaniniwalaan mo sa sandaling iyon?"),
+      t("Whom do you quietly consider beneath you because of job, money, looks or nationality?", "Sino ang tahimik mong itinuturing na mas mababa sa iyo dahil sa trabaho, pera, itsura o lahi?"),
+      t("What would change in how you speak online if you remembered that every person bears God's image?", "Ano ang magbabago sa pananalita mo online kung maaalala mong may dalang larawan ng Diyos ang bawat tao?"),
+      t("Where do you see Christ renewing His likeness in you, and where do you still resist Him?", "Saan mo nakikitang ibinabalik ni Cristo ang Kanyang wangis sa iyo, at saan ka pa rin tumatanggi sa Kanya?"),
+    ],
+    actions: [
+      t("Write Genesis 1:27 on a card and read it every morning before work this week.", "Isulat ang Genesis 1:27 sa isang card at basahin ito tuwing umaga bago magtrabaho ngayong linggo."),
+      t("Learn the name of one worker others ignore, greet them by name, and thank them.", "Alamin ang pangalan ng isang manggagawang hindi pinapansin ng iba, batiin siya sa pangalan, at pasalamatan."),
+      t("Delete or apologize for one harsh word or post you made about someone.", "Burahin o humingi ng tawad sa isang masakit na salita o post na ginawa mo tungkol sa isang tao."),
+    ],
+    prayer: t(
+      "Creator God, You formed me from dust and breathed Your life into me. Thank You that my worth comes from You and not from my salary, my looks or my mistakes. Forgive me for the times I despised myself, and for the times I despised others who bear Your image. Open my eyes to see Your portrait in every face I meet. Lord Jesus, true image of God, keep renewing me until I look like You. Amen.",
+      "Diyos na Manlilikha, hinubog Mo ako mula sa alabok at hiningahan Mo ako ng Iyong buhay. Salamat po na ang halaga ko ay galing sa Inyo at hindi sa sahod ko, sa itsura ko o sa mga pagkakamali ko. Patawarin Ninyo ako sa mga panahong kinamuhian ko ang sarili ko, at sa mga panahong hinamak ko ang iba na may dala ng Inyong larawan. Buksan Ninyo ang aking mga mata para makita ang Inyong larawan sa bawat mukhang makakasalubong ko. Panginoong Hesus, tunay na larawan ng Diyos, patuloy Ninyo akong baguhin hanggang maging kawangis Ninyo ako. Amen."
+    ),
+  },
+
+  "c-providence-of-god": {
+    revelation: t(
+      "Nothing in your life is random and nothing is wasted; the God who counts sparrows is quietly weaving even the evil done to you into a story that ends in good.",
+      "Walang nagkataon lang sa buhay mo at walang nasasayang; ang Diyos na nagbibilang ng mga maya ay tahimik na hinahabi pati ang kasamaang ginawa sa iyo sa isang kuwentong nagtatapos sa kabutihan."
+    ),
+    mainTruth: t(
+      "Joseph was betrayed by his brothers, slandered and forgotten in prison, yet years later he could say, “You meant evil against me, but God meant it for good, to bring it about that many people should be kept alive” (Genesis 50:20). Jesus taught that not one sparrow falls apart from the Father and that the hairs of our heads are numbered (Matthew 10:29-31). We plan our ways, but the Lord directs our steps (Proverbs 16:9). The clearest proof is the cross, where wicked men were fully guilty and yet God's definite plan was fulfilled (Acts 2:23). So for those who love God, all things work together for good: the good of being made like His Son (Romans 8:28-29).",
+      "Ipinagkanulo si Jose ng kanyang mga kapatid, siniraang-puri at kinalimutan sa bilangguan, pero makalipas ang maraming taon ay nasabi niya, “Kayo ay nagbalak ng masama laban sa akin, ngunit binalak ito ng Diyos para sa kabutihan, upang maraming tao ang manatiling buhay” (Genesis 50:20). Itinuro ni Hesus na wala ni isang mayang nahuhulog nang hindi alam ng Ama at bilang ang mga buhok sa ating ulo (Mateo 10:29-31). Tayo ang nagbabalak ng ating daan, pero ang Panginoon ang nagtatakda ng ating mga hakbang (Kawikaan 16:9). Ang pinakamalinaw na patunay ay ang krus, kung saan buong may sala ang masasamang tao pero natupad ang tiyak na plano ng Diyos (Gawa 2:23). Kaya sa mga umiibig sa Diyos, ang lahat ng bagay ay nagtutulungan para sa kabutihan: ang kabutihang maging katulad ng Kanyang Anak (Roma 8:28-29)."
+    ),
+    insight: [
+      t(
+        "Many Filipino believers carry two religions in one heart. On Sunday we sing that God is sovereign; on Monday we knock on wood, avoid the number thirteen, check our horoscope, and say “bahala na” as if the future were a coin toss. Providence clears all of that away. There is no suwerte and no malas in God's world, only a Father who rules. That does not make us careless; it makes us calm.",
+        "Maraming Pilipinong mananampalataya ang may dalang dalawang relihiyon sa iisang puso. Sa Linggo, kinakanta nating makapangyarihan ang Diyos; sa Lunes, kumakatok tayo sa kahoy, iniiwasan ang numerong trese, tinitingnan ang horoscope, at sinasabing “bahala na” na parang hagis ng barya ang kinabukasan. Nililinis ng probidensya ang lahat ng iyan. Walang suwerte at walang malas sa mundo ng Diyos, mayroon lang Amang naghahari. Hindi tayo nito ginagawang pabaya; ginagawa tayo nitong panatag."
+      ),
+      t(
+        "We also misread Romans 8:28 as a promise that everything will turn out the way we want. It does not say all things are good, or that we will understand them soon. It says God works them together for a specific good: to make us like Jesus. Sometimes the contract is not renewed, the sickness is not healed this side of heaven, and the betrayer never apologizes. Providence does not deny the pain. It denies that the pain has the last word.",
+        "Mali rin ang pagbasa natin sa Roma 8:28 na para bang pangako ito na lahat ay mangyayari ayon sa gusto natin. Hindi nito sinasabing mabuti ang lahat ng bagay, o na maiintindihan natin agad ang mga ito. Sinasabi nitong pinagtutulungan ng Diyos ang mga ito para sa isang tiyak na kabutihan: ang gawin tayong katulad ni Hesus. Minsan hindi nare-renew ang kontrata, hindi gumagaling ang sakit sa panig na ito ng langit, at hindi kailanman humihingi ng tawad ang nagtaksil. Hindi itinatanggi ng probidensya ang sakit. Itinatanggi nito na ang sakit ang may huling salita."
+      ),
+    ],
+    life: [
+      t(
+        "Joseph was the first overseas worker in the Bible. Sold by his own family, taken to a foreign land, working for a master who did not share his faith, accused of something he did not do, and forgotten by the one person who promised to help him. Many OFWs can trace their own story in his. But Joseph also shows what God can do through a faithful worker far from home: he served with excellence wherever he was put, and the Lord was with him. Years later, the son who was sold became the man who fed his family.",
+        "Si Jose ang unang overseas worker sa Bibliya. Ipinagbili ng sarili niyang pamilya, dinala sa ibang bayan, nagtrabaho sa amo na iba ang pananampalataya, pinagbintangan sa hindi niya ginawa, at kinalimutan ng nag-iisang taong nangakong tutulong sa kanya. Makikita ng maraming OFW ang sarili nilang kuwento sa kanya. Pero ipinakikita rin ni Jose ang kayang gawin ng Diyos sa isang tapat na manggagawang malayo sa tahanan: naglingkod siya nang mahusay saanman siya inilagay, at kasama niya ang Panginoon. Makalipas ang maraming taon, ang anak na ipinagbili ang naging taong nagpakain sa kanyang pamilya."
+      ),
+      t(
+        "Corrie ten Boom and her sister Betsie were sent to the Ravensbrück concentration camp for hiding Jews in their home in Holland. Their barracks were overcrowded and infested with fleas. Betsie insisted on thanking God even for the fleas, and Corrie could hardly do it. Later they learned that the guards avoided their barracks because of the fleas, which is why the sisters were able to hold Bible readings there openly. Betsie died in the camp, but Corrie lived to tell the world that there is no pit so deep that God's love is not deeper still.",
+        "Ipinadala sina Corrie ten Boom at ang kapatid niyang si Betsie sa concentration camp ng Ravensbrück dahil itinago nila ang mga Judio sa kanilang bahay sa Holland. Siksikan ang kanilang barracks at puno ng pulgas. Ipinilit ni Betsie na magpasalamat sa Diyos pati sa mga pulgas, at halos hindi ito magawa ni Corrie. Kalaunan, nalaman nilang iniiwasan ng mga bantay ang kanilang barracks dahil sa mga pulgas, kaya hayagan silang nakapagbabasa ng Bibliya roon. Namatay si Betsie sa kampo, pero nabuhay si Corrie para sabihin sa mundo na walang hukay na napakalalim na hindi mas malalim pa ang pag-ibig ng Diyos."
+      ),
+    ],
+    twist: t(
+      "We usually think God is most absent when we cannot see Him working. But the book of Esther never mentions God's name even once, and it is one of the clearest pictures of His providence in the Bible. A king cannot sleep, asks for the records to be read, and finds the one page that saves a nation (Esther 6:1-3). God's silence is not His absence. Some of His greatest work in your life is happening right now in the chapters where His name seems missing.",
+      "Akala natin ay pinakamalayo ang Diyos kapag hindi natin nakikitang kumikilos Siya. Pero ni minsan ay hindi binanggit ng aklat ng Ester ang pangalan ng Diyos, at isa ito sa pinakamalinaw na larawan ng Kanyang probidensya sa Bibliya. Hindi makatulog ang isang hari, nagpabasa ng mga talaan, at natagpuan ang iisang pahinang nagligtas sa isang bansa (Ester 6:1-3). Ang pananahimik ng Diyos ay hindi Kanyang pagkawala. Ang ilan sa pinakadakila Niyang gawa sa buhay mo ay nangyayari ngayon mismo sa mga kabanatang parang wala ang Kanyang pangalan."
+    ),
+    confirm: [
+      t("Ruth 2:3: Ruth “happened” to glean in the field of Boaz, the kinsman who would redeem her.", "Ruth 2:3: “Nagkataong” namulot si Ruth sa bukid ni Boaz, ang kamag-anak na tutubos sa kanya."),
+      t("Daniel 4:34-35: the humbled king confessed that God does as He wills and none can stay His hand.", "Daniel 4:34-35: inamin ng haring pinakumbaba na ginagawa ng Diyos ang Kanyang naisin at walang makapipigil sa Kanyang kamay."),
+      t("Hebrews 1:3: the Son upholds the universe by the word of His power.", "Hebreo 1:3: inaalalayan ng Anak ang sansinukob sa pamamagitan ng salita ng Kanyang kapangyarihan."),
+      t("Philippians 1:12: Paul's imprisonment actually served to advance the gospel.", "Filipos 1:12: ang pagkabilanggo ni Pablo ay nakatulong pa sa paglaganap ng ebanghelyo."),
+    ],
+    heart: [
+      t(
+        "Trade worry and superstition for trust. Do your part with diligence, then lay your head down in peace, because your Father does not sleep.",
+        "Ipagpalit ang pag-aalala at pamahiin sa pagtitiwala. Gawin nang masipag ang iyong bahagi, saka humiga nang payapa, dahil hindi natutulog ang iyong Ama."
+      ),
+      t(
+        "Let providence soften your heart toward those who hurt you. Like Joseph, you can weep, name the evil as evil, and still forgive, because you know God has the final word.",
+        "Hayaang palambutin ng probidensya ang puso mo sa mga nanakit sa iyo. Gaya ni Jose, puwede kang umiyak, tawaging masama ang masama, at magpatawad pa rin, dahil alam mong nasa Diyos ang huling salita."
+      ),
+    ],
+    questions: [
+      t("Which chapter of your life still feels wasted, and can you ask God what He is forming in you through it?", "Aling kabanata ng buhay mo ang pakiramdam mo ay sayang pa rin, at kaya mo bang itanong sa Diyos kung ano ang hinuhubog Niya sa iyo sa pamamagitan nito?"),
+      t("Do you rely on any lucky charm, sign or habit more than on God's care?", "May pampasuwerte, senyales o gawi ka bang mas pinagkakatiwalaan kaysa sa pag-aaruga ng Diyos?"),
+      t("Is “bahala na” in your life an expression of faith or an excuse for not planning?", "Ang “bahala na” ba sa buhay mo ay pagpapahayag ng pananampalataya o dahilan para hindi magplano?"),
+      t("Whom do you need to forgive, trusting that God can turn their evil into good?", "Sino ang kailangan mong patawarin, nagtitiwalang kayang gawing mabuti ng Diyos ang kasamaan nila?"),
+    ],
+    actions: [
+      t("Write down three hard events from your past and, beside each, any good you now see God brought from it.", "Isulat ang tatlong mahirap na pangyayari sa nakaraan mo at, sa tabi ng bawat isa, ang anumang kabutihang nakikita mo ngayong inilabas ng Diyos mula rito."),
+      t("Throw away any amulet or lucky item you keep, and pray Matthew 10:29-31 over your fears instead.", "Itapon ang anumang anting-anting o pampasuwerteng itinatago mo, at ipanalangin na lang ang Mateo 10:29-31 sa iyong mga takot."),
+      t("Make one wise plan this week (budget, savings, a health check) and commit the outcome to God in prayer.", "Gumawa ng isang matalinong plano ngayong linggo (budget, ipon, check-up) at ipagkatiwala sa Diyos sa panalangin ang resulta."),
+    ],
+    prayer: t(
+      "Heavenly Father, You hold the stars in place and You count every hair on my head. Thank You that nothing in my life is outside Your hand. I bring You the chapters I do not understand, the evil others did to me, and the fears I have about tomorrow. Forgive me for trusting luck and charms instead of You. Teach me to work faithfully, plan wisely and rest in Your care. Turn what was meant for evil into good, and make me more like Jesus through it all. Amen.",
+      "Ama naming nasa langit, hawak Ninyo ang mga bituin at bilang Ninyo ang bawat buhok sa aking ulo. Salamat po na walang bahagi ng buhay ko ang labas sa Inyong kamay. Dinadala ko sa Inyo ang mga kabanatang hindi ko maintindihan, ang kasamaang ginawa sa akin ng iba, at ang mga takot ko sa bukas. Patawarin Ninyo ako sa pagtitiwala sa suwerte at anting-anting sa halip na sa Inyo. Turuan Ninyo akong magtrabaho nang tapat, magplano nang may karunungan at magpahinga sa Inyong pag-aaruga. Gawin Ninyong mabuti ang binalak na masama, at gawin Ninyo akong higit na katulad ni Hesus sa lahat ng ito. Amen."
+    ),
+  },
 };

@@ -555,4 +555,92 @@ export const EXTRA: ExtraSet = {
       },
     ],
   },
+  "c-image-of-god": {
+    deeper: [
+      {
+        heading: t("What the ancient world heard in Genesis 1", "Ang narinig ng sinaunang mundo sa Genesis 1"),
+        body: [
+          t(
+            "In the ancient Near East, an image was a statue that stood for someone. Kings set up images of themselves in conquered cities to say, “This land is mine.” Some kings were even called the image of their god, as if only royalty carried the divine likeness. Ordinary people were thought of as servants made to do the gods' heavy work.",
+            "Sa sinaunang Gitnang Silangan, ang larawan ay isang estatwang kumakatawan sa isang tao. Nagtatayo ang mga hari ng larawan ng kanilang sarili sa mga nasakop na lungsod para sabihing, “Akin ang lupaing ito.” May mga haring tinatawag pang larawan ng kanilang diyos, na para bang mga maharlika lang ang may wangis ng diyos. Ang mga ordinaryong tao naman ay itinuturing na mga aliping ginawa para sa mabibigat na trabaho ng mga diyos."
+          ),
+          t(
+            "Genesis 1 overturns all of that. God makes every human being His image, male and female alike, and gives the whole human race the royal task of caring for His world (Genesis 1:26-28). The farmer, the fisherman, the mother, the slave: all are God's living statues on earth, showing whose world this is. That is why Scripture never allows us to make an image of God out of wood or stone (Exodus 20:4). He has already placed His images among us, and they breathe.",
+            "Binabaligtad iyan lahat ng Genesis 1. Ginagawa ng Diyos ang bawat tao na Kanyang larawan, lalaki man o babae, at ibinibigay sa buong sangkatauhan ang maharlikang tungkuling alagaan ang Kanyang mundo (Genesis 1:26-28). Ang magsasaka, ang mangingisda, ang ina, ang alipin: lahat ay buhay na estatwa ng Diyos sa lupa, nagpapakita kung kanino ang mundong ito. Kaya hindi kailanman pinahihintulutan ng Kasulatan na gumawa tayo ng larawan ng Diyos mula sa kahoy o bato (Exodo 20:4). Naglagay na Siya ng Kanyang mga larawan sa gitna natin, at humihinga sila."
+          ),
+        ],
+      },
+      {
+        heading: t("Dominion, work and stewardship", "Pamamahala, trabaho at pagiging katiwala"),
+        body: [
+          t(
+            "God placed the man in the garden “to work it and keep it” (Genesis 2:15). Work came before the fall, not after it. The curse brought thorns, sweat and frustration into work (Genesis 3:17-19), but work itself is part of our dignity as image-bearers. The cleaner, the welder, the caregiver and the accountant are all doing something God designed humans to do: bring order, beauty and fruitfulness to His world.",
+            "Inilagay ng Diyos ang tao sa halamanan “upang pagyamanin at ingatan ito” (Genesis 2:15). Nauna ang trabaho sa pagkahulog, hindi pagkatapos nito. Ang sumpa ang nagdala ng tinik, pawis at pagkabigo sa trabaho (Genesis 3:17-19), pero ang trabaho mismo ay bahagi ng ating dangal bilang mga larawan ng Diyos. Ang naglilinis, ang welder, ang caregiver at ang accountant ay gumagawa ng isang bagay na idinisenyo ng Diyos na gawin ng tao: magdala ng kaayusan, kagandahan at kasaganaan sa Kanyang mundo."
+          ),
+          t(
+            "Dominion is not domination. It is the rule of a steward who will answer to the true Owner (Psalm 24:1). It does not give us permission to destroy the land, abuse animals or exploit workers. It calls us to care for creation and for people the way God Himself would, with wisdom, justice and kindness.",
+            "Ang pamamahala ay hindi pang-aapi. Ito ang pamumuno ng isang katiwala na mananagot sa tunay na May-ari (Awit 24:1). Hindi tayo nito binibigyan ng pahintulot na sirain ang lupa, abusuhin ang mga hayop o pagsamantalahan ang mga manggagawa. Tinatawag tayo nitong alagaan ang nilikha at ang mga tao gaya ng gagawin ng Diyos mismo, nang may karunungan, katarungan at kabaitan."
+          ),
+        ],
+      },
+      {
+        heading: t("Image-bearers in a cracked world", "Mga larawan ng Diyos sa isang basag na mundo"),
+        body: [
+          t(
+            "After the flood, God still grounds the value of human life in His image (Genesis 9:6), and James applies it to our speech (James 3:9-10). Proverbs adds that oppressing the poor insults their Maker, while kindness to the needy honors Him (Proverbs 14:31). The image of God is the root of Christian concern for the unborn, the disabled, the elderly, the poor, migrants and prisoners.",
+            "Pagkatapos ng baha, isinasalig pa rin ng Diyos ang halaga ng buhay ng tao sa Kanyang larawan (Genesis 9:6), at inilalapat ito ni Santiago sa ating pananalita (Santiago 3:9-10). Idinagdag ng Kawikaan na ang pang-aapi sa dukha ay paghamak sa Lumikha nito, samantalang ang kabaitan sa nangangailangan ay pagpaparangal sa Kanya (Kawikaan 14:31). Ang larawan ng Diyos ang ugat ng malasakit ng Kristiyano sa hindi pa isinisilang, sa may kapansanan, sa matatanda, sa mahihirap, sa mga migrante at sa mga bilanggo."
+          ),
+          t(
+            "History shows the power of this truth. In the campaign against the British slave trade in the late 1700s, a widely copied medallion showed a kneeling African in chains with the words, “Am I not a man and a brother?” Christian abolitionists pressed the question because Scripture had already answered it. Every time we treat a person as less than human, we deny what God said in Genesis 1, and every time we honor the lowly, we agree with Him.",
+            "Ipinakikita ng kasaysayan ang kapangyarihan ng katotohanang ito. Sa kampanya laban sa kalakalan ng alipin ng Britanya noong huling bahagi ng 1700s, may medalyong kinopya nang malawakan na nagpapakita ng isang Aprikanong nakaluhod at nakakadena, na may mga salitang, “Hindi ba ako tao at kapatid?” Ipinilit ng mga Kristiyanong abolitionist ang tanong na iyon dahil sinagot na ito ng Kasulatan. Tuwing itinuturing natin ang isang tao na mas mababa sa tao, itinatanggi natin ang sinabi ng Diyos sa Genesis 1, at tuwing pinararangalan natin ang mababa, sumasang-ayon tayo sa Kanya."
+          ),
+        ],
+      },
+    ],
+    stories: [],
+  },
+  "c-providence-of-god": {
+    deeper: [
+      {
+        heading: t("Preserving and governing: two sides of providence", "Pag-iingat at pamamahala: dalawang panig ng probidensya"),
+        body: [
+          t(
+            "Theologians describe providence in two parts. First, God preserves His creation. The Son “upholds the universe by the word of His power” (Hebrews 1:3), and “in Him all things hold together” (Colossians 1:17). Every breath you take is a gift He keeps giving (Acts 17:25, 28). Creation is not a machine running on its own; it depends on Him moment by moment (Psalm 104:27-30).",
+            "Inilalarawan ng mga teologo ang probidensya sa dalawang bahagi. Una, iniingatan ng Diyos ang Kanyang nilikha. “Inaalalayan [ng Anak] ang sansinukob sa pamamagitan ng salita ng Kanyang kapangyarihan” (Hebreo 1:3), at “sa Kanya ay nagkakaugnay ang lahat ng bagay” (Colosas 1:17). Ang bawat hiningang hinihinga mo ay regalong patuloy Niyang ibinibigay (Gawa 17:25, 28). Ang nilikha ay hindi makinang tumatakbo nang mag-isa; umaasa ito sa Kanya sa bawat sandali (Awit 104:27-30)."
+          ),
+          t(
+            "Second, God governs. He guides history toward His purposes: “The king's heart is a stream of water in the hand of the Lord; He turns it wherever He will” (Proverbs 21:1). Nebuchadnezzar, the most powerful man of his day, learned on his knees that God “does according to His will among the host of heaven and among the inhabitants of the earth” (Daniel 4:35). Presidents, employers and immigration officers are not outside His reach.",
+            "Ikalawa, namamahala ang Diyos. Ginagabayan Niya ang kasaysayan tungo sa Kanyang mga layunin: “Ang puso ng hari ay parang batis sa kamay ng Panginoon; ibinabaling Niya ito saanman Niya naisin” (Kawikaan 21:1). Si Nabucodonosor, ang pinakamakapangyarihang tao sa kanyang panahon, ay natutong nakaluhod na ang Diyos ay “gumagawa ayon sa Kanyang kalooban sa hukbo ng langit at sa mga naninirahan sa lupa” (Daniel 4:35). Hindi labas sa Kanyang abot ang mga pangulo, mga amo at mga opisyal ng imigrasyon."
+          ),
+        ],
+      },
+      {
+        heading: t("Providence and evil: what we can and cannot say", "Probidensya at kasamaan: ang masasabi at hindi masasabi natin"),
+        body: [
+          t(
+            "Scripture holds two truths together. God is never the author of sin and never tempts anyone (James 1:13), and people are truly responsible for the evil they do. Yet nothing escapes God's rule, and He is able to bend even evil choices to serve His good purposes, as He did with Joseph's brothers and with those who crucified Jesus (Genesis 50:20; Acts 4:27-28).",
+            "Magkasabay na hinahawakan ng Kasulatan ang dalawang katotohanan. Hindi kailanman ang Diyos ang may-akda ng kasalanan at hindi Siya kailanman nanunukso (Santiago 1:13), at tunay na may pananagutan ang tao sa kasamaang ginagawa niya. Pero walang nakatatakas sa paghahari ng Diyos, at kaya Niyang baluktutin pati ang masasamang pasya para maglingkod sa Kanyang mabubuting layunin, gaya ng ginawa Niya sa mga kapatid ni Jose at sa mga nagpako kay Hesus (Genesis 50:20; Gawa 4:27-28)."
+          ),
+          t(
+            "We cannot always say why a particular tragedy happened, and we should be slow to explain other people's suffering, as Job's friends were not. What we can say is what God has revealed: He is good, He is in control, He is with His people in the fire, and He will one day judge every wrong and wipe away every tear. Honest faith can say both “I don't understand” and “I trust Him.”",
+            "Hindi natin laging masasabi kung bakit nangyari ang isang trahedya, at dapat tayong maging mabagal sa pagpapaliwanag ng pagdurusa ng iba, na hindi ginawa ng mga kaibigan ni Job. Ang masasabi natin ay ang ipinahayag ng Diyos: mabuti Siya, Siya ang may hawak, kasama Siya ng Kanyang bayan sa apoy, at balang araw ay hahatulan Niya ang bawat mali at papahirin ang bawat luha. Kayang sabihin ng tapat na pananampalataya ang “Hindi ko maintindihan” at ang “Nagtitiwala ako sa Kanya” nang sabay."
+          ),
+        ],
+      },
+      {
+        heading: t("Not fatalism: the place of prayer and planning", "Hindi fatalismo: ang lugar ng panalangin at pagpaplano"),
+        body: [
+          t(
+            "Fatalism says, “What will be will be, so nothing I do matters.” Providence says, “God rules, and He works through means, including my prayers and my choices.” When enemies threatened Jerusalem, Nehemiah wrote, “We prayed to our God and set a guard as a protection against them day and night” (Nehemiah 4:9). Prayer and planning were not rivals. Both were trust in action.",
+            "Sinasabi ng fatalismo, “Kung ano ang mangyayari ay mangyayari, kaya walang saysay ang anumang gawin ko.” Sinasabi ng probidensya, “Naghahari ang Diyos, at kumikilos Siya sa pamamagitan ng mga paraan, kasama ang aking mga panalangin at pasya.” Nang bantaan ng mga kaaway ang Jerusalem, isinulat ni Nehemias, “Nanalangin kami sa aming Diyos at naglagay ng bantay laban sa kanila araw at gabi” (Nehemias 4:9). Hindi magkalaban ang panalangin at ang pagpaplano. Pareho silang pagtitiwalang kumikilos."
+          ),
+          t(
+            "Paul's shipwreck shows it clearly. God promised that no one on board would die (Acts 27:22-24). Yet when the sailors tried to escape in the lifeboat, Paul said, “Unless these men stay in the ship, you cannot be saved” (Acts 27:31). God's certain promise was fulfilled through human obedience. So Filipino believers can replace “bahala na” with something better: “I will do what is wise and right, and I leave the outcome to my Father.”",
+            "Malinaw itong ipinakikita ng pagkawasak ng barko ni Pablo. Nangako ang Diyos na walang mamamatay sa sinumang sakay (Gawa 27:22-24). Pero nang tangkain ng mga marino na tumakas sakay ng bangkang pansagip, sinabi ni Pablo, “Kung hindi mananatili sa barko ang mga taong ito, hindi kayo maliligtas” (Gawa 27:31). Natupad ang tiyak na pangako ng Diyos sa pamamagitan ng pagsunod ng tao. Kaya mapapalitan ng mga Pilipinong mananampalataya ang “bahala na” ng mas mabuti: “Gagawin ko ang marunong at tama, at ipinauubaya ko sa aking Ama ang resulta.”"
+          ),
+        ],
+      },
+    ],
+    stories: [],
+  },
 };

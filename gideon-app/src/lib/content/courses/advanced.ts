@@ -1,5 +1,6 @@
 import { t, v, type Course, type CourseLesson } from "./types";
 import { ADVANCED_LESSONS_2 } from "./advanced-2";
+import { ADVANCED_LESSONS_3 } from "./advanced-3";
 
 /**
  * Advanced Christian walk: discernment, standing firm in trials, perseverance,
@@ -317,6 +318,8 @@ export const ADVANCED: Course = {
     t("Have you ever seen a group or community change for the better? What happened?", "Nakakita ka na ba ng isang grupo o komunidad na nagbago para sa ikabubuti? Ano ang nangyari?"),
     t("What gives you energy when you feel spiritually tired?", "Ano ang nagbibigay sa iyo ng lakas kapag pagod ka sa espirituwal?"),
     t("Who is an older believer you admire? What do you admire about them?", "Sino ang isang nakatatandang mananampalatayang hinahangaan mo? Ano ang hinahangaan mo sa kanila?"),
+    t("Where is the place you feel closest to God, and why?", "Saan ka pinakamalapit sa Diyos, at bakit?"),
+    t("When did a failure or loss teach you something you could not have learned otherwise?", "Kailan ka tinuruan ng isang pagkabigo o pagkawala ng bagay na hindi mo sana natutunan sa ibang paraan?"),
   ],
-  lessons: [...ADVANCED_LESSONS_1, ...ADVANCED_LESSONS_2],
+  lessons: [...ADVANCED_LESSONS_1, ...ADVANCED_LESSONS_2, ...ADVANCED_LESSONS_3],
 };

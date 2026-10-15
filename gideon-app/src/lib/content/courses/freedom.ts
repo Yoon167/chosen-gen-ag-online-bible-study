@@ -1,5 +1,6 @@
 import { t, v, type Course, type CourseLesson } from "./types";
 import { FREEDOM_LESSONS_2 } from "./freedom-2";
+import { FREEDOM_LESSONS_3 } from "./freedom-3";
 
 /**
  * Deliverance and spiritual freedom, strictly from Scripture: Christ's
@@ -609,6 +610,8 @@ export const FREEDOM: Course = {
     t("What good trait runs in your family? What hard one?", "Anong mabuting katangian ang nasa inyong pamilya? Anong mahirap?"),
     t("What do soldiers or security guards wear to stay protected?", "Ano ang isinusuot ng mga sundalo o guwardiya upang manatiling protektado?"),
     t("After a big victory, what helps you not fall back?", "Pagkatapos ng malaking tagumpay, ano ang tumutulong sa iyong hindi bumalik sa dati?"),
+    t("What is something you once felt ashamed of that you can now laugh about?", "Ano ang isang bagay na dati mong ikinahihiya pero natatawanan mo na ngayon?"),
+    t("Who helped you through a hard time, and what did they do that helped most?", "Sino ang tumulong sa iyo sa isang mahirap na panahon, at ano ang pinakanakatulong sa ginawa niya?"),
   ],
-  lessons: [...FREEDOM_LESSONS_1, ...FREEDOM_LESSONS_2],
+  lessons: [...FREEDOM_LESSONS_1, ...FREEDOM_LESSONS_2, ...FREEDOM_LESSONS_3],
 };

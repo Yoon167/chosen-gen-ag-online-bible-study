@@ -392,4 +392,134 @@ export const DEEP: DeepSet = {
       "Panginoong Hesus, salamat po na pinalaya Ninyo ako, at bago tuwing umaga ang Inyong awa. Turuan Ninyo akong manatili sa Inyo gaya ng sangang nananatili sa puno. Hindi ko gusto ang isang dramatikong sandali; gusto ko ang buhay na kasama Kayo. Tulungan Ninyo akong panatilihin ang simpleng ritmo ng Inyong Salita at panalangin. Kapag nabuwal ako, ipaalala Ninyong agad akong bumalik sa Inyong awa. Hayaan Ninyong gamitin ko ang kalayaan ko para umibig at maglingkod sa iba. Baguhin Ninyo ako habang tumitingin ako sa Inyo. Akin Kayo, at Kayo ang kalayaan ko. Amen."
     ),
   },
+  "c-shame-to-honor": {
+    revelation: t(
+      "Jesus did not only take away your guilt; He hung naked on a cross to carry your shame, so that you never have to hide from God again.",
+      "Hindi lang ang pagkakasala mo ang inalis ni Hesus; nakabitin Siyang hubad sa krus para pasanin ang hiya mo, upang hindi ka na kailangang magtago sa Diyos kailanman."
+    ),
+    mainTruth: t(
+      "Before sin, the first couple were “naked and were not ashamed” (Genesis 2:25). After sin, they sewed fig leaves and hid among the trees, and Adam said, “I was afraid, because I was naked, and I hid myself” (Genesis 3:10). Yet God came looking, and He clothed them with garments He Himself made (3:21). In the fullness of time, His Son “endured the cross, despising the shame” (Hebrews 12:2). He called an ashamed woman forward and named her “Daughter” (Luke 8:48). He restored Peter beside a charcoal fire (John 21:15-19). And the promise stands: “Those who look to him are radiant, and their faces shall never be ashamed” (Psalm 34:5).",
+      "Bago ang kasalanan, ang unang mag-asawa ay “hubad at hindi nahihiya” (Genesis 2:25). Matapos magkasala, nagtahi sila ng dahon ng igos at nagtago sa mga punongkahoy, at sinabi ni Adan, “Natakot ako, sapagkat ako'y hubad, kaya nagtago ako” (Genesis 3:10). Pero dumating ang Diyos na naghahanap, at dinamitan Niya sila ng kasuotang Siya mismo ang gumawa (3:21). Sa takdang panahon, ang Kanyang Anak ay “nagtiis ng krus, hinamak ang kahihiyan” (Hebreo 12:2). Tinawag Niya pasulong ang isang babaeng nahihiya at pinangalanan siyang “Anak” (Lucas 8:48). Ibinalik Niya si Pedro sa tabi ng apoy ng uling (Juan 21:15-19). At nananatili ang pangako: “Ang mga tumitingin sa Kanya ay nagliliwanag, at ang kanilang mukha ay hindi kailanman mapapahiya” (Awit 34:5)."
+    ),
+    insight: [
+      t(
+        "Many believers have dealt with guilt but never with shame. Guilt is about what I did, and the blood of Jesus answers it: confess, and He forgives (1 John 1:9). Shame is about who I think I am, and it often lingers long after the sin is forgiven. That is why some Christians can quote Romans 8:1 and still sit at the back, avoid eye contact with the pastor, and never volunteer to serve. They believe they are forgiven, but they still feel disqualified. Shame does not argue with doctrine; it simply tells you to hide.",
+        "Maraming mananampalatayang nakaharap na ang pagkakasala pero hindi pa ang hiya. Ang pagkakasala ay tungkol sa ginawa ko, at sinasagot ito ng dugo ni Hesus: magtapat ka, at magpapatawad Siya (1 Juan 1:9). Ang hiya ay tungkol sa iniisip kong pagkatao ko, at madalas itong nananatili kahit matagal nang napatawad ang kasalanan. Kaya may mga Kristiyanong kayang sipiin ang Roma 8:1 pero nakaupo pa rin sa likod, umiiwas tumingin sa pastor, at hindi nagbo-volunteer maglingkod. Naniniwala silang napatawad sila, pero pakiramdam pa rin nila ay hindi sila karapat-dapat. Hindi nakikipagtalo ang hiya sa doktrina; sinasabi lang nito sa iyong magtago."
+      ),
+      t(
+        "Notice too that shame is not always the result of our own sin. The woman in Luke 8 had done nothing wrong; her illness made her “unclean” and isolated for twelve years. Many carry shame for what was done to them: abuse, abandonment, poverty, a parent's scandal, an annulled marriage they did not want. Jesus treats both kinds the same way. He does not leave the ashamed in the crowd. He calls them forward, not to expose them, but to restore them in front of the very people who looked down on them.",
+        "Pansinin din na hindi laging bunga ng sarili nating kasalanan ang hiya. Walang ginawang mali ang babae sa Lucas 8; ginawa siyang “marumi” at ihiwalay ng sakit niya sa loob ng labindalawang taon. Marami ang may dalang hiya dahil sa ginawa sa kanila: pang-aabuso, pag-abandona, kahirapan, eskandalo ng magulang, kasal na napawalang-bisa na hindi nila ginusto. Pareho ang pagtrato ni Hesus sa dalawang uri. Hindi Niya iniiwan sa gitna ng madla ang mga nahihiya. Tinatawag Niya sila pasulong, hindi para ilantad, kundi para ibalik ang dangal nila sa harap mismo ng mga taong humamak sa kanila."
+      ),
+    ],
+    life: [
+      t(
+        "Picture a woman who went to Hong Kong to save money for her children's schooling and came home after two years with nothing, cheated by an agency and buried in utang. She cannot face her relatives at the fiesta. She stops going to church because she cannot bear the question, “Kumusta ang abroad?” Her sin was not the problem; her shame was. Now picture an AG that hears her story without judgment, prays over her, and tells her the truth: “You are not your failure. God calls you His daughter.” Shame loses its grip when love comes close.",
+        "Isipin mo ang isang babaeng pumunta sa Hong Kong para mag-ipon para sa pag-aaral ng mga anak niya at umuwi pagkalipas ng dalawang taon na walang dala, niloko ng ahensya at baon sa utang. Hindi niya maharap ang mga kamag-anak sa pista. Tumigil siyang magsimba dahil hindi niya kayang marinig ang tanong na, “Kumusta ang abroad?” Hindi kasalanan ang problema niya; hiya ang problema. Ngayon, isipin mo ang isang AG na nakikinig sa kuwento niya nang walang paghatol, ipinapanalangin siya, at sinasabi sa kanya ang totoo: “Hindi ikaw ang pagkabigo mo. Tinatawag ka ng Diyos na anak Niya.” Nawawalan ng kapit ang hiya kapag lumapit ang pag-ibig."
+      ),
+      t(
+        "Hiya runs deep in our culture. It can be a gift: it keeps us decent and respectful. But it can also become a chain that keeps families silent about a father's drinking or a cousin's abuse, because “nakakahiya sa kapitbahay.” It keeps young people from confessing sin to anyone. It keeps OFWs from admitting they are drowning. Ask yourself: is my hiya protecting what is good, or protecting what is hidden? The first is honor. The second is bondage.",
+        "Malalim ang ugat ng hiya sa ating kultura. Maaari itong maging regalo: pinananatili tayo nitong disente at magalang. Pero maaari rin itong maging tanikalang nagpapatahimik sa pamilya tungkol sa pag-inom ng ama o pang-aabuso ng pinsan, dahil “nakakahiya sa kapitbahay.” Pinipigilan nito ang mga kabataan na magtapat ng kasalanan kaninuman. Pinipigilan nito ang mga OFW na aminin na lumulubog na sila. Tanungin mo ang sarili: ang hiya ko ba ay nagpoprotekta sa mabuti, o nagpoprotekta sa nakatago? Ang una ay karangalan. Ang ikalawa ay pagkaalipin."
+      ),
+    ],
+    twist: t(
+      "We think the cure for shame is to be hidden better. The Kingdom twist is that the cure for shame is to be seen fully and loved anyway. The woman wanted to slip away unnoticed, but Jesus would not let her leave healed and still hiding. The cross was designed to make a man as visible and humiliated as possible, and Jesus accepted that public shame so that you could stand publicly in His honor. God's answer to your fig leaves is not a bigger leaf. It is a robe He sews Himself, and a Father who runs to put it on you in front of the whole village (Luke 15:22).",
+      "Akala natin ang lunas sa hiya ay mas mahusay na pagtatago. Ang twist ng Kaharian: ang lunas sa hiya ay ang makita nang buo at mahalin pa rin. Gustong umalis ng babae nang hindi napapansin, pero hindi pumayag si Hesus na umalis siyang magaling na pero nagtatago pa. Dinisenyo ang krus para gawing kitang-kita at hiyang-hiya ang isang tao, at tinanggap ni Hesus ang hayagang kahihiyang iyon para makatayo ka nang hayagan sa Kanyang karangalan. Ang sagot ng Diyos sa iyong mga dahon ng igos ay hindi mas malaking dahon. Isa itong balabal na Siya mismo ang nagtahi, at isang Amang tumatakbo para isuot ito sa iyo sa harap ng buong nayon (Lucas 15:22)."
+    ),
+    confirm: [
+      t("Isaiah 61:7: instead of your shame there shall be a double portion.", "Isaias 61:7: sa halip na kahihiyan ay magkakaroon kayo ng dobleng bahagi."),
+      t("Luke 15:20-24: the father ran, embraced his son and clothed him with the best robe.", "Lucas 15:20-24: tumakbo ang ama, niyakap ang anak, at dinamitan siya ng pinakamagandang balabal."),
+      t("John 4:28-30, 39: the woman who avoided the crowd ran back to tell the whole town about Jesus.", "Juan 4:28-30, 39: ang babaeng umiiwas sa madla ay tumakbo pabalik para ikuwento kay Hesus ang buong bayan."),
+      t("Romans 10:11: everyone who believes in Him will not be put to shame.", "Roma 10:11: ang bawat sumasampalataya sa Kanya ay hindi mapapahiya."),
+    ],
+    heart: [
+      t(
+        "Stop hiding from God. Come out from behind the trees and answer His question, “Where are you?” honestly. Tell Him the memory you would never tell anyone. He already knows, and He is not looking away. Let Him cover you His way, not yours.",
+        "Tumigil ka nang magtago sa Diyos. Lumabas ka mula sa likod ng mga punongkahoy at sagutin mo nang tapat ang tanong Niyang, “Nasaan ka?” Sabihin mo sa Kanya ang alaalang hindi mo kailanman sasabihin kaninuman. Alam na Niya, at hindi Siya umiiwas ng tingin. Hayaan mong takpan ka Niya sa paraan Niya, hindi sa paraan mo."
+      ),
+      t(
+        "Then let your face be lifted. Look to Jesus more than at your past. Accept the name He gives you, and take one step back into the place shame pushed you out of: the front row, the ministry team, the family table. And be a safe place for others who are ashamed. Never make someone pay twice for what Jesus already carried.",
+        "Saka mo hayaang maitaas ang mukha mo. Tumingin ka kay Hesus nang higit kaysa sa nakaraan mo. Tanggapin mo ang pangalang ibinibigay Niya sa iyo, at humakbang ka pabalik sa lugar kung saan ka itinulak palabas ng hiya: ang unahang upuan, ang ministry team, ang hapag ng pamilya. At maging ligtas na lugar ka para sa ibang nahihiya. Huwag mong pagbayarin nang dalawang beses ang sinuman sa pinasan na ni Hesus."
+      ),
+    ],
+    questions: [
+      t("What memory, secret or label still makes me want to hide?", "Anong alaala, lihim, o tatak ang nagpapatago pa rin sa akin?"),
+      t("Is my shame from my own sin, from what was done to me, or both?", "Ang hiya ko ba ay mula sa sarili kong kasalanan, sa ginawa sa akin, o pareho?"),
+      t("Where has hiya kept me or my family silent when we needed help?", "Saan ako o ang pamilya ko pinatahimik ng hiya kung kailan kailangan namin ng tulong?"),
+      t("What name does Jesus give me, and do I believe it more than the old label?", "Anong pangalan ang ibinibigay sa akin ni Hesus, at mas pinaniniwalaan ko ba ito kaysa sa lumang tatak?"),
+    ],
+    actions: [
+      t("Write down the one thing you are most ashamed of, bring it to God in prayer, and read Hebrews 12:2 aloud over it.", "Isulat ang isang bagay na pinakaikinahihiya mo, dalhin ito sa Diyos sa panalangin, at basahin nang malakas ang Hebreo 12:2 para dito."),
+      t("Tell one safe, mature believer your story this week and let them pray over you.", "Ikuwento sa isang ligtas at mature na mananampalataya ang kuwento mo ngayong linggo at hayaan silang ipanalangin ka."),
+      t("Take one step back into a place shame made you leave: a seat nearer the front, a ministry, a phone call home.", "Humakbang pabalik sa isang lugar na pinaalis ka ng hiya: upuang mas malapit sa unahan, isang ministeryo, isang tawag pauwi."),
+    ],
+    prayer: t(
+      "Lord Jesus, You were stripped and mocked and hung on a cross, and You despised that shame for me. I have hidden behind fig leaves for too long. I come out now. I bring You what I did and what was done to me. Cover me with the robe You made. Call me forward and call me by the name You have given me. Lift my face so that I look at You and not at my past. Make my face radiant, and make me a safe place for others who are ashamed. Amen.",
+      "Panginoong Hesus, hinubaran Ka, nilibak, at ibinitin sa krus, at hinamak Mo ang kahihiyang iyon para sa akin. Matagal na akong nagtatago sa likod ng mga dahon ng igos. Lumalabas na ako ngayon. Dinadala ko sa Iyo ang ginawa ko at ang ginawa sa akin. Takpan Mo ako ng balabal na Ikaw ang gumawa. Tawagin Mo ako pasulong at tawagin sa pangalang ibinigay Mo sa akin. Itaas Mo ang mukha ko upang sa Iyo ako tumingin at hindi sa nakaraan ko. Paliwanagin Mo ang mukha ko, at gawin Mo akong ligtas na lugar para sa ibang nahihiya. Amen."
+    ),
+  },
+  "c-unbind-them": {
+    revelation: t(
+      "Jesus alone can raise the dead, but He has chosen to let freed people help unwrap the grave clothes of others.",
+      "Si Hesus lamang ang makabubuhay sa patay, pero pinili Niyang hayaan ang mga pinalaya na tumulong sa pagkakalag ng damit-panlibing ng iba."
+    ),
+    mainTruth: t(
+      "At the tomb of Lazarus, Jesus did what no one else could do: “Lazarus, come out.” Then He turned to the people and said, “Unbind him, and let him go” (John 11:43-44). God calls His people into the work of loosing: “Is not this the fast that I choose: to loose the bonds of wickedness... to let the oppressed go free, and to break every yoke?” (Isaiah 58:6). Paul shows the manner: “restore him in a spirit of gentleness... Bear one another's burdens” (Galatians 6:1-2), and the Lord's servant must be kind and patient, because God grants repentance so that people “escape from the snare of the devil” (2 Timothy 2:24-26). And He uses our stories: “Go home to your friends and tell them how much the Lord has done for you” (Mark 5:19).",
+      "Sa libingan ni Lazaro, ginawa ni Hesus ang hindi kayang gawin ng sinuman: “Lazaro, lumabas ka.” Saka Siya bumaling sa mga tao at sinabi, “Kalagan ninyo siya, at hayaan siyang makalakad” (Juan 11:43-44). Tinatawag ng Diyos ang Kanyang bayan sa gawain ng pagkakalag: “Hindi ba ito ang ayunong pinipili Ko: kalagan ang mga gapos ng kasamaan... palayain ang mga inaapi, at baliin ang bawat pamatok?” (Isaias 58:6). Ipinakita ni Pablo ang paraan: “ibalik siya sa diwa ng kahinahunan... Pasanin ninyo ang pasanin ng isa't isa” (Galacia 6:1-2), at ang lingkod ng Panginoon ay dapat mabait at matiyaga, sapagkat ang Diyos ang nagbibigay ng pagsisisi upang ang mga tao ay “makatakas sa bitag ng diyablo” (2 Timoteo 2:24-26). At ginagamit Niya ang ating mga kuwento: “Umuwi ka sa iyong mga kaibigan at sabihin mo sa kanila kung gaano kalaki ang ginawa sa iyo ng Panginoon” (Marcos 5:19)."
+    ),
+    insight: [
+      t(
+        "Many churches are full of Lazaruses: people truly raised to new life who are still wrapped in old cloths. They are saved but still bound by habits, lies, bitterness or shame, and they shuffle through Sunday unable to use their hands or see clearly. The tragedy is not that they are bound; Lazarus came out bound too. The tragedy is when the people standing around the tomb only watch. Jesus did not unwrap Lazarus Himself. He gave that job to the community.",
+        "Maraming iglesiang puno ng mga Lazaro: mga taong tunay na binuhay sa bagong buhay pero nakabalot pa sa mga lumang tela. Ligtas na sila pero nakagapos pa sa mga ugali, kasinungalingan, pait, o hiya, at pakaladkad silang dumaraan sa Linggo, hindi magamit ang mga kamay at hindi makakita nang malinaw. Ang trahedya ay hindi na nakagapos sila; lumabas din si Lazaro na nakagapos. Ang trahedya ay kapag nanonood lang ang mga taong nakatayo sa paligid ng libingan. Hindi si Hesus mismo ang nagkalag kay Lazaro. Ibinigay Niya ang trabahong iyon sa komunidad."
+      ),
+      t(
+        "But Paul adds a warning many skip: “Keep watch on yourself, lest you too be tempted” (Galatians 6:1). Helping others get free is holy work, and it can expose the helper. Pride can creep in (“I am the strong one”). Old temptations can stir. Curiosity can turn into gossip. That is why we restore “in a spirit of gentleness,” never alone in dangerous situations, always under the covering of the church, and always remembering that it is God, not we, who grants repentance and breaks chains.",
+        "Pero may babala si Pablo na nilalaktawan ng marami: “Bantayan mo ang iyong sarili, baka ikaw rin ay matukso” (Galacia 6:1). Banal na gawain ang pagtulong sa iba na lumaya, at maaari nitong ilantad ang tumutulong. Maaaring sumingit ang kayabangan (“Ako ang malakas”). Maaaring mabuhay ang mga lumang tukso. Maaaring maging tsismis ang kuryosidad. Kaya ibinabalik natin sila “sa diwa ng kahinahunan,” hindi kailanman nag-iisa sa mapanganib na sitwasyon, laging nasa ilalim ng pag-iingat ng iglesia, at laging inaalala na ang Diyos, hindi tayo, ang nagbibigay ng pagsisisi at pumuputol ng mga tanikala."
+      ),
+    ],
+    life: [
+      t(
+        "Picture a bedspace in Dubai where eight Filipino men share bunks. One of them comes home drunk every Friday and sends less and less money home. The others joke about him or ignore him. One believer among them, who was once bound by drinking himself, starts waking him for breakfast on Saturdays, listens without lecturing, and one night tells him simply, “Pare, ganyan din ako dati. Si Lord ang tumulong sa akin.” He invites him to his AG. He does not fix him. He loosens one strip of cloth at a time, and he lets God do the rest.",
+        "Isipin mo ang isang bedspace sa Dubai kung saan walong lalaking Pilipino ang magkakasama sa mga double deck. Isa sa kanila ang umuuwing lasing tuwing Biyernes at paliit nang paliit ang ipinapadala sa bahay. Biniro siya o binabalewala ng iba. Isang mananampalataya sa kanila, na dati ring nakagapos sa alak, ang nagsimulang gisingin siya para mag-almusal tuwing Sabado, nakikinig nang hindi nagsesermon, at isang gabi ay simpleng sinabi sa kanya, “Pare, ganyan din ako dati. Si Lord ang tumulong sa akin.” Inanyayahan niya ito sa AG niya. Hindi niya inaayos ang kasama. Isa-isang hibla ng tela ang kinakalag niya, at hinahayaan niya ang Diyos sa natitira."
+      ),
+      t(
+        "Gentleness matters most in a culture of tsismis. When someone falls, the group chat often knows before the pastor does. Isaiah 58 speaks of taking away “the pointing of the finger, and speaking wickedness” (verse 9). Restoring a brother means protecting his name, speaking to him before speaking about him, and keeping confidences, unless someone is in danger and others must be told to keep them safe. People will only bring their chains into the light where they know they will not be put on display.",
+        "Pinakamahalaga ang kahinahunan sa kultura ng tsismis. Kapag may nadapa, madalas ay nauuna pang malaman ng group chat kaysa sa pastor. Sinasabi ng Isaias 58 ang pag-alis ng “pagtuturo ng daliri, at pagsasalita ng kasamaan” (t. 9). Ang pagbabalik sa isang kapatid ay pag-iingat sa pangalan niya, pakikipag-usap sa kanya bago pag-usapan siya, at pag-iingat ng mga lihim, maliban kung may nasa panganib at kailangang sabihan ang iba para mapanatili silang ligtas. Dadalhin lang ng mga tao ang mga tanikala nila sa liwanag kung alam nilang hindi sila gagawing palabas."
+      ),
+    ],
+    twist: t(
+      "We think we must be fully free and fully healed before we can help anyone. The Kingdom twist is that Paul and Silas were still in chains when their songs loosened every prisoner in the jail (Acts 16:25-26). And the man Jesus sent home to the Decapolis had been free for only a few hours (Mark 5:18-20). You do not need to be finished to be useful. Your story, still in progress, told honestly, is often more powerful to someone still bound than a polished testimony from someone who seems never to have struggled. God frees others through people who are still being freed.",
+      "Akala natin kailangan muna nating maging ganap na malaya at ganap na magaling bago tayo makatulong sa iba. Ang twist ng Kaharian: nakakadena pa sina Pablo at Silas nang makalag ng kanilang awit ang bawat bilanggo sa piitan (Gawa 16:25-26). At ang lalaking pinauwi ni Hesus sa Decapolis ay ilang oras pa lang na malaya (Marcos 5:18-20). Hindi mo kailangang tapos na para magamit. Ang kuwento mo, na nagpapatuloy pa, na ikinuwento nang tapat, ay madalas mas makapangyarihan sa taong nakagapos pa kaysa sa pulidong patotoo ng taong parang hindi kailanman nakipagbuno. Pinalalaya ng Diyos ang iba sa pamamagitan ng mga taong pinalalaya pa rin Niya."
+    ),
+    confirm: [
+      t("Luke 4:18: Jesus came to proclaim liberty to the captives, and He sends us as the Father sent Him (John 20:21).", "Lucas 4:18: dumating si Hesus upang ipahayag ang kalayaan sa mga bihag, at isinusugo Niya tayo gaya ng pagsugo sa Kanya ng Ama (Juan 20:21)."),
+      t("Mark 2:1-12: four friends carried a paralyzed man and broke through a roof to bring him to Jesus.", "Marcos 2:1-12: binuhat ng apat na kaibigan ang isang paralitiko at binutas ang bubong para dalhin siya kay Hesus."),
+      t("James 5:19-20: whoever brings back a wanderer from his error will save his soul from death.", "Santiago 5:19-20: ang nagbabalik sa isang naligaw mula sa kanyang pagkakamali ay magliligtas ng kanyang kaluluwa mula sa kamatayan."),
+      t("2 Corinthians 1:3-4: God comforts us so that we can comfort others with the same comfort.", "2 Corinto 1:3-4: inaaliw tayo ng Diyos upang maaliw natin ang iba sa parehong aliw."),
+    ],
+    heart: [
+      t(
+        "Move from spectator to helper. Ask God to open your eyes to the Lazarus near you, and to give you His compassion instead of judgment. Remember who unwrapped you, and how patient they had to be.",
+        "Lumipat ka mula sa pagiging manonood tungo sa pagiging katuwang. Hilingin sa Diyos na buksan ang mga mata mo sa Lazarong malapit sa iyo, at bigyan ka ng Kanyang habag sa halip na paghatol. Alalahanin mo kung sino ang nagkalag sa iyo, at kung gaano sila kinailangang maging matiyaga."
+      ),
+      t(
+        "Be gentle, be humble and be wise. Listen more than you speak. Guard people's stories. Watch yourself. Know when to bring in your pastor or a professional. And keep singing in your own midnight, because someone in the next cell is listening.",
+        "Maging mahinahon, mapagpakumbaba, at matalino. Makinig nang higit kaysa magsalita. Ingatan ang kuwento ng mga tao. Bantayan ang sarili. Alamin kung kailan isasama ang pastor mo o isang propesyonal. At patuloy kang umawit sa sarili mong hatinggabi, dahil may nakikinig sa kabilang selda."
+      ),
+    ],
+    questions: [
+      t("Who is the Lazarus near me, alive in Christ but still bound?", "Sino ang Lazarong malapit sa akin, buhay kay Cristo pero nakagapos pa?"),
+      t("When someone falls, is my first reaction gentleness, judgment or gossip?", "Kapag may nadapa, ang una ko bang reaksyon ay kahinahunan, paghatol, o tsismis?"),
+      t("Am I watching myself, or am I helping others while ignoring my own weak places?", "Binabantayan ko ba ang sarili ko, o tumutulong ako sa iba habang binabalewala ang sarili kong mahihinang bahagi?"),
+      t("Who needs to hear how much the Lord has done for me?", "Sino ang kailangang makarinig kung gaano kalaki ang ginawa sa akin ng Panginoon?"),
+    ],
+    actions: [
+      t("Ask God for one name, write it down, and pray for that person by name every day this week.", "Humingi sa Diyos ng isang pangalan, isulat ito, at ipanalangin ang taong iyon sa pangalan araw-araw ngayong linggo."),
+      t("Write your testimony of freedom in a few sentences, and be ready to share it simply when the moment comes.", "Isulat ang iyong patotoo ng kalayaan sa ilang pangungusap, at maging handang ibahagi ito nang simple kapag dumating ang pagkakataon."),
+      t("Have one unhurried, listening conversation with that person, and offer to pray or to bring them to your AG.", "Magkaroon ng isang hindi minamadali at nakikinig na pag-uusap sa taong iyon, at mag-alok na manalangin o dalhin siya sa iyong AG."),
+    ],
+    prayer: t(
+      "Lord Jesus, You called me out of my tomb and sent people to unwrap me. Thank You for every person who was patient with me. Now give me Your eyes for the bound people around me, in my family, my workplace and my church. Make me gentle, humble and wise. Keep me watchful over my own heart. Give me courage to tell what You have done, and patience to love people while You set them free. Let my life be a song at midnight that loosens chains. Amen.",
+      "Panginoong Hesus, tinawag Mo ako palabas sa aking libingan at nagpadala Ka ng mga taong nagkalag sa akin. Salamat sa bawat taong naging matiyaga sa akin. Ngayon, bigyan Mo ako ng Iyong mga mata para sa mga nakagapos sa paligid ko, sa aking pamilya, trabaho, at iglesia. Gawin Mo akong mahinahon, mapagpakumbaba, at matalino. Panatilihin Mo akong nagbabantay sa sarili kong puso. Bigyan Mo ako ng tapang na ikuwento ang ginawa Mo, at ng tiyagang mahalin ang mga tao habang pinalalaya Mo sila. Maging awit nawa sa hatinggabi ang buhay ko na nagkakalag ng mga tanikala. Amen."
+    ),
+  },
 };

@@ -1,4 +1,5 @@
 import { t, v, type Course } from "./types";
+import { GROWTH_LESSONS_3 } from "./growth-3";
 
 export const GROWTH: Course = {
   id: "growth",
@@ -17,6 +18,8 @@ export const GROWTH: Course = {
     t("Who is someone whose character you deeply respect? What makes them that way?", "Sino ang taong lubos mong iginagalang ang karakter? Ano ang nagpapaganda rito?"),
     t("What fruit or plant have you seen grow from a seed? How long did it take?", "Anong prutas o halaman ang nakita mong lumaki mula sa buto? Gaano katagal?"),
     t("If someone gave you 10,000 pesos to manage for them, what would you do?", "Kung may magbigay sa iyo ng 10,000 piso upang pangasiwaan para sa kanya, ano ang gagawin mo?"),
+    t("When was the last time you truly rested? What did you do?", "Kailan ka huling talagang nakapagpahinga? Ano ang ginawa mo?"),
+    t("Have you ever gone through a season when God felt far away? What kept you going?", "Dumaan ka na ba sa panahong parang malayo ang Diyos? Ano ang nagpatuloy sa iyo?"),
   ],
   lessons: [
     {
@@ -779,5 +782,6 @@ export const GROWTH: Course = {
         t("Time is a precious trust; plan it around God's priorities.", "Ang oras ay mahalagang ipinagkatiwala; planuhin ito ayon sa mga prayoridad ng Diyos."),
       ],
     },
+    ...GROWTH_LESSONS_3,
   ],
 };

@@ -1,4 +1,5 @@
 import { t, v, type Course } from "./types";
+import { THEOLOGY_LESSONS_3 } from "./theology-3";
 
 export const THEOLOGY: Course = {
   id: "theology",
@@ -17,6 +18,8 @@ export const THEOLOGY: Course = {
     t("What stories about spirits or ghosts did you hear growing up?", "Anong mga kuwento tungkol sa espiritu o multo ang narinig mo noong lumalaki ka?"),
     t("What makes a group feel like family to you?", "Ano ang nagpaparamdam sa iyo na parang pamilya ang isang grupo?"),
     t("What do you feel when people talk about the end of the world?", "Ano ang nararamdaman mo kapag pinag-uusapan ng mga tao ang katapusan ng mundo?"),
+    t("What is one thing about another person that made you see their worth?", "Ano ang isang bagay sa ibang tao na nagpakita sa iyo ng kanyang halaga?"),
+    t("Looking back, what is one hard thing God turned for good in your life?", "Kung lilingon ka, ano ang isang mahirap na bagay na ginawang mabuti ng Diyos sa buhay mo?"),
   ],
   lessons: [
     {
@@ -799,5 +802,6 @@ export const THEOLOGY: Course = {
         t("Christians differ on details; we unite on the core and live holy lives.", "Nagkakaiba ang mga Kristiyano sa detalye; nagkakaisa tayo sa pangunahing katotohanan at namumuhay nang banal."),
       ],
     },
+    ...THEOLOGY_LESSONS_3,
   ],
 };
