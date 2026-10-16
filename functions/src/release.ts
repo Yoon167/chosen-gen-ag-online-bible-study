@@ -4,10 +4,10 @@
  * the first time it sees a new id.
  */
 export const LATEST_RELEASE = {
-  id: "2026-10-12-profile",
+  id: "2026-10-16-ag-logos",
   title: { en: "✨ New in Anointed Academy", tl: "✨ Bago sa Anointed Academy" },
   body: {
-    en: "A new Profile, cleaner verse images with 12 new photos, and pictures of life in Jesus' time. Tap to see what's new.",
-    tl: "Bagong Profile, mas malinis na verse image na may 12 bagong larawan, at mga larawan ng buhay noong panahon ni Hesus. Pindutin para makita ang bago.",
+    en: "Every course is now a book you enroll in, a bell for your notifications, a new certificate, and your AG's own logo. Tap to see what's new.",
+    tl: "Aklat na ang bawat course na puwedeng i-enroll, may bell para sa mga abiso, bagong certificate, at sariling logo ng inyong AG. Pindutin para makita ang bago.",
   },
 };

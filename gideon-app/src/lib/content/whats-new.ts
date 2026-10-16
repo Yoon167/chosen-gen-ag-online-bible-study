@@ -18,6 +18,106 @@ export interface Release {
 
 export const RELEASES: Release[] = [
   {
+    id: "2026-10-16-ag-logos",
+    date: "2026-10-16",
+    title: t("Your AG's own logo", "Sariling logo ng inyong AG"),
+    items: [
+      t(
+        "Every AG can now have its own logo. AG Leaders and Assistant Leaders upload it on My AG, then zoom and drag it to fit the circle, with a white, navy or clear background.",
+        "May sariling logo na ang bawat AG. Ia-upload ito ng AG Leader at Katuwang na Lider sa My AG, saka i-zoom at i-drag para magkasya sa bilog, na may puti, navy o walang background."
+      ),
+      t(
+        "Pick a border for your logo: gold ring, double gold, navy and gold, laurel wreath, glowing, dotted, rainbow, or no frame.",
+        "Pumili ng border ng logo: gintong singsing, dobleng ginto, navy at ginto, korona ng laurel, nagniningning, tuldok-tuldok, bahaghari, o walang frame."
+      ),
+      t(
+        "In more than one AG? Tap your AG's logo to switch, on My AG, in the Library and on every book. On a book, a small lock on each logo shows whether that AG has opened it.",
+        "Kasali sa higit sa isang AG? Pindutin ang logo ng AG para lumipat, sa My AG, sa Library at sa bawat aklat. Sa aklat, may maliit na kandado sa bawat logo na nagpapakita kung binuksan na ito ng AG na iyon."
+      ),
+      t(
+        "Your AG's logo now stands on your Course and Journey certificates, above your AG leader's signature.",
+        "Nasa mga Course at Journey certificate mo na ang logo ng inyong AG, sa itaas ng pirma ng iyong AG leader."
+      ),
+    ],
+  },
+  {
+    id: "2026-10-15-inbox",
+    date: "2026-10-15",
+    title: t("A bell for your notifications and a new certificate", "Bell para sa mga abiso at bagong certificate"),
+    items: [
+      t(
+        "A bell on Home with a red count of new notifications. Tap it for your inbox: prayers, announcements, check-ins, live studies, meetings and enrollment updates, all in one place, even the ones you missed on your phone.",
+        "May bell na sa Home na may pulang bilang ng bagong abiso. Pindutin para sa iyong inbox: mga panalangin, announcement, check-in, live study, meeting at update sa enrollment, lahat sa iisang lugar, pati ang mga hindi mo napansin sa phone."
+      ),
+      t(
+        "AG leaders get a notification when a member sends an enrollment form, and members get one the moment it is approved, with their leader's message.",
+        "May abiso ang mga AG leader kapag may member na nagpadala ng enrollment form, at may abiso ang member sa sandaling ma-approve ito, kasama ang mensahe ng leader."
+      ),
+      t(
+        "A new certificate: cream paper in a navy and gold frame, the Anointed Academy logo, your name in large letters, a gold seal and signature lines. Print it or save it as a PDF.",
+        "Bagong certificate: cream na papel sa navy at gintong frame, ang logo ng Anointed Academy, ang pangalan mo sa malalaking letra, gintong seal at mga linya ng pirma. I-print o i-save bilang PDF."
+      ),
+      t(
+        "Every book cover now carries the Anointed Academy mark in gold.",
+        "May gintong tatak na ng Anointed Academy ang bawat book cover."
+      ),
+      t(
+        "The opening film now leads straight into the app.",
+        "Diretso na sa app pagkatapos ng opening film."
+      ),
+    ],
+  },
+  {
+    id: "2026-10-15-books",
+    date: "2026-10-15",
+    title: t("Every course is now a book", "Aklat na ang bawat course"),
+    items: [
+      t(
+        "A full chapter for every lesson, 109 in all, written by your pastors: a verse, an opening story, teaching in sections, a quote to remember, a word from the pastor and a blessing. Plus 22 new lessons, two in every course.",
+        "Buong kabanata para sa bawat aralin, 109 lahat, isinulat ng iyong mga pastor: talata, panimulang kuwento, turo sa mga bahagi, linyang tatandaan, salita mula sa pastor at pagpapala. May 22 bagong aralin din, dalawa sa bawat course."
+      ),
+      t(
+        "Enroll with a short form (why this book, when you read, your commitment). Your AG leader approves it, and each AG opens its own books.",
+        "Mag-enroll sa maikling form (bakit ang aklat na ito, kailan ka nagbabasa, ang pangako mo). Ia-approve ito ng AG leader mo, at may sariling bukas na aklat ang bawat AG."
+      ),
+      t(
+        "Reading tools: Aa for English or Tagalog and text size, \"Continue where you stopped\", and tap any paragraph to highlight it, bookmark it or write a note. Your bookmarks and notes are listed on the book's page.",
+        "Mga tool sa pagbasa: Aa para sa English o Tagalog at laki ng letra, \"Ituloy kung saan ka huminto\", at pindutin ang anumang talata para i-highlight, i-bookmark o sulatan ng tala. Nakalista sa page ng aklat ang mga bookmark at tala mo."
+      ),
+      t(
+        "Before enrolling, read \"About this book\" and a taste of Chapter I.",
+        "Bago mag-enroll, basahin ang \"Tungkol sa aklat\" at ang simula ng Kabanata I."
+      ),
+      t(
+        "Finish the last chapter for a celebration and your certificate. AG leaders see who enrolled and how many chapters they finished, never notes or journals.",
+        "Tapusin ang huling kabanata para sa selebrasyon at sa iyong certificate. Nakikita ng AG leader kung sino ang naka-enroll at ilang kabanata ang natapos, hindi kailanman ang tala o journal."
+      ),
+    ],
+  },
+  {
+    id: "2026-10-14-tour",
+    date: "2026-10-14",
+    title: t("An opening film, an App Tour and colorful pages", "Opening film, App Tour at makukulay na page"),
+    items: [
+      t(
+        "A new opening film with a voiceover and a \"Begin your journey\" button, sharper on phones.",
+        "Bagong opening film na may voiceover at button na \"Simulan ang iyong paglalakbay\", mas malinaw sa phone."
+      ),
+      t(
+        "The App Tour is animated: 20 stops in five colored chapters (Home, Bible, Grow, My AG, Profile), a gliding spotlight, swipeable cards and confetti at the end. Start it anytime from Profile.",
+        "Animated na ang App Tour: 20 hinto sa limang kulay na kabanata (Home, Bible, Grow, My AG, Profile), gumagalaw na spotlight, mga card na puwedeng i-swipe at confetti sa dulo. Simulan anumang oras sa Profile."
+      ),
+      t(
+        "Colorful headers with a verse on 16 pages, including Prayer Wall, Memory Verses, Reading Plans, Prayer & Fasting, Prayer Journal, My Oikos, Testimonies and Victories.",
+        "Makukulay na header na may talata sa 16 na page, kasama ang Prayer Wall, Memory Verses, Reading Plans, Prayer & Fasting, Prayer Journal, My Oikos, Testimonies at Victories."
+      ),
+      t(
+        "Spiritual Inventory ends with a surrender ceremony: your list burns in a bronze bowl, followed by words of forgiveness and anointing.",
+        "Nagtatapos ang Spiritual Inventory sa seremonya ng pagsuko: nasusunog ang listahan mo sa tansong mangkok, kasunod ang mga salita ng kapatawaran at pagpapahid."
+      ),
+    ],
+  },
+  {
     id: "2026-10-12-profile",
     date: "2026-10-12",
     title: t("A new Profile and beautiful verse images", "Bagong Profile at magagandang verse image"),
