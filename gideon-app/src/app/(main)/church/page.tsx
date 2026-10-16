@@ -12,6 +12,7 @@ import {
   MapPin,
   ShieldCheck,
   UserPlus,
+  Camera,
   UserRound,
   Users,
   Megaphone,
@@ -28,6 +29,8 @@ import { EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { InviteSheet } from "@/components/church/invite-sheet";
+import { AgLogo, AgLogoEditor } from "@/components/church/ag-logo";
+import { AgLogoSwitcher } from "@/components/church/ag-switcher";
 import { AccountSheet } from "@/components/profile/account-sheet";
 import { useAuth } from "@/lib/hooks/use-auth";
 import { useProfile } from "@/lib/hooks/use-profile";
@@ -36,8 +39,7 @@ import {
   listActiveChurches,
   requestToJoin,
   setShareProgress,
-  switchAg,
-  useChurchNames,
+  useChurchBrands,
   useMyChurch,
   setSharePhone,
 } from "@/lib/hooks/use-church";
@@ -50,6 +52,8 @@ export default function MyChurchPage() {
   const { uid } = useAuth();
   const { profile, hasAccount } = useProfile();
   const my = useMyChurch();
+  // The AG Leader and Assistant Leader (and the owner) set the AG's logo.
+  const canEditLogo = !!my.churchId && (uid === NATIONAL_ADMIN_UID || my.rank >= 5);
   const [churches, setChurches] = useState<Church[] | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -68,7 +72,8 @@ export default function MyChurchPage() {
 
   // Only people not in any AG yet see the directory to ask to join one.
   const needsDirectory = !my.loading && !my.membership;
-  const agNames = useChurchNames(my.memberships.map((m) => m.churchId));
+  const agBrands = useChurchBrands(my.memberships.map((m) => m.churchId));
+  const [logoOpen, setLogoOpen] = useState(false);
   // AG Leaders and Assistant Leaders (and the national admin) can start another AG.
   const canStartAg =
     hasAccount && (uid === NATIONAL_ADMIN_UID || my.memberships.some((m) => m.membership.status === "active" && m.membership.rank >= 5));
@@ -151,9 +156,7 @@ export default function MyChurchPage() {
                   <p className="text-xs font-semibold text-primary">{tx("You're invited to join", "Inimbitahan kang sumali")}</p>
                 )}
                 <div className="flex items-center gap-3">
-                  <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-[#1E3A5F] font-heading text-lg font-semibold text-[#F4DC8A] ring-2 ring-[#D4AF37]/60">
-                    {c.name.trim().charAt(0).toUpperCase()}
-                  </span>
+                  <AgLogo src={c.logo} name={c.name} frame={c.logoFrame ?? "gold"} size={44} />
                   <div className="min-w-0">
                     <p className="font-heading font-semibold">{c.name}</p>
                     <p className="text-xs text-muted-foreground">
@@ -192,32 +195,19 @@ export default function MyChurchPage() {
           </div>
         )}
 
-        {/* People in more than one AG pick which one to see */}
+        {/* People in more than one AG pick which one to see, by its logo */}
         {my.memberships.length > 1 && (
-          <div className="space-y-1.5">
-          <p className="text-xs font-semibold text-muted-foreground">
-            {tx("Your AGs (tap to switch)", "Mga AG mo (pindutin para lumipat)")}
-          </p>
-          <div className="flex gap-1.5 overflow-x-auto pb-1" role="tablist" aria-label={tx("Your AGs", "Mga AG mo")}>
-            {my.memberships.map((m) => (
-              <button
-                key={m.churchId}
-                role="tab"
-                aria-selected={m.churchId === my.churchId}
-                disabled={m.membership.status !== "active"}
-                onClick={() => switchAg(m.churchId)}
-                className={
-                  m.churchId === my.churchId
-                    ? "shrink-0 rounded-full bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground"
-                    : "shrink-0 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium disabled:opacity-50"
-                }
-              >
-                {agNames[m.churchId] ?? "…"}
-                {m.membership.status !== "active" && ` · ${tx("pending", "naghihintay")}`}
-              </button>
-            ))}
-          </div>
-          </div>
+          <AgLogoSwitcher
+            options={my.memberships.map((m) => ({
+              id: m.churchId,
+              name: agBrands[m.churchId]?.name ?? "…",
+              logo: agBrands[m.churchId]?.logo,
+              logoFrame: agBrands[m.churchId]?.logoFrame,
+              pending: m.membership.status !== "active",
+            }))}
+            currentId={my.churchId}
+            label={tx("Your AGs (tap a logo to switch)", "Mga AG mo (pindutin ang logo para lumipat)")}
+          />
         )}
 
         {my.ownerView && (
@@ -244,9 +234,32 @@ export default function MyChurchPage() {
                 style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.55), transparent)" }}
               />
               <ChurchIcon className="pointer-events-none absolute -bottom-5 -right-3 size-32 text-white/[0.07]" strokeWidth={1} />
-              <p className="relative text-[0.625rem] font-semibold uppercase tracking-[0.3em] text-[#F4DC8A]">{tx("Accountability Group", "Accountability Group")}</p>
-              <h2 className="relative mt-1 font-heading text-2xl font-semibold leading-tight">{my.church.name}</h2>
-              <p className="relative mt-0.5 text-xs text-white/70">{my.church.denomination}</p>
+              <div className="relative flex items-center gap-4">
+                <button
+                  type="button"
+                  disabled={!canEditLogo}
+                  onClick={() => setLogoOpen(true)}
+                  aria-label={canEditLogo ? tx("Change the AG logo", "Palitan ang logo ng AG") : my.church.name}
+                  className="relative shrink-0 rounded-full disabled:cursor-default"
+                >
+                  <AgLogo src={my.church.logo} name={my.church.name} frame={my.church.logoFrame ?? "gold"} size={76} />
+                  {canEditLogo && (
+                    <span className="absolute -bottom-0.5 -right-0.5 flex size-6 items-center justify-center rounded-full bg-[#D4AF37] text-[#13253d] ring-2 ring-[#13253d]">
+                      <Camera className="size-3.5" />
+                    </span>
+                  )}
+                </button>
+                <div className="min-w-0">
+                  <p className="text-[0.625rem] font-semibold uppercase tracking-[0.3em] text-[#F4DC8A]">{tx("Accountability Group", "Accountability Group")}</p>
+                  <h2 className="mt-1 font-heading text-2xl font-semibold leading-tight">{my.church.name}</h2>
+                  <p className="mt-0.5 text-xs text-white/70">{my.church.denomination}</p>
+                </div>
+              </div>
+              {canEditLogo && !my.church.logo && (
+                <button onClick={() => setLogoOpen(true)} className="relative mt-2 text-[0.6875rem] font-medium text-[#F4DC8A] underline underline-offset-2">
+                  {tx("Add your AG's logo", "Ilagay ang logo ng inyong AG")}
+                </button>
+              )}
               <div className="relative mt-3 space-y-1 text-xs text-white/85">
                 <p className="flex items-center gap-1.5">
                   <MapPin className="size-3.5 text-[#F4DC8A]" />
@@ -432,6 +445,17 @@ export default function MyChurchPage() {
       <AccountSheet open={accountOpen} onOpenChange={setAccountOpen} />
       {my.active && my.church && (
         <InviteSheet open={inviteOpen} onOpenChange={setInviteOpen} churchId={my.churchId!} churchName={my.church.name} />
+      )}
+      {canEditLogo && my.church && (
+        <AgLogoEditor
+          key={my.churchId}
+          churchId={my.churchId!}
+          name={my.church.name}
+          logo={my.church.logo}
+          frame={my.church.logoFrame}
+          open={logoOpen}
+          onOpenChange={setLogoOpen}
+        />
       )}
     </div>
   );

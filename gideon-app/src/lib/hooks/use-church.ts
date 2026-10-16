@@ -22,6 +22,7 @@ import {
   NATIONAL_ADMIN_UID,
   OWNER_RANK,
   roleInfo,
+  type AgLogoFrame,
   type Church,
   type ChurchRole,
   type Membership,
@@ -216,6 +217,32 @@ export function useChurchNames(ids: string[]) {
 }
 
 /** Every AG, active or suspended, for the owner's All AGs page. */
+/** Name, logo and logo frame of each of these AGs, kept live. */
+export function useChurchBrands(ids: string[]) {
+  const [brands, setBrands] = useState<Record<string, Pick<Church, "name" | "logo" | "logoFrame">>>({});
+  const key = [...new Set(ids)].sort().join("|");
+  useEffect(() => {
+    if (!key) return;
+    const unsubs = key.split("|").map((id) =>
+      onSnapshot(
+        doc(db, "churches", id),
+        (snap) => {
+          const d = snap.data() as Partial<Church> | undefined;
+          setBrands((b) => ({ ...b, [id]: { name: d?.name ?? id, logo: d?.logo, logoFrame: d?.logoFrame } }));
+        },
+        () => {}
+      )
+    );
+    return () => unsubs.forEach((u) => u());
+  }, [key]);
+  return brands;
+}
+
+/** An AG Leader or Assistant Leader sets (or, with null, removes) the AG's logo and frame. */
+export async function setAgLogo(churchId: string, logo: string | null, frame: AgLogoFrame) {
+  await updateDoc(doc(db, "churches", churchId), { logo: logo ?? deleteField(), logoFrame: frame });
+}
+
 export async function listAllChurches() {
   const snap = await getDocs(collection(db, "churches"));
   return snap.docs

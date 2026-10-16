@@ -179,7 +179,16 @@ service cloud.firestore {
           && request.resource.data.createdAt is int
           && request.resource.data.createdFrom is string
           && rankAtLeast(request.resource.data.createdFrom, 5));
-      allow update: if isAdmin();
+      // The AG Leader and Assistant Leader (rank 5+) may change only the AG's
+      // logo (a small image data URL) and its frame.
+      allow update: if isAdmin()
+        || (rankAtLeast(churchId, 5)
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['logo', 'logoFrame'])
+          && (!('logo' in request.resource.data)
+            || (request.resource.data.logo is string
+              && request.resource.data.logo.size() <= 300000
+              && request.resource.data.logo.matches('^data:image/(webp|png|jpeg);base64,.*')))
+          && request.resource.data.get('logoFrame', 'gold') in ['gold', 'double', 'navy', 'laurel', 'glow', 'dotted', 'rainbow', 'none']);
       allow delete: if false;
 
       match /members/{uid} {

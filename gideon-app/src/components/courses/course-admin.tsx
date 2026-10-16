@@ -2,85 +2,49 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { doc, onSnapshot } from "firebase/firestore";
-import { Check, ChevronDown, ChevronRight, ClipboardList, Lock, LockOpen, Phone, Undo2, Users, X } from "lucide-react";
-import { db } from "@/lib/firebase";
+import { Check, ChevronDown, ChevronRight, ClipboardList, Phone, Undo2, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useLanguage, useTx } from "@/lib/i18n";
 import type { Text } from "@/lib/content/courses/types";
 import { NATIONAL_ADMIN_UID } from "@/lib/church";
 import { useAuth } from "@/lib/hooks/use-auth";
-import { listAllChurches, switchAg, useChurchNames, useMyChurch } from "@/lib/hooks/use-church";
+import { listAllChurches, useChurchBrands, useMyChurch } from "@/lib/hooks/use-church";
+import { AgLogoSwitcher, type AgOption } from "@/components/church/ag-switcher";
 import { useCourseAccess } from "@/lib/hooks/use-lesson-assignments";
 import { decideEnrollment, useCourseEnrollments, type CourseEnrollment, type EnrollmentStatus } from "@/lib/hooks/use-course-enrollment";
 import { cn } from "@/lib/utils";
 
 /**
  * For people in more than one AG (and the owner, who sees every AG): pick
- * which AG the courses show. Each AG has its own unlocks and enrollments.
+ * which AG the courses show, by its logo. Each AG has its own unlocks and
+ * enrollments.
  */
 export function AgSwitcher({ courseId }: { courseId?: string }) {
   const tx = useTx();
   const { uid } = useAuth();
   const my = useMyChurch();
   const isOwner = uid === NATIONAL_ADMIN_UID;
-  const [all, setAll] = useState<{ id: string; name: string }[] | null>(null);
+  const [all, setAll] = useState<AgOption[] | null>(null);
   useEffect(() => {
     if (!isOwner) return;
     listAllChurches()
-      .then((cs) => setAll(cs.map((c) => ({ id: c.id, name: c.name ?? c.id }))))
+      .then((cs) => setAll(cs.map((c) => ({ id: c.id, name: c.name ?? c.id, logo: c.logo, logoFrame: c.logoFrame }))))
       .catch(() => setAll([]));
   }, [isOwner]);
   const mineIds = my.memberships.filter((m) => m.membership.status === "active").map((m) => m.churchId);
-  const names = useChurchNames(isOwner ? [] : mineIds);
-  const options = isOwner ? (all ?? []) : mineIds.map((id) => ({ id, name: names[id] ?? "…" }));
+  const brands = useChurchBrands(isOwner ? [] : mineIds);
+  const options: AgOption[] = isOwner ? (all ?? []) : mineIds.map((id) => ({ id, name: brands[id]?.name ?? "…", logo: brands[id]?.logo, logoFrame: brands[id]?.logoFrame }));
   if (my.loading || options.length < 2) return null;
-
   return (
-    <section className="mx-5 space-y-1.5">
-      <p className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground">
-        <Users className="size-3.5" />
-        {tx("Showing for AG (tap to switch)", "Para sa AG na ito (pindutin para lumipat)")}
-      </p>
-      <div className="flex gap-1.5 overflow-x-auto pb-1" role="tablist" aria-label={tx("Your AGs", "Mga AG mo")}>
-        {options.map((o) => (
-          <AgChip key={o.id} id={o.id} name={o.name} courseId={courseId} active={o.id === my.churchId} />
-        ))}
-      </div>
+    <section className="mx-5">
+      <AgLogoSwitcher
+        options={options}
+        currentId={my.churchId}
+        courseId={courseId}
+        label={tx("Showing for AG (tap a logo to switch)", "Para sa AG na ito (pindutin ang logo para lumipat)")}
+      />
     </section>
-  );
-}
-
-function AgChip({ id, name, courseId, active }: { id: string; name: string; courseId?: string; active: boolean }) {
-  const tx = useTx();
-  const [unlocked, setUnlocked] = useState<boolean | null>(null);
-  useEffect(() => {
-    if (!courseId) return;
-    return onSnapshot(
-      doc(db, "churches", id, "courseUnlocks", courseId),
-      (snap) => setUnlocked(snap.exists()),
-      () => setUnlocked(null)
-    );
-  }, [id, courseId]);
-  return (
-    <button
-      role="tab"
-      aria-selected={active}
-      onClick={() => switchAg(id)}
-      className={cn(
-        "flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium",
-        active ? "bg-primary font-semibold text-primary-foreground" : "border border-border bg-card"
-      )}
-    >
-      {courseId && unlocked !== null &&
-        (unlocked ? (
-          <LockOpen className={cn("size-3", active ? "" : "text-emerald-600")} aria-label={tx("Unlocked", "Naka-unlock")} />
-        ) : (
-          <Lock className="size-3 opacity-60" aria-label={tx("Locked", "Naka-lock")} />
-        ))}
-      {name}
-    </button>
   );
 }
 

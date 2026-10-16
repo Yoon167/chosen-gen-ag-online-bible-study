@@ -30,3 +30,4 @@ export function readImageAsDataUrl(file: File, maxSize = 512): Promise<string> {
     reader.readAsDataURL(file);
   });
 }
+

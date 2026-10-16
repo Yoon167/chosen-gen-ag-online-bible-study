@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import { Printer } from "lucide-react";
 import { Certificate } from "@/components/shared/certificate";
 import { useAuth } from "@/lib/hooks/use-auth";
+import { useMyChurch } from "@/lib/hooks/use-church";
 import { PageHeader } from "@/components/shared/page-header";
 import { Button } from "@/components/ui/button";
 import { useLanguage, useTx } from "@/lib/i18n";
@@ -18,6 +19,7 @@ export function CertificateClient() {
   const { profile } = useProfile();
   const journey = useJourneyProgress();
   const { uid } = useAuth();
+  const my = useMyChurch();
 
   const level = findLevel(Number(params.level));
   if (!level) return <PageHeader title={tx("Certificate not found", "Walang ganitong sertipiko")} back />;
@@ -61,6 +63,7 @@ export function CertificateClient() {
               ),
               ref: tx("Philippians 1:6", "Filipos 1:6"),
             }}
+            ag={my.church ? { name: my.church.name, logo: my.church.logo, frame: my.church.logoFrame } : null}
             certId={`AA-L${level.level}-${(uid ?? "").slice(0, 6).toUpperCase()}`}
           />
           <Button variant="outline" className="w-full" onClick={() => window.print()}>

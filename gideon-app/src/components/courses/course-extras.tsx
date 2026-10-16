@@ -11,6 +11,7 @@ import { useCourseProgress } from "@/lib/hooks/use-course-progress";
 import { useCourseReaders } from "@/lib/hooks/use-course-readers";
 import { useCourseEnrollment, useCourseGate } from "@/lib/hooks/use-course-enrollment";
 import { useAuth } from "@/lib/hooks/use-auth";
+import { useChurchBrands } from "@/lib/hooks/use-church";
 import { Certificate } from "@/components/shared/certificate";
 import { useProfile } from "@/lib/hooks/use-profile";
 import { roman } from "@/components/courses/book-chapter";
@@ -175,6 +176,7 @@ export function CourseCertificate({ courseId, title, lessonIds }: { courseId: st
   const complete = lessonIds.length > 0 && done.length === lessonIds.length;
   const completedAt = complete ? Math.max(...lessonIds.map((id) => progress.lessons[id]?.completedAt ?? 0)) : 0;
   const enrollment = useCourseEnrollment(courseId);
+  const agBrand = useChurchBrands(enrollment.churchId ? [enrollment.churchId] : [])[enrollment.churchId ?? ""];
   const { uid } = useAuth();
   const dateText = new Date(completedAt).toLocaleDateString(lang === "tl" ? "fil-PH" : "en-PH", { year: "numeric", month: "long", day: "numeric" });
 
@@ -208,7 +210,7 @@ export function CourseCertificate({ courseId, title, lessonIds }: { courseId: st
             )}
             date={dateText}
             signatures={[
-              { name: enrollment.enrollment?.decidedByName ?? enrollment.agName ?? "", role: tx("AG Leader", "AG Leader") },
+              { name: enrollment.enrollment?.decidedByName ?? "", role: tx("AG Leader", "AG Leader") },
               { name: dateText, role: tx("Date completed", "Petsa ng pagtatapos") },
             ]}
             verse={{
@@ -218,6 +220,7 @@ export function CourseCertificate({ courseId, title, lessonIds }: { courseId: st
               ),
               ref: tx("Matthew 25:21", "Mateo 25:21"),
             }}
+            ag={enrollment.churchId ? { name: agBrand?.name ?? enrollment.agName, logo: agBrand?.logo, frame: agBrand?.logoFrame } : null}
             certId={`AA-${courseId.toUpperCase()}-${(uid ?? "").slice(0, 6).toUpperCase()}-${new Date(completedAt).getFullYear()}`}
           />
           <Button variant="outline" className="w-full" onClick={() => window.print()}>

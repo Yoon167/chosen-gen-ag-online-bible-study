@@ -65,7 +65,14 @@ export interface Church {
   /** Started directly by an AG leader (their uid) from another AG (`createdFrom`). */
   createdBy?: string;
   createdFrom?: string;
+  /** The AG's own logo: a small square image (data URL), shown in a circle. */
+  logo?: string;
+  /** The frame drawn around the logo (see components/church/ag-logo.tsx). */
+  logoFrame?: AgLogoFrame;
 }
+
+export const AG_LOGO_FRAMES = ["gold", "double", "navy", "laurel", "glow", "dotted", "rainbow", "none"] as const;
+export type AgLogoFrame = (typeof AG_LOGO_FRAMES)[number];
 
 /** Stored at churchApplications/{applicant uid}; only the applicant and the admin can read it. */
 export interface ChurchApplication {

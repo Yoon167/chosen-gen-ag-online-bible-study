@@ -1,4 +1,6 @@
 import Image from "next/image";
+import type { AgLogoFrame } from "@/lib/church";
+import { AgLogo } from "@/components/church/ag-logo";
 
 /** A gold flourish for each corner of the certificate. */
 function Corner({ className }: { className: string }) {
@@ -67,6 +69,8 @@ export interface CertificateProps {
   verse: { text: string; ref: string };
   /** Printed small at the foot, e.g. "AA-TRUTH-3F9A2C". */
   certId?: string;
+  /** The AG this was earned in: its logo stands over the first signature. */
+  ag?: { name: string; logo?: string; frame?: AgLogoFrame } | null;
 }
 
 /**
@@ -130,7 +134,15 @@ export function Certificate(p: CertificateProps) {
 
           {/* Signatures and the seal */}
           <div className="mt-6 flex items-end justify-center gap-3 sm:gap-6">
-            <Signature {...(left ?? { name: "", role: "" })} />
+            <div className="flex flex-col items-center gap-1.5">
+              {p.ag && (
+                <>
+                  <AgLogo src={p.ag.logo} name={p.ag.name} frame={p.ag.frame ?? "gold"} size={52} />
+                  <p className="max-w-24 truncate text-[0.625rem] font-semibold uppercase tracking-wider text-[#13253d] sm:max-w-36">{p.ag.name}</p>
+                </>
+              )}
+              <Signature {...(left ?? { name: "", role: "" })} />
+            </div>
             <Seal />
             <Signature name={right?.name ?? p.date} role={right?.role ?? ""} />
           </div>
