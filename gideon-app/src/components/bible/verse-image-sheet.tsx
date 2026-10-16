@@ -10,6 +10,7 @@ import {
   canvasToBlob,
   drawVerseImage,
   verseImageFileName,
+  type VerseImageTheme,
 } from "@/lib/verse-image";
 import { cn } from "@/lib/utils";
 import { useLanguage, useTx } from "@/lib/i18n";
@@ -20,35 +21,47 @@ export interface VerseForImage {
 }
 
 /** Turns a verse into a picture to post on Facebook, Messenger or Instagram. */
-export function VerseImageSheet({ verse, onClose }: { verse: VerseForImage | null; onClose: () => void }) {
+export function VerseImageSheet({
+  verse,
+  onClose,
+  featured,
+  title,
+}: {
+  verse: VerseForImage | null;
+  onClose: () => void;
+  /** A photo made for this verse (e.g. the day's devotion), shown first and picked to start. */
+  featured?: VerseImageTheme;
+  title?: string;
+}) {
   const tx = useTx();
   return (
     <Sheet open={!!verse} onOpenChange={(open) => !open && onClose()}>
       <SheetContent side="bottom" className="max-h-[92vh] rounded-t-2xl">
         <SheetHeader className="pb-0">
-          <SheetTitle className="font-heading">{tx("Verse image", "Larawan ng talata")}</SheetTitle>
+          <SheetTitle className="font-heading">{title ?? tx("Verse image", "Larawan ng talata")}</SheetTitle>
         </SheetHeader>
-        {verse && <Editor verse={verse} />}
+        {verse && <VerseImageEditor verse={verse} featured={featured} />}
       </SheetContent>
     </Sheet>
   );
 }
 
-function Editor({ verse }: { verse: VerseForImage }) {
+export function VerseImageEditor({ verse, featured }: { verse: VerseForImage; featured?: VerseImageTheme }) {
   const tx = useTx();
   const { lang } = useLanguage();
   const canvas = useRef<HTMLCanvasElement>(null);
   // Starts on today's photo, the same one behind the verse on Home.
-  const [themeId, setThemeId] = useState(() => photoOfTheDay());
+  const [themeId, setThemeId] = useState(() => featured?.id ?? photoOfTheDay());
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const canShareFiles =
     typeof navigator !== "undefined" &&
     !!navigator.canShare?.({ files: [new File([""], "v.png", { type: "image/png" })] });
 
-  const theme = VERSE_IMAGE_THEMES.find((t) => t.id === themeId)!;
+  const all = featured ? [featured, ...VERSE_IMAGE_THEMES] : VERSE_IMAGE_THEMES;
+  const theme = all.find((t) => t.id === themeId) ?? VERSE_IMAGE_THEMES[0];
   const colors = VERSE_IMAGE_THEMES.filter((t) => !t.thumb);
-  const photos = VERSE_IMAGE_THEMES.filter((t) => t.thumb && !t.group);
+  const photos = all.filter((t) => t.thumb && !t.group);
   const life = VERSE_IMAGE_THEMES.filter((t) => t.group === "life");
 
   // Draw off screen and copy over only if this design is still the chosen

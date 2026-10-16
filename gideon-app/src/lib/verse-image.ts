@@ -357,3 +357,60 @@ export function canvasToBlob(canvas: HTMLCanvasElement) {
 export function verseImageFileName(reference: string) {
   return `${reference.replace(/[^\p{L}\p{N}]+/gu, "-").replace(/^-|-$/g, "").toLowerCase() || "verse"}.png`;
 }
+
+/**
+ * The photo behind each devotion when shared as an image, in the order of
+ * lib/content/devotions.ts, chosen for its topic. "ai" means the devotion's
+ * own AI-made scenery (public/devotion-bg/d{n}.webp); otherwise one of
+ * Anointed Academy's photos above.
+ */
+const DEVOTION_PHOTOS: ("ai" | string)[] = [
+  "ai", // Anchored in Grace: a boat at anchor in a calm harbor
+  "ai", // The Shepherd Who Leads: sheep by still waters
+  "ai", // Strength in Weakness: a flower through the rock
+  "aa-road", // A Future and a Hope
+  "aa-golden", // Renewed Mercies
+  "aa-lake", // Do Not Be Anxious
+  "aa-meadow", // Fearfully and Wonderfully Made
+  "aa-mountain", // Be Strong and Courageous
+  "aa-forest-river", // The Vine and the Branches
+  "aa-lake", // Casting Every Care
+  "aa-cross", // A Living Sacrifice
+  "aa-meadow", // Faith as Small as a Seed
+  "aa-rain", // The Lord Is My Light
+  "aa-table", // Love That Endures
+  "aa-meadow", // Delight Yourself in the Lord
+  "aa-road", // Called According to His Purpose
+  "aa-arch", // The Narrow Gate
+  "aa-forest-river", // Rest for the Weary
+  "aa-golden", // Chosen and Dearly Loved
+  "aa-mountain", // The Good Fight
+  "aa-water", // Living Water
+  "aa-mountain", // Clothed in Strength and Dignity
+  "aa-bread-basket", // The Potter and the Clay
+  "aa-golden", // Overflowing with Hope
+  "aa-bread-basket", // Every Good Gift
+  "aa-road", // Pressing Toward the Goal
+  "aa-rain", // The Lord Fights for You
+  "aa-table", // A Cord of Three Strands
+  "aa-mountain", // Set Your Mind Above
+  "aa-water", // The God Who Sees Me
+];
+
+/** The photo chosen for this devotion's topic (by its place in the list). */
+export function devotionPhotoTheme(index: number, name: { en: string; tl: string }): VerseImageTheme | undefined {
+  const pick = DEVOTION_PHOTOS[index];
+  if (!pick) return undefined;
+  const file = pick === "ai" ? `/devotion-bg/d${index + 1}.webp` : `/verse-bg/${pick}.webp`;
+  const thumb = pick === "ai" ? `/devotion-bg/thumb/d${index + 1}.webp` : `/verse-bg/thumb/${pick}.webp`;
+  return {
+    id: `devotion-${index + 1}`,
+    name,
+    colors: ["#13253d", "#13253d"],
+    text: "#ffffff",
+    accent: "#f4d58a",
+    photo: file,
+    thumb,
+    wash: 0.42,
+  };
+}

@@ -38,6 +38,10 @@ export const RELEASES: Release[] = [
         "Your AG's logo now stands on your Course and Journey certificates, above your AG leader's signature.",
         "Nasa mga Course at Journey certificate mo na ang logo ng inyong AG, sa itaas ng pirma ng iyong AG leader."
       ),
+      t(
+        "Daily Devotion now shows the Bible passage itself under the title. Tap Share, pick the verse or the line that spoke to you, and it becomes a picture on a scenery photo chosen for the day's topic, ready to post.",
+        "Makikita na sa Daily Devotion ang mismong talata sa ilalim ng title. Pindutin ang I-share, piliin ang talata o ang linyang tumatak sa iyo, at magiging larawan ito sa tanawing pinili para sa topic ng araw, handa nang i-post."
+      ),
     ],
   },
   {

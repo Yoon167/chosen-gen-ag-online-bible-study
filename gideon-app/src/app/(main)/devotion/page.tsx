@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { Sun, Heart, Share2, Check, RotateCcw, BookOpenCheck, ChevronRight } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
@@ -14,6 +14,10 @@ import { cn } from "@/lib/utils";
 import { LanguageToggle } from "@/components/language-toggle";
 import { useLanguage, useTx } from "@/lib/i18n";
 import { findMethod } from "@/lib/content/devotion-guide";
+import { fetchPassage } from "@/lib/bible/api";
+import { TAGALOG_TRANSLATION } from "@/lib/bible/translations";
+import { devotionPhotoTheme } from "@/lib/verse-image";
+import { DevotionShareSheet, sentences, type ShareLine } from "@/components/devotion/devotion-share";
 
 const noSubscribe = () => () => {};
 
@@ -42,10 +46,26 @@ export default function DevotionPage() {
     );
   }
 
-  return <DevotionContent devotion={today.devotion} dateKey={today.dateKey} />;
+  return <DevotionContent devotion={today.devotion} dateKey={today.dateKey} index={today.index} reference={today.reference} />;
 }
 
-function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; dateKey: string }) {
+/** The devotion's Bible passage, in the reader's language. */
+function useDevotionVerse(reference: string, lang: "en" | "tl") {
+  const key = `${reference}|${lang}`;
+  const [state, setState] = useState<{ key: string; verses: { verse: number; text: string }[] | null }>({ key: "", verses: null });
+  useEffect(() => {
+    let alive = true;
+    fetchPassage(reference, lang === "tl" ? TAGALOG_TRANSLATION : undefined)
+      .then((r) => alive && setState({ key, verses: r.verses.map((v) => ({ verse: v.verse, text: v.text.replace(/\s+/g, " ").trim() })) }))
+      .catch(() => alive && setState({ key, verses: [] }));
+    return () => {
+      alive = false;
+    };
+  }, [key, reference, lang]);
+  return state.key === key ? state.verses : null;
+}
+
+function DevotionContent({ devotion, dateKey, index, reference }: { devotion: StaticDevotion; dateKey: string; index: number; reference: string }) {
   const { entry, update } = useDevotionLog(dateKey, devotion.title);
   const { items: history } = useDevotionHistory();
   const { t, lang } = useLanguage();
@@ -56,14 +76,18 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
   const noteDirty = draft !== null;
   const noteDraft = draft ?? entry?.note ?? "";
 
-  async function share() {
-    const text = `${devotion.title} (${devotion.scriptureReference})\n\n${devotion.mainLesson}\n\n— Anointed Academy`;
-    if (navigator.share) {
-      await navigator.share({ text }).catch(() => {});
-    } else {
-      await navigator.clipboard.writeText(text).catch(() => {});
-    }
-  }
+  const verses = useDevotionVerse(reference, lang);
+  const [shareOpen, setShareOpen] = useState(false);
+  const verseText = verses?.map((v) => v.text).join(" ") ?? "";
+
+  // What can go on the picture: the verse (whole, or one verse of it) and the lines of the devotion.
+  const shareLines: ShareLine[] = [
+    ...(verseText ? [{ group: tx("The verse", "Ang talata"), text: verseText }] : []),
+    ...(verses && verses.length > 1 ? verses.map((v) => ({ group: tx("One verse", "Isang talata"), text: v.text })) : []),
+    ...sentences(devotion.mainLesson).map((text) => ({ group: t("devotion.mainLesson"), text })),
+    ...sentences(devotion.application).map((text) => ({ group: t("devotion.application"), text })),
+    ...sentences(devotion.closingPrayer).map((text) => ({ group: t("devotion.prayer"), text })),
+  ];
 
   return (
     <div>
@@ -86,6 +110,30 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
             {devotion.scriptureReference}
           </p>
           <h2 className="mt-3 text-center font-heading text-2xl font-bold leading-tight">{devotion.title}</h2>
+
+          {/* The passage itself, under the title */}
+          <blockquote className="mx-auto mt-4 max-w-md border-y border-[#D4AF37]/50 py-3 text-center font-heading text-[0.9375rem] italic leading-relaxed">
+            {verses === null ? (
+              <span className="mx-auto block h-12 w-4/5 animate-pulse rounded bg-[#2a2418]/10" />
+            ) : verses.length ? (
+              <>
+                &ldquo;
+                {verses.map((v, i) => (
+                  <span key={v.verse}>
+                    {verses.length > 1 && <sup className="mr-0.5 not-italic text-[0.625rem] text-[#a8862a]">{v.verse}</sup>}
+                    {v.text}
+                    {i < verses.length - 1 ? " " : ""}
+                  </span>
+                ))}
+                &rdquo;
+              </>
+            ) : (
+              <span className="text-xs not-italic opacity-70">
+                {tx("Open your Bible to", "Buksan ang iyong Bibliya sa")} {devotion.scriptureReference}
+              </span>
+            )}
+            <span className="mt-1.5 block text-xs font-semibold not-italic tracking-wide text-[#7a5a12]">{devotion.scriptureReference}</span>
+          </blockquote>
 
           <div className="mt-5 space-y-5 font-heading text-[0.9375rem] leading-relaxed">
             <DevotionStep n={1} label={t("devotion.mainLesson")}>
@@ -134,14 +182,22 @@ function DevotionContent({ devotion, dateKey }: { devotion: StaticDevotion; date
               <Heart className={cn("size-4", entry?.favorited && "fill-current")} />
             </button>
             <button
-              onClick={share}
-              aria-label="Share devotion"
-              className="flex size-10 shrink-0 items-center justify-center rounded-full border border-[#2a2418]/25 text-[#2a2418]/60"
+              onClick={() => setShareOpen(true)}
+              aria-label={tx("Share as an image", "I-share bilang larawan")}
+              className="flex h-10 shrink-0 items-center justify-center gap-1.5 rounded-full border border-[#2a2418]/25 px-3 text-xs font-medium text-[#2a2418]/75"
             >
               <Share2 className="size-4" />
+              {tx("Share", "I-share")}
             </button>
           </div>
         </article>
+        <DevotionShareSheet
+          open={shareOpen}
+          onOpenChange={setShareOpen}
+          lines={shareLines}
+          reference={`${devotion.scriptureReference} · ${devotion.title}`}
+          featured={devotionPhotoTheme(index, { en: devotion.title, tl: devotion.title })}
+        />
       </div>
 
       <div className="mt-4 px-5">
