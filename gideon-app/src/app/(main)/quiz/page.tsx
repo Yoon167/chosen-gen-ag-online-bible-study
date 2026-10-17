@@ -47,8 +47,9 @@ const GAME_TONES: [string, string][] = [
   ["#ca8a04", "#854d0e"],
   ["#dc2626", "#7f1d1d"],
 ];
-/** Easy, medium, hard. */
+/** Kids, easy, medium, hard. */
 const LEVEL_TONES = [
+  "bg-sky-500 text-white shadow-md shadow-sky-500/30",
   "bg-emerald-500 text-white shadow-md shadow-emerald-500/30",
   "bg-amber-500 text-white shadow-md shadow-amber-500/30",
   "bg-rose-600 text-white shadow-md shadow-rose-500/30",
@@ -147,20 +148,20 @@ export default function GamesPage() {
   }
 
   if (playing && info) {
-    const props = { key: playing.key, level, round: info.round, onRead: setPassage, onFinish: finish };
+    const props = { level, round: info.round, onRead: setPassage, onFinish: finish };
     const levelInfo = LEVELS.find((l) => l.id === level)!;
     return (
       <div>
         <PageHeader title={`${info.emoji} ${info.title[lang]}`} subtitle={`${levelInfo.emoji} ${levelInfo.label[lang]}`} back />
         <div className="px-5 pb-8">
           {playing.game === "scramble" ? (
-            <ScrambleGame {...props} />
+            <ScrambleGame key={playing.key} {...props} />
           ) : playing.game === "verse" ? (
-            <VerseOrderGame {...props} />
+            <VerseOrderGame key={playing.key} {...props} />
           ) : playing.game === "who" ? (
-            <WhoAmIGame {...props} />
+            <WhoAmIGame key={playing.key} {...props} />
           ) : (
-            <ChoiceGame {...props} game={playing.game} />
+            <ChoiceGame key={playing.key} {...props} game={playing.game} />
           )}
           <button
             className="mt-6 block w-full text-center text-xs text-muted-foreground underline underline-offset-2"
@@ -202,16 +203,25 @@ export default function GamesPage() {
         </div>
       </PageHeader>
       <div className="space-y-4 px-5 pb-8">
-        <div className="grid grid-cols-3 gap-1.5 rounded-2xl bg-muted p-1.5" data-tour="games-hub">
-          {LEVELS.map((l, i) => (
-            <button
-              key={l.id}
-              onClick={() => pickLevel(l.id)}
-              className={cn("rounded-xl py-2.5 text-sm font-semibold transition", level === l.id ? LEVEL_TONES[i] ?? "bg-background" : "text-muted-foreground")}
-            >
-              {l.emoji} {l.label[lang]}
-            </button>
-          ))}
+        <div className="space-y-1.5" data-tour="games-hub">
+          <p className="px-1 text-xs font-semibold text-muted-foreground">{tx("Who is playing?", "Sino ang maglalaro?")}</p>
+          <div className="grid grid-cols-4 gap-1.5 rounded-2xl bg-muted p-1.5">
+            {LEVELS.map((l, i) => (
+              <button
+                key={l.id}
+                onClick={() => pickLevel(l.id)}
+                aria-pressed={level === l.id}
+                className={cn(
+                  "flex flex-col items-center rounded-xl px-1 py-2 text-center transition",
+                  level === l.id ? LEVEL_TONES[i] ?? "bg-background" : "text-muted-foreground"
+                )}
+              >
+                <span className="text-xl leading-none">{l.emoji}</span>
+                <span className="mt-1 text-[0.6875rem] font-semibold leading-tight">{l.label[lang]}</span>
+                <span className={cn("text-[0.5625rem] leading-tight", level === l.id ? "text-white/85" : "text-muted-foreground/80")}>{l.hint[lang]}</span>
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-2 gap-3">

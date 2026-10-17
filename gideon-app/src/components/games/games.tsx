@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { BookOpen, Check, ChevronRight, Delete, Lightbulb, RotateCcw, SkipForward, X } from "lucide-react";
+import { BookOpen, Check, ChevronRight, Delete, Lightbulb, RotateCcw, SkipForward, X, Volume2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { verseLabel, type VerseRef } from "@/lib/bible/verse-ref";
 import {
@@ -89,6 +89,7 @@ export function ChoiceGame({ game, level, round, onRead, onFinish }: Props & { g
     <div className="space-y-4">
       <Progress index={index} total={items.length} />
       <Prompt item={item} lang={lang} />
+      {level === "kids" && !("icons" in item.prompt) && <ReadAloud key={item.id} text={item.prompt[lang]} lang={lang} />}
       <div className={cn("gap-2", game === "truefalse" ? "grid grid-cols-2" : "space-y-2")}>
         {order.map((ci) => {
           const right = ci === 0;
@@ -103,6 +104,7 @@ export function ChoiceGame({ game, level, round, onRead, onFinish }: Props & { g
               }}
               className={cn(
                 "flex min-h-12 w-full items-center gap-3 rounded-2xl border px-4 py-3 text-left text-[0.9375rem] font-medium transition-colors",
+                level === "kids" && "min-h-16 text-lg",
                 game === "truefalse" && "min-h-16 justify-center text-center text-base",
                 !answered && "border-border bg-card active:bg-muted",
                 answered && right && "border-emerald-500 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300",
@@ -129,6 +131,29 @@ export function ChoiceGame({ game, level, round, onRead, onFinish }: Props & { g
         </div>
       )}
     </div>
+  );
+}
+
+/** For pre-readers: reads the question out loud (on phones that have a voice). */
+function ReadAloud({ text, lang }: { text: string; lang: "en" | "tl" }) {
+  const tx = useTx();
+  const speak = () => {
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = lang === "tl" ? "fil-PH" : "en-US";
+    u.rate = 0.9;
+    window.speechSynthesis.speak(u);
+  };
+  return (
+    <button
+      type="button"
+      onClick={speak}
+      className="mx-auto flex items-center gap-2 rounded-full bg-sky-500/15 px-4 py-2 text-sm font-semibold text-sky-700 dark:text-sky-300"
+    >
+      <Volume2 className="size-4" />
+      {tx("Read it to me", "Basahin para sa akin")}
+    </button>
   );
 }
 

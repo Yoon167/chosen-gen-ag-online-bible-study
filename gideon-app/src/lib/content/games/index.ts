@@ -6,6 +6,7 @@ import { SCRAMBLE } from "./scramble";
 import { TRUE_FALSE } from "./true-false";
 import { VERSE_ORDER } from "./verse-order";
 import { WHO_AM_I } from "./who-am-i";
+import { KIDS_QUIZ, KIDS_TRUE_FALSE } from "./kids";
 import { t, type Level, type Text } from "./types";
 
 export type { Level, Text } from "./types";
@@ -31,14 +32,16 @@ export const GAMES: GameInfo[] = [
   { id: "truefalse", emoji: "✅", title: t("True or False", "Tama o Mali"), blurb: t("Fast facts: is it in the Bible or not?", "Mabilisang tanong: nasa Bibliya ba o hindi?"), round: 12 },
 ];
 
-export const LEVELS: { id: Level; label: Text; emoji: string }[] = [
-  { id: "easy", label: t("Easy", "Madali"), emoji: "🌱" },
-  { id: "medium", label: t("Medium", "Katamtaman"), emoji: "🔥" },
-  { id: "hard", label: t("Hard", "Mahirap"), emoji: "⚡" },
+/** The levels, by age: for everyone from preschoolers to adults. */
+export const LEVELS: { id: Level; label: Text; emoji: string; hint: Text }[] = [
+  { id: "kids", label: t("Kids 3–7", "Bata 3–7"), emoji: "👶", hint: t("Pictures, read aloud", "May larawan, binabasa nang malakas") },
+  { id: "easy", label: t("Kids 8–12", "Bata 8–12"), emoji: "🧒", hint: t("Easy", "Madali") },
+  { id: "medium", label: t("Youth 13–17", "Kabataan 13–17"), emoji: "🧑", hint: t("Medium", "Katamtaman") },
+  { id: "hard", label: t("Adults", "Adult"), emoji: "🧔", hint: t("Hard", "Mahirap") },
 ];
 
 /** Points per right answer, by level. */
-export const LEVEL_POINTS: Record<Level, number> = { easy: 1, medium: 2, hard: 3 };
+export const LEVEL_POINTS: Record<Level, number> = { kids: 1, easy: 1, medium: 2, hard: 3 };
 
 /** A question with four (or two) choices; choices[0] is right. */
 export interface ChoiceItem {
@@ -66,12 +69,13 @@ const FALSE = t("False", "Mali");
 /** The pool for a choice game at a level. */
 export function choicePool(game: "quiz" | "icons" | "truefalse", level: Level): ChoiceItem[] {
   if (game === "quiz")
-    return [...LEGACY_QUIZ, ...QUIZ]
+    return [...LEGACY_QUIZ, ...QUIZ, ...KIDS_QUIZ]
       .filter((q) => q.level === level)
       .map((q) => ({ id: q.id, prompt: q.question, choices: [...q.choices], ref: q.ref }));
+  // The youngest share the easy picture puzzles.
   if (game === "icons")
-    return ICONS.filter((q) => q.level === level).map((q) => ({ id: q.id, prompt: { icons: q.icons }, choices: [...q.choices], ref: q.ref }));
-  return TRUE_FALSE.filter((q) => q.level === level).map((q) => ({
+    return ICONS.filter((q) => q.level === (level === "kids" ? "easy" : level)).map((q) => ({ id: q.id, prompt: { icons: q.icons }, choices: [...q.choices], ref: q.ref }));
+  return [...TRUE_FALSE, ...KIDS_TRUE_FALSE].filter((q) => q.level === level).map((q) => ({
     id: q.id,
     prompt: q.statement,
     choices: q.answer ? [TRUE, FALSE] : [FALSE, TRUE],

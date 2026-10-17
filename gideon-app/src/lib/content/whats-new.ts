@@ -18,6 +18,29 @@ export interface Release {
 
 export const RELEASES: Release[] = [
   {
+    id: "2026-10-18-kids",
+    date: "2026-10-18",
+    title: t("Kids Ministry and a Bible quiz for every age", "Kids Ministry at Bible quiz para sa lahat ng edad"),
+    items: [
+      t(
+        "New in Grow: Kids Ministry, for teachers and parents. 12 Bible stories from Creation to Easter, told for ages 3–5, 6–8 and 9–12, with a picture for every part.",
+        "Bago sa Grow: Kids Ministry, para sa teachers at magulang. 12 Bible stories mula sa Paglikha hanggang sa Muling Pagkabuhay, isinalaysay para sa edad 3–5, 6–8 at 9–12, may larawan bawat bahagi."
+      ),
+      t(
+        "“Show the story”: big pictures and words, one slide at a time, to show your class on a phone, TV or projector. “Read to me” reads the story out loud.",
+        "“Ipakita ang kuwento”: malalaking larawan at salita, isang slide bawat pindot, para ipakita sa klase sa phone, TV o projector. Binabasa nang malakas ng “Basahin para sa akin” ang kuwento."
+      ),
+      t(
+        "Every story is a ready Sunday School lesson: questions, an activity with what you need, a memory verse game with stars, a prayer and a teacher tip, for each age.",
+        "Handang Sunday School lesson ang bawat kuwento: mga tanong, gawain na may listahan ng kailangan, memory verse game na may stars, panalangin at tip sa teacher, para sa bawat edad."
+      ),
+      t(
+        "Bible Games now asks “Who is playing?”: Kids 3–7 (picture answers, read aloud), Kids 8–12, Youth 13–17 or Adults.",
+        "Tinatanong na ng Bible Games: “Sino ang maglalaro?”: Bata 3–7 (may larawan ang sagot at binabasa nang malakas), Bata 8–12, Kabataan 13–17 o Adult."
+      ),
+    ],
+  },
+  {
     id: "2026-10-17-new-link",
     date: "2026-10-17",
     title: t("Our new home: anointed-academy.web.app", "Bagong tahanan: anointed-academy.web.app"),

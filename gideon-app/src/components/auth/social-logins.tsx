@@ -27,6 +27,13 @@ function GoogleMark({ className }: { className?: string }) {
 }
 
 /**
+ * Facebook login works in the code but needs the Facebook app set up in
+ * Facebook for Developers and Firebase (App ID and secret). Until then its
+ * logo stays hidden; set this to true once it is on.
+ */
+export const FACEBOOK_LOGIN_ENABLED = false;
+
+/**
  * "Or continue with" and the Google and Facebook logos, each a round button
  * that opens that login.
  */
@@ -60,9 +67,11 @@ export function SocialLogins({
         <button type="button" disabled={disabled} onClick={onGoogle} aria-label={googleLabel} title={googleLabel} className={cn(round, "bg-white")}>
           <GoogleMark className="size-6" />
         </button>
+{FACEBOOK_LOGIN_ENABLED && (
         <button type="button" disabled={disabled} onClick={onFacebook} aria-label={facebookLabel} title={facebookLabel} className={cn(round, "bg-[#1877F2] text-white")}>
           <FacebookMark className="size-6" />
         </button>
+        )}
       </div>
     </div>
   );

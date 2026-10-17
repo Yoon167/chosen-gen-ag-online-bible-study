@@ -59,6 +59,19 @@ export default function GrowPage() {
           />
           <Feature href="/courses" icon={Library} kicker={tx("11 courses", "11 course")} title={tx("Bible Courses", "Bible Courses")} from="#6b1f2a" to="#3e0f17" />
         </div>
+        <Link
+          href="/kids"
+          className="ui-rise flex items-center gap-3 rounded-2xl p-4 text-white shadow-lg active:scale-[0.98]"
+          style={{ background: "linear-gradient(140deg, #c026d3, #ea580c)" }}
+        >
+          <span className="text-3xl">🧒📖</span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-[0.625rem] font-bold uppercase tracking-wider text-white/80">{tx("For teachers and parents", "Para sa teachers at magulang")}</span>
+            <span className="block font-heading text-lg font-semibold leading-tight">{tx("Kids Ministry", "Kids Ministry")}</span>
+            <span className="block text-xs text-white/85">{tx("Bible stories, Sunday School and quizzes", "Bible stories, Sunday School at quiz")}</span>
+          </span>
+          <ChevronRight className="size-5 shrink-0" />
+        </Link>
 
         <NextStepCard />
 

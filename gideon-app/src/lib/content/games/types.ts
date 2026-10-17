@@ -1,12 +1,13 @@
 import type { VerseRef } from "@/lib/bible/verse-ref";
 
 /**
- * Bible games: every item has a level so players pick Easy, Medium or Hard.
+ * Bible games: every item has a level, picked by age: kids (3–7), easy (8–12),
+ * medium (youth) or hard (adults).
  * English and Tagalog everywhere. Content lives in the files next to this one.
  */
 
 export type Text = { en: string; tl: string };
-export type Level = "easy" | "medium" | "hard";
+export type Level = "kids" | "easy" | "medium" | "hard";
 
 export const t = (en: string, tl: string): Text => ({ en, tl });
 export const v = (book: string, chapter: number, verses: string): VerseRef => ({ book, chapter, verses });

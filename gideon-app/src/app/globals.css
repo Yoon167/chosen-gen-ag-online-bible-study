@@ -547,3 +547,10 @@ html[data-text-size="xl"] {
   0%, 100% { box-shadow: 0 0 6px 1px rgba(212, 175, 55, 0.45); }
   50% { box-shadow: 0 0 18px 5px rgba(212, 175, 55, 0.75); }
 }
+
+/* A wrong answer shakes. */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}

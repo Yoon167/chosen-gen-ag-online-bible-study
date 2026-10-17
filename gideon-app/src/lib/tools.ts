@@ -1,5 +1,6 @@
 import {
   Award,
+  BookHeart,
   BookMarked,
   Brain,
   CalendarDays,
@@ -54,7 +55,8 @@ export const TOOLS: Tool[] = [
   { href: "/devotion/guide", icon: BookMarked, group: "learn", title: t("How to have a devotion", "Paano mag-debosyon"), blurb: t("SOAP, HEAR, ACTS and more", "SOAP, HEAR, ACTS at iba pa") },
   { href: "/bible/plans", icon: CalendarDays, group: "learn", title: t("Reading plans", "Reading plans"), blurb: t("Read the Bible through, step by step", "Basahin ang Bibliya nang paunti-unti") },
   { href: "/memory", icon: Brain, group: "learn", title: t("Memory verses", "Isinasaulong talata"), blurb: t("Hide God's Word in your heart", "Itago ang Salita ng Diyos sa puso") },
-  { href: "/quiz", icon: Gamepad2, group: "learn", title: t("Bible Games", "Bible Games"), blurb: t("Quiz, puzzles and more in 3 levels", "Quiz, puzzle at iba pa sa 3 level") },
+  { href: "/quiz", icon: Gamepad2, group: "learn", title: t("Bible Games", "Bible Games"), blurb: t("Quiz and puzzles for kids, youth and adults", "Quiz at puzzle para sa bata, kabataan at adult") },
+  { href: "/kids", icon: BookHeart, group: "lead", title: t("Kids Ministry", "Kids Ministry"), blurb: t("Bible stories, Sunday School lessons and show mode", "Bible stories, Sunday School lessons at show mode") },
   { href: "/journey/assessment", icon: ShieldCheck, group: "learn", title: t("Spiritual Assessment", "Spiritual Assessment"), blurb: t("24 areas of your walk, private", "24 na bahagi ng paglakad mo, pribado") },
   { href: "/journey/gifts", icon: Award, group: "learn", title: t("Spiritual Gifts", "Spiritual Gifts"), blurb: t("Discover how God made you to serve", "Tuklasin kung paano ka ginawa ng Diyos para maglingkod") },
   { href: "/prayer", icon: HandHeart, group: "pray", title: t("Prayer journal", "Prayer journal"), blurb: t("Prayers, answers and a prayer timer", "Mga panalangin, sagot at prayer timer") },
