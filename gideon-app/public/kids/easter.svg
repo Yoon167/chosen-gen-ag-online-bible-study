@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c084fc"/><stop offset=".45" stop-color="#fb7185"/><stop offset="1" stop-color="#fde68a"/></linearGradient>
+    <radialGradient id="rise" cx=".5" cy=".55" r=".55"><stop offset="0" stop-color="#fffbeb"/><stop offset="1" stop-color="#fffbeb" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <!-- Sunrise rays -->
+  <g transform="translate(520 330)" fill="#fef3c7" opacity=".45">
+    <path d="M0 0 L-260 -320 L-200 -330Z"/><path d="M0 0 L-120 -340 L-60 -340Z"/><path d="M0 0 L20 -340 L80 -340Z"/><path d="M0 0 L160 -330 L220 -320Z"/><path d="M0 0 L280 -260 L300 -210Z"/>
+  </g>
+  <circle cx="520" cy="330" r="200" fill="url(#rise)"/>
+  <circle cx="520" cy="330" r="60" fill="#fde047"/>
+  <!-- Three crosses on a far hill -->
+  <path d="M0 300 Q120 240 260 290 V600 H0Z" fill="#7c3aed" opacity=".5"/>
+  <g stroke="#4c1d95" stroke-width="7" stroke-linecap="round" opacity=".7">
+    <path d="M90 220 v56 M74 236 h32"/><path d="M140 200 v70 M120 218 h40"/><path d="M190 222 v54 M174 238 h32"/>
+  </g>
+  <!-- Garden hill with the tomb -->
+  <path d="M260 600 Q300 330 520 320 Q760 320 800 420 V600Z" fill="#a8a29e"/>
+  <path d="M0 470 Q200 430 420 460 Q620 490 800 450 V600 H0Z" fill="#4ade80"/>
+  <!-- Tomb opening, empty and shining -->
+  <path d="M460 470 Q460 380 520 380 Q580 380 580 470Z" fill="#292524"/>
+  <path d="M470 470 Q470 392 520 392 Q570 392 570 470Z" fill="#fef9c3" opacity=".55"/>
+  <!-- Linen cloths -->
+  <path d="M490 462 h60 v8 h-60Z" fill="#fff"/>
+  <!-- Stone rolled away -->
+  <circle cx="660" cy="430" r="58" fill="#78716c"/>
+  <circle cx="660" cy="430" r="58" fill="none" stroke="#57534e" stroke-width="6"/>
+  <path d="M630 410 q20 -14 44 0 M640 446 q14 10 34 0" stroke="#57534e" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- Angel -->
+  <g transform="translate(360 360)">
+    <ellipse cx="-44" cy="0" rx="40" ry="20" fill="#fff" opacity=".95" transform="rotate(-25 -44 0)"/>
+    <ellipse cx="44" cy="0" rx="40" ry="20" fill="#fff" opacity=".95" transform="rotate(25 44 0)"/>
+    <path d="M-24 0 Q0 -10 24 0 L30 80 H-30Z" fill="#fff"/>
+    <circle cy="-22" r="20" fill="#fcd9b6"/>
+    <ellipse cy="-50" rx="22" ry="6" fill="none" stroke="#facc15" stroke-width="5"/>
+    <circle cx="-7" cy="-24" r="2.5" fill="#1e293b"/><circle cx="7" cy="-24" r="2.5" fill="#1e293b"/>
+    <path d="M-8 -12 Q0 -4 8 -12" stroke="#b45309" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M24 20 Q60 0 70 -30" stroke="#fff" stroke-width="12" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- Easter lilies and flowers -->
+  <g>
+    <path d="M120 600 V500 M160 600 V480 M720 600 V510" stroke="#15803d" stroke-width="6"/>
+    <g fill="#fff" stroke="#fde047" stroke-width="2">
+      <path d="M120 500 l-16 -24 l16 8 l16 -8Z"/><path d="M160 480 l-16 -24 l16 8 l16 -8Z"/><path d="M720 510 l-16 -24 l16 8 l16 -8Z"/>
+    </g>
+    <circle cx="260" cy="540" r="10" fill="#f472b6"/><circle cx="260" cy="540" r="4" fill="#fde047"/>
+    <circle cx="610" cy="550" r="10" fill="#a78bfa"/><circle cx="610" cy="550" r="4" fill="#fde047"/>
+  </g>
+</svg>

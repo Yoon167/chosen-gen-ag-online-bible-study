@@ -6,7 +6,8 @@ import { BookHeart, ChevronLeft, ChevronRight, Gamepad2, ShieldCheck, Users } fr
 import { HeroStat, PageHeader } from "@/components/shared/page-header";
 import { useLanguage, useTx } from "@/lib/i18n";
 import { KIDS_STORIES, findKidsStory } from "@/lib/content/kids";
-import { AgePicker, StoryCard, StoryView } from "@/components/kids/kids-client";
+import { AgePicker, StoryCard, StoryView, storyArt } from "@/components/kids/kids-client";
+import { LanguageToggle } from "@/components/language-toggle";
 
 /** Kids Ministry: Bible stories and Sunday School lessons for teachers and parents. */
 export function KidsHome() {
@@ -21,6 +22,7 @@ export function KidsHome() {
         title={tx("Kids Ministry", "Kids Ministry")}
         icon={BookHeart}
         back
+        action={<LanguageToggle className="shrink-0 bg-white/90 text-foreground" />}
         hero={{
           from: "#c026d3",
           to: "#ea580c",
@@ -109,15 +111,19 @@ export function KidsStoryPage({ id, pictures }: { id: string; pictures: string[]
     <div>
       <header className="relative overflow-hidden px-5 pb-6 pt-4 text-white safe-top" style={{ background: `linear-gradient(150deg, ${story.colors[0]}, ${story.colors[1]})` }}>
         <span aria-hidden className="pointer-events-none absolute -right-10 -top-10 size-48 rounded-full bg-white/15" />
-        <button
-          onClick={() => router.push("/kids")}
-          aria-label={tx("Back to Kids Ministry", "Bumalik sa Kids Ministry")}
-          className="relative flex size-9 items-center justify-center rounded-full border border-white/25 bg-white/15 backdrop-blur"
-        >
-          <ChevronLeft className="size-4.5" />
-        </button>
-        <div className="relative mt-2 text-center">
-          <div className="text-6xl tracking-widest drop-shadow-lg">{story.scene}</div>
+        <div className="relative flex items-center justify-between">
+          <button
+            onClick={() => router.push("/kids")}
+            aria-label={tx("Back to Kids Ministry", "Bumalik sa Kids Ministry")}
+            className="flex size-9 items-center justify-center rounded-full border border-white/25 bg-white/15 backdrop-blur"
+          >
+            <ChevronLeft className="size-4.5" />
+          </button>
+          <LanguageToggle className="shrink-0 bg-white/90 text-foreground" />
+        </div>
+        <div className="relative mt-3 text-center">
+          {/* eslint-disable-next-line @next/next/no-img-element -- a small static drawing */}
+          <img src={storyArt(story.id)} alt="" className="mx-auto aspect-[4/3] w-full max-w-md rounded-3xl object-cover shadow-2xl ring-4 ring-white/30" />
           <p className="mt-2 text-[0.6875rem] font-bold uppercase tracking-[0.25em] text-white/80">{story.passage[lang]}</p>
           <h1 className="mt-1 font-heading text-[1.75rem] font-semibold leading-tight">{story.title[lang]}</h1>
         </div>
@@ -131,7 +137,8 @@ export function KidsStoryPage({ id, pictures }: { id: string; pictures: string[]
               className="flex items-center gap-3 rounded-2xl p-4 text-white shadow-md"
               style={{ background: `linear-gradient(150deg, ${next.colors[0]}, ${next.colors[1]})` }}
             >
-              <span className="text-3xl">{next.scene}</span>
+              {/* eslint-disable-next-line @next/next/no-img-element -- a small static drawing */}
+              <img src={storyArt(next.id)} alt="" className="h-14 w-[4.6rem] shrink-0 rounded-xl object-cover" />
               <span className="min-w-0 flex-1">
                 <span className="block text-[0.625rem] font-bold uppercase tracking-wider text-white/80">{tx("Next story", "Susunod na kuwento")}</span>
                 <span className="block font-heading font-semibold">{next.title[lang]}</span>

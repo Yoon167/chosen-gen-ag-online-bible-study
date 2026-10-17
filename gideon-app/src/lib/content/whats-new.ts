@@ -38,6 +38,10 @@ export const RELEASES: Release[] = [
         "Bible Games now asks “Who is playing?”: Kids 3–7 (picture answers, read aloud), Kids 8–12, Youth 13–17 or Adults.",
         "Tinatanong na ng Bible Games: “Sino ang maglalaro?”: Bata 3–7 (may larawan ang sagot at binabasa nang malakas), Bata 8–12, Kabataan 13–17 o Adult."
       ),
+      t(
+        "Every Kids Ministry story now has its own colorful drawing, on the story cards, at the top of each story and in Show mode. Tap EN or TL to switch the language anytime.",
+        "May sariling makulay na drawing na ang bawat kuwento sa Kids Ministry, sa mga story card, sa itaas ng bawat kuwento at sa Show mode. Pindutin ang EN o TL para magpalit ng wika anumang oras."
+      ),
     ],
   },
   {

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bae6fd"/><stop offset="1" stop-color="#f0f9ff"/></linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#075985"/></linearGradient>
+    <linearGradient id="whale" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#1e3a8a"/></linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <circle cx="680" cy="90" r="46" fill="#fde047"/>
+  <!-- Nineveh far away -->
+  <g fill="#cbd5e1">
+    <rect x="40" y="250" width="40" height="60"/><rect x="84" y="226" width="30" height="84"/><rect x="118" y="260" width="46" height="50"/><path d="M84 226 l15 -20 l15 20Z"/>
+  </g>
+  <!-- Sea -->
+  <path d="M0 300 Q60 286 120 300 T240 300 T360 300 T480 300 T600 300 T720 300 T840 300 V600 H0Z" fill="url(#sea)"/>
+  <!-- Whale -->
+  <g transform="translate(430 380)">
+    <path d="M-230 20 Q-220 -110 -40 -120 Q140 -120 190 -20 Q210 30 160 70 Q40 110 -120 90 Q-220 80 -230 20Z" fill="url(#whale)"/>
+    <path d="M-200 60 Q-60 110 150 66 Q60 96 -120 90 Q-190 84 -200 60Z" fill="#bfdbfe"/>
+    <path d="M170 -10 Q230 -70 260 -40 Q240 -10 200 10 Q250 20 260 60 Q220 70 170 40Z" fill="#1e40af"/>
+    <circle cx="-120" cy="-40" r="16" fill="#fff"/><circle cx="-116" cy="-40" r="8" fill="#0f172a"/><circle cx="-113" cy="-43" r="3" fill="#fff"/>
+    <path d="M-150 -6 Q-130 6 -110 -2" stroke="#1e3a8a" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- open mouth with Jonah -->
+    <path d="M-232 22 Q-180 -10 -150 30 Q-190 60 -232 22Z" fill="#7f1d1d"/>
+    <g transform="translate(-190 10)">
+      <path d="M-14 6 Q-14 -18 0 -20 Q14 -18 14 6Z" fill="#16a34a"/>
+      <circle cy="-30" r="14" fill="#e8b48a"/>
+      <path d="M-14 -32 Q-12 -48 0 -46 Q12 -48 14 -32 Q8 -42 0 -40 Q-8 -42 -14 -32Z" fill="#422006"/>
+      <circle cx="-5" cy="-30" r="2" fill="#1e293b"/><circle cx="5" cy="-30" r="2" fill="#1e293b"/>
+      <path d="M-5 -22 Q0 -18 5 -22" stroke="#7c2d12" stroke-width="2" fill="none"/>
+      <path d="M-12 -6 L-22 -26 M12 -6 L22 -26" stroke="#e8b48a" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <!-- spout -->
+    <g fill="#e0f2fe">
+      <path d="M-30 -120 Q-34 -170 -60 -190 Q-30 -176 -26 -150 Q-20 -186 6 -200 Q-14 -170 -20 -120Z"/>
+      <circle cx="-64" cy="-196" r="8"/><circle cx="10" cy="-206" r="8"/><circle cx="-28" cy="-214" r="7"/>
+    </g>
+  </g>
+  <!-- Front waves -->
+  <path d="M0 540 Q40 520 80 540 T160 540 T240 540 T320 540 T400 540 T480 540 T560 540 T640 540 T720 540 T800 540 V600 H0Z" fill="#0369a1" opacity=".85"/>
+  <g fill="none" stroke="#e0f2fe" stroke-width="4" stroke-linecap="round" opacity=".8">
+    <path d="M60 565 q20 -10 40 0"/><path d="M300 575 q20 -10 40 0"/><path d="M600 565 q20 -10 40 0"/>
+  </g>
+</svg>

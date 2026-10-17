@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f472b6"/><stop offset=".5" stop-color="#fdba74"/><stop offset="1" stop-color="#fef3c7"/></linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <circle cx="400" cy="300" r="90" fill="#fde047" opacity=".9"/>
+  <!-- Hills -->
+  <path d="M0 340 Q160 270 340 330 Q520 390 800 300 V600 H0Z" fill="#65a30d"/>
+  <path d="M0 420 Q200 370 420 410 Q640 450 800 400 V600 H0Z" fill="#84cc16"/>
+  <!-- Flock far away (99) -->
+  <g fill="#fff">
+    <g transform="translate(90 330) scale(.4)"><circle r="24"/><circle cx="22" cy="-6" r="20"/><circle cx="-22" cy="-4" r="20"/></g>
+    <g transform="translate(130 326) scale(.4)"><circle r="24"/><circle cx="22" cy="-6" r="20"/><circle cx="-22" cy="-4" r="20"/></g>
+    <g transform="translate(170 334) scale(.4)"><circle r="24"/><circle cx="22" cy="-6" r="20"/><circle cx="-22" cy="-4" r="20"/></g>
+    <g transform="translate(110 350) scale(.4)"><circle r="24"/><circle cx="22" cy="-6" r="20"/><circle cx="-22" cy="-4" r="20"/></g>
+    <g transform="translate(150 352) scale(.4)"><circle r="24"/><circle cx="22" cy="-6" r="20"/><circle cx="-22" cy="-4" r="20"/></g>
+  </g>
+  <!-- Tree -->
+  <rect x="660" y="300" width="18" height="90" rx="5" fill="#78350f"/>
+  <circle cx="669" cy="280" r="54" fill="#15803d"/>
+  <!-- The shepherd carrying the lost sheep home -->
+  <g transform="translate(400 430)">
+    <path d="M-44 0 Q-50 -100 0 -110 Q50 -100 44 0 L54 140 H-54Z" fill="#a16207"/>
+    <path d="M-36 -40 H36" stroke="#78350f" stroke-width="8"/>
+    <rect x="-34" y="136" width="22" height="30" rx="8" fill="#78350f"/><rect x="12" y="136" width="22" height="30" rx="8" fill="#78350f"/>
+    <!-- staff -->
+    <path d="M88 160 L88 -150" stroke="#713f12" stroke-width="10" stroke-linecap="round"/>
+    <path d="M88 -150 q0 -36 -30 -30" stroke="#713f12" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <!-- sheep on shoulders -->
+    <g transform="translate(0 -150)">
+      <g fill="#fff"><ellipse cx="0" cy="0" rx="80" ry="34"/><circle cx="-50" cy="-14" r="24"/><circle cx="-10" cy="-26" r="26"/><circle cx="34" cy="-20" r="24"/></g>
+      <ellipse cx="86" cy="-12" rx="22" ry="24" fill="#475569"/>
+      <circle cx="94" cy="-18" r="3.5" fill="#fff"/>
+      <path d="M84 2 Q92 10 100 4" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M-70 18 l-14 30 M-50 24 l-10 30 M60 22 l8 30 M76 16 l14 28" stroke="#475569" stroke-width="8" stroke-linecap="round"/>
+    </g>
+    <!-- arms holding the legs -->
+    <path d="M-40 -90 Q-80 -120 -70 -134" stroke="#c68b62" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <path d="M40 -90 Q80 -120 72 -134" stroke="#c68b62" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <!-- head -->
+    <circle cy="-128" r="1" fill="none"/>
+    <g transform="translate(0 -122)">
+      <circle r="32" fill="#c68b62"/>
+      <path d="M-32 -4 Q0 46 32 -4 Q28 22 0 26 Q-28 22 -32 -4Z" fill="#422006"/>
+      <path d="M-36 -8 Q-30 -48 0 -46 Q30 -48 36 -8 Q22 -30 0 -30 Q-22 -30 -36 -8Z" fill="#f8fafc"/>
+      <circle cx="-11" cy="-6" r="3.5" fill="#1e293b"/><circle cx="11" cy="-6" r="3.5" fill="#1e293b"/>
+      <path d="M-12 10 Q0 18 12 10" stroke="#fef3c7" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+  <!-- Hearts of joy -->
+  <g fill="#f43f5e">
+    <path d="M240 200 c-10 -18 -34 -6 -24 12 l24 22 l24 -22 c10 -18 -14 -30 -24 -12Z"/>
+    <path d="M560 170 c-7 -13 -24 -4 -17 9 l17 16 l17 -16 c7 -13 -10 -22 -17 -9Z"/>
+  </g>
+</svg>

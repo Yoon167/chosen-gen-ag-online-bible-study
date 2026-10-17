@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdba74"/><stop offset="1" stop-color="#fef3c7"/></linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <circle cx="660" cy="110" r="50" fill="#fde047"/>
+  <!-- Sea of Galilee far away -->
+  <path d="M0 260 H800 V300 H0Z" fill="#7dd3fc"/>
+  <!-- Grassy hillside -->
+  <path d="M0 280 Q200 240 420 280 Q620 320 800 280 V600 H0Z" fill="#86efac"/>
+  <!-- The crowd (simple heads) -->
+  <g>
+    <g fill="#e8b48a"><circle cx="60" cy="300" r="12"/><circle cx="100" cy="296" r="12"/><circle cx="140" cy="304" r="12"/><circle cx="560" cy="300" r="12"/><circle cx="600" cy="306" r="12"/><circle cx="640" cy="300" r="12"/><circle cx="700" cy="306" r="12"/><circle cx="740" cy="300" r="12"/></g>
+    <g fill="#c68b62"><circle cx="80" cy="330" r="14"/><circle cx="125" cy="334" r="14"/><circle cx="170" cy="330" r="14"/><circle cx="580" cy="334" r="14"/><circle cx="625" cy="330" r="14"/><circle cx="670" cy="336" r="14"/><circle cx="720" cy="330" r="14"/></g>
+    <g><rect x="64" y="342" width="32" height="26" rx="12" fill="#f43f5e"/><rect x="110" y="346" width="32" height="26" rx="12" fill="#0ea5e9"/><rect x="154" y="342" width="32" height="26" rx="12" fill="#a855f7"/><rect x="564" y="346" width="32" height="26" rx="12" fill="#22c55e"/><rect x="609" y="342" width="32" height="26" rx="12" fill="#f59e0b"/><rect x="654" y="348" width="32" height="26" rx="12" fill="#ec4899"/><rect x="704" y="342" width="32" height="26" rx="12" fill="#3b82f6"/></g>
+  </g>
+  <path d="M0 380 Q240 350 440 380 T800 380 V600 H0Z" fill="#4ade80"/>
+  <!-- Jesus, giving thanks -->
+  <g transform="translate(520 420)">
+    <path d="M-34 0 Q-38 -80 0 -88 Q38 -80 34 0 L40 120 H-40Z" fill="#f8fafc"/>
+    <path d="M14 -84 L28 -80 L22 120 H10Z" fill="#dc2626"/>
+    <path d="M-28 -60 Q-70 -80 -80 -120" stroke="#f8fafc" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <path d="M28 -60 Q70 -80 80 -120" stroke="#f8fafc" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <circle cx="-82" cy="-128" r="10" fill="#c68b62"/><circle cx="82" cy="-128" r="10" fill="#c68b62"/>
+    <circle cy="-116" r="28" fill="#c68b62"/>
+    <path d="M-28 -112 Q0 -72 28 -112 Q24 -88 0 -86 Q-24 -88 -28 -112Z" fill="#422006"/>
+    <path d="M-30 -120 Q-26 -152 0 -150 Q26 -152 30 -120 Q20 -138 0 -138 Q-20 -138 -30 -120Z" fill="#422006"/>
+    <path d="M-12 -118 q4 -4 8 0 M4 -118 q4 -4 8 0" stroke="#1e293b" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- The boy holding his basket -->
+  <g transform="translate(250 450)">
+    <path d="M-26 0 Q-28 -40 0 -44 Q28 -40 26 0 L30 70 H-30Z" fill="#0ea5e9"/>
+    <rect x="-22" y="68" width="16" height="36" rx="7" fill="#e8b48a"/><rect x="6" y="68" width="16" height="36" rx="7" fill="#e8b48a"/>
+    <circle cy="-66" r="28" fill="#e8b48a"/>
+    <path d="M-28 -70 Q-24 -102 0 -100 Q24 -102 28 -70 Q18 -88 0 -86 Q-18 -88 -28 -70Z" fill="#1c1917"/>
+    <circle cx="-10" cy="-68" r="3.5" fill="#1e293b"/><circle cx="10" cy="-68" r="3.5" fill="#1e293b"/>
+    <path d="M-12 -52 Q0 -40 12 -52" stroke="#7c2d12" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- basket held up -->
+    <g transform="translate(70 -40)">
+      <path d="M-50 -10 H50 L38 40 H-38Z" fill="#b45309"/>
+      <path d="M-46 4 H46 M-42 20 H42" stroke="#78350f" stroke-width="4"/>
+      <path d="M-40 -10 Q0 -60 40 -10" stroke="#92400e" stroke-width="6" fill="none"/>
+      <!-- 5 loaves -->
+      <g fill="#f59e0b" stroke="#b45309" stroke-width="2">
+        <ellipse cx="-30" cy="-16" rx="14" ry="9"/><ellipse cx="-12" cy="-22" rx="14" ry="9"/><ellipse cx="6" cy="-16" rx="14" ry="9"/><ellipse cx="22" cy="-24" rx="13" ry="8"/><ellipse cx="34" cy="-14" rx="12" ry="8"/>
+      </g>
+      <!-- 2 fish -->
+      <g transform="translate(-16 -36)"><path d="M0 0 q14 -10 28 0 q-14 10 -28 0Z" fill="#94a3b8"/><path d="M28 0 l10 -7 v14Z" fill="#94a3b8"/><circle cx="7" cy="-1" r="2" fill="#1e293b"/></g>
+      <g transform="translate(14 -42)"><path d="M0 0 q14 -10 28 0 q-14 10 -28 0Z" fill="#cbd5e1"/><path d="M28 0 l10 -7 v14Z" fill="#cbd5e1"/><circle cx="7" cy="-1" r="2" fill="#1e293b"/></g>
+    </g>
+    <path d="M22 -30 Q40 -40 40 -60" stroke="#e8b48a" stroke-width="12" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- Twelve baskets left over (a few shown) -->
+  <g transform="translate(690 520)">
+    <path d="M-30 -14 H30 L22 20 H-22Z" fill="#a16207"/><g fill="#f59e0b"><ellipse cx="-12" cy="-18" rx="11" ry="7"/><ellipse cx="10" cy="-20" rx="11" ry="7"/></g>
+  </g>
+  <g transform="translate(80 530)">
+    <path d="M-30 -14 H30 L22 20 H-22Z" fill="#a16207"/><g fill="#f59e0b"><ellipse cx="-12" cy="-18" rx="11" ry="7"/><ellipse cx="10" cy="-20" rx="11" ry="7"/></g>
+  </g>
+</svg>

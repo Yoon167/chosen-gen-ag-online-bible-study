@@ -92,9 +92,10 @@ export function StoryCard({ story, index }: { story: KidsStory; index: number })
       className="ui-rise group relative flex flex-col overflow-hidden rounded-3xl text-white shadow-lg transition active:scale-[0.97]"
       style={{ background: `linear-gradient(150deg, ${story.colors[0]}, ${story.colors[1]})`, animationDelay: `${Math.min(index, 10) * 0.04}s` }}
     >
-      <span aria-hidden className="pointer-events-none absolute -right-6 -top-6 size-24 rounded-full bg-white/15" />
-      <span aria-hidden className="pointer-events-none absolute -bottom-8 -left-4 size-20 rounded-full bg-white/10" />
-      <span className="relative flex h-24 items-center justify-center whitespace-nowrap text-[2.1rem] leading-none drop-shadow-md transition-transform group-hover:scale-110">{story.scene}</span>
+      <span className="relative block aspect-[4/3] overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element -- a small static drawing */}
+        <img src={storyArt(story.id)} alt="" className="size-full object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+      </span>
       <span className="relative bg-black/20 px-3 pb-3 pt-2 backdrop-blur-[2px]">
         <span className="block font-heading text-[0.9375rem] font-semibold leading-tight">{story.title[lang]}</span>
         <span className="mt-0.5 flex items-center justify-between text-[0.6875rem] text-white/80">
@@ -111,6 +112,9 @@ export function StoryCard({ story, index }: { story: KidsStory; index: number })
     </Link>
   );
 }
+
+/** Each story's drawing (public/kids/{id}.svg). */
+export const storyArt = (id: string) => `/kids/${id}.svg`;
 
 // ---------- Memory verse stars (this device) ----------
 
@@ -180,7 +184,7 @@ export function StoryView({ story, pictures }: { story: KidsStory; pictures: str
       <section className="space-y-4">
         {parts.map((p, i) => {
           const pic = young ? pictures[i] : pictures[Math.min(pictures.length - 1, Math.floor((i / parts.length) * pictures.length))];
-          const showPic = young || i % 2 === 0;
+          const showPic = young ? true : i % 2 === 0 && i > 0;
           return (
             <article
               key={i}
@@ -412,11 +416,11 @@ function ShowMode({ story, pictures, onClose }: { story: KidsStory; pictures: st
   const tx = useTx();
   const slides = useMemo(
     () => [
-      { pic: story.scene, text: story.title[lang], small: story.passage[lang], big: true },
-      ...story.short.map((p, i) => ({ pic: pictures[i] ?? story.scene, text: p[lang], small: "", big: false })),
-      { pic: "💡", text: story.bigIdea[lang], small: tx("Remember", "Tandaan"), big: true },
-      { pic: "📖", text: `“${story.verse.text[lang]}”`, small: story.verse.ref[lang], big: false },
-      { pic: "🙏", text: story.prayer[lang], small: tx("Let’s pray", "Manalangin tayo"), big: false },
+      { pic: story.scene, art: storyArt(story.id), text: story.title[lang], small: story.passage[lang], big: true },
+      ...story.short.map((p, i) => ({ pic: pictures[i] ?? story.scene, art: "", text: p[lang], small: "", big: false })),
+      { pic: "💡", art: storyArt(story.id), text: story.bigIdea[lang], small: tx("Remember", "Tandaan"), big: true },
+      { pic: "📖", art: "", text: `“${story.verse.text[lang]}”`, small: story.verse.ref[lang], big: false },
+      { pic: "🙏", art: "", text: story.prayer[lang], small: tx("Let’s pray", "Manalangin tayo"), big: false },
     ],
     [story, pictures, lang, tx]
   );
@@ -456,7 +460,12 @@ function ShowMode({ story, pictures, onClose }: { story: KidsStory; pictures: st
         </button>
       </div>
       <div key={i} className="ui-pop flex flex-1 flex-col items-center justify-center gap-6 px-8 text-center">
-        <div className="text-[min(28vw,11rem)] leading-none tracking-wider drop-shadow-xl">{s.pic}</div>
+        {s.art ? (
+          // eslint-disable-next-line @next/next/no-img-element -- a small static drawing
+          <img src={s.art} alt="" className="max-h-[45vh] w-full max-w-2xl rounded-3xl object-contain shadow-2xl" />
+        ) : (
+          <div className="text-[min(28vw,11rem)] leading-none tracking-wider drop-shadow-xl">{s.pic}</div>
+        )}
         {s.small && <p className="text-sm font-bold uppercase tracking-[0.25em] text-white/80">{s.small}</p>}
         <p className={cn("max-w-3xl font-heading font-semibold leading-snug drop-shadow", s.big ? "text-[min(9vw,3.5rem)]" : "text-[min(6.5vw,2.4rem)]")}>{s.text}</p>
       </div>

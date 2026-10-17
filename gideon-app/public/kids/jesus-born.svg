@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#312e81"/></linearGradient>
+    <radialGradient id="glow"><stop offset="0" stop-color="#fef08a" stop-opacity=".95"/><stop offset="1" stop-color="#fef08a" stop-opacity="0"/></radialGradient>
+    <radialGradient id="warm" cx=".5" cy=".6" r=".6"><stop offset="0" stop-color="#fde68a" stop-opacity=".7"/><stop offset="1" stop-color="#fde68a" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#night)"/>
+  <g fill="#fef3c7"><circle cx="80" cy="60" r="2.5"/><circle cx="200" cy="120" r="2"/><circle cx="660" cy="70" r="2.5"/><circle cx="740" cy="160" r="2"/><circle cx="560" cy="40" r="2"/><circle cx="120" cy="200" r="2"/></g>
+  <!-- The star -->
+  <circle cx="400" cy="90" r="90" fill="url(#glow)"/>
+  <path d="M400 40 L414 78 L454 80 L422 104 L434 144 L400 120 L366 144 L378 104 L346 80 L386 78Z" fill="#fde047"/>
+  <path d="M400 150 L400 270" stroke="#fde047" stroke-width="4" opacity=".6"/>
+  <!-- Hills -->
+  <path d="M0 470 Q200 420 400 460 Q600 500 800 450 V600 H0Z" fill="#14532d"/>
+  <!-- Stable -->
+  <g transform="translate(400 300)">
+    <path d="M-190 40 L0 -60 L190 40Z" fill="#78350f"/>
+    <rect x="-170" y="36" width="340" height="190" fill="#92400e"/>
+    <rect x="-150" y="56" width="300" height="170" fill="#451a03"/>
+    <circle cx="0" cy="150" r="170" fill="url(#warm)"/>
+    <!-- Mary -->
+    <g transform="translate(-80 150)">
+      <path d="M-34 70 Q-38 -10 0 -24 Q38 -10 34 70Z" fill="#2563eb"/>
+      <path d="M-30 -10 Q0 -70 30 -10 Q24 -40 0 -44 Q-24 -40 -30 -10Z" fill="#1d4ed8"/>
+      <circle cy="-30" r="20" fill="#e8b48a"/>
+      <path d="M-20 -34 Q0 -64 20 -34 Q14 -50 0 -50 Q-14 -50 -20 -34Z" fill="#1d4ed8"/>
+      <path d="M-8 -30 q3 3 6 0 M2 -30 q3 3 6 0" stroke="#1e293b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M-6 -20 Q0 -16 6 -20" stroke="#7c2d12" stroke-width="2.5" fill="none"/>
+    </g>
+    <!-- Joseph -->
+    <g transform="translate(90 140)">
+      <path d="M-34 80 Q-38 -10 0 -24 Q38 -10 34 80Z" fill="#a16207"/>
+      <circle cy="-36" r="22" fill="#c68b62"/>
+      <path d="M-22 -30 Q0 6 22 -30 Q18 -10 0 -8 Q-18 -10 -22 -30Z" fill="#422006"/>
+      <path d="M-22 -40 Q-20 -64 0 -62 Q20 -64 22 -40 Q14 -54 0 -54 Q-14 -54 -22 -40Z" fill="#422006"/>
+      <circle cx="-8" cy="-38" r="2.5" fill="#1e293b"/><circle cx="8" cy="-38" r="2.5" fill="#1e293b"/>
+      <path d="M40 90 L44 -60" stroke="#713f12" stroke-width="7" stroke-linecap="round"/>
+    </g>
+    <!-- Manger with baby Jesus -->
+    <g transform="translate(0 190)">
+      <path d="M-60 -10 H60 L46 34 H-46Z" fill="#b45309"/>
+      <path d="M-50 34 L-60 60 M50 34 L60 60" stroke="#78350f" stroke-width="7" stroke-linecap="round"/>
+      <path d="M-62 -10 Q-40 -26 -20 -12 Q0 -28 20 -12 Q40 -26 62 -10Z" fill="#fde047"/>
+      <ellipse cx="0" cy="-20" rx="30" ry="15" fill="#fef9c3"/>
+      <circle cx="-22" cy="-26" r="13" fill="#f1c39a"/>
+      <path d="M-28 -26 q3 3 6 0 M-20 -26 q3 3 6 0" stroke="#1e293b" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <circle cx="-22" cy="-26" r="26" fill="none" stroke="#fde047" stroke-width="3" opacity=".6"/>
+    </g>
+  </g>
+  <!-- Sheep -->
+  <g transform="translate(130 520)">
+    <g fill="#f8fafc"><circle r="24"/><circle cx="22" cy="-6" r="20"/><circle cx="-22" cy="-4" r="20"/><circle cx="0" cy="-18" r="20"/></g>
+    <ellipse cx="38" cy="-6" rx="12" ry="14" fill="#334155"/><circle cx="42" cy="-10" r="2.5" fill="#fff"/>
+    <path d="M-10 20 v16 M10 20 v16" stroke="#334155" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(680 530) scale(-.8 .8)">
+    <g fill="#f8fafc"><circle r="24"/><circle cx="22" cy="-6" r="20"/><circle cx="-22" cy="-4" r="20"/><circle cx="0" cy="-18" r="20"/></g>
+    <ellipse cx="38" cy="-6" rx="12" ry="14" fill="#334155"/><circle cx="42" cy="-10" r="2.5" fill="#fff"/>
+    <path d="M-10 20 v16 M10 20 v16" stroke="#334155" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</svg>

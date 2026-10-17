@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbbf24"/><stop offset="1" stop-color="#fef3c7"/></linearGradient>
+    <linearGradient id="wallL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0c4a6e"/><stop offset="1" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="wallR" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#0c4a6e"/><stop offset="1" stop-color="#38bdf8"/></linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <!-- Pillar of cloud -->
+  <path d="M400 30 q-40 0 -36 40 q-30 10 -16 44 q-16 30 22 40 q10 20 30 6 q20 14 30 -6 q38 -10 22 -40 q14 -34 -16 -44 q4 -40 -36 -40Z" fill="#fff" opacity=".9"/>
+  <!-- Dry path -->
+  <path d="M330 600 L380 230 H420 L470 600Z" fill="#e7c48c"/>
+  <!-- Water walls -->
+  <path d="M0 160 Q120 130 250 170 Q330 190 380 230 L330 600 H0Z" fill="url(#wallL)"/>
+  <path d="M800 160 Q680 130 550 170 Q470 190 420 230 L470 600 H800Z" fill="url(#wallR)"/>
+  <g fill="none" stroke="#e0f2fe" stroke-width="5" stroke-linecap="round" opacity=".8">
+    <path d="M40 220 q30 -14 60 0 q30 14 60 0"/><path d="M80 320 q30 -14 60 0 q30 14 60 0"/><path d="M30 440 q30 -14 60 0 q30 14 60 0"/>
+    <path d="M600 220 q30 -14 60 0 q30 14 60 0"/><path d="M560 330 q30 -14 60 0 q30 14 60 0"/><path d="M620 450 q30 -14 60 0 q30 14 60 0"/>
+  </g>
+  <!-- Fish in the wall -->
+  <g transform="translate(160 260)"><path d="M0 0 q18 -14 36 0 q-18 14 -36 0Z" fill="#fde047"/><path d="M36 0 l12 -9 v18Z" fill="#fde047"/><circle cx="9" cy="-2" r="2.5" fill="#1e293b"/></g>
+  <g transform="translate(640 390) scale(-1 1)"><path d="M0 0 q18 -14 36 0 q-18 14 -36 0Z" fill="#fb7185"/><path d="M36 0 l12 -9 v18Z" fill="#fb7185"/><circle cx="9" cy="-2" r="2.5" fill="#1e293b"/></g>
+  <!-- People walking (small, far) -->
+  <g>
+    <g transform="translate(392 300) scale(.45)"><rect x="-12" y="0" width="24" height="40" rx="10" fill="#7c3aed"/><circle cy="-10" r="12" fill="#e8b48a"/></g>
+    <g transform="translate(408 330) scale(.5)"><rect x="-12" y="0" width="24" height="40" rx="10" fill="#16a34a"/><circle cy="-10" r="12" fill="#e8b48a"/></g>
+    <g transform="translate(386 370) scale(.6)"><rect x="-12" y="0" width="24" height="40" rx="10" fill="#dc2626"/><circle cy="-10" r="12" fill="#e8b48a"/></g>
+    <g transform="translate(414 410) scale(.65)"><rect x="-12" y="0" width="24" height="40" rx="10" fill="#0ea5e9"/><circle cy="-10" r="12" fill="#e8b48a"/></g>
+  </g>
+  <!-- Moses with his staff -->
+  <g transform="translate(400 470)">
+    <path d="M-34 0 Q-40 -50 0 -56 Q40 -50 34 0 L44 110 H-44Z" fill="#92400e"/>
+    <path d="M-10 -56 L-14 110 M10 -56 L14 110" stroke="#fef3c7" stroke-width="6" opacity=".6"/>
+    <path d="M30 -30 Q70 -60 84 -110" stroke="#92400e" stroke-width="18" fill="none" stroke-linecap="round"/>
+    <circle cx="86" cy="-116" r="10" fill="#e8b48a"/>
+    <path d="M92 -200 L78 40" stroke="#713f12" stroke-width="9" stroke-linecap="round"/>
+    <path d="M92 -200 q14 -2 12 16" stroke="#713f12" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <circle cx="0" cy="-86" r="32" fill="#e8b48a"/>
+    <path d="M-30 -80 Q0 -30 30 -80 Q24 -50 0 -46 Q-24 -50 -30 -80Z" fill="#f1f5f9"/>
+    <path d="M-34 -92 Q0 -140 34 -92 Q20 -112 0 -112 Q-20 -112 -34 -92Z" fill="#f1f5f9"/>
+    <circle cx="-11" cy="-90" r="3.5" fill="#1e293b"/><circle cx="11" cy="-90" r="3.5" fill="#1e293b"/>
+  </g>
+</svg>
