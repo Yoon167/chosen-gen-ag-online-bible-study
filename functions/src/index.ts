@@ -374,7 +374,7 @@ async function releaseNotice() {
   const devices = snap.docs
     .map((d) => ({ ...(d.data() as PushToken), path: d.ref.path }))
     .filter((d) => d.token && wants(d, "updates"));
-  const sent = await sendTo(devices, { title: LATEST_RELEASE.title, body: LATEST_RELEASE.body, url: "/whats-new", tag: "app-release" });
+  const sent = await sendTo(devices, { title: LATEST_RELEASE.title, body: LATEST_RELEASE.body, url: LATEST_RELEASE.url ?? "/whats-new", tag: "app-release" });
   logger.info(`release ${LATEST_RELEASE.id} announced to ${sent} devices`);
 }
 

@@ -4,10 +4,15 @@
  * the first time it sees a new id.
  */
 export const LATEST_RELEASE = {
-  id: "2026-10-16-ag-logos",
-  title: { en: "✨ New in Anointed Academy", tl: "✨ Bago sa Anointed Academy" },
+  id: "2026-10-17-new-link",
+  title: { en: "🏠 Anointed Academy has a new link", tl: "🏠 Bagong link ng Anointed Academy" },
   body: {
-    en: "Every course is now a book you enroll in, a bell for your notifications, a new certificate, and your AG's own logo. Tap to see what's new.",
-    tl: "Aklat na ang bawat course na puwedeng i-enroll, may bell para sa mga abiso, bagong certificate, at sariling logo ng inyong AG. Pindutin para makita ang bago.",
+    en: "We moved to anointed-academy.web.app. Tap to open it, log in and install the app again. Your progress is all there.",
+    tl: "Lumipat na tayo sa anointed-academy.web.app. Pindutin para buksan, mag-login at i-install ulit ang app. Nandoon pa rin ang lahat ng progress mo.",
   },
+  /**
+   * A full address, not a path: phones that installed the app from an old link
+   * open this from that link's service worker, so a path would go to the old site.
+   */
+  url: "https://anointed-academy.web.app/whats-new",
 };

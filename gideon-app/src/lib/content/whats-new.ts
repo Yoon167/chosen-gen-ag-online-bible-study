@@ -18,6 +18,33 @@ export interface Release {
 
 export const RELEASES: Release[] = [
   {
+    id: "2026-10-17-new-link",
+    date: "2026-10-17",
+    title: t("Our new home: anointed-academy.web.app", "Bagong tahanan: anointed-academy.web.app"),
+    items: [
+      t(
+        "Anointed Academy has a new link: anointed-academy.web.app. The old links (gideon-app.web.app) no longer open.",
+        "May bagong link na ang Anointed Academy: anointed-academy.web.app. Hindi na bumubukas ang mga lumang link (gideon-app.web.app)."
+      ),
+      t(
+        "If you installed the app before, open the new link and install it again: Profile → Install web app. Then remove the old icon from your home screen.",
+        "Kung na-install mo na ang app dati, buksan ang bagong link at i-install ulit: Profile → I-install ang app. Pagkatapos, alisin ang lumang icon sa home screen."
+      ),
+      t(
+        "Log in with the same account: your Journey, courses, journal, notes and enrollments are all still there.",
+        "Mag-login gamit ang parehong account: nandoon pa rin ang iyong Journey, courses, journal, notes at enrollment."
+      ),
+      t(
+        "Turn notifications on again in Profile → Notifications, so you keep getting prayers, announcements and the daily verse.",
+        "I-on ulit ang notifications sa Profile → Notifications, para patuloy mong matanggap ang mga panalangin, announcement at daily verse."
+      ),
+      t(
+        "Share the new link with your AG so no one gets left behind.",
+        "I-share ang bagong link sa inyong AG para walang maiwan."
+      ),
+    ],
+  },
+  {
     id: "2026-10-16-ag-logos",
     date: "2026-10-16",
     title: t("Your AG's own logo", "Sariling logo ng inyong AG"),
