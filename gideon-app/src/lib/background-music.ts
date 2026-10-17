@@ -5,12 +5,16 @@ import { useEffect, useSyncExternalStore } from "react";
 // Soaking worship instrumental that plays under the intro and keeps playing
 // while the app is in use. One shared <audio> element lives for the whole
 // session, so navigating between pages never restarts it.
-// Track: "Christian Instrumental Piano Worship Calm Emotional Soaking Prayer"
-// by JesseQuinnMedia (Pixabay Content License).
-// Mono AAC at 48 kbps (1.4 MB instead of 2.7 MB): every new visitor downloads
-// it, and the free Hosting plan allows about 360 MB a day. Files in /audio
-// are cached for a year, so give a changed file a new name.
-const SRC = "/audio/soaking-prayer-v2.m4a";
+// Music: "Promise & Presence (Instrumental Elevation Worship)", a 100-minute
+// set split at its silences into its 12 songs (worship-01 to worship-12), each
+// faded in and out and made equally loud. Each time the app opens it plays
+// the next song (it loops), and while the app stays open it moves on to the
+// next song every hour. Mono AAC at 48 kbps (1.4 to 4.6 MB a song; only the
+// one playing is downloaded). Files in /audio are cached for a year, so give
+// a changed file a new name.
+const TRACKS = Array.from({ length: 12 }, (_, i) => `/audio/worship-${String(i + 1).padStart(2, "0")}.m4a`);
+const TRACK_KEY = "gideon-music-track";
+const SWITCH_MS = 60 * 60 * 1000;
 // The file itself is mastered quieter (iOS ignores `audio.volume`), and other
 // platforms lower it a bit more.
 const VOLUME = 0.7;
@@ -21,6 +25,8 @@ const SERVER_STATE: MusicState = { playing: false, muted: false };
 
 let state: MusicState = SERVER_STATE;
 let audio: HTMLAudioElement | null = null;
+let track = -1;
+let trackSince = 0;
 let fadeTimer = 0;
 const listeners = new Set<() => void>();
 
@@ -62,9 +68,24 @@ function fadeTo(target: number, seconds: number, then?: () => void) {
   }, 50);
 }
 
+/** The song after the one played last time (on this device). */
+function nextTrack() {
+  let last = -1;
+  try {
+    last = Number(localStorage.getItem(TRACK_KEY) ?? -1);
+  } catch {}
+  const next = Number.isInteger(last) && last >= 0 ? (last + 1) % TRACKS.length : Math.floor(Math.random() * TRACKS.length);
+  try {
+    localStorage.setItem(TRACK_KEY, String(next));
+  } catch {}
+  return next;
+}
+
 function getAudio() {
   if (!audio) {
-    audio = new Audio(SRC);
+    track = nextTrack();
+    trackSince = Date.now();
+    audio = new Audio(TRACKS[track]);
     audio.loop = true;
     audio.preload = "auto";
     audio.volume = 0;
@@ -103,6 +124,20 @@ function playWhenAllowed() {
     });
 }
 
+/** After an hour on one song, fade to the next one. */
+function switchIfDue() {
+  if (!audio || Date.now() - trackSince < SWITCH_MS) return;
+  const el = audio;
+  const change = () => {
+    track = nextTrack();
+    trackSince = Date.now();
+    el.src = TRACKS[track];
+    if (!state.muted && !held && !document.hidden) playWhenAllowed();
+  };
+  if (el.paused) change();
+  else fadeTo(0, 2, change);
+}
+
 let started = false;
 /** Starts the music for this session unless the member muted it. */
 export function startBackgroundMusic() {
@@ -110,6 +145,8 @@ export function startBackgroundMusic() {
   started = true;
   setState({ muted: readMuted() });
   if (!state.muted) playWhenAllowed();
+
+  window.setInterval(switchIfDue, 60 * 1000);
 
   // Pause while the app is in the background, resume when it comes back.
   document.addEventListener("visibilitychange", () => {
