@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { FacebookButton } from "@/components/auth/facebook-button";
 import { LanguageToggle } from "@/components/language-toggle";
 import { PRIVACY_VERSION, PrivacyNotice } from "@/components/privacy/privacy-notice";
 import { useAccount } from "@/lib/hooks/use-account";
@@ -165,6 +166,11 @@ export function AuthScreen() {
           <Button type="button" variant="outline" className="w-full" disabled={account.busy} onClick={() => account.signInWithGoogle().catch(() => {})}>
             {tx("Continue with Google", "Magpatuloy gamit ang Google")}
           </Button>
+          <FacebookButton
+            disabled={account.busy}
+            onClick={() => account.signInWithProvider("facebook").catch(() => {})}
+            label={tx("Continue with Facebook", "Magpatuloy gamit ang Facebook")}
+          />
           <button type="button" className="w-full text-xs text-muted-foreground underline underline-offset-2" onClick={() => switchTo("reset")}>
             {tx("Forgot password?", "Nakalimutan ang password?")}
           </button>

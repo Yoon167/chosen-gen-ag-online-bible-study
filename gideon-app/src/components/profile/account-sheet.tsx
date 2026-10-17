@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/lib/hooks/use-auth";
 import { useAccount } from "@/lib/hooks/use-account";
+import { FacebookButton } from "@/components/auth/facebook-button";
 
 export function AccountSheet({
   open,
@@ -20,6 +21,8 @@ export function AccountSheet({
     signIn,
     backupWithGoogle,
     signInWithGoogle,
+    backupWithProvider,
+    signInWithProvider,
     signOutAccount,
     busy,
     error,
@@ -44,6 +47,15 @@ export function AccountSheet({
       if (mode === "backup") await backupAccount(email.trim(), password);
       else await signIn(email.trim(), password);
       setDone(true);
+    } catch {
+      // error state already set by the hook
+    }
+  }
+
+  async function submitFacebook() {
+    try {
+      const ok = mode === "backup" ? await backupWithProvider("facebook") : await signInWithProvider("facebook");
+      if (ok) setDone(true);
     } catch {
       // error state already set by the hook
     }
@@ -114,6 +126,11 @@ export function AccountSheet({
             <Button variant="outline" className="w-full" disabled={busy} onClick={submitGoogle}>
               {mode === "backup" ? "Back Up with Google" : "Sign In with Google"}
             </Button>
+            <FacebookButton
+              disabled={busy}
+              onClick={submitFacebook}
+              label={mode === "backup" ? "Back Up with Facebook" : "Sign In with Facebook"}
+            />
 
             <p className="text-center text-[0.6875rem] text-muted-foreground">or use email</p>
 

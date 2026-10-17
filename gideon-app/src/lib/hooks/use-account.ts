@@ -6,29 +6,61 @@ import {
   createUserWithEmailAndPassword,
   sendPasswordResetEmail,
   EmailAuthProvider,
+  FacebookAuthProvider,
   GoogleAuthProvider,
   linkWithCredential,
   linkWithPopup,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  type AuthCredential,
   type AuthError,
+  type User,
 } from "firebase/auth";
 import { auth, db } from "@/lib/firebase";
 import { setPendingProfile } from "@/lib/hooks/use-profile";
 import type { UserProfile } from "@/types";
 
-function mapAuthError(error: unknown): string {
+export type SocialProvider = "google" | "facebook";
+
+const PROVIDER_NAME: Record<SocialProvider, string> = { google: "Google", facebook: "Facebook" };
+
+function providerFor(kind: SocialProvider) {
+  if (kind === "facebook") {
+    const p = new FacebookAuthProvider();
+    p.addScope("email");
+    return p;
+  }
+  return new GoogleAuthProvider();
+}
+
+/**
+ * A Facebook (or Google) login whose email already has an account made
+ * another way. Kept until the member signs in that other way, then joined
+ * to the account so both logins open it.
+ */
+let pendingLink: { credential: AuthCredential; provider: SocialProvider } | null = null;
+
+async function finishPendingLink(user: User) {
+  const pending = pendingLink;
+  if (!pending) return;
+  pendingLink = null;
+  await linkWithCredential(user, pending.credential).catch(() => {});
+}
+
+function mapAuthError(error: unknown, kind: SocialProvider = "google"): string {
   const code = (error as AuthError)?.code;
+  const name = PROVIDER_NAME[kind];
   switch (code) {
+    case "auth/account-exists-with-different-credential":
+      return `This email already has an Anointed Academy account. Log in the way you did before (email or Google); your ${name} login will be joined to it.`;
     case "auth/email-already-in-use":
     case "auth/credential-already-in-use":
-    case "auth/account-exists-with-different-credential":
       return "That account is already registered. Try signing in instead.";
     case "auth/popup-blocked":
-      return "Your browser blocked the Google window. Allow pop-ups and try again.";
+      return `Your browser blocked the ${name} window. Allow pop-ups and try again.`;
     case "auth/operation-not-allowed":
-      return "Google sign-in isn't turned on yet. Please use email for now.";
+      return `${name} sign-in isn't turned on yet. Please use email for now.`;
     case "auth/network-request-failed":
       return "No connection. Check your internet and try again.";
     case "auth/invalid-email":
@@ -42,10 +74,10 @@ function mapAuthError(error: unknown): string {
     case "auth/too-many-requests":
       return "Too many tries. Wait a few minutes and try again.";
     case "auth/unauthorized-domain":
-      return "Google sign-in isn't set up for this web address yet. Please use email for now.";
+      return `${name} sign-in isn't set up for this web address yet. Please use email for now.`;
     case "auth/web-storage-unsupported":
     case "auth/operation-not-supported-in-this-environment":
-      return "This browser blocks Google sign-in. Open Anointed Academy in Chrome or Safari, or use email.";
+      return `This browser blocks ${name} sign-in. Open Anointed Academy in Chrome or Safari, or use email.`;
     default:
       // Keep the code visible so a member can report it.
       return `Something went wrong${code ? ` (${code})` : ""}. Please try again.`;
@@ -90,7 +122,8 @@ export function useAccount() {
     setError("");
     setBusy(true);
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const { user } = await signInWithEmailAndPassword(auth, email, password);
+      await finishPendingLink(user);
     } catch (e) {
       setError(mapAuthError(e));
       throw e;
@@ -99,38 +132,48 @@ export function useAccount() {
     }
   }
 
-  // Google versions of the two flows above. Closing the Google window is not
-  // an error worth showing, so it resolves to false instead of throwing.
-  async function backupWithGoogle() {
+  // Google and Facebook versions of the two flows above. Closing the login
+  // window is not an error worth showing, so it resolves to false instead of
+  // throwing.
+  async function backupWithProvider(kind: SocialProvider) {
     setError("");
     setBusy(true);
     try {
       if (!auth.currentUser) throw new Error("Not ready yet, try again in a moment.");
-      await linkWithPopup(auth.currentUser, new GoogleAuthProvider());
+      await linkWithPopup(auth.currentUser, providerFor(kind));
       return true;
     } catch (e) {
       if (isPopupClosed(e)) return false;
-      setError(mapAuthError(e));
+      setError(mapAuthError(e, kind));
       throw e;
     } finally {
       setBusy(false);
     }
   }
 
-  async function signInWithGoogle() {
+  async function signInWithProvider(kind: SocialProvider) {
     setError("");
     setBusy(true);
     try {
-      await signInWithPopup(auth, new GoogleAuthProvider());
+      const { user } = await signInWithPopup(auth, providerFor(kind));
+      await finishPendingLink(user);
       return true;
     } catch (e) {
       if (isPopupClosed(e)) return false;
-      setError(mapAuthError(e));
+      if ((e as AuthError)?.code === "auth/account-exists-with-different-credential") {
+        const credential =
+          kind === "facebook" ? FacebookAuthProvider.credentialFromError(e as AuthError) : GoogleAuthProvider.credentialFromError(e as AuthError);
+        if (credential) pendingLink = { credential, provider: kind };
+      }
+      setError(mapAuthError(e, kind));
       throw e;
     } finally {
       setBusy(false);
     }
   }
+
+  const backupWithGoogle = () => backupWithProvider("google");
+  const signInWithGoogle = () => signInWithProvider("google");
 
   // A new account with email and password, no email confirmation needed. An
   // older guest session on this device becomes the account (same uid), so its
@@ -179,6 +222,8 @@ export function useAccount() {
     signIn,
     backupWithGoogle,
     signInWithGoogle,
+    backupWithProvider,
+    signInWithProvider,
     signOutAccount,
     busy,
     error,

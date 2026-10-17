@@ -2,6 +2,7 @@
 
 import {
   EmailAuthProvider,
+  FacebookAuthProvider,
   GoogleAuthProvider,
   deleteUser,
   reauthenticateWithCredential,
@@ -71,11 +72,13 @@ async function deleteRefs(refs: DocumentReference[]) {
   }
 }
 
-/** Google or password sign-ins must be recent before Firebase deletes an account. */
+/** Google, Facebook or password sign-ins must be recent before Firebase deletes an account. */
 export async function reauthenticate(user: User, password?: string) {
   const provider = user.providerData[0]?.providerId;
   if (provider === "google.com") {
     await reauthenticateWithPopup(user, new GoogleAuthProvider());
+  } else if (provider === "facebook.com") {
+    await reauthenticateWithPopup(user, new FacebookAuthProvider());
   } else if (provider === "password" && user.email) {
     if (!password) throw new Error("password-required");
     await reauthenticateWithCredential(user, EmailAuthProvider.credential(user.email, password));

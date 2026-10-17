@@ -51,8 +51,8 @@ const SECTIONS: { title: Text; body: Text[] }[] = [
     title: { en: "Where your data is kept", tl: "Saan iniingatan ang iyong data" },
     body: [
       {
-        en: "Your data is stored with Google Firebase and protected by security rules that decide who can read each record. English audio Bible recordings stream from eBible.org, and Bible text comes from public Bible services; they receive only the chapter you open.",
-        tl: "Iniingatan ang iyong data sa Google Firebase at pinoprotektahan ng security rules na nagpapasya kung sino ang makakabasa ng bawat record. Ang English audio Bible ay mula sa eBible.org, at ang teksto ng Bibliya ay mula sa mga pampublikong Bible service; ang kabanatang binubuksan mo lang ang natatanggap nila.",
+        en: "Your data is stored with Google Firebase and protected by security rules that decide who can read each record. English audio Bible recordings stream from eBible.org, and Bible text comes from public Bible services; they receive only the chapter you open. If you log in with Google or Facebook, Anointed Academy receives only your name, email and profile photo from them, and never posts anything for you.",
+        tl: "Iniingatan ang iyong data sa Google Firebase at pinoprotektahan ng security rules na nagpapasya kung sino ang makakabasa ng bawat record. Ang English audio Bible ay mula sa eBible.org, at ang teksto ng Bibliya ay mula sa mga pampublikong Bible service; ang kabanatang binubuksan mo lang ang natatanggap nila. Kung mag-login ka gamit ang Google o Facebook, ang pangalan, email at profile photo mo lang ang natatanggap ng Anointed Academy mula sa kanila, at hindi kailanman ito magpo-post para sa iyo.",
       },
     ],
   },
