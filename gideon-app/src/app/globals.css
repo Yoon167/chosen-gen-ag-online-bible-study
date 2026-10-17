@@ -204,22 +204,33 @@ html:not([lang="tl"]) .t-tl {
   .page-enter, .ui-rise, .ui-pop, .ui-grow-x { animation: none; }
 }
 /* Journey certificate: when printing (or saving as PDF), show only the certificate. */
+/* Printing a certificate: only the certificate, in its colors. The app's
+   containers (fixed height, scrolling) let go of their size, and everything
+   else is left out, so "Save as PDF" is never blank. */
 @media print {
-  body:has(.gideon-certificate) * {
-    visibility: hidden;
+  body:has(.gideon-certificate) *:not(:has(.gideon-certificate)):not(.gideon-certificate):not(.gideon-certificate *) {
+    display: none !important;
   }
-  .gideon-certificate,
-  .gideon-certificate * {
-    visibility: visible;
+  html:has(.gideon-certificate),
+  body:has(.gideon-certificate),
+  body *:has(.gideon-certificate) {
+    position: static !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
   }
   .gideon-certificate {
-    position: absolute;
-    inset: 0 0 auto 0;
-    margin: 1cm;
+    margin: 0 !important;
     box-shadow: none !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+    animation: none !important;
+    break-inside: avoid;
   }
+  .gideon-certificate,
   .gideon-certificate * {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -556,20 +567,38 @@ html[data-text-size="xl"] {
 }
 
 /* Kids Ministry activity sheet: when printing, show only the sheet. */
+/* Printing a Kids activity sheet: only the sheet, on white paper. The app's
+   containers (fixed height, scrolling) let go of their size so the whole
+   sheet flows onto the pages, and everything else is left out. */
 @media print {
-  body:has(.kids-print) * {
-    visibility: hidden;
+  body:has(.kids-print) *:not(:has(.kids-print)):not(.kids-print):not(.kids-print *) {
+    display: none !important;
   }
-  .kids-print,
-  .kids-print * {
-    visibility: visible;
+  html:has(.kids-print),
+  body:has(.kids-print),
+  body *:has(.kids-print) {
+    position: static !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
   }
   .kids-print {
-    position: absolute;
-    inset: 0 0 auto 0;
-    margin: 0;
+    margin: 0 !important;
+    padding: 0 !important;
     box-shadow: none !important;
-    border-radius: 0;
+    border-radius: 0 !important;
+    background: #fff !important;
+    color: #000 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .kids-print section {
+    break-inside: avoid;
   }
   .no-print {
     display: none !important;
