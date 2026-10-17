@@ -55,12 +55,12 @@ export function useKidsAge() {
   return useSyncExternalStore(subscribeAge, readAge, () => "6-8" as KidsAge);
 }
 
-export function AgePicker({ className }: { className?: string }) {
+export function AgePicker({ className, ...rest }: { className?: string; "data-tour"?: string }) {
   const { lang } = useLanguage();
   const tx = useTx();
   const age = useKidsAge();
   return (
-    <div className={cn("space-y-1.5", className)}>
+    <div className={cn("space-y-1.5", className)} {...rest}>
       <p className="px-1 text-xs font-semibold text-muted-foreground">{tx("Teaching which age?", "Anong edad ang tuturuan?")}</p>
       <div className="grid grid-cols-3 gap-1.5 rounded-2xl bg-muted p-1.5" role="radiogroup">
         {KIDS_AGES.map((a) => (
@@ -166,7 +166,7 @@ export function StoryView({ story, pictures }: { story: KidsStory; pictures: str
       <AgePicker />
 
       {/* Read to me / Show */}
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-2 gap-2" data-tour="kids-story-buttons">
         <Button
           variant="outline"
           className="h-12 rounded-2xl"
@@ -183,7 +183,7 @@ export function StoryView({ story, pictures }: { story: KidsStory; pictures: str
       </div>
 
       {/* The story, a picture for each part */}
-      <section className="space-y-4">
+      <section className="space-y-4" data-tour="kids-story-parts">
         {parts.map((p, i) => {
           // Four drawings per story: one per part for the youngest, spread across the longer telling.
           const picIndex = young ? i : Math.min(3, Math.floor((i * 4) / parts.length));
@@ -219,11 +219,16 @@ export function StoryView({ story, pictures }: { story: KidsStory; pictures: str
       </section>
 
       <BigIdea story={story} />
-      <VerseGame story={story} />
-      <LessonPlan story={story} age={age} />
+      <div data-tour="kids-verse-game">
+        <VerseGame story={story} />
+      </div>
+      <div data-tour="kids-lesson">
+        <LessonPlan story={story} age={age} />
+      </div>
 
       <Link
         href={`/kids/${story.id}/print`}
+        data-tour="kids-print-link"
         className="flex items-center gap-3 rounded-2xl border border-emerald-500/40 bg-emerald-500/10 p-4"
       >
         <Printer className="size-6 shrink-0 text-emerald-600" />

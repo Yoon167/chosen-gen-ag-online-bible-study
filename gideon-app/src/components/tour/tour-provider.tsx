@@ -14,6 +14,7 @@ import {
   takeTourAutostart,
   type TourStep,
 } from "@/lib/tour";
+import { KIDS_TOUR_COLORS, KIDS_TOUR_STEPS, markKidsTourDone } from "@/lib/kids-tour";
 import { celebrate } from "@/lib/celebrate";
 import { TourVideoButton } from "@/components/tour/tour-video";
 import { cn } from "@/lib/utils";
@@ -25,10 +26,12 @@ import { useLanguage, useTx } from "@/lib/i18n";
  * someone has joined), ending with a button to start their journey.
  */
 type Mode = "app" | "preview";
+/** Which tour: the whole app, or the short Kids Ministry tour. */
+export type TourKind = "app" | "kids";
 
 interface TourApi {
   active: boolean;
-  start: (mode?: Mode, options?: { onStartJourney?: () => void }) => void;
+  start: (mode?: Mode, options?: { onStartJourney?: () => void; kind?: TourKind }) => void;
   stop: () => void;
 }
 
@@ -39,17 +42,18 @@ export function useTour() {
 }
 
 export function TourProvider({ children }: { children: React.ReactNode }) {
-  const [state, setState] = useState<{ mode: Mode; index: number } | null>(null);
+  const [state, setState] = useState<{ mode: Mode; kind: TourKind; index: number } | null>(null);
   const onStartJourney = useRef<(() => void) | undefined>(undefined);
 
-  const start = useCallback((mode: Mode = "app", options?: { onStartJourney?: () => void }) => {
+  const start = useCallback((mode: Mode = "app", options?: { onStartJourney?: () => void; kind?: TourKind }) => {
     onStartJourney.current = options?.onStartJourney;
-    setState({ mode, index: 0 });
+    setState({ mode, kind: options?.kind ?? "app", index: 0 });
   }, []);
 
   const stop = useCallback(() => {
     setState((s) => {
-      if (s?.mode === "app") markTourDone();
+      if (s?.kind === "kids") markKidsTourDone();
+      else if (s?.mode === "app") markTourDone();
       return null;
     });
   }, []);
@@ -59,8 +63,9 @@ export function TourProvider({ children }: { children: React.ReactNode }) {
       {children}
       {state && (
         <TourOverlay
-          key={state.mode}
+          key={`${state.kind}-${state.mode}`}
           mode={state.mode}
+          kind={state.kind}
           index={state.index}
           setIndex={(index) => setState((s) => (s ? { ...s, index } : s))}
           onClose={stop}
@@ -100,12 +105,14 @@ const CARD_HEIGHT = 390;
 
 function TourOverlay({
   mode,
+  kind,
   index,
   setIndex,
   onClose,
   onStartJourney,
 }: {
   mode: Mode;
+  kind: TourKind;
   index: number;
   setIndex: (index: number) => void;
   onClose: () => void;
@@ -114,9 +121,11 @@ function TourOverlay({
   const tx = useTx();
   const { lang } = useLanguage();
   const router = useRouter();
-  const step = TOUR_STEPS[index];
-  const last = index === TOUR_STEPS.length - 1;
-  const chapter = TOUR_CHAPTERS.find((c) => c.id === step.chapter) ?? TOUR_CHAPTERS[0];
+  const steps = kind === "kids" ? KIDS_TOUR_STEPS : TOUR_STEPS;
+  const step = steps[index];
+  const last = index === steps.length - 1;
+  const chapter =
+    kind === "kids" ? { ...TOUR_CHAPTERS[0], ...KIDS_TOUR_COLORS } : (TOUR_CHAPTERS.find((c) => c.id === step.chapter) ?? TOUR_CHAPTERS[0]);
   // The spotlight belongs to one step; a stale box from the previous step is ignored.
   const [spot, setSpot] = useState<{ id: string; box: Box; glide: boolean } | null>(null);
   const box = mode === "app" && spot?.id === step.id ? spot.box : null;
@@ -184,11 +193,11 @@ function TourOverlay({
 
   const go = useCallback(
     (to: number) => {
-      if (to < 0 || to >= TOUR_STEPS.length || to === index) return;
+      if (to < 0 || to >= steps.length || to === index) return;
       setDir(to > index ? "next" : "prev");
       setIndex(to);
     },
-    [index, setIndex]
+    [index, setIndex, steps.length]
   );
   const next = useCallback(() => (last ? onClose() : go(index + 1)), [last, onClose, go, index]);
   const prev = useCallback(() => go(index - 1), [go, index]);
@@ -238,7 +247,7 @@ function TourOverlay({
 
   const shade = cn("pointer-events-none absolute bg-[#0a0818]/72", glide && "tour-glide");
   const gradient = `linear-gradient(135deg, ${chapter.from}, ${chapter.to})`;
-  const chapterSteps = TOUR_STEPS.filter((s) => s.chapter === step.chapter);
+  const chapterSteps = kind === "kids" ? [] : steps.filter((s) => s.chapter === step.chapter);
   const inChapter = chapterSteps.indexOf(step);
   const Icon = step.icon;
 
@@ -308,7 +317,20 @@ function TourOverlay({
             />
             <Icon aria-hidden className="pointer-events-none absolute -bottom-5 -right-3 size-28 text-white/[0.08]" strokeWidth={1} />
 
-            <ChapterBar step={step} onJump={go} onClose={last ? undefined : onClose} />
+            {kind === "kids" ? (
+              <div className="relative flex items-center gap-1.5">
+                <span className="flex h-7 flex-1 items-center gap-1 text-[0.6875rem] font-semibold">
+                  <span className="flex h-7 items-center gap-1 rounded-full bg-white px-2 text-[#13253d] shadow-sm">🧒 {tx("Kids Ministry tour", "Kids Ministry tour")}</span>
+                </span>
+                {!last && (
+                  <button onClick={onClose} aria-label={tx("Skip tour", "Laktawan ang tour")} className="rounded-full bg-white/15 p-1.5 text-white/90">
+                    <X className="size-4" />
+                  </button>
+                )}
+              </div>
+            ) : (
+              <ChapterBar step={step} onJump={go} onClose={last ? undefined : onClose} />
+            )}
 
             {step.visual === "logo" ? (
               <>
@@ -338,7 +360,7 @@ function TourOverlay({
               <div className="min-w-0">
                 <p className="flex items-center gap-1 text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-[#F4DC8A]">
                   <Icon className="size-3.5" />
-                  {tx(`Step ${index + 1} of ${TOUR_STEPS.length}`, `Hakbang ${index + 1} sa ${TOUR_STEPS.length}`)}
+                  {tx(`Step ${index + 1} of ${steps.length}`, `Hakbang ${index + 1} sa ${steps.length}`)}
                 </p>
                 <h2 className="font-heading text-xl font-semibold leading-tight">{step.title[lang]}</h2>
               </div>
@@ -352,7 +374,7 @@ function TourOverlay({
               <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
                 <div
                   className="h-full rounded-full transition-[width] duration-500"
-                  style={{ width: `${((index + 1) / TOUR_STEPS.length) * 100}%`, background: `linear-gradient(90deg, ${chapter.from}, #D4AF37)` }}
+                  style={{ width: `${((index + 1) / steps.length) * 100}%`, background: `linear-gradient(90deg, ${chapter.from}, #D4AF37)` }}
                 />
               </div>
               {chapterSteps.length > 1 && (

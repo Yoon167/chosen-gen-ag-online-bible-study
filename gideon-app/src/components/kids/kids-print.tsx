@@ -86,7 +86,7 @@ export function KidsPrintSheet({ id }: { id: string }) {
 
       <div className="no-print space-y-2 px-5 pb-4">
         <p className="text-xs text-muted-foreground">{tx("Pick the picture to color:", "Piliin ang larawang kukulayan:")}</p>
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-4 gap-2" data-tour="kids-print-pick">
           {[0, 1, 2, 3].map((i) => (
             <button
               key={i}
@@ -98,14 +98,14 @@ export function KidsPrintSheet({ id }: { id: string }) {
             </button>
           ))}
         </div>
-        <Button className="h-11 w-full bg-emerald-600 text-white hover:bg-emerald-600/90" onClick={() => window.print()}>
+        <Button data-tour="kids-print-button" className="h-11 w-full bg-emerald-600 text-white hover:bg-emerald-600/90" onClick={() => window.print()}>
           <Printer className="size-4" />
           {tx("Print or save as PDF", "I-print o i-save bilang PDF")}
         </Button>
       </div>
 
       {/* The sheet itself: black on white, sized for A4 or Letter */}
-      <article className="kids-print mx-5 space-y-5 rounded-xl bg-white p-6 text-black shadow-sm">
+      <article data-tour="kids-print-sheet" className="kids-print mx-5 space-y-5 rounded-xl bg-white p-6 text-black shadow-sm">
         <header className="flex items-center gap-3 border-b-2 border-black pb-3">
           <Image src="/brand/mark-160.webp" alt="" width={40} height={40} className="size-10" />
           <div className="min-w-0 flex-1">

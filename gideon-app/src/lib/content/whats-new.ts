@@ -42,6 +42,10 @@ export const RELEASES: Release[] = [
         "Printable activity sheets: for every story, a coloring page, word search, memory verse fill-in, questions for your age group and a drawing box. Print it or save it as PDF.",
         "Printable activity sheet: sa bawat kuwento, may coloring page, word search, fill-in ng memory verse, mga tanong ayon sa edad at kahon para gumuhit. I-print o i-save bilang PDF."
       ),
+      t(
+        "A new Kids Ministry tour walks you through everything there, from picking the age to printing the activity sheet. It opens the first time you visit Kids Ministry, and anytime from its Tour button.",
+        "May bagong Kids Ministry tour na nagpapakita ng lahat ng nandoon, mula sa pagpili ng edad hanggang sa pag-print ng activity sheet. Bubukas ito sa unang pasok mo sa Kids Ministry, at anumang oras gamit ang Tour button nito."
+      ),
     ],
   },
   {

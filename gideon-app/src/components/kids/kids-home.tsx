@@ -1,13 +1,16 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { BookHeart, ChevronLeft, ChevronRight, Gamepad2, ShieldCheck, Users } from "lucide-react";
+import { BookHeart, ChevronLeft, ChevronRight, Compass, Gamepad2, ShieldCheck, Users } from "lucide-react";
 import { HeroStat, PageHeader } from "@/components/shared/page-header";
 import { useLanguage, useTx } from "@/lib/i18n";
 import { KIDS_STORIES, findKidsStory } from "@/lib/content/kids";
 import { AgePicker, StoryCard, StoryView, storyArt } from "@/components/kids/kids-client";
 import { LanguageToggle } from "@/components/language-toggle";
+import { useTour } from "@/components/tour/tour-provider";
+import { isKidsTourDone } from "@/lib/kids-tour";
 
 /** Kids Ministry: Bible stories and Sunday School lessons for teachers and parents. */
 export function KidsHome() {
@@ -15,6 +18,24 @@ export function KidsHome() {
   const tx = useTx();
   const old = KIDS_STORIES.filter((s) => s.testament === "old");
   const nu = KIDS_STORIES.filter((s) => s.testament === "new");
+  const tour = useTour();
+
+  // The first time Kids Ministry opens, walk through it (not in the middle of the app tour).
+  const tried = useRef(false);
+  const { active, start } = tour;
+  useEffect(() => {
+    if (tried.current) return;
+    if (active || isKidsTourDone()) {
+      tried.current = true;
+      return;
+    }
+    // Marked only when it really starts, so an effect React runs twice still starts it.
+    const id = setTimeout(() => {
+      tried.current = true;
+      start("app", { kind: "kids" });
+    }, 700);
+    return () => clearTimeout(id);
+  }, [active, start]);
 
   return (
     <div className="pb-10">
@@ -22,7 +43,11 @@ export function KidsHome() {
         title={tx("Kids Ministry", "Kids Ministry")}
         icon={BookHeart}
         back
-        action={<LanguageToggle className="shrink-0 bg-white/90 text-foreground" />}
+        action={
+          <div data-tour="kids-lang">
+            <LanguageToggle className="shrink-0 bg-white/90 text-foreground" />
+          </div>
+        }
         hero={{
           from: "#c026d3",
           to: "#ea580c",
@@ -38,9 +63,21 @@ export function KidsHome() {
       </PageHeader>
 
       <div className="space-y-6 px-5">
-        <AgePicker />
+        <button
+          onClick={() => tour.start("app", { kind: "kids" })}
+          className="flex w-full items-center gap-3 rounded-2xl bg-gradient-to-r from-fuchsia-600 to-orange-500 p-3.5 text-left text-white shadow-md"
+        >
+          <Compass className="size-6 shrink-0" />
+          <span className="min-w-0 flex-1">
+            <span className="block text-sm font-semibold">{tx("Tour of Kids Ministry", "Tour ng Kids Ministry")}</span>
+            <span className="block text-xs text-white/85">{tx("See everything here in 1 minute", "Tingnan ang lahat ng nandito sa loob ng 1 minuto")}</span>
+          </span>
+          <ChevronRight className="size-5" />
+        </button>
 
-        <div className="grid grid-cols-2 gap-2">
+        <AgePicker data-tour="kids-age" />
+
+        <div className="grid grid-cols-2 gap-2" data-tour="kids-games">
           <Link href="/quiz" className="flex items-center gap-2.5 rounded-2xl border border-sky-500/40 bg-sky-500/10 p-3">
             <Gamepad2 className="size-6 shrink-0 text-sky-600" />
             <span className="min-w-0 text-xs">
@@ -57,22 +94,24 @@ export function KidsHome() {
           </Link>
         </div>
 
-        <section className="space-y-3" data-tour="kids-stories">
-          <h2 className="px-1 font-heading text-lg font-semibold">{tx("Old Testament stories", "Mga kuwento sa Lumang Tipan")}</h2>
-          <div className="grid grid-cols-2 gap-3">
-            {old.map((s, i) => (
-              <StoryCard key={s.id} story={s} index={i} />
-            ))}
-          </div>
-        </section>
-        <section className="space-y-3">
-          <h2 className="px-1 font-heading text-lg font-semibold">{tx("New Testament stories", "Mga kuwento sa Bagong Tipan")}</h2>
-          <div className="grid grid-cols-2 gap-3">
-            {nu.map((s, i) => (
-              <StoryCard key={s.id} story={s} index={i} />
-            ))}
-          </div>
-        </section>
+        <div className="space-y-6" data-tour="kids-stories">
+          <section className="space-y-3">
+            <h2 className="px-1 font-heading text-lg font-semibold">{tx("Old Testament stories", "Mga kuwento sa Lumang Tipan")}</h2>
+            <div className="grid grid-cols-2 gap-3">
+              {old.map((s, i) => (
+                <StoryCard key={s.id} story={s} index={i} />
+              ))}
+            </div>
+          </section>
+          <section className="space-y-3">
+            <h2 className="px-1 font-heading text-lg font-semibold">{tx("New Testament stories", "Mga kuwento sa Bagong Tipan")}</h2>
+            <div className="grid grid-cols-2 gap-3">
+              {nu.map((s, i) => (
+                <StoryCard key={s.id} story={s} index={i} />
+              ))}
+            </div>
+          </section>
+        </div>
 
         <section className="space-y-2 rounded-3xl border bg-card p-5 text-sm">
           <p className="flex items-center gap-2 font-heading text-base font-semibold">
@@ -84,6 +123,7 @@ export function KidsHome() {
             <li>{tx("Open a story: read it, or tap “Read to me”.", "Buksan ang kuwento: basahin, o pindutin ang “Basahin para sa akin”.")}</li>
             <li>{tx("Tap “Show the story” to show big pictures to the class (works on a TV or projector too).", "Pindutin ang “Ipakita ang kuwento” para ipakita ang malalaking larawan sa klase (puwede rin sa TV o projector).")}</li>
             <li>{tx("Use the lesson plan: questions, activity and prayer.", "Gamitin ang lesson plan: tanong, gawain at panalangin.")}</li>
+            <li>{tx("Print the activity sheet for each child: coloring, word search and memory verse.", "I-print ang activity sheet para sa bawat bata: coloring, word search at memory verse.")}</li>
           </ol>
           <p className="flex items-start gap-2 pt-2 text-xs text-muted-foreground">
             <ShieldCheck className="mt-0.5 size-4 shrink-0 text-emerald-600" />
