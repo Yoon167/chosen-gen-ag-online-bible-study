@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Check, Copy, Send } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 
-export const APP_URL = "https://gideon-app.web.app";
+export const APP_URL = "https://anointed-academy.web.app";
 
 const INVITE = {
   en: {

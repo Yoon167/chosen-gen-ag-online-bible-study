@@ -15,7 +15,7 @@ const PLATFORMS: { id: Platform; label: Text; steps: Text[] }[] = [
     id: "android",
     label: { en: "Android", tl: "Android" },
     steps: [
-      { en: "Open gideon-app.web.app in Chrome.", tl: "Buksan ang gideon-app.web.app sa Chrome." },
+      { en: "Open anointed-academy.web.app in Chrome.", tl: "Buksan ang anointed-academy.web.app sa Chrome." },
       { en: "Tap the ⋮ menu at the top right.", tl: "Pindutin ang ⋮ menu sa itaas na kanan." },
       { en: "Tap “Install app” (or “Add to Home screen”), then Install.", tl: "Pindutin ang “Install app” (o “Add to Home screen”), tapos Install." },
     ],
@@ -24,7 +24,7 @@ const PLATFORMS: { id: Platform; label: Text; steps: Text[] }[] = [
     id: "ios",
     label: { en: "iPhone / iPad", tl: "iPhone / iPad" },
     steps: [
-      { en: "Open gideon-app.web.app in Safari.", tl: "Buksan ang gideon-app.web.app sa Safari." },
+      { en: "Open anointed-academy.web.app in Safari.", tl: "Buksan ang anointed-academy.web.app sa Safari." },
       { en: "Tap the Share button (the square with an arrow).", tl: "Pindutin ang Share button (ang kahon na may arrow)." },
       { en: "Scroll down, tap “Add to Home Screen”, then Add.", tl: "Mag-scroll pababa, pindutin ang “Add to Home Screen”, tapos Add." },
     ],
@@ -42,7 +42,7 @@ const PLATFORMS: { id: Platform; label: Text; steps: Text[] }[] = [
     id: "desktop",
     label: { en: "Computer", tl: "Computer" },
     steps: [
-      { en: "Open gideon-app.web.app in Chrome or Edge.", tl: "Buksan ang gideon-app.web.app sa Chrome o Edge." },
+      { en: "Open anointed-academy.web.app in Chrome or Edge.", tl: "Buksan ang anointed-academy.web.app sa Chrome o Edge." },
       { en: "Click the install icon at the right of the address bar (or ⋮ → Install Anointed Academy).", tl: "I-click ang install icon sa kanan ng address bar (o ⋮ → Install Anointed Academy)." },
       { en: "On a Mac with Safari: File → Add to Dock.", tl: "Sa Mac gamit ang Safari: File → Add to Dock." },
     ],

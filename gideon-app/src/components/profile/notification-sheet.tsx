@@ -38,7 +38,7 @@ export function NotificationSheet({ open, onOpenChange }: { open: boolean; onOpe
   const [checkinTime, setCheckinTime] = useState("19:00");
   const [checkinDay, setCheckinDay] = useState<Weekday>("SU");
   const [added, setAdded] = useState<string | null>(null);
-  const origin = typeof window !== "undefined" ? window.location.origin : "https://gideon-app.web.app";
+  const origin = typeof window !== "undefined" ? window.location.origin : "https://anointed-academy.web.app";
 
   const reminders: {
     id: string;

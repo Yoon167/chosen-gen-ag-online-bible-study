@@ -33,7 +33,7 @@ const LAUNCH_SCREENS: [number, number, number][] = [
 ];
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gideon-app.web.app"),
+  metadataBase: new URL("https://anointed-academy.web.app"),
   title: "Anointed Academy — Learn. Grow. Disciple. Lead.",
   description:
     "Anointed Academy is a complete Christian discipleship platform: structured learning, biblical teaching, courses, assessments, prayer, Bible study, follow-up, mentorship, presentations and spiritual growth tracking.",

@@ -32,7 +32,7 @@ export function OpenInBrowserBanner() {
   }, []);
 
   if (!where) return null;
-  const href = typeof location !== "undefined" ? location.href : "https://gideon-app.web.app";
+  const href = typeof location !== "undefined" ? location.href : "https://anointed-academy.web.app";
   // iOS 17+ opens Safari from this scheme; Android opens Chrome with an intent.
   const openUrl =
     where === "ios"

@@ -9,7 +9,7 @@ import { useTx } from "@/lib/i18n";
 
 /** The link that opens My AG with this group ready to join. */
 export function agInviteUrl(churchId: string) {
-  const origin = typeof window === "undefined" ? "https://gideon-app.web.app" : window.location.origin;
+  const origin = typeof window === "undefined" ? "https://anointed-academy.web.app" : window.location.origin;
   return `${origin}/church?join=${encodeURIComponent(churchId)}`;
 }
 
