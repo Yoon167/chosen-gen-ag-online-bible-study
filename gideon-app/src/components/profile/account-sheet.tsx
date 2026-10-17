@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/lib/hooks/use-auth";
 import { useAccount } from "@/lib/hooks/use-account";
-import { FacebookButton } from "@/components/auth/facebook-button";
+import { SocialLogins } from "@/components/auth/social-logins";
 
 export function AccountSheet({
   open,
@@ -123,13 +123,13 @@ export function AccountSheet({
                 : "Sign in to an account you already created, on this or another device."}
             </p>
 
-            <Button variant="outline" className="w-full" disabled={busy} onClick={submitGoogle}>
-              {mode === "backup" ? "Back Up with Google" : "Sign In with Google"}
-            </Button>
-            <FacebookButton
+            <SocialLogins
               disabled={busy}
-              onClick={submitFacebook}
-              label={mode === "backup" ? "Back Up with Facebook" : "Sign In with Facebook"}
+              label={mode === "backup" ? "or back up with" : "or sign in with"}
+              googleLabel={mode === "backup" ? "Back Up with Google" : "Sign In with Google"}
+              facebookLabel={mode === "backup" ? "Back Up with Facebook" : "Sign In with Facebook"}
+              onGoogle={submitGoogle}
+              onFacebook={submitFacebook}
             />
 
             <p className="text-center text-[0.6875rem] text-muted-foreground">or use email</p>
