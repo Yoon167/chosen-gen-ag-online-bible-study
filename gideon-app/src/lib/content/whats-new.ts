@@ -18,6 +18,33 @@ export interface Release {
 
 export const RELEASES: Release[] = [
   {
+    id: "2026-10-18-birthdays",
+    date: "2026-10-18",
+    title: t("A devotion for every day, AG birthdays and 6 new kids stories", "Devotion sa bawat araw, birthday sa AG at 6 na bagong kids story"),
+    items: [
+      t(
+        "Daily Devotion now has 367 devotions, a new one for every day of the year, in English and Tagalog, each with its Bible verse and a photo for sharing.",
+        "May 367 na devotion na ang Daily Devotion, bago bawat araw ng taon, sa English at Tagalog, bawat isa may Bible verse at larawan para i-share."
+      ),
+      t(
+        "AG birthdays: share your birthday (month and day only) in My AG, see who celebrates this week on Home, and get a notification on a member's birthday so you can greet and pray for them.",
+        "Birthday sa AG: i-share ang iyong birthday (buwan at araw lang) sa My AG, makita sa Home kung sino ang may birthday ngayong linggo, at makatanggap ng abiso sa birthday ng kapwa member para mabati at maipanalangin sila."
+      ),
+      t(
+        "6 new Kids Ministry stories: The Walls of Jericho, Ruth Stays with Naomi, God Calls Young Samuel, Brave Queen Esther, The Good Samaritan and Zacchaeus Meets Jesus, now 18 in all.",
+        "6 na bagong kuwento sa Kids Ministry: Ang mga Pader ng Jerico, Hindi Iniwan ni Ruth si Noemi, Tinawag ng Diyos ang Batang si Samuel, Ang Matapang na Reyna Ester, Ang Mabuting Samaritano at Nakilala ni Zaqueo si Hesus, 18 na lahat."
+      ),
+      t(
+        "Every story now has 4 drawings, one for each part of the story, in the story and in Show mode.",
+        "May 4 na drawing na ang bawat kuwento, isa sa bawat bahagi, sa kuwento at sa Show mode."
+      ),
+      t(
+        "Printable activity sheets: for every story, a coloring page, word search, memory verse fill-in, questions for your age group and a drawing box. Print it or save it as PDF.",
+        "Printable activity sheet: sa bawat kuwento, may coloring page, word search, fill-in ng memory verse, mga tanong ayon sa edad at kahon para gumuhit. I-print o i-save bilang PDF."
+      ),
+    ],
+  },
+  {
     id: "2026-10-18-kids",
     date: "2026-10-18",
     title: t("Kids Ministry and a Bible quiz for every age", "Kids Ministry at Bible quiz para sa lahat ng edad"),

@@ -26,6 +26,7 @@ import { encouragementOfTheDay } from "@/lib/content/encouragements";
 import { LanguageToggle } from "@/components/language-toggle";
 import { MusicToggle } from "@/components/music-toggle";
 import { InboxBell } from "@/components/inbox-bell";
+import { BirthdayCard } from "@/components/church/birthdays";
 import { InviteCard } from "@/components/invite-card";
 import { WhatsNewCard } from "@/components/home/whats-new-card";
 import { DailyLetter, HomeNewsletter } from "@/components/home/newsletter";
@@ -120,6 +121,7 @@ export default function HomePage() {
           <WhatsNewCard />
           <UrgentPrayerCard />
           <PrayerChainCard />
+          <BirthdayCard />
           <AnnouncementCard />
           <NextStepCard />
           <CheckinCard />

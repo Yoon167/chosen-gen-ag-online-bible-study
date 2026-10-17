@@ -1,13 +1,14 @@
 import { NEW_TESTAMENT_STORIES } from "./new-testament";
 import { OLD_TESTAMENT_STORIES } from "./old-testament";
+import { MORE_STORIES } from "./more-stories";
 import type { KidsStory } from "./types";
 
 export * from "./types";
 
 /** In Bible order, from Creation to the empty tomb. */
-const ORDER = ["creation", "noah", "joseph", "red-sea", "david", "daniel", "jonah", "jesus-born", "storm", "feeding", "lost-sheep", "easter"];
+const ORDER = ["creation", "noah", "joseph", "red-sea", "jericho", "ruth", "samuel", "david", "esther", "daniel", "jonah", "jesus-born", "storm", "feeding", "samaritan", "lost-sheep", "zacchaeus", "easter"];
 
-export const KIDS_STORIES: KidsStory[] = [...OLD_TESTAMENT_STORIES, ...NEW_TESTAMENT_STORIES].sort(
+export const KIDS_STORIES: KidsStory[] = [...OLD_TESTAMENT_STORIES, ...NEW_TESTAMENT_STORIES, ...MORE_STORIES].sort(
   (a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id)
 );
 
@@ -32,4 +33,10 @@ export const STORY_PICTURES: Record<string, string[]> = {
   feeding: ["👨‍👩‍👧‍👦⛰️😋", "🧒🍞🐟", "🙏🍞🍞🍞", "🧺🧺🧺😊"],
   "lost-sheep": ["🐑🐑🐑❓", "🔍🌳🪨", "🧑‍🌾🐑❤️", "✝️🐑💛"],
   easter: ["✝️❤️🌍", "🪨⚫😢", "🌅🪨➡️✨", "👼🌅🙌"],
+  jericho: ["🧱🏰🧱", "🚶🚶🚶", "🎺📯🙌", "💥🧱🎉"],
+  ruth: ["😢🏠🛤️", "🤗👩‍🦰👵", "🌾🧺☀️", "💍👶😊"],
+  samuel: ["👦🏛️🕯️", "🌙👂🏃", "👴💬👦", "🙏👂✨"],
+  esther: ["👸👑🏰", "😠📜⚠️", "🙏🍽️🙏", "👑🤝🎉"],
+  samaritan: ["🚶🛣️🤕", "🚶‍♂️➡️😐", "🫏🩹❤️", "🏠🪙😊"],
+  zacchaeus: ["🧔💰😠", "🌳🧗👀", "✝️👆🌳", "🏠🤗🪙"],
 };

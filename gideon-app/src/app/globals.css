@@ -554,3 +554,24 @@ html[data-text-size="xl"] {
   25% { transform: translateX(-6px); }
   75% { transform: translateX(6px); }
 }
+
+/* Kids Ministry activity sheet: when printing, show only the sheet. */
+@media print {
+  body:has(.kids-print) * {
+    visibility: hidden;
+  }
+  .kids-print,
+  .kids-print * {
+    visibility: visible;
+  }
+  .kids-print {
+    position: absolute;
+    inset: 0 0 auto 0;
+    margin: 0;
+    box-shadow: none !important;
+    border-radius: 0;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

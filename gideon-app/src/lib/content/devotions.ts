@@ -1,4 +1,5 @@
 import { DEVOTIONS_TL } from "./devotions-tl";
+import { MORE_DEVOTIONS } from "./devotions-more";
 
 export interface StaticDevotion {
   title: string;
@@ -405,6 +406,7 @@ export const DEVOTIONS: StaticDevotion[] = [
     closingPrayer:
       "El Roi, the God who sees me — thank You that I am never truly overlooked by You. See me today, and meet me here. Amen.",
   },
+  ...MORE_DEVOTIONS.map((d) => d.en),
 ];
 
 export function devotionOfTheDay(

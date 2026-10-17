@@ -1,4 +1,5 @@
 import type { StaticDevotion } from "./devotions";
+import { MORE_DEVOTIONS } from "./devotions-more";
 
 /**
  * Tagalog versions of DEVOTIONS, in the same order so the same day shows the
@@ -400,4 +401,5 @@ export const DEVOTIONS_TL: StaticDevotion[] = [
     closingPrayer:
       "El Roi, ang Diyos na nakakakita sa akin — salamat po na hindi N'yo ako kailanman binabalewala. Tingnan N'yo po ako ngayon, at salubungin ako rito. Amen.",
   },
+  ...MORE_DEVOTIONS.map((d) => d.tl),
 ];

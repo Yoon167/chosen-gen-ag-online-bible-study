@@ -3,7 +3,7 @@ import { getFirestore } from "firebase-admin/firestore";
 import { setGlobalOptions, logger } from "firebase-functions";
 import { onDocumentCreated, onDocumentWritten } from "firebase-functions/v2/firestore";
 import { onSchedule } from "firebase-functions/v2/scheduler";
-import { activeMembers, clip, devicesOf, notify, sendTo, wants, type Device, type PushToken } from "./push";
+import { activeMembers, clip, devicesOf, notify, sendTo, toInbox, wants, type Device, type PushToken } from "./push";
 import { HOUR, QUARTER, dayOfYear, daySlot, localParts, nextStart, runStart, weekKeyIn, weekSlot } from "./time";
 import { VERSE_POOL, verseText } from "./verses";
 import { LATEST_RELEASE } from "./release";
@@ -257,7 +257,7 @@ export const every15Minutes = onSchedule(
   { schedule: "every 15 minutes", timeZone: "Etc/UTC", timeoutSeconds: 300, region: "asia-southeast1" },
   async () => {
     const at = runStart(Date.now());
-    const jobs = await Promise.allSettled([dailyVerse(at), meetingReminders(at), chainHours(at), checkinFollowUp(at), releaseNotice(), morningCare(at)]);
+    const jobs = await Promise.allSettled([dailyVerse(at), meetingReminders(at), chainHours(at), checkinFollowUp(at), releaseNotice(), morningCare(at), birthdayGreetings(at)]);
     jobs.forEach((j, i) => j.status === "rejected" && logger.error(`job ${i} failed`, j.reason));
   }
 );
@@ -288,6 +288,53 @@ async function dailyVerse(at: number) {
       url: "/devotion",
       tag: "verse-of-the-day",
     });
+  }
+}
+
+/**
+ * At each device's morning verse time: birthdays shared in the member's AGs
+ * today (their own day, in their time zone). Goes to the inbox too, once a day.
+ */
+async function birthdayGreetings(at: number) {
+  const devices = (await devicesInSlot("verseSlot", daySlot(at))).filter((d) => d.token && wants(d, "ag"));
+  if (!devices.length) return;
+  const byUser = new Map<string, Device[]>();
+  for (const d of devices) byUser.set(d.uid, [...(byUser.get(d.uid) ?? []), d]);
+  for (const [uid, list] of byUser) {
+    const date = localParts(at, list[0].tz).date;
+    const md = date.slice(5);
+    const memberships = await db().collectionGroup("members").where("uid", "==", uid).get();
+    const names = new Set<string>();
+    let mine = false;
+    for (const m of memberships.docs) {
+      if (m.data().status !== "active") continue;
+      const church = m.ref.parent.parent!;
+      const snap = await church.collection("birthdays").where("md", "==", md).get();
+      snap.docs.forEach((b) => {
+        const data = b.data() as { uid: string; name: string };
+        if (data.uid === uid) mine = true;
+        else if (data.name) names.add(data.name);
+      });
+    }
+    const who = [...names];
+    if (!who.length && !mine) continue;
+    const note = mine && !who.length
+      ? {
+          title: { en: "🎂 Happy birthday!", tl: "🎂 Maligayang kaarawan!" },
+          body: {
+            en: "Your AG is celebrating you today. May God bless your new year with His grace and joy.",
+            tl: "Ipinagdiriwang ka ng inyong AG ngayon. Pagpalain nawa ng Diyos ang iyong bagong taon ng Kanyang biyaya at kagalakan.",
+          },
+        }
+      : {
+          title: { en: `🎂 Birthday today: ${clip(who.join(", "), 60)}`, tl: `🎂 Kaarawan ngayon: ${clip(who.join(", "), 60)}` },
+          body: {
+            en: "Greet them and pray a blessing over their new year.",
+            tl: "Batiin sila at ipanalangin ang pagpapala sa kanilang bagong taon.",
+          },
+        };
+    const full = { ...note, url: "/", tag: `birthday-${date}` };
+    await Promise.all([sendTo(list, full), toInbox([uid], full)]);
   }
 }
 

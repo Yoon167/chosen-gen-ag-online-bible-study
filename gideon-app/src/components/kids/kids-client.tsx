@@ -13,6 +13,7 @@ import {
   Pause,
   Play,
   Presentation,
+  Printer,
   RotateCcw,
   Sparkles,
   Star,
@@ -25,6 +26,7 @@ import { useBibleSpeech } from "@/lib/hooks/use-bible-speech";
 import { celebrate } from "@/lib/celebrate";
 import { cn } from "@/lib/utils";
 import { KIDS_AGES, type KidsAge, type KidsStory } from "@/lib/content/kids/types";
+import { StoryPicture, hasStoryPictures } from "@/components/kids/art/scenes";
 
 // ---------- The age the teacher or parent picked (kept on this device) ----------
 
@@ -183,8 +185,12 @@ export function StoryView({ story, pictures }: { story: KidsStory; pictures: str
       {/* The story, a picture for each part */}
       <section className="space-y-4">
         {parts.map((p, i) => {
-          const pic = young ? pictures[i] : pictures[Math.min(pictures.length - 1, Math.floor((i / parts.length) * pictures.length))];
-          const showPic = young ? true : i % 2 === 0 && i > 0;
+          // Four drawings per story: one per part for the youngest, spread across the longer telling.
+          const picIndex = young ? i : Math.min(3, Math.floor((i * 4) / parts.length));
+          const prevIndex = young || i === 0 ? -1 : Math.min(3, Math.floor(((i - 1) * 4) / parts.length));
+          const drawn = hasStoryPictures(story.id);
+          const pic = pictures[picIndex];
+          const showPic = young || picIndex !== prevIndex;
           return (
             <article
               key={i}
@@ -193,13 +199,18 @@ export function StoryView({ story, pictures }: { story: KidsStory; pictures: str
                 reading && speech.index === i && "ring-4 ring-fuchsia-400/60"
               )}
             >
-              {showPic && pic && (
-                <div
-                  className="flex h-36 items-center justify-center text-6xl tracking-widest"
-                  style={{ background: `linear-gradient(150deg, ${story.colors[0]}33, ${story.colors[1]}55)` }}
-                >
-                  <span className="drop-shadow">{pic}</span>
-                </div>
+              {showPic && drawn ? (
+                <StoryPicture id={story.id} part={picIndex} title={story.title[lang]} />
+              ) : (
+                showPic &&
+                pic && (
+                  <div
+                    className="flex h-36 items-center justify-center text-6xl tracking-widest"
+                    style={{ background: `linear-gradient(150deg, ${story.colors[0]}33, ${story.colors[1]}55)` }}
+                  >
+                    <span className="drop-shadow">{pic}</span>
+                  </div>
+                )
               )}
               <p className={cn("p-4 font-heading leading-relaxed", young ? "text-xl" : "text-[1.0625rem]")}>{p[lang]}</p>
             </article>
@@ -210,6 +221,20 @@ export function StoryView({ story, pictures }: { story: KidsStory; pictures: str
       <BigIdea story={story} />
       <VerseGame story={story} />
       <LessonPlan story={story} age={age} />
+
+      <Link
+        href={`/kids/${story.id}/print`}
+        className="flex items-center gap-3 rounded-2xl border border-emerald-500/40 bg-emerald-500/10 p-4"
+      >
+        <Printer className="size-6 shrink-0 text-emerald-600" />
+        <span className="min-w-0 flex-1">
+          <span className="block text-sm font-semibold">{tx("Printable activity sheet", "Printable activity sheet")}</span>
+          <span className="block text-xs text-muted-foreground">
+            {tx("Coloring page, word search and memory verse to print.", "Coloring page, word search at memory verse na puwedeng i-print.")}
+          </span>
+        </span>
+        <ChevronRight className="size-4 text-muted-foreground" />
+      </Link>
 
       <Link
         href="/quiz"
@@ -417,7 +442,7 @@ function ShowMode({ story, pictures, onClose }: { story: KidsStory; pictures: st
   const slides = useMemo(
     () => [
       { pic: story.scene, art: storyArt(story.id), text: story.title[lang], small: story.passage[lang], big: true },
-      ...story.short.map((p, i) => ({ pic: pictures[i] ?? story.scene, art: "", text: p[lang], small: "", big: false })),
+      ...story.short.map((p, i) => ({ pic: pictures[i] ?? story.scene, art: "", part: i, text: p[lang], small: "", big: false })),
       { pic: "💡", art: storyArt(story.id), text: story.bigIdea[lang], small: tx("Remember", "Tandaan"), big: true },
       { pic: "📖", art: "", text: `“${story.verse.text[lang]}”`, small: story.verse.ref[lang], big: false },
       { pic: "🙏", art: "", text: story.prayer[lang], small: tx("Let’s pray", "Manalangin tayo"), big: false },
@@ -460,7 +485,11 @@ function ShowMode({ story, pictures, onClose }: { story: KidsStory; pictures: st
         </button>
       </div>
       <div key={i} className="ui-pop flex flex-1 flex-col items-center justify-center gap-6 px-8 text-center">
-        {s.art ? (
+        {"part" in s && typeof s.part === "number" && hasStoryPictures(story.id) ? (
+          <div className="w-full max-w-2xl overflow-hidden rounded-3xl shadow-2xl">
+            <StoryPicture id={story.id} part={s.part} />
+          </div>
+        ) : s.art ? (
           // eslint-disable-next-line @next/next/no-img-element -- a small static drawing
           <img src={s.art} alt="" className="max-h-[45vh] w-full max-w-2xl rounded-3xl object-contain shadow-2xl" />
         ) : (

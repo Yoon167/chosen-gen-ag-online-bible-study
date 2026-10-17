@@ -397,10 +397,13 @@ const DEVOTION_PHOTOS: ("ai" | string)[] = [
   "aa-water", // The God Who Sees Me
 ];
 
+/** For the devotions after the first 30: Anointed Academy's photos in turn. */
+const MORE_PHOTOS = ["aa-road", "aa-golden", "aa-lake", "aa-meadow", "aa-mountain", "aa-forest-river", "aa-cross", "aa-rain", "aa-table", "aa-arch", "aa-water", "aa-bread-basket"];
+
 /** The photo chosen for this devotion's topic (by its place in the list). */
 export function devotionPhotoTheme(index: number, name: { en: string; tl: string }): VerseImageTheme | undefined {
-  const pick = DEVOTION_PHOTOS[index];
-  if (!pick) return undefined;
+  if (index < 0) return undefined;
+  const pick = DEVOTION_PHOTOS[index] ?? MORE_PHOTOS[index % MORE_PHOTOS.length];
   const file = pick === "ai" ? `/devotion-bg/d${index + 1}.webp` : `/verse-bg/${pick}.webp`;
   const thumb = pick === "ai" ? `/devotion-bg/thumb/d${index + 1}.webp` : `/verse-bg/thumb/${pick}.webp`;
   return {

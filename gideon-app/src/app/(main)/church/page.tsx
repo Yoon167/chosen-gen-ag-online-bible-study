@@ -31,6 +31,7 @@ import { Switch } from "@/components/ui/switch";
 import { InviteSheet } from "@/components/church/invite-sheet";
 import { AgLogo, AgLogoEditor } from "@/components/church/ag-logo";
 import { AgLogoSwitcher } from "@/components/church/ag-switcher";
+import { MyBirthdayCard } from "@/components/church/birthdays";
 import { AccountSheet } from "@/components/profile/account-sheet";
 import { useAuth } from "@/lib/hooks/use-auth";
 import { useProfile } from "@/lib/hooks/use-profile";
@@ -291,6 +292,8 @@ export default function MyChurchPage() {
                 {tx("Invite someone", "Mag-imbita")}
               </button>
             </section>
+
+            <MyBirthdayCard />
 
             {/* AG life: one colored tile each */}
             <section className="space-y-2" data-tour="ag-community">

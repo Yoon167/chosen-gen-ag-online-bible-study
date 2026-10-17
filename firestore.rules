@@ -566,6 +566,22 @@ service cloud.firestore {
         allow delete: if isAdmin() || rankAtLeast(churchId, 3);
       }
 
+      // Birthdays a member chose to share with their AG: month and day only
+      // ("MM-DD", no year). Every active member can see them; only the
+      // member writes their own.
+      match /birthdays/{uid} {
+        allow read: if isAdmin() || (request.auth != null && isActiveMember(churchId, request.auth.uid));
+        allow create, update: if request.auth != null && request.auth.uid == uid
+          && isActiveMember(churchId, uid)
+          && request.resource.data.keys().hasOnly(['uid', 'name', 'md', 'updatedAt'])
+          && request.resource.data.uid == uid
+          && validText(request.resource.data.name, 1, 100)
+          && request.resource.data.md is string
+          && request.resource.data.md.matches('^(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$')
+          && request.resource.data.updatedAt is int;
+        allow delete: if isAdmin() || (request.auth != null && request.auth.uid == uid) || rankAtLeast(churchId, 3);
+      }
+
       // A member's place in the Courses, for their AG leaders: enrolled, and
       // chapters finished per course. Never the journal or notes. Doc id is
       // the member's uid; only they write it, leaders (cell leader+) read it.
