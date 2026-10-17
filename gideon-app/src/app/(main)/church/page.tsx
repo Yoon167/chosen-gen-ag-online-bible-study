@@ -228,7 +228,7 @@ export default function MyChurchPage() {
         {my.active && my.church && (
           <>
             {/* The AG itself: deep blue, gold, and who you are in it */}
-            <section className="gradient-hero relative overflow-hidden rounded-3xl p-5 text-white shadow-lg shadow-black/10">
+            <section className="gradient-hero relative overflow-hidden rounded-3xl p-5 text-white shadow-lg shadow-black/10" data-tour="ag-identity">
               <div
                 className="pointer-events-none absolute -right-12 -top-12 size-48 rounded-full opacity-60"
                 style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.55), transparent)" }}

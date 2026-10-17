@@ -83,7 +83,7 @@ export function CourseCards({ courses }: { courses: CourseCard[] }) {
     return access.isUnlocked(id) ? tx("Open", "Bukas") : tx("Locked", "Naka-lock");
   };
   return (
-    <div className="book-shelf grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3">
+    <div className="book-shelf grid grid-cols-2 gap-x-4 gap-y-7 sm:grid-cols-3" data-tour="library-shelf">
       {courses.map((c, i) => {
         const Icon = COURSE_ICONS[c.icon];
         const done = c.lessonIds.filter((id) => progress[c.id]?.lessons?.[id]?.completedAt).length;

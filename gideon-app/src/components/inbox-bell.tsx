@@ -13,6 +13,7 @@ export function InboxBell({ className }: { className?: string }) {
   return (
     <Link
       href="/notifications"
+      data-tour="inbox-bell"
       aria-label={unread ? tx(`Notifications, ${unread} new`, `Mga abiso, ${unread} bago`) : tx("Notifications", "Mga abiso")}
       className={cn("relative flex size-8 items-center justify-center rounded-full bg-white/90 text-foreground shadow-sm", className)}
     >

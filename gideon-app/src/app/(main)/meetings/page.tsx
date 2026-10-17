@@ -79,6 +79,7 @@ export default function MeetingsPage() {
   return (
     <div>
       <PageHeader
+        tour="meetings-hero"
         title={t("page.meetings")}
         icon={Video}
         hero={{

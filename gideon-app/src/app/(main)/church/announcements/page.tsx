@@ -42,6 +42,7 @@ export default function AnnouncementsPage() {
   return (
     <div>
       <PageHeader
+        tour="news-hero"
         title={tx("Announcements", "Mga Anunsyo")}
         subtitle={my.church?.name}
         back

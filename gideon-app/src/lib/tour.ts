@@ -6,7 +6,12 @@
  */
 
 import {
+  Bell,
+  Languages,
+  Megaphone,
+  Video,
   BellRing,
+  BookHeart,
   BookOpenText,
   Brain,
   CalendarCheck2,
@@ -18,6 +23,7 @@ import {
   HandHeart,
   Home,
   LayoutDashboard,
+  Library,
   LifeBuoy,
   PartyPopper,
   Plus,
@@ -103,6 +109,19 @@ export const TOUR_STEPS: TourStep[] = [
     },
   },
   {
+    id: "bell",
+    chapter: "home",
+    href: "/",
+    target: "inbox-bell",
+    icon: Bell,
+    emoji: "🔔",
+    title: { en: "Your notifications", tl: "Ang iyong mga abiso" },
+    body: {
+      en: "The bell on Home shows how many notifications are new. Tap it for your inbox: prayers, announcements, enrollment updates and reminders, even the ones you missed.",
+      tl: "Ipinapakita ng bell sa Home kung ilan ang bagong abiso. Pindutin para sa iyong inbox: mga panalangin, announcement, update sa enrollment at mga paalala, pati ang mga hindi mo napansin.",
+    },
+  },
+  {
     id: "bible",
     chapter: "bible",
     href: "/bible",
@@ -137,8 +156,21 @@ export const TOUR_STEPS: TourStep[] = [
     emoji: "🌱",
     title: { en: "Journey and Courses", tl: "Journey at Courses" },
     body: {
-      en: "A 12-level Discipleship Journey and 11 Spirit-led courses. Every lesson opens with today's revelation, then the main truth, life connection, action steps and prayer. Your AG leader unlocks each course.",
+      en: "A 12-level Discipleship Journey and 11 course books, plus Kids Ministry. Every lesson opens with today's revelation, then the main truth, life connection, action steps and prayer.",
       tl: "12-level na Discipleship Journey at 11 Spirit-led na course. Bawat aralin ay nagsisimula sa pahayag ngayong araw, saka ang pangunahing katotohanan, ugnayan sa buhay, mga hakbang at panalangin. Ina-unlock ng AG leader ang bawat course.",
+    },
+  },
+  {
+    id: "courses",
+    chapter: "grow",
+    href: "/courses",
+    target: "library-shelf",
+    icon: Library,
+    emoji: "📚",
+    title: { en: "Courses are books", tl: "Aklat ang mga Course" },
+    body: {
+      en: "11 books with 109 chapters written by your pastors. Fill in the enrollment form; your AG leader approves it. Read with Aa (language and text size), highlight, bookmark and write notes, then get your certificate.",
+      tl: "11 aklat na may 109 kabanatang isinulat ng iyong mga pastor. Sagutan ang enrollment form; ia-approve ito ng iyong AG leader. Magbasa gamit ang Aa (wika at laki ng letra), mag-highlight, mag-bookmark at magsulat ng tala, saka kunin ang iyong certificate.",
     },
   },
   {
@@ -150,8 +182,8 @@ export const TOUR_STEPS: TourStep[] = [
     emoji: "☀️",
     title: { en: "Daily devotion", tl: "Araw-araw na debosyon" },
     body: {
-      en: "Your quiet time with God each morning: today's passage, a reflection and a prayer. New to devotions? “How to have a devotion” teaches SOAP, HEAR and ACTS.",
-      tl: "Ang quiet time mo kasama ang Diyos tuwing umaga: talata ngayong araw, pagninilay at panalangin. Bago sa debosyon? Itinuturo ng “Paano mag-devotion” ang SOAP, HEAR at ACTS.",
+      en: "Your quiet time with God each morning: the passage itself under the title, a reflection and a prayer. Tap Share to turn a verse or a line into a picture for Facebook.",
+      tl: "Ang quiet time mo kasama ang Diyos tuwing umaga: ang mismong talata sa ilalim ng title, pagninilay at panalangin. Pindutin ang I-share para gawing larawan ang isang talata o linya para sa Facebook.",
     },
   },
   {
@@ -202,8 +234,21 @@ export const TOUR_STEPS: TourStep[] = [
     emoji: "🎮",
     title: { en: "Bible Games", tl: "Bible Games" },
     body: {
-      en: "Quiz, Guess the Icons, Scrambled Letters, Verse Puzzle, Who Am I? and True or False, in Easy, Medium and Hard. Earn points and climb from Seeker to Elder of the Word.",
-      tl: "Quiz, Hulaan ang Icon, Ginulong Letra, Verse Puzzle, Sino Ako? at Tama o Mali, sa Madali, Katamtaman at Mahirap. Mag-ipon ng puntos at umakyat mula Naghahanap hanggang Matanda sa Salita.",
+      en: "Pick who is playing: Kids 3–7 (picture answers read aloud), Kids 8–12, Youth or Adults. Quiz, Guess the Icons, Verse Puzzle, Who Am I? and more. Earn points and climb the ranks.",
+      tl: "Piliin kung sino ang maglalaro: Bata 3–7 (may larawan ang sagot at binabasa nang malakas), Bata 8–12, Kabataan o Adult. Quiz, Hulaan ang Icon, Verse Puzzle, Sino Ako? at iba pa. Mag-ipon ng puntos at umakyat ng ranggo.",
+    },
+  },
+  {
+    id: "kids",
+    chapter: "grow",
+    href: "/kids",
+    target: "kids-stories",
+    icon: BookHeart,
+    emoji: "🧒",
+    title: { en: "Kids Ministry", tl: "Kids Ministry" },
+    body: {
+      en: "For teachers and parents: 12 illustrated Bible stories for ages 3 to 12, “Read to me”, a full-screen Show mode for the class, and a ready Sunday School lesson for each age.",
+      tl: "Para sa teachers at magulang: 12 Bible stories na may drawing para sa edad 3 hanggang 12, “Basahin para sa akin”, full-screen na Show mode para sa klase, at handang Sunday School lesson para sa bawat edad.",
     },
   },
   {
@@ -259,6 +304,58 @@ export const TOUR_STEPS: TourStep[] = [
     },
   },
   {
+    id: "ag-logo",
+    chapter: "ag",
+    href: "/church",
+    target: "ag-identity",
+    icon: Church,
+    emoji: "🌿",
+    title: { en: "Your AG's logo", tl: "Ang logo ng inyong AG" },
+    body: {
+      en: "Every AG has its own logo and border. In more than one AG? Tap a logo to switch. Your AG's logo also stands on your certificates.",
+      tl: "May sariling logo at border ang bawat AG. Kasali sa higit sa isang AG? Pindutin ang logo para lumipat. Nasa mga certificate mo rin ang logo ng inyong AG.",
+    },
+  },
+  {
+    id: "checkin",
+    chapter: "ag",
+    href: "/church/checkin",
+    target: "checkin-hero",
+    icon: ShieldCheck,
+    emoji: "🤝",
+    title: { en: "Weekly check-in", tl: "Lingguhang check-in" },
+    body: {
+      en: "Two minutes a week with your accountability partner: how your prayer and Bible reading went, a struggle, a win. Only your partner reads your answers.",
+      tl: "Dalawang minuto bawat linggo kasama ang iyong accountability partner: kumusta ang panalangin at pagbabasa ng Bibliya, isang pakikibaka, isang tagumpay. Ang partner mo lang ang makakabasa ng iyong mga sagot.",
+    },
+  },
+  {
+    id: "announcements",
+    chapter: "ag",
+    href: "/church/announcements",
+    target: "news-hero",
+    icon: Megaphone,
+    emoji: "📰",
+    title: { en: "Your AG's newspaper", tl: "Diyaryo ng inyong AG" },
+    body: {
+      en: "Announcements arrive as your AG's own newspaper: swipe to turn the pages. You also get a notification when your leader posts news.",
+      tl: "Dumarating ang mga anunsyo bilang sariling diyaryo ng inyong AG: i-swipe para lumipat ng pahina. May abiso ka rin tuwing magpo-post ng balita ang iyong leader.",
+    },
+  },
+  {
+    id: "meetings",
+    chapter: "ag",
+    href: "/meetings",
+    target: "meetings-hero",
+    icon: Video,
+    emoji: "🎥",
+    title: { en: "Meetings", tl: "Mga Meeting" },
+    body: {
+      en: "Every AG meeting in one place, in person or on Zoom, Teams or Google Meet, with a reminder 30 minutes before.",
+      tl: "Lahat ng meeting ng AG sa iisang lugar, harapan man o sa Zoom, Teams o Google Meet, may paalala 30 minuto bago magsimula.",
+    },
+  },
+  {
     id: "live",
     chapter: "ag",
     href: "/church",
@@ -295,6 +392,19 @@ export const TOUR_STEPS: TourStep[] = [
     body: {
       en: "Turn on push notifications in Profile: the daily verse at your time, live studies, prayer requests, meeting reminders, follow-ups and app updates, even when Anointed Academy is closed.",
       tl: "I-on ang push notifications sa Profile: ang daily verse sa oras mo, live study, prayer request, paalala sa meeting, follow-up at updates ng app, kahit sarado ang Anointed Academy.",
+    },
+  },
+  {
+    id: "settings",
+    chapter: "profile",
+    href: "/profile",
+    target: "profile-prefs",
+    icon: Languages,
+    emoji: "🌐",
+    title: { en: "Your way: language, text size, theme", tl: "Ayon sa iyo: wika, laki ng letra, tema" },
+    body: {
+      en: "Switch between English and Tagalog anytime (look for EN and TL on many pages), make the text bigger, and pick a light or dark look.",
+      tl: "Magpalit sa English o Tagalog anumang oras (hanapin ang EN at TL sa maraming page), palakihin ang letra, at pumili ng maliwanag o madilim na itsura.",
     },
   },
   {

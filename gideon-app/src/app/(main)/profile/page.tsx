@@ -23,12 +23,12 @@ import {
   Award,
   Palette,
   Map as MapIcon,
-  Sparkles,
-} from "lucide-react";
+  Sparkles, PlayCircle } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { EditProfileDialog } from "@/components/profile/edit-profile-dialog";
 import { AccountSheet } from "@/components/profile/account-sheet";
 import { NotificationSheet } from "@/components/profile/notification-sheet";
+import { TourVideoPlayer } from "@/components/tour/tour-video";
 import { InstallSheet } from "@/components/profile/install-sheet";
 import { WebAppCard } from "@/components/profile/web-app-card";
 import { ThemeSelect } from "@/components/theme-select";
@@ -70,6 +70,7 @@ export default function ProfilePage() {
   const [editOpen, setEditOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
+  const [tourVideo, setTourVideo] = useState(false);
   const [installOpen, setInstallOpen] = useState(false);
   const { canInstall, installed, promptInstall } = usePwaInstall();
   const tour = useTour();
@@ -151,9 +152,11 @@ export default function ProfilePage() {
       </div>
 
       <Group title={tl ? "Mga Kagustuhan" : "Preferences"}>
-        <SettingRow icon={Languages} tone="bg-sky-500/15 text-sky-600 dark:text-sky-400" label={t("profile.language")}>
-          <LanguageToggle />
-        </SettingRow>
+        <div data-tour="profile-prefs">
+          <SettingRow icon={Languages} tone="bg-sky-500/15 text-sky-600 dark:text-sky-400" label={t("profile.language")}>
+            <LanguageToggle />
+          </SettingRow>
+        </div>
         <SettingRow icon={Type} tone="bg-violet-500/15 text-violet-600 dark:text-violet-400" label={tl ? "Laki ng Text" : "Text Size"}>
           <TextSizeToggle />
         </SettingRow>
@@ -233,6 +236,12 @@ export default function ProfilePage() {
             {chevron}
           </SettingRow>
         </button>
+        <button onClick={() => setTourVideo(true)} className="block w-full text-left">
+          <SettingRow icon={PlayCircle} tone="bg-rose-500/15 text-rose-600 dark:text-rose-400" label={tl ? "Panoorin ang App Tour video" : "Watch the App Tour video"}>
+            {chevron}
+          </SettingRow>
+        </button>
+        {tourVideo && <TourVideoPlayer onClose={() => setTourVideo(false)} />}
         <Link href="/bible/plans" className="block">
           <SettingRow icon={CalendarCheck2} tone="bg-amber-500/15 text-amber-600 dark:text-amber-400" label="Reading Plans">
             {chevron}

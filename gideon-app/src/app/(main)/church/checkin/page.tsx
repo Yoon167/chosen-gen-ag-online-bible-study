@@ -62,6 +62,7 @@ export default function CheckinPage() {
   return (
     <div>
       <PageHeader
+        tour="checkin-hero"
         title={tx("Weekly Check-in", "Lingguhang Check-in")}
         subtitle={`${tx("Week of", "Linggo ng")} ${weekLabel(thisWeek)}`}
         icon={ShieldCheck}

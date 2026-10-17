@@ -42,6 +42,14 @@ export const RELEASES: Release[] = [
         "Every Kids Ministry story now has its own colorful drawing, on the story cards, at the top of each story and in Show mode. Tap EN or TL to switch the language anytime.",
         "May sariling makulay na drawing na ang bawat kuwento sa Kids Ministry, sa mga story card, sa itaas ng bawat kuwento at sa Show mode. Pindutin ang EN o TL para magpalit ng wika anumang oras."
       ),
+      t(
+        "A new App Tour video (1½ minutes) shows every feature, from logging in to Kids Ministry. Watch it from Profile or the first card of the App Tour.",
+        "May bagong App Tour video (1½ minuto) na ipinapakita ang bawat feature, mula sa pag-login hanggang Kids Ministry. Panoorin ito sa Profile o sa unang card ng App Tour."
+      ),
+      t(
+        "The App Tour grew to 28 stops, now with Courses, Kids Ministry, the notification bell, your AG's logo, check-ins, the AG newspaper, meetings and your settings.",
+        "Umabot na sa 28 hinto ang App Tour, kasama na ang Courses, Kids Ministry, bell ng abiso, logo ng AG, check-in, diyaryo ng AG, meetings at iyong mga setting."
+      ),
     ],
   },
   {

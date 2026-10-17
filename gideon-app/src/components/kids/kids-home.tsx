@@ -57,7 +57,7 @@ export function KidsHome() {
           </Link>
         </div>
 
-        <section className="space-y-3">
+        <section className="space-y-3" data-tour="kids-stories">
           <h2 className="px-1 font-heading text-lg font-semibold">{tx("Old Testament stories", "Mga kuwento sa Lumang Tipan")}</h2>
           <div className="grid grid-cols-2 gap-3">
             {old.map((s, i) => (

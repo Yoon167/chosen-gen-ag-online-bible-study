@@ -15,6 +15,7 @@ import {
   type TourStep,
 } from "@/lib/tour";
 import { celebrate } from "@/lib/celebrate";
+import { TourVideoButton } from "@/components/tour/tour-video";
 import { cn } from "@/lib/utils";
 import { useLanguage, useTx } from "@/lib/i18n";
 
@@ -310,7 +311,12 @@ function TourOverlay({
             <ChapterBar step={step} onJump={go} onClose={last ? undefined : onClose} />
 
             {step.visual === "logo" ? (
-              <LogoBurst />
+              <>
+                <LogoBurst />
+                <div className="relative mt-1 flex justify-center">
+                  <TourVideoButton className="flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur" />
+                </div>
+              </>
             ) : step.visual === "celebrate" ? (
               <div className="relative mx-auto mt-3 flex size-24 items-center justify-center">
                 <div aria-hidden className="tour-spin absolute inset-0 rounded-full opacity-60" style={{ background: RAYS }} />
