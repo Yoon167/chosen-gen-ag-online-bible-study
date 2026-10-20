@@ -18,6 +18,33 @@ export interface Release {
 
 export const RELEASES: Release[] = [
   {
+    id: "2026-10-20-quiz-night",
+    date: "2026-10-20",
+    title: t("Quiz Night, 6 new kids stories, course books for leaders and more offline", "Quiz Night, 6 bagong kids story, course books para sa leaders at mas maraming offline"),
+    items: [
+      t(
+        "6 new Kids Ministry stories with their drawings, lessons and printable sheets: God’s Promise to Abraham, Baby Moses in a Basket, Gideon’s Small Army, Elijah and the Fire from Heaven, Jesus Loves the Little Children, and Jesus Raises Lazarus. 24 stories in all.",
+        "6 bagong kuwento sa Kids Ministry, may drawing, lesson at printable sheet: Ang Pangako ng Diyos kay Abraham, Ang Sanggol na si Moises sa Basket, Ang Maliit na Hukbo ni Gideon, Si Elias at ang Apoy mula sa Langit, Mahal ni Hesus ang Maliliit na Bata, at Binuhay ni Hesus si Lazaro. 24 na lahat."
+      ),
+      t(
+        "Bible Quiz Night: the whole class plays on one screen in 2 to 4 teams. Big questions read aloud, “Show the answer”, tap the teams that got it right, and a scoreboard with a winner.",
+        "Bible Quiz Night: sabay na naglalaro ang buong klase sa iisang screen, 2 hanggang 4 na team. Malalaking tanong na binabasa nang malakas, “Ipakita ang sagot”, pindutin ang mga team na tama, at scoreboard na may nanalo."
+      ),
+      t(
+        "Leader Dashboard: a new Course books section shows who is reading each book, who finished, the average progress, forms waiting for approval, and readers who have paused for 3 weeks.",
+        "Leader Dashboard: may bagong Course books na nagpapakita kung sino ang nagbabasa ng bawat aklat, sino ang tapos na, ang karaniwang progress, mga form na naghihintay ng approval, at mga 3 linggo nang nakahinto."
+      ),
+      t(
+        "Offline: you can now also download Kids Ministry (stories, drawings, sheets, Quiz Night) and all the course books, to use with no signal.",
+        "Offline: puwede na ring i-download ang Kids Ministry (kuwento, drawing, sheet, Quiz Night) at lahat ng course book, para magamit kahit walang signal."
+      ),
+      t(
+        "Music on Wi-Fi only: a new switch in Profile keeps the worship music from using your mobile data (on Android).",
+        "Music sa Wi-Fi lang: bagong switch sa Profile para hindi gumamit ng mobile data ang worship music (sa Android)."
+      ),
+    ],
+  },
+  {
     id: "2026-10-18-birthdays",
     date: "2026-10-18",
     title: t("A devotion for every day, AG birthdays and 6 new kids stories", "Devotion sa bawat araw, birthday sa AG at 6 na bagong kids story"),

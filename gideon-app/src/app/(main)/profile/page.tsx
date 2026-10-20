@@ -23,7 +23,7 @@ import {
   Award,
   Palette,
   Map as MapIcon,
-  Sparkles, PlayCircle } from "lucide-react";
+  Sparkles, PlayCircle, Wifi } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { EditProfileDialog } from "@/components/profile/edit-profile-dialog";
 import { AccountSheet } from "@/components/profile/account-sheet";
@@ -50,6 +50,8 @@ import { TextSizeToggle } from "@/components/text-size-toggle";
 import { useEarnedBadges } from "@/lib/hooks/use-badges";
 import { BADGES } from "@/lib/badges";
 import { InviteCard } from "@/components/invite-card";
+import { Switch } from "@/components/ui/switch";
+import { setMusicWifiOnly, useBackgroundMusic } from "@/lib/background-music";
 import { useLanguage } from "@/lib/i18n";
 
 export default function ProfilePage() {
@@ -163,6 +165,7 @@ export default function ProfilePage() {
         <SettingRow icon={Palette} tone="bg-amber-500/15 text-amber-600 dark:text-amber-400" label={tl ? "Tema" : "Theme"}>
           <ThemeSelect />
         </SettingRow>
+        <MusicWifiRow tl={tl} />
         <button onClick={() => setNotificationsOpen(true)} className="block w-full text-left">
           <SettingRow icon={Bell} tone="bg-rose-500/15 text-rose-600 dark:text-rose-400" label={tl ? "Notifications at Paalala" : "Notifications & Reminders"}>
             {chevron}
@@ -332,5 +335,15 @@ function SettingRow({
       </div>
       {children}
     </div>
+  );
+}
+
+/** "Music on Wi-Fi only": saves mobile data (the worship songs are 1.4 to 4.6 MB each). */
+function MusicWifiRow({ tl }: { tl: boolean }) {
+  const { wifiOnly } = useBackgroundMusic();
+  return (
+    <SettingRow icon={Wifi} tone="bg-teal-500/15 text-teal-600 dark:text-teal-400" label={tl ? "Music sa Wi-Fi lang" : "Music on Wi-Fi only"}>
+      <Switch checked={wifiOnly} onCheckedChange={setMusicWifiOnly} aria-label={tl ? "Music sa Wi-Fi lang" : "Music on Wi-Fi only"} />
+    </SettingRow>
   );
 }

@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import {
+  Altar,
   Angel,
   Ark,
   Basket,
@@ -11,12 +12,14 @@ import {
   Cross,
   Donkey,
   Dove,
+  Fire,
   Fish,
   Flower,
   Ground,
   Hearts,
   Hills,
   House,
+  Jar,
   Lamp,
   Lion,
   Moon,
@@ -35,6 +38,7 @@ import {
   Star,
   Stars,
   Sun,
+  Tent,
   Throne,
   Tree,
   Trumpet,
@@ -66,6 +70,18 @@ const KING = { robe: "#b91c1c", hair: "#1c1917", beard: true, crown: true };
 const HAMAN = { robe: "#334155", hair: "#1c1917", beard: true };
 const SAMARITAN = { robe: "#0d9488", head: "#ccfbf1", beard: true, hair: "#422006" };
 const ZACCHAEUS = { robe: "#ca8a04", sash: "#7c2d12", hair: "#1c1917", beard: true };
+const ABRAHAM = { robe: "#7c2d12", sash: "#f59e0b", hair: "#e5e7eb", beard: true };
+const SARAH = { robe: "#be185d", head: "#e5e7eb" };
+const PHARAOH = { robe: "#facc15", sash: "#1d4ed8", hair: "#1c1917", crown: true };
+const MOSES_MOM = { robe: "#0d9488", head: "#99f6e4" };
+const MIRIAM = { robe: "#16a34a", hair: "#1c1917" };
+const PRINCESS = { robe: "#f8fafc", sash: "#eab308", hair: "#1c1917", crown: true };
+const GIDEON = { robe: "#65a30d", sash: "#a16207", hair: "#3f2a1d", beard: true };
+const ELIJAH = { robe: "#78350f", sash: "#facc15", hair: "#f1f5f9", beard: true };
+const BAAL_PROPHET = { robe: "#334155", sash: "#a855f7", hair: "#1c1917", beard: true };
+const MARTHA = { robe: "#0369a1", head: "#bae6fd" };
+const MARY_B = { robe: "#db2777", head: "#fbcfe8" };
+const LAZARUS = { robe: "#f5f5f4", hair: "#3f2a1d", beard: true };
 
 export const STORY_SCENES: Record<string, Pic[]> = {
   creation: [
@@ -169,6 +185,42 @@ export const STORY_SCENES: Record<string, Pic[]> = {
     { sky: "day", art: <><Sun x={110} y={100} /><Ground y={470} color="#d6d3d1" /><Tree x={540} y={400} s={2.2} /><Child x={540} y={250} {...ZACCHAEUS} /><Person x={200} y={500} robe="#0ea5e9" hair="#1c1917" /><Person x={300} y={500} robe="#f43f5e" hair="#1c1917" /></> },
     { sky: "day", art: <><Sun x={110} y={100} /><Ground y={470} color="#d6d3d1" /><Tree x={560} y={400} s={2.2} /><Child x={560} y={250} {...ZACCHAEUS} pose="arms-up" /><Person x={330} y={500} {...JESUS} pose="point" /></> },
     { sky: "dawn", art: <><House x={180} y={480} s={1.2} /><Ground y={480} color="#d6d3d1" /><Person x={360} y={490} {...JESUS} /><Child x={480} y={510} {...ZACCHAEUS} pose="arms-up" /><Hearts x={420} y={320} /></> },
+  ],
+  abraham: [
+    { sky: "desert", art: <><Sun /><Hills color="#d97706" back="#f59e0b" /><Person x={250} y={500} {...SARAH} /><Person x={380} y={490} {...ABRAHAM} pose="point" /><Donkey x={590} y={480} /></> },
+    { sky: "night", art: <><Stars /><Moon x={680} y={100} /><Star x={250} y={120} s={1.4} /><Star x={480} y={90} s={1.1} /><Star x={380} y={200} s={0.9} /><Hills color="#1e3a8a" back="#312e81" /><Tent x={620} y={470} s={0.9} color="#92400e" /><Person x={300} y={500} {...ABRAHAM} pose="arms-up" /></> },
+    { sky: "dusk", art: <><Hills color="#c2410c" back="#ea580c" /><Tent x={400} y={470} s={1.3} /><Person x={200} y={510} {...ABRAHAM} pose="pray" /><Person x={600} y={510} {...SARAH} pose="pray" /></> },
+    { sky: "dawn", art: <><Sun x={640} y={110} /><Hills color="#d97706" back="#f59e0b" /><Tent x={650} y={470} s={0.8} /><Person x={260} y={500} {...ABRAHAM} pose="arms-up" /><Person x={420} y={500} {...SARAH} pose="wave" /><Child x={340} y={520} s={0.55} robe="#fef9c3" hair="#3f2a1d" /><Hearts x={340} y={300} /></> },
+  ],
+  "baby-moses": [
+    { sky: "desert", art: <><Sun /><Sand y={460} /><Palm x={680} y={470} /><Throne x={300} y={500} /><Person x={300} y={510} {...PHARAOH} pose="point" /></> },
+    { sky: "day", art: <><Sun /><Sand y={440} /><Sea y={480} /><Palm x={110} y={450} s={0.8} /><Palm x={700} y={450} s={0.8} /><Person x={250} y={470} {...MOSES_MOM} kneel pose="pray" /><Child x={470} y={512} s={0.42} robe="#fef9c3" hair="#3f2a1d" /><Basket x={470} y={518} s={1.4} bread={false} /></> },
+    { sky: "day", art: <><Sun x={700} y={90} /><Sand y={440} /><Sea y={480} /><Palm x={240} y={460} /><Child x={150} y={470} {...MIRIAM} pose="point" /><Child x={420} y={514} s={0.42} robe="#fef9c3" hair="#3f2a1d" /><Basket x={420} y={520} s={1.4} bread={false} /><Person x={630} y={470} {...PRINCESS} pose="wave" /></> },
+    { sky: "indoor", art: <><Ground y={500} color="#fcd34d" /><Person x={290} y={510} {...PRINCESS} pose="wave" /><Person x={520} y={510} {...MOSES_MOM} pose="arms-up" /><Basket x={405} y={545} s={0.9} bread={false} /><Hearts x={405} y={300} /></> },
+  ],
+  gideon: [
+    { sky: "day", art: <><Sun /><Hills color="#eab308" back="#fde047" /><Ground y={520} color="#a16207" /><Person x={260} y={520} {...GIDEON} kneel sad /><Angel x={560} y={440} /></> },
+    { sky: "day", art: <><Sun /><Hills /><Person x={200} y={500} s={0.8} robe="#64748b" hair="#1c1917" /><Person x={320} y={500} s={0.8} robe="#64748b" hair="#1c1917" /><Person x={560} y={490} {...GIDEON} pose="point" flip /><Sparkles x={260} y={260} /></> },
+    { sky: "night", art: <><Stars /><Moon x={680} y={100} /><Hills color="#1e293b" back="#334155" />{[180, 400, 620].map((x) => <g key={x}><Person x={x} y={510} s={0.85} robe="#65a30d" hair="#1c1917" pose="arms-up" /><Jar x={x + 55} y={515} s={0.9} lit /><Trumpet x={x} y={330} s={0.7} /></g>)}</> },
+    { sky: "dawn", art: <><Sun x={640} y={120} /><Hills /><Fire x={160} y={520} s={0.7} /><Fire x={640} y={520} s={0.7} /><Person x={400} y={500} {...GIDEON} pose="arms-up" /><Sparkles x={520} y={240} /><Hearts x={280} y={280} /></> },
+  ],
+  elijah: [
+    { sky: "day", art: <><Sun /><Hills color="#a8a29e" back="#d6d3d1" /><Altar x={570} y={500} s={1.2} /><Person x={250} y={500} {...ELIJAH} pose="point" /></> },
+    { sky: "day", art: <><Sun /><Hills color="#a8a29e" back="#d6d3d1" /><Altar x={620} y={500} s={0.9} /><Person x={160} y={500} s={0.85} {...BAAL_PROPHET} pose="arms-up" /><Person x={300} y={510} s={0.85} {...BAAL_PROPHET} pose="wave" flip /><Person x={440} y={500} s={0.85} {...BAAL_PROPHET} pose="arms-up" /></> },
+    { sky: "dusk", art: <><Hills color="#a8a29e" back="#d6d3d1" /><Altar x={470} y={500} s={1.2} wet /><Person x={210} y={500} {...ELIJAH} pose="pray" /></> },
+    { sky: "dusk", art: <><Rays x={470} /><Hills color="#a8a29e" back="#d6d3d1" /><Altar x={470} y={500} s={1.2} fire /><Person x={200} y={500} {...ELIJAH} pose="arms-up" /><Person x={690} y={530} s={0.8} kneel robe="#0ea5e9" hair="#1c1917" pose="pray" /></> },
+  ],
+  "jesus-children": [
+    { sky: "day", art: <><Sun /><Hills /><Person x={180} y={490} robe="#f43f5e" head="#fecdd3" /><Child x={250} y={500} robe="#facc15" hair="#1c1917" pose="wave" /><Person x={540} y={490} robe="#0ea5e9" hair="#1c1917" beard /><Child x={610} y={500} robe="#a855f7" hair="#3f2a1d" /></> },
+    { sky: "day", art: <><Sun /><Hills /><Person x={460} y={490} robe="#475569" hair="#1c1917" beard pose="point" flip /><Child x={220} y={510} robe="#facc15" hair="#1c1917" sad /><Child x={310} y={515} robe="#a855f7" hair="#3f2a1d" sad /></> },
+    { sky: "day", art: <><Sun /><Hills /><Person x={400} y={490} {...JESUS} pose="wave" /><Child x={230} y={515} robe="#facc15" hair="#1c1917" pose="wave" /><Child x={570} y={515} robe="#a855f7" hair="#3f2a1d" pose="wave" /></> },
+    { sky: "dawn", art: <><Sun x={660} y={110} /><Hills /><Person x={400} y={490} {...JESUS} pose="arms-up" /><Child x={270} y={520} robe="#facc15" hair="#1c1917" pose="arms-up" /><Child x={530} y={520} robe="#a855f7" hair="#3f2a1d" pose="arms-up" /><Child x={170} y={530} s={0.6} robe="#22c55e" hair="#1c1917" /><Hearts x={400} y={290} /></> },
+  ],
+  lazarus: [
+    { sky: "indoor", art: <><Ground y={500} color="#fcd34d" /><Person x={400} y={540} {...LAZARUS} kneel sad /><Person x={220} y={510} {...MARTHA} sad /><Person x={590} y={510} {...MARY_B} sad /></> },
+    { sky: "dusk", art: <><Hills color="#78716c" back="#a8a29e" /><Person x={290} y={500} {...MARY_B} sad /><Person x={480} y={490} {...JESUS} sad /></> },
+    { sky: "dusk", art: <><Hills color="#57534e" back="#78716c" /><Rock x={580} y={450} s={4} /><Person x={260} y={490} {...JESUS} pose="point" /></> },
+    { sky: "dawn", art: <><Rays x={420} /><Hills color="#a8a29e" back="#d6d3d1" /><Rock x={680} y={460} s={2.4} /><Person x={420} y={490} {...LAZARUS} pose="arms-up" /><Person x={200} y={500} {...MARTHA} pose="arms-up" /><Sparkles x={520} y={200} /></> },
   ],
   easter: [
     { sky: "dusk", art: <><Hills color="#7c3aed" back="#a78bfa" /><Cross x={260} y={330} s={0.7} /><Cross x={400} y={300} /><Cross x={540} y={330} s={0.7} /></> },

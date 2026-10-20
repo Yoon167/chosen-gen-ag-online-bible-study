@@ -19,9 +19,24 @@ const SWITCH_MS = 60 * 60 * 1000;
 // platforms lower it a bit more.
 const VOLUME = 0.7;
 const MUTE_KEY = "gideon-music-muted";
+const WIFI_KEY = "gideon-music-wifi-only";
 
-type MusicState = { playing: boolean; muted: boolean };
-const SERVER_STATE: MusicState = { playing: false, muted: false };
+type MusicState = { playing: boolean; muted: boolean; wifiOnly: boolean };
+const SERVER_STATE: MusicState = { playing: false, muted: false, wifiOnly: false };
+
+type Connection = { type?: string; addEventListener?: (type: "change", listener: () => void) => void };
+const connection = () =>
+  typeof navigator === "undefined" ? undefined : (navigator as Navigator & { connection?: Connection }).connection;
+
+/** On mobile data now. Only Android tells; elsewhere this is always false, so the music plays as usual. */
+function onMobileData() {
+  return connection()?.type === "cellular";
+}
+
+// "Music on Wi-Fi only" waits for Wi-Fi, unless the member taps Music on
+// mobile data themselves: then it plays for the rest of the visit.
+let dataAllowed = false;
+const waitForWifi = () => state.wifiOnly && !dataAllowed && onMobileData();
 
 let state: MusicState = SERVER_STATE;
 let audio: HTMLAudioElement | null = null;
@@ -38,6 +53,14 @@ function setState(next: Partial<MusicState>) {
 function readMuted() {
   try {
     return localStorage.getItem(MUTE_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+function readWifiOnly() {
+  try {
+    return localStorage.getItem(WIFI_KEY) === "1";
   } catch {
     return false;
   }
@@ -101,7 +124,8 @@ let waitingForGesture = false;
 // The opening film has its own soundtrack; the music waits until it ends.
 let held = false;
 function playWhenAllowed() {
-  if (held) return;
+  // Not even created on mobile data, so nothing is downloaded.
+  if (held || waitForWifi()) return;
   const el = getAudio();
   el.play()
     .then(() => {
@@ -143,10 +167,17 @@ let started = false;
 export function startBackgroundMusic() {
   if (started) return;
   started = true;
-  setState({ muted: readMuted() });
+  setState({ muted: readMuted(), wifiOnly: readWifiOnly() });
   if (!state.muted) playWhenAllowed();
 
   window.setInterval(switchIfDue, 60 * 1000);
+
+  // Moving between Wi-Fi and mobile data.
+  connection()?.addEventListener?.("change", () => {
+    if (waitForWifi()) {
+      if (audio && !audio.paused) fadeTo(0, 0.6, () => audio?.pause());
+    } else if (!state.muted && !document.hidden) playWhenAllowed();
+  });
 
   // Pause while the app is in the background, resume when it comes back.
   document.addEventListener("visibilitychange", () => {
@@ -169,6 +200,7 @@ export function holdBackgroundMusic(hold: boolean) {
 
 export function toggleBackgroundMusic() {
   if (state.muted || !state.playing) {
+    dataAllowed = true;
     saveMuted(false);
     setState({ muted: false });
     playWhenAllowed();
@@ -177,6 +209,18 @@ export function toggleBackgroundMusic() {
     setState({ muted: true });
     fadeTo(0, 0.6, () => audio?.pause());
   }
+}
+
+/** "Music on Wi-Fi only": no music (and no download) on mobile data. */
+export function setMusicWifiOnly(on: boolean) {
+  try {
+    localStorage.setItem(WIFI_KEY, on ? "1" : "0");
+  } catch {}
+  dataAllowed = false;
+  setState({ wifiOnly: on });
+  if (waitForWifi()) {
+    if (audio && !audio.paused) fadeTo(0, 0.6, () => audio?.pause());
+  } else if (started && !state.muted) playWhenAllowed();
 }
 
 function subscribe(listener: () => void) {

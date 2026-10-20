@@ -247,8 +247,8 @@ export const TOUR_STEPS: TourStep[] = [
     emoji: "🧒",
     title: { en: "Kids Ministry", tl: "Kids Ministry" },
     body: {
-      en: "For teachers and parents: 18 Bible stories with 4 drawings each for ages 3 to 12, “Read to me”, Show mode for the class, a Sunday School lesson for each age and a printable activity sheet. Kids Ministry has its own tour too.",
-      tl: "Para sa teachers at magulang: 18 Bible stories na may tig-4 na drawing para sa edad 3 hanggang 12, “Basahin para sa akin”, Show mode para sa klase, Sunday School lesson para sa bawat edad at printable activity sheet. May sariling tour din ang Kids Ministry.",
+      en: "For teachers and parents: 24 Bible stories with 4 drawings each for ages 3 to 12, “Read to me”, Show mode for the class, a Sunday School lesson for each age, a printable activity sheet and Bible Quiz Night for the whole class. Kids Ministry has its own tour too.",
+      tl: "Para sa teachers at magulang: 24 Bible stories na may tig-4 na drawing para sa edad 3 hanggang 12, “Basahin para sa akin”, Show mode para sa klase, Sunday School lesson para sa bawat edad, printable activity sheet at Bible Quiz Night para sa buong klase. May sariling tour din ang Kids Ministry.",
     },
   },
   {

@@ -72,6 +72,24 @@ export const KIDS_QUIZ: KidsQuizItem[] = [
   k("k-034", ["What happened to the big stone at Jesus’ tomb?", "Ano ang nangyari sa malaking bato sa libingan ni Hesus?"], [["🪨➡️ It was rolled away", "🪨➡️ Naigulong ito"], ["🪨 It got bigger", "🪨 Lumaki ito"], ["🪨 It turned gold", "🪨 Naging ginto"]], v("Luke", 24, "2")),
   k("k-035", ["What did the angels say?", "Ano ang sinabi ng mga anghel?"], [["🌅 He is risen!", "🌅 Muli Siyang nabuhay!"], ["😴 He is sleeping", "😴 Natutulog Siya"], ["🏃 He ran away", "🏃 Tumakas Siya"]], v("Luke", 24, "6")),
   k("k-036", ["Is Jesus alive today?", "Buhay ba si Hesus ngayon?"], [["✅ Yes! He is alive!", "✅ Oo! Buhay Siya!"], ["❌ No", "❌ Hindi"], ["🤷 Only at Christmas", "🤷 Tuwing Pasko lang"]], v("Luke", 24, "6")),
+  // Abraham
+  k("k-037", ["What did God tell Abraham to count?", "Ano ang ipinabilang ng Diyos kay Abraham?"], [["⭐ The stars", "⭐ Ang mga bituin"], ["🐑 His sheep", "🐑 Ang kanyang mga tupa"], ["🪙 His coins", "🪙 Ang kanyang pera"]], v("Genesis", 15, "5")),
+  k("k-038", ["What was the name of Abraham and Sarah’s baby?", "Ano ang pangalan ng sanggol nina Abraham at Sara?"], [["👶 Isaac", "👶 Isaac"], ["👶 David", "👶 David"], ["👶 Moses", "👶 Moises"]], v("Genesis", 21, "3")),
+  // Baby Moses
+  k("k-039", ["Where did Moses’ mommy put him to keep him safe?", "Saan inilagay ng nanay ni Moises ang sanggol para maging ligtas?"], [["🧺 In a basket", "🧺 Sa isang basket"], ["🏰 In a castle", "🏰 Sa kastilyo"], ["🌳 In a tree", "🌳 Sa puno"]], v("Exodus", 2, "3")),
+  k("k-040", ["Who found baby Moses in the river?", "Sino ang nakakita sa sanggol na si Moises sa ilog?"], [["👸 The king’s daughter", "👸 Ang anak ng hari"], ["🐊 A crocodile", "🐊 Isang buwaya"], ["🧑‍🌾 A farmer", "🧑‍🌾 Isang magsasaka"]], v("Exodus", 2, "5")),
+  // Gideon
+  k("k-041", ["How many soldiers did Gideon have at the end?", "Ilang sundalo ang natira kay Gideon sa huli?"], [["3️⃣0️⃣0️⃣ Only 300", "3️⃣0️⃣0️⃣ 300 lang"], ["🔢 A million", "🔢 Isang milyon"], ["1️⃣ Just one", "1️⃣ Isa lang"]], v("Judges", 7, "7")),
+  k("k-042", ["What did Gideon’s soldiers carry?", "Ano ang dala ng mga sundalo ni Gideon?"], [["🎺🏺 Trumpets and jars", "🎺🏺 Trumpeta at banga"], ["🍞🐟 Bread and fish", "🍞🐟 Tinapay at isda"], ["⚽🎈 Balls and balloons", "⚽🎈 Bola at lobo"]], v("Judges", 7, "16")),
+  // Elijah
+  k("k-043", ["What came down from heaven when Elijah prayed?", "Ano ang bumaba mula sa langit nang manalangin si Elias?"], [["🔥 Fire", "🔥 Apoy"], ["❄️ Snow", "❄️ Niyebe"], ["🍬 Candy", "🍬 Kendi"]], v("1 Kings", 18, "38")),
+  k("k-044", ["What did Elijah pour on the altar?", "Ano ang ibinuhos ni Elias sa altar?"], [["💧 Water", "💧 Tubig"], ["🥛 Milk", "🥛 Gatas"], ["🍯 Honey", "🍯 Pulot"]], v("1 Kings", 18, "34")),
+  // Jesus and the children
+  k("k-045", ["What did Jesus say about the children?", "Ano ang sinabi ni Hesus tungkol sa mga bata?"], [["🤗 Let them come to Me", "🤗 Hayaan silang lumapit sa Akin"], ["🙅 Send them home", "🙅 Pauwiin sila"], ["🤫 Be quiet", "🤫 Tumahimik"]], v("Mark", 10, "14")),
+  k("k-046", ["What did Jesus do with the children?", "Ano ang ginawa ni Hesus sa mga bata?"], [["🙌 He blessed them", "🙌 Pinagpala Niya sila"], ["😠 He scolded them", "😠 Pinagalitan Niya sila"], ["🏃 He ran away", "🏃 Tumakbo Siya palayo"]], v("Mark", 10, "16")),
+  // Lazarus
+  k("k-047", ["What did Jesus do when He saw His friends crying?", "Ano ang ginawa ni Hesus nang makita Niyang umiiyak ang Kanyang mga kaibigan?"], [["😢 He cried too", "😢 Umiyak din Siya"], ["😂 He laughed", "😂 Tumawa Siya"], ["😴 He slept", "😴 Natulog Siya"]], v("John", 11, "35")),
+  k("k-048", ["What did Jesus say at Lazarus’ tomb?", "Ano ang sinabi ni Hesus sa libingan ni Lazaro?"], [["🗣️ Lazarus, come out!", "🗣️ Lazaro, lumabas ka!"], ["🌙 Good night!", "🌙 Magandang gabi!"], ["🍽️ Let’s eat!", "🍽️ Kumain na tayo!"]], v("John", 11, "43")),
 ];
 
 const tf = (id: string, statement: [string, string], answer: boolean, ref: TrueFalse["ref"]): TrueFalse => ({

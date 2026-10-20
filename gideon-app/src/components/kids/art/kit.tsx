@@ -571,3 +571,58 @@ export function Sparkles({ x, y }: { x: number; y: number }) {
     </>
   );
 }
+
+export function Tent({ x, y, s = 1, color = "#d97706" }: { x: number; y: number; s?: number; color?: string }) {
+  const line = useLine();
+  return (
+    <g transform={`translate(${x} ${y}) scale(${s})`}>
+      <path d="M-90 0 L0 -110 L90 0Z" {...paint(line, color)} />
+      <path d="M-18 0 L0 -70 L18 0Z" {...paint(line, "#78350f")} />
+      <path d="M0 -110 L0 -128" stroke={line ? "#111" : "#78350f"} strokeWidth={4} />
+    </g>
+  );
+}
+
+/** Flames: a campfire, a torch flame or fire from heaven. */
+export function Fire({ x, y, s = 1 }: { x: number; y: number; s?: number }) {
+  const line = useLine();
+  return (
+    <g transform={`translate(${x} ${y}) scale(${s})`}>
+      <path d="M-34 0 C-44 -30 -20 -44 -16 -70 C-4 -50 4 -60 0 -92 C24 -62 40 -40 34 0Z" {...paint(line, "#f97316", "#ea580c")} />
+      <path d="M-16 0 C-22 -18 -6 -26 -4 -44 C6 -30 18 -22 16 0Z" {...paint(line, "#fde047", "#facc15")} />
+    </g>
+  );
+}
+
+/** A clay jar, with a torch burning inside when `lit`. */
+export function Jar({ x, y, s = 1, lit = false }: { x: number; y: number; s?: number; lit?: boolean }) {
+  const line = useLine();
+  return (
+    <g transform={`translate(${x} ${y}) scale(${s})`}>
+      {lit && <Fire x={0} y={-40} s={0.55} />}
+      <path d="M-16 -44 H16 L14 -34 C30 -26 32 -4 22 0 H-22 C-32 -4 -30 -26 -14 -34Z" {...paint(line, "#c2410c")} />
+    </g>
+  );
+}
+
+/** A stone altar; `fire` sets it ablaze. */
+export function Altar({ x, y, s = 1, fire = false, wet = false }: { x: number; y: number; s?: number; fire?: boolean; wet?: boolean }) {
+  const line = useLine();
+  return (
+    <g transform={`translate(${x} ${y}) scale(${s})`}>
+      {wet && <ellipse cx={0} cy={4} rx={110} ry={14} {...paint(line, "#38bdf8", "#0ea5e9")} />}
+      {[0, 1, 2].map((r) =>
+        [0, 1, 2, 3].slice(0, 4 - r).map((c) => (
+          <rect key={`${r}-${c}`} x={-80 + r * 20 + c * 40} y={-30 - r * 26} width={38} height={24} rx={6} {...paint(line, "#a8a29e", "#78716c")} />
+        ))
+      )}
+      <rect x={-46} y={-96} width={92} height={14} rx={4} {...paint(line, "#92400e")} />
+      {fire && (
+        <>
+          <Fire x={-26} y={-92} s={1.1} />
+          <Fire x={22} y={-92} s={1.3} />
+        </>
+      )}
+    </g>
+  );
+}

@@ -8,6 +8,7 @@ import { EmptyState } from "@/components/shared/empty-state";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useMyChurch } from "@/lib/hooks/use-church";
+import { CourseBooksDashboard } from "@/components/church/course-books-dashboard";
 import { downloadRosterCsv, TREND_WEEKS, useChurchDashboard } from "@/lib/hooks/use-church-dashboard";
 import { LEADER_RANK } from "@/lib/church";
 import { useLanguage, useTx } from "@/lib/i18n";
@@ -165,6 +166,8 @@ export default function PastorDashboardPage() {
                 </>
               )}
             </section>
+
+            <CourseBooksDashboard churchId={my.churchId} />
 
             {/* Attendance */}
             <section className="space-y-3 rounded-2xl border border-border/70 bg-card p-4">

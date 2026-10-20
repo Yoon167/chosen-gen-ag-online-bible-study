@@ -14,6 +14,7 @@ import {
   Printer,
   Sparkles,
   Star,
+  Trophy,
   Users,
 } from "lucide-react";
 import type { TourStep } from "@/lib/tour";
@@ -77,13 +78,26 @@ export const KIDS_TOUR_STEPS: TourStep[] = [
     },
   },
   {
+    id: "kids-quiz-night",
+    chapter: "grow",
+    href: "/kids",
+    target: "kids-quiz-night",
+    icon: Trophy,
+    emoji: "🏆",
+    title: { en: "Bible Quiz Night", tl: "Bible Quiz Night" },
+    body: {
+      en: "A quiz for the whole class on one screen: 2 to 4 teams, big questions read aloud, “Show the answer”, and you tap the teams that got it right. A scoreboard and a winner at the end.",
+      tl: "Quiz para sa buong klase sa iisang screen: 2 hanggang 4 na team, malalaking tanong na binabasa nang malakas, “Ipakita ang sagot”, at pipindutin mo ang mga team na tama. May scoreboard at nanalo sa huli.",
+    },
+  },
+  {
     id: "kids-stories",
     chapter: "grow",
     href: "/kids",
     target: "kids-stories",
     icon: BookHeart,
     emoji: "📖",
-    title: { en: "18 Bible stories", tl: "18 Bible stories" },
+    title: { en: "24 Bible stories", tl: "24 Bible stories" },
     body: {
       en: "From Creation to Easter, in the Old and New Testament. Each card shows the story's drawing. Tap a story to open it. Next, let's open Creation.",
       tl: "Mula sa Paglikha hanggang sa Muling Pagkabuhay, sa Luma at Bagong Tipan. May drawing ang bawat card. Pindutin ang kuwento para buksan. Susunod, bubuksan natin ang Paglikha.",

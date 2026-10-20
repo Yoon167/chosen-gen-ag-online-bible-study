@@ -44,6 +44,8 @@ export const OFFLINE_READER_PATH = "/bible/offline-reader";
 interface OfflineState {
   bibles: Record<string, number>;
   pages?: { at: number; count: number };
+  /** Extra sections saved on their own (Kids Ministry, the course books). */
+  packs?: Record<string, { at: number; count: number }>;
 }
 
 export function offlineSupported() {
@@ -196,12 +198,13 @@ function assetUrls(text: string) {
 }
 
 /**
- * Saves the given app pages and every script, style and font they use. Old
- * pages are replaced, so this also works as "update".
+ * Saves the given app pages and every script, style and font they use, plus
+ * any extra files (pictures). Old pages are replaced, so this also works as
+ * "update".
  */
-export async function downloadPages(paths: string[], onProgress: (done: number, total: number) => void) {
+async function savePages(paths: string[], extra: string[], onProgress: (done: number, total: number) => void) {
   const cache = await caches.open(PAGES_CACHE);
-  const assets = new Set<string>();
+  const assets = new Set<string>(extra);
   let done = 0;
   // Pages plus an estimate for their shared files, so the bar moves steadily.
   const total = () => paths.length + assets.size;
@@ -219,8 +222,9 @@ export async function downloadPages(paths: string[], onProgress: (done: number, 
   await pool(queue, 6, async (url) => {
     if (seen.has(url)) return;
     seen.add(url);
-    const cached = await caches.match(url);
-    const res = cached ?? (await fetchWithRetry(url));
+    const cached = await cache.match(url);
+    // A copy from the app's own cache is kept here too: that cache is cleared when the app updates.
+    const res = cached ?? (await caches.match(url)) ?? (await fetchWithRetry(url));
     if (url.endsWith(".css")) {
       // Fonts are only named inside the stylesheets.
       const extra = assetUrls(await res.clone().text()).filter((a) => !assets.has(a));
@@ -232,8 +236,28 @@ export async function downloadPages(paths: string[], onProgress: (done: number, 
     if (!cached) await cache.put(url, res);
     onProgress(++done, total());
   });
+}
 
+export async function downloadPages(paths: string[], onProgress: (done: number, total: number) => void) {
+  await savePages(paths, [], onProgress);
   writeOfflineState((s) => ({ ...s, pages: { at: Date.now(), count: paths.length } }));
+}
+
+/** Saves one extra section (its pages and pictures) on its own. */
+export async function downloadPack(id: string, paths: string[], extra: string[], onProgress: (done: number, total: number) => void) {
+  await savePages(paths, extra, onProgress);
+  writeOfflineState((s) => ({ ...s, packs: { ...s.packs, [id]: { at: Date.now(), count: paths.length } } }));
+}
+
+/** Removes a section's pages and pictures; the shared scripts stay for the rest. */
+export async function removePack(id: string, paths: string[], extra: string[]) {
+  const cache = await caches.open(PAGES_CACHE);
+  await Promise.all([...paths, ...extra].map((p) => cache.delete(p)));
+  writeOfflineState((s) => {
+    const packs = { ...s.packs };
+    delete packs[id];
+    return { ...s, packs };
+  });
 }
 
 export async function removePages() {

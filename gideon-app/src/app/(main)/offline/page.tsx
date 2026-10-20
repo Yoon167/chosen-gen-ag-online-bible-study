@@ -1,21 +1,25 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BookOpenText, Check, CloudDownload, Compass, Loader2, Trash2, WifiOff } from "lucide-react";
+import { BookHeart, BookOpenText, Check, CloudDownload, Compass, GraduationCap, Loader2, Trash2, WifiOff, type LucideIcon } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { translationName } from "@/lib/bible/api";
 import { useBibleTranslation } from "@/lib/hooks/use-bible-translation";
 import { JOURNEY_LEVELS, LESSONS } from "@/lib/content/journey";
+import { KIDS_STORIES } from "@/lib/content/kids";
+import { COURSES } from "@/lib/content/courses";
 import {
   OFFLINE_READER_PATH,
   OFFLINE_TRANSLATIONS,
   downloadBible,
+  downloadPack,
   downloadPages,
   offlineSupported,
   readOfflineState,
   removeBible,
+  removePack,
   removePages,
   requestPersistentStorage,
   storageUsedMb,
@@ -36,6 +40,32 @@ const OFFLINE_PAGES = [
   "/profile",
   ...JOURNEY_LEVELS.map((l) => `/journey/levels/${l.level}`),
   ...LESSONS.map((l) => `/journey/lessons/${l.id}`),
+];
+
+/** Sections saved on their own, for members who teach kids or read the course books. */
+const PACKS: { id: string; icon: LucideIcon; title: [string, string]; detail: [string, string]; paths: string[]; extra: string[] }[] = [
+  {
+    id: "kids",
+    icon: BookHeart,
+    title: ["Kids Ministry", "Kids Ministry"],
+    detail: [
+      `All ${KIDS_STORIES.length} stories with their drawings, lessons, printable sheets and Quiz Night`,
+      `Lahat ng ${KIDS_STORIES.length} kuwento kasama ang mga drawing, lesson, printable sheet at Quiz Night`,
+    ],
+    paths: ["/kids", "/kids/quiz-night", ...KIDS_STORIES.flatMap((s) => [`/kids/${s.id}`, `/kids/${s.id}/print`])],
+    extra: [...KIDS_STORIES.map((s) => `/kids/${s.id}.svg`), "/brand/mark-160.webp"],
+  },
+  {
+    id: "courses",
+    icon: GraduationCap,
+    title: ["Course books", "Course books"],
+    detail: [
+      `All ${COURSES.length} books and their ${COURSES.reduce((n, c) => n + c.lessons.length, 0)} chapters`,
+      `Lahat ng ${COURSES.length} aklat at ang ${COURSES.reduce((n, c) => n + c.lessons.length, 0)} kabanata nito`,
+    ],
+    paths: ["/courses", ...COURSES.flatMap((c) => [`/courses/${c.id}`, ...c.lessons.map((l) => `/courses/${c.id}/${l.id}`)])],
+    extra: ["/brand/mark-160.webp", "/brand/logo-440.webp"],
+  },
 ];
 
 type Job = { key: string; done: number; total: number } | null;
@@ -163,6 +193,59 @@ export default function OfflinePage() {
             </p>
           )}
         </section>
+
+        {PACKS.map((pack) => {
+          const saved = state?.packs?.[pack.id];
+          const Icon = pack.icon;
+          return (
+            <section key={pack.id} className="rounded-2xl border border-border/70 bg-card p-4">
+              <div className="flex items-start gap-3">
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <Icon className="size-5" />
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="font-medium">{tx(...pack.title)}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {saved ? (
+                      <span className="text-primary">
+                        <Check className="mr-0.5 inline size-3" />
+                        {tx(`Saved ${date(saved.at)}`, `Na-save ${date(saved.at)}`)}
+                      </span>
+                    ) : (
+                      tx(...pack.detail)
+                    )}
+                  </p>
+                </div>
+              </div>
+              {job?.key === pack.id ? (
+                <JobProgress job={job} />
+              ) : (
+                <div className="mt-3 flex gap-2">
+                  <Button
+                    className="h-10 flex-1"
+                    variant={saved ? "outline" : "default"}
+                    disabled={!!job || !supported}
+                    onClick={() => run(pack.id, (p) => downloadPack(pack.id, pack.paths, pack.extra, p))}
+                  >
+                    <CloudDownload />
+                    {saved ? tx("Update", "I-update") : tx("Download", "I-download")}
+                  </Button>
+                  {saved && (
+                    <Button
+                      className="h-10"
+                      variant="ghost"
+                      disabled={!!job}
+                      aria-label={tx("Remove", "Alisin")}
+                      onClick={() => removePack(pack.id, pack.paths, pack.extra).then(refresh)}
+                    >
+                      <Trash2 />
+                    </Button>
+                  )}
+                </div>
+              )}
+            </section>
+          );
+        })}
 
         <h2 className="flex items-center gap-2 pt-1 font-heading text-lg font-semibold">
           <BookOpenText className="size-4.5" />

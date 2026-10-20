@@ -94,6 +94,21 @@ export function KidsHome() {
           </Link>
         </div>
 
+        <Link
+          href="/kids/quiz-night"
+          data-tour="kids-quiz-night"
+          className="flex items-center gap-3 rounded-2xl bg-gradient-to-r from-purple-700 to-fuchsia-600 p-3.5 text-white shadow-md"
+        >
+          <span className="text-3xl">🏆</span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-sm font-semibold">{tx("Bible Quiz Night", "Bible Quiz Night")}</span>
+            <span className="block text-xs text-white/85">
+              {tx("The whole class plays in teams on one screen, with a scoreboard.", "Sabay na naglalaro ang buong klase nang naka-team sa iisang screen, may scoreboard.")}
+            </span>
+          </span>
+          <ChevronRight className="size-5" />
+        </Link>
+
         <div className="space-y-6" data-tour="kids-stories">
           <section className="space-y-3">
             <h2 className="px-1 font-heading text-lg font-semibold">{tx("Old Testament stories", "Mga kuwento sa Lumang Tipan")}</h2>

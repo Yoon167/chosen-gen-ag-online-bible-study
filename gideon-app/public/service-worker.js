@@ -1,4 +1,4 @@
-const CACHE_NAME = "gideon-cache-v6";
+const CACHE_NAME = "gideon-cache-v7";
 // Downloads the member chose on the Offline page (see lib/offline.ts). They
 // survive app updates; only the app's own cache is replaced.
 const OFFLINE_PREFIX = "gideon-offline-";
@@ -47,6 +47,15 @@ self.addEventListener("fetch", (event) => {
           return response;
         });
       })
+    );
+    return;
+  }
+
+  // Pictures come from the network; with no signal, from a download on the
+  // Offline page (Kids Ministry drawings, logos).
+  if (event.request.destination === "image") {
+    event.respondWith(
+      fetch(event.request).catch(() => caches.match(url.pathname, MATCH).then((r) => r || Response.error()))
     );
     return;
   }
