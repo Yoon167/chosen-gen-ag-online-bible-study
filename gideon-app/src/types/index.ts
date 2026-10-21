@@ -203,4 +203,6 @@ export interface UserProfile {
   activePlanId?: string;
   /** Share first names and steps from My Oikos with the member's AG. */
   shareOikos?: boolean;
+  /** Show reading/prayer streaks and badges on the public profile (default on). */
+  showStats?: boolean;
 }

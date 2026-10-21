@@ -55,7 +55,7 @@ import { setMusicWifiOnly, useBackgroundMusic } from "@/lib/background-music";
 import { useLanguage } from "@/lib/i18n";
 
 export default function ProfilePage() {
-  const { profile, updateProfile, isLeader } = useProfile();
+  const { profile, updateProfile, isLeader, hasAccount } = useProfile();
   const { user } = useAuth();
   const myChurch = useMyChurch();
   const isNationalAdmin = user?.uid === NATIONAL_ADMIN_UID;
@@ -118,6 +118,15 @@ export default function ProfilePage() {
         </p>
         {profile?.ministry && <p className="relative mt-1.5 text-xs text-white/75">{profile.ministry}</p>}
         {profile?.bio && <p className="relative mx-auto mt-1.5 max-w-xs text-xs italic leading-relaxed text-white/80">{profile.bio}</p>}
+        {hasAccount && (
+          <Link
+            href="/profile/view"
+            className="relative mx-auto mt-3 flex w-fit items-center gap-1.5 rounded-full bg-white/15 px-3.5 py-1.5 text-xs font-semibold text-white backdrop-blur"
+          >
+            <UserRound className="size-3.5" />
+            {tl ? "Tingnan ang profile ko" : "View my profile"}
+          </Link>
+        )}
       </header>
 
       {/* Stats overlap the hero */}
@@ -166,6 +175,11 @@ export default function ProfilePage() {
           <ThemeSelect />
         </SettingRow>
         <MusicWifiRow tl={tl} />
+        {hasAccount && (
+          <SettingRow icon={Award} tone="bg-amber-500/15 text-amber-600 dark:text-amber-400" label={tl ? "Ipakita ang streak at badge sa profile ko" : "Show my streaks and badges on my profile"}>
+            <Switch checked={profile?.showStats !== false} onCheckedChange={(on) => updateProfile({ showStats: on })} />
+          </SettingRow>
+        )}
         <button onClick={() => setNotificationsOpen(true)} className="block w-full text-left">
           <SettingRow icon={Bell} tone="bg-rose-500/15 text-rose-600 dark:text-rose-400" label={tl ? "Notifications at Paalala" : "Notifications & Reminders"}>
             {chevron}

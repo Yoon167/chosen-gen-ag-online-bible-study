@@ -153,6 +153,12 @@ async function deleteEverything(user: User, onStep?: (step: string) => void) {
         const slots = await getDocs(query(collection(chain.ref, "slots"), where("uid", "==", uid)));
         await deleteRefs(slots.docs.map((s) => s.ref));
       }
+      // Their AG chat messages, shared birthday, and course reading and enrollment records.
+      const chat = await getDocs(query(collection(db, "churches", churchId, "chat"), where("uid", "==", uid)));
+      await deleteRefs(chat.docs.map((c) => c.ref));
+      await deleteRefs([doc(db, "churches", churchId, "birthdays", uid), doc(db, "churches", churchId, "courseReaders", uid)]);
+      const enrollments = await getDocs(query(collection(db, "churches", churchId, "courseEnrollments"), where("uid", "==", uid)));
+      await deleteRefs(enrollments.docs.map((e) => e.ref));
       // Their RSVPs to AG meetings.
       const meetings = await getDocs(collection(db, "churches", churchId, "meetings"));
       for (const meeting of meetings.docs) {
@@ -185,6 +191,8 @@ async function deleteEverything(user: User, onStep?: (step: string) => void) {
   onStep?.("shared");
   const testimonies = await getDocs(query(collection(db, "communityTestimonies"), where("ownerUid", "==", uid)));
   await deleteRefs(testimonies.docs.map((t) => t.ref));
+  // The public profile others see.
+  await deleteRefs([doc(db, "profiles", uid)]);
   try {
     const application = await getDoc(doc(db, "churchApplications", uid));
     if (application.exists() && application.data().status !== "approved") await deleteRefs([application.ref]);

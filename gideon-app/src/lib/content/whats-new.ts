@@ -18,6 +18,25 @@ export interface Release {
 
 export const RELEASES: Release[] = [
   {
+    id: "2026-10-22-profiles",
+    date: "2026-10-22",
+    title: t("Member profiles", "Profile ng bawat member"),
+    items: [
+      t(
+        "Tap anyone's name or photo, in AG Chat, the Prayer Wall, the member list or birthdays, to see their profile: name, photo, bio, AG and role, streaks and badges, and the testimonies they shared.",
+        "Pindutin ang pangalan o larawan ng kahit sino, sa AG Chat, Prayer Wall, listahan ng member o birthdays, para makita ang profile niya: pangalan, larawan, bio, AG at role, streak at badge, at mga patotoong ibinahagi niya."
+      ),
+      t(
+        "AG leaders have a gold check and the owner a blue one, and nobody can fake them. Your mobile number and private notes are never shown.",
+        "May gintong check ang mga AG leader at asul ang owner, at walang makapagpapanggap nito. Hindi kailanman ipinapakita ang mobile number at mga pribadong tala mo."
+      ),
+      t(
+        "See yours in Profile → View my profile. To hide your streaks and badges, turn off \"Show my streaks and badges on my profile\".",
+        "Tingnan ang sa iyo sa Profile → Tingnan ang profile ko. Para itago ang streak at badge, i-off ang \"Ipakita ang streak at badge sa profile ko\"."
+      ),
+    ],
+  },
+  {
     id: "2026-10-21-ag-chat",
     date: "2026-10-21",
     title: t("AG Chat, your week with God, and a photo for every devotion", "AG Chat, ang linggo mo kasama ang Diyos, at larawan sa bawat devotion"),

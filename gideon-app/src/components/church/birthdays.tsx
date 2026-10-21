@@ -9,6 +9,7 @@ import { useMyChurch } from "@/lib/hooks/use-church";
 import { monthDay, saveBirthday, useAgBirthdays } from "@/lib/hooks/use-birthdays";
 import { celebrate } from "@/lib/celebrate";
 import { cn } from "@/lib/utils";
+import { PersonName } from "@/components/profile/person";
 
 const MONTHS = {
   en: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
@@ -53,7 +54,18 @@ export function BirthdayCard() {
           <p className="font-heading text-xl font-semibold leading-snug">
             {mine
               ? tx("Happy birthday! 🎉 Your AG is celebrating you today.", "Maligayang kaarawan! 🎉 Ipinagdiriwang ka ng inyong AG ngayon.")
-              : tx(`Today: ${now.map((b) => b.name).join(", ")} 🎂`, `Ngayon: ${now.map((b) => b.name).join(", ")} 🎂`)}
+              : (
+                <>
+                  {tx("Today: ", "Ngayon: ")}
+                  {now.map((b, i) => (
+                    <span key={b.uid}>
+                      {i > 0 && ", "}
+                      <PersonName uid={b.uid} name={b.name} />
+                    </span>
+                  ))}{" "}
+                  🎂
+                </>
+              )}
           </p>
           {!mine && (
             <p className="mt-1 text-sm text-white/85">
@@ -66,7 +78,7 @@ export function BirthdayCard() {
         <ul className="mt-3 space-y-1 text-sm">
           {next.map((b) => (
             <li key={b.uid} className="flex items-center justify-between gap-2 rounded-xl bg-white/15 px-3 py-1.5">
-              <span className="truncate">{b.name}</span>
+              <PersonName uid={b.uid} name={b.name} className="truncate" />
               <span className="shrink-0 text-xs text-white/85">{formatMonthDay(b.md, lang)}</span>
             </li>
           ))}

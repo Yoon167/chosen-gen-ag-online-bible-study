@@ -827,6 +827,40 @@ service cloud.firestore {
       allow read: if request.auth != null && resource.data.uid == request.auth.uid;
     }
 
+    // Public profiles: what other members see when they tap a name or photo.
+    // Readable by signed-in accounts (not guest sessions, except their own).
+    // Only the member writes theirs, and the AG, role and owner badge must be
+    // true: the AG must be one they are active in, with that rank and name.
+    match /profiles/{uid} {
+      allow read: if request.auth != null && (isRealAccount() || request.auth.uid == uid);
+      allow create, update: if isRealAccount() && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['uid', 'name', 'photoUrl', 'bio', 'ministry', 'agId', 'agName', 'rank',
+          'owner', 'showStats', 'stats', 'since', 'updatedAt'])
+        && request.resource.data.uid == uid
+        && validText(request.resource.data.name, 1, 100)
+        && validText(request.resource.data.bio, 0, 300)
+        && validText(request.resource.data.ministry, 0, 100)
+        && validText(request.resource.data.photoUrl, 0, 300000)
+        && (request.resource.data.photoUrl == ''
+          || request.resource.data.photoUrl.matches('^(data:image/(jpeg|png|webp);base64,|https://).*'))
+        && request.resource.data.owner == isAdmin()
+        && ((request.resource.data.agId == null
+            && request.resource.data.rank == 0
+            && request.resource.data.agName == '')
+          || (request.resource.data.agId is string
+            && exists(memberPath(request.resource.data.agId, uid))
+            && get(memberPath(request.resource.data.agId, uid)).data.status == 'active'
+            && get(memberPath(request.resource.data.agId, uid)).data.rank == request.resource.data.rank
+            && request.resource.data.agName
+              == get(/databases/$(database)/documents/churches/$(request.resource.data.agId)).data.name))
+        && request.resource.data.showStats is bool
+        && request.resource.data.stats is map
+        && request.resource.data.stats.size() <= 6
+        && request.resource.data.since is int
+        && request.resource.data.updatedAt is int;
+      allow delete: if isAdmin() || (request.auth != null && request.auth.uid == uid);
+    }
+
     // Testimonies a member chose to share ("All members"). Any signed-in
     // member can read them; only the owner can publish, edit or unshare.
     match /communityTestimonies/{docId} {

@@ -21,6 +21,7 @@ import {
 } from "@/lib/hooks/use-church-prayers";
 import { LEADER_RANK } from "@/lib/church";
 import { useLanguage, useTx } from "@/lib/i18n";
+import { PersonAvatar, PersonName } from "@/components/profile/person";
 
 type Filter = "all" | "urgent" | "answered";
 
@@ -319,14 +320,18 @@ function PrayerCard({
         )}
       />
       <div className="flex items-center gap-2.5">
-        <span
-          aria-hidden
-          className="flex size-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-rose-500 to-[#1E3A5F] text-sm font-semibold text-white"
-        >
-          {p.anonymous ? "🙏" : name.trim().charAt(0).toUpperCase()}
-        </span>
+        {!p.anonymous && p.authorUid ? (
+          <PersonAvatar uid={p.authorUid} name={name} className="size-9" />
+        ) : (
+          <span
+            aria-hidden
+            className="flex size-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-rose-500 to-[#1E3A5F] text-sm font-semibold text-white"
+          >
+            {p.anonymous ? "🙏" : name.trim().charAt(0).toUpperCase()}
+          </span>
+        )}
         <div className="min-w-0 flex-1">
-          <p className="truncate text-sm font-semibold">{name}</p>
+          <p className="truncate text-sm font-semibold">{!p.anonymous && p.authorUid ? <PersonName uid={p.authorUid} name={name} /> : name}</p>
           <p className="text-[0.6875rem] text-muted-foreground">
             {new Date(p.createdAt).toLocaleDateString(lang === "tl" ? "fil-PH" : "en-PH", { month: "short", day: "numeric" })}
           </p>

@@ -31,6 +31,7 @@ import {
 const ADMIN_RANK = 7;
 import { useLanguage, useTx } from "@/lib/i18n";
 import { QuietMembers } from "@/components/church/quiet-members";
+import { PersonAvatar, PersonName } from "@/components/profile/person";
 
 const selectClass =
   "h-9 w-full rounded-lg border border-border bg-background px-2 text-xs disabled:opacity-60";
@@ -253,10 +254,10 @@ function MemberRow({
   return (
     <div className="space-y-3 rounded-2xl border border-border/70 bg-card p-3">
       <div className="flex items-center gap-3">
-        <MemberAvatar name={m.displayName} />
+        <PersonAvatar uid={m.uid} name={m.displayName} className="size-10" />
         <div className="min-w-0 flex-1">
           <p className="truncate text-sm font-medium">
-            {m.displayName}
+            <PersonName uid={m.uid} name={m.displayName} />
             {isSelf && <span className="text-muted-foreground"> ({tx("you", "ikaw")})</span>}
           </p>
           <p className="truncate text-xs text-muted-foreground">

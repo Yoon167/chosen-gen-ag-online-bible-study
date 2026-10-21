@@ -7,6 +7,7 @@ import { TourAutostart, TourProvider } from "@/components/tour/tour-provider";
 import { LiveBanner } from "@/components/teaching/live-follow";
 import { PushRefresher } from "@/components/profile/push-settings";
 import { ActivityPing } from "@/components/activity-ping";
+import { PublicProfileSync } from "@/components/profile/person";
 
 export default function MainLayout({ children }: LayoutProps<"/">) {
   return (
@@ -25,6 +26,7 @@ export default function MainLayout({ children }: LayoutProps<"/">) {
       <TourAutostart />
       <PushRefresher />
       <ActivityPing />
+      <PublicProfileSync />
     </WelcomeGate>
     </TourProvider>
     </LanguageProvider>

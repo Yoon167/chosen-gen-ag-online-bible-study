@@ -10,6 +10,7 @@ import { useMyChurch } from "@/lib/hooks/use-church";
 import { CHAT_MAX_LENGTH, deleteChat, markChatRead, sendChat, useChat, useChatReadAt, useLatestChat, type ChatMessage } from "@/lib/hooks/use-chat";
 import { useLanguage, useTx } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+import { PersonAvatar, PersonName } from "@/components/profile/person";
 
 /** The AG's group chat: everyone in this AG, live. Leaders can remove any message. */
 export function AgChat() {
@@ -112,11 +113,19 @@ export function AgChat() {
                 {newDay && (
                   <p className="py-2 text-center text-[0.6875rem] font-semibold text-muted-foreground">{day(m.createdAt)}</p>
                 )}
-                <div className={cn("flex", mine ? "justify-end" : "justify-start", !sameAuthor && "pt-1.5")}>
-                  <div className="relative max-w-[80%]">
+                <div className={cn("flex items-end gap-2", mine ? "justify-end" : "justify-start", !sameAuthor && "pt-1.5")}>
+                  {/* Others' photo beside their last message in a row; tap it for their profile */}
+                  {!mine && (
+                    <span className="w-8 shrink-0">
+                      {chat.items[i + 1]?.uid !== m.uid || chat.items[i + 1].createdAt - m.createdAt >= 5 * 60 * 1000 ? (
+                        <PersonAvatar uid={m.uid} name={m.name} />
+                      ) : null}
+                    </span>
+                  )}
+                  <div className="relative max-w-[78%]">
                     {!mine && !sameAuthor && (
                       <p className="mb-0.5 flex items-center gap-1 px-1 text-[0.6875rem] font-semibold text-muted-foreground">
-                        {m.name}
+                        <PersonName uid={m.uid} name={m.name} />
                         {m.leader && <span className="rounded-full bg-primary/15 px-1.5 text-[0.5625rem] text-primary">{tx("Leader", "Leader")}</span>}
                       </p>
                     )}
