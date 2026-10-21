@@ -397,13 +397,50 @@ const DEVOTION_PHOTOS: ("ai" | string)[] = [
   "aa-water", // The God Who Sees Me
 ];
 
-/** For the devotions after the first 30: Anointed Academy's photos in turn. */
-const MORE_PHOTOS = ["aa-road", "aa-golden", "aa-lake", "aa-meadow", "aa-mountain", "aa-forest-river", "aa-cross", "aa-rain", "aa-table", "aa-arch", "aa-water", "aa-bread-basket"];
+/**
+ * For the devotions after the first 30 (in order): the Anointed Academy photo
+ * that fits each one's topic (cross for grace, water for peace, mountain for
+ * courage, table for family...). Chosen from each title and lesson.
+ */
+const MORE_PHOTOS = `
+  table mountain table cross meadow meadow cross road cross table table cross
+  cross water meadow water mountain arch meadow arch golden cross table water
+  bread-basket golden road mountain golden golden road bread-basket forest-river bread-basket forest-river arch
+  forest-river forest-river bread-basket water golden lake mountain lake golden forest-river golden golden
+  bread-basket golden bread-basket meadow mountain forest-river bread-basket golden road meadow bread-basket road
+  cross road arch forest-river bread-basket lake lake mountain mountain mountain rain mountain
+  lake mountain lake lake lake lake golden forest-river forest-river road lake lake
+  golden golden golden golden golden golden arch golden golden arch golden golden
+  golden golden golden bread-basket bread-basket lake table water meadow lake meadow lake
+  arch rain golden rain mountain forest-river cross mountain water road cross forest-river
+  table road road meadow cross cross water rain cross cross cross meadow
+  road forest-river cross water mountain forest-river cross road bread-basket bread-basket bread-basket water
+  bread-basket bread-basket bread-basket bread-basket bread-basket golden bread-basket road bread-basket lake arch bread-basket
+  bread-basket bread-basket bread-basket bread-basket table bread-basket bread-basket lake bread-basket bread-basket bread-basket bread-basket
+  table table table table table table table table bread-basket table cross cross
+  cross lake table forest-river table table forest-river table road table table golden
+  table table table road golden bread-basket bread-basket golden table bread-basket golden table
+  cross cross lake bread-basket lake road water cross arch forest-river golden table
+  road cross road arch arch water forest-river cross forest-river forest-river water bread-basket
+  forest-river forest-river bread-basket bread-basket arch golden arch cross arch golden cross bread-basket
+  golden bread-basket golden bread-basket arch arch arch arch cross water rain bread-basket
+  arch cross rain rain rain forest-river golden rain road arch rain rain
+  cross arch lake road meadow cross rain lake rain rain cross rain
+  rain cross forest-river mountain forest-river forest-river forest-river water table meadow meadow forest-river
+  lake water forest-river bread-basket bread-basket forest-river bread-basket table road mountain mountain bread-basket
+  mountain mountain mountain mountain mountain forest-river golden golden golden arch lake lake
+  road lake arch rain arch forest-river meadow bread-basket road golden meadow bread-basket
+  bread-basket table cross meadow road lake water lake road road arch water
+  table
+`
+  .trim()
+  .split(/\s+/)
+  .map((p) => `aa-${p}`);
 
 /** The photo chosen for this devotion's topic (by its place in the list). */
 export function devotionPhotoTheme(index: number, name: { en: string; tl: string }): VerseImageTheme | undefined {
   if (index < 0) return undefined;
-  const pick = DEVOTION_PHOTOS[index] ?? MORE_PHOTOS[index % MORE_PHOTOS.length];
+  const pick = DEVOTION_PHOTOS[index] ?? MORE_PHOTOS[index - DEVOTION_PHOTOS.length] ?? MORE_PHOTOS[index % MORE_PHOTOS.length];
   const file = pick === "ai" ? `/devotion-bg/d${index + 1}.webp` : `/verse-bg/${pick}.webp`;
   const thumb = pick === "ai" ? `/devotion-bg/thumb/d${index + 1}.webp` : `/verse-bg/thumb/${pick}.webp`;
   return {

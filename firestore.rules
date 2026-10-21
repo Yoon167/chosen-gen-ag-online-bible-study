@@ -153,6 +153,29 @@ service cloud.firestore {
         && validText(d.prayerRequest, 0, 1000);
     }
 
+    // An optional text field: missing, empty (null) or a string up to `max`.
+    function optText(d, key, max) {
+      return !(key in d) || d[key] == null || validText(d[key], 0, max);
+    }
+
+    // A copy of a member's testimony shared with their AG or everyone.
+    function validSharedTestimony(docId) {
+      let d = request.resource.data;
+      return request.auth != null
+        && d.ownerUid == request.auth.uid
+        && docId.matches(request.auth.uid + '_.*')
+        && d.keys().size() <= 20
+        && optText(d, 'title', 200)
+        && optText(d, 'beforeChrist', 6000)
+        && optText(d, 'transformation', 6000)
+        && optText(d, 'lessonsLearned', 6000)
+        && optText(d, 'godsFaithfulness', 6000)
+        && optText(d, 'scriptureReference', 200)
+        && optText(d, 'photoUrl', 2000)
+        && optText(d, 'authorName', 100)
+        && optText(d, 'authorPhotoUrl', 300000);
+    }
+
     function changedOnly(keys) {
       return request.resource.data.diff(resource.data).affectedKeys().hasOnly(keys);
     }
@@ -206,6 +229,8 @@ service cloud.firestore {
             && getAfter(/databases/$(database)/documents/churches/$(churchId)).data.createdBy == uid
             && request.resource.data.keys().hasOnly(['uid', 'displayName', 'role', 'rank', 'status', 'joinedAt'])
             && request.resource.data.uid == uid
+            && validText(request.resource.data.displayName, 1, 100)
+            && request.resource.data.joinedAt is int
             && request.resource.data.role == 'senior_pastor'
             && request.resource.data.rank == 6
             && request.resource.data.status == 'active')
@@ -213,6 +238,8 @@ service cloud.firestore {
             && get(/databases/$(database)/documents/churches/$(churchId)).data.status == 'active'
             && request.resource.data.keys().hasOnly(['uid', 'displayName', 'role', 'rank', 'status', 'joinedAt'])
             && request.resource.data.uid == uid
+            && validText(request.resource.data.displayName, 1, 100)
+            && request.resource.data.joinedAt is int
             && request.resource.data.role == 'member'
             && request.resource.data.rank == 1
             && request.resource.data.status == 'pending');
@@ -222,9 +249,12 @@ service cloud.firestore {
           // (only while sharing) a summary of their journey progress.
           || (request.auth != null && request.auth.uid == uid
             && changedOnly(['displayName', 'shareProgress', 'progress', 'phone', 'lastActiveAt'])
+            && validText(request.resource.data.get('displayName', ''), 0, 100)
+            && (!request.resource.data.keys().hasAny(['shareProgress']) || request.resource.data.shareProgress is bool)
             && (!request.resource.data.keys().hasAny(['lastActiveAt']) || request.resource.data.lastActiveAt is int)
             && (!request.resource.data.keys().hasAny(['progress'])
-              || (request.resource.data.shareProgress == true && request.resource.data.progress is map))
+              || (request.resource.data.shareProgress == true && request.resource.data.progress is map
+                && request.resource.data.progress.size() <= 60))
             // A mobile number the member chose to share with their leaders.
             && (!request.resource.data.keys().hasAny(['phone']) || validText(request.resource.data.phone, 7, 20)))
           // A member's own mentor confirms journey checkpoints.
@@ -309,9 +339,8 @@ service cloud.firestore {
       // testimony). Doc id is "{ownerUid}_{testimonyId}".
       match /testimonies/{docId} {
         allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);
-        allow create, update: if request.auth != null && isActiveMember(churchId, request.auth.uid)
-          && request.resource.data.ownerUid == request.auth.uid
-          && docId.matches(request.auth.uid + '_.*');
+        allow create, update: if isActiveMember(churchId, request.auth.uid)
+          && validSharedTestimony(docId);
         // The owner can always take it down (even after leaving); leaders can remove it.
         allow delete: if (request.auth != null && docId.matches(request.auth.uid + '_.*'))
           || rankAtLeast(churchId, 3);
@@ -410,6 +439,7 @@ service cloud.firestore {
           && request.resource.data.type in ['bible_study', 'prayer', 'discipleship', 'leadership', 'service', 'other']
           && request.resource.data.platform in ['Google Meet', 'Teams', 'Zoom', 'In person']
           && validText(request.resource.data.link, 0, 500)
+          && (request.resource.data.link == '' || request.resource.data.link.matches('https://.+'))
           && validText(request.resource.data.location, 0, 200)
           && request.resource.data.startsAt is int
           && request.resource.data.durationMin is int
@@ -427,6 +457,7 @@ service cloud.firestore {
             && request.resource.data.uid == request.auth.uid
             && attendanceId == request.resource.data.dateKey + '_' + request.auth.uid
             && request.resource.data.dateKey.matches('[0-9]{4}-[0-9]{2}-[0-9]{2}')
+            && request.resource.data.at is int
             && validText(request.resource.data.name, 1, 100);
           allow delete: if rankAtLeast(churchId, 3)
             || (request.auth != null && attendanceId.matches('[0-9-]+_' + request.auth.uid));
@@ -564,6 +595,27 @@ service cloud.firestore {
           && request.resource.data.unlockedBy == request.auth.uid
           && request.resource.data.unlockedAt is int;
         allow delete: if isAdmin() || rankAtLeast(churchId, 3);
+      }
+
+      // The AG's group chat. Active members read and post as themselves
+      // (the leader flag must be true only for leaders); a message is never
+      // edited. Its author or any leader can remove it.
+      match /chat/{msgId} {
+        allow read: if isAdmin() || (request.auth != null && isActiveMember(churchId, request.auth.uid));
+        allow create: if request.auth != null
+          && isActiveMember(churchId, request.auth.uid)
+          && request.resource.data.keys().hasOnly(['uid', 'name', 'text', 'leader', 'createdAt'])
+          && request.resource.data.uid == request.auth.uid
+          && validText(request.resource.data.name, 1, 100)
+          && validText(request.resource.data.text, 1, 1000)
+          && request.resource.data.leader == rankAtLeast(churchId, 3)
+          && request.resource.data.createdAt is int
+          && request.resource.data.createdAt > request.time.toMillis() - 300000
+          && request.resource.data.createdAt < request.time.toMillis() + 300000;
+        allow update: if false;
+        allow delete: if isAdmin()
+          || (request.auth != null && resource.data.uid == request.auth.uid)
+          || rankAtLeast(churchId, 3);
       }
 
       // Birthdays a member chose to share with their AG: month and day only
@@ -779,9 +831,7 @@ service cloud.firestore {
     // member can read them; only the owner can publish, edit or unshare.
     match /communityTestimonies/{docId} {
       allow read: if request.auth != null;
-      allow create, update: if request.auth != null
-        && request.resource.data.ownerUid == request.auth.uid
-        && docId.matches(request.auth.uid + '_.*');
+      allow create, update: if validSharedTestimony(docId);
       allow delete: if request.auth != null
         && docId.matches(request.auth.uid + '_.*');
     }

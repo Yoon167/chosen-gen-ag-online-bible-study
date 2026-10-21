@@ -28,8 +28,10 @@ const KINDS: { id: PushPref; label: Text; detail: Text }[] = [
   { id: "verse", label: { en: "Daily Bible verse", tl: "Araw-araw na talata" }, detail: { en: "At the time you choose", tl: "Sa oras na pipiliin mo" } },
   { id: "live", label: { en: "Live Bible study", tl: "Live Bible study" }, detail: { en: "When your AG goes live", tl: "Kapag nag-live ang AG mo" } },
   { id: "prayer", label: { en: "Prayer wall and prayer chains", tl: "Prayer wall at prayer chain" }, detail: { en: "New requests, your prayer hour, who prayed for you", tl: "Bagong request, oras mo sa chain, sino ang nanalangin para sa iyo" } },
+  { id: "chat", label: { en: "AG chat", tl: "AG chat" }, detail: { en: "New messages in your AG's chat (at most one every few minutes)", tl: "Bagong mensahe sa chat ng AG mo (hindi hihigit sa isa kada ilang minuto)" } },
   { id: "meetings", label: { en: "Meeting reminders", tl: "Paalala sa meeting" }, detail: { en: "30 minutes before", tl: "30 minuto bago magsimula" } },
   { id: "checkin", label: { en: "Check-ins and follow-up", tl: "Check-in at follow-up" }, detail: { en: "Your partner's check-in, and a Sunday nudge", tl: "Check-in ng partner mo, at paalala tuwing Linggo" } },
+  { id: "summary", label: { en: "Your week with God", tl: "Ang linggo mo kasama ang Diyos" }, detail: { en: "A short summary on Sunday evening", tl: "Maikling buod tuwing Linggo ng gabi" } },
   { id: "updates", label: { en: "Anointed Academy app updates", tl: "Updates ng Anointed Academy app" }, detail: { en: "New features and improvements", tl: "Mga bagong feature at pagpapabuti" } },
   { id: "ag", label: { en: "AG news", tl: "Balita ng AG" }, detail: { en: "Announcements, join requests, approvals", tl: "Anunsyo, gustong sumali, pag-apruba" } },
 ];

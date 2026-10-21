@@ -10,10 +10,10 @@ import { app, db } from "@/lib/firebase";
  * reminder times (as UTC quarter-hour slots) and which kinds it wants; the
  * Cloud Functions in /functions read these to send. Must match functions/src/push.ts.
  */
-export type PushPref = "verse" | "live" | "prayer" | "ag" | "meetings" | "checkin" | "updates";
+export type PushPref = "verse" | "live" | "prayer" | "ag" | "chat" | "meetings" | "checkin" | "summary" | "updates";
 export type PushPrefs = Record<PushPref, boolean>;
 
-export const DEFAULT_PREFS: PushPrefs = { verse: true, live: true, prayer: true, ag: true, meetings: true, checkin: true, updates: true };
+export const DEFAULT_PREFS: PushPrefs = { verse: true, live: true, prayer: true, ag: true, chat: true, meetings: true, checkin: true, summary: true, updates: true };
 
 export interface PushSettings {
   prefs: PushPrefs;

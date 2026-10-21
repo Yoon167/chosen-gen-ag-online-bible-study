@@ -18,6 +18,29 @@ export interface Release {
 
 export const RELEASES: Release[] = [
   {
+    id: "2026-10-21-ag-chat",
+    date: "2026-10-21",
+    title: t("AG Chat, your week with God, and a photo for every devotion", "AG Chat, ang linggo mo kasama ang Diyos, at larawan sa bawat devotion"),
+    items: [
+      t(
+        "AG Chat: talk with everyone in your AG in My AG → AG Chat. Only your AG can see it, and leaders can remove messages. You get a notification for new messages (at most one every few minutes), which you can turn off in Profile → Notifications.",
+        "AG Chat: makipag-usap sa lahat ng nasa AG mo sa My AG → AG Chat. Ang AG mo lang ang nakakakita nito, at puwedeng mag-alis ng mensahe ang mga leader. May notification para sa bagong mensahe (hindi hihigit sa isa kada ilang minuto), na puwedeng i-off sa Profile → Notifications."
+      ),
+      t(
+        "Your week with God: on Sunday evening, a short notification of your week: devotions, chapters read, time in prayer and lessons. Turn it off anytime in Profile → Notifications.",
+        "Ang linggo mo kasama ang Diyos: tuwing Linggo ng gabi, maikling notification ng linggo mo: debosyon, kabanatang nabasa, oras sa panalangin at mga aralin. Puwedeng i-off anumang oras sa Profile → Notifications."
+      ),
+      t(
+        "Sharing a devotion as an image now uses a photo that fits its topic: the cross for grace, water for peace, mountains for courage, the table for family, and more.",
+        "Kapag ini-share ang devotion bilang larawan, angkop na sa paksa ang background: krus para sa biyaya, tubig para sa kapayapaan, bundok para sa tapang, hapag para sa pamilya, at iba pa."
+      ),
+      t(
+        "Safer sharing: shared testimonies, names and meeting links are now checked more strictly to keep out spam and harmful links.",
+        "Mas ligtas na pagbabahagi: mas mahigpit nang sinusuri ang mga shared testimony, pangalan at meeting link para maiwasan ang spam at mapanganib na link."
+      ),
+    ],
+  },
+  {
     id: "2026-10-20-quiz-night",
     date: "2026-10-20",
     title: t("Quiz Night, 6 new kids stories, course books for leaders and more offline", "Quiz Night, 6 bagong kids story, course books para sa leaders at mas maraming offline"),

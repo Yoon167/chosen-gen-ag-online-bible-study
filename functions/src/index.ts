@@ -53,6 +53,39 @@ export const onLiveStarted = onDocumentWritten("churches/{churchId}/live/current
   });
 });
 
+// ---------- AG chat ----------
+
+/** Pushes for a busy chat: at most one per AG every few minutes. */
+const CHAT_PUSH_GAP = 3 * 60 * 1000;
+
+/**
+ * A new chat message: everyone else in the AG gets a push (no inbox entry;
+ * the chat is its own list). One tag per AG, so a newer message replaces the
+ * older notification, and a busy chat sends at most one push every few minutes.
+ */
+export const onChatMessage = onDocumentCreated("churches/{churchId}/chat/{msgId}", async (event) => {
+  const m = event.data?.data();
+  const { churchId } = event.params;
+  if (!m?.uid) return;
+  const gate = db().doc(`churches/${churchId}/chatMeta/push`);
+  const due = await db().runTransaction(async (tx) => {
+    const last = (await tx.get(gate)).data()?.at ?? 0;
+    if (Date.now() - last < CHAT_PUSH_GAP) return false;
+    tx.set(gate, { at: Date.now() });
+    return true;
+  });
+  if (!due) return;
+  const [members, church] = await Promise.all([activeMembers(churchId, [m.uid]), db().doc(`churches/${churchId}`).get()]);
+  const ag = clip(church.data()?.name ?? "AG", 40);
+  const devices = await devicesOf(members.map((x) => x.uid), "chat");
+  await sendTo(devices, {
+    title: { en: `💬 ${ag}`, tl: `💬 ${ag}` },
+    body: { en: `${clip(m.name, 40)}: ${clip(m.text, 140)}`, tl: `${clip(m.name, 40)}: ${clip(m.text, 140)}` },
+    url: "/church/chat",
+    tag: `chat-${churchId}`,
+  });
+});
+
 // ---------- Prayer wall and prayer chains ----------
 
 export const onPrayerPosted = onDocumentCreated("churches/{churchId}/prayers/{prayerId}", async (event) => {
@@ -257,7 +290,7 @@ export const every15Minutes = onSchedule(
   { schedule: "every 15 minutes", timeZone: "Etc/UTC", timeoutSeconds: 300, region: "asia-southeast1" },
   async () => {
     const at = runStart(Date.now());
-    const jobs = await Promise.allSettled([dailyVerse(at), meetingReminders(at), chainHours(at), checkinFollowUp(at), releaseNotice(), morningCare(at), birthdayGreetings(at)]);
+    const jobs = await Promise.allSettled([dailyVerse(at), meetingReminders(at), chainHours(at), checkinFollowUp(at), releaseNotice(), morningCare(at), birthdayGreetings(at), weeklySummary(at)]);
     jobs.forEach((j, i) => j.status === "rejected" && logger.error(`job ${i} failed`, j.reason));
   }
 );
@@ -407,6 +440,58 @@ async function checkinFollowUp(at: number) {
     url: "/church/checkin",
     tag: "weekly-checkin",
   });
+}
+
+/**
+ * "Your week with God", an hour after each member's Sunday check-in nudge:
+ * what they did in the last seven days, from their own records (the same
+ * counts as the summary card on Home). Nothing is sent for an empty week.
+ */
+async function weeklySummary(at: number) {
+  const devices = (await devicesInSlot("weeklySlot", weekSlot(at - HOUR))).filter((d) => d.token && wants(d, "summary"));
+  const byUser = new Map<string, Device[]>();
+  for (const d of devices) byUser.set(d.uid, [...(byUser.get(d.uid) ?? []), d]);
+  const since = at - 7 * DAY_MS;
+  for (const [uid, list] of byUser) {
+    const user = db().doc(`users/${uid}`);
+    const sinceKey = localParts(since, list[0].tz).date;
+    const count = (name: string, field: string, from: number | string) =>
+      user.collection(name).where(field, ">=", from).get().then((s) => s.docs.map((d) => d.data()));
+    const [chapters, devotions, sessions, prayers, journey] = await Promise.all([
+      count("bibleHistory", "visitedAt", since),
+      count("devotionLog", "date", sinceKey),
+      count("prayerSessions", "startedAt", since),
+      count("prayers", "createdAt", since),
+      user.collection("journeyProgress").get(),
+    ]);
+    const lessons = journey.docs.reduce((n, d) => {
+      const level = d.data() as { lessons?: Record<string, { completedAt?: number }> };
+      return n + Object.values(level.lessons ?? {}).filter((l) => (l.completedAt ?? 0) >= since).length;
+    }, 0);
+    const week = {
+      devotions: devotions.filter((x) => x.completed).length,
+      chapters: chapters.length,
+      minutes: Math.round(sessions.reduce((m, x) => m + (Number(x.minutes) || 0), 0)),
+      prayers: prayers.length,
+      lessons,
+    };
+    const parts: { en: string; tl: string }[] = [];
+    if (week.devotions) parts.push({ en: `${week.devotions} devotion${week.devotions > 1 ? "s" : ""}`, tl: `${week.devotions} debosyon` });
+    if (week.chapters) parts.push({ en: `${week.chapters} chapter${week.chapters > 1 ? "s" : ""} read`, tl: `${week.chapters} kabanatang nabasa` });
+    if (week.minutes) parts.push({ en: `${week.minutes} min in prayer`, tl: `${week.minutes} minuto sa panalangin` });
+    else if (week.prayers) parts.push({ en: `${week.prayers} prayer${week.prayers > 1 ? "s" : ""} written`, tl: `${week.prayers} panalanging isinulat` });
+    if (week.lessons) parts.push({ en: `${week.lessons} lesson${week.lessons > 1 ? "s" : ""}`, tl: `${week.lessons} aralin` });
+    if (!parts.length) continue;
+    await sendTo(list, {
+      title: { en: "🌱 Your week with God", tl: "🌱 Ang linggo mo kasama ang Diyos" },
+      body: {
+        en: `This week: ${parts.map((p) => p.en).join(" · ")}. Well done! Keep going.`,
+        tl: `Ngayong linggo: ${parts.map((p) => p.tl).join(" · ")}. Magaling! Ituloy mo.`,
+      },
+      url: "/",
+      tag: "weekly-summary",
+    });
+  }
 }
 
 /** A new app release: one push to every device that wants updates, exactly once. */

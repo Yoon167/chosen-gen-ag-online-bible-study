@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, HandHeart, NotebookPen, Sparkles, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -15,6 +15,10 @@ const ACTIONS = [
 export function QuickAddFab() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
+
+  // The chat has its own send button where this would sit.
+  if (pathname.startsWith("/church/chat")) return null;
 
   return (
     <>
