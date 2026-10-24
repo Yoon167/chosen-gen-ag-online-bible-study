@@ -121,8 +121,14 @@ export const narrate = onCall({ region: "me-central1", memory: "256MiB", timeout
 
   const ssml = buildSsml(text, lang, voice);
   const hash = createHash("sha256").update(`${STYLE_VERSION}|${lang}|${voice}|${ssml}`).digest("hex");
+  // Clips that fit in a document are kept in Firestore (ttsCache, server
+  // only); longer ones in Cloud Storage, when the project has a bucket.
+  const cacheDoc = getFirestore().doc(`ttsCache/${hash}`);
   const file = getStorage().bucket().file(`tts/${STYLE_VERSION}/${lang}-${voice}/${hash}.mp3`);
 
+  const doc = await cacheDoc.get();
+  const bytes = doc.get("audio") as Uint8Array | undefined;
+  if (bytes) return { audio: Buffer.from(bytes).toString("base64"), cached: true };
   try {
     const [cached] = await file.download();
     return { audio: cached.toString("base64"), cached: true };
@@ -132,8 +138,10 @@ export const narrate = onCall({ region: "me-central1", memory: "256MiB", timeout
 
   await reserve(uid, ssml.length);
   const audio = await synthesize(ssml, lang, voice);
-  await file
-    .save(audio, { contentType: "audio/mpeg", resumable: false, metadata: { cacheControl: "public, max-age=31536000" } })
-    .catch((e) => logger.warn("couldn't cache clip", e));
+  const save =
+    audio.length < 900_000
+      ? cacheDoc.set({ audio, lang, voice, chars: ssml.length, createdAt: Date.now() })
+      : file.save(audio, { contentType: "audio/mpeg", resumable: false, metadata: { cacheControl: "public, max-age=31536000" } });
+  await save.catch((e) => logger.warn("couldn't cache clip", e));
   return { audio: audio.toString("base64"), cached: false };
 });
