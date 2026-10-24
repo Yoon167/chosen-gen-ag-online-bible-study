@@ -110,7 +110,8 @@ async function synthesize(ssml: string, lang: NarratorLang, voice: NarratorVoice
 }
 
 /** Reads one verse or one part of a devotion aloud. Returns MP3 as base64. */
-export const narrate = onCall({ memory: "256MiB", timeoutSeconds: 30, maxInstances: 5 }, async (req) => {
+// The region is set here: this module loads before index.ts sets the global options.
+export const narrate = onCall({ region: "me-central1", memory: "256MiB", timeoutSeconds: 30, maxInstances: 5 }, async (req) => {
   const uid = req.auth?.uid;
   if (!uid) throw new HttpsError("unauthenticated", "sign-in");
   const { text, lang, voice } = (req.data ?? {}) as { text?: unknown; lang?: unknown; voice?: unknown };
