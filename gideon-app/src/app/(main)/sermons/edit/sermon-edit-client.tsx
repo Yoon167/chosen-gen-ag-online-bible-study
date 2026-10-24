@@ -10,7 +10,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Textarea } from "@/components/ui/textarea";
 import { useAuth } from "@/lib/hooks/use-auth";
 import { useMyChurch } from "@/lib/hooks/use-church";
-import { createSermon, deleteSermon, updateSermon, useSermon, type SermonInput } from "@/lib/hooks/use-sermons";
+import { createSermon, deleteSermon, updateSermon, useSermon, useSermons, type SermonInput } from "@/lib/hooks/use-sermons";
 import { localDateKey } from "@/lib/memory";
 import { parseOutline, type Sermon } from "@/lib/sermon";
 import { useTx } from "@/lib/i18n";
@@ -52,6 +52,11 @@ function Editor({ churchId, sermon }: { churchId: string; sermon: Sermon | null 
   const [scripture, setScripture] = useState(sermon?.scripture ?? "");
   const [date, setDate] = useState(sermon?.date ?? localDateKey());
   const [outline, setOutline] = useState(sermon?.outline ?? "");
+  const [series, setSeries] = useState(sermon?.series ?? "");
+  const [questions, setQuestions] = useState(sermon?.questions ?? "");
+  // Series already used in this AG, to pick from.
+  const { items: all } = useSermons(churchId);
+  const seriesNames = [...new Set(all.map((s) => s.series?.trim()).filter(Boolean))] as string[];
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(false);
   const blanks = parseOutline(outline).answers;
@@ -66,6 +71,8 @@ function Editor({ churchId, sermon }: { churchId: string; sermon: Sermon | null 
       scripture: scripture.trim(),
       date,
       outline: outline.trim(),
+      series: series.trim(),
+      questions: questions.trim(),
     };
     try {
       const id = sermon ? (await updateSermon(churchId, sermon.id, data), sermon.id) : await createSermon(churchId, uid, data);
@@ -91,6 +98,18 @@ function Editor({ churchId, sermon }: { churchId: string; sermon: Sermon | null 
           placeholder={tx("Main scripture, e.g. Ephesians 2:8-10", "Pangunahing talata, hal. Ephesians 2:8-10")}
           maxLength={100}
         />
+        <Input
+          value={series}
+          onChange={(e) => setSeries(e.target.value)}
+          placeholder={tx("Series (optional), e.g. Book of Acts", "Serye (opsyonal), hal. Aklat ng Gawa")}
+          maxLength={80}
+          list="sermon-series"
+        />
+        <datalist id="sermon-series">
+          {seriesNames.map((name) => (
+            <option key={name} value={name} />
+          ))}
+        </datalist>
         <div className="rounded-xl bg-secondary/50 p-3 text-xs leading-relaxed text-foreground/80">
           {tx("Start a line with ", "Simulan ang linya sa ")}
           <code className="font-semibold"># </code>
@@ -113,6 +132,13 @@ function Editor({ churchId, sermon }: { churchId: string; sermon: Sermon | null 
           placeholder={EXAMPLE}
           maxLength={10000}
           className="min-h-64 font-mono text-sm"
+        />
+        <Textarea
+          value={questions}
+          onChange={(e) => setQuestions(e.target.value)}
+          placeholder={tx("Discussion questions for the AG, one per line (optional)", "Mga tanong para pag-usapan ng AG, isa bawat linya (opsyonal)")}
+          maxLength={3000}
+          className="min-h-24 text-sm"
         />
         <p className="text-xs text-muted-foreground">
           {blanks.length

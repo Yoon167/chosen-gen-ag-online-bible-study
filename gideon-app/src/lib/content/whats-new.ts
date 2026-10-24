@@ -18,6 +18,37 @@ export interface Release {
 
 export const RELEASES: Release[] = [
   {
+    id: "2026-10-24-narrator",
+    date: "2026-10-24",
+    title: t("A natural reading voice, Heart Journal, events and more", "Natural na boses sa pagbasa, Heart Journal, mga event at iba pa"),
+    items: [
+      t(
+        "✨ Anointed Narrator: the Bible, Kids stories and now the daily devotion are read aloud in a warm, natural voice, in English and in Tagalog, male or female. Pick it in the player's voice list. The worship music goes soft while the Word is read.",
+        "✨ Anointed Narrator: binabasa na nang malakas ang Bibliya, Kids stories at ngayon pati ang daily devotion sa mainit at natural na boses, sa English at Tagalog, lalaki o babae. Piliin ito sa listahan ng boses sa player. Humihina ang worship music habang binabasa ang Salita."
+      ),
+      t(
+        "Listen to today's devotion: tap “Listen to today's devotion” under the title. Each part lights up as it's read.",
+        "Pakinggan ang debosyon ngayon: pindutin ang “Pakinggan ang debosyon ngayon” sa ilalim ng pamagat. Umiilaw ang bawat bahagi habang binabasa."
+      ),
+      t(
+        "Heart Journal (Grow → Write and remember): write to God with how you feel, get a verse for it, and see your last 4 weeks at a glance. Only you can read it.",
+        "Heart Journal (Grow → Isulat at alalahanin): sumulat sa Diyos kasama ang nararamdaman mo, makatanggap ng talata para dito, at makita ang huling 4 na linggo mo. Ikaw lang ang makakabasa."
+      ),
+      t(
+        "Events (My AG → Events): leaders post an outreach, camp or fellowship; members sign up, add guests and pick what to bring.",
+        "Mga Event (My AG → Mga Event): magpo-post ang leader ng outreach, camp o fellowship; magsa-sign up ang mga member, magdadagdag ng bisita at pipili ng dadalhin."
+      ),
+      t(
+        "Sermon series and discussion questions: leaders can group sermons into a series and add questions for the AG to talk about.",
+        "Sermon series at tanong para sa usapan: puwedeng igrupo ng leader ang mga sermon sa isang serye at magdagdag ng mga tanong na pag-uusapan ng AG."
+      ),
+      t(
+        "Giving & Pledges (Grow → Write and remember): a private record of your tithes, offerings and pledges, with progress for each pledge. No money goes through the app.",
+        "Pagbibigay at Pledge (Grow → Isulat at alalahanin): pribadong talaan ng iyong ikapu, handog at pledge, may progress sa bawat pledge. Walang perang dumadaan sa app."
+      ),
+    ],
+  },
+  {
     id: "2026-10-22-profiles",
     date: "2026-10-22",
     title: t("Member profiles", "Profile ng bawat member"),

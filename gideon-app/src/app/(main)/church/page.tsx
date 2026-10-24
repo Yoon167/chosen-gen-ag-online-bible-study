@@ -22,6 +22,7 @@ import {
   Link2,
   ClipboardCheck,
   CalendarDays,
+  CalendarHeart,
   Sprout,
 } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
@@ -309,6 +310,7 @@ export default function MyChurchPage() {
                   { href: "/church/reading", icon: CalendarCheck2, label: tx("Reading plan", "Reading plan"), tone: "from-amber-500/20 text-amber-700 dark:text-amber-300" },
                   { href: "/sermons", icon: NotebookPen, label: tx("Sermon notes", "Sermon notes"), tone: "from-emerald-500/20 text-emerald-700 dark:text-emerald-300" },
                   { href: "/meetings", icon: CalendarDays, label: tx("Meetings", "Pulong"), tone: "from-orange-500/20 text-orange-700 dark:text-orange-300" },
+                  { href: "/church/events", icon: CalendarHeart, label: tx("Events", "Mga Event"), tone: "from-pink-500/20 text-pink-700 dark:text-pink-300" },
                 ].map((l, i) => (
                   <Link
                     key={l.href}

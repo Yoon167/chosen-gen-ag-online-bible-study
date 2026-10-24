@@ -55,6 +55,9 @@ const USER_SUBCOLLECTIONS = [
   "courseProgress",
   "assessments",
   "vaultKeys",
+  "journal",
+  "giving",
+  "pledges",
 ];
 
 export class LeaderMustTransferError extends Error {
@@ -159,6 +162,9 @@ async function deleteEverything(user: User, onStep?: (step: string) => void) {
       await deleteRefs([doc(db, "churches", churchId, "birthdays", uid), doc(db, "churches", churchId, "courseReaders", uid)]);
       const enrollments = await getDocs(query(collection(db, "churches", churchId, "courseEnrollments"), where("uid", "==", uid)));
       await deleteRefs(enrollments.docs.map((e) => e.ref));
+      // Their sign-ups for AG events.
+      const events = await getDocs(collection(db, "churches", churchId, "events"));
+      await deleteRefs(events.docs.map((e) => doc(db, "churches", churchId, "events", e.id, "signups", uid)));
       // Their RSVPs to AG meetings.
       const meetings = await getDocs(collection(db, "churches", churchId, "meetings"));
       for (const meeting of meetings.docs) {

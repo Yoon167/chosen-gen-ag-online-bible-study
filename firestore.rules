@@ -388,8 +388,10 @@ service cloud.firestore {
       match /sermons/{sermonId} {
         allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);
         allow create, update: if rankAtLeast(churchId, 3)
-          && request.resource.data.keys().hasOnly(['title', 'speaker', 'scripture', 'date', 'outline', 'createdBy', 'createdAt'])
+          && request.resource.data.keys().hasOnly(['title', 'speaker', 'scripture', 'date', 'outline', 'series', 'questions', 'createdBy', 'createdAt'])
           && validText(request.resource.data.title, 1, 120)
+          && optText(request.resource.data, 'series', 80)
+          && optText(request.resource.data, 'questions', 3000)
           && validText(request.resource.data.speaker, 0, 100)
           && validText(request.resource.data.scripture, 0, 100)
           && request.resource.data.date is string
@@ -477,6 +479,42 @@ service cloud.firestore {
             && validText(request.resource.data.name, 1, 100);
           allow delete: if rankAtLeast(churchId, 3)
             || (request.auth != null && rsvpId.matches('[0-9-]+_' + request.auth.uid));
+        }
+      }
+
+      // Events members sign up for (outreach, camp, fellowship). Leaders post
+      // them; each member keeps one sign-up with their guests and what they'll bring.
+      match /events/{eventId} {
+        allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);
+        allow create, update: if rankAtLeast(churchId, 3)
+          && request.resource.data.keys().hasOnly(['title', 'kind', 'startsAt', 'location', 'details',
+            'capacity', 'bring', 'createdBy', 'createdAt'])
+          && validText(request.resource.data.title, 1, 100)
+          && request.resource.data.kind in ['outreach', 'camp', 'fellowship', 'service', 'other']
+          && request.resource.data.startsAt is int
+          && validText(request.resource.data.location, 0, 200)
+          && validText(request.resource.data.details, 0, 2000)
+          && request.resource.data.capacity is int
+          && request.resource.data.capacity >= 0 && request.resource.data.capacity <= 10000
+          && request.resource.data.bring is list
+          && request.resource.data.bring.size() <= 15
+          && request.resource.data.createdBy is string
+          && request.resource.data.createdAt is int;
+        allow delete: if rankAtLeast(churchId, 3);
+
+        match /signups/{uid} {
+          allow read: if request.auth != null && isActiveMember(churchId, request.auth.uid);
+          allow create, update: if request.auth != null && request.auth.uid == uid
+            && isActiveMember(churchId, uid)
+            && request.resource.data.keys().hasOnly(['uid', 'name', 'guests', 'bring', 'note', 'at'])
+            && request.resource.data.uid == uid
+            && validText(request.resource.data.name, 1, 100)
+            && request.resource.data.guests is int
+            && request.resource.data.guests >= 0 && request.resource.data.guests <= 10
+            && validText(request.resource.data.bring, 0, 60)
+            && validText(request.resource.data.note, 0, 200)
+            && request.resource.data.at is int;
+          allow delete: if (request.auth != null && request.auth.uid == uid) || rankAtLeast(churchId, 3);
         }
       }
 

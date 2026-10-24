@@ -41,7 +41,7 @@ export function useSermon(churchId: string | null, sermonId: string | null) {
   return { sermon, loading: !!churchId && !!sermonId && loading };
 }
 
-export type SermonInput = Pick<Sermon, "title" | "speaker" | "scripture" | "date" | "outline">;
+export type SermonInput = Pick<Sermon, "title" | "speaker" | "scripture" | "date" | "outline" | "series" | "questions">;
 
 export async function createSermon(churchId: string, uid: string, data: SermonInput) {
   const ref = await addDoc(collection(db, "churches", churchId, "sermons"), {

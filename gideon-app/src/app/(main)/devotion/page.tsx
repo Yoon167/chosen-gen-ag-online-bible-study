@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
-import { Sun, Heart, Share2, Check, RotateCcw, BookOpenCheck, ChevronRight } from "lucide-react";
+import { Sun, Heart, Share2, Check, RotateCcw, BookOpenCheck, ChevronRight, Headphones } from "lucide-react";
 import { PageHeader } from "@/components/shared/page-header";
 import { Section } from "@/components/shared/section";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -18,6 +18,9 @@ import { fetchPassage } from "@/lib/bible/api";
 import { TAGALOG_TRANSLATION } from "@/lib/bible/translations";
 import { devotionPhotoTheme } from "@/lib/verse-image";
 import { DevotionShareSheet, sentences, type ShareLine } from "@/components/devotion/devotion-share";
+import { AudioPlayer } from "@/components/bible/audio-player";
+import { useBibleSpeech } from "@/lib/hooks/use-bible-speech";
+import { chunkForNarrator } from "@/lib/narrator";
 
 const noSubscribe = () => () => {};
 
@@ -80,6 +83,25 @@ function DevotionContent({ devotion, dateKey, index, reference }: { devotion: St
   const [shareOpen, setShareOpen] = useState(false);
   const verseText = verses?.map((v) => v.text).join(" ") ?? "";
 
+  // Read aloud by the narrator, part by part: the title, the passage, then each step and the prayer.
+  const [listening, setListening] = useState(false);
+  const parts = useMemo(() => {
+    const list: { id: string; label: string; text: string }[] = [
+      { id: "title", label: devotion.title, text: `${devotion.title}. ${devotion.scriptureReference}.` },
+      ...(verseText ? [{ id: "verse", label: devotion.scriptureReference, text: verseText }] : []),
+      { id: "lesson", label: t("devotion.mainLesson"), text: `${t("devotion.mainLesson")}. ${devotion.mainLesson}` },
+      { id: "reflection", label: t("devotion.reflection"), text: `${t("devotion.reflection")}. ${devotion.reflectionQuestions.join(" ")}` },
+      { id: "application", label: t("devotion.application"), text: `${t("devotion.application")}. ${devotion.application}` },
+      { id: "prayer", label: t("devotion.prayer"), text: `${tx("Let us pray.", "Manalangin tayo.")} ${devotion.closingPrayer}` },
+    ];
+    // The narrator reads at most 1,500 characters at a time.
+    return list.flatMap((p) => chunkForNarrator(p.text).map((text) => ({ ...p, text })));
+  }, [devotion, verseText, t, tx]);
+  const partTexts = useMemo(() => parts.map((p) => p.text), [parts]);
+  const speech = useBibleSpeech(partTexts, lang);
+  const readingPart = listening && speech.state !== "idle" ? parts[speech.index]?.id : null;
+  const reading = (id: string) => readingPart === id && "rounded-xl ring-2 ring-[#D4AF37]/70 ring-offset-4 ring-offset-transparent";
+
   // What can go on the picture: the verse (whole, or one verse of it) and the lines of the devotion.
   const shareLines: ShareLine[] = [
     ...(verseText ? [{ group: tx("The verse", "Ang talata"), text: verseText }] : []),
@@ -109,10 +131,42 @@ function DevotionContent({ devotion, dateKey, index, reference }: { devotion: St
           <p className="news-rule border-b-2 border-double pb-2 text-center text-[0.625rem] font-bold uppercase tracking-[0.3em] text-[#7a5a12]">
             {devotion.scriptureReference}
           </p>
-          <h2 className="mt-3 text-center font-heading text-2xl font-bold leading-tight">{devotion.title}</h2>
+          <h2 className={cn("mt-3 text-center font-heading text-2xl font-bold leading-tight", reading("title"))}>{devotion.title}</h2>
+
+          {/* Listen: the narrator reads the whole devotion, with the worship music soft underneath */}
+          <div className="mt-3 flex justify-center">
+            {!listening ? (
+              <button
+                disabled={verses === null}
+                onClick={() => {
+                  setListening(true);
+                  speech.play();
+                }}
+                className="flex items-center gap-1.5 rounded-full bg-[#1E3A5F] px-4 py-2 text-xs font-semibold text-[#F4DC8A] shadow-sm"
+              >
+                <Headphones className="size-4" />
+                {tx("Listen to today's devotion", "Pakinggan ang debosyon ngayon")}
+              </button>
+            ) : (
+              <div className="w-full font-sans">
+                <AudioPlayer
+                  speech={speech}
+                  verseNumber={undefined}
+                  isTagalog={lang === "tl"}
+                  part={parts[speech.index]?.label}
+                  onClose={() => setListening(false)}
+                />
+              </div>
+            )}
+          </div>
 
           {/* The passage itself, under the title */}
-          <blockquote className="mx-auto mt-4 max-w-md border-y border-[#D4AF37]/50 py-3 text-center font-heading text-[0.9375rem] italic leading-relaxed">
+          <blockquote
+            className={cn(
+              "mx-auto mt-4 max-w-md border-y border-[#D4AF37]/50 py-3 text-center font-heading text-[0.9375rem] italic leading-relaxed",
+              reading("verse")
+            )}
+          >
             {verses === null ? (
               <span className="mx-auto block h-12 w-4/5 animate-pulse rounded bg-[#2a2418]/10" />
             ) : verses.length ? (
@@ -136,10 +190,10 @@ function DevotionContent({ devotion, dateKey, index, reference }: { devotion: St
           </blockquote>
 
           <div className="mt-5 space-y-5 font-heading text-[0.9375rem] leading-relaxed">
-            <DevotionStep n={1} label={t("devotion.mainLesson")}>
+            <DevotionStep n={1} label={t("devotion.mainLesson")} className={reading("lesson")}>
               <p className="news-dropcap">{devotion.mainLesson}</p>
             </DevotionStep>
-            <DevotionStep n={2} label={t("devotion.reflection")}>
+            <DevotionStep n={2} label={t("devotion.reflection")} className={reading("reflection")}>
               <ul className="space-y-1.5">
                 {devotion.reflectionQuestions.map((q) => (
                   <li key={q} className="flex gap-2">
@@ -149,10 +203,10 @@ function DevotionContent({ devotion, dateKey, index, reference }: { devotion: St
                 ))}
               </ul>
             </DevotionStep>
-            <DevotionStep n={3} label={t("devotion.application")}>
+            <DevotionStep n={3} label={t("devotion.application")} className={reading("application")}>
               <p>{devotion.application}</p>
             </DevotionStep>
-            <div className="rounded-xl border border-[#D4AF37]/50 bg-[#D4AF37]/10 p-4">
+            <div className={cn("rounded-xl border border-[#D4AF37]/50 bg-[#D4AF37]/10 p-4", reading("prayer"))}>
               <p className="text-[0.625rem] font-bold uppercase tracking-[0.2em] text-[#7a5a12]">🙏 {t("devotion.prayer")}</p>
               <p className="mt-1 italic">{devotion.closingPrayer}</p>
             </div>
@@ -275,9 +329,9 @@ function DevotionContent({ devotion, dateKey, index, reference }: { devotion: St
 }
 
 /** One numbered part of the devotion. */
-function DevotionStep({ n, label, children }: { n: number; label: string; children: React.ReactNode }) {
+function DevotionStep({ n, label, className, children }: { n: number; label: string; className?: string | false; children: React.ReactNode }) {
   return (
-    <section>
+    <section className={cn(className)}>
       <p className="mb-1.5 flex items-center gap-2 font-sans text-[0.625rem] font-bold uppercase tracking-[0.2em] text-[#1E3A5F]">
         <span className="flex size-5 items-center justify-center rounded-full bg-[#1E3A5F] text-[0.625rem] text-[#F4DC8A]">{n}</span>
         {label}

@@ -8,6 +8,8 @@ import { HOUR, QUARTER, dayOfYear, daySlot, localParts, nextStart, runStart, wee
 import { VERSE_POOL, verseText } from "./verses";
 import { LATEST_RELEASE } from "./release";
 
+export { narrate } from "./tts";
+
 initializeApp();
 // Firestore triggers must run where the database is (Doha).
 setGlobalOptions({ region: "me-central1", maxInstances: 5, memory: "256MiB" });
@@ -151,6 +153,23 @@ export const onAnnouncement = onDocumentCreated("churches/{churchId}/announcemen
     body: { en: clip(a.body, 140), tl: clip(a.body, 140) },
     url: "/church/announcements",
     tag: `announcement-${event.params.id}`,
+  });
+});
+
+/** A new AG event (outreach, camp, fellowship): everyone is invited to sign up. */
+export const onEventPosted = onDocumentCreated("churches/{churchId}/events/{id}", async (event) => {
+  const e = event.data?.data();
+  if (!e) return;
+  const members = await activeMembers(event.params.churchId);
+  const date = new Date(e.startsAt).toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", timeZone: "Asia/Qatar" });
+  await notify([...members.map((m) => m.uid), e.createdBy], "ag", {
+    title: { en: `🎉 ${clip(e.title, 70)}`, tl: `🎉 ${clip(e.title, 70)}` },
+    body: {
+      en: `${date}${e.location ? ` · ${clip(e.location, 60)}` : ""}. Tap to sign up${e.bring?.length ? " and pick what to bring" : ""}.`,
+      tl: `${date}${e.location ? ` · ${clip(e.location, 60)}` : ""}. Pindutin para mag-sign up${e.bring?.length ? " at pumili ng dadalhin" : ""}.`,
+    },
+    url: "/church/events",
+    tag: `event-${event.params.id}`,
   });
 });
 

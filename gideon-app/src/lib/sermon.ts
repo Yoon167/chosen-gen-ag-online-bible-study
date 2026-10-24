@@ -16,6 +16,10 @@ export interface Sermon {
   /** Local date, YYYY-MM-DD. */
   date: string;
   outline: string;
+  /** A series of sermons this one belongs to, e.g. "Book of Acts". */
+  series?: string;
+  /** Questions for the AG to discuss afterwards, one per line. */
+  questions?: string;
   createdBy: string;
   createdAt: number;
 }

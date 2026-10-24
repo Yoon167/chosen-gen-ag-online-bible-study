@@ -156,6 +156,14 @@ function Worksheet({
       />
 
       <div className="space-y-4 px-5 pb-8">
+        {sermon.series && (
+          <Link
+            href="/sermons"
+            className="inline-flex items-center gap-1 rounded-full bg-emerald-600/10 px-3 py-1 text-[0.6875rem] font-semibold uppercase tracking-wide text-emerald-800 dark:text-emerald-300"
+          >
+            {tx("Series", "Serye")}: {sermon.series}
+          </Link>
+        )}
         {sermon.scripture &&
           (ref ? (
             <button
@@ -226,6 +234,23 @@ function Worksheet({
               </span>
             )}
           </div>
+        )}
+
+        {sermon.questions?.trim() && (
+          <section className="rounded-2xl border border-[#D4AF37]/50 bg-[#D4AF37]/10 p-4">
+            <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#7a5a12] dark:text-[#F4DC8A]">
+              {tx("Talk about it in your AG", "Pag-usapan sa inyong AG")}
+            </h2>
+            <ol className="mt-2 list-decimal space-y-1.5 pl-5 text-sm leading-relaxed">
+              {sermon.questions
+                .split(/\r?\n/)
+                .map((q) => q.replace(/^\s*(\d+[.)]|[-*•])\s*/, "").trim())
+                .filter(Boolean)
+                .map((q) => (
+                  <li key={q}>{q}</li>
+                ))}
+            </ol>
+          </section>
         )}
 
         <div className="space-y-1.5">

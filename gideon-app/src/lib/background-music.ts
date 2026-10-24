@@ -18,6 +18,7 @@ const SWITCH_MS = 60 * 60 * 1000;
 // The file itself is mastered quieter (iOS ignores `audio.volume`), and other
 // platforms lower it a bit more.
 const VOLUME = 0.7;
+const DUCKED_VOLUME = 0.18;
 const MUTE_KEY = "gideon-music-muted";
 const WIFI_KEY = "gideon-music-wifi-only";
 
@@ -130,7 +131,7 @@ function playWhenAllowed() {
   el.play()
     .then(() => {
       if (held) el.pause();
-      else fadeTo(VOLUME, 2);
+      else fadeTo(ducked ? DUCKED_VOLUME : VOLUME, 2);
     })
     .catch(() => {
       if (waitingForGesture) return;
@@ -196,6 +197,18 @@ export function holdBackgroundMusic(hold: boolean) {
   } else if (started && !state.muted) {
     playWhenAllowed();
   }
+}
+
+/**
+ * Softer under the narrator while the Bible or a devotion is read aloud, so
+ * the worship stays in the background of the reading. (iOS ignores volume;
+ * the file is already mastered quiet there.)
+ */
+let ducked = false;
+export function duckBackgroundMusic(duck: boolean) {
+  if (ducked === duck) return;
+  ducked = duck;
+  if (audio && !audio.paused) fadeTo(duck ? DUCKED_VOLUME : VOLUME, 0.8);
 }
 
 export function toggleBackgroundMusic() {
